@@ -1,0 +1,1686 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://csrc.nist.gov/publications/search?dateFrom-lg=&dateTo-lg=&keywords-lg=8011
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-cache, no-store, must-revalidate
+      Pragma:
+      - no-cache
+      Content-Length:
+      - '90821'
+      Content-Type:
+      - text/html; charset=utf-8
+      Expires:
+      - "-1"
+      Server:
+      - Microsoft-IIS/7.5
+      Set-Cookie:
+      - ASP.NET_SessionId=tmfzzwoajcwjzgs3vdedrlop; path=/; secure; HttpOnly
+      - CMSCsrfCookie=lR8m0ZX/tg+Cb+Vwm0HxNyYqxhpnfQ++oHqQPnZu; path=/; secure; HttpOnly
+      - CMSPreferredCulture=en-US; path=/; HttpOnly; Secure
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Ua-Compatible:
+      - IE=Edge
+      X-Aspnet-Version:
+      - 4.0.30319
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Wed, 06 Feb 2019 18:39:26 GMT
+    body:
+      encoding: UTF-8
+      string: "<!DOCTYPE html>\r\n<html  >\r\n<head id=\"head\"><title>\r\n\tSearch
+        | CSRC\r\n</title><meta charset=\"UTF-8\" /> \n<meta http-equiv=\"content-type\"
+        content=\"text/html; charset=UTF-8\" />\r\n<meta http-equiv=\"content-style-type\"
+        content=\"text/css\" />\r\n<meta http-equiv=\"content-script-type\" content=\"text/javascript\"
+        />\r\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"
+        />\r\n\r\n<link href=\"/Scripts/font-awesome/css/font-awesome.css\" type=\"text/css\"
+        rel=\"stylesheet\" />\r\n<link href=\"/CSRC/media/bootstrap/css/bootstrap.min.css\"
+        type=\"text/css\" rel=\"stylesheet\" />\r\n<link href=\"/CSRC/media/bootstrap/css/bootstrap-theme.min.css\"
+        type=\"text/css\" rel=\"stylesheet\" />\r\n<link href=\"/Scripts/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css\"
+        type=\"text/css\" rel=\"stylesheet\" />\r\n<link href=\"/CSRC/media/css/nist-fonts.css\"
+        type=\"text/css\" rel=\"stylesheet\" />\r\n<link href=\"/CSRC/media/css/csrc-style.css\"
+        type=\"text/css\" rel=\"stylesheet\" />\r\n<link href=\"/CSRC/media/css/media-resize.css\"
+        type=\"text/css\" rel=\"stylesheet\" />\r\n\r\n\r\n<link rel=\"apple-touch-icon\"
+        sizes=\"180x180\" href=\"/CSRC/Media/images/favicons/apple-touch-icon.png\"
+        />\r\n<link rel=\"icon\" type=\"image/png\" href=\"/CSRC/Media/images/favicons/favicon-32x32.png\"
+        sizes=\"32x32\" />\r\n<link rel=\"icon\" type=\"image/png\" href=\"/CSRC/Media/images/favicons/favicon-16x16.png\"
+        sizes=\"16x16\" />\r\n<link rel=\"manifest\" href=\"/CSRC/Media/images/favicons/manifest.json\"
+        />\r\n<link rel=\"mask-icon\" href=\"/CSRC/Media/images/favicons/safari-pinned-tab.svg\"
+        color=\"#000000\" />\r\n<link rel=\"shortcut icon\" href=\"/CSRC/Media/images/favicons/favicon.ico\"
+        />\r\n<meta name=\"msapplication-config\" content=\"/CSRC/Media/images/favicons/browserconfig.xml\"
+        />\r\n<meta name=\"theme-color\" content=\"#000000\" />\r\n\r\n<script src=\"/Scripts/jquery/dist/jquery.min.js\"></script>\r\n<script
+        src=\"/Scripts/underscore/underscore-min.js\"></script>\r\n<script src=\"/Scripts/bootstrap/dist/js/bootstrap.min.js\"></script>\r\n<script
+        src=\"/Scripts/moment/min/moment.min.js\" type=\"text/javascript\"></script>\r\n<script
+        src=\"/Scripts/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js\"
+        type=\"text/javascript\"></script>\r\n<script src=\"/CSRC/media/js/megamenu.js\"
+        type=\"text/javascript\"></script>\r\n<script src=\"/CSRC/media/js/main.js\"></script>\r\n<script
+        src=\"/CSRC/media/js/forms.js\" type=\"text/javascript\"></script>\r\n<script
+        src=\"/CSRC/media/js/forms-topics.js\" type=\"text/javascript\"></script>\r\n<script
+        src=\"/CSRC/media/js/forms-controlFamilies.js\" type=\"text/javascript\"></script>\r\n<script
+        src=\"/CSRC/media/js/forms-searchCriteria.js\" type=\"text/javascript\"></script>\r\n<script
+        src=\"/CSRC/media/js/nist-exit-script.js\" type=\"text/javascript\"></script>\r\n\r\n<script
+        async type=\"text/javascript\" id=\"_fed_an_ua_tag\" src=\"https://dap.digitalgov.gov/Universal-Federated-Analytics-Min.js?agency=nist&subagency=csrc&pua=UA-66610693-15&yt=true&exts=xsd,xml,wav,mpg,mpeg,avi,rtf,webm,ogg,ogv,oga,map,otf,eot,svg,ttf,woff\"></script>\r\n\r\n<style
+        id=\"antiClickjack\">body{display:none !important;}</style>\r\n<script type=\"text/javascript\">\r\n
+        \  if (self === top) {\r\n       var antiClickjack = document.getElementById(\"antiClickjack\");\r\n
+        \      antiClickjack.parentNode.removeChild(antiClickjack);\r\n   } else {\r\n
+        \      top.location = self.location;\r\n   }\r\n</script>\r\n \n<link href=\"/CSRC/Media/images/favicons/favicon.ico\"
+        type=\"image/x-icon\" rel=\"shortcut icon\"/>\r\n<link href=\"/CSRC/Media/images/favicons/favicon.ico\"
+        type=\"image/x-icon\" rel=\"icon\"/>\r\n</head>\r\n<body class=\"LTR Unknown
+        ENUS ContentBody\" >\r\n    \r\n    <form method=\"post\" action=\"/publications/search?keywords-lg=8011&amp;dateFrom-lg=&amp;dateTo-lg=\"
+        id=\"form\">\r\n<input type=\"hidden\" name=\"__CMSCsrfToken\" id=\"__CMSCsrfToken\"
+        value=\"tRfpnOHcYNLeuMuX1fbdLALVs3LOmC+dRoXBShujCQLkTcJdaofeBg7o4JkWgNlAR1EFcjWGLNVnGR7z99Bz3AzpJaqM1a3cFhaB9nsbopY=\"
+        />\r\n<input type=\"hidden\" name=\"__VIEWSTATE\" id=\"__VIEWSTATE\" value=\"dBnAJeU4QU+AETSnwAadlxjEWcNaMHDcv2K8D2u/YhuCXtJgi4jFy5r7qtzL1i+p9C6lLA9j6DsYEQWwq0Z2PSatlbU86MGERMhfqMpf/mqO2JVvTiQQHuN52nErKVMvwGwGXE2XuA5PBnfWQpAwjehpgvQ3vjxieqF8c0WpluFaPrNEBbssA2Do3JNtOvm8WcdpwQtuJK6Mq3oohr+GEDAedme1PJI7AM6O1PWg2LtJw4/odQOqCg1Cn32Eboors8RWnrsLEd2QLQSGjWAYCDhR/U4SO+qRl6gvIEmAmkOw/y+uEuGDOJSQabDY+UPNZN0XFhRV+Ee+33uMIUdhNJwVOm5SUWYVEVlgs623x/IrfP8EszX1Lnc1hi7FT0BE\"
+        />\r\n\r\n<input type=\"hidden\" name=\"lng\" id=\"lng\" value=\"en-US\" />\r\n<script
+        type=\"text/javascript\">\r\n\t//<![CDATA[\n\r\nfunction PM_Postback(param)
+        { if (window.top.HideScreenLockWarningAndSync) { window.top.HideScreenLockWarningAndSync(1080);
+        } if(window.CMSContentManager) { CMSContentManager.allowSubmit = true; };
+        __doPostBack('m$am',param); }\r\nfunction PM_Callback(param, callback, ctx)
+        { if (window.top.HideScreenLockWarningAndSync) { window.top.HideScreenLockWarningAndSync(1080);
+        }if (window.CMSContentManager) { CMSContentManager.storeContentChangedStatus();
+        };WebForm_DoCallback('m$am',param,callback,ctx,null,true); }\n//]]>\r\n</script>\r\n<script
+        src=\"/ScriptResource.axd?d=uHIkleVeDJf4xS50Krz-yEL6BbhBiF45lsyDpasAzWtzCQJtc3dXLl1MqQyMoBddI_O_uiqYRrrD592E4da-2WesA2JhR0XghR0QIALOhp9342afvPsvwJS3o4OM9Vxe6f-ElDVqmMiQ_ATQpGKRafEv9S4i2xDFm7GeQM8JCN81&amp;t=ffffffff999c3159\"
+        type=\"text/javascript\"></script>\r\n<script type=\"text/javascript\">\r\n\t//<![CDATA[\n\r\nvar
+        CMS = CMS || {};\r\nCMS.Application = {\r\n  \"language\": \"en\",\r\n  \"imagesUrl\":
+        \"/CMSPages/GetResource.ashx?image=%5bImages.zip%5d%2f\",\r\n  \"isDebuggingEnabled\":
+        false,\r\n  \"applicationUrl\": \"/\",\r\n  \"isDialog\": false,\r\n  \"isRTL\":
+        \"false\"\r\n};\r\n\n//]]>\r\n</script>\r\n<input type=\"hidden\" name=\"__VIEWSTATEGENERATOR\"
+        id=\"__VIEWSTATEGENERATOR\" value=\"A5343185\" />\r\n    \r\n    <div id=\"ctxM\">\r\n\r\n</div>\r\n
+        \       <div id=\"antiClickjack\" style=\"display: none\">\r\n        <h1>You
+        are viewing this page in an unauthorized frame window.</h1>\r\n        <p>This
+        is a potential security issue, you are being redirected to <a href=\"https://csrc.nist.gov\">https://csrc.nist.gov</a></p>\r\n
+        \   </div>\r\n    <nav id=\"navbar\" class=\"navbar\">\r\n      <div id=\"nist-menu-container\"
+        class=\"container\">\r\n        <div class=\"row\">\r\n        <!-- Brand
+        -->\r\n        <div class=\"col-xs-6 col-md-4 navbar-header\">\r\n          <a
+        class=\"navbar-brand\" href=\"https://www.nist.gov\" target=\"_blank\" id=\"navbar-brand-image\">\r\n
+        \           <img src=\"/CSRC/Media/images/svg/nist-logo.svg\" alt=\"National
+        Institute of Standards and Technology\" width=\"110\" height=\"30\">\r\n          </a>\r\n
+        \       </div>\r\n        <div class=\"col-xs-6 col-md-8 navbar-nist-logo\">\r\n
+        \           <div class=\"form-inline hidden-sm hidden-xs\">\r\n                <label
+        for=\"search-csrc-query\" class=\"element-invisible\">Search</label>\r\n                <input
+        autocomplete=\"off\" class=\"form-control\" id=\"search-csrc-query\" name=\"search-csrc-query\"
+        type=\"text\" size=\"15\" maxlength=\"128\" placeholder=\"Search CSRC\"/>\r\n
+        \               <button type=\"button\" id=\"search-csrc-submit-btn\" name=\"op\"
+        class=\"form-submit\">\r\n                    <span class=\"element-invisible\">Search</span>\r\n
+        \                   <i class=\"fa fa-search\"></i>\r\n                </button>\r\n
+        \           </div>\r\n          <span id=\"nvd-menu-button\" class=\"pull-right\">\r\n
+        \           <a href=\"#\">\r\n              <span class=\"fa fa-bars\"></span>
+        \r\n              <span id=\"nvd-menu-full-text\"><span class=\"hidden-xxs\">CSRC
+        </span>MENU</span>\r\n            </a>\r\n          </span>\r\n        </div>\r\n
+        \       </div>\r\n      </div>\r\n        \r\n        <div class=\"form-inline
+        hidden-md hidden-lg\">\r\n            <label for=\"search-csrc-query\" class=\"element-invisible\">Search</label>\r\n
+        \           <input autocomplete=\"off\" class=\"form-control\" id=\"search-csrc-query-mobile\"
+        name=\"search-csrc-query\" type=\"text\" size=\"15\" maxlength=\"128\" placeholder=\"Search
+        CSRC\"/>\r\n            <button type=\"button\" id=\"search-csrc-submit-btn-mobile\"
+        name=\"op\" class=\"form-submit\">\r\n                <span class=\"element-invisible\">Search</span>\r\n
+        \               <i class=\"fa fa-search\"></i>\r\n            </button>\r\n
+        \       </div>\r\n    <div class=\"main-menu-row container\">\r\n        <!--
+        Collect the nav links, forms, and other content for toggling -->\r\n        <div
+        id=\"main-menu-drop\" class=\"col-lg-12\" style=\"display: none;\">\r\n            <ul>\r\n\t\t
+        \       <li><a href=\"/projects\">Projects</a></li>\r\n\t\t        <li>\r\n
+        \                   <a href=\"/publications\">\r\n                        Publications\r\n
+        \                       <span class=\"expander fa fa-plus\" id=\"main-menu-expander-pubs\"
+        data-expander-name=\"publications\" data-expanded=\"false\">\r\n                            <span
+        class=\"element-invisible\">Expand or Collapse</span>\r\n                        </span>\r\n
+        \                   </a>\r\n                    <div style=\"display: none;\"
+        class=\"sub-menu\" data-expander-trigger=\"publications\">\r\n                        <div
+        class=\"row\">\r\n                            <div class=\"col-lg-4\">\r\n\t\t\t\t\t\t\t\t<p><a
+        href=\"/publications/draft-pubs\">Draft Pubs</a></p>\r\n\t\t\t\t\t\t\t\t<p><a
+        href=\"/publications/final-pubs\">Final Pubs</a></p>\r\n\t\t\t\t\t\t\t\t<p><a
+        href=\"/publications/fips\">FIPS</a></p>\r\n\t\t\t\t\t\t\t\t<p><a href=\"/publications/sp\">Special
+        Publications (SP<small>s</small>)</a></p>\r\n                            </div>\r\n
+        \                           <div class=\"col-lg-4\">\r\n\t\t\t\t\t\t\t\t<p><a
+        href=\"/publications/nistir\">NISTIR<small>s</small></a></p>\r\n\t\t\t\t\t\t\t\t<p><a
+        href=\"/publications/itl-bulletin\">ITL Bulletins</a></p>\r\n\t\t\t\t\t\t\t\t<p><a
+        href=\"/publications/white-paper\">White Papers</a></p>\r\n                            </div>\r\n
+        \                           <div class=\"col-lg-4\">\r\n\t\t\t\t\t\t\t\t<p><a
+        href=\"/publications/journal-article\">Journal Articles</a></p>\r\n\t\t\t\t\t\t\t\t<p><a
+        href=\"/publications/conference-paper\">Conference Papers</a></p>\r\n\t\t\t\t\t\t\t\t<p><a
+        href=\"/publications/book\">Books</a></p>\r\n                            </div>\r\n
+        \                       </div>\r\n                    </div>\r\n\t\t        </li>\r\n\t\t
+        \       <li>\r\n                    <a href=\"/topics\">\r\n                        Topics\r\n
+        \                       <span class=\"expander fa fa-plus\" id=\"main-menu-expander-topics\"
+        data-expander-name=\"topics\" data-expanded=\"false\">\r\n                            <span
+        class=\"element-invisible\">Expand or Collapse</span>\r\n                        </span>\r\n
+        \                   </a>\r\n                    <div style=\"display: none;\"
+        class=\"sub-menu\" data-expander-trigger=\"topics\">\r\n                        <div
+        class=\"row\">\r\n                            <div class=\"col-lg-4\">\r\n
+        \                               <p><a href=\"/Topics/Security-and-Privacy\">Security
+        &amp Privacy</a></p>\r\n                                <p><a href=\"/Topics/Applications\">Applications</a></p>\r\n
+        \                           </div>\r\n                            <div class=\"col-lg-4\">\r\n
+        \                               <p><a href=\"/Topics/Technologies\">Technologies</a></p>\r\n
+        \                               <p><a href=\"/Topics/Sectors\">Sectors</a></p>\r\n
+        \                           </div>\r\n                            <div class=\"col-lg-4\">\r\n
+        \                               <p><a href=\"/Topics/Laws-and-Regulations\">Laws
+        &amp; Regulations</a></p>\r\n                                <p><a href=\"/Topics/Activities-and-Products\">Activities
+        &amp; Products</a></p>\r\n                            </div>\r\n                        </div>\r\n
+        \                   </div>\r\n\t\t        </li>\r\n\t\t        <li><a href=\"/news\">News
+        &amp; Updates</a></li>\r\n\t\t        <li><a href=\"/events\">Events</a></li>\r\n
+        \               <li><a href=\"/glossary\">Glossary</a></li>\r\n\t\t        <li>\r\n
+        \                   <a href=\"/about\">\r\n                        About CSRC\r\n
+        \                       <span class=\"expander fa fa-plus\" id=\"main-menu-expander-about\"
+        data-expander-name=\"about\" data-expanded=\"false\">\r\n                            <span
+        class=\"element-invisible\">Expand or Collapse</span>\r\n                        </span>\r\n
+        \                   </a>\r\n                    <div style=\"display: none;\"
+        class=\"sub-menu\" data-expander-trigger=\"about\">\r\n                        <div
+        class=\"row\">\r\n                            <div class=\"col-lg-6\">\r\n
+        \                               <p>\r\n                                    <strong>Computer
+        Security Division</strong><br />\r\n                                    <ul>\r\n\t
+        \                                   <li><a href=\"/Groups/Computer-Security-Division/Cryptographic-Technology\">Cryptographic
+        Technology</a></li>\r\n\t                                    <li><a href=\"/Groups/Computer-Security-Division/Secure-Systems-and-Applications\">Secure
+        Systems and Applications</a></li>\r\n\t                                    <li><a
+        href=\"/Groups/Computer-Security-Division/Security-Components-and-Mechanisms\">Security
+        Components and Mechanisms</a></li>\r\n\t                                    <li><a
+        href=\"/Groups/Computer-Security-Division/Security-Engineering-and-Risk-Management\">Security
+        Engineering and Risk Management</a></li>\r\n\t                                    <li><a
+        href=\"/Groups/Computer-Security-Division/Security-Testing-Validation-and-Measurement\">Security
+        Testing, Validation, and Measurement</a></li>\r\n                                    </ul>\r\n
+        \                               </p>\r\n                            </div>\r\n
+        \                           <div class=\"col-lg-6\">\r\n                                <p>\r\n
+        \                                   <strong>Applied Cybersecurity Division</strong><br
+        />\r\n                                    <ul>\r\n\t                                    <li><a
+        href=\"/Groups/Applied-Cybersecurity-Division/Cybersecurity-and-Privacy-Applications\">Cybersecurity
+        and Privacy Applications</a></li>\r\n\t                                    <li><a
+        href=\"/Groups/Applied-Cybersecurity-Division/National-Cybersecurity-Center-of-Excellence\">National
+        Cybersecurity Center of Excellence (NCCoE)</a></li>\r\n\t                                    <li><a
+        href=\"https://www.nist.gov/nice/\">National Initiative for Cybersecurity
+        Education (NICE)</a></li>\r\n\t                                    <li><a
+        href=\"/Groups/Applied-Cybersecurity-Division/Trusted-Identities-Group\">Trusted
+        Identities Group</a></li>\r\n                                    </ul>\r\n
+        \                               </p>\r\n                                <p>\r\n
+        \                                   <a href=\"/contact\">\r\n                                        Contact
+        Us\r\n                                    </a>\r\n                                </p>\r\n
+        \                           </div>\r\n                        </div>\r\n                    </div>\r\n\t\t
+        \       </li>\r\n            </ul>\r\n        </div><!-- /#mobile-nav-container
+        -->\r\n    </div>\r\n  \r\n    </nav>\r\n    <section id=\"itl-header\" class=\"has-menu\">\r\n
+        \       <div class=\"container\">\r\n            <div class=\"row\">\r\n                <div
+        class=\"col-sm-12 col-md-8\">\r\n                    <h2 class=\"hidden-xs
+        hidden-sm\">\r\n                        <a href=\"https://www.nist.gov/itl\"
+        target=\"_blank\">Information Technology Laboratory</a>\r\n                    </h2>\r\n
+        \                   <h1 class=\"hidden-xs hidden-sm\">\r\n                        <a
+        href=\"/\" id=\"csrc-header-link\">Computer Security Resource Center</a>\r\n
+        \                   </h1>\r\n                    <h1 class=\"hidden-xs text-center
+        hidden-md hidden-lg\">Computer Security Resource Center</h1>\r\n                    <h1
+        class=\"hidden-sm hidden-md hidden-lg text-center\">Computer Security<br />Resource
+        Center</h1>\r\n                </div>\r\n                <div class=\"col-sm-12
+        col-md-4\">\r\n                    <a href=\"/\" style=\"width: 100%; text-align:
+        center; display: block;\"><img src=\"/CSRC/Media/images/CSRC-white-134-38.png\"
+        alt=\"CSRC Logo\" class=\"csrc-header-logo\"></a>\r\n                </div>\r\n
+        \           </div>\r\n        </div>\r\n    </section>\r\n\r\n    <div id=\"body-section\"
+        class=\"container\">\r\n\r\n\r\n<h1>Publication Search</h1>\r\n\r\n<div class=\"row\">\r\n
+        \  <div class=\"col-lg-3 col-md-4\">\r\n          <div id=\"publications-quicklinks\"
+        class=\"bs-callout bs-callout-subnav\">\r\n        <h4>Quick Links <i class=\"fa
+        fa-bolt\"></i></h4>\r\n\t\t<p style=\"margin-left: 1rem;\">\r\n\t\t\t<a href=\"/publications/draft-pubs\">Draft
+        Pubs</a>\r\n\t\t\t<br/>\r\n\t\t\t<a href=\"/publications/final-pubs\">Final
+        Pubs</a>\r\n\t\t\t<br/>\r\n\t\t\t<a href=\"/publications/fips\">FIPS</a>\r\n\t\t\t<br/>\r\n\t\t\t<a
+        href=\"/publications/sp\">SPs (Special Pubs)</a>\r\n\t\t\t<br/>\r\n\t\t\t<a
+        href=\"/publications/nistir\">NISTIRs</a>\r\n\t\t\t<br/>\r\n\t\t\t<a href=\"/publications/itl-bulletin\">ITL
+        Bulletins</a>\r\n\t\t\t<br/>\r\n\t\t\t<a href=\"/publications/white-paper\">White
+        Papers</a>\r\n\t\t\t<br/>\r\n\t\t\t<a href=\"/publications/journal-article\">Journal
+        Articles</a>\r\n\t\t\t<br/>\r\n\t\t\t<a href=\"/publications/conference-paper\">Conference
+        Papers</a>\r\n\t\t\t<br/>\r\n\t\t\t<a href=\"/publications/book\">Books</a>\r\n\t\t</p>\r\n
+        \   </div>\r\n<div class=\"bs-callout bs-callout-success csrc-search-form
+        hidden-sm hidden-xs hidden-xxs\" data-csrc-form=\"true\" data-form-name=\"pubSearch\"
+        data-form-action=\"/publications/search\" data-form-method=\"GET\" data-default-query=\"\">\r\n
+        \   <div class=\"form-group\"> \r\n        <label for=\"pub-search-keywords\">Search</label>\r\n
+        \       <input type=\"text\" id=\"pub-search-keywords\" name=\"keywords-lg\"
+        class=\"form-control\" />\r\n        <em class=\"text-muted\">Search publication
+        record data<br/> (not a full text search)</em>\r\n    </div>\r\n    <div class=\"form-group\">\r\n\t\t<label
+        for=\"pub-search-sort-by\">\r\n\t\t\tSort By\r\n\t\t</label>\r\n\t\t<select
+        id=\"pub-search-sort-by\" name=\"sortBy-lg\" class=\"form-control\">\r\n\t\t\t<option
+        value=\"relevance\">Relevance (best match)</option>\r\n\t\t\t<option value=\"releasedate
+        DESC\">Release Date (newest first)</option>\r\n\t\t\t<option value=\"releasedate
+        ASC\">Release Date (oldest first)</option>\r\n\t\t\t<option value=\"Series
+        ASC\">Series (A-Z)</option>\r\n\t\t\t<option value=\"Series DESC\">Series
+        (Z-A)</option>\r\n\t\t\t<option value=\"Number DESC\">Number (highest to lowest)</option>\r\n\t\t\t<option
+        value=\"Number ASC\">Number (lowest to highest)</option>\r\n\t\t\t<option
+        value=\"Title ASC\">Title (A-Z)</option>\r\n\t\t\t<option value=\"Title DESC\">Title
+        (Z-A)</option>\r\n\t\t</select>\r\n    </div>\r\n    <div class=\"form-group\">\r\n
+        \       <label for=\"pub-search-view-mode\">\r\n            Results View\r\n
+        \       </label>\r\n\t\t<select id=\"pub-search-view-mode\" name=\"viewMode-lg\"
+        class=\"form-control\">\r\n\t\t\t<option value=\"brief\">Brief</option>\r\n\t\t\t<option
+        value=\"summary\">Detailed Summary</option>\r\n\t\t</select>\r\n    </div>\r\n
+        \   <div class=\"form-group form-inline\">\r\n        <label for=\"pub-search-ipp\"
+        class=\"form-control-half\">\r\n            Items Per Page\r\n        </label>\r\n
+        \           <select id=\"pub-search-ipp\" name=\"ipp-lg\" class=\"form-control\">\r\n
+        \               <option>25</option>\r\n                <option>50</option>\r\n
+        \               <option>75</option>\r\n                <option>100</option>\r\n
+        \               <option value=\"ALL\">All</option>\r\n            </select>\r\n
+        \   </div>\r\n\t<div class=\"form-group\">\r\n\t\t<label for=\"pubs-search-date-from\">\r\n\t\t\tDate\r\n\t\t</label>\r\n\t\t<div
+        class=\"form-inline form-date-inline\">\r\n\t\t\t<div class=\"input-group
+        date\" data-date-picker=\"true\">\r\n\t\t\t\t<input type=\"text\" \r\n\t\t\t\t\tid=\"pubs-search-date-from\"
+        \r\n\t\t\t\t\tname=\"dateFrom-lg\" \r\n\t\t\t\t\tclass=\"form-control\" \r\n\t\t\t\t\tplaceholder=\"
+        \ /  /    \"\r\n\t\t\t\t\tdata-control-type=\"date\" \r\n\t\t\t\t\tdata-validation=\"true\"\r\n\t\t\t\t\tdata-validation-message=\"From
+        date must be less than To date\"\r\n\t\t\t\t\tdata-validation-type=\"less-than-date\"\r\n\t\t\t\t\tdata-validation-compare-field=\"pubs-search-date-to\"
+        />\r\n\t\t\t\t<span class=\"input-group-addon\">\r\n\t\t\t\t\t<span class=\"fa
+        fa-calendar\">\r\n\t\t\t\t\t</span>\r\n\t\t\t\t</span>\r\n\t\t\t</div>\r\n\t\t\t<div
+        class=\"input-group date\" data-date-picker=\"true\">\r\n\t\t\t\t<input type=\"text\"
+        \r\n\t\t\t\t\tid=\"pubs-search-date-to\" \r\n\t\t\t\t\tname=\"dateTo-lg\"
+        \r\n\t\t\t\t\tclass=\"form-control\" \r\n\t\t\t\t\tplaceholder=\"  /  /    \"\r\n\t\t\t\t\tdata-control-type=\"date\"
+        />\r\n\t\t\t\t<span class=\"input-group-addon\">\r\n\t\t\t\t\t<span class=\"fa
+        fa-calendar\">\r\n\t\t\t\t\t</span>\r\n\t\t\t\t</span>\r\n\t\t\t</div>\r\n\t\t</div>\r\n\t</div>\r\n\t<div
+        class=\"form-group\">\r\n\t\t<label for=\"pub-search-status\">\r\n\t\t\tStatus\r\n\t\t\t<button
+        type=\"button\" id=\"status-all-btn\" class=\"btn btn-sm btn-success\" data-check-all=\"status-lg\">Check
+        All</button>\r\n\t\t\t<button type=\"button\" id=\"status-clear-btn\" class=\"btn
+        btn-sm btn-success\" data-check-none=\"status-lg\">Clear</button>\r\n\t\t</label>\r\n\t\t<div
+        class=\"form-inline status-type\" style=\"margin-left: 1rem;\">\r\n\t\t\t<input
+        type=\"checkbox\" name=\"status-lg\" value=\"Draft\" data-default-checked=\"true\"
+        /> Draft<br/>\r\n\t\t\t<input type=\"checkbox\" name=\"status-lg\" value=\"Final\"
+        data-default-checked=\"true\" /> Final<br/>\r\n\t\t\t<input type=\"checkbox\"
+        name=\"status-lg\" value=\"Retired Draft\" /> Retired Draft<br/>\r\n\t\t\t<input
+        type=\"checkbox\" name=\"status-lg\" value=\"Withdrawn\" /> Withdrawn\r\n\t\t</div>\r\n\t</div>\r\n\t<div
+        class=\"form-group\">\r\n\t\t<label for=\"pub-search-series\">\r\n\t\t\tSeries\r\n\t\t\t<button
+        type=\"button\" id=\"series-all-btn\" class=\"btn btn-sm btn-success\" data-check-all=\"series-lg\">Check
+        All</button>\r\n\t\t\t<button type=\"button\" id=\"series-clear-btn\" class=\"btn
+        btn-sm btn-success\" data-check-none=\"series-lg\">Clear</button>\r\n\t\t</label>\r\n\t\t<div
+        class=\"form-inline series-type\" style=\"margin-left: 1rem;\">\r\n\t\t\t<input
+        type=\"checkbox\" name=\"series-lg\" value=\"FIPS\" data-default-checked=\"true\"
+        /> FIPS<br/>\r\n\t\t\t<input type=\"checkbox\" name=\"series-lg\" value=\"SP\"
+        data-default-checked=\"true\" /> SP<br/>\r\n\t\t\t<input type=\"checkbox\"
+        name=\"series-lg\" value=\"NISTIR\" data-default-checked=\"true\" /> NISTIR<br/>\r\n\t\t\t<input
+        type=\"checkbox\" name=\"series-lg\" value=\"ITL Bulletin\" data-default-checked=\"true\"
+        /> ITL Bulletin<br/>\r\n\t\t\t<input type=\"checkbox\" name=\"series-lg\"
+        value=\"White Paper\" data-default-checked=\"true\" /> White Paper<br/>\r\n\t\t\t<input
+        type=\"checkbox\" name=\"series-lg\" value=\"Building Block\" data-default-checked=\"true\"
+        /> Building Block<br/>\r\n\t\t\t<input type=\"checkbox\" name=\"series-lg\"
+        value=\"Use Case\" data-default-checked=\"true\" /> Use Case<br/>\r\n\t\t\t<input
+        type=\"checkbox\" name=\"series-lg\" value=\"Journal Article\" data-default-checked=\"true\"
+        /> Journal Article<br/>\r\n\t\t\t<input type=\"checkbox\" name=\"series-lg\"
+        value=\"Conference Paper\" data-default-checked=\"true\" /> Conference Paper<br/>\r\n\t\t\t<input
+        type=\"checkbox\" name=\"series-lg\" value=\"Book\" data-default-checked=\"true\"
+        /> Book<br/>\r\n\t\t</div>\r\n\t</div>\r\n\t<div class=\"form-group\">\r\n\t\t<label
+        for=\"pub-search-topics\">\r\n\t\t\tTopics\r\n\t\t</label>\r\n\t\t<input type=\"hidden\"
+        name=\"topics-lg\" />\r\n\t\t<div class=\"form-control topics-selection\"
+        \r\n\t\t\tid=\"pub-search-topics\" \r\n\t\t\tcontenteditable=\"true\" \r\n\t\t\tdata-drop-target=\"pub-search-topics-drop\"\r\n\t\t\tdata-field-name=\"topics-lg\"\r\n\t\t\taria-haspopup=\"true\"
+        \r\n\t\t\taria-expanded=\"false\">\r\n\t\t</div>\r\n\t  <div class=\"topics-selection-dropdown
+        desktop\" id=\"pub-search-topics-drop\" style=\"display: none;\"><div class=\"col-sm-4\"><strong>Security
+        and Privacy</strong><br/>\n<ul><li><i class=\"fa fa-plus fa-fw\"></i> <a data-topic-id=\"3349\"
+        data-topic-text=\"cryptography\">cryptography</a><ul style=\"display: none;\"><li><i
+        class=\"fa fa-fw\"></i> <a data-topic-id=\"3552\" data-topic-text=\"digital
+        signatures\">digital signatures</a></li><li><i class=\"fa fa-fw\"></i> <a
+        data-topic-id=\"3538\" data-topic-text=\"encryption\">encryption</a></li><li><i
+        class=\"fa fa-fw\"></i> <a data-topic-id=\"3539\" data-topic-text=\"key management\">key
+        management</a></li><li><i class=\"fa fa-fw\"></i> <a data-topic-id=\"3540\"
+        data-topic-text=\"message authentication\">message authentication</a></li><li><i
+        class=\"fa fa-fw\"></i> <a data-topic-id=\"3541\" data-topic-text=\"post-quantum
+        cryptography\">post-quantum cryptography</a></li><li><i class=\"fa fa-fw\"></i>
+        <a data-topic-id=\"3542\" data-topic-text=\"random number generation\">random
+        number generation</a></li><li><i class=\"fa fa-fw\"></i> <a data-topic-id=\"3543\"
+        data-topic-text=\"secure hashing\">secure hashing</a></li></ul>\n</li><li><i
+        class=\"fa fa-fw\"></i> <a data-topic-id=\"3360\" data-topic-text=\"cyber
+        supply chain risk management\">cyber supply chain risk management</a></li><li><i
+        class=\"fa fa-fw\"></i> <a data-topic-id=\"3399\" data-topic-text=\"general
+        security & privacy\">general security & privacy</a></li><li><i class=\"fa
+        fa-plus fa-fw\"></i> <a data-topic-id=\"3354\" data-topic-text=\"identity
+        & access management\">identity & access management</a><ul style=\"display:
+        none;\"><li><i class=\"fa fa-fw\"></i> <a data-topic-id=\"3535\" data-topic-text=\"access
+        authorization\">access authorization</a></li><li><i class=\"fa fa-fw\"></i>
+        <a data-topic-id=\"3534\" data-topic-text=\"access control\">access control</a></li><li><i
+        class=\"fa fa-fw\"></i> <a data-topic-id=\"3536\" data-topic-text=\"authentication\">authentication</a></li><li><i
+        class=\"fa fa-fw\"></i> <a data-topic-id=\"3554\" data-topic-text=\"Personal
+        Identity Verification\">Personal Identity Verification</a></li><li><i class=\"fa
+        fa-fw\"></i> <a data-topic-id=\"3537\" data-topic-text=\"public key infrastructure\">public
+        key infrastructure</a></li></ul>\n</li><li><i class=\"fa fa-plus fa-fw\"></i>
+        <a data-topic-id=\"3376\" data-topic-text=\"privacy\">privacy</a><ul style=\"display:
+        none;\"><li><i class=\"fa fa-fw\"></i> <a data-topic-id=\"3532\" data-topic-text=\"personally
+        identifiable information\">personally identifiable information</a></li><li><i
+        class=\"fa fa-fw\"></i> <a data-topic-id=\"3533\" data-topic-text=\"privacy
+        engineering\">privacy engineering</a></li></ul>\n</li><li><i class=\"fa fa-plus
+        fa-fw\"></i> <a data-topic-id=\"3377\" data-topic-text=\"risk management\">risk
+        management</a><ul style=\"display: none;\"><li><i class=\"fa fa-fw\"></i>
+        <a data-topic-id=\"3524\" data-topic-text=\"categorization\">categorization</a></li><li><i
+        class=\"fa fa-fw\"></i> <a data-topic-id=\"3525\" data-topic-text=\"continuous
+        monitoring\">continuous monitoring</a></li><li><i class=\"fa fa-plus fa-fw\"></i>
+        <a data-topic-id=\"3526\" data-topic-text=\"controls\">controls</a><ul style=\"display:
+        none;\"><li><i class=\"fa fa-fw\"></i> <a data-topic-id=\"3570\" data-topic-text=\"controls
+        assessment\">controls assessment</a></li><li><i class=\"fa fa-fw\"></i> <a
+        data-topic-id=\"3571\" data-topic-text=\"privacy controls\">privacy controls</a></li><li><i
+        class=\"fa fa-fw\"></i> <a data-topic-id=\"3572\" data-topic-text=\"security
+        controls\">security controls</a></li></ul>\n</li><li><i class=\"fa fa-fw\"></i>
+        <a data-topic-id=\"3527\" data-topic-text=\"risk assessment\">risk assessment</a></li><li><i
+        class=\"fa fa-fw\"></i> <a data-topic-id=\"3528\" data-topic-text=\"roots
+        of trust\">roots of trust</a></li><li><i class=\"fa fa-fw\"></i> <a data-topic-id=\"3529\"
+        data-topic-text=\"system authorization\">system authorization</a></li><li><i
+        class=\"fa fa-plus fa-fw\"></i> <a data-topic-id=\"3530\" data-topic-text=\"threats\">threats</a><ul
+        style=\"display: none;\"><li><i class=\"fa fa-fw\"></i> <a data-topic-id=\"3573\"
+        data-topic-text=\"botnets\">botnets</a></li><li><i class=\"fa fa-fw\"></i>
+        <a data-topic-id=\"3574\" data-topic-text=\"information sharing\">information
+        sharing</a></li><li><i class=\"fa fa-fw\"></i> <a data-topic-id=\"3575\" data-topic-text=\"intrusion
+        detection & prevention\">intrusion detection & prevention</a></li><li><i class=\"fa
+        fa-fw\"></i> <a data-topic-id=\"3576\" data-topic-text=\"malware\">malware</a></li></ul>\n</li><li><i
+        class=\"fa fa-fw\"></i> <a data-topic-id=\"3531\" data-topic-text=\"vulnerability
+        management\">vulnerability management</a></li></ul>\n</li><li><i class=\"fa
+        fa-plus fa-fw\"></i> <a data-topic-id=\"3380\" data-topic-text=\"security
+        & behavior\">security & behavior</a><ul style=\"display: none;\"><li><i class=\"fa
+        fa-fw\"></i> <a data-topic-id=\"3502\" data-topic-text=\"accessibility\">accessibility</a></li><li><i
+        class=\"fa fa-fw\"></i> <a data-topic-id=\"3503\" data-topic-text=\"behavior\">behavior</a></li><li><i
+        class=\"fa fa-fw\"></i> <a data-topic-id=\"3504\" data-topic-text=\"usability\">usability</a></li></ul>\n</li><li><i
+        class=\"fa fa-plus fa-fw\"></i> <a data-topic-id=\"3378\" data-topic-text=\"security
+        measurement\">security measurement</a><ul style=\"display: none;\"><li><i
+        class=\"fa fa-fw\"></i> <a data-topic-id=\"3505\" data-topic-text=\"analytics\">analytics</a></li><li><i
+        class=\"fa fa-fw\"></i> <a data-topic-id=\"3506\" data-topic-text=\"assurance\">assurance</a></li><li><i
+        class=\"fa fa-fw\"></i> <a data-topic-id=\"3507\" data-topic-text=\"modeling\">modeling</a></li><li><i
+        class=\"fa fa-fw\"></i> <a data-topic-id=\"3508\" data-topic-text=\"testing
+        & validation\">testing & validation</a></li></ul>\n</li><li><i class=\"fa
+        fa-plus fa-fw\"></i> <a data-topic-id=\"3379\" data-topic-text=\"security
+        programs & operations\">security programs & operations</a><ul style=\"display:
+        none;\"><li><i class=\"fa fa-fw\"></i> <a data-topic-id=\"3509\" data-topic-text=\"acquisition\">acquisition</a></li><li><i
+        class=\"fa fa-fw\"></i> <a data-topic-id=\"3510\" data-topic-text=\"asset
+        management\">asset management</a></li><li><i class=\"fa fa-fw\"></i> <a data-topic-id=\"3511\"
+        data-topic-text=\"audit & accountability\">audit & accountability</a></li><li><i
+        class=\"fa fa-fw\"></i> <a data-topic-id=\"3512\" data-topic-text=\"awareness
+        training & education\">awareness training & education</a></li><li><i class=\"fa
+        fa-fw\"></i> <a data-topic-id=\"3513\" data-topic-text=\"configuration management\">configuration
+        management</a></li><li><i class=\"fa fa-fw\"></i> <a data-topic-id=\"3514\"
+        data-topic-text=\"contingency planning\">contingency planning</a></li><li><i
+        class=\"fa fa-fw\"></i> <a data-topic-id=\"3515\" data-topic-text=\"incident
+        response\">incident response</a></li><li><i class=\"fa fa-fw\"></i> <a data-topic-id=\"3516\"
+        data-topic-text=\"maintenance\">maintenance</a></li><li><i class=\"fa fa-fw\"></i>
+        <a data-topic-id=\"3517\" data-topic-text=\"media protection\">media protection</a></li><li><i
+        class=\"fa fa-fw\"></i> <a data-topic-id=\"3518\" data-topic-text=\"patch
+        management\">patch management</a></li><li><i class=\"fa fa-fw\"></i> <a data-topic-id=\"3519\"
+        data-topic-text=\"personnel security\">personnel security</a></li><li><i class=\"fa
+        fa-fw\"></i> <a data-topic-id=\"3520\" data-topic-text=\"physical & environmental
+        protection\">physical & environmental protection</a></li><li><i class=\"fa
+        fa-fw\"></i> <a data-topic-id=\"3521\" data-topic-text=\"planning\">planning</a></li><li><i
+        class=\"fa fa-fw\"></i> <a data-topic-id=\"3522\" data-topic-text=\"program
+        management\">program management</a></li><li><i class=\"fa fa-fw\"></i> <a
+        data-topic-id=\"3523\" data-topic-text=\"security automation\">security automation</a></li></ul>\n</li><li><i
+        class=\"fa fa-fw\"></i> <a data-topic-id=\"3553\" data-topic-text=\"systems
+        security engineering\">systems security engineering</a></li></ul><strong>Applications</strong><br/>\n<ul><li><i
+        class=\"fa fa-fw\"></i> <a data-topic-id=\"3355\" data-topic-text=\"cyber-physical
+        systems\">cyber-physical systems</a></li><li><i class=\"fa fa-fw\"></i> <a
+        data-topic-id=\"3368\" data-topic-text=\"cybersecurity education\">cybersecurity
+        education</a></li><li><i class=\"fa fa-fw\"></i> <a data-topic-id=\"3356\"
+        data-topic-text=\"cybersecurity framework\">cybersecurity framework</a></li><li><i
+        class=\"fa fa-fw\"></i> <a data-topic-id=\"3369\" data-topic-text=\"cybersecurity
+        workforce\">cybersecurity workforce</a></li><li><i class=\"fa fa-fw\"></i>
+        <a data-topic-id=\"3370\" data-topic-text=\"forensics\">forensics</a></li><li><i
+        class=\"fa fa-fw\"></i> <a data-topic-id=\"3371\" data-topic-text=\"industrial
+        control systems\">industrial control systems</a></li><li><i class=\"fa fa-fw\"></i>
+        <a data-topic-id=\"3372\" data-topic-text=\"Internet of Things\">Internet
+        of Things</a></li><li><i class=\"fa fa-fw\"></i> <a data-topic-id=\"3373\"
+        data-topic-text=\"small & medium business\">small & medium business</a></li><li><i
+        class=\"fa fa-fw\"></i> <a data-topic-id=\"3374\" data-topic-text=\"telework\">telework</a></li><li><i
+        class=\"fa fa-fw\"></i> <a data-topic-id=\"3375\" data-topic-text=\"voting\">voting</a></li></ul></div><div
+        class=\"col-sm-4\"><strong>Technologies</strong><br/>\n<ul><li><i class=\"fa
+        fa-fw\"></i> <a data-topic-id=\"3384\" data-topic-text=\"Basic Input/Output
+        System\">Basic Input/Output System</a></li><li><i class=\"fa fa-fw\"></i>
+        <a data-topic-id=\"3382\" data-topic-text=\"big data\">big data</a></li><li><i
+        class=\"fa fa-fw\"></i> <a data-topic-id=\"3383\" data-topic-text=\"biometrics\">biometrics</a></li><li><i
+        class=\"fa fa-fw\"></i> <a data-topic-id=\"3350\" data-topic-text=\"cloud
+        & virtualization\">cloud & virtualization</a></li><li><i class=\"fa fa-fw\"></i>
+        <a data-topic-id=\"3361\" data-topic-text=\"communications & wireless\">communications
+        & wireless</a></li><li><i class=\"fa fa-fw\"></i> <a data-topic-id=\"3385\"
+        data-topic-text=\"databases\">databases</a></li><li><i class=\"fa fa-fw\"></i>
+        <a data-topic-id=\"3388\" data-topic-text=\"firewalls\">firewalls</a></li><li><i
+        class=\"fa fa-fw\"></i> <a data-topic-id=\"3387\" data-topic-text=\"firmware\">firmware</a></li><li><i
+        class=\"fa fa-fw\"></i> <a data-topic-id=\"3389\" data-topic-text=\"hardware\">hardware</a></li><li><i
+        class=\"fa fa-fw\"></i> <a data-topic-id=\"3362\" data-topic-text=\"mobile\">mobile</a></li><li><i
+        class=\"fa fa-fw\"></i> <a data-topic-id=\"3390\" data-topic-text=\"networks\">networks</a></li><li><i
+        class=\"fa fa-fw\"></i> <a data-topic-id=\"3391\" data-topic-text=\"operating
+        systems\">operating systems</a></li><li><i class=\"fa fa-fw\"></i> <a data-topic-id=\"3386\"
+        data-topic-text=\"personal computers\">personal computers</a></li><li><i class=\"fa
+        fa-fw\"></i> <a data-topic-id=\"3392\" data-topic-text=\"sensors\">sensors</a></li><li><i
+        class=\"fa fa-fw\"></i> <a data-topic-id=\"3393\" data-topic-text=\"servers\">servers</a></li><li><i
+        class=\"fa fa-fw\"></i> <a data-topic-id=\"3394\" data-topic-text=\"smart
+        cards\">smart cards</a></li><li><i class=\"fa fa-fw\"></i> <a data-topic-id=\"3395\"
+        data-topic-text=\"software\">software</a></li><li><i class=\"fa fa-fw\"></i>
+        <a data-topic-id=\"3396\" data-topic-text=\"storage\">storage</a></li></ul><strong>Sectors</strong><br/>\n<ul><li><i
+        class=\"fa fa-plus fa-fw\"></i> <a data-topic-id=\"3397\" data-topic-text=\"energy\">energy</a><ul
+        style=\"display: none;\"><li><i class=\"fa fa-fw\"></i> <a data-topic-id=\"3544\"
+        data-topic-text=\"smart grid\">smart grid</a></li></ul>\n</li><li><i class=\"fa
+        fa-fw\"></i> <a data-topic-id=\"3351\" data-topic-text=\"financial services\">financial
+        services</a></li><li><i class=\"fa fa-fw\"></i> <a data-topic-id=\"3357\"
+        data-topic-text=\"healthcare\">healthcare</a></li><li><i class=\"fa fa-fw\"></i>
+        <a data-topic-id=\"3358\" data-topic-text=\"manufacturing\">manufacturing</a></li><li><i
+        class=\"fa fa-fw\"></i> <a data-topic-id=\"3359\" data-topic-text=\"public
+        safety\">public safety</a></li><li><i class=\"fa fa-fw\"></i> <a data-topic-id=\"3398\"
+        data-topic-text=\"retail\">retail</a></li><li><i class=\"fa fa-fw\"></i> <a
+        data-topic-id=\"3381\" data-topic-text=\"transportation\">transportation</a></li></ul></div><div
+        class=\"col-sm-4\"><strong>Laws and Regulations</strong><br/>\n<ul><li><i
+        class=\"fa fa-plus fa-fw\"></i> <a data-topic-id=\"3365\" data-topic-text=\"executive
+        documents\">executive documents</a><ul style=\"display: none;\"><li><i class=\"fa
+        fa-fw\"></i> <a data-topic-id=\"3498\" data-topic-text=\"Comprehensive National
+        Cybersecurity Initiative\">Comprehensive National Cybersecurity Initiative</a></li><li><i
+        class=\"fa fa-fw\"></i> <a data-topic-id=\"3493\" data-topic-text=\"Cybersecurity
+        Strategy and Implementation Plan\">Cybersecurity Strategy and Implementation
+        Plan</a></li><li><i class=\"fa fa-fw\"></i> <a data-topic-id=\"3494\" data-topic-text=\"Cyberspace
+        Policy Review\">Cyberspace Policy Review</a></li><li><i class=\"fa fa-fw\"></i>
+        <a data-topic-id=\"3491\" data-topic-text=\"Executive Order 13636\">Executive
+        Order 13636</a></li><li><i class=\"fa fa-fw\"></i> <a data-topic-id=\"3495\"
+        data-topic-text=\"Executive Order 13702\">Executive Order 13702</a></li><li><i
+        class=\"fa fa-fw\"></i> <a data-topic-id=\"3496\" data-topic-text=\"Executive
+        Order 13718\">Executive Order 13718</a></li><li><i class=\"fa fa-fw\"></i>
+        <a data-topic-id=\"5067\" data-topic-text=\"Executive Order 13800\">Executive
+        Order 13800</a></li><li><i class=\"fa fa-fw\"></i> <a data-topic-id=\"3556\"
+        data-topic-text=\"Federal Cybersecurity Research and Development Strategic
+        Plan\">Federal Cybersecurity Research and Development Strategic Plan</a></li><li><i
+        class=\"fa fa-fw\"></i> <a data-topic-id=\"3497\" data-topic-text=\"Homeland
+        Security Presidential Directive 7\">Homeland Security Presidential Directive
+        7</a></li><li><i class=\"fa fa-fw\"></i> <a data-topic-id=\"3492\" data-topic-text=\"Homeland
+        Security Presidential Directive 12\">Homeland Security Presidential Directive
+        12</a></li><li><i class=\"fa fa-fw\"></i> <a data-topic-id=\"3499\" data-topic-text=\"OMB
+        Circular A-11\">OMB Circular A-11</a></li><li><i class=\"fa fa-fw\"></i> <a
+        data-topic-id=\"3500\" data-topic-text=\"OMB Circular A-130\">OMB Circular
+        A-130</a></li></ul>\n</li><li><i class=\"fa fa-plus fa-fw\"></i> <a data-topic-id=\"3352\"
+        data-topic-text=\"laws\">laws</a><ul style=\"display: none;\"><li><i class=\"fa
+        fa-fw\"></i> <a data-topic-id=\"3545\" data-topic-text=\"Cyber Security R&D
+        Act\">Cyber Security R&D Act</a></li><li><i class=\"fa fa-fw\"></i> <a data-topic-id=\"3546\"
+        data-topic-text=\"Cybersecurity Enhancement Act\">Cybersecurity Enhancement
+        Act</a></li><li><i class=\"fa fa-fw\"></i> <a data-topic-id=\"3547\" data-topic-text=\"E-Government
+        Act\">E-Government Act</a></li><li><i class=\"fa fa-fw\"></i> <a data-topic-id=\"3549\"
+        data-topic-text=\"Energy Independence and Security Act\">Energy Independence
+        and Security Act</a></li><li><i class=\"fa fa-fw\"></i> <a data-topic-id=\"3548\"
+        data-topic-text=\"Federal Information Security Modernization Act\">Federal
+        Information Security Modernization Act</a></li><li><i class=\"fa fa-fw\"></i>
+        <a data-topic-id=\"3551\" data-topic-text=\"First Responder Network Authority\">First
+        Responder Network Authority</a></li><li><i class=\"fa fa-fw\"></i> <a data-topic-id=\"3555\"
+        data-topic-text=\"Health Insurance Portability and Accountability Act\">Health
+        Insurance Portability and Accountability Act</a></li><li><i class=\"fa fa-fw\"></i>
+        <a data-topic-id=\"3550\" data-topic-text=\"Help America Vote Act\">Help America
+        Vote Act</a></li></ul>\n</li><li><i class=\"fa fa-plus fa-fw\"></i> <a data-topic-id=\"3353\"
+        data-topic-text=\"regulations\">regulations</a><ul style=\"display: none;\"><li><i
+        class=\"fa fa-fw\"></i> <a data-topic-id=\"3501\" data-topic-text=\"Federal
+        Acquisition Regulation\">Federal Acquisition Regulation</a></li></ul>\n</li></ul><strong>Activities
+        and Products</strong><br/>\n<ul><li><i class=\"fa fa-fw\"></i> <a data-topic-id=\"3363\"
+        data-topic-text=\"annual reports\">annual reports</a></li><li><i class=\"fa
+        fa-fw\"></i> <a data-topic-id=\"3364\" data-topic-text=\"conferences & workshops\">conferences
+        & workshops</a></li><li><i class=\"fa fa-fw\"></i> <a data-topic-id=\"3366\"
+        data-topic-text=\"reference materials\">reference materials</a></li><li><i
+        class=\"fa fa-fw\"></i> <a data-topic-id=\"3367\" data-topic-text=\"standards
+        development\">standards development</a></li></ul></div></div>\r\n\t\t<div
+        class=\"form-inline topics-type\">\r\n\t\t\t<label class=\"radio-label\">Match
+        ANY: <input type=\"radio\" name=\"topicsMatch-lg\" value=\"ANY\" checked=\"checked\"
+        /></label>\r\n\t\t\t<label class=\"radio-label\">Match ALL: <input type=\"radio\"
+        name=\"topicsMatch-lg\" value=\"ALL\" /></label>\r\n\t\t</div>\r\n\t</div>\r\n\t<div
+        class=\"form-group\">\r\n\t\t<label for=\"pub-search-controls\">\r\n\t\t\tControl
+        Family (800-53)\r\n\t\t</label>\r\n\t\t<input type=\"hidden\" name=\"controls-lg\"
+        />\r\n\t\t<div class=\"form-control controls-selection\" \r\n\t\t\tid=\"pub-search-controls\"
+        \r\n\t\t\tcontenteditable=\"true\" \r\n\t\t\tdata-drop-target-ctrl=\"pub-search-controls-drop\"\r\n\t\t\tdata-field-name=\"controls-lg\"\r\n\t\t\taria-haspopup=\"true\"
+        \r\n\t\t\taria-expanded=\"false\">\r\n\t\t</div>\r\n        \r\n        <div
+        class=\"controls-selection-dropdown desktop\" id=\"pub-search-controls-drop\"
+        style=\"display: none;\">\r\n\t\t\t<strong>Control Families</strong>\r\n          <ul>\r\n
+        \         \r\n            <li><a data-control-id=\"63d54ae4-c6cf-4ae4-a398-f19298c74903\">AC
+        - Access Control</a></li>\r\n          \r\n            <li><a data-control-id=\"36fb0b10-f6ae-4e0e-803c-bece9c947fd8\">AT
+        - Awareness and Training</a></li>\r\n          \r\n            <li><a data-control-id=\"4243d52c-ff5e-417b-8e1b-8344ff811570\">AU
+        - Audit and Accountability</a></li>\r\n          \r\n            <li><a data-control-id=\"0d93bf29-4551-4b7d-9677-23d0eb0524e0\">CA
+        - Security Assessment and Authorization</a></li>\r\n          \r\n            <li><a
+        data-control-id=\"809b7563-f050-4bbf-a0e4-7ad25411734d\">CM - Configuration
+        Management</a></li>\r\n          \r\n            <li><a data-control-id=\"da51be5c-b86d-4e32-9484-f94cf75b8217\">CP
+        - Contingency Planning</a></li>\r\n          \r\n            <li><a data-control-id=\"ed87a12a-b75a-4555-862c-52f071b7ddb0\">IA
+        - Identification and Authentication</a></li>\r\n          \r\n            <li><a
+        data-control-id=\"4801756a-a4ed-4b64-8890-4169d9b6a9ce\">IR - Incident Response</a></li>\r\n
+        \         \r\n            <li><a data-control-id=\"88089d1d-c115-41f7-92ad-a84abe6101fc\">MA
+        - Maintenance</a></li>\r\n          \r\n            <li><a data-control-id=\"3fb9de77-cb37-43fd-b8a5-e33576b8caa1\">MP
+        - Media Protection</a></li>\r\n          \r\n            <li><a data-control-id=\"f3b91e7e-2498-49ce-bd0f-5b9ce3bbd9e0\">PE
+        - Physical and Environmental Protection</a></li>\r\n          \r\n            <li><a
+        data-control-id=\"641492d1-d2da-40e6-a523-f93fdb5358e9\">PL - Planning</a></li>\r\n
+        \         \r\n            <li><a data-control-id=\"9d2a46b6-2530-4266-ae75-dab3ea78d7a0\">PM
+        - Program Management</a></li>\r\n          \r\n            <li><a data-control-id=\"205e7cff-23a5-4b59-85bc-168ae6e7d95f\">PS
+        - Personnel Security</a></li>\r\n          \r\n            <li><a data-control-id=\"e08f7835-ea6b-4b7c-9db3-33a3662a38d1\">RA
+        - Risk Assessment</a></li>\r\n          \r\n            <li><a data-control-id=\"8e2ea53d-c53d-480e-b374-eb5ab055a94b\">SA
+        - System and Services Acquisition</a></li>\r\n          \r\n            <li><a
+        data-control-id=\"f35646b1-d701-4941-b1c5-8e872f6bb812\">SC - System and Communications
+        Protection</a></li>\r\n          \r\n            <li><a data-control-id=\"660d9ce0-9cfe-4f5e-890a-41670d010846\">SI
+        - System and Information Integrity</a></li>\r\n          \r\n          </ul>\r\n
+        \       </div>\r\n\t\t<div class=\"form-inline controls-type\">\r\n\t\t\t<label
+        class=\"radio-label\">Match ANY: <input type=\"radio\" name=\"controlsMatch-lg\"
+        value=\"ANY\" checked=\"checked\" /></label>\r\n\t\t\t<label class=\"radio-label\">Match
+        ALL: <input type=\"radio\" name=\"controlsMatch-lg\" value=\"ALL\" /></label>\r\n\t\t</div>\r\n\t</div>\r\n
+        \   <div style=\"display: none;\" data-form-error-pane=\"true\" class=\"text-danger\">\r\n
+        \       <strong class=\"text-danger\">Please fix the following:</strong>\r\n
+        \       <ul data-form-error-list=\"true\">\r\n        </ul>\r\n    </div>\r\n
+        \   <div class=\"form-group\">\r\n        <button type=\"submit\" id=\"pubs-search-submit\"
+        name=\"submit-btn\" data-form-button=\"submit\" class=\"btn\">Search</button>\r\n
+        \       <button type=\"reset\" id=\"pubs-search-reset\" name=\"reset-btn\"
+        data-form-button=\"reset\" class=\"btn\">Reset</button>\r\n    </div>\r\n</div>\r\n
+        \     </div>\r\n      <div class=\"col-lg-9 col-md-8\">\r\n      <h4>Search
+        Results</h4>\r\n<!--\r\n<div class=\"alert alert-danger\" role=\"alert\">\r\n<p><strong>(4/12/2018
+        11:15 AM EST)</strong> Publication search is temporarily unavailable due to
+        technical issues with the server, it will be restored shortly.</p>\r\n</div>\r\n-->\r\n\r\n\r\n\r\n\r\n<div
+        class=\"bs-callout bs-callout-success csrc-search-form hidden-lg hidden-md
+        mobile-form\" data-csrc-form=\"true\" data-form-name=\"pubSearchMobile\" data-form-action=\"/publications/search\"
+        data-form-method=\"GET\" data-default-query=\"\">\r\n    <div class=\"form-group\">
+        \r\n        <label for=\"pub-search-keywords\">Search</label>\r\n        <input
+        type=\"text\" id=\"pub-search-keywords\" name=\"keywords-sm\" class=\"form-control\"
+        />\r\n        <em class=\"text-muted\">Search publication record data<br/>
+        (not a full text search)</em>\r\n    </div>\r\n    <div class=\"form-group\">\r\n\t\t<label
+        for=\"pub-search-sort-by\">\r\n\t\t\tSort By\r\n\t\t</label>\r\n\t\t<select
+        id=\"pub-search-sort-by\" name=\"sortBy-sm\" class=\"form-control\">\r\n\t\t\t<option
+        value=\"relevance\">Relevance (best match)</option>\r\n\t\t\t<option value=\"releasedate
+        DESC\">Release Date (newest first)</option>\r\n\t\t\t<option value=\"releasedate
+        ASC\">Release Date (oldest first)</option>\r\n\t\t\t<option value=\"Series
+        ASC\">Series (A-Z)</option>\r\n\t\t\t<option value=\"Series DESC\">Series
+        (Z-A)</option>\r\n\t\t\t<option value=\"Number DESC\">Number (highest to lowest)</option>\r\n\t\t\t<option
+        value=\"Number ASC\">Number (lowest to highest)</option>\r\n\t\t\t<option
+        value=\"Title ASC\">Title (A-Z)</option>\r\n\t\t\t<option value=\"Title DESC\">Title
+        (Z-A)</option>\r\n\t\t</select>\r\n    </div>\r\n    <div class=\"form-group\">\r\n
+        \       <label for=\"pub-search-view-mode\">\r\n            Results View\r\n
+        \       </label>\r\n\t\t<select id=\"pub-search-view-mode\" name=\"viewMode-sm\"
+        class=\"form-control\">\r\n\t\t\t<option value=\"brief\">Brief</option>\r\n\t\t\t<option
+        value=\"summary\">Detailed Summary</option>\r\n\t\t</select>\r\n    </div>\r\n
+        \   <div class=\"form-group form-inline\">\r\n        <label for=\"pub-search-ipp\"
+        class=\"form-control-half\">\r\n            Items Per Page\r\n        </label>\r\n
+        \           <select id=\"pub-search-ipp\" name=\"ipp-sm\" class=\"form-control\">\r\n
+        \               <option>25</option>\r\n                <option>50</option>\r\n
+        \               <option>75</option>\r\n                <option>100</option>\r\n
+        \               <option value=\"ALL\">All</option>\r\n            </select>\r\n
+        \   </div>\r\n  \r\n    <div class=\"form-group\">\r\n      <p class=\"text-center\">\r\n
+        \       <a href=\"#\" data-form-show-name=\"newsAdvanced\">\r\n            Advanced
+        Search\r\n            <i class=\"fa fa-caret-down\" aria-hidden=\"true\" data-form-show-expanded=\"true\"
+        style=\"display: none;\"></i>\r\n            <i class=\"fa fa-caret-up\" aria-hidden=\"true\"
+        data-form-show-expanded=\"false\"></i>\r\n        </a>\r\n      </p>\r\n    </div>\r\n
+        \   <div style=\"display: none;\" data-form-show-trigger=\"newsAdvanced\"
+        data-form-show=\"false\">\r\n        <div class=\"form-group\">\r\n            <label
+        for=\"pubs-search-date-from\">\r\n                Date\r\n            </label>\r\n
+        \           <div class=\"form-inline form-date-inline\">\r\n                <div
+        class=\"input-group date\" data-date-picker=\"true\">\r\n                    <input
+        type=\"text\" \r\n                        id=\"pubs-search-date-from\" \r\n
+        \                       name=\"dateFrom-sm\" \r\n                        class=\"form-control\"
+        \r\n                        placeholder=\"  /  /    \"\r\n                        data-control-type=\"date\"
+        \r\n                        data-validation=\"true\"\r\n                        data-validation-message=\"From
+        date must be less than To date\"\r\n                        data-validation-type=\"less-than-date\"\r\n
+        \                       data-validation-compare-field=\"pubs-search-date-to\"
+        />\r\n                    <span class=\"input-group-addon\">\r\n                        <span
+        class=\"fa fa-calendar\">\r\n                        </span>\r\n                    </span>\r\n
+        \               </div>\r\n                <div class=\"input-group date\"
+        data-date-picker=\"true\">\r\n                    <input type=\"text\" \r\n
+        \                       id=\"pubs-search-date-to\" \r\n                        name=\"dateTo-sm\"
+        \r\n                        class=\"form-control\" \r\n                        placeholder=\"
+        \ /  /    \"\r\n                        data-control-type=\"date\" />\r\n
+        \                   <span class=\"input-group-addon\">\r\n                        <span
+        class=\"fa fa-calendar\">\r\n                        </span>\r\n                    </span>\r\n
+        \               </div>\r\n            </div>\r\n        </div>\r\n        <div
+        class=\"form-group\">\r\n            <label for=\"pub-search-status\">\r\n
+        \               Status\r\n                <button type=\"button\" id=\"status-all-btn\"
+        class=\"btn btn-sm btn-success\" data-check-all=\"status-sm\">Check All</button>\r\n
+        \               <button type=\"button\" id=\"status-clear-btn\" class=\"btn
+        btn-sm btn-success\" data-check-none=\"status-sm\">Clear</button>\r\n            </label>\r\n
+        \           <div class=\"form-inline status-type\" style=\"margin-left: 1rem;\">\r\n
+        \               <input type=\"checkbox\" name=\"status-sm\" value=\"Draft\"
+        data-default-checked=\"true\" /> Draft<br/>\r\n                <input type=\"checkbox\"
+        name=\"status-sm\" value=\"Final\" data-default-checked=\"true\" /> Final<br/>\r\n
+        \               <input type=\"checkbox\" name=\"status-sm\" value=\"Retired
+        Draft\" /> Retired Draft<br/>\r\n                <input type=\"checkbox\"
+        name=\"status-sm\" value=\"Withdrawn\" /> Withdrawn\r\n            </div>\r\n
+        \       </div>\r\n        <div class=\"form-group\">\r\n            <label
+        for=\"pub-search-series\">\r\n                Series\r\n                <button
+        type=\"button\" id=\"series-all-btn\" class=\"btn btn-sm btn-success\" data-check-all=\"series-sm\">Check
+        All</button>\r\n                <button type=\"button\" id=\"series-clear-btn\"
+        class=\"btn btn-sm btn-success\" data-check-none=\"series-sm\">Clear</button>\r\n
+        \           </label>\r\n            <div class=\"form-inline series-type\"
+        style=\"margin-left: 1rem;\">\r\n                <input type=\"checkbox\"
+        name=\"series-sm\" value=\"FIPS\" data-default-checked=\"true\" /> FIPS<br/>\r\n
+        \               <input type=\"checkbox\" name=\"series-sm\" value=\"SP\" data-default-checked=\"true\"
+        /> SP<br/>\r\n                <input type=\"checkbox\" name=\"series-sm\"
+        value=\"NISTIR\" data-default-checked=\"true\" /> NISTIR<br/>\r\n                <input
+        type=\"checkbox\" name=\"series-sm\" value=\"ITL Bulletin\" data-default-checked=\"true\"
+        /> ITL Bulletin<br/>\r\n                <input type=\"checkbox\" name=\"series-sm\"
+        value=\"White Paper\" data-default-checked=\"true\" /> White Paper<br/>\r\n
+        \               <input type=\"checkbox\" name=\"series-sm\" value=\"Building
+        Block\" data-default-checked=\"true\" /> Building Block<br/>\r\n                <input
+        type=\"checkbox\" name=\"series-sm\" value=\"Use Case\" data-default-checked=\"true\"
+        /> Use Case<br/>\r\n                <input type=\"checkbox\" name=\"series-sm\"
+        value=\"Journal Article\" data-default-checked=\"true\" /> Journal Article<br/>\r\n
+        \               <input type=\"checkbox\" name=\"series-sm\" value=\"Conference
+        Paper\" data-default-checked=\"true\" /> Conference Paper<br/>\r\n                <input
+        type=\"checkbox\" name=\"series-sm\" value=\"Book\" data-default-checked=\"true\"
+        /> Book<br/>\r\n            </div>\r\n        </div>\r\n        <div class=\"form-group\">\r\n
+        \           <label for=\"pub-search-topics\">\r\n                Topics\r\n
+        \           </label>\r\n            <input type=\"hidden\" name=\"topics-sm\"
+        />\r\n            <div class=\"form-control topics-selection\" \r\n                id=\"pub-search-topics\"
+        \r\n                contenteditable=\"true\" \r\n                data-drop-target=\"pub-search-topics-drop\"\r\n
+        \               data-field-name=\"topics-sm\"\r\n                aria-haspopup=\"true\"
+        \r\n                aria-expanded=\"false\">\r\n            </div>\r\n          <div
+        class=\"topics-selection-dropdown desktop\" id=\"pub-search-topics-drop\"
+        style=\"display: none;\"><div class=\"col-sm-4\"><strong>Security and Privacy</strong><br/>\n<ul><li><i
+        class=\"fa fa-plus fa-fw\"></i> <a data-topic-id=\"3349\" data-topic-text=\"cryptography\">cryptography</a><ul
+        style=\"display: none;\"><li><i class=\"fa fa-fw\"></i> <a data-topic-id=\"3552\"
+        data-topic-text=\"digital signatures\">digital signatures</a></li><li><i class=\"fa
+        fa-fw\"></i> <a data-topic-id=\"3538\" data-topic-text=\"encryption\">encryption</a></li><li><i
+        class=\"fa fa-fw\"></i> <a data-topic-id=\"3539\" data-topic-text=\"key management\">key
+        management</a></li><li><i class=\"fa fa-fw\"></i> <a data-topic-id=\"3540\"
+        data-topic-text=\"message authentication\">message authentication</a></li><li><i
+        class=\"fa fa-fw\"></i> <a data-topic-id=\"3541\" data-topic-text=\"post-quantum
+        cryptography\">post-quantum cryptography</a></li><li><i class=\"fa fa-fw\"></i>
+        <a data-topic-id=\"3542\" data-topic-text=\"random number generation\">random
+        number generation</a></li><li><i class=\"fa fa-fw\"></i> <a data-topic-id=\"3543\"
+        data-topic-text=\"secure hashing\">secure hashing</a></li></ul>\n</li><li><i
+        class=\"fa fa-fw\"></i> <a data-topic-id=\"3360\" data-topic-text=\"cyber
+        supply chain risk management\">cyber supply chain risk management</a></li><li><i
+        class=\"fa fa-fw\"></i> <a data-topic-id=\"3399\" data-topic-text=\"general
+        security & privacy\">general security & privacy</a></li><li><i class=\"fa
+        fa-plus fa-fw\"></i> <a data-topic-id=\"3354\" data-topic-text=\"identity
+        & access management\">identity & access management</a><ul style=\"display:
+        none;\"><li><i class=\"fa fa-fw\"></i> <a data-topic-id=\"3535\" data-topic-text=\"access
+        authorization\">access authorization</a></li><li><i class=\"fa fa-fw\"></i>
+        <a data-topic-id=\"3534\" data-topic-text=\"access control\">access control</a></li><li><i
+        class=\"fa fa-fw\"></i> <a data-topic-id=\"3536\" data-topic-text=\"authentication\">authentication</a></li><li><i
+        class=\"fa fa-fw\"></i> <a data-topic-id=\"3554\" data-topic-text=\"Personal
+        Identity Verification\">Personal Identity Verification</a></li><li><i class=\"fa
+        fa-fw\"></i> <a data-topic-id=\"3537\" data-topic-text=\"public key infrastructure\">public
+        key infrastructure</a></li></ul>\n</li><li><i class=\"fa fa-plus fa-fw\"></i>
+        <a data-topic-id=\"3376\" data-topic-text=\"privacy\">privacy</a><ul style=\"display:
+        none;\"><li><i class=\"fa fa-fw\"></i> <a data-topic-id=\"3532\" data-topic-text=\"personally
+        identifiable information\">personally identifiable information</a></li><li><i
+        class=\"fa fa-fw\"></i> <a data-topic-id=\"3533\" data-topic-text=\"privacy
+        engineering\">privacy engineering</a></li></ul>\n</li><li><i class=\"fa fa-plus
+        fa-fw\"></i> <a data-topic-id=\"3377\" data-topic-text=\"risk management\">risk
+        management</a><ul style=\"display: none;\"><li><i class=\"fa fa-fw\"></i>
+        <a data-topic-id=\"3524\" data-topic-text=\"categorization\">categorization</a></li><li><i
+        class=\"fa fa-fw\"></i> <a data-topic-id=\"3525\" data-topic-text=\"continuous
+        monitoring\">continuous monitoring</a></li><li><i class=\"fa fa-plus fa-fw\"></i>
+        <a data-topic-id=\"3526\" data-topic-text=\"controls\">controls</a><ul style=\"display:
+        none;\"><li><i class=\"fa fa-fw\"></i> <a data-topic-id=\"3570\" data-topic-text=\"controls
+        assessment\">controls assessment</a></li><li><i class=\"fa fa-fw\"></i> <a
+        data-topic-id=\"3571\" data-topic-text=\"privacy controls\">privacy controls</a></li><li><i
+        class=\"fa fa-fw\"></i> <a data-topic-id=\"3572\" data-topic-text=\"security
+        controls\">security controls</a></li></ul>\n</li><li><i class=\"fa fa-fw\"></i>
+        <a data-topic-id=\"3527\" data-topic-text=\"risk assessment\">risk assessment</a></li><li><i
+        class=\"fa fa-fw\"></i> <a data-topic-id=\"3528\" data-topic-text=\"roots
+        of trust\">roots of trust</a></li><li><i class=\"fa fa-fw\"></i> <a data-topic-id=\"3529\"
+        data-topic-text=\"system authorization\">system authorization</a></li><li><i
+        class=\"fa fa-plus fa-fw\"></i> <a data-topic-id=\"3530\" data-topic-text=\"threats\">threats</a><ul
+        style=\"display: none;\"><li><i class=\"fa fa-fw\"></i> <a data-topic-id=\"3573\"
+        data-topic-text=\"botnets\">botnets</a></li><li><i class=\"fa fa-fw\"></i>
+        <a data-topic-id=\"3574\" data-topic-text=\"information sharing\">information
+        sharing</a></li><li><i class=\"fa fa-fw\"></i> <a data-topic-id=\"3575\" data-topic-text=\"intrusion
+        detection & prevention\">intrusion detection & prevention</a></li><li><i class=\"fa
+        fa-fw\"></i> <a data-topic-id=\"3576\" data-topic-text=\"malware\">malware</a></li></ul>\n</li><li><i
+        class=\"fa fa-fw\"></i> <a data-topic-id=\"3531\" data-topic-text=\"vulnerability
+        management\">vulnerability management</a></li></ul>\n</li><li><i class=\"fa
+        fa-plus fa-fw\"></i> <a data-topic-id=\"3380\" data-topic-text=\"security
+        & behavior\">security & behavior</a><ul style=\"display: none;\"><li><i class=\"fa
+        fa-fw\"></i> <a data-topic-id=\"3502\" data-topic-text=\"accessibility\">accessibility</a></li><li><i
+        class=\"fa fa-fw\"></i> <a data-topic-id=\"3503\" data-topic-text=\"behavior\">behavior</a></li><li><i
+        class=\"fa fa-fw\"></i> <a data-topic-id=\"3504\" data-topic-text=\"usability\">usability</a></li></ul>\n</li><li><i
+        class=\"fa fa-plus fa-fw\"></i> <a data-topic-id=\"3378\" data-topic-text=\"security
+        measurement\">security measurement</a><ul style=\"display: none;\"><li><i
+        class=\"fa fa-fw\"></i> <a data-topic-id=\"3505\" data-topic-text=\"analytics\">analytics</a></li><li><i
+        class=\"fa fa-fw\"></i> <a data-topic-id=\"3506\" data-topic-text=\"assurance\">assurance</a></li><li><i
+        class=\"fa fa-fw\"></i> <a data-topic-id=\"3507\" data-topic-text=\"modeling\">modeling</a></li><li><i
+        class=\"fa fa-fw\"></i> <a data-topic-id=\"3508\" data-topic-text=\"testing
+        & validation\">testing & validation</a></li></ul>\n</li><li><i class=\"fa
+        fa-plus fa-fw\"></i> <a data-topic-id=\"3379\" data-topic-text=\"security
+        programs & operations\">security programs & operations</a><ul style=\"display:
+        none;\"><li><i class=\"fa fa-fw\"></i> <a data-topic-id=\"3509\" data-topic-text=\"acquisition\">acquisition</a></li><li><i
+        class=\"fa fa-fw\"></i> <a data-topic-id=\"3510\" data-topic-text=\"asset
+        management\">asset management</a></li><li><i class=\"fa fa-fw\"></i> <a data-topic-id=\"3511\"
+        data-topic-text=\"audit & accountability\">audit & accountability</a></li><li><i
+        class=\"fa fa-fw\"></i> <a data-topic-id=\"3512\" data-topic-text=\"awareness
+        training & education\">awareness training & education</a></li><li><i class=\"fa
+        fa-fw\"></i> <a data-topic-id=\"3513\" data-topic-text=\"configuration management\">configuration
+        management</a></li><li><i class=\"fa fa-fw\"></i> <a data-topic-id=\"3514\"
+        data-topic-text=\"contingency planning\">contingency planning</a></li><li><i
+        class=\"fa fa-fw\"></i> <a data-topic-id=\"3515\" data-topic-text=\"incident
+        response\">incident response</a></li><li><i class=\"fa fa-fw\"></i> <a data-topic-id=\"3516\"
+        data-topic-text=\"maintenance\">maintenance</a></li><li><i class=\"fa fa-fw\"></i>
+        <a data-topic-id=\"3517\" data-topic-text=\"media protection\">media protection</a></li><li><i
+        class=\"fa fa-fw\"></i> <a data-topic-id=\"3518\" data-topic-text=\"patch
+        management\">patch management</a></li><li><i class=\"fa fa-fw\"></i> <a data-topic-id=\"3519\"
+        data-topic-text=\"personnel security\">personnel security</a></li><li><i class=\"fa
+        fa-fw\"></i> <a data-topic-id=\"3520\" data-topic-text=\"physical & environmental
+        protection\">physical & environmental protection</a></li><li><i class=\"fa
+        fa-fw\"></i> <a data-topic-id=\"3521\" data-topic-text=\"planning\">planning</a></li><li><i
+        class=\"fa fa-fw\"></i> <a data-topic-id=\"3522\" data-topic-text=\"program
+        management\">program management</a></li><li><i class=\"fa fa-fw\"></i> <a
+        data-topic-id=\"3523\" data-topic-text=\"security automation\">security automation</a></li></ul>\n</li><li><i
+        class=\"fa fa-fw\"></i> <a data-topic-id=\"3553\" data-topic-text=\"systems
+        security engineering\">systems security engineering</a></li></ul><strong>Applications</strong><br/>\n<ul><li><i
+        class=\"fa fa-fw\"></i> <a data-topic-id=\"3355\" data-topic-text=\"cyber-physical
+        systems\">cyber-physical systems</a></li><li><i class=\"fa fa-fw\"></i> <a
+        data-topic-id=\"3368\" data-topic-text=\"cybersecurity education\">cybersecurity
+        education</a></li><li><i class=\"fa fa-fw\"></i> <a data-topic-id=\"3356\"
+        data-topic-text=\"cybersecurity framework\">cybersecurity framework</a></li><li><i
+        class=\"fa fa-fw\"></i> <a data-topic-id=\"3369\" data-topic-text=\"cybersecurity
+        workforce\">cybersecurity workforce</a></li><li><i class=\"fa fa-fw\"></i>
+        <a data-topic-id=\"3370\" data-topic-text=\"forensics\">forensics</a></li><li><i
+        class=\"fa fa-fw\"></i> <a data-topic-id=\"3371\" data-topic-text=\"industrial
+        control systems\">industrial control systems</a></li><li><i class=\"fa fa-fw\"></i>
+        <a data-topic-id=\"3372\" data-topic-text=\"Internet of Things\">Internet
+        of Things</a></li><li><i class=\"fa fa-fw\"></i> <a data-topic-id=\"3373\"
+        data-topic-text=\"small & medium business\">small & medium business</a></li><li><i
+        class=\"fa fa-fw\"></i> <a data-topic-id=\"3374\" data-topic-text=\"telework\">telework</a></li><li><i
+        class=\"fa fa-fw\"></i> <a data-topic-id=\"3375\" data-topic-text=\"voting\">voting</a></li></ul></div><div
+        class=\"col-sm-4\"><strong>Technologies</strong><br/>\n<ul><li><i class=\"fa
+        fa-fw\"></i> <a data-topic-id=\"3384\" data-topic-text=\"Basic Input/Output
+        System\">Basic Input/Output System</a></li><li><i class=\"fa fa-fw\"></i>
+        <a data-topic-id=\"3382\" data-topic-text=\"big data\">big data</a></li><li><i
+        class=\"fa fa-fw\"></i> <a data-topic-id=\"3383\" data-topic-text=\"biometrics\">biometrics</a></li><li><i
+        class=\"fa fa-fw\"></i> <a data-topic-id=\"3350\" data-topic-text=\"cloud
+        & virtualization\">cloud & virtualization</a></li><li><i class=\"fa fa-fw\"></i>
+        <a data-topic-id=\"3361\" data-topic-text=\"communications & wireless\">communications
+        & wireless</a></li><li><i class=\"fa fa-fw\"></i> <a data-topic-id=\"3385\"
+        data-topic-text=\"databases\">databases</a></li><li><i class=\"fa fa-fw\"></i>
+        <a data-topic-id=\"3388\" data-topic-text=\"firewalls\">firewalls</a></li><li><i
+        class=\"fa fa-fw\"></i> <a data-topic-id=\"3387\" data-topic-text=\"firmware\">firmware</a></li><li><i
+        class=\"fa fa-fw\"></i> <a data-topic-id=\"3389\" data-topic-text=\"hardware\">hardware</a></li><li><i
+        class=\"fa fa-fw\"></i> <a data-topic-id=\"3362\" data-topic-text=\"mobile\">mobile</a></li><li><i
+        class=\"fa fa-fw\"></i> <a data-topic-id=\"3390\" data-topic-text=\"networks\">networks</a></li><li><i
+        class=\"fa fa-fw\"></i> <a data-topic-id=\"3391\" data-topic-text=\"operating
+        systems\">operating systems</a></li><li><i class=\"fa fa-fw\"></i> <a data-topic-id=\"3386\"
+        data-topic-text=\"personal computers\">personal computers</a></li><li><i class=\"fa
+        fa-fw\"></i> <a data-topic-id=\"3392\" data-topic-text=\"sensors\">sensors</a></li><li><i
+        class=\"fa fa-fw\"></i> <a data-topic-id=\"3393\" data-topic-text=\"servers\">servers</a></li><li><i
+        class=\"fa fa-fw\"></i> <a data-topic-id=\"3394\" data-topic-text=\"smart
+        cards\">smart cards</a></li><li><i class=\"fa fa-fw\"></i> <a data-topic-id=\"3395\"
+        data-topic-text=\"software\">software</a></li><li><i class=\"fa fa-fw\"></i>
+        <a data-topic-id=\"3396\" data-topic-text=\"storage\">storage</a></li></ul><strong>Sectors</strong><br/>\n<ul><li><i
+        class=\"fa fa-plus fa-fw\"></i> <a data-topic-id=\"3397\" data-topic-text=\"energy\">energy</a><ul
+        style=\"display: none;\"><li><i class=\"fa fa-fw\"></i> <a data-topic-id=\"3544\"
+        data-topic-text=\"smart grid\">smart grid</a></li></ul>\n</li><li><i class=\"fa
+        fa-fw\"></i> <a data-topic-id=\"3351\" data-topic-text=\"financial services\">financial
+        services</a></li><li><i class=\"fa fa-fw\"></i> <a data-topic-id=\"3357\"
+        data-topic-text=\"healthcare\">healthcare</a></li><li><i class=\"fa fa-fw\"></i>
+        <a data-topic-id=\"3358\" data-topic-text=\"manufacturing\">manufacturing</a></li><li><i
+        class=\"fa fa-fw\"></i> <a data-topic-id=\"3359\" data-topic-text=\"public
+        safety\">public safety</a></li><li><i class=\"fa fa-fw\"></i> <a data-topic-id=\"3398\"
+        data-topic-text=\"retail\">retail</a></li><li><i class=\"fa fa-fw\"></i> <a
+        data-topic-id=\"3381\" data-topic-text=\"transportation\">transportation</a></li></ul></div><div
+        class=\"col-sm-4\"><strong>Laws and Regulations</strong><br/>\n<ul><li><i
+        class=\"fa fa-plus fa-fw\"></i> <a data-topic-id=\"3365\" data-topic-text=\"executive
+        documents\">executive documents</a><ul style=\"display: none;\"><li><i class=\"fa
+        fa-fw\"></i> <a data-topic-id=\"3498\" data-topic-text=\"Comprehensive National
+        Cybersecurity Initiative\">Comprehensive National Cybersecurity Initiative</a></li><li><i
+        class=\"fa fa-fw\"></i> <a data-topic-id=\"3493\" data-topic-text=\"Cybersecurity
+        Strategy and Implementation Plan\">Cybersecurity Strategy and Implementation
+        Plan</a></li><li><i class=\"fa fa-fw\"></i> <a data-topic-id=\"3494\" data-topic-text=\"Cyberspace
+        Policy Review\">Cyberspace Policy Review</a></li><li><i class=\"fa fa-fw\"></i>
+        <a data-topic-id=\"3491\" data-topic-text=\"Executive Order 13636\">Executive
+        Order 13636</a></li><li><i class=\"fa fa-fw\"></i> <a data-topic-id=\"3495\"
+        data-topic-text=\"Executive Order 13702\">Executive Order 13702</a></li><li><i
+        class=\"fa fa-fw\"></i> <a data-topic-id=\"3496\" data-topic-text=\"Executive
+        Order 13718\">Executive Order 13718</a></li><li><i class=\"fa fa-fw\"></i>
+        <a data-topic-id=\"5067\" data-topic-text=\"Executive Order 13800\">Executive
+        Order 13800</a></li><li><i class=\"fa fa-fw\"></i> <a data-topic-id=\"3556\"
+        data-topic-text=\"Federal Cybersecurity Research and Development Strategic
+        Plan\">Federal Cybersecurity Research and Development Strategic Plan</a></li><li><i
+        class=\"fa fa-fw\"></i> <a data-topic-id=\"3497\" data-topic-text=\"Homeland
+        Security Presidential Directive 7\">Homeland Security Presidential Directive
+        7</a></li><li><i class=\"fa fa-fw\"></i> <a data-topic-id=\"3492\" data-topic-text=\"Homeland
+        Security Presidential Directive 12\">Homeland Security Presidential Directive
+        12</a></li><li><i class=\"fa fa-fw\"></i> <a data-topic-id=\"3499\" data-topic-text=\"OMB
+        Circular A-11\">OMB Circular A-11</a></li><li><i class=\"fa fa-fw\"></i> <a
+        data-topic-id=\"3500\" data-topic-text=\"OMB Circular A-130\">OMB Circular
+        A-130</a></li></ul>\n</li><li><i class=\"fa fa-plus fa-fw\"></i> <a data-topic-id=\"3352\"
+        data-topic-text=\"laws\">laws</a><ul style=\"display: none;\"><li><i class=\"fa
+        fa-fw\"></i> <a data-topic-id=\"3545\" data-topic-text=\"Cyber Security R&D
+        Act\">Cyber Security R&D Act</a></li><li><i class=\"fa fa-fw\"></i> <a data-topic-id=\"3546\"
+        data-topic-text=\"Cybersecurity Enhancement Act\">Cybersecurity Enhancement
+        Act</a></li><li><i class=\"fa fa-fw\"></i> <a data-topic-id=\"3547\" data-topic-text=\"E-Government
+        Act\">E-Government Act</a></li><li><i class=\"fa fa-fw\"></i> <a data-topic-id=\"3549\"
+        data-topic-text=\"Energy Independence and Security Act\">Energy Independence
+        and Security Act</a></li><li><i class=\"fa fa-fw\"></i> <a data-topic-id=\"3548\"
+        data-topic-text=\"Federal Information Security Modernization Act\">Federal
+        Information Security Modernization Act</a></li><li><i class=\"fa fa-fw\"></i>
+        <a data-topic-id=\"3551\" data-topic-text=\"First Responder Network Authority\">First
+        Responder Network Authority</a></li><li><i class=\"fa fa-fw\"></i> <a data-topic-id=\"3555\"
+        data-topic-text=\"Health Insurance Portability and Accountability Act\">Health
+        Insurance Portability and Accountability Act</a></li><li><i class=\"fa fa-fw\"></i>
+        <a data-topic-id=\"3550\" data-topic-text=\"Help America Vote Act\">Help America
+        Vote Act</a></li></ul>\n</li><li><i class=\"fa fa-plus fa-fw\"></i> <a data-topic-id=\"3353\"
+        data-topic-text=\"regulations\">regulations</a><ul style=\"display: none;\"><li><i
+        class=\"fa fa-fw\"></i> <a data-topic-id=\"3501\" data-topic-text=\"Federal
+        Acquisition Regulation\">Federal Acquisition Regulation</a></li></ul>\n</li></ul><strong>Activities
+        and Products</strong><br/>\n<ul><li><i class=\"fa fa-fw\"></i> <a data-topic-id=\"3363\"
+        data-topic-text=\"annual reports\">annual reports</a></li><li><i class=\"fa
+        fa-fw\"></i> <a data-topic-id=\"3364\" data-topic-text=\"conferences & workshops\">conferences
+        & workshops</a></li><li><i class=\"fa fa-fw\"></i> <a data-topic-id=\"3366\"
+        data-topic-text=\"reference materials\">reference materials</a></li><li><i
+        class=\"fa fa-fw\"></i> <a data-topic-id=\"3367\" data-topic-text=\"standards
+        development\">standards development</a></li></ul></div></div>\r\n            <div
+        class=\"form-inline topics-type\">\r\n                <label class=\"radio-label\">Match
+        ANY: <input type=\"radio\" name=\"topicsMatch-sm\" value=\"ANY\" checked=\"checked\"
+        /></label>\r\n                <label class=\"radio-label\">Match ALL: <input
+        type=\"radio\" name=\"topicsMatch-sm\" value=\"ALL\" /></label>\r\n            </div>\r\n
+        \       </div>\r\n        <div class=\"form-group\">\r\n            <label
+        for=\"pub-search-controls\">\r\n                Control Family (800-53)\r\n
+        \           </label>\r\n            <input type=\"hidden\" name=\"controls-sm\"
+        />\r\n            <div class=\"form-control controls-selection\" \r\n                id=\"pub-search-controls\"
+        \r\n                contenteditable=\"true\" \r\n                data-drop-target-ctrl=\"pub-search-controls-drop\"\r\n
+        \               data-field-name=\"controls-sm\"\r\n                aria-haspopup=\"true\"
+        \r\n                aria-expanded=\"false\">\r\n            </div>\r\n\t\t\t\r\n
+        \           <div class=\"controls-selection-dropdown desktop\" id=\"pub-search-controls-drop\"
+        style=\"display: none;\">\r\n                <strong>Control Families</strong>\r\n
+        \             <ul>\r\n\t\t\t  \r\n\t\t\t\t<li><a data-control-id=\"63d54ae4-c6cf-4ae4-a398-f19298c74903\">AC
+        - Access Control</a></li>\r\n\t\t\t  \r\n\t\t\t\t<li><a data-control-id=\"36fb0b10-f6ae-4e0e-803c-bece9c947fd8\">AT
+        - Awareness and Training</a></li>\r\n\t\t\t  \r\n\t\t\t\t<li><a data-control-id=\"4243d52c-ff5e-417b-8e1b-8344ff811570\">AU
+        - Audit and Accountability</a></li>\r\n\t\t\t  \r\n\t\t\t\t<li><a data-control-id=\"0d93bf29-4551-4b7d-9677-23d0eb0524e0\">CA
+        - Security Assessment and Authorization</a></li>\r\n\t\t\t  \r\n\t\t\t\t<li><a
+        data-control-id=\"809b7563-f050-4bbf-a0e4-7ad25411734d\">CM - Configuration
+        Management</a></li>\r\n\t\t\t  \r\n\t\t\t\t<li><a data-control-id=\"da51be5c-b86d-4e32-9484-f94cf75b8217\">CP
+        - Contingency Planning</a></li>\r\n\t\t\t  \r\n\t\t\t\t<li><a data-control-id=\"ed87a12a-b75a-4555-862c-52f071b7ddb0\">IA
+        - Identification and Authentication</a></li>\r\n\t\t\t  \r\n\t\t\t\t<li><a
+        data-control-id=\"4801756a-a4ed-4b64-8890-4169d9b6a9ce\">IR - Incident Response</a></li>\r\n\t\t\t
+        \ \r\n\t\t\t\t<li><a data-control-id=\"88089d1d-c115-41f7-92ad-a84abe6101fc\">MA
+        - Maintenance</a></li>\r\n\t\t\t  \r\n\t\t\t\t<li><a data-control-id=\"3fb9de77-cb37-43fd-b8a5-e33576b8caa1\">MP
+        - Media Protection</a></li>\r\n\t\t\t  \r\n\t\t\t\t<li><a data-control-id=\"f3b91e7e-2498-49ce-bd0f-5b9ce3bbd9e0\">PE
+        - Physical and Environmental Protection</a></li>\r\n\t\t\t  \r\n\t\t\t\t<li><a
+        data-control-id=\"641492d1-d2da-40e6-a523-f93fdb5358e9\">PL - Planning</a></li>\r\n\t\t\t
+        \ \r\n\t\t\t\t<li><a data-control-id=\"9d2a46b6-2530-4266-ae75-dab3ea78d7a0\">PM
+        - Program Management</a></li>\r\n\t\t\t  \r\n\t\t\t\t<li><a data-control-id=\"205e7cff-23a5-4b59-85bc-168ae6e7d95f\">PS
+        - Personnel Security</a></li>\r\n\t\t\t  \r\n\t\t\t\t<li><a data-control-id=\"e08f7835-ea6b-4b7c-9db3-33a3662a38d1\">RA
+        - Risk Assessment</a></li>\r\n\t\t\t  \r\n\t\t\t\t<li><a data-control-id=\"8e2ea53d-c53d-480e-b374-eb5ab055a94b\">SA
+        - System and Services Acquisition</a></li>\r\n\t\t\t  \r\n\t\t\t\t<li><a data-control-id=\"f35646b1-d701-4941-b1c5-8e872f6bb812\">SC
+        - System and Communications Protection</a></li>\r\n\t\t\t  \r\n\t\t\t\t<li><a
+        data-control-id=\"660d9ce0-9cfe-4f5e-890a-41670d010846\">SI - System and Information
+        Integrity</a></li>\r\n\t\t\t  \r\n              </ul>\r\n            </div>\r\n
+        \           <div class=\"form-inline controls-type\">\r\n                <label
+        class=\"radio-label\">Match ANY: <input type=\"radio\" name=\"controlsMatch-sm\"
+        value=\"ANY\" checked=\"checked\" /></label>\r\n                <label class=\"radio-label\">Match
+        ALL: <input type=\"radio\" name=\"controlsMatch-sm\" value=\"ALL\" /></label>\r\n
+        \           </div>\r\n        </div>\r\n        <div style=\"display: none;\"
+        data-form-error-pane=\"true\" class=\"text-danger\">\r\n            <strong
+        class=\"text-danger\">Please fix the following:</strong>\r\n            <ul
+        data-form-error-list=\"true\">\r\n            </ul>\r\n        </div>\r\n
+        \   </div>\r\n    <div class=\"form-group\">\r\n        <button type=\"submit\"
+        id=\"pubs-search-submit\" name=\"submit-btn\" data-form-button=\"submit\"
+        class=\"btn\">Search</button>\r\n        <button type=\"reset\" id=\"pubs-search-reset\"
+        name=\"reset-btn\" data-form-button=\"reset\" class=\"btn\">Reset</button>\r\n
+        \   </div>\r\n</div>\r\n<div id=\"search-criteria-container\"></div>\r\n\r\n<div
+        class=\"row top-pagination-area\">\r\n\t<div class=\"col-lg-6 col-sm-12\">\r\n
+        \       Showing <strong id=\"strongTotalResults\">6</strong> matching records.\r\n\t</div>\r\n\t<div
+        class=\"col-lg-6 col-sm-12\">\r\n\t\t<span class=\"pull-right hidden-sm hidden-xs
+        hidden-xxs\">\r\n\t\t\t\r\n\t\t</span>\r\n\t\t<p class=\"text-center hidden-md
+        hidden-lg\">\r\n\t\t\t\r\n\t\t</p>\r\n\t</div>\r\n</div>\r\n<table class=\"table
+        table-striped table-condensed publications-table table-bordered\">\r\n\t<thead>\r\n\t\t<tr>\r\n\t\t\t<th
+        nowrap class=\"hidden-sm hidden-xs hidden-xxs\">Series</th>\r\n\t\t\t<th nowrap
+        class=\"hidden-sm hidden-xs hidden-xxs\">Number</th>\r\n\t\t\t<th nowrap>\r\n\t\t\t\t<span
+        class=\"hidden-sm hidden-xs hidden-xxs\">Title</span>\r\n\t\t\t\t<span class=\"hidden-md
+        hidden-lg\">Publications</span>\r\n\t\t\t</th>\r\n\t\t\t<th nowrap class=\"hidden-sm
+        hidden-xs hidden-xxs\">Status</th>\r\n\t\t\t<th nowrap class=\"hidden-sm hidden-xs
+        hidden-xxs\">Release Date</th>\r\n\t\t\t\r\n\t\t</tr>\r\n\t</thead>\r\n\t<tbody>\r\n\r\n\r\n\r\n
+        \ \r\n\t\t<tr>\r\n\t\t\t<td class=\"hidden-sm hidden-xs hidden-xxs\">NISTIR</td>\r\n\t\t\t<td
+        class=\"hidden-sm hidden-xs hidden-xxs\"> 8011 Vol. 3</td>\r\n\t\t\t<td>\r\n\t\t\t\t\r\n\t\t\t\t<div
+        class=\"hidden-sm hidden-xs hidden-xxs\">\r\n\t\t\t\t\t<strong><a href=\"/publications/detail/nistir/8011/vol-3/final\">Automation
+        Support for Security Control Assessments: Software Asset Management</a></strong>\r\n\t\t\t\t</div>\r\n\r\n\t\t\t\t<div
+        class=\"hidden-md hidden-lg\">\r\n\t\t\t\t\t<strong>NISTIR 8011 Vol. 3<br
+        />\r\n\t\t\t\t\t\t<a href=\"/publications/detail/nistir/8011/vol-3/final\"
+        class=\"mobile-pub-title\">Automation Support for Security Control Assessments:
+        Software Asset Management</a>\r\n\t\t\t\t\t</strong>\r\n\t\t\t\t</div>\r\n\t\t\t\t\r\n\t\t\t\t<div
+        class=\"hidden-md hidden-lg\">\r\n\t\t\t\t\t<strong>12/06/2018</strong>\r\n\t\t\t\t\t<br
+        />\r\n\t\t\t\t\tStatus: \r\n\t\t\t\t</div>\r\n\t\t\t\t\r\n\t\t\t\t\r\n                <div
+        class=\"control-value-no-block\">\r\n\t\t\t\tDownload: <a href=\"https://doi.org/10.6028/NIST.IR.8011-3\">NISTIR
+        8011 Vol. 3 (DOI)</a>; <a href=\"http://nvlpubs.nist.gov/nistpubs/ir/2018/NIST.IR.8011-3.pdf\">Local
+        Download</a>\r\n\t\t\t\t</div>\r\n\t\t\t</td>\r\n\t\t\t<td class=\"hidden-sm
+        hidden-xs hidden-xxs\">\r\n\t\t\t\tFinal\r\n\t\t\t</td>\r\n\t\t\t<td class=\"hidden-sm
+        hidden-xs hidden-xxs\">\r\n\t\t\t\t 12/06/2018\r\n\t\t\t</td>\r\n\t\t\t\r\n\t\t</tr>\r\n\r\n
+        \ \r\n\t\t<tr>\r\n\t\t\t<td class=\"hidden-sm hidden-xs hidden-xxs\">NISTIR</td>\r\n\t\t\t<td
+        class=\"hidden-sm hidden-xs hidden-xxs\"> 8011 Vol. 3</td>\r\n\t\t\t<td>\r\n\t\t\t\t\r\n\t\t\t\t<div
+        class=\"hidden-sm hidden-xs hidden-xxs\">\r\n\t\t\t\t\t<strong><a href=\"/publications/detail/nistir/8011/vol-3/draft\">Automation
+        Support for Security Control Assessments: Software Asset Management</a></strong>\r\n\t\t\t\t</div>\r\n\r\n\t\t\t\t<div
+        class=\"hidden-md hidden-lg\">\r\n\t\t\t\t\t<strong>NISTIR 8011 Vol. 3 (DRAFT)
+        (WITHDRAWN)<br />\r\n\t\t\t\t\t\t<a href=\"/publications/detail/nistir/8011/vol-3/draft\"
+        class=\"mobile-pub-title\">Automation Support for Security Control Assessments:
+        Software Asset Management</a>\r\n\t\t\t\t\t</strong>\r\n\t\t\t\t</div>\r\n\t\t\t\t\r\n\t\t\t\t<div
+        class=\"hidden-md hidden-lg\">\r\n\t\t\t\t\t<strong>4/05/2018</strong>\r\n\t\t\t\t\t<br
+        />\r\n\t\t\t\t\tStatus: \r\n\t\t\t\t</div>\r\n\t\t\t\t\r\n\t\t\t\t\r\n                <div
+        class=\"control-value-no-block\">\r\n\t\t\t\tDownload: <a href=\"/CSRC/media/Publications/nistir/8011/vol-3/draft/documents/nistir-8011-vol3-draft.pdf\">Draft
+        NISTIR 8011 Vol. 3</a>\r\n\t\t\t\t</div>\r\n\t\t\t</td>\r\n\t\t\t<td class=\"hidden-sm
+        hidden-xs hidden-xxs\">\r\n\t\t\t\tDraft (Withdrawn)\r\n\t\t\t</td>\r\n\t\t\t<td
+        class=\"hidden-sm hidden-xs hidden-xxs\">\r\n\t\t\t\t 4/05/2018\r\n\t\t\t</td>\r\n\t\t\t\r\n\t\t</tr>\r\n\r\n
+        \ \r\n\t\t<tr>\r\n\t\t\t<td class=\"hidden-sm hidden-xs hidden-xxs\">NISTIR</td>\r\n\t\t\t<td
+        class=\"hidden-sm hidden-xs hidden-xxs\"> 8011 Vol. 1</td>\r\n\t\t\t<td>\r\n\t\t\t\t\r\n\t\t\t\t<div
+        class=\"hidden-sm hidden-xs hidden-xxs\">\r\n\t\t\t\t\t<strong><a href=\"/publications/detail/nistir/8011/vol-1/final\">Automation
+        Support for Security Control Assessments: Overview</a></strong>\r\n\t\t\t\t</div>\r\n\r\n\t\t\t\t<div
+        class=\"hidden-md hidden-lg\">\r\n\t\t\t\t\t<strong>NISTIR 8011 Vol. 1<br
+        />\r\n\t\t\t\t\t\t<a href=\"/publications/detail/nistir/8011/vol-1/final\"
+        class=\"mobile-pub-title\">Automation Support for Security Control Assessments:
+        Overview</a>\r\n\t\t\t\t\t</strong>\r\n\t\t\t\t</div>\r\n\t\t\t\t\r\n\t\t\t\t<div
+        class=\"hidden-md hidden-lg\">\r\n\t\t\t\t\t<strong>6/06/2017</strong>\r\n\t\t\t\t\t<br
+        />\r\n\t\t\t\t\tStatus: \r\n\t\t\t\t</div>\r\n\t\t\t\t\r\n\t\t\t\t\r\n                <div
+        class=\"control-value-no-block\">\r\n\t\t\t\tDownload: <a href=\"https://doi.org/10.6028/NIST.IR.8011-1\">NISTIR
+        8011 Vol. 1 (DOI)</a>; <a href=\"https://nvlpubs.nist.gov/nistpubs/ir/2017/NIST.IR.8011-1.pdf\">Local
+        Download</a>\r\n\t\t\t\t</div>\r\n\t\t\t</td>\r\n\t\t\t<td class=\"hidden-sm
+        hidden-xs hidden-xxs\">\r\n\t\t\t\tFinal\r\n\t\t\t</td>\r\n\t\t\t<td class=\"hidden-sm
+        hidden-xs hidden-xxs\">\r\n\t\t\t\t 6/06/2017\r\n\t\t\t</td>\r\n\t\t\t\r\n\t\t</tr>\r\n\r\n
+        \ \r\n\t\t<tr>\r\n\t\t\t<td class=\"hidden-sm hidden-xs hidden-xxs\">NISTIR</td>\r\n\t\t\t<td
+        class=\"hidden-sm hidden-xs hidden-xxs\"> 8011 Vol. 2</td>\r\n\t\t\t<td>\r\n\t\t\t\t\r\n\t\t\t\t<div
+        class=\"hidden-sm hidden-xs hidden-xxs\">\r\n\t\t\t\t\t<strong><a href=\"/publications/detail/nistir/8011/vol-2/final\">Automation
+        Support for Security Control Assessments: Hardware Asset Management</a></strong>\r\n\t\t\t\t</div>\r\n\r\n\t\t\t\t<div
+        class=\"hidden-md hidden-lg\">\r\n\t\t\t\t\t<strong>NISTIR 8011 Vol. 2<br
+        />\r\n\t\t\t\t\t\t<a href=\"/publications/detail/nistir/8011/vol-2/final\"
+        class=\"mobile-pub-title\">Automation Support for Security Control Assessments:
+        Hardware Asset Management</a>\r\n\t\t\t\t\t</strong>\r\n\t\t\t\t</div>\r\n\t\t\t\t\r\n\t\t\t\t<div
+        class=\"hidden-md hidden-lg\">\r\n\t\t\t\t\t<strong>6/06/2017</strong>\r\n\t\t\t\t\t<br
+        />\r\n\t\t\t\t\tStatus: \r\n\t\t\t\t</div>\r\n\t\t\t\t\r\n\t\t\t\t\r\n                <div
+        class=\"control-value-no-block\">\r\n\t\t\t\tDownload: <a href=\"https://doi.org/10.6028/NIST.IR.8011-2\">NISTIR
+        8011 Vol. 2 (DOI)</a>; <a href=\"https://nvlpubs.nist.gov/nistpubs/ir/2017/NIST.IR.8011-2.pdf\">Local
+        Download</a>\r\n\t\t\t\t</div>\r\n\t\t\t</td>\r\n\t\t\t<td class=\"hidden-sm
+        hidden-xs hidden-xxs\">\r\n\t\t\t\tFinal\r\n\t\t\t</td>\r\n\t\t\t<td class=\"hidden-sm
+        hidden-xs hidden-xxs\">\r\n\t\t\t\t 6/06/2017\r\n\t\t\t</td>\r\n\t\t\t\r\n\t\t</tr>\r\n\r\n
+        \ \r\n\t\t<tr>\r\n\t\t\t<td class=\"hidden-sm hidden-xs hidden-xxs\">NISTIR</td>\r\n\t\t\t<td
+        class=\"hidden-sm hidden-xs hidden-xxs\"> 8011 Vol. 2</td>\r\n\t\t\t<td>\r\n\t\t\t\t\r\n\t\t\t\t<div
+        class=\"hidden-sm hidden-xs hidden-xxs\">\r\n\t\t\t\t\t<strong><a href=\"/publications/detail/nistir/8011/vol-2/draft\">Automation
+        Support for Security Control Assessments: Hardware Asset Management</a></strong>\r\n\t\t\t\t</div>\r\n\r\n\t\t\t\t<div
+        class=\"hidden-md hidden-lg\">\r\n\t\t\t\t\t<strong>NISTIR 8011 Vol. 2 (DRAFT)
+        (WITHDRAWN)<br />\r\n\t\t\t\t\t\t<a href=\"/publications/detail/nistir/8011/vol-2/draft\"
+        class=\"mobile-pub-title\">Automation Support for Security Control Assessments:
+        Hardware Asset Management</a>\r\n\t\t\t\t\t</strong>\r\n\t\t\t\t</div>\r\n\t\t\t\t\r\n\t\t\t\t<div
+        class=\"hidden-md hidden-lg\">\r\n\t\t\t\t\t<strong>2/02/2016</strong>\r\n\t\t\t\t\t<br
+        />\r\n\t\t\t\t\tStatus: \r\n\t\t\t\t</div>\r\n\t\t\t\t\r\n\t\t\t\t\r\n                <div
+        class=\"control-value-no-block\">\r\n\t\t\t\tDownload: <a href=\"/CSRC/media/Publications/nistir/8011/vol-2/draft/documents/nistir_8011_ipd-draft_vol2-hwam.pdf\">Draft
+        NISTIR 8011 Vol. 2: Hardware Asset Management</a>\r\n\t\t\t\t</div>\r\n\t\t\t</td>\r\n\t\t\t<td
+        class=\"hidden-sm hidden-xs hidden-xxs\">\r\n\t\t\t\tDraft (Withdrawn)\r\n\t\t\t</td>\r\n\t\t\t<td
+        class=\"hidden-sm hidden-xs hidden-xxs\">\r\n\t\t\t\t 2/02/2016\r\n\t\t\t</td>\r\n\t\t\t\r\n\t\t</tr>\r\n\r\n
+        \ \r\n\t\t<tr>\r\n\t\t\t<td class=\"hidden-sm hidden-xs hidden-xxs\">NISTIR</td>\r\n\t\t\t<td
+        class=\"hidden-sm hidden-xs hidden-xxs\"> 8011 Vol. 1</td>\r\n\t\t\t<td>\r\n\t\t\t\t\r\n\t\t\t\t<div
+        class=\"hidden-sm hidden-xs hidden-xxs\">\r\n\t\t\t\t\t<strong><a href=\"/publications/detail/nistir/8011/vol-1/draft\">Automation
+        Support for Security Control Assessments: Overview</a></strong>\r\n\t\t\t\t</div>\r\n\r\n\t\t\t\t<div
+        class=\"hidden-md hidden-lg\">\r\n\t\t\t\t\t<strong>NISTIR 8011 Vol. 1 (DRAFT)
+        (WITHDRAWN)<br />\r\n\t\t\t\t\t\t<a href=\"/publications/detail/nistir/8011/vol-1/draft\"
+        class=\"mobile-pub-title\">Automation Support for Security Control Assessments:
+        Overview</a>\r\n\t\t\t\t\t</strong>\r\n\t\t\t\t</div>\r\n\t\t\t\t\r\n\t\t\t\t<div
+        class=\"hidden-md hidden-lg\">\r\n\t\t\t\t\t<strong>2/02/2016</strong>\r\n\t\t\t\t\t<br
+        />\r\n\t\t\t\t\tStatus: \r\n\t\t\t\t</div>\r\n\t\t\t\t\r\n\t\t\t\t\r\n                <div
+        class=\"control-value-no-block\">\r\n\t\t\t\tDownload: <a href=\"/CSRC/media/Publications/nistir/8011/vol-1/draft/documents/nistir_8011_ipd-draft_vol1_overview.pdf\">Draft
+        NISTIR 8011 Vol. 1: Overview</a>\r\n\t\t\t\t</div>\r\n\t\t\t</td>\r\n\t\t\t<td
+        class=\"hidden-sm hidden-xs hidden-xxs\">\r\n\t\t\t\tDraft (Withdrawn)\r\n\t\t\t</td>\r\n\t\t\t<td
+        class=\"hidden-sm hidden-xs hidden-xxs\">\r\n\t\t\t\t 2/02/2016\r\n\t\t\t</td>\r\n\t\t\t\r\n\t\t</tr>\r\n\r\n\t</tbody>\r\n</table>\r\n<div
+        class=\"row bottom-pagination-area\">\r\n  <p class=\"text-center\">\r\n      \r\n
+        \ </p>\r\n</div> \r\n\r\n    <div id=\"publications-quicklinks\" class=\"bs-callout
+        bs-callout-subnav hidden-md hidden-lg\">\r\n        <h4>Quick Links <i class=\"fa
+        fa-bolt\"></i></h4>\r\n\t\t<p style=\"margin-left: 1rem;\">\r\n\t\t\t<!--<a
+        href=\"/publications/draft-pubs\">Draft Pubs</a>-->\r\n\t\t\t<a href=\"/publications/Search?requestControlFamilyList=&requestSeriesList=1,2,3,4,5,6,7,8,9,10,11,12,13,&requestStatusList=1,&requestDisplayOption=basic\">Draft
+        Pubs</a>\r\n\t\t\t<br/>\r\n\t\t\t<!--<a href=\"/publications/final-pubs\">Final
+        Pubs</a>-->\r\n\t\t\t<a href=\"/publications/Search?requestControlFamilyList=&requestSeriesList=1,2,3,4,7,8,13,&requestStatusList=3,&requestDisplayOption=basic\">Final
+        Pubs</a>\r\n\t\t\t<br/>\r\n\t\t\t<!--<a href=\"/publications/fips\">FIPS</a>-->\r\n\t\t\t<a
+        href=\"/publications/Search?requestControlFamilyList=&requestSeriesList=3,&requestStatusList=1,3,&requestDisplayOption=basic&requestSortOrder=5\">FIPS</a>\r\n\t\t\t<br/>\r\n\t\t\t<!--<a
+        href=\"/publications/special-pubs\">SPs (Special Pubs)</a>-->\r\n\t\t\t<a
+        href=\"/publications/Search?requestControlFamilyList=&requestSeriesList=1,&requestStatusList=1,3,&requestDisplayOption=basic&requestSortOrder=5\">SPs
+        (Special Pubs)</a>\r\n\t\t\t<br/>\r\n\t\t\t<!--<a href=\"/publications/nistirs\">NISTIRs</a>-->\r\n\t\t\t<a
+        href=\"/publications/Search?requestControlFamilyList=&requestSeriesList=4,&requestStatusList=1,3,&requestDisplayOption=basic&requestSortOrder=5\">NISTIRs</a>\r\n\t\t\t<br/>\r\n\t\t\t<!--<a
+        href=\"/publications/itl-bulletins\">ITL Bulletins</a>-->\r\n\t\t\t<a href=\"/publications/Search?requestControlFamilyList=&requestSeriesList=2,&requestStatusList=1,3,&requestDisplayOption=basic\">ITL
+        Bulletins</a>\r\n\t\t\t<br/>\r\n\t\t\t<!--<a href=\"/publications/white-papers\">White
+        Papers</a>-->\r\n\t\t\t<a href=\"/publications/Search?requestControlFamilyList=&requestSeriesList=7,8,13,&requestStatusList=1,3,&requestDisplayOption=basic\">White
+        Papers</a>\r\n\t\t\t<br/>\r\n\t\t\t<!--<a href=\"/publications/journal-articles\">Journal
+        Articles</a>-->\r\n\t\t\t<a href=\"/publications/Search?requestControlFamilyList=&requestSeriesList=9,&requestStatusList=3,&requestDisplayOption=basic\">Journal
+        Articles</a>\r\n\t\t\t<br/>\r\n\t\t\t<!--<a href=\"/publications/conference-papers\">Conference
+        Papers</a>-->\r\n\t\t\t<a href=\"/publications/Search?requestControlFamilyList=&requestSeriesList=5,6,&requestStatusList=3,&requestDisplayOption=basic\">Conference
+        Papers</a>\r\n\t\t\t<br/>\r\n\t\t\t<!--<a href=\"/publications/books\">Books</a>-->\r\n\t\t\t<a
+        href=\"/publications/Search?requestControlFamilyList=&requestSeriesList=10,11,12,&requestStatusList=3,&requestDisplayOption=basic\">Books</a>\r\n\t\t</p>\r\n
+        \   </div>\r\n    </div>\r\n</div>\r\n<script type=\"text/javascript\" src=\"/CSRC/media/js/publications.js\"></script>\r\n
+        \ \r\n      <div id=\"footer-pusher\"></div>\r\n  \r\n    </div>\r\n    \r\n<footer
+        id=\"footer\" >\r\n    <div class=\"container\">\r\n\r\n        <div class=\"row\">\r\n
+        \           <div class=\"col-sm-6\">\r\n                <span class=\"hidden-xs\">\r\n
+        \                   <a href=\"https://www.nist.gov\" title=\"National Institute
+        of Standards and Technology\" rel=\"home\" target=\"_blank\" class=\"footer-nist-logo\">\r\n
+        \                       <img src=\"/CSRC/Media/images/logo_rev.png\" alt=\"National
+        Institute of Standards and Technology logo\"/>\r\n                    </a>\r\n
+        \               </span>\r\n\r\n\t\t\t\t<div class=\"row footer-contact-container\">\r\n\t\t\t\t\t<div
+        class=\"col-sm-12\">\r\n\t\t\t\t\t\t<strong>HEADQUARTERS</strong><br>\r\n\t\t\t\t\t\t100
+        Bureau Drive<br>\r\n\t\t\t\t\t\tGaithersburg, MD 20899\r\n\t\t\t\t\t</div>\r\n\t\t\t\t</div>\r\n
+        \           </div>\r\n            <div class=\"col-sm-6\">\r\n\t\t\t\t<ul
+        class=\"social-list text-right\" style=\"display: block;\">\r\n\t\t\t\t\t<li
+        class=\"field-item service-twitter list-horiz\">\r\n\t\t\t\t\t\t<a href=\"https://twitter.com/USNISTGOV\"
+        target=\"_blank\" class=\"social-btn social-btn--large extlink ext\">\r\n\t\t\t\t\t\t<i
+        class=\"fa fa-twitter fa-fw\"><span class=\"element-invisible\">twitter</span></i><span
+        class=\"ext\"><span class=\"element-invisible\"> (link is external)</span></span>\r\n\t\t\t\t\t</a>\r\n\t\t\t\t\t</li>\r\n\t\t\t\t\t<li
+        class=\"field-item service-facebook list-horiz\"><a href=\"https://www.facebook.com/USNISTGOV\"
+        target=\"_blank\" class=\"social-btn social-btn--large extlink ext\">\r\n\t\t\t\t\t\t<i
+        class=\"fa fa-facebook fa-fw\"><span class=\"element-invisible\">facebook</span></i><span
+        class=\"ext\"><span class=\"element-invisible\"> (link is external)</span></span></a>\r\n\r\n\t\t\t\t\t</li>\r\n\t\t\t\t\t<li
+        class=\"field-item service-linkedin list-horiz\"><a href=\"https://www.linkedin.com/company/nist\"
+        target=\"_blank\" class=\"social-btn social-btn--large extlink ext\">\r\n\t\t\t\t\t\t<i
+        class=\"fa fa-linkedin fa-fw\"><span class=\"element-invisible\">linkedin</span></i><span
+        class=\"ext\"><span class=\"element-invisible\"> (link is external)</span></span></a>\r\n\r\n\t\t\t\t\t</li>\r\n\t\t\t\t\t<li
+        class=\"field-item service-youtube list-horiz\"><a href=\"https://www.youtube.com/user/USNISTGOV\"
+        target=\"_blank\" class=\"social-btn social-btn--large extlink ext\">\r\n\t\t\t\t\t\t<i
+        class=\"fa fa-youtube fa-fw\"><span class=\"element-invisible\">youtube</span></i><span
+        class=\"ext\"><span class=\"element-invisible\"> (link is external)</span></span></a>\r\n\r\n\t\t\t\t\t</li>\r\n\t\t\t\t\t<li
+        class=\"field-item service-rss list-horiz\"><a href=\"https://www.nist.gov/news-events/nist-rss-feeds\"
+        target=\"_blank\" class=\"social-btn social-btn--large extlink\">\r\n\t\t\t\t\t\t<i
+        class=\"fa fa-rss fa-fw\"><span class=\"element-invisible\">rss</span></i></a>\r\n\r\n\t\t\t\t\t</li>\r\n\t\t\t\t\t<li
+        class=\"field-item service-govdelivery list-horiz last\">\r\n\t\t\t\t\t\t<a
+        href=\"https://public.govdelivery.com/accounts/USNIST/subscriber/new?qsp=USNIST_3\"
+        target=\"_blank\" class=\"social-btn social-btn--large extlink ext\" title=\"Subscribe
+        to CSRC and publication updates, and other NIST cybersecurity news\">\r\n\t\t\t\t\t\t\t<i
+        class=\"fa fa-envelope fa-fw\"><span class=\"element-invisible\">govdelivery</span></i><span
+        class=\"ext\"><span class=\"element-invisible\"> (link is external)</span></span>\r\n\t\t\t\t\t\t</a>\r\n\t\t\t\t\t</li>\r\n\t\t\t\t</ul>\r\n\t\t\t\t<p
+        class=\"text-right\">\r\n\t\t\t\t\tWant updates about CSRC and our publications?
+        \r\n\t\t\t\t\t<a href=\"https://public.govdelivery.com/accounts/USNIST/subscriber/new?qsp=USNIST_3\"
+        target=\"_blank\" class=\"btn btn-lg btn-info\" style=\"background-color:
+        #12659c!important; border-color: #12659c!important;\">Subscribe</a>\r\n\t\t\t\t</p>\r\n\t\t\t</div>\r\n
+        \       </div>\r\n        <div class=\"row hidden-sm hidden-md hidden-lg\">\r\n
+        \           <div class=\"col-sm-12\">\r\n                    <a href=\"https://www.nist.gov\"
+        title=\"National Institute of Standards and Technology\" rel=\"home\" target=\"_blank\"
+        class=\"footer-nist-logo\">\r\n                        <img src=\"/CSRC/Media/images/logo_rev.png\"
+        alt=\"National Institute of Standards and Technology logo\"/>\r\n                    </a>\r\n
+        \           </div>\r\n        </div>\r\n\r\n        <div class=\"row\">\r\n
+        \           <div class=\"col-sm-12\">\r\n                <p>\r\n                    <a
+        href=\"mailto:webmaster-csrc@nist.gov?subject=CSRC Inquiry\">Webmaster</a>
+        | \r\n                    <a href=\"/about/contact\">Contact Us</a> |\r\n
+        \                   <a href=\"https://www.nist.gov/about-nist/our-organization\"
+        style=\"display: inline-block;\">Our Other Offices</a>\r\n                </p>\r\n
+        \           </div>\r\n        </div>\r\n\r\n        <div id=\"footer-nav-menu\"
+        class=\"row\" role=\"navigation\">\r\n            <div class=\"col-md-8 col-sm-6
+        col-xs-12 col-xxs-12\">\r\n                <div class=\"row\">\r\n                    <div
+        class=\"col-md-4\">\r\n                        <p>\r\n                            <a
+        href=\"/projects\">PROJECTS</a>\r\n                        </p>\r\n                        <p>\r\n
+        \                           <a href=\"/publications\">PUBLICATIONS</a><br/>\r\n\t\t\t\t\t\t\t<a
+        href=\"/publications/draft-pubs\">Draft Pubs</a><br/>\r\n\t\t\t\t\t\t\t<a
+        href=\"/publications/final-pubs\">Final Pubs</a><br/>\r\n\t\t\t\t\t\t\t<a
+        href=\"/publications/fips\">FIPS</a><br/>\r\n\t\t\t\t\t\t\t<a href=\"/publications/sp\">Special
+        Publications (SPs)</a><br/>\r\n\t\t\t\t\t\t\t<a href=\"/publications/nistir\">NISTIRs</a><br/>\r\n\t\t\t\t\t\t\t<a
+        href=\"/publications/itl-bulletin\">ITL Bulletins</a><br/>\r\n\t\t\t\t\t\t\t<a
+        href=\"/publications/white-paper\">White Papers</a><br/>\r\n\t\t\t\t\t\t\t<a
+        href=\"/publications/journal-article\">Journal Articles</a><br/>\r\n\t\t\t\t\t\t\t<a
+        href=\"/publications/conference-paper\">Conference Papers</a><br/>\r\n\t\t\t\t\t\t\t<a
+        href=\"/publications/book\">Books</a>\r\n                        </p>\r\n
+        \                   </div>\r\n                    <div class=\"col-md-4\">\r\n
+        \                       <p>\r\n                            <a href=\"/topics\">TOPICS</a><br/>\r\n
+        \                           <a href=\"/Topics/Security-and-Privacy\">Security
+        &amp; Privacy</a><br/>\r\n                            <a href=\"/Topics/Applications\">Applications</a><br/>\r\n
+        \                           <a href=\"/Topics/Technologies\">Technologies</a><br/>\r\n
+        \                           <a href=\"/Topics/Sectors\">Sectors</a><br/>\r\n
+        \                           <a href=\"/Topics/Laws-and-Regulations\">Laws
+        &amp; Regulations</a><br/>\r\n                            <a href=\"/Topics/Activities-and-Products\">Activities
+        &amp; Products</a>\r\n                        </p>\r\n                        <p>\r\n
+        \                           <a href=\"/news\">NEWS &amp; UPDATES</a>\r\n                        </p>\r\n
+        \                       <p>\r\n                            <a href=\"/events\">EVENTS</a>\r\n
+        \                       </p>\r\n                        <p>\r\n                            <a
+        href=\"/glossary\">GLOSSARY</a>\r\n                        </p>\r\n                    </div>\r\n
+        \                   <div class=\"col-md-4\">\r\n                        <p>\r\n
+        \                           <a href=\"/about\">ABOUT CSRC</a><br/>\r\n                            <a
+        href=\"/about\">Computer Security Division</a><br/>\r\n                            <a
+        href=\"/about\">Applied Cybersecurity Division</a><br/>\r\n                            <a
+        href=\"/contact\">Contact Us</a>\r\n                        </p>\r\n                    </div>\r\n
+        \               </div>\r\n             </div>\r\n            <div class=\"col-md-4
+        col-sm-6 col-xs-12 col-xxs-12\">\r\n                    <span class=\"pull-right
+        text-right\">\r\n                        <p><strong>Information Technology
+        Laboratory<span class=\"hidden-xs\"> (ITL)</span></strong></p>\r\n                        <strong>Computer
+        Security Division<span class=\"hidden-xs\"> (CSD)</span></strong><br/>\r\n
+        \                       TEL: 301.975.8443<br/>\r\n                        <strong>Applied
+        Cybersecurity Division<span class=\"hidden-xs\"> (ACD)</span></strong>\r\n
+        \                       <br /><br /><br />\r\n                        Contact
+        CSRC Webmaster: <a href=\"mailto:webmaster-csrc@nist.gov?subject=CSRC Inquiry\"
+        style=\"display: inline-block;\">webmaster-csrc@nist.gov</a>\r\n                    </span>\r\n
+        \           </div>\r\n        </div>\r\n\r\n        <div class=\"row\">\r\n
+        \           <div class=\"col-lg-12 footer-bottom-links-container\">\r\n                <p>\r\n
+        \                   <a target=\"_blank\" href=\"https://www.nist.gov/privacy-policy\">Privacy
+        Statement</a> |\r\n                    <a target=\"_blank\" href=\"https://www.nist.gov/privacy-policy#privpolicy\">Privacy
+        Policy</a> |\r\n                    <a target=\"_blank\" href=\"https://www.nist.gov/privacy-policy#secnot\">Security
+        Notice</a> |\r\n                    <a target=\"_blank\" href=\"https://www.nist.gov/privacy-policy#accesstate\">Accessibility
+        Statement</a> |\r\n                    <a target=\"_blank\" href=\"https://www.nist.gov/privacy\">NIST
+        Privacy Program</a> |\r\n                    <a target=\"_blank\" href=\"https://www.nist.gov/no-fear-act-policy\">No
+        Fear Act Policy</a>\r\n                </p>\r\n                <p>\r\n                    <a
+        target=\"_blank\" href=\"https://www.nist.gov/disclaimer\">Disclaimer</a>
+        |\r\n                    <a target=\"_blank\" href=\"https://www.nist.gov/office-director/freedom-information-act\">FOIA</a>
+        |\r\n                    <a target=\"_blank\" href=\"https://www.nist.gov/environmental-policy-statement\">Environmental
+        Policy Statement</a> |\r\n                    <a target=\"_blank\" href=\"https://www.nist.gov/privacy-policy#cookie\">Cookie
+        Disclaimer</a> |\r\n                    <a target=\"_blank\" href=\"https://www.nist.gov/summary-report-scientific-integrity\">Scientific
+        Integrity Summary</a> |\r\n                    <a target=\"_blank\" href=\"https://www.nist.gov/nist-information-quality-standards\">NIST
+        Information Quality Standards</a>\r\n                </p>\r\n                <p>\r\n
+        \                   <a target=\"_blank\" href=\"https://www.usa.gov/business\">Business
+        USA</a> |\r\n                    <a target=\"_blank\" href=\"https://www.commerce.gov/\">Commerce.gov</a>
+        |\r\n                    <a target=\"_blank\" href=\"https://www.healthcare.gov/\">Healthcare.gov</a>
+        |\r\n                    <a target=\"_blank\" href=\"http://www.science.gov/\">Science.gov</a>
+        |\r\n                    <a target=\"_blank\" href=\"http://www.usa.gov/\">USA.gov</a>\r\n
+        \               </p>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</footer>\r\n\r\n<script
+        type=\"text/javascript\">\r\n     (function() {\r\n       document.getElementsByTagName('html')[0].setAttribute('lang',
+        'en');\r\n       document.getElementsByTagName('html')[0].setAttribute('xml:lang',
+        'en')\r\n   })(); \r\n</script>\r\n\r\n    \r\n    </form>\r\n</body>\r\n</html>\r\n"
+    http_version: 
+  recorded_at: Wed, 06 Feb 2019 18:39:28 GMT
+- request:
+    method: get
+    uri: https://csrc.nist.gov/publications/detail/nistir/8011/vol-3/final
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - csrc.nist.gov
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-cache, no-store, must-revalidate
+      Pragma:
+      - no-cache
+      Content-Length:
+      - '41425'
+      Content-Type:
+      - text/html; charset=utf-8
+      Expires:
+      - "-1"
+      Server:
+      - Microsoft-IIS/7.5
+      Set-Cookie:
+      - ASP.NET_SessionId=idydktmmb4lbsiradthpc2mo; path=/; secure; HttpOnly
+      - CMSCsrfCookie=DsMmrELYJU/BMShoduSf6HpBTQ0FxteLSw4nMAbB; path=/; secure; HttpOnly
+      - CMSPreferredCulture=en-US; path=/; HttpOnly; Secure
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Ua-Compatible:
+      - IE=Edge
+      X-Aspnet-Version:
+      - 4.0.30319
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Wed, 06 Feb 2019 18:39:29 GMT
+    body:
+      encoding: UTF-8
+      string: "<!DOCTYPE html>\r\n<html  >\r\n<head id=\"head\"><title>\r\n\tNISTIR
+        8011 Vol. 3, Automation Support for Security Control Assessments: SWAM | CSRC\r\n</title><meta
+        charset=\"UTF-8\" /> \n<meta http-equiv=\"content-type\" content=\"text/html;
+        charset=UTF-8\" />\r\n<meta http-equiv=\"content-style-type\" content=\"text/css\"
+        />\r\n<meta http-equiv=\"content-script-type\" content=\"text/javascript\"
+        />\r\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"
+        />\r\n\r\n<link href=\"/Scripts/font-awesome/css/font-awesome.css\" type=\"text/css\"
+        rel=\"stylesheet\" />\r\n<link href=\"/CSRC/media/bootstrap/css/bootstrap.min.css\"
+        type=\"text/css\" rel=\"stylesheet\" />\r\n<link href=\"/CSRC/media/bootstrap/css/bootstrap-theme.min.css\"
+        type=\"text/css\" rel=\"stylesheet\" />\r\n<link href=\"/Scripts/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css\"
+        type=\"text/css\" rel=\"stylesheet\" />\r\n<link href=\"/CSRC/media/css/nist-fonts.css\"
+        type=\"text/css\" rel=\"stylesheet\" />\r\n<link href=\"/CSRC/media/css/csrc-style.css\"
+        type=\"text/css\" rel=\"stylesheet\" />\r\n<link href=\"/CSRC/media/css/media-resize.css\"
+        type=\"text/css\" rel=\"stylesheet\" />\r\n\r\n\r\n<link rel=\"apple-touch-icon\"
+        sizes=\"180x180\" href=\"/CSRC/Media/images/favicons/apple-touch-icon.png\"
+        />\r\n<link rel=\"icon\" type=\"image/png\" href=\"/CSRC/Media/images/favicons/favicon-32x32.png\"
+        sizes=\"32x32\" />\r\n<link rel=\"icon\" type=\"image/png\" href=\"/CSRC/Media/images/favicons/favicon-16x16.png\"
+        sizes=\"16x16\" />\r\n<link rel=\"manifest\" href=\"/CSRC/Media/images/favicons/manifest.json\"
+        />\r\n<link rel=\"mask-icon\" href=\"/CSRC/Media/images/favicons/safari-pinned-tab.svg\"
+        color=\"#000000\" />\r\n<link rel=\"shortcut icon\" href=\"/CSRC/Media/images/favicons/favicon.ico\"
+        />\r\n<meta name=\"msapplication-config\" content=\"/CSRC/Media/images/favicons/browserconfig.xml\"
+        />\r\n<meta name=\"theme-color\" content=\"#000000\" />\r\n\r\n<script src=\"/Scripts/jquery/dist/jquery.min.js\"></script>\r\n<script
+        src=\"/Scripts/underscore/underscore-min.js\"></script>\r\n<script src=\"/Scripts/bootstrap/dist/js/bootstrap.min.js\"></script>\r\n<script
+        src=\"/Scripts/moment/min/moment.min.js\" type=\"text/javascript\"></script>\r\n<script
+        src=\"/Scripts/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js\"
+        type=\"text/javascript\"></script>\r\n<script src=\"/CSRC/media/js/megamenu.js\"
+        type=\"text/javascript\"></script>\r\n<script src=\"/CSRC/media/js/main.js\"></script>\r\n<script
+        src=\"/CSRC/media/js/forms.js\" type=\"text/javascript\"></script>\r\n<script
+        src=\"/CSRC/media/js/forms-topics.js\" type=\"text/javascript\"></script>\r\n<script
+        src=\"/CSRC/media/js/forms-controlFamilies.js\" type=\"text/javascript\"></script>\r\n<script
+        src=\"/CSRC/media/js/forms-searchCriteria.js\" type=\"text/javascript\"></script>\r\n<script
+        src=\"/CSRC/media/js/nist-exit-script.js\" type=\"text/javascript\"></script>\r\n\r\n<script
+        async type=\"text/javascript\" id=\"_fed_an_ua_tag\" src=\"https://dap.digitalgov.gov/Universal-Federated-Analytics-Min.js?agency=nist&subagency=csrc&pua=UA-66610693-15&yt=true&exts=xsd,xml,wav,mpg,mpeg,avi,rtf,webm,ogg,ogv,oga,map,otf,eot,svg,ttf,woff\"></script>\r\n\r\n<style
+        id=\"antiClickjack\">body{display:none !important;}</style>\r\n<script type=\"text/javascript\">\r\n
+        \  if (self === top) {\r\n       var antiClickjack = document.getElementById(\"antiClickjack\");\r\n
+        \      antiClickjack.parentNode.removeChild(antiClickjack);\r\n   } else {\r\n
+        \      top.location = self.location;\r\n   }\r\n</script>\r\n \n<link href=\"/CSRC/Media/images/favicons/favicon.ico\"
+        type=\"image/x-icon\" rel=\"shortcut icon\"/>\r\n<link href=\"/CSRC/Media/images/favicons/favicon.ico\"
+        type=\"image/x-icon\" rel=\"icon\"/>\r\n\r\n<meta description=\"The NISTIR
+        8011 volumes each focus on an individual information security capability,
+        adding tangible detail to the more general overview given in NISTIR 8011 Volume
+        1, and providing a template for transition to a detailed, NIST guidance-based
+        automated assessment. This document, Volume 3 of NISTIR 8011, addresses the
+        Software Asset Management (SWAM) information security capability. The focus
+        of the SWAM capability is to manage risk created by unmanaged or unauthorized
+        software on a network. Unmanaged or unauthorized software is a target that
+        attackers can use as a platform from which to attack components on the network.\"/>\r\n<meta
+        name=\"dcterms.title\" content=\"NIST Internal or Interagency Report (NISTIR)
+        8011 Vol. 3, Automation Support for Security Control Assessments: Software
+        Asset Management\"/>\r\n<meta name=\"dcterms.description\" content=\"The NISTIR
+        8011 volumes each focus on an individual information security capability,
+        adding tangible detail to the more general overview given in NISTIR 8011 Volume
+        1, and providing a template for transition to a detailed, NIST guidance-based
+        automated assessment. This document, Volume 3 of NISTIR 8011, addresses the
+        Software Asset Management (SWAM) information security capability. The focus
+        of the SWAM capability is to manage risk created by unmanaged or unauthorized
+        software on a network. Unmanaged or unauthorized software is a target that
+        attackers can use as a platform from which to attack components on the network.\"/>\r\n\r\n<!--Authors-->\r\n<meta
+        name=\"dcterms.creator\" content=\"Author: Kelley Dempsey (NIST)\"/>\r\n<meta
+        name=\"dcterms.creator\" content=\"Author: Nedim Goren (NIST)\"/>\r\n<meta
+        name=\"dcterms.creator\" content=\"Author: Paul Eavy (DHS)\"/>\r\n<meta name=\"dcterms.creator\"
+        content=\"Author: George Moore (APL)\"/>\r\n\r\n\r\n<meta name=\"dcterms.date.created\"
+        scheme=\"ISO8601\" content=\"2018-12-06\"/>\r\n<meta name=\"dcterms.identifier\"
+        content=\"https://content.csrc.nist.gov/publications/detail/nistir/8011/vol-3\"/>\r\n<meta
+        name=\"dcterms.language\" scheme=\"DCTERMS.RFC1766\" content=\"EN-US\"/>\r\n\r\n<!--Google
+        Scholar Info-->\r\n<meta name=\"citation_title\" content=\"Automation Support
+        for Security Control Assessments: Software Asset Management\" />\r\n<meta
+        name=\"citation_publication_date\" content=\"2018/12/06\" />\r\n<meta name=\"citation_doi\"
+        content=\"https://doi.org/10.6028/NIST.IR.8011-3\" />\r\n<meta name=\"citation_technical_report_number\"
+        content=\"NIST Internal or Interagency Report (NISTIR) 8011 Vol. 3\" />\r\n<meta
+        name=\"citation_technical_report_institution\" content=\"National Institute
+        of Standards and Technology\" />\r\n\r\n\r\n<meta name=\"citation_keywords\"
+        content=\"actual state; assessment; authorization boundary; automation; capability;
+        continuous diagnostics and mitigation; dashboard; defect; desired state specification;
+        firmware; information security continuous monitoring; ISCM; inventory management;
+        malicious code; malware; mitigation; mobile code; ongoing assessment; root
+        cause analysis; security capability; security control; security control item;
+        software; software asset management; software file; SWID tag; whitelisting;
+        \" />\r\n<meta name=\"citation_language\" content=\"en\" />\r\n<meta name=\"citation_abstract_html_url\"
+        content=\"https://csrc.nist.gov/publications/detail/nistir/8011/vol-3/final\"
+        />\r\n\r\n\r\n<!--Google Scholar Authors-->\r\n\r\n<meta name=\"citation_author\"
+        content=\"Dempsey, Kelley\" />\r\n<meta name=\"citation_author\" content=\"Goren,
+        Nedim\" />\r\n<meta name=\"citation_author\" content=\"Eavy, Paul\" />\r\n<meta
+        name=\"citation_author\" content=\"Moore, George\" />\r\n\r\n\r\n<!-- Facebook
+        OpenGraph -->\r\n<meta name=\"og:site_name\" content=\"CSRC | NIST\" />\r\n<meta
+        name=\"og:type\" content=\"article\" />\r\n<meta name=\"og:url\" content=\"https://csrc.nist.gov/publications/detail/nistir/8011/vol-3/final\"
+        />\r\n<meta name=\"og:title\" content=\"NIST Internal or Interagency Report
+        (NISTIR) 8011 Vol. 3, Automation Support for Security Control Assessments:
+        Software Asset Management\" />\r\n<meta name=\"og:description\" content=\"The
+        NISTIR 8011 volumes each focus on an individual information security capability,
+        adding tangible detail to the more general overview given in NISTIR 8011 Volume
+        1, and providing a template for transition to a detailed, NIST guidance-based
+        automated assessment. This document, Volume 3 of NISTIR 8011, addresses the
+        Software Asset Management (SWAM) information security capability. The focus
+        of the SWAM capability is to manage risk created by unmanaged or unauthorized
+        software on a network. Unmanaged or unauthorized software is a target that
+        attackers can use as a platform from which to attack components on the network.\"
+        />\r\n\r\n\r\n<meta name=\"article:author\" content=\"Dempsey, Kelley\" />\r\n<meta
+        name=\"article:author\" content=\"Goren, Nedim\" />\r\n<meta name=\"article:author\"
+        content=\"Eavy, Paul\" />\r\n<meta name=\"article:author\" content=\"Moore,
+        George\" />\r\n\r\n\r\n<meta name=\"article:tag\" content=\"actual state\"
+        />\r\n<meta name=\"article:tag\" content=\"assessment\" />\r\n<meta name=\"article:tag\"
+        content=\"authorization boundary\" />\r\n<meta name=\"article:tag\" content=\"automation\"
+        />\r\n<meta name=\"article:tag\" content=\"capability\" />\r\n<meta name=\"article:tag\"
+        content=\"continuous diagnostics and mitigation\" />\r\n<meta name=\"article:tag\"
+        content=\"dashboard\" />\r\n<meta name=\"article:tag\" content=\"defect\"
+        />\r\n<meta name=\"article:tag\" content=\"desired state specification\" />\r\n<meta
+        name=\"article:tag\" content=\"firmware\" />\r\n<meta name=\"article:tag\"
+        content=\"information security continuous monitoring\" />\r\n<meta name=\"article:tag\"
+        content=\"ISCM\" />\r\n<meta name=\"article:tag\" content=\"inventory management\"
+        />\r\n<meta name=\"article:tag\" content=\"malicious code\" />\r\n<meta name=\"article:tag\"
+        content=\"malware\" />\r\n<meta name=\"article:tag\" content=\"mitigation\"
+        />\r\n<meta name=\"article:tag\" content=\"mobile code\" />\r\n<meta name=\"article:tag\"
+        content=\"ongoing assessment\" />\r\n<meta name=\"article:tag\" content=\"root
+        cause analysis\" />\r\n<meta name=\"article:tag\" content=\"security capability\"
+        />\r\n<meta name=\"article:tag\" content=\"security control\" />\r\n<meta
+        name=\"article:tag\" content=\"security control item\" />\r\n<meta name=\"article:tag\"
+        content=\"software\" />\r\n<meta name=\"article:tag\" content=\"software asset
+        management\" />\r\n<meta name=\"article:tag\" content=\"software file\" />\r\n<meta
+        name=\"article:tag\" content=\"SWID tag\" />\r\n<meta name=\"article:tag\"
+        content=\"whitelisting\" />\r\n<meta name=\"article:published_time\" content=\"2018-12-06\"
+        />\r\n<meta name=\"og:image\" content=\"https://csrc.nist.gov/CSRC/media/images/CSRC-logo-open-graph.png\"
+        />\r\n</head>\r\n<body class=\"LTR Unknown ENUS ContentBody\" >\r\n    \r\n
+        \   <form method=\"post\" action=\"/publications/detail/nistir/8011/vol-3/final\"
+        id=\"form\">\r\n<input type=\"hidden\" name=\"__CMSCsrfToken\" id=\"__CMSCsrfToken\"
+        value=\"WLdiKgu7eIxy9NX1ZbwEz1Rc7uOaJCTaTK9R9dmIEZSLKWZHqijUi9mNURk166yAJW3eGQTsHdkItImEmv2wVZgO7Tk11hEbi9KUfhygYMM=\"
+        />\r\n<input type=\"hidden\" name=\"__VIEWSTATE\" id=\"__VIEWSTATE\" value=\"dTxcrs5rYP+yECpWcXtRuhSnC0vm/7sfbbj6sm/vwrYfTnIcF8y9cRLG4S/wvnF9t+3wdL0kLrI2PIWdgnCaHMPG0eXGnhqr2s1N+OJLAgD7NHkFm6zmGcuPZggXR+AIoaYarKHay35RFVha/sQLEbKtXrv6TBzHZaqblPSy6iqEzfIKaqCOk98yztpYUCspsuWyWO9pdMLD84dhrViBVh994/uAWCsCYN/YUDcPza/h2HbfHSecCktNdpeJqXlaZEfiPlhvMQa+x8o3LhvI40jDFt204R1a5R5RuPSIBRrKeVimatNJEt5mXG6v+UQfx5Ttkn8wQKqxY9T922Sz2ajpsAfyy0oQo4PYH1dkQ/8=\"
+        />\r\n\r\n<input type=\"hidden\" name=\"lng\" id=\"lng\" value=\"en-US\" />\r\n<script
+        type=\"text/javascript\">\r\n\t//<![CDATA[\n\r\nfunction PM_Postback(param)
+        { if (window.top.HideScreenLockWarningAndSync) { window.top.HideScreenLockWarningAndSync(1080);
+        } if(window.CMSContentManager) { CMSContentManager.allowSubmit = true; };
+        __doPostBack('m$am',param); }\r\nfunction PM_Callback(param, callback, ctx)
+        { if (window.top.HideScreenLockWarningAndSync) { window.top.HideScreenLockWarningAndSync(1080);
+        }if (window.CMSContentManager) { CMSContentManager.storeContentChangedStatus();
+        };WebForm_DoCallback('m$am',param,callback,ctx,null,true); }\n//]]>\r\n</script>\r\n<script
+        src=\"/ScriptResource.axd?d=uHIkleVeDJf4xS50Krz-yEL6BbhBiF45lsyDpasAzWtzCQJtc3dXLl1MqQyMoBddI_O_uiqYRrrD592E4da-2WesA2JhR0XghR0QIALOhp9342afvPsvwJS3o4OM9Vxe6f-ElDVqmMiQ_ATQpGKRafEv9S4i2xDFm7GeQM8JCN81&amp;t=ffffffff999c3159\"
+        type=\"text/javascript\"></script>\r\n<script type=\"text/javascript\">\r\n\t//<![CDATA[\n\r\nvar
+        CMS = CMS || {};\r\nCMS.Application = {\r\n  \"language\": \"en\",\r\n  \"imagesUrl\":
+        \"/CMSPages/GetResource.ashx?image=%5bImages.zip%5d%2f\",\r\n  \"isDebuggingEnabled\":
+        false,\r\n  \"applicationUrl\": \"/\",\r\n  \"isDialog\": false,\r\n  \"isRTL\":
+        \"false\"\r\n};\r\n\n//]]>\r\n</script>\r\n<input type=\"hidden\" name=\"__VIEWSTATEGENERATOR\"
+        id=\"__VIEWSTATEGENERATOR\" value=\"A5343185\" />\r\n    \r\n    <div id=\"ctxM\">\r\n\r\n</div>\r\n
+        \       <div id=\"antiClickjack\" style=\"display: none\">\r\n        <h1>You
+        are viewing this page in an unauthorized frame window.</h1>\r\n        <p>This
+        is a potential security issue, you are being redirected to <a href=\"https://csrc.nist.gov\">https://csrc.nist.gov</a></p>\r\n
+        \   </div>\r\n    <nav id=\"navbar\" class=\"navbar\">\r\n      <div id=\"nist-menu-container\"
+        class=\"container\">\r\n        <div class=\"row\">\r\n        <!-- Brand
+        -->\r\n        <div class=\"col-xs-6 col-md-4 navbar-header\">\r\n          <a
+        class=\"navbar-brand\" href=\"https://www.nist.gov\" target=\"_blank\" id=\"navbar-brand-image\">\r\n
+        \           <img src=\"/CSRC/Media/images/svg/nist-logo.svg\" alt=\"National
+        Institute of Standards and Technology\" width=\"110\" height=\"30\">\r\n          </a>\r\n
+        \       </div>\r\n        <div class=\"col-xs-6 col-md-8 navbar-nist-logo\">\r\n
+        \           <div class=\"form-inline hidden-sm hidden-xs\">\r\n                <label
+        for=\"search-csrc-query\" class=\"element-invisible\">Search</label>\r\n                <input
+        autocomplete=\"off\" class=\"form-control\" id=\"search-csrc-query\" name=\"search-csrc-query\"
+        type=\"text\" size=\"15\" maxlength=\"128\" placeholder=\"Search CSRC\"/>\r\n
+        \               <button type=\"button\" id=\"search-csrc-submit-btn\" name=\"op\"
+        class=\"form-submit\">\r\n                    <span class=\"element-invisible\">Search</span>\r\n
+        \                   <i class=\"fa fa-search\"></i>\r\n                </button>\r\n
+        \           </div>\r\n          <span id=\"nvd-menu-button\" class=\"pull-right\">\r\n
+        \           <a href=\"#\">\r\n              <span class=\"fa fa-bars\"></span>
+        \r\n              <span id=\"nvd-menu-full-text\"><span class=\"hidden-xxs\">CSRC
+        </span>MENU</span>\r\n            </a>\r\n          </span>\r\n        </div>\r\n
+        \       </div>\r\n      </div>\r\n        \r\n        <div class=\"form-inline
+        hidden-md hidden-lg\">\r\n            <label for=\"search-csrc-query\" class=\"element-invisible\">Search</label>\r\n
+        \           <input autocomplete=\"off\" class=\"form-control\" id=\"search-csrc-query-mobile\"
+        name=\"search-csrc-query\" type=\"text\" size=\"15\" maxlength=\"128\" placeholder=\"Search
+        CSRC\"/>\r\n            <button type=\"button\" id=\"search-csrc-submit-btn-mobile\"
+        name=\"op\" class=\"form-submit\">\r\n                <span class=\"element-invisible\">Search</span>\r\n
+        \               <i class=\"fa fa-search\"></i>\r\n            </button>\r\n
+        \       </div>\r\n    <div class=\"main-menu-row container\">\r\n        <!--
+        Collect the nav links, forms, and other content for toggling -->\r\n        <div
+        id=\"main-menu-drop\" class=\"col-lg-12\" style=\"display: none;\">\r\n            <ul>\r\n\t\t
+        \       <li><a href=\"/projects\">Projects</a></li>\r\n\t\t        <li>\r\n
+        \                   <a href=\"/publications\">\r\n                        Publications\r\n
+        \                       <span class=\"expander fa fa-plus\" id=\"main-menu-expander-pubs\"
+        data-expander-name=\"publications\" data-expanded=\"false\">\r\n                            <span
+        class=\"element-invisible\">Expand or Collapse</span>\r\n                        </span>\r\n
+        \                   </a>\r\n                    <div style=\"display: none;\"
+        class=\"sub-menu\" data-expander-trigger=\"publications\">\r\n                        <div
+        class=\"row\">\r\n                            <div class=\"col-lg-4\">\r\n\t\t\t\t\t\t\t\t<p><a
+        href=\"/publications/draft-pubs\">Draft Pubs</a></p>\r\n\t\t\t\t\t\t\t\t<p><a
+        href=\"/publications/final-pubs\">Final Pubs</a></p>\r\n\t\t\t\t\t\t\t\t<p><a
+        href=\"/publications/fips\">FIPS</a></p>\r\n\t\t\t\t\t\t\t\t<p><a href=\"/publications/sp\">Special
+        Publications (SP<small>s</small>)</a></p>\r\n                            </div>\r\n
+        \                           <div class=\"col-lg-4\">\r\n\t\t\t\t\t\t\t\t<p><a
+        href=\"/publications/nistir\">NISTIR<small>s</small></a></p>\r\n\t\t\t\t\t\t\t\t<p><a
+        href=\"/publications/itl-bulletin\">ITL Bulletins</a></p>\r\n\t\t\t\t\t\t\t\t<p><a
+        href=\"/publications/white-paper\">White Papers</a></p>\r\n                            </div>\r\n
+        \                           <div class=\"col-lg-4\">\r\n\t\t\t\t\t\t\t\t<p><a
+        href=\"/publications/journal-article\">Journal Articles</a></p>\r\n\t\t\t\t\t\t\t\t<p><a
+        href=\"/publications/conference-paper\">Conference Papers</a></p>\r\n\t\t\t\t\t\t\t\t<p><a
+        href=\"/publications/book\">Books</a></p>\r\n                            </div>\r\n
+        \                       </div>\r\n                    </div>\r\n\t\t        </li>\r\n\t\t
+        \       <li>\r\n                    <a href=\"/topics\">\r\n                        Topics\r\n
+        \                       <span class=\"expander fa fa-plus\" id=\"main-menu-expander-topics\"
+        data-expander-name=\"topics\" data-expanded=\"false\">\r\n                            <span
+        class=\"element-invisible\">Expand or Collapse</span>\r\n                        </span>\r\n
+        \                   </a>\r\n                    <div style=\"display: none;\"
+        class=\"sub-menu\" data-expander-trigger=\"topics\">\r\n                        <div
+        class=\"row\">\r\n                            <div class=\"col-lg-4\">\r\n
+        \                               <p><a href=\"/Topics/Security-and-Privacy\">Security
+        &amp Privacy</a></p>\r\n                                <p><a href=\"/Topics/Applications\">Applications</a></p>\r\n
+        \                           </div>\r\n                            <div class=\"col-lg-4\">\r\n
+        \                               <p><a href=\"/Topics/Technologies\">Technologies</a></p>\r\n
+        \                               <p><a href=\"/Topics/Sectors\">Sectors</a></p>\r\n
+        \                           </div>\r\n                            <div class=\"col-lg-4\">\r\n
+        \                               <p><a href=\"/Topics/Laws-and-Regulations\">Laws
+        &amp; Regulations</a></p>\r\n                                <p><a href=\"/Topics/Activities-and-Products\">Activities
+        &amp; Products</a></p>\r\n                            </div>\r\n                        </div>\r\n
+        \                   </div>\r\n\t\t        </li>\r\n\t\t        <li><a href=\"/news\">News
+        &amp; Updates</a></li>\r\n\t\t        <li><a href=\"/events\">Events</a></li>\r\n
+        \               <li><a href=\"/glossary\">Glossary</a></li>\r\n\t\t        <li>\r\n
+        \                   <a href=\"/about\">\r\n                        About CSRC\r\n
+        \                       <span class=\"expander fa fa-plus\" id=\"main-menu-expander-about\"
+        data-expander-name=\"about\" data-expanded=\"false\">\r\n                            <span
+        class=\"element-invisible\">Expand or Collapse</span>\r\n                        </span>\r\n
+        \                   </a>\r\n                    <div style=\"display: none;\"
+        class=\"sub-menu\" data-expander-trigger=\"about\">\r\n                        <div
+        class=\"row\">\r\n                            <div class=\"col-lg-6\">\r\n
+        \                               <p>\r\n                                    <strong>Computer
+        Security Division</strong><br />\r\n                                    <ul>\r\n\t
+        \                                   <li><a href=\"/Groups/Computer-Security-Division/Cryptographic-Technology\">Cryptographic
+        Technology</a></li>\r\n\t                                    <li><a href=\"/Groups/Computer-Security-Division/Secure-Systems-and-Applications\">Secure
+        Systems and Applications</a></li>\r\n\t                                    <li><a
+        href=\"/Groups/Computer-Security-Division/Security-Components-and-Mechanisms\">Security
+        Components and Mechanisms</a></li>\r\n\t                                    <li><a
+        href=\"/Groups/Computer-Security-Division/Security-Engineering-and-Risk-Management\">Security
+        Engineering and Risk Management</a></li>\r\n\t                                    <li><a
+        href=\"/Groups/Computer-Security-Division/Security-Testing-Validation-and-Measurement\">Security
+        Testing, Validation, and Measurement</a></li>\r\n                                    </ul>\r\n
+        \                               </p>\r\n                            </div>\r\n
+        \                           <div class=\"col-lg-6\">\r\n                                <p>\r\n
+        \                                   <strong>Applied Cybersecurity Division</strong><br
+        />\r\n                                    <ul>\r\n\t                                    <li><a
+        href=\"/Groups/Applied-Cybersecurity-Division/Cybersecurity-and-Privacy-Applications\">Cybersecurity
+        and Privacy Applications</a></li>\r\n\t                                    <li><a
+        href=\"/Groups/Applied-Cybersecurity-Division/National-Cybersecurity-Center-of-Excellence\">National
+        Cybersecurity Center of Excellence (NCCoE)</a></li>\r\n\t                                    <li><a
+        href=\"https://www.nist.gov/nice/\">National Initiative for Cybersecurity
+        Education (NICE)</a></li>\r\n\t                                    <li><a
+        href=\"/Groups/Applied-Cybersecurity-Division/Trusted-Identities-Group\">Trusted
+        Identities Group</a></li>\r\n                                    </ul>\r\n
+        \                               </p>\r\n                                <p>\r\n
+        \                                   <a href=\"/contact\">\r\n                                        Contact
+        Us\r\n                                    </a>\r\n                                </p>\r\n
+        \                           </div>\r\n                        </div>\r\n                    </div>\r\n\t\t
+        \       </li>\r\n            </ul>\r\n        </div><!-- /#mobile-nav-container
+        -->\r\n    </div>\r\n  \r\n    </nav>\r\n    <section id=\"itl-header\" class=\"has-menu\">\r\n
+        \       <div class=\"container\">\r\n            <div class=\"row\">\r\n                <div
+        class=\"col-sm-12 col-md-8\">\r\n                    <h2 class=\"hidden-xs
+        hidden-sm\">\r\n                        <a href=\"https://www.nist.gov/itl\"
+        target=\"_blank\">Information Technology Laboratory</a>\r\n                    </h2>\r\n
+        \                   <h1 class=\"hidden-xs hidden-sm\">\r\n                        <a
+        href=\"/\" id=\"csrc-header-link\">Computer Security Resource Center</a>\r\n
+        \                   </h1>\r\n                    <h1 class=\"hidden-xs text-center
+        hidden-md hidden-lg\">Computer Security Resource Center</h1>\r\n                    <h1
+        class=\"hidden-sm hidden-md hidden-lg text-center\">Computer Security<br />Resource
+        Center</h1>\r\n                </div>\r\n                <div class=\"col-sm-12
+        col-md-4\">\r\n                    <a href=\"/\" style=\"width: 100%; text-align:
+        center; display: block;\"><img src=\"/CSRC/Media/images/CSRC-white-134-38.png\"
+        alt=\"CSRC Logo\" class=\"csrc-header-logo\"></a>\r\n                </div>\r\n
+        \           </div>\r\n        </div>\r\n    </section>\r\n\r\n    <div id=\"body-section\"
+        class=\"container\">\r\n\r\n\r\n  <div class=\"publications-detail\">\r\n
+        \   <ol class=\"breadcrumb\"><a href=\"/Publications\" class=\"CMSBreadCrumbsLink\">Publications</a>
+        <span class=\"fa fa-angle-right\"></span> <span  class=\"CMSBreadCrumbsCurrentItem\">Detail</span>\r\n</ol>
+        \r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n    <h3>\r\n        NISTIR 8011 Vol. 3\r\n
+        \       \r\n        \r\n    </h3>\r\n\r\n    <h1>Automation Support for Security
+        Control Assessments: Software Asset Management</h1>\r\n    \r\n    <div class=\"page-social-buttons\">\r\n
+        \       <a href=\"#\" class=\"social-facebook\"><i class=\"fa fa-facebook
+        fa-fw\" aria-hidden=\"true\"></i></a>\r\n        <a href=\"#\" class=\"social-google-plus\"><i
+        class=\"fa fa-google-plus\" aria-hidden=\"true\"></i></a>\r\n        <a href=\"#\"
+        class=\"social-twitter\"><i class=\"fa fa-twitter fa-fw\" aria-hidden=\"true\"></i></a>\r\n
+        \   </div>\r\n\r\n    <p class=\"hidden-lg hidden-md\">\r\n        &nbsp;&nbsp;&nbsp;\r\n
+        \       <a href=\"#pubs-documentation\" class=\"btn btn-lg btn-info\">Documentation</a>\r\n
+        \       \r\n        &nbsp;&nbsp;&nbsp;\r\n        <a href=\"#pubs-topics\"
+        class=\"btn btn-lg btn-info\">Topics</a>\r\n        \r\n    </p>\r\n\r\n    <div
+        class=\"row\">\r\n        <div  class=\"col-md-8 col-sm-12 publication-panel\">\r\n
+        \           \r\n                \r\n                \r\n            <p>\r\n\t\t\t\r\n
+        \           \r\n                <strong>Date Published:</strong> December
+        2018<br />\r\n            \r\n\r\n            \r\n\r\n            \r\n            \r\n
+        \           </p>\r\n            \r\n            \r\n\t\t\t\r\n\t\t\t\r\n            \r\n
+        \           \r\n            <p>\r\n            \r\n\r\n            \r\n            </p>\r\n\t\t\t\r\n
+        \           \r\n            <h4>Author(s)</h4>\r\n            <p><strong>Kelley
+        Dempsey (NIST), Nedim Goren (NIST), Paul Eavy (DHS), George Moore (APL)</strong></p>\r\n
+        \           \r\n\r\n\r\n            \r\n\r\n\r\n            \r\n\r\n\r\n            \r\n\r\n\r\n
+        \           <div class=\"bs-callout bs-callout-success pub-abstract-callout\">\r\n
+        \               <h4 id=\"pubs-abstract-header\">Abstract</h4>\r\n                <div
+        class=\"hidden-sm hidden-xs hidden-xxs\">\r\n                    <p>The NISTIR
+        8011 volumes each focus on an individual information security capability,
+        adding tangible detail to the more general overview given in NISTIR 8011 Volume
+        1, and providing a template for transition to a detailed, NIST guidance-based
+        automated assessment. This document, Volume 3 of NISTIR 8011, addresses the
+        Software Asset Management (SWAM) information security capability. The focus
+        of the SWAM capability is to manage risk created by unmanaged or unauthorized
+        software on a network. Unmanaged or unauthorized software is a target that
+        attackers can use as a platform from which to attack components on the network.</p>\r\n
+        \               </div>\r\n                <div class=\"hidden-lg hidden-md\">\r\n
+        \                   \r\n                    <div id=\"pub-detail-abstract-min\">\r\n
+        \                       The NISTIR 8011 volumes each focus on an individual
+        information security capability, adding tangible detail to the more general
+        overview given in NISTIR 8011 Volume 1, and providing a template for transition
+        to a detailed, NIST guidance-based automated assessment. This document, Volume
+        3 of...\r\n                        <a href=\"#pubs-abstract-header\" id=\"pub-detail-abs-show\">See
+        full abstract</a>\r\n                    </div>\r\n                    <div
+        id=\"pub-detail-abstract-all\" style=\"display: none;\">\r\n                        <p>The
+        NISTIR 8011 volumes each focus on an individual information security capability,
+        adding tangible detail to the more general overview given in NISTIR 8011 Volume
+        1, and providing a template for transition to a detailed, NIST guidance-based
+        automated assessment. This document, Volume 3 of NISTIR 8011, addresses the
+        Software Asset Management (SWAM) information security capability. The focus
+        of the SWAM capability is to manage risk created by unmanaged or unauthorized
+        software on a network. Unmanaged or unauthorized software is a target that
+        attackers can use as a platform from which to attack components on the network.</p><br
+        />\r\n                        <a href=\"#pubs-abstract-header\" id=\"pub-detail-abs-hide\">Hide
+        full abstract</a>\r\n                    </div>\r\n                    \r\n
+        \               </div>\r\n                <h4>Keywords</h4> actual state;
+        assessment; authorization boundary; automation; capability; continuous diagnostics
+        and mitigation; dashboard; defect; desired state specification; firmware;
+        information security continuous monitoring; ISCM; inventory management; malicious
+        code; malware; mitigation; mobile code; ongoing assessment; root cause analysis;
+        security capability; security control; security control item; software; software
+        asset management; software file; SWID tag; whitelisting\r\n            </div>\r\n
+        \           \r\n            <h5>Control Families</h5>\r\n            <p>\r\n
+        \               \r\n                \r\n                    Security Assessment
+        and Authorization; \r\n                \r\n                    Risk Assessment;
+        \r\n                \r\n                \r\n            </p>\r\n\r\n        </div>\r\n
+        \       <div class=\"col-md-4 col-sm-12\">\r\n\r\n            <div class=\"bs-callout
+        bs-callout-success\" id=\"pubs-documentation\">\r\n                <h4>Documentation</h4>\r\n\r\n
+        \               <p>\r\n                    <strong>Publication:</strong><br
+        />\r\n                    <a href=\"https://doi.org/10.6028/NIST.IR.8011-3\"
+        data-identity=\"first-link-display\"><i class='fa fa-external-link' aria-hidden='true'></i>
+        \ NISTIR 8011 Vol. 3 (DOI)</a><br />\r\n                    <a href=\"http://nvlpubs.nist.gov/nistpubs/ir/2018/NIST.IR.8011-3.pdf\"
+        data-identity=\"second-link-display\"><i class=\"fa fa-file-pdf-o\"></i> Local
+        Download</a><br />\r\n                </p>\r\n\r\n                <p>\r\n
+        \                   <strong>Supplemental Material:</strong><br />\r\n                    \r\n\t\t\t\t\t\tNone
+        available<br />\r\n                    \r\n                </p>\r\n                \r\n
+        \               \r\n                <p>\r\n                    <strong>Other
+        Parts of this Publication:</strong><br />\r\n                    \r\n                        <a
+        href=\"/publications/detail/nistir/8011/vol-1/final\">NISTIR 8011 Vol. 1</a><br
+        />\r\n                    \r\n                        <a href=\"/publications/detail/nistir/8011/vol-2/final\">NISTIR
+        8011 Vol. 2</a><br />\r\n                    \r\n                </p>\r\n
+        \               \r\n                \r\n                \r\n                <p>\r\n
+        \                   <strong>Related NIST Publications:</strong><br />\r\n
+        \                   \r\n                        <a href=\"/publications/detail/sp/800-53a/rev-4/final\">SP
+        800-53A Rev. 4</a><br />\r\n                    \r\n                        <a
+        href=\"/publications/detail/sp/800-53/rev-4/final\">SP 800-53 Rev. 4</a><br
+        />\r\n                    \r\n                </p>\r\n                \r\n\r\n
+        \               \r\n                <p>\r\n                    <strong>Document
+        History:</strong><br />\r\n                    <a href='/publications/detail/nistir/8011/vol-3/draft'>Draft
+        NISTIR  8011 Vol. 3 (4/5/18)</a><br/>NISTIR  8011 Vol. 3 (12/6/18)<br/>\r\n
+        \               </p>\r\n                \r\n\r\n            </div>\r\n\r\n
+        \           \r\n            \r\n            <div class=\"bs-callout bs-callout-danger\"
+        id=\"pubs-topics\">\r\n                <h4>Topics</h4>\r\n                \r\n
+        \                   <p>\r\n                        <strong>Security and Privacy</strong><br
+        /><a href='/Topics/Security-and-Privacy/security-programs-and-operations/asset-management'>asset
+        management</a>; <a href='/Topics/Security-and-Privacy/security-measurement/assurance'>assurance</a>;
+        <a href='/Topics/Security-and-Privacy/risk-management/continuous-monitoring'>continuous
+        monitoring</a>; <a href='/Topics/Security-and-Privacy/risk-management/controls/controls-assessment'>controls
+        assessment</a>; <a href='/Topics/Security-and-Privacy/risk-management/risk-assessment'>risk
+        assessment</a>; <a href='/Topics/Security-and-Privacy/security-programs-and-operations/security-automation'>security
+        automation</a>; <a href='/Topics/Security-and-Privacy/risk-management/controls/security-controls'>security
+        controls</a>; <a href='/Topics/Security-and-Privacy/risk-management/system-authorization'>system
+        authorization</a>; <a href='/Topics/Security-and-Privacy/security-measurement/testing-and-validation'>testing
+        & validation</a></p>\r\n                    </p>\r\n                \r\n                    <p>\r\n
+        \                       <strong>Technologies</strong><br /><a href='/Topics/Technologies/software'>software</a></p>\r\n
+        \                   </p>\r\n                \r\n                    <p>\r\n
+        \                       <strong>Laws and Regulations</strong><br /><a href='/Topics/Laws-and-Regulations/laws/E-Gov-Act'>E-Government
+        Act</a>; <a href='/Topics/Laws-and-Regulations/laws/FISMA'>Federal Information
+        Security Modernization Act</a>; <a href='/Topics/Laws-and-Regulations/executive-documents/OMB-A-130'>OMB
+        Circular A-130</a></p>\r\n                    </p>\r\n                \r\n
+        \           </div>\r\n            \r\n\r\n        </div>\r\n    </div>\r\n\r\n
+        \ </div>\r\n<script type=\"text/javascript\" src=\"/CSRC/media/js/publications.js\"></script>\r\n
+        \ \r\n      <div id=\"footer-pusher\"></div>\r\n  \r\n    </div>\r\n    \r\n<footer
+        id=\"footer\" >\r\n    <div class=\"container\">\r\n\r\n        <div class=\"row\">\r\n
+        \           <div class=\"col-sm-6\">\r\n                <span class=\"hidden-xs\">\r\n
+        \                   <a href=\"https://www.nist.gov\" title=\"National Institute
+        of Standards and Technology\" rel=\"home\" target=\"_blank\" class=\"footer-nist-logo\">\r\n
+        \                       <img src=\"/CSRC/Media/images/logo_rev.png\" alt=\"National
+        Institute of Standards and Technology logo\"/>\r\n                    </a>\r\n
+        \               </span>\r\n\r\n\t\t\t\t<div class=\"row footer-contact-container\">\r\n\t\t\t\t\t<div
+        class=\"col-sm-12\">\r\n\t\t\t\t\t\t<strong>HEADQUARTERS</strong><br>\r\n\t\t\t\t\t\t100
+        Bureau Drive<br>\r\n\t\t\t\t\t\tGaithersburg, MD 20899\r\n\t\t\t\t\t</div>\r\n\t\t\t\t</div>\r\n
+        \           </div>\r\n            <div class=\"col-sm-6\">\r\n\t\t\t\t<ul
+        class=\"social-list text-right\" style=\"display: block;\">\r\n\t\t\t\t\t<li
+        class=\"field-item service-twitter list-horiz\">\r\n\t\t\t\t\t\t<a href=\"https://twitter.com/USNISTGOV\"
+        target=\"_blank\" class=\"social-btn social-btn--large extlink ext\">\r\n\t\t\t\t\t\t<i
+        class=\"fa fa-twitter fa-fw\"><span class=\"element-invisible\">twitter</span></i><span
+        class=\"ext\"><span class=\"element-invisible\"> (link is external)</span></span>\r\n\t\t\t\t\t</a>\r\n\t\t\t\t\t</li>\r\n\t\t\t\t\t<li
+        class=\"field-item service-facebook list-horiz\"><a href=\"https://www.facebook.com/USNISTGOV\"
+        target=\"_blank\" class=\"social-btn social-btn--large extlink ext\">\r\n\t\t\t\t\t\t<i
+        class=\"fa fa-facebook fa-fw\"><span class=\"element-invisible\">facebook</span></i><span
+        class=\"ext\"><span class=\"element-invisible\"> (link is external)</span></span></a>\r\n\r\n\t\t\t\t\t</li>\r\n\t\t\t\t\t<li
+        class=\"field-item service-linkedin list-horiz\"><a href=\"https://www.linkedin.com/company/nist\"
+        target=\"_blank\" class=\"social-btn social-btn--large extlink ext\">\r\n\t\t\t\t\t\t<i
+        class=\"fa fa-linkedin fa-fw\"><span class=\"element-invisible\">linkedin</span></i><span
+        class=\"ext\"><span class=\"element-invisible\"> (link is external)</span></span></a>\r\n\r\n\t\t\t\t\t</li>\r\n\t\t\t\t\t<li
+        class=\"field-item service-youtube list-horiz\"><a href=\"https://www.youtube.com/user/USNISTGOV\"
+        target=\"_blank\" class=\"social-btn social-btn--large extlink ext\">\r\n\t\t\t\t\t\t<i
+        class=\"fa fa-youtube fa-fw\"><span class=\"element-invisible\">youtube</span></i><span
+        class=\"ext\"><span class=\"element-invisible\"> (link is external)</span></span></a>\r\n\r\n\t\t\t\t\t</li>\r\n\t\t\t\t\t<li
+        class=\"field-item service-rss list-horiz\"><a href=\"https://www.nist.gov/news-events/nist-rss-feeds\"
+        target=\"_blank\" class=\"social-btn social-btn--large extlink\">\r\n\t\t\t\t\t\t<i
+        class=\"fa fa-rss fa-fw\"><span class=\"element-invisible\">rss</span></i></a>\r\n\r\n\t\t\t\t\t</li>\r\n\t\t\t\t\t<li
+        class=\"field-item service-govdelivery list-horiz last\">\r\n\t\t\t\t\t\t<a
+        href=\"https://public.govdelivery.com/accounts/USNIST/subscriber/new?qsp=USNIST_3\"
+        target=\"_blank\" class=\"social-btn social-btn--large extlink ext\" title=\"Subscribe
+        to CSRC and publication updates, and other NIST cybersecurity news\">\r\n\t\t\t\t\t\t\t<i
+        class=\"fa fa-envelope fa-fw\"><span class=\"element-invisible\">govdelivery</span></i><span
+        class=\"ext\"><span class=\"element-invisible\"> (link is external)</span></span>\r\n\t\t\t\t\t\t</a>\r\n\t\t\t\t\t</li>\r\n\t\t\t\t</ul>\r\n\t\t\t\t<p
+        class=\"text-right\">\r\n\t\t\t\t\tWant updates about CSRC and our publications?
+        \r\n\t\t\t\t\t<a href=\"https://public.govdelivery.com/accounts/USNIST/subscriber/new?qsp=USNIST_3\"
+        target=\"_blank\" class=\"btn btn-lg btn-info\" style=\"background-color:
+        #12659c!important; border-color: #12659c!important;\">Subscribe</a>\r\n\t\t\t\t</p>\r\n\t\t\t</div>\r\n
+        \       </div>\r\n        <div class=\"row hidden-sm hidden-md hidden-lg\">\r\n
+        \           <div class=\"col-sm-12\">\r\n                    <a href=\"https://www.nist.gov\"
+        title=\"National Institute of Standards and Technology\" rel=\"home\" target=\"_blank\"
+        class=\"footer-nist-logo\">\r\n                        <img src=\"/CSRC/Media/images/logo_rev.png\"
+        alt=\"National Institute of Standards and Technology logo\"/>\r\n                    </a>\r\n
+        \           </div>\r\n        </div>\r\n\r\n        <div class=\"row\">\r\n
+        \           <div class=\"col-sm-12\">\r\n                <p>\r\n                    <a
+        href=\"mailto:webmaster-csrc@nist.gov?subject=CSRC Inquiry\">Webmaster</a>
+        | \r\n                    <a href=\"/about/contact\">Contact Us</a> |\r\n
+        \                   <a href=\"https://www.nist.gov/about-nist/our-organization\"
+        style=\"display: inline-block;\">Our Other Offices</a>\r\n                </p>\r\n
+        \           </div>\r\n        </div>\r\n\r\n        <div id=\"footer-nav-menu\"
+        class=\"row\" role=\"navigation\">\r\n            <div class=\"col-md-8 col-sm-6
+        col-xs-12 col-xxs-12\">\r\n                <div class=\"row\">\r\n                    <div
+        class=\"col-md-4\">\r\n                        <p>\r\n                            <a
+        href=\"/projects\">PROJECTS</a>\r\n                        </p>\r\n                        <p>\r\n
+        \                           <a href=\"/publications\">PUBLICATIONS</a><br/>\r\n\t\t\t\t\t\t\t<a
+        href=\"/publications/draft-pubs\">Draft Pubs</a><br/>\r\n\t\t\t\t\t\t\t<a
+        href=\"/publications/final-pubs\">Final Pubs</a><br/>\r\n\t\t\t\t\t\t\t<a
+        href=\"/publications/fips\">FIPS</a><br/>\r\n\t\t\t\t\t\t\t<a href=\"/publications/sp\">Special
+        Publications (SPs)</a><br/>\r\n\t\t\t\t\t\t\t<a href=\"/publications/nistir\">NISTIRs</a><br/>\r\n\t\t\t\t\t\t\t<a
+        href=\"/publications/itl-bulletin\">ITL Bulletins</a><br/>\r\n\t\t\t\t\t\t\t<a
+        href=\"/publications/white-paper\">White Papers</a><br/>\r\n\t\t\t\t\t\t\t<a
+        href=\"/publications/journal-article\">Journal Articles</a><br/>\r\n\t\t\t\t\t\t\t<a
+        href=\"/publications/conference-paper\">Conference Papers</a><br/>\r\n\t\t\t\t\t\t\t<a
+        href=\"/publications/book\">Books</a>\r\n                        </p>\r\n
+        \                   </div>\r\n                    <div class=\"col-md-4\">\r\n
+        \                       <p>\r\n                            <a href=\"/topics\">TOPICS</a><br/>\r\n
+        \                           <a href=\"/Topics/Security-and-Privacy\">Security
+        &amp; Privacy</a><br/>\r\n                            <a href=\"/Topics/Applications\">Applications</a><br/>\r\n
+        \                           <a href=\"/Topics/Technologies\">Technologies</a><br/>\r\n
+        \                           <a href=\"/Topics/Sectors\">Sectors</a><br/>\r\n
+        \                           <a href=\"/Topics/Laws-and-Regulations\">Laws
+        &amp; Regulations</a><br/>\r\n                            <a href=\"/Topics/Activities-and-Products\">Activities
+        &amp; Products</a>\r\n                        </p>\r\n                        <p>\r\n
+        \                           <a href=\"/news\">NEWS &amp; UPDATES</a>\r\n                        </p>\r\n
+        \                       <p>\r\n                            <a href=\"/events\">EVENTS</a>\r\n
+        \                       </p>\r\n                        <p>\r\n                            <a
+        href=\"/glossary\">GLOSSARY</a>\r\n                        </p>\r\n                    </div>\r\n
+        \                   <div class=\"col-md-4\">\r\n                        <p>\r\n
+        \                           <a href=\"/about\">ABOUT CSRC</a><br/>\r\n                            <a
+        href=\"/about\">Computer Security Division</a><br/>\r\n                            <a
+        href=\"/about\">Applied Cybersecurity Division</a><br/>\r\n                            <a
+        href=\"/contact\">Contact Us</a>\r\n                        </p>\r\n                    </div>\r\n
+        \               </div>\r\n             </div>\r\n            <div class=\"col-md-4
+        col-sm-6 col-xs-12 col-xxs-12\">\r\n                    <span class=\"pull-right
+        text-right\">\r\n                        <p><strong>Information Technology
+        Laboratory<span class=\"hidden-xs\"> (ITL)</span></strong></p>\r\n                        <strong>Computer
+        Security Division<span class=\"hidden-xs\"> (CSD)</span></strong><br/>\r\n
+        \                       TEL: 301.975.8443<br/>\r\n                        <strong>Applied
+        Cybersecurity Division<span class=\"hidden-xs\"> (ACD)</span></strong>\r\n
+        \                       <br /><br /><br />\r\n                        Contact
+        CSRC Webmaster: <a href=\"mailto:webmaster-csrc@nist.gov?subject=CSRC Inquiry\"
+        style=\"display: inline-block;\">webmaster-csrc@nist.gov</a>\r\n                    </span>\r\n
+        \           </div>\r\n        </div>\r\n\r\n        <div class=\"row\">\r\n
+        \           <div class=\"col-lg-12 footer-bottom-links-container\">\r\n                <p>\r\n
+        \                   <a target=\"_blank\" href=\"https://www.nist.gov/privacy-policy\">Privacy
+        Statement</a> |\r\n                    <a target=\"_blank\" href=\"https://www.nist.gov/privacy-policy#privpolicy\">Privacy
+        Policy</a> |\r\n                    <a target=\"_blank\" href=\"https://www.nist.gov/privacy-policy#secnot\">Security
+        Notice</a> |\r\n                    <a target=\"_blank\" href=\"https://www.nist.gov/privacy-policy#accesstate\">Accessibility
+        Statement</a> |\r\n                    <a target=\"_blank\" href=\"https://www.nist.gov/privacy\">NIST
+        Privacy Program</a> |\r\n                    <a target=\"_blank\" href=\"https://www.nist.gov/no-fear-act-policy\">No
+        Fear Act Policy</a>\r\n                </p>\r\n                <p>\r\n                    <a
+        target=\"_blank\" href=\"https://www.nist.gov/disclaimer\">Disclaimer</a>
+        |\r\n                    <a target=\"_blank\" href=\"https://www.nist.gov/office-director/freedom-information-act\">FOIA</a>
+        |\r\n                    <a target=\"_blank\" href=\"https://www.nist.gov/environmental-policy-statement\">Environmental
+        Policy Statement</a> |\r\n                    <a target=\"_blank\" href=\"https://www.nist.gov/privacy-policy#cookie\">Cookie
+        Disclaimer</a> |\r\n                    <a target=\"_blank\" href=\"https://www.nist.gov/summary-report-scientific-integrity\">Scientific
+        Integrity Summary</a> |\r\n                    <a target=\"_blank\" href=\"https://www.nist.gov/nist-information-quality-standards\">NIST
+        Information Quality Standards</a>\r\n                </p>\r\n                <p>\r\n
+        \                   <a target=\"_blank\" href=\"https://www.usa.gov/business\">Business
+        USA</a> |\r\n                    <a target=\"_blank\" href=\"https://www.commerce.gov/\">Commerce.gov</a>
+        |\r\n                    <a target=\"_blank\" href=\"https://www.healthcare.gov/\">Healthcare.gov</a>
+        |\r\n                    <a target=\"_blank\" href=\"http://www.science.gov/\">Science.gov</a>
+        |\r\n                    <a target=\"_blank\" href=\"http://www.usa.gov/\">USA.gov</a>\r\n
+        \               </p>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</footer>\r\n\r\n<script
+        type=\"text/javascript\">\r\n     (function() {\r\n       document.getElementsByTagName('html')[0].setAttribute('lang',
+        'en');\r\n       document.getElementsByTagName('html')[0].setAttribute('xml:lang',
+        'en')\r\n   })(); \r\n</script>\r\n\r\n    \r\n    </form>\r\n</body>\r\n</html>\r\n"
+    http_version: 
+  recorded_at: Wed, 06 Feb 2019 18:39:30 GMT
+recorded_with: VCR 4.0.0

@@ -6,6 +6,8 @@ end
 require "bundler/setup"
 require "nistbib"
 require "vcr"
+require 'rspec/matchers'
+require 'equivalent-xml'
 
 VCR.configure do |conf|
   conf.cassette_library_dir = "spec/vcr_cassettes"

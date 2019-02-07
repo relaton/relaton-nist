@@ -12,7 +12,7 @@ module Relaton
       end
 
       def get(code, date, opts)
-        ::Nistbib::IsoBibliography.get(code, date, opts)
+        ::Nistbib::NistBibliography.get(code, date, opts)
       end
 
       def from_xml(xml)

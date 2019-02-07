@@ -27,10 +27,11 @@ module NistBib
       @year = year
       from, to = nil
       if year
-        from = Date.strptime year, '%Y'
-        to   = from.next_year.prev_day
+        d = Date.strptime year, '%Y'
+        from = d.strftime '%m/%d/%Y'
+        to   = d.next_year.prev_day.strftime '%m/%d/%Y'
       end
-      url  = "#{DOMAIN}/publications/search?keywords-lg=#{ref_nbr}&dateFrom-lg=#{from}&dateTo-lg=#{to}&status-lg=Draft,Final"
+      url  = "#{DOMAIN}/publications/search?keywords-lg=#{ref_nbr}&dateFrom-lg=#{from}&dateTo-lg=#{to}"
       doc  = Nokogiri::HTML OpenURI.open_uri(::Addressable::URI.parse(url).normalize)
       hits = doc.css('table.publications-table > tbody > tr').map do |h|
         link  = h.at('td/div/strong/a')

@@ -35,7 +35,7 @@ class WorkersPool
     @num_workers.times { @queue << :END }
   end
 
-  def size
-    @result.size
-  end
+  # def size
+  #   @result.size
+  # end
 end

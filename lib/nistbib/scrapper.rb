@@ -3,12 +3,7 @@ require 'iso_bib_item'
 module NistBib
   module Scrapper
     class << self
-      def get(text)
-        url = "https://www.nist.gov/publications/search?field_report_number_value=#{text}"
-        html = Net::HTTP.get URI(url)
-        doc = Nokogiri::HTML html
-        doc
-      end
+      DOMAIN = 'https://csrc.nist.gov'
 
       # Parse page.
       # @param hit_data [Hash]
@@ -38,27 +33,14 @@ module NistBib
 
       private
 
-      # rubocop:disable Metrics/AbcSize, Metrics/MethodLength
       # Get page.
       # @param path [String] page's path
       # @return [Array<Nokogiri::HTML::Document, String>]
       def get_page(url)
         uri = URI url
         resp = Net::HTTP.get_response(uri)#.encode("UTF-8")
-        if resp.code == '301'
-          path = resp['location']
-          url = DOMAIN + path
-          uri = URI url
-          resp = Net::HTTP.get_response(uri)#.encode("UTF-8")
-        end
-        # n = 0
-        # while resp.body !~ /<strong/ && n < 10
-        #   resp = Net::HTTP.get_response(uri)#.encode("UTF-8")
-        #   n += 1
-        # end
         Nokogiri::HTML(resp.body)
       end
-      # rubocop:enable Metrics/AbcSize, Metrics/MethodLength
 
       # Fetch docid.
       # @param doc [Nokogiri::HTML::Document]
@@ -68,11 +50,11 @@ module NistBib
         unless item_ref
           return { project_number: '?', part_number: '', prefix: nil, type: 'NIST', id: '?' }
         end
-        m = item_ref.match(/(?<=\s)(?<project>\d+)-?(?<part>(?<=-)\d+|)-?(?<subpart>(?<=-)\d+|)/)
+        m = item_ref.match(/(?<=\s)(?<project>[\d-]+)(?<vol>\sVol\.\s)?(?<part>(?(<vol>)\d+|))/)
         {
           project_number: m[:project],
           part_number: m[:part],
-          subpart_number: m[:subpart],
+          subpart_number: nil,
           prefix: nil,
           type: 'NIST',
           id: item_ref
@@ -88,12 +70,12 @@ module NistBib
         return { status: 'withdrawn', stage: '95', substage: '99' } if withdrawn
 
         item_ref = doc.at("//div[contains(@class, 'publications-detail')]/h3").text.strip
-        wip = item_ref.match(/(?<=\()\w+/)
+        wip = item_ref.match(/(?<=\()\w+/).to_s
         case wip
         when 'DRAFT'
           { status: 'working-draft', stage: '20', substage: '20' }
-        when 'RETIRED DRAFT'
-          { status: 'committee-draft', stage: '30', substage: '00' }
+        # when 'RETIRED DRAFT'
+        #   { status: 'committee-draft', stage: '30', substage: '00' }
         else
           { status: 'published', stage: '60', substage: '60' }
         end
@@ -104,22 +86,22 @@ module NistBib
       # @return [Array<Hash>]
       def fetch_titles(hit_data)
         titles = hit_data[:title].split ' - '
-        case titles.size
-        when 0
-          intro, main, part = nil, "", nil
-        when 1
+        # case titles.size
+        # when 0
+        #   intro, main, part = nil, "", nil
+        # when 1
           intro, main, part = nil, titles[0], nil
-        when 2
-          if /^(Part|Partie) \d+:/ =~ titles[1]
-            intro, main, part = nil, titles[0], titles[1]
-          else
-            intro, main, part = titles[0], titles[1], nil
-          end
-        when 3
-          intro, main, part = titles[0], titles[1], titles[2]
-        else
-          intro, main, part = titles[0], titles[1], titles[2..-1]&.join(" -- ")
-        end
+        # when 2
+        #   if /^(Part|Partie) \d+:/ =~ titles[1]
+        #     intro, main, part = nil, titles[0], titles[1]
+        #   else
+        #     intro, main, part = titles[0], titles[1], nil
+        #   end
+        # when 3
+        #   intro, main, part = titles[0], titles[1], titles[2]
+        # else
+        #   intro, main, part = titles[0], titles[1], titles[2..-1]&.join(" -- ")
+        # end
         [{
           title_intro: intro,
           title_main:  main,
@@ -187,17 +169,15 @@ module NistBib
       # @return [Array<Hash>]
       # rubocop:disable Metrics/MethodLength
       def fetch_relations(doc)
-        doc.xpath('//ROW[STATUS[.!="PREPARING"]][STATUS[.!="PUBLISHED"]]').map do |r|
-          r_type = r.at('STATUS').text.downcase
-          type = case r_type
-                #  when 'published' then 'obsoletes' # Valid
-                 when 'revised', 'replaced' then 'updates'
-                 when 'withdrawn' then 'obsoletes'
-                 else r_type
-                 end
-          url = DOMAIN + '/publication/' + r.at('PUB_ID').text
-          { type: type, identifier: r.at('FULL_NAME').text, url: url }
+        relations = doc.xpath('//strong[text()="Other Parts of this Publication:"]/following-sibling::a').map do |r|
+          { type: 'partOf', identifier: r.text, url: DOMAIN + r[:href] }
         end
+
+        doc.xpath('//strong[text()="Related NIST Publications:"]/following-sibling::a').map do |r|
+          relations << { type: 'updates', identifier: r.text, url: DOMAIN + r[:href] }
+        end
+
+        relations
       end
     end
   end
