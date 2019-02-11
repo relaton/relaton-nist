@@ -1,7 +1,7 @@
 require "relaton/processor"
 
 module Relaton
-  module Isobib
+  module NistBib
     class Processor < Relaton::Processor
 
       def initialize
