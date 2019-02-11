@@ -4,9 +4,9 @@ image:https://img.shields.io/gem/v/nistbib.svg["Gem Version", link="https://ruby
 
 Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/nistbib`. To experiment with that code, run `bin/console` for an interactive prompt.
 
-Iecbib is a Ruby gem that implements the https://github.com/riboseinc/isodoc-models#iso-bibliographic-item[IsoBibliographicItem model].
+NistBib is a Ruby gem that implements the https://github.com/riboseinc/isodoc-models#iso-bibliographic-item[IsoBibliographicItem model].
 
-You can use it to retrieve metadata of IEC Standards from https://www.iec.ch, and access such metadata through the `IsoBibliographicItem` object.
+You can use it to retrieve metadata of NIST Standards from https://csrc.nist.gov, and access such metadata through the `IsoBibliographicItem` object.
 
 == Installation
 
