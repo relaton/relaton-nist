@@ -11,7 +11,7 @@ Gem::Specification.new do |spec|
 
   spec.summary       = %q{NistBib: retrive NIST standards.}
   spec.description   = %q{NistBib: retrive NIST standards.}
-  spec.homepage      = "https://github.com/riboseinc/nistbib"
+  spec.homepage      = "https://github.com/metanorma/nistbib"
   spec.license       = "MIT"
 
   # Specify which files should be added to the gem when it is released.

@@ -2,9 +2,7 @@
 
 image:https://img.shields.io/gem/v/nistbib.svg["Gem Version", link="https://rubygems.org/gems/nistbib"]
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/nistbib`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-NistBib is a Ruby gem that implements the https://github.com/riboseinc/isodoc-models#iso-bibliographic-item[IsoBibliographicItem model].
+NistBib is a Ruby gem that implements the https://github.com/metanorma/metanorma-model-iso#iso-bibliographic-item[IsoBibliographicItem model].
 
 You can use it to retrieve metadata of NIST Standards from https://csrc.nist.gov, and access such metadata through the `IsoBibliographicItem` object.
 
@@ -72,7 +70,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 == Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/riboseinc/nistbib.
+Bug reports and pull requests are welcome on GitHub at https://github.com/metanorma/nistbib.
 
 == License
 
