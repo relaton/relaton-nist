@@ -1,6 +1,10 @@
 = NistBib: retrieve NIST Standards for bibliographic use using the BibliographicItem model
 
 image:https://img.shields.io/gem/v/nistbib.svg["Gem Version", link="https://rubygems.org/gems/nistbib"]
+image:https://img.shields.io/travis/metanorma/nistbib/master.svg["Build Status", link="https://travis-ci.com/metanorma/nistbib"]
+image:https://ci.appveyor.com/api/projects/status/vk85u3df4f3kertr?svg=true["Appveyor Build Status", link="https://ci.appveyor.com/project/ribose/nistbib"]
+image:https://codeclimate.com/github/metanorma/nistbib/badges/gpa.svg["Code Climate", link="https://codeclimate.com/github/metanorma/nistbib"]
+
 
 NistBib is a Ruby gem that implements the https://github.com/metanorma/metanorma-model-iso#iso-bibliographic-item[IsoBibliographicItem model].
 
