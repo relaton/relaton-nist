@@ -50,6 +50,13 @@ RSpec.describe NistBib do
     end
   end
 
+  it 'get a reference with an year in a code' do
+    VCR.use_cassette '8200_2017' do
+      result = NistBib::NistBibliography.get('NISTIR 8200:2018').to_xml
+      expect(result).to include '<on>2018</on>'
+    end
+  end
+
   it 'get DRAFT' do
     VCR.use_cassette 'draft' do
       result = NistBib::NistBibliography.get('800-189', nil, {}).to_xml

@@ -32,6 +32,8 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'simplecov'
   spec.add_development_dependency 'vcr'
   spec.add_development_dependency 'webmock'
+  spec.add_development_dependency 'ruby-debug-ide'
+  spec.add_development_dependency 'debase'
 
   spec.add_dependency 'iso-bib-item', '~> 0.4.2'
 end
