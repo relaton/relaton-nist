@@ -79,9 +79,7 @@ RSpec.describe NistBib do
     VCR.use_cassette '8200_wrong_year' do
       expect { NistBib::NistBibliography.get('8200', '2017', {}) }.to output(
         "fetching 8200...\nWARNING: no match found online for 8200:2017. "\
-        "The code must be exactly like it is on the standards website.\n"\
-        "If you wanted to cite all document parts for the reference, use \"8200 (all parts)\".\n"\
-        "If the document is not a standard, use its document type abbreviation (TS, TR, PAS, Guide).\n"
+        "The code must be exactly like it is on the standards website.\n"
       ).to_stderr
     end
   end
@@ -90,9 +88,7 @@ RSpec.describe NistBib do
     VCR.use_cassette 'failed' do
       expect { NistBib::NistBibliography.get('2222', nil, {}) }.to output(
         "fetching 2222...\n"\
-        "WARNING: no match found online for 2222. The code must be exactly like it is on the standards website.\n"\
-        "If you wanted to cite all document parts for the reference, use \"2222 (all parts)\".\n"\
-        "If the document is not a standard, use its document type abbreviation (TS, TR, PAS, Guide).\n"
+        "WARNING: no match found online for 2222. The code must be exactly like it is on the standards website.\n"
       ).to_stderr
     end
   end
