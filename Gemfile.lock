@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    nistbib (0.1.0)
+    nistbib (0.1.1)
       iso-bib-item (~> 0.4.2)
 
 GEM

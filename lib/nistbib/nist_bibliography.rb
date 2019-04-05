@@ -93,10 +93,6 @@ module NistBib
         if /\d-\d/ =~ code
           warn "The provided document part may not exist, or the document "\
             "may no longer be published in parts."
-        else
-          warn "If you wanted to cite all document parts for the reference, "\
-            "use \"#{code} (all parts)\".\nIf the document is not a standard, "\
-            "use its document type abbreviation (TS, TR, PAS, Guide)."
         end
         nil
       end

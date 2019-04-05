@@ -7,7 +7,7 @@ module Relaton
       def initialize
         @short = :nistbib
         @prefix = "NIST"
-        @defaultprefix = %r{^(NIST)[ /]}
+        @defaultprefix = %r{^(NIST|NISTGCR|ITL Bulletin|JPCRD|NISTIR|CSRC)[ /]}
         @idtype = "NIST"
       end
 
