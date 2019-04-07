@@ -1,7 +1,16 @@
----
-sudo: false
 language: ruby
 cache: bundler
+os:
+- linux
+- osx
 rvm:
-  - 2.4.0
-before_install: gem install bundler -v 2.0.1
+- 2.5
+- 2.4
+- ruby-head
+before_install:
+- gem install bundler -v 2.0.1
+- bundle update
+matrix:
+  allow_failures:
+    - rvm: ruby-head
+
