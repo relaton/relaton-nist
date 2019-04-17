@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    nistbib (0.1.1)
+    nistbib (0.1.2)
       iso-bib-item (~> 0.4.2)
 
 GEM
@@ -21,7 +21,7 @@ GEM
     equivalent-xml (0.6.0)
       nokogiri (>= 1.4.3)
     hashdiff (0.3.8)
-    iso-bib-item (0.4.4)
+    iso-bib-item (0.4.5)
       isoics (~> 0.1.6)
       nokogiri (~> 1.8.4)
       ruby_deep_clone (~> 0.8.0)
