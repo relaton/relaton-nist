@@ -35,5 +35,6 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'ruby-debug-ide'
   spec.add_development_dependency 'debase'
 
+  spec.add_dependency "nokogiri", "~> 1.8.4"
   spec.add_dependency "relaton-bib", "~> 0.1.0"
 end
