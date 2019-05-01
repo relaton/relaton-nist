@@ -1,9 +1,9 @@
-require 'iso_bib_item'
+require "relaton_bib"
 
 module NistBib
-  module Scrapper
+  class Scrapper
     class << self
-      DOMAIN = 'https://csrc.nist.gov'
+      DOMAIN = "https://csrc.nist.gov".freeze
 
       # Parse page.
       # @param hit_data [Hash]
@@ -12,22 +12,25 @@ module NistBib
       def parse_page(hit_data)
         doc = get_page hit_data[:url]
 
-        IsoBibItem::IsoBibliographicItem.new(
-          docid:        fetch_docid(doc),
-          edition:      nil,
-          language:     ['en'],
-          script:       ['Latn'],
-          titles:       fetch_titles(hit_data),
+        NistBibliographicItem.new(
+          fetched:      Date.today.to_s,
           type:         nil,
-          docstatus:    fetch_status(doc),
-          ics:          [],
+          titles:       fetch_titles(hit_data),
+          link:         fetch_link(doc),
+          docid:        fetch_docid(doc),
           dates:        fetch_dates(doc),
-          contributors: fetch_contributors,
-          workgroup:    nil,
+          contributors: fetch_contributors(doc),
+          edition:      nil,
+          language:     ["en"],
+          script:       ["Latn"],
           abstract:     fetch_abstract(doc),
+          docstatus:    fetch_status(doc),
           copyright:    fetch_copyright(doc),
-          link:         fetch_link(doc, hit_data[:url]),
-          relations:    fetch_relations(doc)
+          relations:    fetch_relations(doc),
+          nistseries:   fetch_nistseries(doc),
+          # ics:          [],
+          # workgroup:    nil,
+          # id:           fetch_id(doc),
         )
       end
 
@@ -38,7 +41,7 @@ module NistBib
       # @return [Array<Nokogiri::HTML::Document, String>]
       def get_page(url)
         uri = URI url
-        resp = Net::HTTP.get_response(uri)#.encode("UTF-8")
+        resp = Net::HTTP.get_response(uri) # .encode("UTF-8")
         Nokogiri::HTML(resp.body)
       end
 
@@ -46,69 +49,50 @@ module NistBib
       # @param doc [Nokogiri::HTML::Document]
       # @return [Hash]
       def fetch_docid(doc)
-        item_ref = doc.at("//div[contains(@class, 'publications-detail')]/h3").text.strip
-        unless item_ref
-          return { project_number: '?', part_number: '', prefix: nil, type: 'NIST', id: '?' }
-        end
-        m = item_ref.match(/(?<=\s)(?<project>[\d-]+)(?<vol>\sVol\.\s)?(?<part>(?(<vol>)\d+|))/)
-        {
-          project_number: m[:project],
-          part_number: m[:part],
-          subpart_number: nil,
-          prefix: nil,
-          type: 'NIST',
-          id: item_ref
-        }
+        item_ref = doc.at("//div[contains(@class, 'publications-detail')]/h3").
+          text.strip
+        return [RelatonBib::DocumentIdentifier.new(type: "nist", id: "?")] unless item_ref
+
+        [RelatonBib::DocumentIdentifier.new(id: item_ref, type: "nist")]
       end
+
+      # Fetch id.
+      # @param doc [Nokogiri::HTML::Document]
+      # @return [String]
+      # def fetch_id(doc)
+      #   doc.at("//div[contains(@class, 'publications-detail')]/h3").text.
+      #     strip.gsub(/\s/, "")
+      # end
 
       # Fetch status.
       # @param doc [Nokogiri::HTML::Document]
       # @param status [String]
       # @return [Hash]
       def fetch_status(doc)
-        withdrawn = doc.at "//p/strong[text()='Withdrawn:']"
-        return { status: 'withdrawn', stage: '95', substage: '99' } if withdrawn
-
-        item_ref = doc.at("//div[contains(@class, 'publications-detail')]/h3").text.strip
-        wip = item_ref.match(/(?<=\()\w+/).to_s
-        case wip
-        when 'DRAFT'
-          { status: 'working-draft', stage: '20', substage: '20' }
-        # when 'RETIRED DRAFT'
-        #   { status: 'committee-draft', stage: '30', substage: '00' }
-        else
-          { status: 'published', stage: '60', substage: '60' }
-        end
+        status = if doc.at "//p/strong[text()='Withdrawn:']"
+                   "withdrawn"
+                 else
+                   item_ref = doc.at(
+                     "//div[contains(@class, 'publications-detail')]/h3"
+                   ).text.strip
+                   wip = item_ref.match(/(?<=\()\w+/).to_s
+                   case wip
+                   when "DRAFT"
+                     "draft"
+                   else
+                     "published"
+                   end
+                 end
+        RelatonBib::DocumentStatus.new(
+          RelatonBib::LocalizedString.new(status, "en", "Latn"),
+        )
       end
 
       # Fetch titles.
       # @param hit_data [Hash]
       # @return [Array<Hash>]
       def fetch_titles(hit_data)
-        titles = hit_data[:title].split ' - '
-        # case titles.size
-        # when 0
-        #   intro, main, part = nil, "", nil
-        # when 1
-          intro, main, part = nil, titles[0], nil
-        # when 2
-        #   if /^(Part|Partie) \d+:/ =~ titles[1]
-        #     intro, main, part = nil, titles[0], titles[1]
-        #   else
-        #     intro, main, part = titles[0], titles[1], nil
-        #   end
-        # when 3
-        #   intro, main, part = titles[0], titles[1], titles[2]
-        # else
-        #   intro, main, part = titles[0], titles[1], titles[2..-1]&.join(" -- ")
-        # end
-        [{
-          title_intro: intro,
-          title_main:  main,
-          title_part:  part,
-          language:    'en',
-          script:      'Latn'
-        }]
+        [{ content: hit_data[:title], language: "en", script: "Latn", format: "text/plain" }]
       end
 
       # Fetch dates
@@ -117,17 +101,59 @@ module NistBib
       def fetch_dates(doc)
         dates = []
         d = doc.at("//strong[text()='Date Published:']/../text()[2]").text.strip
-        publish_date = Date.strptime(d, '%B %Y').to_s
+        publish_date = Date.strptime(d, "%B %Y").to_s
         unless publish_date.empty?
-          dates << { type: 'published', on: publish_date }
+          dates << { type: "published", on: publish_date }
         end
         dates
       end
 
-      def fetch_contributors
-        name = 'National Institute of Standards and Technology'
-        url = 'www.nist.gov'
-        [{ entity: { name: name, url: url, abbreviation: 'NIST' }, roles: ['publisher'] }]
+      def fetch_contributors(doc)
+        name = "National Institute of Standards and Technology"
+        org = RelatonBib::Organization.new(
+          name: name, url: "www.nist.gov", abbreviation: "NIST",
+        )
+        contribs = [
+          RelatonBib::ContributionInfo.new(entity: org, role: ["publisher"]),
+        ]
+
+        authors = doc.at('//h4[.="Author(s)"]/following-sibling::p')
+        contribs += contributors(authors, "author")
+
+        editors = doc.at('//h4[.="Editor(s)"]/following-sibling::p')
+        contribs + contributors(editors, "editor")
+      end
+
+      def contributors(doc, role)
+        return [] if doc.nil?
+
+        doc.text.split(", ").map do |contr|
+          /(?<an>.+?)(\s+\((?<abbrev>.+?)\))?$/ =~ contr
+          if abbrev && an.downcase !~ /(task|force|group)/ && an.split.size.between?(2, 3)
+            fullname = RelatonBib::FullName.new(
+              completename: RelatonBib::LocalizedString.new(an, "en", "Latn"),
+            )
+            case abbrev
+            when "NIST"
+              org_name = "National Institute of Standards and Technology"
+              url = "www.nist.gov"
+            when "MITRE"
+              org_name = abbrev
+              url = "www.mitre.org"
+            else
+              org_name = abbrev
+              url = nil
+            end
+            org = RelatonBib::Organization.new name: org_name, url: url, abbreviation: abbrev
+            affiliation = RelatonBib::Affilation.new org
+            entity = RelatonBib::Person.new(
+              name: fullname, affiliation: [affiliation], contacts: [],
+            )
+          else
+            entity = RelatonBib::Organization.new name: an, abbreviation: abbrev
+          end
+          RelatonBib::ContributionInfo.new entity: entity, role: [role]
+        end
       end
 
       # Fetch abstracts.
@@ -136,9 +162,10 @@ module NistBib
       def fetch_abstract(doc)
         abstract_content = doc.xpath('//div[contains(@class, "pub-abstract-callout")]/div[1]/p').text
         [{
-          content:  abstract_content,
-          language: 'en',
-          script:   'Latn'
+          content: abstract_content,
+          language: "en",
+          script: "Latn",
+          format: "text/plain",
         }]
       end
 
@@ -146,38 +173,66 @@ module NistBib
       # @param title [String]
       # @return [Hash]
       def fetch_copyright(doc)
-        name = 'National Institute of Standards and Technology'
-        url = 'www.nist.gov'
+        name = "National Institute of Standards and Technology"
+        url = "www.nist.gov"
         d = doc.at("//strong[text()='Date Published:']/../text()[2]").text.strip
         from = d.match(/\d{4}$/).to_s
-        { owner: { name: name, abbreviation: 'NIST', url: url }, from: from }
+        { owner: { name: name, abbreviation: "NIST", url: url }, from: from }
       end
 
       # Fetch links.
       # @param doc [Nokogiri::HTML::Document]
-      # @param url [String]
       # @return [Array<Hash>]
-      def fetch_link(doc, url)
-        links = [{ type: 'src', content: url }]
-        obp_elms = doc.at_css('a[data-identity="first-link-display"]')
-        links << { type: 'obp', content: obp_elms[:href] } if obp_elms
+      def fetch_link(doc)
+        pub = doc.at "//p/strong[.='Publication:']"
+        links = []
+        pdf = pub.at "./following-sibling::a[.=' Local Download']"
+        links << { type: "pdf", content: pdf[:href] } if pdf
+        doi = pub.at("./following-sibling::a[contains(.,'(DOI)')]")
+        links << { type: "doi", content: doi[:href] } if doi
         links
       end
 
       # Fetch relations.
       # @param doc [Nokogiri::HTML::Document]
       # @return [Array<Hash>]
-      # rubocop:disable Metrics/MethodLength
       def fetch_relations(doc)
-        relations = doc.xpath('//strong[text()="Other Parts of this Publication:"]/following-sibling::a').map do |r|
-          { type: 'partOf', identifier: r.text, url: DOMAIN + r[:href] }
+        relations = doc.xpath(
+          '//strong[text()="Other Parts of this Publication:"]/following-sibling::a',
+        ).map do |r|
+          RelatonBib::DocumentRelation.new(
+            type: "partOf",
+            bibitem: RelatonBib::BibliographicItem.new(
+              formattedref: RelatonBib::FormattedRef.new(
+                content: r.text, language: "en", script: "Latn", format: "text/plain",
+              ),
+              link: [RelatonBib::TypedUri.new(type: "src", content: DOMAIN + r[:href])],
+            ),
+          )
         end
 
-        doc.xpath('//strong[text()="Related NIST Publications:"]/following-sibling::a').map do |r|
-          relations << { type: 'updates', identifier: r.text, url: DOMAIN + r[:href] }
+        relations + doc.xpath(
+          '//strong[text()="Related NIST Publications:"]/following-sibling::a',
+        ).map do |r|
+          RelatonBib::DocumentRelation.new(
+            type: "updates",
+            bibitem: RelatonBib::BibliographicItem.new(
+              formattedref: RelatonBib::FormattedRef.new(
+                content: r.text, language: "en", script: "Latn", format: "text/plain",
+              ),
+              link: [RelatonBib::TypedUri.new(type: "src", content: DOMAIN + r[:href])],
+            ),
+          )
         end
+      end
 
-        relations
+      def fetch_nistseries(doc)
+        doc.xpath("//p/strong[.='Document History:']/following-sibling::*[not(self::br)]").each do |s|
+          NistSeries::ABBREVIATIONS.each do |k, _v|
+            return NistSeries.new k if s.text.include? k
+          end
+        end
+        nil
       end
     end
   end

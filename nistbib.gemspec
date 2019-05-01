@@ -35,5 +35,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'ruby-debug-ide'
   spec.add_development_dependency 'debase'
 
-  spec.add_dependency 'iso-bib-item', '~> 0.4.2'
+  spec.add_dependency "relaton-bib", "~> 0.1.0"
 end

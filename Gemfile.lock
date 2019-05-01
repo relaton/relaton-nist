@@ -2,7 +2,7 @@ PATH
   remote: .
   specs:
     nistbib (0.1.2)
-      iso-bib-item (~> 0.4.2)
+      relaton-bib (~> 0.1.0)
 
 GEM
   remote: https://rubygems.org/
@@ -21,11 +21,6 @@ GEM
     equivalent-xml (0.6.0)
       nokogiri (>= 1.4.3)
     hashdiff (0.3.8)
-    iso-bib-item (0.4.5)
-      isoics (~> 0.1.6)
-      nokogiri (~> 1.8.4)
-      ruby_deep_clone (~> 0.8.0)
-    isoics (0.1.7)
     json (2.2.0)
     method_source (0.9.2)
     mini_portile2 (2.3.0)
@@ -39,6 +34,8 @@ GEM
       pry (~> 0.10)
     public_suffix (3.0.3)
     rake (10.5.0)
+    relaton-bib (0.1.0)
+      nokogiri (~> 1.8.4)
     rspec (3.8.0)
       rspec-core (~> 3.8.0)
       rspec-expectations (~> 3.8.0)
@@ -54,7 +51,6 @@ GEM
     rspec-support (3.8.0)
     ruby-debug-ide (0.6.1)
       rake (>= 0.8.1)
-    ruby_deep_clone (0.8.0)
     safe_yaml (1.0.5)
     simplecov (0.16.1)
       docile (~> 1.1)

@@ -1,5 +1,8 @@
-require 'nistbib/scrapper'
-require 'nistbib/hit_collection'
+require "relaton_bib"
+require "nistbib/nist_bibliographic_item"
+require "nistbib/scrapper"
+require "nistbib/hit_collection"
+require "nistbib/nist_series"
 
 module NistBib
   class NistBibliography
@@ -10,7 +13,7 @@ module NistBib
         HitCollection.new text, year
       rescue
         warn "Could not access https://www.nist.gov"
-        []       
+        []
       end
 
       # @param code [String] the NIST standard Code to look up (e..g "8200")
@@ -26,11 +29,11 @@ module NistBib
           end
         end
 
-        code += '-1' if opts[:all_parts]
+        code += "-1" if opts[:all_parts]
         ret = nistbib_get1(code, year, opts)
-        return nil if ret.nil?
-        ret.to_most_recent_reference unless year || opts[:keep_year]
-        ret.to_all_parts if opts[:all_parts]
+        # return nil if ret.nil?
+        # ret.to_most_recent_reference unless year || opts[:keep_year]
+        # ret.to_all_parts if opts[:all_parts]
         ret
       end
 
@@ -40,10 +43,11 @@ module NistBib
         result = nistbib_search_filter(code, year) or return nil
         ret = nistbib_results_filter(result, year)
         return ret[:ret] if ret[:ret]
+
         fetch_ref_err(code, year, ret[:years])
       end
 
-      # Sort through the results from Isobib, fetching them three at a time,
+      # Sort through the results from NistBib, fetching them three at a time,
       # and return the first result that matches the code,
       # matches the year (if provided), and which # has a title (amendments do not).
       # Only expects the first page of results to be populated.
@@ -52,10 +56,12 @@ module NistBib
       def nistbib_results_filter(result, year)
         missed_years = []
         result.each_slice(3) do |s| # ISO website only allows 3 connections
-          fetch_pages(s, 3).each_with_index do |r, i|
+          fetch_pages(s, 3).each_with_index do |r, _i|
             return { ret: r } if !year
+
             r.dates.select { |d| d.type == "published" }.each do |d|
               return { ret: r } if year.to_i == d.on.year
+
               missed_years << d.on.year
             end
           end

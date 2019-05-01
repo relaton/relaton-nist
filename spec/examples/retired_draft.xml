@@ -1,9 +1,10 @@
-<bibitem type="" id="NISTIR7831(RETIREDDRAFT)">
-  <fetched>2019-02-06</fetched>
+<nist-standard>
+  <fetched>2019-04-29</fetched>
   <title format="text/plain" language="en" script="Latn">Common Remediation Enumeration (CRE) Version 1.0</title>
-  <uri type="src">https://csrc.nist.gov/publications/detail/nistir/7831/archive/2011-12-06</uri>
-  <uri type="obp">/CSRC/media/Publications/nistir/7831/archive/2011-12-06/documents/Draft-NISTIR-7831.pdf</uri>
-  <docidentifier type="NIST">NISTIR 7831 (RETIRED DRAFT)</docidentifier>
+  <docidentifier type="nist">NISTIR 7831 (RETIRED DRAFT)</docidentifier>
+  <date type="published">
+    <on>2011-12</on>
+  </date>
   <contributor>
     <role type="publisher"/>
     <organization>
@@ -12,12 +13,55 @@
       <uri>www.nist.gov</uri>
     </organization>
   </contributor>
+  <contributor>
+    <role type="author"/>
+    <person>
+      <name>
+        <completename language="en" script="Latn">Gerard McGuire</completename>
+      </name>
+      <affiliation>
+        <organization>
+          <name>MITRE</name>
+          <abbreviation>MITRE</abbreviation>
+          <uri>www.mitre.org</uri>
+        </organization>
+      </affiliation>
+    </person>
+  </contributor>
+  <contributor>
+    <role type="author"/>
+    <person>
+      <name>
+        <completename language="en" script="Latn">David Waltermire</completename>
+      </name>
+      <affiliation>
+        <organization>
+          <name>National Institute of Standards and Technology</name>
+          <abbreviation>NIST</abbreviation>
+          <uri>www.nist.gov</uri>
+        </organization>
+      </affiliation>
+    </person>
+  </contributor>
+  <contributor>
+    <role type="author"/>
+    <person>
+      <name>
+        <completename language="en" script="Latn">Jonathan Baker</completename>
+      </name>
+      <affiliation>
+        <organization>
+          <name>MITRE</name>
+          <abbreviation>MITRE</abbreviation>
+          <uri>www.mitre.org</uri>
+        </organization>
+      </affiliation>
+    </person>
+  </contributor>
   <language>en</language>
   <script>Latn</script>
-  <status>
-    <stage>95</stage>
-    <substage>99</substage>
-  </status>
+  <abstract format="text/plain" language="en" script="Latn">NISTIR 7831 defines the Common Remediation Enumeration (CRE) specification. CRE is part of an emerging suite of enterprise remediation specifications that enable automation and enhanced correlation of enterprise remediation activities. Each CRE entry represents a unique remediation activity and is assigned a globally unique CRE identifier (CRE-ID). This specification describes the core concepts of CRE and the technical components of a CRE entry, outlines how CRE entries are created, and defines the technical requirements for constructing CRE entries.</abstract>
+  <status language="en" script="Latn">withdrawn</status>
   <copyright>
     <from>2011</from>
     <owner>
@@ -28,41 +72,4 @@
       </organization>
     </owner>
   </copyright>
-  <relation type="instance">
-    <bibitem type="">
-      <fetched>2019-02-06</fetched>
-      <title format="text/plain" language="en" script="Latn">Common Remediation Enumeration (CRE) Version 1.0</title>
-      <uri type="src">https://csrc.nist.gov/publications/detail/nistir/7831/archive/2011-12-06</uri>
-      <uri type="obp">/CSRC/media/Publications/nistir/7831/archive/2011-12-06/documents/Draft-NISTIR-7831.pdf</uri>
-      <docidentifier type="NIST">NISTIR 7831 (RETIRED DRAFT)</docidentifier>
-      <date type="published">
-        <on>2011</on>
-      </date>
-      <contributor>
-        <role type="publisher"/>
-        <organization>
-          <name>National Institute of Standards and Technology</name>
-          <abbreviation>NIST</abbreviation>
-          <uri>www.nist.gov</uri>
-        </organization>
-      </contributor>
-      <language>en</language>
-      <script>Latn</script>
-      <abstract format="plain" language="en" script="Latn">NISTIR 7831 defines the Common Remediation Enumeration (CRE) specification. CRE is part of an emerging suite of enterprise remediation specifications that enable automation and enhanced correlation of enterprise remediation activities. Each CRE entry represents a unique remediation activity and is assigned a globally unique CRE identifier (CRE-ID). This specification describes the core concepts of CRE and the technical components of a CRE entry, outlines how CRE entries are created, and defines the technical requirements for constructing CRE entries.</abstract>
-      <status>
-        <stage>95</stage>
-        <substage>99</substage>
-      </status>
-      <copyright>
-        <from>2011</from>
-        <owner>
-          <organization>
-            <name>National Institute of Standards and Technology</name>
-            <abbreviation>NIST</abbreviation>
-            <uri>www.nist.gov</uri>
-          </organization>
-        </owner>
-      </copyright>
-    </bibitem>
-  </relation>
-</bibitem>
+</nist-standard>
