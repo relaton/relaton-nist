@@ -40,7 +40,7 @@ hit_collection = NistBib::NistBibliography.search("8200")
  <NistBib::Hit:0x007f82b9b2a1e0 @text="8200" @fetched="false" @fullIdentifier="" @title="8200">]
 
  item = hit_collection[1].fetch
- => #<IsoBibItem::IsoBibliographicItem:0x007f82b986e668
+ => #<NistBib::NistBibliographicItem:0x007f82b986e668
  ...
 ----
 
@@ -48,13 +48,13 @@ hit_collection = NistBib::NistBibliography.search("8200")
 [source,ruby]
 ----
 item.to_xml
-=> "<bibitem type="" id="NISTIR8200(DRAFT)">
-      <fetched>2019-02-11</fetched>
+=> "<nist-standard>
+      <fetched>2019-05-03</fetched>
       <title format="text/plain" language="en" script="Latn">
         Interagency Report on Status of International Cybersecurity Standardization for the Internet of Things (IoT)
       </title>
       ...
-    </bibitem>"
+    </nist-standard>"
 ----
 
 === Get code, and year
@@ -62,7 +62,7 @@ item.to_xml
 ----
 NistBib::NistBibliography.get("8200", "2018", {})
 fetching 8200...
-=> #<IsoBibItem::IsoBibliographicItem:0x007f82bb3370a8
+=> #<NistBib::NistBibliographicItem:0x007f82bb3370a8
 ...
 ----
 

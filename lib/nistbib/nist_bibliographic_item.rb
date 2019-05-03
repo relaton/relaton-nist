@@ -1,7 +1,13 @@
 module NistBib
   class NistBibliographicItem < RelatonBib::BibliographicItem
-    # @return [Nist::NistSeries, NilClass]
+    # @return [NistBib::NistSeries, NilClass]
     attr_reader :nistseries
+
+    # @return [Array<NistBib::Keyword>]
+    attr_reader :keyword
+
+    # @return [NistBib::CommentPeriod]
+    attr_reader :commentperiod
 
     # @param title [Array<RelatonBib::TypedTitleString>]
     # @param formattedref [RelatonBib::FormattedRef, NilClass]
@@ -22,6 +28,8 @@ module NistBib
     # @param classification [RelatonBib::Classification, NilClass]
     # @param validity [RelatonBib:Validity, NilClass]
     # @param fetched [Date, NilClass] default nil
+    # @param keyword [Array<NistBib::Keyword>]
+    # @param commentperiod [NistBib::CommentPeriod]
     #
     # @param dates [Array<Hash>]
     # @option dates [String] :type
@@ -50,12 +58,16 @@ module NistBib
     def initialize(**args)
       super
       @nistseries = args[:nistseries]
+      @keyword = args.fetch :keyword, []
+      @commentperiod = args[:commentperiod]
     end
 
     # @param builder [Nokogiri::XML::Builder]
     def to_xml(builder = nil)
       super builder, "nist-standard" do |b|
         nistseries&.to_xml b
+        keyword.each { |kw| kw.to_xml b }
+        commentperiod&.to_xml b
       end
     end
   end

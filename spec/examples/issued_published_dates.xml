@@ -1,0 +1,163 @@
+<nist-standard>
+  <fetched>2019-05-02</fetched>
+  <title format="text/plain" language="en" script="Latn">Guide to Attribute Based Access Control (ABAC) Definition and Considerations</title>
+  <uri type="pdf">https://nvlpubs.nist.gov/nistpubs/specialpublications/NIST.SP.800-162.pdf</uri>
+  <uri type="doi">https://doi.org/10.6028/NIST.SP.800-162</uri>
+  <docidentifier type="nist">SP 800-162</docidentifier>
+  <date type="issued">
+    <on>2014-01</on>
+  </date>
+  <date type="published">
+    <on>2019-02</on>
+  </date>
+  <contributor>
+    <role type="publisher"/>
+    <organization>
+      <name>National Institute of Standards and Technology</name>
+      <abbreviation>NIST</abbreviation>
+      <uri>www.nist.gov</uri>
+    </organization>
+  </contributor>
+  <contributor>
+    <role type="author"/>
+    <person>
+      <name>
+        <completename language="en" script="Latn">Vincent Hu</completename>
+      </name>
+      <affiliation>
+        <organization>
+          <name>National Institute of Standards and Technology</name>
+          <abbreviation>NIST</abbreviation>
+          <uri>www.nist.gov</uri>
+        </organization>
+      </affiliation>
+    </person>
+  </contributor>
+  <contributor>
+    <role type="author"/>
+    <person>
+      <name>
+        <completename language="en" script="Latn">David Ferraiolo</completename>
+      </name>
+      <affiliation>
+        <organization>
+          <name>National Institute of Standards and Technology</name>
+          <abbreviation>NIST</abbreviation>
+          <uri>www.nist.gov</uri>
+        </organization>
+      </affiliation>
+    </person>
+  </contributor>
+  <contributor>
+    <role type="author"/>
+    <person>
+      <name>
+        <completename language="en" script="Latn">Richard Kuhn</completename>
+      </name>
+      <affiliation>
+        <organization>
+          <name>National Institute of Standards and Technology</name>
+          <abbreviation>NIST</abbreviation>
+          <uri>www.nist.gov</uri>
+        </organization>
+      </affiliation>
+    </person>
+  </contributor>
+  <contributor>
+    <role type="author"/>
+    <person>
+      <name>
+        <completename language="en" script="Latn">Adam Schnitzer</completename>
+      </name>
+      <affiliation>
+        <organization>
+          <name>BAH</name>
+          <abbreviation>BAH</abbreviation>
+        </organization>
+      </affiliation>
+    </person>
+  </contributor>
+  <contributor>
+    <role type="author"/>
+    <person>
+      <name>
+        <completename language="en" script="Latn">Kenneth Sandlin</completename>
+      </name>
+      <affiliation>
+        <organization>
+          <name>MITRE</name>
+          <abbreviation>MITRE</abbreviation>
+          <uri>www.mitre.org</uri>
+        </organization>
+      </affiliation>
+    </person>
+  </contributor>
+  <contributor>
+    <role type="author"/>
+    <person>
+      <name>
+        <completename language="en" script="Latn">Robert Miller</completename>
+      </name>
+      <affiliation>
+        <organization>
+          <name>MITRE</name>
+          <abbreviation>MITRE</abbreviation>
+          <uri>www.mitre.org</uri>
+        </organization>
+      </affiliation>
+    </person>
+  </contributor>
+  <contributor>
+    <role type="author"/>
+    <person>
+      <name>
+        <completename language="en" script="Latn">Karen Scarfone</completename>
+      </name>
+      <affiliation>
+        <organization>
+          <name>Scarfone Cybersecurity</name>
+          <abbreviation>Scarfone Cybersecurity</abbreviation>
+        </organization>
+      </affiliation>
+    </person>
+  </contributor>
+  <language>en</language>
+  <script>Latn</script>
+  <abstract format="text/plain" language="en" script="Latn">This document provides Federal agencies with a definition of attribute based access control (ABAC). ABAC is a logical access control methodology where authorization to perform a set of operations is determined by evaluating attributes associated with the subject, object, requested operations, and, in some cases, environment conditions against policy, rules, or relationships that describe the allowable operations for a given set of attributes. This document also provides considerations for using ABAC to improve information sharing within organizations and between organizations while maintaining control of that information.</abstract>
+  <status language="en" script="Latn">published</status>
+  <copyright>
+    <from>2014</from>
+    <owner>
+      <organization>
+        <name>National Institute of Standards and Technology</name>
+        <abbreviation>NIST</abbreviation>
+        <uri>www.nist.gov</uri>
+      </organization>
+    </owner>
+  </copyright>
+  <relation type="supersedes">
+    <bibitem>
+      <formattedref format="text/plain" language="en" script="Latn">SP  800-162 (January 2014)</formattedref>
+      <uri type="src">https://csrc.nist.gov/publications/detail/sp/800-162/archive/2014-01-16</uri>
+    </bibitem>
+  </relation>
+  <relation type="updates">
+    <bibitem>
+      <formattedref format="text/plain" language="en" script="Latn">NISTIR 8112</formattedref>
+      <uri type="src">https://csrc.nist.gov/publications/detail/nistir/8112/final</uri>
+    </bibitem>
+  </relation>
+  <relation type="updates">
+    <bibitem>
+      <formattedref format="text/plain" language="en" script="Latn">Book </formattedref>
+      <uri type="src">https://csrc.nist.gov/publications/detail/book/2017/attribute-based-access-control</uri>
+    </bibitem>
+  </relation>
+  <keyword>access control</keyword>
+  <keyword>access control mechanism</keyword>
+  <keyword>access control model</keyword>
+  <keyword>access control policy</keyword>
+  <keyword>attribute based access control (ABAC)</keyword>
+  <keyword>authorization</keyword>
+  <keyword>privilege</keyword>
+</nist-standard>

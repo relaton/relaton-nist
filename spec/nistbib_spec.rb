@@ -18,7 +18,7 @@ RSpec.describe NistBib do
       hits = NistBib::NistBibliography.search("8011")
       file_path = "spec/examples/hit.xml"
       File.write file_path, hits.first.to_xml unless File.exist? file_path
-      expect(hits.first.to_xml).to be_equivalent_to File.open(file_path, "r:UTF-8", &:read).gsub(/2019-04-30/, Date.today.to_s)
+      expect(hits.first.to_xml).to be_equivalent_to File.open(file_path, "r:UTF-8", &:read).gsub(/2019-05-02/, Date.today.to_s)
     end
   end
 
@@ -46,7 +46,7 @@ RSpec.describe NistBib do
       result = NistBib::NistBibliography.get("8200", "2018", {}).to_xml
       file_path = "spec/examples/get.xml"
       File.write file_path, result unless File.exist? file_path
-      expect(result).to be_equivalent_to File.open(file_path, "r:UTF-8", &:read).gsub(/2019-04-30/, Date.today.to_s)
+      expect(result).to be_equivalent_to File.open(file_path, "r:UTF-8", &:read).gsub(/2019-05-02/, Date.today.to_s)
     end
   end
 
@@ -62,7 +62,7 @@ RSpec.describe NistBib do
       result = NistBib::NistBibliography.get("800-189", nil, {}).to_xml
       file_path = "spec/examples/draft.xml"
       File.write file_path, result unless File.exist? file_path
-      expect(result).to be_equivalent_to File.open(file_path, "r:UTF-8", &:read).gsub(/2019-04-29/, Date.today.to_s)
+      expect(result).to be_equivalent_to File.open(file_path, "r:UTF-8", &:read).gsub(/2019-05-03/, Date.today.to_s)
     end
   end
 
@@ -71,7 +71,16 @@ RSpec.describe NistBib do
       result = NistBib::NistBibliography.get("7831", nil, {}).to_xml
       file_path = "spec/examples/retired_draft.xml"
       File.write file_path, result unless File.exist? file_path
-      expect(result).to be_equivalent_to File.open(file_path, "r:UTF-8", &:read).gsub(/2019-04-29/, Date.today.to_s)
+      expect(result).to be_equivalent_to File.open(file_path, "r:UTF-8", &:read).gsub(/2019-05-03/, Date.today.to_s)
+    end
+  end
+
+  it "get doc with issued & published dates" do
+    VCR.use_cassette "800_162" do
+      result = NistBib::NistBibliography.get("SP 800-162", nil, {}).to_xml
+      file_path = "spec/examples/issued_published_dates.xml"
+      File.write file_path, result unless File.exist? file_path
+      expect(result).to be_equivalent_to File.open(file_path, "r:UTF-8", &:read).gsub(/2019-05-02/, Date.today.to_s)
     end
   end
 

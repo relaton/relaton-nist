@@ -3,6 +3,9 @@ require "nistbib/nist_bibliographic_item"
 require "nistbib/scrapper"
 require "nistbib/hit_collection"
 require "nistbib/nist_series"
+require "nistbib/xml_parser"
+require "nistbib/keyword"
+require "nistbib/comment_period"
 
 module NistBib
   class NistBibliography

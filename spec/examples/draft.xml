@@ -1,9 +1,12 @@
 <nist-standard>
-  <fetched>2019-04-29</fetched>
+  <fetched>2019-05-03</fetched>
   <title format="text/plain" language="en" script="Latn">Secure Interdomain Traffic Exchange: BGP Robustness and DDoS Mitigation</title>
   <uri type="pdf">https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-189-draft.pdf</uri>
   <uri type="doi">https://doi.org/10.6028/NIST.SP.800-189-draft</uri>
   <docidentifier type="nist">SP 800-189 (DRAFT)</docidentifier>
+  <date type="issued">
+    <on>2018-12</on>
+  </date>
   <date type="published">
     <on>2018-12</on>
   </date>
@@ -65,4 +68,24 @@
       <uri type="src">https://csrc.nist.gov/publications/detail/sp/800-54/final</uri>
     </bibitem>
   </relation>
+  <keyword>Routing security and robustness</keyword>
+  <keyword>Internet infrastructure security</keyword>
+  <keyword>Border Gateway Protocol (BGP) security</keyword>
+  <keyword>prefix hijacks, IP address spoofing</keyword>
+  <keyword>Distributed DoS (DDoS) attacks</keyword>
+  <keyword>Resource Public Key Infrastructure (RPKI)</keyword>
+  <keyword>BGP origin validation (BGP-OV)</keyword>
+  <keyword>prefix filtering</keyword>
+  <keyword>BGP path validation (BGP-PV)</keyword>
+  <keyword>BGPsec</keyword>
+  <keyword>route leaks</keyword>
+  <keyword>Source Address Validation (SAV)</keyword>
+  <keyword>unicast Reverse Path Forwarding (uRPF)</keyword>
+  <keyword>Remotely Triggered Black Hole (RTBH) filtering</keyword>
+  <keyword>Flow Specification (Flowspec)</keyword>
+  <commentperiod>
+    <from>2018-12-01</from>
+    <to>2019-03-15</to>
+    <extended>2019-03-15</extended>
+  </commentperiod>
 </nist-standard>

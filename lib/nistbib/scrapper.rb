@@ -13,21 +13,23 @@ module NistBib
         doc = get_page hit_data[:url]
 
         NistBibliographicItem.new(
-          fetched:      Date.today.to_s,
-          type:         nil,
-          titles:       fetch_titles(hit_data),
-          link:         fetch_link(doc),
-          docid:        fetch_docid(doc),
-          dates:        fetch_dates(doc),
+          fetched: Date.today.to_s,
+          type: nil,
+          titles: fetch_titles(hit_data),
+          link: fetch_link(doc),
+          docid: fetch_docid(doc),
+          dates: fetch_dates(doc),
           contributors: fetch_contributors(doc),
-          edition:      nil,
-          language:     ["en"],
-          script:       ["Latn"],
-          abstract:     fetch_abstract(doc),
-          docstatus:    fetch_status(doc),
-          copyright:    fetch_copyright(doc),
-          relations:    fetch_relations(doc),
-          nistseries:   fetch_nistseries(doc),
+          edition: nil,
+          language: ["en"],
+          script: ["Latn"],
+          abstract: fetch_abstract(doc),
+          docstatus: fetch_status(doc),
+          copyright: fetch_copyright(doc),
+          relations: fetch_relations(doc),
+          nistseries: fetch_nistseries(doc),
+          keyword: fetch_keywords(doc),
+          commentperiod: fetch_commentperiod(doc),
           # ics:          [],
           # workgroup:    nil,
           # id:           fetch_id(doc),
@@ -101,10 +103,12 @@ module NistBib
       def fetch_dates(doc)
         dates = []
         d = doc.at("//strong[text()='Date Published:']/../text()[2]").text.strip
-        publish_date = Date.strptime(d, "%B %Y").to_s
-        unless publish_date.empty?
-          dates << { type: "published", on: publish_date }
-        end
+        issued_date = Date.strptime(d, "%B %Y").to_s
+        dates << { type: "issued", on: issued_date } unless issued_date.empty?
+
+        pd = d.match(/\d{2}-\d{2}-\d{4}/)
+        publish_date = pd ? Date.strptime(pd.to_s, "%m-%d-%Y").to_s : issued_date
+        dates << { type: "published", on: publish_date } unless publish_date.empty?
         dates
       end
 
@@ -176,7 +180,7 @@ module NistBib
         name = "National Institute of Standards and Technology"
         url = "www.nist.gov"
         d = doc.at("//strong[text()='Date Published:']/../text()[2]").text.strip
-        from = d.match(/\d{4}$/).to_s
+        from = d.match(/\d{4}/).to_s
         { owner: { name: name, abbreviation: "NIST", url: url }, from: from }
       end
 
@@ -197,33 +201,29 @@ module NistBib
       # @param doc [Nokogiri::HTML::Document]
       # @return [Array<Hash>]
       def fetch_relations(doc)
-        relations = doc.xpath(
-          '//strong[text()="Other Parts of this Publication:"]/following-sibling::a',
-        ).map do |r|
-          RelatonBib::DocumentRelation.new(
-            type: "partOf",
-            bibitem: RelatonBib::BibliographicItem.new(
-              formattedref: RelatonBib::FormattedRef.new(
-                content: r.text, language: "en", script: "Latn", format: "text/plain",
-              ),
-              link: [RelatonBib::TypedUri.new(type: "src", content: DOMAIN + r[:href])],
-            ),
-          )
+        relations = doc.xpath('//strong[.="Supersedes:"]/following-sibling::a').map do |r|
+          doc_relation "supersedes", r
         end
+
+        relations += doc.xpath(
+          '//strong[text()="Other Parts of this Publication:"]/following-sibling::a',
+        ).map { |r| doc_relation "partOf", r }
 
         relations + doc.xpath(
           '//strong[text()="Related NIST Publications:"]/following-sibling::a',
-        ).map do |r|
-          RelatonBib::DocumentRelation.new(
-            type: "updates",
-            bibitem: RelatonBib::BibliographicItem.new(
-              formattedref: RelatonBib::FormattedRef.new(
-                content: r.text, language: "en", script: "Latn", format: "text/plain",
-              ),
-              link: [RelatonBib::TypedUri.new(type: "src", content: DOMAIN + r[:href])],
+        ).map { |r| doc_relation "updates", r }
+      end
+
+      def doc_relation(type, ref)
+        RelatonBib::DocumentRelation.new(
+          type: type,
+          bibitem: RelatonBib::BibliographicItem.new(
+            formattedref: RelatonBib::FormattedRef.new(
+              content: ref.text, language: "en", script: "Latn", format: "text/plain",
             ),
-          )
-        end
+            link: [RelatonBib::TypedUri.new(type: "src", content: DOMAIN + ref[:href])],
+          ),
+        )
       end
 
       def fetch_nistseries(doc)
@@ -233,6 +233,28 @@ module NistBib
           end
         end
         nil
+      end
+
+      def fetch_keywords(doc)
+        kws = doc.at "//h4[.='Keywords']/following-sibling::text()"
+        return [] unless kws
+
+        kws.text.strip.split("; ").map { |kw| Keyword.new kw }
+      end
+
+      def fetch_commentperiod(doc)
+        cp = doc.at "//strong[.='Comments Due:']/following-sibling::text()"
+        return unless cp
+
+        to = Date.strptime cp.text.strip, "%B %d, %Y"
+
+        d = doc.at("//strong[text()='Date Published:']/../text()[2]").text.strip
+        from = Date.strptime(d, "%B %Y").to_s
+
+        ex = doc.at "//strong[contains(.,'The comment closing date has been extended to')]"
+        ext = ex&.text&.match(/\w+\s\d{2},\s\d{4}/).to_s
+        extended = ext.empty? ? nil : Date.strptime(ext, "%B %d, %Y")
+        CommentPeriod.new from, to, extended
       end
     end
   end
