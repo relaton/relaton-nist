@@ -3,7 +3,7 @@ module NistBib
     class << self
       def from_xml(xml)
         doc = Nokogiri::XML xml
-        nistitem = doc.at "/nist-standard"
+        nistitem = doc.at("/bibitem") || doc.at("/bibdata")
         NistBibliographicItem.new(item_data(nistitem))
       end
 

@@ -1,4 +1,4 @@
-<nist-standard>
+<bibitem>
   <fetched>2019-05-03</fetched>
   <title format="text/plain" language="en" script="Latn">Secure Interdomain Traffic Exchange: BGP Robustness and DDoS Mitigation</title>
   <uri type="pdf">https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-189-draft.pdf</uri>
@@ -88,4 +88,4 @@
     <to>2019-03-15</to>
     <extended>2019-03-15</extended>
   </commentperiod>
-</nist-standard>
+</bibitem>

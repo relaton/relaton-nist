@@ -1,4 +1,4 @@
-<nist-standard>
+<bibitem>
   <fetched>2019-05-03</fetched>
   <title format="text/plain" language="en" script="Latn">Common Remediation Enumeration (CRE) Version 1.0</title>
   <docidentifier type="nist">NISTIR 7831 (RETIRED DRAFT)</docidentifier>
@@ -82,4 +82,4 @@
     <from>2011-12-01</from>
     <to>2012-01-20</to>
   </commentperiod>
-</nist-standard>
+</bibitem>

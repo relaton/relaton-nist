@@ -1,4 +1,4 @@
-<nist-standard>
+<bibitem>
   <fetched>2019-05-02</fetched>
   <title format="text/plain" language="en" script="Latn">Interagency Report on the Status of International Cybersecurity Standardization for the Internet of Things (IoT)</title>
   <uri type="pdf">https://nvlpubs.nist.gov/nistpubs/ir/2018/NIST.IR.8200.pdf</uri>
@@ -87,4 +87,4 @@
   <keyword>standards developing organizations</keyword>
   <keyword>standards</keyword>
   <keyword>standards gaps</keyword>
-</nist-standard>
+</bibitem>
