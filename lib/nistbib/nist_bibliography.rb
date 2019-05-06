@@ -6,6 +6,7 @@ require "nistbib/nist_series"
 require "nistbib/xml_parser"
 require "nistbib/keyword"
 require "nistbib/comment_period"
+require "nistbib/document_status"
 
 module NistBib
   class NistBibliography

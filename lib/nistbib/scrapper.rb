@@ -30,9 +30,6 @@ module NistBib
           nistseries: fetch_nistseries(doc),
           keyword: fetch_keywords(doc),
           commentperiod: fetch_commentperiod(doc),
-          # ics:          [],
-          # workgroup:    nil,
-          # id:           fetch_id(doc),
         )
       end
 
@@ -72,7 +69,7 @@ module NistBib
       # @return [Hash]
       def fetch_status(doc)
         status = if doc.at "//p/strong[text()='Withdrawn:']"
-                   "withdrawn"
+                   "final-withdrawn"
                  else
                    item_ref = doc.at(
                      "//div[contains(@class, 'publications-detail')]/h3"
@@ -80,14 +77,12 @@ module NistBib
                    wip = item_ref.match(/(?<=\()\w+/).to_s
                    case wip
                    when "DRAFT"
-                     "draft"
+                     "draft-public"
                    else
-                     "published"
+                     "final"
                    end
                  end
-        RelatonBib::DocumentStatus.new(
-          RelatonBib::LocalizedString.new(status, "en", "Latn"),
-        )
+        NistBib::DocumentStatus.new(status)
       end
 
       # Fetch titles.

@@ -16,7 +16,7 @@ module NistBib
     # @param docnumber [String, NilClass]
     # @param language [Arra<String>]
     # @param script [Array<String>]
-    # @param docstatus [RelatonBib::DocumentStatus, NilClass]
+    # @param docstatus [NistBib::DocumentStatus, NilClass]
     # @param edition [String, NilClass]
     # @param version [RelatonBib::BibliographicItem::Version, NilClass]
     # @param biblionote [Array<RelatonBib::FormattedStrong>]
@@ -56,10 +56,10 @@ module NistBib
     #
     # @param nistseries [Nist::NistSeries, NilClass]
     def initialize(**args)
+      @nistseries = args.delete :nistseries
+      @keyword = args.delete(:keyword) || []
+      @commentperiod = args.delete :commentperiod
       super
-      @nistseries = args[:nistseries]
-      @keyword = args.fetch :keyword, []
-      @commentperiod = args[:commentperiod]
     end
 
     # @param builder [Nokogiri::XML::Builder]

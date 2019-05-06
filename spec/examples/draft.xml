@@ -1,5 +1,5 @@
 <bibitem>
-  <fetched>2019-05-03</fetched>
+  <fetched>2019-05-06</fetched>
   <title format="text/plain" language="en" script="Latn">Secure Interdomain Traffic Exchange: BGP Robustness and DDoS Mitigation</title>
   <uri type="pdf">https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-189-draft.pdf</uri>
   <uri type="doi">https://doi.org/10.6028/NIST.SP.800-189-draft</uri>
@@ -51,7 +51,9 @@
   <language>en</language>
   <script>Latn</script>
   <abstract format="text/plain" language="en" script="Latn">This document gives technical guidelines and recommendations for secure interdomain traffic exchange. The primary audience include information security specialists and network managers. These guidelines apply to routing and Internet transit service infrastructure related to federal networks, especially in Internet border routers. The guidelines will also be useful for network operators and equipment vendors in general. There have been numerous incidents in recent years involving routing control plane anomalies, such as prefix hijacking and route leaks, resulting in Denial of Service (DoS), unwanted data traffic detours and performance degradation. Large-scale DoS and Distributed DoS (DDoS) attacks on servers using spoofed Internet Protocol (IP) addresses and reflection-amplification in the data plane have also been frequent, resulting in significant disruption of services and revenue losses.This initial guidance on Secure Interdomain Traffic Exchange (SITE) includes securing the Interdomain routing control traffic, preventing IP address spoofing, and certain aspects of DoS/DDoS detection and mitigation. The Border Gateway Protocol (BGP) is used for sharing and propagating routing control (i.e., reachability) messages between domains or Autonomous Systems. The Internet Engineering Task Force (IETF) and networking community at large have been actively working on mechanisms for BGP security.Technologies recommended in this document for securing the Interdomain routing control traffic include Resource Public Key Infrastructure (RPKI), BGP origin validation (BGP-OV), and prefix filtering. Additionally, technologies recommended for mitigating DoS/DDoS attacks focus on prevention of IP address spoofing using Source Address Validation (SAV) with Access Control Lists (ACLs) and unicast Reverse Path Forwarding (uRPF). Other technologies (including some application plane methods) such as Remotely Triggered Black Hole (RTBH) filtering, Flow Specification (Flowspec), and Response Rate Limiting (RRL) are also recommended as part of the overall security mechanisms.</abstract>
-  <status language="en" script="Latn">draft</status>
+  <status>
+    <stage>draft-public</stage>
+  </status>
   <copyright>
     <from>2018</from>
     <owner>

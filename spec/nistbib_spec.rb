@@ -46,7 +46,8 @@ RSpec.describe NistBib do
       result = NistBib::NistBibliography.get("8200", "2018", {}).to_xml
       file_path = "spec/examples/get.xml"
       File.write file_path, result unless File.exist? file_path
-      expect(result).to be_equivalent_to File.open(file_path, "r:UTF-8", &:read).gsub(/2019-05-02/, Date.today.to_s)
+      expect(result).to be_equivalent_to File.open(file_path, "r:UTF-8", &:read)
+        .gsub(/(?<=<fetched>)\d{4}-\d{2}-\d{2}/, Date.today.to_s)
     end
   end
 
@@ -62,7 +63,8 @@ RSpec.describe NistBib do
       result = NistBib::NistBibliography.get("800-189", nil, {}).to_xml
       file_path = "spec/examples/draft.xml"
       File.write file_path, result unless File.exist? file_path
-      expect(result).to be_equivalent_to File.open(file_path, "r:UTF-8", &:read).gsub(/2019-05-03/, Date.today.to_s)
+      expect(result).to be_equivalent_to File.open(file_path, "r:UTF-8", &:read)
+        .gsub(/(?<=<fetched>)\d{4}-\d{2}-\d{2}/, Date.today.to_s)
     end
   end
 
@@ -71,7 +73,8 @@ RSpec.describe NistBib do
       result = NistBib::NistBibliography.get("7831", nil, {}).to_xml
       file_path = "spec/examples/retired_draft.xml"
       File.write file_path, result unless File.exist? file_path
-      expect(result).to be_equivalent_to File.open(file_path, "r:UTF-8", &:read).gsub(/2019-05-03/, Date.today.to_s)
+      expect(result).to be_equivalent_to File.open(file_path, "r:UTF-8", &:read)
+        .gsub(/(?<=<fetched>)\d{4}-\d{2}-\d{2}/, Date.today.to_s)
     end
   end
 
@@ -80,7 +83,8 @@ RSpec.describe NistBib do
       result = NistBib::NistBibliography.get("SP 800-162", nil, {}).to_xml
       file_path = "spec/examples/issued_published_dates.xml"
       File.write file_path, result unless File.exist? file_path
-      expect(result).to be_equivalent_to File.open(file_path, "r:UTF-8", &:read).gsub(/2019-05-02/, Date.today.to_s)
+      expect(result).to be_equivalent_to File.open(file_path, "r:UTF-8", &:read)
+        .gsub(/(?<=<fetched>)\d{4}-\d{2}-\d{2}/, Date.today.to_s)
     end
   end
 

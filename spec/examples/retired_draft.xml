@@ -1,5 +1,5 @@
 <bibitem>
-  <fetched>2019-05-03</fetched>
+  <fetched>2019-05-06</fetched>
   <title format="text/plain" language="en" script="Latn">Common Remediation Enumeration (CRE) Version 1.0</title>
   <docidentifier type="nist">NISTIR 7831 (RETIRED DRAFT)</docidentifier>
   <date type="issued">
@@ -64,7 +64,9 @@
   <language>en</language>
   <script>Latn</script>
   <abstract format="text/plain" language="en" script="Latn">NISTIR 7831 defines the Common Remediation Enumeration (CRE) specification. CRE is part of an emerging suite of enterprise remediation specifications that enable automation and enhanced correlation of enterprise remediation activities. Each CRE entry represents a unique remediation activity and is assigned a globally unique CRE identifier (CRE-ID). This specification describes the core concepts of CRE and the technical components of a CRE entry, outlines how CRE entries are created, and defines the technical requirements for constructing CRE entries.</abstract>
-  <status language="en" script="Latn">withdrawn</status>
+  <status>
+    <stage>final-withdrawn</stage>
+  </status>
   <copyright>
     <from>2011</from>
     <owner>

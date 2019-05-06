@@ -1,5 +1,5 @@
 <bibitem>
-  <fetched>2019-05-02</fetched>
+  <fetched>2019-05-06</fetched>
   <title format="text/plain" language="en" script="Latn">Guide to Attribute Based Access Control (ABAC) Definition and Considerations</title>
   <uri type="pdf">https://nvlpubs.nist.gov/nistpubs/specialpublications/NIST.SP.800-162.pdf</uri>
   <uri type="doi">https://doi.org/10.6028/NIST.SP.800-162</uri>
@@ -124,7 +124,9 @@
   <language>en</language>
   <script>Latn</script>
   <abstract format="text/plain" language="en" script="Latn">This document provides Federal agencies with a definition of attribute based access control (ABAC). ABAC is a logical access control methodology where authorization to perform a set of operations is determined by evaluating attributes associated with the subject, object, requested operations, and, in some cases, environment conditions against policy, rules, or relationships that describe the allowable operations for a given set of attributes. This document also provides considerations for using ABAC to improve information sharing within organizations and between organizations while maintaining control of that information.</abstract>
-  <status language="en" script="Latn">published</status>
+  <status>
+    <stage>final</stage>
+  </status>
   <copyright>
     <from>2014</from>
     <owner>

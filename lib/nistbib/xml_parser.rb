@@ -19,6 +19,13 @@ module NistBib
         data
       end
 
+      def fetch_status(item)
+        status = item.at "./status"
+        return unless status
+
+        DocumentStatus.new status.at("stage")&.text, status.at("iteraton")&.text
+      end
+
       def fetch_commentperiod(item)
         cp = item.at "./commentperiod"
         return unless cp
