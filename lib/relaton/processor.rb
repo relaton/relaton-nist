@@ -16,7 +16,7 @@ module Relaton
       end
 
       def from_xml(xml)
-        XMLParser.from_xml xml
+        ::NistBib::XMLParser.from_xml xml
       end
     end
   end
