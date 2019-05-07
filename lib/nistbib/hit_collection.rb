@@ -22,23 +22,24 @@ module NistBib
 
     # @param ref_nbr [String]
     # @param year [String]
-    def initialize(ref_nbr, year = nil) #(text, hit_pages = nil)
+    def initialize(ref_nbr, year = nil)
       @text = ref_nbr
       @year = year
       from, to = nil
       if year
-        d = Date.strptime year, '%Y'
-        from = d.strftime '%m/%d/%Y'
-        to   = d.next_year.prev_day.strftime '%m/%d/%Y'
+        d = Date.strptime year, "%Y"
+        from = d.strftime "%m/%d/%Y"
+        to   = d.next_year.prev_day.strftime "%m/%d/%Y"
       end
       url  = "#{DOMAIN}/publications/search?keywords-lg=#{ref_nbr}&dateFrom-lg=#{from}&dateTo-lg=#{to}"
       doc  = Nokogiri::HTML OpenURI.open_uri(::Addressable::URI.parse(url).normalize)
-      hits = doc.css('table.publications-table > tbody > tr').map do |h|
-        link  = h.at('td/div/strong/a')
-        code  = h.at('td[2]').text.strip
+      hits = doc.css("table.publications-table > tbody > tr").map do |h|
+        link  = h.at("td/div/strong/a")
+        code  = h.at("td[2]").text.strip
         title = link.text
         url   = DOMAIN + link[:href]
-        Hit.new({ code: code, title: title, url: url }, self)
+        status = h.at("td[4]").text.strip.downcase
+        Hit.new({ code: code, title: title, url: url, status: status }, self)
       end
       concat hits
       # concat(hits.map { |h| Hit.new(h, self) })

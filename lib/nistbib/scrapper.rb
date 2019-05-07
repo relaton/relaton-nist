@@ -14,7 +14,8 @@ module NistBib
 
         NistBibliographicItem.new(
           fetched: Date.today.to_s,
-          type: nil,
+          type: "standard",
+          id: fetch_id(doc),
           titles: fetch_titles(hit_data),
           link: fetch_link(doc),
           docid: fetch_docid(doc),
@@ -24,7 +25,7 @@ module NistBib
           language: ["en"],
           script: ["Latn"],
           abstract: fetch_abstract(doc),
-          docstatus: fetch_status(doc),
+          docstatus: fetch_status(doc, hit_data[:status]),
           copyright: fetch_copyright(doc),
           relations: fetch_relations(doc),
           nistseries: fetch_nistseries(doc),
@@ -58,31 +59,31 @@ module NistBib
       # Fetch id.
       # @param doc [Nokogiri::HTML::Document]
       # @return [String]
-      # def fetch_id(doc)
-      #   doc.at("//div[contains(@class, 'publications-detail')]/h3").text.
-      #     strip.gsub(/\s/, "")
-      # end
+      def fetch_id(doc)
+        doc.at("//div[contains(@class, 'publications-detail')]/h3").text.
+          strip.gsub(/\s/, "")
+      end
 
       # Fetch status.
       # @param doc [Nokogiri::HTML::Document]
       # @param status [String]
       # @return [Hash]
-      def fetch_status(doc)
-        status = if doc.at "//p/strong[text()='Withdrawn:']"
-                   "final-withdrawn"
-                 else
-                   item_ref = doc.at(
-                     "//div[contains(@class, 'publications-detail')]/h3"
-                   ).text.strip
-                   wip = item_ref.match(/(?<=\()\w+/).to_s
-                   case wip
-                   when "DRAFT"
-                     "draft-public"
-                   else
-                     "final"
-                   end
-                 end
-        NistBib::DocumentStatus.new(status)
+      def fetch_status(doc, status)
+        if doc.at "//p/strong[text()='Withdrawn:']"
+          stage = "final-withdrawn"
+        else
+          item_ref = doc.at(
+            "//div[contains(@class, 'publications-detail')]/h3",
+          ).text.strip
+          wip = item_ref.match(/(?<=\()\w+/).to_s
+          case wip
+          when "DRAFT"
+            stage = "draft-public"
+          else
+            stage = status
+          end
+        end
+        NistBib::DocumentStatus.new(stage: stage)
       end
 
       # Fetch titles.

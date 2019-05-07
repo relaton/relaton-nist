@@ -1,5 +1,5 @@
-<bibitem>
-  <fetched>2019-05-06</fetched>
+<bibitem id="SP800-162" type="standard">
+  <fetched>2019-05-07</fetched>
   <title format="text/plain" language="en" script="Latn">Guide to Attribute Based Access Control (ABAC) Definition and Considerations</title>
   <uri type="pdf">https://nvlpubs.nist.gov/nistpubs/specialpublications/NIST.SP.800-162.pdf</uri>
   <uri type="doi">https://doi.org/10.6028/NIST.SP.800-162</uri>

@@ -9,16 +9,21 @@ module NistBib
     attr_reader :stage
 
     # @return [String, NilClass]
+    attr_reader :substage
+
+    # @return [String, NilClass]
     attr_reader :iteration
 
     # @param stage [String]
+    # @param substage [String, NilClass]
     # @param iteration [String, NilClass]
-    def initialize(stage, iteration = nil)
+    def initialize(stage:, substage: nil, iteration: nil)
       unless STAGES.include? stage
         raise ArgumentError, "invalid argument: stage (#{stage})"
       end
 
       @stage = stage
+      @substage = substage
       @iteration = iteration
     end
 
