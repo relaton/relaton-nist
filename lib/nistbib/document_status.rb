@@ -1,9 +1,10 @@
 module NistBib
   class DocumentStatus
     STAGES = %w[
-      draft-internal draft-wip draft-prelim draft-public draft-retire
-      draft-withdrawn final final-review final-withdrawn
+      draft-internal draft-wip draft-prelim draft-public final final-review
     ].freeze
+
+    SUBSTAGES = %w[active retired withdrawn].freeze
 
     # @return [String]
     attr_reader :stage
@@ -22,6 +23,10 @@ module NistBib
         raise ArgumentError, "invalid argument: stage (#{stage})"
       end
 
+      if substage && !SUBSTAGES.include?(substage)
+        raise ArgumentError, "invalid argument: substage (#{substage})"
+      end
+
       @stage = stage
       @substage = substage
       @iteration = iteration
@@ -31,6 +36,7 @@ module NistBib
     def to_xml(builder)
       builder.status do
         builder.stage stage
+        builder.substage substage if substage
         builder.iteration iteration if iteration
       end
     end

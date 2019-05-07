@@ -69,21 +69,35 @@ module NistBib
       # @param status [String]
       # @return [Hash]
       def fetch_status(doc, status)
-        if doc.at "//p/strong[text()='Withdrawn:']"
-          stage = "final-withdrawn"
+        case status
+        when "draft (withdrawn)"
+          stage = "draft-public"
+          substage = "withdrawn"
+        when "retired draft"
+          stage = "draft-public"
+          substage = "retired"
+        when "withdrawn"
+          stage = "final"
+          substage = "withdrawn"
+        when "draft"
+          stage = "draft-public"
+          substage = "active"
         else
-          item_ref = doc.at(
-            "//div[contains(@class, 'publications-detail')]/h3",
-          ).text.strip
-          wip = item_ref.match(/(?<=\()\w+/).to_s
-          case wip
-          when "DRAFT"
-            stage = "draft-public"
-          else
-            stage = status
-          end
+          stage = status
+          substage = "active"
         end
-        NistBib::DocumentStatus.new(stage: stage)
+
+        # if doc.at "//p/strong[text()='Withdrawn:']"
+        #   substage = "withdrawn"
+        # else
+        #   substage = "active"
+        #   item_ref = doc.at(
+        #     "//div[contains(@class, 'publications-detail')]/h3",
+        #   ).text.strip
+        #   wip = item_ref.match(/(?<=\()\w+/).to_s
+        #   stage = "draft-public" if wip == "DRAFT"
+        # end
+        NistBib::DocumentStatus.new(stage: stage, substage: substage)
       end
 
       # Fetch titles.

@@ -9,6 +9,7 @@ module NistBib
     # @return [NistBib::CommentPeriod]
     attr_reader :commentperiod
 
+    # @param id [String, NilClass]
     # @param title [Array<RelatonBib::TypedTitleString>]
     # @param formattedref [RelatonBib::FormattedRef, NilClass]
     # @param type [String, NilClass]

@@ -126,6 +126,7 @@
   <abstract format="text/plain" language="en" script="Latn">This document provides Federal agencies with a definition of attribute based access control (ABAC). ABAC is a logical access control methodology where authorization to perform a set of operations is determined by evaluating attributes associated with the subject, object, requested operations, and, in some cases, environment conditions against policy, rules, or relationships that describe the allowable operations for a given set of attributes. This document also provides considerations for using ABAC to improve information sharing within organizations and between organizations while maintaining control of that information.</abstract>
   <status>
     <stage>final</stage>
+    <substage>active</substage>
   </status>
   <copyright>
     <from>2014</from>

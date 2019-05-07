@@ -22,7 +22,11 @@ module NistBib
         status = item.at "./status"
         return unless status
 
-        DocumentStatus.new stage: status.at("stage")&.text, iteration: status.at("iteraton")&.text
+        DocumentStatus.new(
+          stage: status.at("stage")&.text,
+          substage: status.at("substage")&.text,
+          iteration: status.at("iteraton")&.text,
+        )
       end
 
       def fetch_commentperiod(item)

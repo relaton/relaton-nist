@@ -81,6 +81,7 @@
   <abstract format="text/plain" language="en" script="Latn">The NISTIR 8011 volumes each focus on an individual information security capability, adding tangible detail to the more general overview given in NISTIR 8011 Volume 1, and providing a template for transition to a detailed, NIST guidance-based automated assessment. This document, Volume 3 of NISTIR 8011, addresses the Software Asset Management (SWAM) information security capability. The focus of the SWAM capability is to manage risk created by unmanaged or unauthorized software on a network. Unmanaged or unauthorized software is a target that attackers can use as a platform from which to attack components on the network.</abstract>
   <status>
     <stage>final</stage>
+    <substage>active</substage>
   </status>
   <copyright>
     <from>2018</from>

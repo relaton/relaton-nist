@@ -33,6 +33,11 @@ module NistBib
           end
         end
 
+        /^(?<code2>[^\(]+)(?<date2>.*)$/ =~ code
+        if code2
+          code = code2.strip
+        end
+
         code += "-1" if opts[:all_parts]
         ret = nistbib_get1(code, year, opts)
         # return nil if ret.nil?
