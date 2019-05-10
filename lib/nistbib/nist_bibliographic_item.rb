@@ -65,7 +65,7 @@ module NistBib
 
     # @param builder [Nokogiri::XML::Builder]
     def to_xml(builder = nil)
-      super builder, "bibitem" do |b|
+      super builder, root: :bibitem, date_format: :short do |b|
         nistseries&.to_xml b
         keyword.each { |kw| kw.to_xml b }
         commentperiod&.to_xml b

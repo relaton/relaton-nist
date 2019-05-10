@@ -1,13 +1,13 @@
 <bibitem id="NISTIR8011Vol.3" type="standard">
-  <fetched>2019-05-07</fetched>
+  <fetched>2019-05-08</fetched>
   <title format="text/plain" language="en" script="Latn">Automation Support for Security Control Assessments: Software Asset Management</title>
   <uri type="pdf">http://nvlpubs.nist.gov/nistpubs/ir/2018/NIST.IR.8011-3.pdf</uri>
   <uri type="doi">https://doi.org/10.6028/NIST.IR.8011-3</uri>
   <docidentifier type="nist">NISTIR 8011 Vol. 3</docidentifier>
-  <date type="issued">
+  <date type="published">
     <on>2018-12</on>
   </date>
-  <date type="published">
+  <date type="issued">
     <on>2018-12</on>
   </date>
   <contributor>

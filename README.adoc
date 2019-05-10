@@ -66,6 +66,31 @@ fetching 8200...
 ...
 ----
 
+=== Get short citation
+Short citation is a convetion about a citation's format. The format for NIST publications is:
+----
+NIST {abbrev(series)} {docnumber} {(edition), optional} {(stage), optioal}
+# or
+{abbrev(series)} {docnumber} {(edition), optional} {(stage), optioal}
+----
+- `(stage)` is empty if the state is "final" (published)
+- `(edition)` is the date of publication or update
+- `docnumber` is the full NIST number, including revision, e.g., 800-52
+
+The format for FIPS publications is:
+----
+FIPS {docnumber}
+# or
+NIST FIPS {docnumber}
+----
+[source,ruby]
+----
+NistBib::NistBibliography.get("8200", "2018", {})
+fetching 8200...
+=> #<NistBib::NistBibliographicItem:0x007f82bb3370a8
+...
+----
+
 == Development
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.

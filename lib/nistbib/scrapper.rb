@@ -19,7 +19,7 @@ module NistBib
           titles: fetch_titles(hit_data),
           link: fetch_link(doc),
           docid: fetch_docid(doc),
-          dates: fetch_dates(doc),
+          dates: fetch_dates(doc, hit_data[:release_date]),
           contributors: fetch_contributors(doc),
           edition: nil,
           language: ["en"],
@@ -110,15 +110,17 @@ module NistBib
       # Fetch dates
       # @param doc [Nokogiri::HTML::Document]
       # @return [Array<Hash>]
-      def fetch_dates(doc)
-        dates = []
-        d = doc.at("//strong[text()='Date Published:']/../text()[2]").text.strip
-        issued_date = Date.strptime(d, "%B %Y").to_s
-        dates << { type: "issued", on: issued_date } unless issued_date.empty?
+      def fetch_dates(doc, release_date)
+        dates = [{ type: "published", on: release_date.to_s }]
 
-        pd = d.match(/\d{2}-\d{2}-\d{4}/)
-        publish_date = pd ? Date.strptime(pd.to_s, "%m-%d-%Y").to_s : issued_date
-        dates << { type: "published", on: publish_date } unless publish_date.empty?
+        d = doc.at("//span[@id='pub-release-date']").text.strip
+        date = if /(?<date>\w+\s\d{4})/ =~ d
+                 Date.strptime(date, "%B %Y")
+               elsif /(?<date>\w+\s\d{2},\s\d{4})/ =~ d
+                 Date.strptime(date, "%B %d, %Y")
+               end
+        dates << { type: "issued", on: date.to_s }
+
         dates
       end
 
@@ -189,7 +191,7 @@ module NistBib
       def fetch_copyright(doc)
         name = "National Institute of Standards and Technology"
         url = "www.nist.gov"
-        d = doc.at("//strong[text()='Date Published:']/../text()[2]").text.strip
+        d = doc.at("//span[@id='pub-release-date']").text.strip
         from = d.match(/\d{4}/).to_s
         { owner: { name: name, abbreviation: "NIST", url: url }, from: from }
       end
@@ -211,17 +213,17 @@ module NistBib
       # @param doc [Nokogiri::HTML::Document]
       # @return [Array<Hash>]
       def fetch_relations(doc)
-        relations = doc.xpath('//strong[.="Supersedes:"]/following-sibling::a').map do |r|
+        relations = doc.xpath('//span[@id="pub-supersedes-container"]/a').map do |r|
           doc_relation "supersedes", r
         end
 
-        relations += doc.xpath(
-          '//strong[text()="Other Parts of this Publication:"]/following-sibling::a',
-        ).map { |r| doc_relation "partOf", r }
+        relations += doc.xpath('//span[@id="pub-part-container"]/a').map do |r|
+          doc_relation "partOf", r
+        end
 
-        relations + doc.xpath(
-          '//strong[text()="Related NIST Publications:"]/following-sibling::a',
-        ).map { |r| doc_relation "updates", r }
+        relations + doc.xpath('//span[@id="pub-related-container"]/a').map do |r|
+          doc_relation "updates", r
+        end
       end
 
       def doc_relation(type, ref)
@@ -246,19 +248,17 @@ module NistBib
       end
 
       def fetch_keywords(doc)
-        kws = doc.at "//h4[.='Keywords']/following-sibling::text()"
-        return [] unless kws
-
-        kws.text.strip.split("; ").map { |kw| Keyword.new kw }
+        kws = doc.xpath "//span[@id='pub-keywords-container']/span"
+        kws.map { |kw| Keyword.new kw.text }
       end
 
       def fetch_commentperiod(doc)
-        cp = doc.at "//strong[.='Comments Due:']/following-sibling::text()"
+        cp = doc.at "//span[@id='pub-comments-due']"
         return unless cp
 
         to = Date.strptime cp.text.strip, "%B %d, %Y"
 
-        d = doc.at("//strong[text()='Date Published:']/../text()[2]").text.strip
+        d = doc.at("//span[@id='pub-release-date']").text.strip
         from = Date.strptime(d, "%B %Y").to_s
 
         ex = doc.at "//strong[contains(.,'The comment closing date has been extended to')]"

@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://csrc.nist.gov/publications/search?dateFrom-lg=&dateTo-lg=&keywords-lg=7831
+    uri: https://csrc.nist.gov/publications/search?keywords-lg=7831
     body:
       encoding: US-ASCII
       string: ''
@@ -29,8 +29,8 @@ http_interactions:
       Server:
       - Microsoft-IIS/8.5
       Set-Cookie:
-      - ASP.NET_SessionId=fyoabpoqtgfj04bo23ttgcwz; path=/; secure; HttpOnly
-      - CMSCsrfCookie=vwEVPinGxbnUGAH+2p8El3TJ5S8H7+zCQqRElBkc; path=/; secure; HttpOnly
+      - ASP.NET_SessionId=mnx2qwztbsn1lw5mp2qctiby; path=/; secure; HttpOnly
+      - CMSCsrfCookie=aLWf7eNz8gu8yybtB7Uwu+IZ30TTLRiEfVW4eeYw; path=/; secure; HttpOnly
       - CMSPreferredCulture=en-US; path=/; HttpOnly; Secure
       X-Frame-Options:
       - SAMEORIGIN
@@ -39,9 +39,9 @@ http_interactions:
       X-Aspnet-Version:
       - 4.0.30319
       Date:
-      - Thu, 02 May 2019 10:47:45 GMT
+      - Thu, 09 May 2019 11:53:25 GMT
       Content-Length:
-      - '86646'
+      - '87911'
       Strict-Transport-Security:
       - max-age=31536000
     body:
@@ -64,8 +64,7 @@ http_interactions:
         sizes=\"32x32\" />\r\n<link rel=\"icon\" type=\"image/png\" href=\"/CSRC/Media/images/favicons/favicon-16x16.png\"
         sizes=\"16x16\" />\r\n<link rel=\"manifest\" href=\"/CSRC/Media/images/favicons/manifest.json\"
         />\r\n<link rel=\"mask-icon\" href=\"/CSRC/Media/images/favicons/safari-pinned-tab.svg\"
-        color=\"#000000\" />\r\n<link rel=\"shortcut icon\" href=\"/CSRC/Media/images/favicons/favicon.ico\"
-        />\r\n<meta name=\"msapplication-config\" content=\"/CSRC/Media/images/favicons/browserconfig.xml\"
+        color=\"#000000\" />\r\n<meta name=\"msapplication-config\" content=\"/CSRC/Media/images/favicons/browserconfig.xml\"
         />\r\n<meta name=\"theme-color\" content=\"#000000\" />\r\n\r\n<script src=\"/Scripts/jquery/dist/jquery.min.js\"></script>\r\n<script
         src=\"/Scripts/underscore/underscore-min.js\"></script>\r\n<script src=\"/Scripts/bootstrap/dist/js/bootstrap.min.js\"></script>\r\n<script
         src=\"/Scripts/moment/min/moment.min.js\" type=\"text/javascript\"></script>\r\n<script
@@ -78,16 +77,17 @@ http_interactions:
         src=\"/CSRC/media/js/forms-searchCriteria.js\" type=\"text/javascript\"></script>\r\n<script
         src=\"/CSRC/media/js/nist-exit-script.js\" type=\"text/javascript\"></script>\r\n\r\n<script
         async type=\"text/javascript\" id=\"_fed_an_ua_tag\" src=\"https://dap.digitalgov.gov/Universal-Federated-Analytics-Min.js?agency=nist&subagency=csrc&pua=UA-66610693-15&yt=true&exts=xsd,xml,wav,mpg,mpeg,avi,rtf,webm,ogg,ogv,oga,map,otf,eot,svg,ttf,woff\"></script>\r\n\r\n<style
-        id=\"antiClickjack\">body{display:none !important;}</style>\r\n<script type=\"text/javascript\">\r\n
-        \  if (self === top) {\r\n       var antiClickjack = document.getElementById(\"antiClickjack\");\r\n
-        \      antiClickjack.parentNode.removeChild(antiClickjack);\r\n   } else {\r\n
-        \      top.location = self.location;\r\n   }\r\n</script>\r\n \n<link href=\"/CSRC/Media/images/favicons/favicon.ico\"
-        type=\"image/x-icon\" rel=\"shortcut icon\"/>\r\n<link href=\"/CSRC/Media/images/favicons/favicon.ico\"
+        id=\"antiClickjack\">body{display:none !important;}</style>\r\n<script type=\"text/javascript\"
+        id=\"antiClickjackScript\">\r\n   if (self === top) {\r\n       var antiClickjack
+        = document.getElementById(\"antiClickjack\");\r\n       antiClickjack.parentNode.removeChild(antiClickjack);\r\n
+        \  } else {\r\n       top.location = self.location;\r\n   }\r\n</script>\r\n
+        \n<link href=\"/CSRC/Media/images/favicons/favicon.ico\" type=\"image/x-icon\"
+        rel=\"shortcut icon\"/>\r\n<link href=\"/CSRC/Media/images/favicons/favicon.ico\"
         type=\"image/x-icon\" rel=\"icon\"/>\r\n</head>\r\n<body class=\"LTR Unknown
-        ENUS ContentBody\" >\r\n    \r\n    <form method=\"post\" action=\"/publications/search?keywords-lg=7831&amp;dateFrom-lg=&amp;dateTo-lg=\"
+        ENUS ContentBody\" >\r\n    \r\n    <form method=\"post\" action=\"/publications/search?keywords-lg=7831\"
         id=\"form\">\r\n<input type=\"hidden\" name=\"__CMSCsrfToken\" id=\"__CMSCsrfToken\"
-        value=\"Nw+HwJLLeV/PGR/7YpxyYRF9izhUxfTv7BObYYpmhXdOXws97wWhkyuL1apTiz2h76zSPkrHBD8iMREMrTY6kjM7jZ6mXnhjQlkj795bZOo=\"
-        />\r\n<input type=\"hidden\" name=\"__VIEWSTATE\" id=\"__VIEWSTATE\" value=\"zve53woA2U7AGSk/PGqS5us2HacB/l/5VYqP+Re1FUOTg25MBlO0+OhIK8/VGdUWbrcca7B3QXF1jGHrPqBkhSBBTVvDFh+v7qMXQ+RR481TBjNaeCCho/wcxUiA6FwngYxLPuK5cPW0s/SLOgM+br8ZzHlTtDJmZYg0nWor0uXsDT1iBqqbg2OgZeCKuk0Eb0RFb4E6eTb5jI9kIrppRh4Xbm1hQlX5IQzElmTB0V0U04bsiwv84Oq5BgO8xKiPnu5AZXKojWL0/QS61RBpFDGuL7r8TtVwX4f9SwnUavz4kbHA7Fpr8pSJaAb+34cLjwEWaf7LE7uDYxlyPXvUfm0sGbiYehspyQc9mYOefPyHxHIkKVSA1QPFWliXod1c\"
+        value=\"+krExQrjdpSDf47kEkCNAlaZ61ozkSfR1fR4Ug2y8Mitog2PsWaNHhmNgzVmDu05bQnHoRQ++8GFFl/s37974qiuA+xxfw7K9/tl72McEm8=\"
+        />\r\n<input type=\"hidden\" name=\"__VIEWSTATE\" id=\"__VIEWSTATE\" value=\"vnnZ5p1DNV+TXroMIVdSlLFJdI2fRq3pc20Ml0wXtwsMA6NASnj5QprcZ2X1fSAFbtcmPeAsi5upJOwohXET/paQ5SovpRPto0Z8ePUWs5bC02crh+QSvKnL2RciS6x/tW+qlKi8q75B6KWpe//Wn5l+usxYjry6b/kZBTEwsVINUDKQuLKqmB21X7FirQX+8YilqwknPokxv/pfJK6iNcw9Zhd21ZimYuKwXAMVrgQzWPlZi6eWN89DHN+cVZNCnENzkQxy06iH9UPFvV/xt8+FuMKjbNLR3Zel7kcNPXvh39BhRA2aJmE0jgLsEri4k0Xdky9YL+ggCzgBotcVjA==\"
         />\r\n\r\n<input type=\"hidden\" name=\"lng\" id=\"lng\" value=\"en-US\" />\r\n<script
         type=\"text/javascript\">\r\n\t//<![CDATA[\n\r\nfunction PM_Postback(param)
         { if (window.top.HideScreenLockWarningAndSync) { window.top.HideScreenLockWarningAndSync(1080);
@@ -103,148 +103,151 @@ http_interactions:
         false,\r\n  \"applicationUrl\": \"/\",\r\n  \"isDialog\": false,\r\n  \"isRTL\":
         \"false\"\r\n};\r\n\n//]]>\r\n</script>\r\n<input type=\"hidden\" name=\"__VIEWSTATEGENERATOR\"
         id=\"__VIEWSTATEGENERATOR\" value=\"A5343185\" />\r\n    \r\n    <div id=\"ctxM\">\r\n\r\n</div>\r\n
-        \       <div id=\"antiClickjack\" style=\"display: none\">\r\n        <h1>You
-        are viewing this page in an unauthorized frame window.</h1>\r\n        <p>This
-        is a potential security issue, you are being redirected to <a href=\"https://csrc.nist.gov\">https://csrc.nist.gov</a></p>\r\n
-        \   </div>\r\n    <nav id=\"navbar\" class=\"navbar\">\r\n      <div id=\"nist-menu-container\"
-        class=\"container\">\r\n        <div class=\"row\">\r\n        <!-- Brand
-        -->\r\n        <div class=\"col-xs-6 col-md-4 navbar-header\">\r\n          <a
-        class=\"navbar-brand\" href=\"https://www.nist.gov\" target=\"_blank\" id=\"navbar-brand-image\">\r\n
-        \           <img src=\"/CSRC/Media/images/svg/nist-logo.svg\" alt=\"National
-        Institute of Standards and Technology\" width=\"110\" height=\"30\">\r\n          </a>\r\n
-        \       </div>\r\n        <div class=\"col-xs-6 col-md-8 navbar-nist-logo\">\r\n
-        \           <div class=\"form-inline hidden-sm hidden-xs\">\r\n                <label
-        for=\"search-csrc-query\" class=\"element-invisible\">Search</label>\r\n                <input
+        \   <div id=\"antiClickjack\" style=\"display: none\">\r\n    <h1>You are
+        viewing this page in an unauthorized frame window.</h1>\r\n    <p>This is
+        a potential security issue, you are being redirected to <a href=\"https://csrc.nist.gov\">https://csrc.nist.gov</a></p>\r\n</div>\r\n<nav
+        id=\"navbar\" class=\"navbar\">\r\n  <div id=\"nist-menu-container\" class=\"container\">\r\n
+        \   <div class=\"row\">\r\n    <!-- Brand -->\r\n    <div class=\"col-xs-6
+        col-md-4 navbar-header\">\r\n      <a class=\"navbar-brand\" href=\"https://www.nist.gov\"
+        target=\"_blank\" id=\"navbar-brand-image\">\r\n        <img src=\"/CSRC/Media/images/svg/nist-logo.svg\"
+        alt=\"National Institute of Standards and Technology\" width=\"110\" height=\"30\">\r\n
+        \     </a>\r\n    </div>\r\n    <div class=\"col-xs-6 col-md-8 navbar-nist-logo\">\r\n
+        \       <div class=\"form-inline hidden-sm hidden-xs\">\r\n            <label
+        for=\"search-csrc-query\" class=\"element-invisible\">Search</label>\r\n            <input
         autocomplete=\"off\" class=\"form-control\" id=\"search-csrc-query\" name=\"search-csrc-query\"
         type=\"text\" size=\"15\" maxlength=\"128\" placeholder=\"Search CSRC\"/>\r\n
-        \               <button type=\"button\" id=\"search-csrc-submit-btn\" name=\"op\"
-        class=\"form-submit\">\r\n                    <span class=\"element-invisible\">Search</span>\r\n
-        \                   <i class=\"fa fa-search\"></i>\r\n                </button>\r\n
-        \           </div>\r\n          <span id=\"nvd-menu-button\" class=\"pull-right\">\r\n
-        \           <a href=\"#\">\r\n              <span class=\"fa fa-bars\"></span>
-        \r\n              <span id=\"nvd-menu-full-text\"><span class=\"hidden-xxs\">CSRC
-        </span>MENU</span>\r\n            </a>\r\n          </span>\r\n        </div>\r\n
-        \       </div>\r\n      </div>\r\n        \r\n        <div class=\"form-inline
-        hidden-md hidden-lg\">\r\n            <label for=\"search-csrc-query\" class=\"element-invisible\">Search</label>\r\n
-        \           <input autocomplete=\"off\" class=\"form-control\" id=\"search-csrc-query-mobile\"
-        name=\"search-csrc-query\" type=\"text\" size=\"15\" maxlength=\"128\" placeholder=\"Search
-        CSRC\"/>\r\n            <button type=\"button\" id=\"search-csrc-submit-btn-mobile\"
-        name=\"op\" class=\"form-submit\">\r\n                <span class=\"element-invisible\">Search</span>\r\n
+        \           <button type=\"button\" id=\"search-csrc-submit-btn\" name=\"op\"
+        class=\"form-submit\">\r\n                <span class=\"element-invisible\">Search</span>\r\n
         \               <i class=\"fa fa-search\"></i>\r\n            </button>\r\n
-        \       </div>\r\n    <div class=\"main-menu-row container\">\r\n        <!--
-        Collect the nav links, forms, and other content for toggling -->\r\n        <div
-        id=\"main-menu-drop\" class=\"col-lg-12\" style=\"display: none;\">\r\n            <ul>\r\n\t\t
-        \       <li><a href=\"/projects\">Projects</a></li>\r\n\t\t        <li>\r\n
-        \                   <a href=\"/publications\">\r\n                        Publications\r\n
-        \                       <span class=\"expander fa fa-plus\" id=\"main-menu-expander-pubs\"
-        data-expander-name=\"publications\" data-expanded=\"false\">\r\n                            <span
-        class=\"element-invisible\">Expand or Collapse</span>\r\n                        </span>\r\n
-        \                   </a>\r\n                    <div style=\"display: none;\"
-        class=\"sub-menu\" data-expander-trigger=\"publications\">\r\n                        <div
-        class=\"row\">\r\n                            <div class=\"col-lg-4\">\r\n\t\t\t\t\t\t\t\t<p><a
-        href=\"/publications/draft-pubs\">Draft Pubs</a></p>\r\n\t\t\t\t\t\t\t\t<p><a
-        href=\"/publications/final-pubs\">Final Pubs</a></p>\r\n\t\t\t\t\t\t\t\t<p><a
-        href=\"/publications/fips\">FIPS</a></p>\r\n\t\t\t\t\t\t\t\t<p><a href=\"/publications/sp\">Special
-        Publications (SP<small>s</small>)</a></p>\r\n                            </div>\r\n
-        \                           <div class=\"col-lg-4\">\r\n\t\t\t\t\t\t\t\t<p><a
-        href=\"/publications/nistir\">NISTIR<small>s</small></a></p>\r\n\t\t\t\t\t\t\t\t<p><a
-        href=\"/publications/itl-bulletin\">ITL Bulletins</a></p>\r\n\t\t\t\t\t\t\t\t<p><a
-        href=\"/publications/white-paper\">White Papers</a></p>\r\n                            </div>\r\n
-        \                           <div class=\"col-lg-4\">\r\n\t\t\t\t\t\t\t\t<p><a
-        href=\"/publications/journal-article\">Journal Articles</a></p>\r\n\t\t\t\t\t\t\t\t<p><a
-        href=\"/publications/conference-paper\">Conference Papers</a></p>\r\n\t\t\t\t\t\t\t\t<p><a
-        href=\"/publications/book\">Books</a></p>\r\n                            </div>\r\n
-        \                       </div>\r\n                    </div>\r\n\t\t        </li>\r\n\t\t
-        \       <li>\r\n                    <a href=\"/topics\">\r\n                        Topics\r\n
-        \                       <span class=\"expander fa fa-plus\" id=\"main-menu-expander-topics\"
-        data-expander-name=\"topics\" data-expanded=\"false\">\r\n                            <span
-        class=\"element-invisible\">Expand or Collapse</span>\r\n                        </span>\r\n
-        \                   </a>\r\n                    <div style=\"display: none;\"
-        class=\"sub-menu\" data-expander-trigger=\"topics\">\r\n                        <div
-        class=\"row\">\r\n                            <div class=\"col-lg-4\">\r\n
-        \                               <p><a href=\"/Topics/Security-and-Privacy\">Security
-        &amp Privacy</a></p>\r\n                                <p><a href=\"/Topics/Applications\">Applications</a></p>\r\n
-        \                           </div>\r\n                            <div class=\"col-lg-4\">\r\n
-        \                               <p><a href=\"/Topics/Technologies\">Technologies</a></p>\r\n
-        \                               <p><a href=\"/Topics/Sectors\">Sectors</a></p>\r\n
-        \                           </div>\r\n                            <div class=\"col-lg-4\">\r\n
-        \                               <p><a href=\"/Topics/Laws-and-Regulations\">Laws
-        &amp; Regulations</a></p>\r\n                                <p><a href=\"/Topics/Activities-and-Products\">Activities
-        &amp; Products</a></p>\r\n                            </div>\r\n                        </div>\r\n
-        \                   </div>\r\n\t\t        </li>\r\n\t\t        <li><a href=\"/news\">News
-        &amp; Updates</a></li>\r\n\t\t        <li><a href=\"/events\">Events</a></li>\r\n
-        \               <li><a href=\"/glossary\">Glossary</a></li>\r\n\t\t        <li>\r\n
-        \                   <a href=\"/about\">\r\n                        About CSRC\r\n
-        \                       <span class=\"expander fa fa-plus\" id=\"main-menu-expander-about\"
-        data-expander-name=\"about\" data-expanded=\"false\">\r\n                            <span
-        class=\"element-invisible\">Expand or Collapse</span>\r\n                        </span>\r\n
-        \                   </a>\r\n                    <div style=\"display: none;\"
-        class=\"sub-menu\" data-expander-trigger=\"about\">\r\n                        <div
-        class=\"row\">\r\n                            <div class=\"col-lg-6\">\r\n
-        \                               <p>\r\n                                    <strong>Computer
-        Security Division</strong><br />\r\n                                    <ul>\r\n\t
-        \                                   <li><a href=\"/Groups/Computer-Security-Division/Cryptographic-Technology\">Cryptographic
-        Technology</a></li>\r\n\t                                    <li><a href=\"/Groups/Computer-Security-Division/Secure-Systems-and-Applications\">Secure
-        Systems and Applications</a></li>\r\n\t                                    <li><a
+        \       </div>\r\n      <span id=\"nvd-menu-button\" class=\"pull-right\">\r\n
+        \       <a href=\"#\" id=\"nvd-menu-button-link\">\r\n          <span class=\"fa
+        fa-bars\"></span> \r\n          <span id=\"nvd-menu-full-text\"><span class=\"hidden-xxs\">CSRC
+        </span>MENU</span>\r\n        </a>\r\n      </span>\r\n    </div>\r\n    </div>\r\n
+        \ </div>\r\n    \r\n    <div class=\"form-inline hidden-md hidden-lg\">\r\n
+        \       <label for=\"search-csrc-query\" class=\"element-invisible\">Search</label>\r\n
+        \       <input autocomplete=\"off\" class=\"form-control\" id=\"search-csrc-query-mobile\"
+        name=\"search-csrc-query\" type=\"text\" size=\"15\" maxlength=\"128\" placeholder=\"Search
+        CSRC\"/>\r\n        <button type=\"button\" id=\"search-csrc-submit-btn-mobile\"
+        name=\"op\" class=\"form-submit\">\r\n            <span class=\"element-invisible\">Search</span>\r\n
+        \           <i class=\"fa fa-search\"></i>\r\n        </button>\r\n    </div>\r\n<div
+        class=\"main-menu-row container\">\r\n    <!-- Collect the nav links, forms,
+        and other content for toggling -->\r\n    <div id=\"main-menu-drop\" class=\"col-lg-12\"
+        style=\"display: none;\">\r\n        <ul>\r\n            <li><a href=\"/projects\">Projects</a></li>\r\n
+        \           <li>\r\n                <a href=\"/publications\">\r\n                    Publications\r\n
+        \                   <span class=\"expander fa fa-plus\" id=\"main-menu-pubs-expander\"
+        data-expander-name=\"publications\" data-expanded=\"false\">\r\n                        <span
+        class=\"element-invisible\">Expand or Collapse</span>\r\n                    </span>\r\n
+        \               </a>\r\n                <div style=\"display: none;\" class=\"sub-menu\"
+        data-expander-trigger=\"publications\" id=\"main-menu-pubs-expanded\">\r\n
+        \                   <div class=\"row\">\r\n                        <div class=\"col-lg-4\">\r\n
+        \                           <p><a href=\"/publications/draft-pubs\">Draft
+        Pubs</a></p>\r\n                            <p><a href=\"/publications/final-pubs\">Final
+        Pubs</a></p>\r\n                            <p><a href=\"/publications/fips\">FIPS</a></p>\r\n
+        \                           <p><a href=\"/publications/sp\">Special Publications
+        (SP<small>s</small>)</a></p>\r\n                        </div>\r\n                        <div
+        class=\"col-lg-4\">\r\n                            <p><a href=\"/publications/nistir\">NISTIR<small>s</small></a></p>\r\n
+        \                           <p><a href=\"/publications/itl-bulletin\">ITL
+        Bulletins</a></p>\r\n                            <p><a href=\"/publications/white-paper\">White
+        Papers</a></p>\r\n                        </div>\r\n                        <div
+        class=\"col-lg-4\">\r\n                            <p><a href=\"/publications/journal-article\">Journal
+        Articles</a></p>\r\n                            <p><a href=\"/publications/conference-paper\">Conference
+        Papers</a></p>\r\n                            <p><a href=\"/publications/book\">Books</a></p>\r\n
+        \                       </div>\r\n                    </div>\r\n                </div>\r\n
+        \           </li>\r\n            <li>\r\n                <a href=\"/topics\">\r\n
+        \                   Topics\r\n                    <span class=\"expander fa
+        fa-plus\" id=\"main-menu-topics-expander\" data-expander-name=\"topics\" data-expanded=\"false\">\r\n
+        \                       <span class=\"element-invisible\">Expand or Collapse</span>\r\n
+        \                   </span>\r\n                </a>\r\n                <div
+        style=\"display: none;\" class=\"sub-menu\" data-expander-trigger=\"topics\"
+        id=\"main-menu-topics-expanded\">\r\n                    <div class=\"row\">\r\n
+        \                       <div class=\"col-lg-4\">\r\n                            <p><a
+        href=\"/Topics/Security-and-Privacy\">Security &amp Privacy</a></p>\r\n                            <p><a
+        href=\"/Topics/Applications\">Applications</a></p>\r\n                        </div>\r\n
+        \                       <div class=\"col-lg-4\">\r\n                            <p><a
+        href=\"/Topics/Technologies\">Technologies</a></p>\r\n                            <p><a
+        href=\"/Topics/Sectors\">Sectors</a></p>\r\n                        </div>\r\n
+        \                       <div class=\"col-lg-4\">\r\n                            <p><a
+        href=\"/Topics/Laws-and-Regulations\">Laws &amp; Regulations</a></p>\r\n                            <p><a
+        href=\"/Topics/Activities-and-Products\">Activities &amp; Products</a></p>\r\n
+        \                       </div>\r\n                    </div>\r\n                </div>\r\n
+        \           </li>\r\n            <li><a href=\"/news\">News &amp; Updates</a></li>\r\n
+        \           <li><a href=\"/events\">Events</a></li>\r\n            <li><a
+        href=\"/glossary\">Glossary</a></li>\r\n            <li>\r\n                <a
+        href=\"/about\">\r\n                    About CSRC\r\n                    <span
+        class=\"expander fa fa-plus\" id=\"main-menu-about-expander\" data-expander-name=\"about\"
+        data-expanded=\"false\">\r\n                        <span class=\"element-invisible\">Expand
+        or Collapse</span>\r\n                    </span>\r\n                </a>\r\n
+        \               <div style=\"display: none;\" class=\"sub-menu\" data-expander-trigger=\"about\"
+        id=\"main-menu-about-expanded\">\r\n                    <div class=\"row\">\r\n
+        \                       <div class=\"col-lg-6\">\r\n                            <p>\r\n
+        \                               <strong>Computer Security Division</strong><br
+        />\r\n                                <ul>\r\n                                    <li><a
+        href=\"/Groups/Computer-Security-Division/Cryptographic-Technology\">Cryptographic
+        Technology</a></li>\r\n                                    <li><a href=\"/Groups/Computer-Security-Division/Secure-Systems-and-Applications\">Secure
+        Systems and Applications</a></li>\r\n                                    <li><a
         href=\"/Groups/Computer-Security-Division/Security-Components-and-Mechanisms\">Security
-        Components and Mechanisms</a></li>\r\n\t                                    <li><a
+        Components and Mechanisms</a></li>\r\n                                    <li><a
         href=\"/Groups/Computer-Security-Division/Security-Engineering-and-Risk-Management\">Security
-        Engineering and Risk Management</a></li>\r\n\t                                    <li><a
+        Engineering and Risk Management</a></li>\r\n                                    <li><a
         href=\"/Groups/Computer-Security-Division/Security-Testing-Validation-and-Measurement\">Security
-        Testing, Validation, and Measurement</a></li>\r\n                                    </ul>\r\n
-        \                               </p>\r\n                            </div>\r\n
-        \                           <div class=\"col-lg-6\">\r\n                                <p>\r\n
-        \                                   <strong>Applied Cybersecurity Division</strong><br
-        />\r\n                                    <ul>\r\n\t                                    <li><a
-        href=\"/Groups/Applied-Cybersecurity-Division/Cybersecurity-and-Privacy-Applications\">Cybersecurity
-        and Privacy Applications</a></li>\r\n\t                                    <li><a
+        Testing, Validation, and Measurement</a></li>\r\n                                </ul>\r\n
+        \                           </p>\r\n                        </div>\r\n                        <div
+        class=\"col-lg-6\">\r\n                            <p>\r\n                                <strong>Applied
+        Cybersecurity Division</strong><br />\r\n                                <ul>\r\n
+        \                                   <li><a href=\"/Groups/Applied-Cybersecurity-Division/Cybersecurity-and-Privacy-Applications\">Cybersecurity
+        and Privacy Applications</a></li>\r\n                                    <li><a
         href=\"/Groups/Applied-Cybersecurity-Division/National-Cybersecurity-Center-of-Excellence\">National
-        Cybersecurity Center of Excellence (NCCoE)</a></li>\r\n\t                                    <li><a
+        Cybersecurity Center of Excellence (NCCoE)</a></li>\r\n                                    <li><a
         href=\"https://www.nist.gov/nice/\">National Initiative for Cybersecurity
-        Education (NICE)</a></li>\r\n\t                                    <li><a
-        href=\"/Groups/Applied-Cybersecurity-Division/Trusted-Identities-Group\">Trusted
-        Identities Group</a></li>\r\n                                    </ul>\r\n
-        \                               </p>\r\n                                <p>\r\n
-        \                                   <a href=\"/contact\">\r\n                                        Contact
-        Us\r\n                                    </a>\r\n                                </p>\r\n
-        \                           </div>\r\n                        </div>\r\n                    </div>\r\n\t\t
-        \       </li>\r\n            </ul>\r\n        </div><!-- /#mobile-nav-container
-        -->\r\n    </div>\r\n  \r\n    </nav>\r\n    <section id=\"itl-header\" class=\"has-menu\">\r\n
-        \       <div class=\"container\">\r\n            <div class=\"row\">\r\n                <div
-        class=\"col-sm-12 col-md-8\">\r\n                    <h2 class=\"hidden-xs
-        hidden-sm\">\r\n                        <a href=\"https://www.nist.gov/itl\"
-        target=\"_blank\">Information Technology Laboratory</a>\r\n                    </h2>\r\n
-        \                   <h1 class=\"hidden-xs hidden-sm\">\r\n                        <a
-        href=\"/\" id=\"csrc-header-link\">Computer Security Resource Center</a>\r\n
-        \                   </h1>\r\n                    <h1 class=\"hidden-xs text-center
-        hidden-md hidden-lg\">Computer Security Resource Center</h1>\r\n                    <h1
-        class=\"hidden-sm hidden-md hidden-lg text-center\">Computer Security<br />Resource
-        Center</h1>\r\n                </div>\r\n                <div class=\"col-sm-12
-        col-md-4\">\r\n                    <a href=\"/\" style=\"width: 100%; text-align:
-        center; display: block;\"><img src=\"/CSRC/Media/images/CSRC-white-134-38.png\"
-        alt=\"CSRC Logo\" class=\"csrc-header-logo\"></a>\r\n                </div>\r\n
-        \           </div>\r\n        </div>\r\n    </section>\r\n\r\n    <div id=\"body-section\"
+        Education (NICE)</a></li>\r\n                                    <li><a href=\"/Groups/Applied-Cybersecurity-Division/Trusted-Identities-Group\">Trusted
+        Identities Group</a></li>\r\n                                </ul>\r\n                            </p>\r\n
+        \                           <p>\r\n                                <a href=\"/contact\">\r\n
+        \                                   Contact Us\r\n                                </a>\r\n
+        \                           </p>\r\n                        </div>\r\n                    </div>\r\n
+        \               </div>\r\n            </li>\r\n        </ul>\r\n    </div><!--
+        /#mobile-nav-container -->\r\n</div>\r\n\r\n</nav>\r\n<section id=\"itl-header\"
+        class=\"has-menu\">\r\n    <div class=\"container\">\r\n        <div class=\"row\">\r\n
+        \           <div class=\"col-sm-12 col-md-8\">\r\n                <h2 class=\"hidden-xs
+        hidden-sm\">\r\n                    <a href=\"https://www.nist.gov/itl\" target=\"_blank\"
+        id=\"itl-header-link\">Information Technology Laboratory</a>\r\n                </h2>\r\n
+        \               <h1 class=\"hidden-xs hidden-sm\">\r\n                    <a
+        href=\"/\" id=\"csrc-header-link-lg\">Computer Security Resource Center</a>\r\n
+        \               </h1>\r\n                <h1 class=\"hidden-xs text-center
+        hidden-md hidden-lg\" id=\"csrc-header-link-md\">Computer Security Resource
+        Center</h1>\r\n                <h1 class=\"hidden-sm hidden-md hidden-lg text-center\"
+        id=\"csrc-header-link-sm\">Computer Security<br />Resource Center</h1>\r\n
+        \           </div>\r\n            <div class=\"col-sm-12 col-md-4\">\r\n                <a
+        id=\"logo-csrc\" href=\"/\" style=\"width: 100%; text-align: center; display:
+        block;\"><img id=\"img-logo-csrc\"src=\"/CSRC/Media/images/CSRC-white-134-38.png\"
+        alt=\"CSRC Logo\" class=\"csrc-header-logo\"></a>\r\n            </div>\r\n
+        \       </div>\r\n    </div>\r\n</section>\r\n\r\n<div id=\"body-section\"
         class=\"container\">\r\n\r\n\r\n<h1>Publication Search</h1>\r\n\r\n<div class=\"row\">\r\n
-        \  <div class=\"col-lg-3 col-md-4\">\r\n          <div id=\"publications-quicklinks\"
-        class=\"bs-callout bs-callout-subnav\">\r\n        <h4>Quick Links <i class=\"fa
-        fa-bolt\"></i></h4>\r\n\t\t<p style=\"margin-left: 1rem;\">\r\n\t\t\t<a href=\"/publications/draft-pubs\">Draft
-        Pubs</a>\r\n\t\t\t<br/>\r\n\t\t\t<a href=\"/publications/final-pubs\">Final
-        Pubs</a>\r\n\t\t\t<br/>\r\n\t\t\t<a href=\"/publications/fips\">FIPS</a>\r\n\t\t\t<br/>\r\n\t\t\t<a
-        href=\"/publications/sp\">SPs (Special Pubs)</a>\r\n\t\t\t<br/>\r\n\t\t\t<a
-        href=\"/publications/nistir\">NISTIRs</a>\r\n\t\t\t<br/>\r\n\t\t\t<a href=\"/publications/itl-bulletin\">ITL
-        Bulletins</a>\r\n\t\t\t<br/>\r\n\t\t\t<a href=\"/publications/white-paper\">White
-        Papers</a>\r\n\t\t\t<br/>\r\n\t\t\t<a href=\"/publications/journal-article\">Journal
-        Articles</a>\r\n\t\t\t<br/>\r\n\t\t\t<a href=\"/publications/conference-paper\">Conference
-        Papers</a>\r\n\t\t\t<br/>\r\n\t\t\t<a href=\"/publications/book\">Books</a>\r\n\t\t</p>\r\n
-        \   </div>\r\n<div class=\"bs-callout bs-callout-success csrc-search-form
-        hidden-sm hidden-xs hidden-xxs\" data-csrc-form=\"true\" data-form-name=\"pubSearch\"
-        data-form-action=\"/publications/search\" data-form-method=\"GET\" data-default-query=\"\">\r\n
-        \   <div class=\"form-group\"> \r\n        <label for=\"pub-search-keywords\">Search</label>\r\n
-        \       <input type=\"text\" id=\"pub-search-keywords\" name=\"keywords-lg\"
-        class=\"form-control\" />\r\n        <em class=\"text-muted\">Search publication
-        record data<br/> (not a full text search)</em>\r\n    </div>\r\n    <div class=\"form-group\">\r\n\t\t<label
-        for=\"pub-search-sort-by\">\r\n\t\t\tSort By\r\n\t\t</label>\r\n\t\t<select
-        id=\"pub-search-sort-by\" name=\"sortBy-lg\" class=\"form-control\">\r\n\t\t\t<option
+        \  <div class=\"col-lg-3 col-md-4\">\r\n      <div id=\"publications-quicklinks-lg\"
+        class=\"bs-callout bs-callout-subnav hidden-sm hidden-xs hidden-xxs\">\r\n
+        \   <h4>Quick Links <i class=\"fa fa-bolt\"></i></h4>\r\n    <p style=\"margin-left:
+        1rem;\">\r\n        <a href=\"/publications/draft-pubs\" id=\"quick-link-draft-lg\">Draft
+        Pubs</a>\r\n        <br/>\r\n        <a href=\"/publications/final-pubs\"
+        id=\"quick-link-final-lg\">Final Pubs</a>\r\n        <br/>\r\n        <a href=\"/publications/fips\"
+        id=\"quick-link-fips-lg\">FIPS</a>\r\n        <br/>\r\n        <a href=\"/publications/sp800\"
+        id=\"quick-link-sp-800-lg\">SP 800 series</a>\r\n        <br/>\r\n        <a
+        href=\"/publications/sp\" id=\"quick-link-sp-lg\">All SP (Special Pubs) series</a>\r\n
+        \       <br/>\r\n        <a href=\"/publications/nistir\" id=\"quick-link-nistir-lg\">NISTIRs</a>\r\n
+        \       <br/>\r\n        <a href=\"/publications/itl-bulletin\" id=\"quick-link-itl-bul-lg\">ITL
+        Bulletins</a>\r\n        <br/>\r\n        <a href=\"/publications/white-paper\"
+        id=\"quick-link-white-papers-lg\">White Papers</a>\r\n        <br/>\r\n        <a
+        href=\"/publications/journal-article\" id=\"quick-link-journal-articles-lg\">Journal
+        Articles</a>\r\n        <br/>\r\n        <a href=\"/publications/conference-paper\"
+        id=\"quick-link-conference-papers-lg\">Conference Papers</a>\r\n        <br/>\r\n
+        \       <a href=\"/publications/book\" id=\"quick-link-books-lg\">Books</a>\r\n
+        \   </p>\r\n</div>\r\n<div class=\"bs-callout bs-callout-success csrc-search-form
+        hidden-sm hidden-xs hidden-xxs\" id=\"pubs-search-form-lg\" data-csrc-form=\"true\"
+        data-form-name=\"pubSearch\" data-form-action=\"/publications/search\" data-form-method=\"GET\"
+        data-default-query=\"\">\r\n    <div class=\"form-group\"> \r\n        <label
+        for=\"keywords-lg\">Search</label>\r\n        <input type=\"text\" id=\"keywords-lg\"
+        name=\"keywords-lg\" class=\"form-control\" />\r\n        <em class=\"text-muted\">Search
+        publication record data<br/> (not a full text search)</em>\r\n    </div>\r\n
+        \   <div class=\"form-group\">\r\n\t\t<label for=\"sortBy-lg\">\r\n\t\t\tSort
+        By\r\n\t\t</label>\r\n\t\t<select id=\"sortBy-lg\" name=\"sortBy-lg\" class=\"form-control\">\r\n\t\t\t<option
         value=\"relevance\">Relevance (best match)</option>\r\n\t\t\t<option value=\"releasedate
         DESC\">Release Date (newest first)</option>\r\n\t\t\t<option value=\"releasedate
         ASC\">Release Date (oldest first)</option>\r\n\t\t\t<option value=\"Series
@@ -253,64 +256,69 @@ http_interactions:
         value=\"Number ASC\">Number (lowest to highest)</option>\r\n\t\t\t<option
         value=\"Title ASC\">Title (A-Z)</option>\r\n\t\t\t<option value=\"Title DESC\">Title
         (Z-A)</option>\r\n\t\t</select>\r\n    </div>\r\n    <div class=\"form-group\">\r\n
-        \       <label for=\"pub-search-view-mode\">\r\n            Results View\r\n
-        \       </label>\r\n\t\t<select id=\"pub-search-view-mode\" name=\"viewMode-lg\"
-        class=\"form-control\">\r\n\t\t\t<option value=\"brief\">Brief</option>\r\n\t\t\t<option
-        value=\"summary\">Detailed Summary</option>\r\n\t\t</select>\r\n    </div>\r\n
-        \   <div class=\"form-group form-inline\">\r\n        <label for=\"pub-search-ipp\"
-        class=\"form-control-half\">\r\n            Items Per Page\r\n        </label>\r\n
-        \           <select id=\"pub-search-ipp\" name=\"ipp-lg\" class=\"form-control\">\r\n
-        \               <option>25</option>\r\n                <option>50</option>\r\n
-        \               <option>75</option>\r\n                <option>100</option>\r\n
-        \               <option value=\"ALL\">All</option>\r\n            </select>\r\n
-        \   </div>\r\n\t<div class=\"form-group\">\r\n\t\t<label for=\"pubs-search-date-from\">\r\n\t\t\tDate\r\n\t\t</label>\r\n\t\t<div
-        class=\"form-inline form-date-inline\">\r\n\t\t\t<div class=\"input-group
-        date\" data-date-picker=\"true\">\r\n\t\t\t\t<input type=\"text\" \r\n\t\t\t\t\tid=\"pubs-search-date-from\"
-        \r\n\t\t\t\t\tname=\"dateFrom-lg\" \r\n\t\t\t\t\tclass=\"form-control\" \r\n\t\t\t\t\tplaceholder=\"
-        \ /  /    \"\r\n\t\t\t\t\tdata-control-type=\"date\" \r\n\t\t\t\t\tdata-validation=\"true\"\r\n\t\t\t\t\tdata-validation-message=\"From
-        date must be less than To date\"\r\n\t\t\t\t\tdata-validation-type=\"less-than-date\"\r\n\t\t\t\t\tdata-validation-compare-field=\"pubs-search-date-to\"
+        \       <label for=\"viewMode-lg\">\r\n            Results View\r\n        </label>\r\n\t\t<select
+        id=\"viewMode-lg\" name=\"viewMode-lg\" class=\"form-control\">\r\n\t\t\t<option
+        value=\"brief\">Brief</option>\r\n\t\t\t<option value=\"summary\">Detailed
+        Summary</option>\r\n\t\t</select>\r\n    </div>\r\n    <div class=\"form-group
+        form-inline\">\r\n        <label for=\"ipp-lg\" class=\"form-control-half\">\r\n
+        \           Items Per Page\r\n        </label>\r\n            <select id=\"ipp-lg\"
+        name=\"ipp-lg\" class=\"form-control\">\r\n                <option>25</option>\r\n
+        \               <option>50</option>\r\n                <option>75</option>\r\n
+        \               <option>100</option>\r\n                <option value=\"ALL\">All</option>\r\n
+        \           </select>\r\n    </div>\r\n\t<div class=\"form-group\">\r\n\t\t<label
+        for=\"dateFrom-lg\">\r\n\t\t\tDate\r\n\t\t</label>\r\n\t\t<div class=\"form-inline
+        form-date-inline\">\r\n\t\t\t<div class=\"input-group date\" data-date-picker=\"true\">\r\n\t\t\t\t<input
+        type=\"text\" \r\n\t\t\t\t\tid=\"dateFrom-lg\" \r\n\t\t\t\t\tname=\"dateFrom-lg\"
+        \r\n\t\t\t\t\tclass=\"form-control\" \r\n\t\t\t\t\tplaceholder=\"  /  /    \"\r\n\t\t\t\t\tdata-control-type=\"date\"
+        \r\n\t\t\t\t\tdata-validation=\"true\"\r\n\t\t\t\t\tdata-validation-message=\"From
+        date must be less than To date\"\r\n\t\t\t\t\tdata-validation-type=\"less-than-date\"\r\n\t\t\t\t\tdata-validation-compare-field=\"dateTo-lg\"
         />\r\n\t\t\t\t<span class=\"input-group-addon\">\r\n\t\t\t\t\t<span class=\"fa
         fa-calendar\">\r\n\t\t\t\t\t</span>\r\n\t\t\t\t</span>\r\n\t\t\t</div>\r\n\t\t\t<div
         class=\"input-group date\" data-date-picker=\"true\">\r\n\t\t\t\t<input type=\"text\"
-        \r\n\t\t\t\t\tid=\"pubs-search-date-to\" \r\n\t\t\t\t\tname=\"dateTo-lg\"
-        \r\n\t\t\t\t\tclass=\"form-control\" \r\n\t\t\t\t\tplaceholder=\"  /  /    \"\r\n\t\t\t\t\tdata-control-type=\"date\"
+        \r\n\t\t\t\t\tid=\"dateTo-lg\" \r\n\t\t\t\t\tname=\"dateTo-lg\" \r\n\t\t\t\t\tclass=\"form-control\"
+        \r\n\t\t\t\t\tplaceholder=\"  /  /    \"\r\n\t\t\t\t\tdata-control-type=\"date\"
         />\r\n\t\t\t\t<span class=\"input-group-addon\">\r\n\t\t\t\t\t<span class=\"fa
         fa-calendar\">\r\n\t\t\t\t\t</span>\r\n\t\t\t\t</span>\r\n\t\t\t</div>\r\n\t\t</div>\r\n\t</div>\r\n\t<div
-        class=\"form-group\">\r\n\t\t<label for=\"pub-search-status\">\r\n\t\t\tStatus\r\n\t\t\t<button
-        type=\"button\" id=\"status-all-btn\" class=\"btn btn-sm btn-success\" data-check-all=\"status-lg\">Check
-        All</button>\r\n\t\t\t<button type=\"button\" id=\"status-clear-btn\" class=\"btn
+        class=\"form-group\">\r\n\t\t<label for=\"status-all-lg\">\r\n\t\t\tStatus\r\n\t\t\t<button
+        type=\"button\" id=\"status-all-lg\" class=\"btn btn-sm btn-success\" data-check-all=\"status-lg\">Check
+        All</button>\r\n\t\t\t<button type=\"button\" id=\"status-clear-lg\" class=\"btn
         btn-sm btn-success\" data-check-none=\"status-lg\">Clear</button>\r\n\t\t</label>\r\n\t\t<div
         class=\"form-inline status-type\" style=\"margin-left: 1rem;\">\r\n\t\t\t<input
-        type=\"checkbox\" name=\"status-lg\" value=\"Draft\" data-default-checked=\"true\"
-        /> Draft<br/>\r\n\t\t\t<input type=\"checkbox\" name=\"status-lg\" value=\"Final\"
-        data-default-checked=\"true\" /> Final<br/>\r\n\t\t\t<input type=\"checkbox\"
-        name=\"status-lg\" value=\"Retired Draft\" /> Retired Draft<br/>\r\n\t\t\t<input
-        type=\"checkbox\" name=\"status-lg\" value=\"Withdrawn\" /> Withdrawn\r\n\t\t</div>\r\n\t</div>\r\n\t<div
+        type=\"checkbox\" name=\"status-lg\" id=\"status-draft-lg\" value=\"Draft\"
+        data-default-checked=\"true\" /> Draft<br/>\r\n\t\t\t<input type=\"checkbox\"
+        name=\"status-lg\" id=\"status-final-lg\" value=\"Final\" data-default-checked=\"true\"
+        /> Final<br/>\r\n\t\t\t<input type=\"checkbox\" name=\"status-lg\" id=\"status-retired-lg\"
+        value=\"Retired Draft\" /> Retired Draft<br/>\r\n\t\t\t<input type=\"checkbox\"
+        name=\"status-lg\" id=\"status-withdrawn-lg\" value=\"Withdrawn\" /> Withdrawn\r\n\t\t</div>\r\n\t</div>\r\n\t<div
         class=\"form-group\">\r\n\t\t<label for=\"pub-search-series\">\r\n\t\t\tSeries\r\n\t\t\t<button
-        type=\"button\" id=\"series-all-btn\" class=\"btn btn-sm btn-success\" data-check-all=\"series-lg\">Check
-        All</button>\r\n\t\t\t<button type=\"button\" id=\"series-clear-btn\" class=\"btn
+        type=\"button\" id=\"series-all-lg\" class=\"btn btn-sm btn-success\" data-check-all=\"series-lg\">Check
+        All</button>\r\n\t\t\t<button type=\"button\" id=\"series-clear-lg\" class=\"btn
         btn-sm btn-success\" data-check-none=\"series-lg\">Clear</button>\r\n\t\t</label>\r\n\t\t<div
         class=\"form-inline series-type\" style=\"margin-left: 1rem;\">\r\n\t\t\t<input
-        type=\"checkbox\" name=\"series-lg\" value=\"FIPS\" data-default-checked=\"true\"
-        /> FIPS<br/>\r\n\t\t\t<input type=\"checkbox\" name=\"series-lg\" value=\"SP\"
-        data-default-checked=\"true\" /> SP<br/>\r\n\t\t\t<input type=\"checkbox\"
-        name=\"series-lg\" value=\"NISTIR\" data-default-checked=\"true\" /> NISTIR<br/>\r\n\t\t\t<input
-        type=\"checkbox\" name=\"series-lg\" value=\"ITL Bulletin\" data-default-checked=\"true\"
-        /> ITL Bulletin<br/>\r\n\t\t\t<input type=\"checkbox\" name=\"series-lg\"
-        value=\"White Paper\" data-default-checked=\"true\" /> White Paper<br/>\r\n\t\t\t<input
-        type=\"checkbox\" name=\"series-lg\" value=\"Building Block\" data-default-checked=\"true\"
-        /> Building Block<br/>\r\n\t\t\t<input type=\"checkbox\" name=\"series-lg\"
-        value=\"Use Case\" data-default-checked=\"true\" /> Use Case<br/>\r\n\t\t\t<input
-        type=\"checkbox\" name=\"series-lg\" value=\"Journal Article\" data-default-checked=\"true\"
+        type=\"checkbox\" name=\"series-lg\" id=\"series-fips-lg\" value=\"FIPS\"
+        data-default-checked=\"true\" /> FIPS<br/>\r\n\t\t\t<input type=\"checkbox\"
+        name=\"series-lg\" id=\"series-sp-lg\" value=\"SP\" data-default-checked=\"true\"
+        /> SP<br/>\r\n\t\t\t<input type=\"checkbox\" name=\"series-lg\" id=\"series-nistir-lg\"
+        value=\"NISTIR\" data-default-checked=\"true\" /> NISTIR<br/>\r\n\t\t\t<input
+        type=\"checkbox\" name=\"series-lg\" id=\"series-itl-bul-lg\" value=\"ITL
+        Bulletin\" data-default-checked=\"true\" /> ITL Bulletin<br/>\r\n\t\t\t<input
+        type=\"checkbox\" name=\"series-lg\" id=\"series-white-paper-lg\" value=\"White
+        Paper\" data-default-checked=\"true\" /> White Paper<br/>\r\n\t\t\t<input
+        type=\"checkbox\" name=\"series-lg\" id=\"series-build-block-lg\" value=\"Building
+        Block\" data-default-checked=\"true\" /> Building Block<br/>\r\n\t\t\t<input
+        type=\"checkbox\" name=\"series-lg\" id=\"series-use-case-lg\" value=\"Use
+        Case\" data-default-checked=\"true\" /> Use Case<br/>\r\n\t\t\t<input type=\"checkbox\"
+        name=\"series-lg\" id=\"series-journal-lg\" value=\"Journal Article\" data-default-checked=\"true\"
         /> Journal Article<br/>\r\n\t\t\t<input type=\"checkbox\" name=\"series-lg\"
-        value=\"Conference Paper\" data-default-checked=\"true\" /> Conference Paper<br/>\r\n\t\t\t<input
-        type=\"checkbox\" name=\"series-lg\" value=\"Book\" data-default-checked=\"true\"
-        /> Book<br/>\r\n\t\t</div>\r\n\t</div>\r\n\t<div class=\"form-group\">\r\n\t\t<label
-        for=\"pub-search-topics\">\r\n\t\t\tTopics\r\n\t\t</label>\r\n\t\t<input type=\"hidden\"
-        name=\"topics-lg\" />\r\n\t\t<div class=\"form-control topics-selection\"
-        \r\n\t\t\tid=\"pub-search-topics\" \r\n\t\t\tcontenteditable=\"true\" \r\n\t\t\tdata-drop-target=\"pub-search-topics-drop\"\r\n\t\t\tdata-field-name=\"topics-lg\"\r\n\t\t\taria-haspopup=\"true\"
+        id=\"series-conf-paper-lg\" value=\"Conference Paper\" data-default-checked=\"true\"
+        /> Conference Paper<br/>\r\n\t\t\t<input type=\"checkbox\" name=\"series-lg\"
+        id=\"series-book-lg\" value=\"Book\" data-default-checked=\"true\" /> Book<br/>\r\n\t\t</div>\r\n\t</div>\r\n\t<div
+        class=\"form-group\">\r\n\t\t<label for=\"pub-search-topics-lg\">\r\n\t\t\tTopics\r\n\t\t</label>\r\n\t\t<input
+        type=\"hidden\" name=\"topics-lg\" name=\"topics-lg\" />\r\n\t\t<div class=\"form-control
+        topics-selection\" \r\n\t\t\tid=\"pub-search-topics-lg\" \r\n\t\t\tcontenteditable=\"true\"
+        \r\n\t\t\tdata-drop-target=\"pub-search-topics-drop-lg\"\r\n\t\t\tdata-field-name=\"topics-lg\"\r\n\t\t\taria-haspopup=\"true\"
         \r\n\t\t\taria-expanded=\"false\">\r\n\t\t</div>\r\n\t  <div class=\"topics-selection-dropdown
-        desktop\" id=\"pub-search-topics-drop\" style=\"display: none;\"><div class=\"col-sm-4\"><strong>Security
+        desktop\" id=\"pub-search-topics-drop-lg\" style=\"display: none;\"><div class=\"col-sm-4\"><strong>Security
         and Privacy</strong><br/>\n<ul><li><i class=\"fa fa-plus fa-fw\" id=\"topics-expander-7809-10063\"></i>
         <a data-topic-id=\"10063\" data-topic-text=\"cryptography\">cryptography</a><ul
         style=\"display: none;\"><li><i class=\"fa fa-fw\"></i> <a data-topic-id=\"10312\"
@@ -512,15 +520,16 @@ http_interactions:
         class=\"fa fa-fw\"></i> <a data-topic-id=\"10081\" data-topic-text=\"standards
         development\">standards development</a></li></ul></div></div>\r\n\t\t<div
         class=\"form-inline topics-type\">\r\n\t\t\t<label class=\"radio-label\">Match
-        ANY: <input type=\"radio\" name=\"topicsMatch-lg\" value=\"ANY\" checked=\"checked\"
-        /></label>\r\n\t\t\t<label class=\"radio-label\">Match ALL: <input type=\"radio\"
-        name=\"topicsMatch-lg\" value=\"ALL\" /></label>\r\n\t\t</div>\r\n\t</div>\r\n\t<div
-        class=\"form-group\">\r\n\t\t<label for=\"pub-search-controls\">\r\n\t\t\tControl
-        Family (800-53)\r\n\t\t</label>\r\n\t\t<input type=\"hidden\" name=\"controls-lg\"
-        />\r\n\t\t<div class=\"form-control controls-selection\" \r\n\t\t\tid=\"pub-search-controls\"
-        \r\n\t\t\tcontenteditable=\"true\" \r\n\t\t\tdata-drop-target-ctrl=\"pub-search-controls-drop\"\r\n\t\t\tdata-field-name=\"controls-lg\"\r\n\t\t\taria-haspopup=\"true\"
+        ANY: <input type=\"radio\" id=\"topicsMatch-any-lg\" name=\"topicsMatch-lg\"
+        value=\"ANY\" checked=\"checked\" /></label>\r\n\t\t\t<label class=\"radio-label\">Match
+        ALL: <input type=\"radio\" id=\"topicsMatch-all-lg\" name=\"topicsMatch-lg\"
+        value=\"ALL\" /></label>\r\n\t\t</div>\r\n\t</div>\r\n\t<div class=\"form-group\">\r\n\t\t<label
+        for=\"pub-search-controls-lg\">\r\n\t\t\tControl Family (800-53)\r\n\t\t</label>\r\n\t\t<input
+        type=\"hidden\" id=\"controls-lg\" name=\"controls-lg\" />\r\n\t\t<div class=\"form-control
+        controls-selection\" \r\n\t\t\tid=\"pub-search-controls-lg\" \r\n\t\t\tcontenteditable=\"true\"
+        \r\n\t\t\tdata-drop-target-ctrl=\"pub-search-controls-drop-lg\"\r\n\t\t\tdata-field-name=\"controls-lg\"\r\n\t\t\taria-haspopup=\"true\"
         \r\n\t\t\taria-expanded=\"false\">\r\n\t\t</div>\r\n        \r\n        <div
-        class=\"controls-selection-dropdown desktop\" id=\"pub-search-controls-drop\"
+        class=\"controls-selection-dropdown desktop\" id=\"pub-search-controls-drop-lg\"
         style=\"display: none;\">\r\n\t\t\t<strong>Control Families</strong>\r\n          <ul>\r\n
         \         \r\n            <li><a data-control-id=\"63d54ae4-c6cf-4ae4-a398-f19298c74903\">AC
         - Access Control</a></li>\r\n          \r\n            <li><a data-control-id=\"36fb0b10-f6ae-4e0e-803c-bece9c947fd8\">AT
@@ -546,121 +555,127 @@ http_interactions:
         Protection</a></li>\r\n          \r\n            <li><a data-control-id=\"660d9ce0-9cfe-4f5e-890a-41670d010846\">SI
         - System and Information Integrity</a></li>\r\n          \r\n          </ul>\r\n
         \       </div>\r\n\t\t<div class=\"form-inline controls-type\">\r\n\t\t\t<label
-        class=\"radio-label\">Match ANY: <input type=\"radio\" name=\"controlsMatch-lg\"
-        value=\"ANY\" checked=\"checked\" /></label>\r\n\t\t\t<label class=\"radio-label\">Match
-        ALL: <input type=\"radio\" name=\"controlsMatch-lg\" value=\"ALL\" /></label>\r\n\t\t</div>\r\n\t</div>\r\n
+        class=\"radio-label\">Match ANY: <input type=\"radio\" id=\"controlsMatch-any-lg\"
+        name=\"controlsMatch-lg\" value=\"ANY\" checked=\"checked\" /></label>\r\n\t\t\t<label
+        class=\"radio-label\">Match ALL: <input type=\"radio\" id=\"controlsMatch-all-lg\"
+        name=\"controlsMatch-lg\" value=\"ALL\" /></label>\r\n\t\t</div>\r\n\t</div>\r\n
         \   <div style=\"display: none;\" data-form-error-pane=\"true\" class=\"text-danger\">\r\n
         \       <strong class=\"text-danger\">Please fix the following:</strong>\r\n
-        \       <ul data-form-error-list=\"true\">\r\n        </ul>\r\n    </div>\r\n
-        \   <div class=\"form-group\">\r\n        <button type=\"submit\" id=\"pubs-search-submit\"
-        name=\"submit-btn\" data-form-button=\"submit\" class=\"btn\">Search</button>\r\n
-        \       <button type=\"reset\" id=\"pubs-search-reset\" name=\"reset-btn\"
-        data-form-button=\"reset\" class=\"btn\">Reset</button>\r\n    </div>\r\n</div>\r\n
-        \     </div>\r\n      <div class=\"col-lg-9 col-md-8\">\r\n      <h4>Search
-        Results</h4>\r\n<!--\r\n<div class=\"alert alert-danger\" role=\"alert\">\r\n<p><strong>(4/12/2018
-        11:15 AM EST)</strong> Publication search is temporarily unavailable due to
-        technical issues with the server, it will be restored shortly.</p>\r\n</div>\r\n-->\r\n\r\n\r\n\r\n\r\n<div
+        \       <ul data-form-error-list=\"true\" id=\"errors-lg\">\r\n        </ul>\r\n
+        \   </div>\r\n    <div class=\"form-group\">\r\n        <button type=\"submit\"
+        id=\"pubs-search-submit-lg\" name=\"submit-btn\" data-form-button=\"submit\"
+        class=\"btn\">Search</button>\r\n        <button type=\"reset\" id=\"pubs-search-reset-lg\"
+        name=\"reset-btn\" data-form-button=\"reset\" class=\"btn\">Reset</button>\r\n
+        \   </div>\r\n</div>\r\n      </div>\r\n      <div class=\"col-lg-9 col-md-8\">\r\n
+        \     <h4>Search Results</h4>\r\n<!--\r\n<div class=\"alert alert-danger\"
+        role=\"alert\">\r\n<p><strong>(4/12/2018 11:15 AM EST)</strong> Publication
+        search is temporarily unavailable due to technical issues with the server,
+        it will be restored shortly.</p>\r\n</div>\r\n-->\r\n\r\n\r\n\r\n\r\n<div
         class=\"bs-callout bs-callout-success csrc-search-form hidden-lg hidden-md
-        mobile-form\" data-csrc-form=\"true\" data-form-name=\"pubSearchMobile\" data-form-action=\"/publications/search\"
-        data-form-method=\"GET\" data-default-query=\"\">\r\n    <div class=\"form-group\">
-        \r\n        <label for=\"pub-search-keywords\">Search</label>\r\n        <input
-        type=\"text\" id=\"pub-search-keywords\" name=\"keywords-sm\" class=\"form-control\"
+        mobile-form\" id=\"pubs-search-form-sm\" data-csrc-form=\"true\" data-form-name=\"pubSearchMobile\"
+        data-form-action=\"/publications/search\" data-form-method=\"GET\" data-default-query=\"\">\r\n
+        \   <div class=\"form-group\"> \r\n        <label for=\"keywords-sm\">Search</label>\r\n
+        \       <input type=\"text\" id=\"keywords-sm\" name=\"keywords-sm\" class=\"form-control\"
         />\r\n        <em class=\"text-muted\">Search publication record data<br/>
         (not a full text search)</em>\r\n    </div>\r\n    <div class=\"form-group\">\r\n\t\t<label
-        for=\"pub-search-sort-by\">\r\n\t\t\tSort By\r\n\t\t</label>\r\n\t\t<select
-        id=\"pub-search-sort-by\" name=\"sortBy-sm\" class=\"form-control\">\r\n\t\t\t<option
-        value=\"relevance\">Relevance (best match)</option>\r\n\t\t\t<option value=\"releasedate
-        DESC\">Release Date (newest first)</option>\r\n\t\t\t<option value=\"releasedate
-        ASC\">Release Date (oldest first)</option>\r\n\t\t\t<option value=\"Series
-        ASC\">Series (A-Z)</option>\r\n\t\t\t<option value=\"Series DESC\">Series
-        (Z-A)</option>\r\n\t\t\t<option value=\"Number DESC\">Number (highest to lowest)</option>\r\n\t\t\t<option
+        for=\"sortBy-sm\">\r\n\t\t\tSort By\r\n\t\t</label>\r\n\t\t<select id=\"sortBy-sm\"
+        name=\"sortBy-sm\" class=\"form-control\">\r\n\t\t\t<option value=\"relevance\">Relevance
+        (best match)</option>\r\n\t\t\t<option value=\"releasedate DESC\">Release
+        Date (newest first)</option>\r\n\t\t\t<option value=\"releasedate ASC\">Release
+        Date (oldest first)</option>\r\n\t\t\t<option value=\"Series ASC\">Series
+        (A-Z)</option>\r\n\t\t\t<option value=\"Series DESC\">Series (Z-A)</option>\r\n\t\t\t<option
+        value=\"Number DESC\">Number (highest to lowest)</option>\r\n\t\t\t<option
         value=\"Number ASC\">Number (lowest to highest)</option>\r\n\t\t\t<option
         value=\"Title ASC\">Title (A-Z)</option>\r\n\t\t\t<option value=\"Title DESC\">Title
         (Z-A)</option>\r\n\t\t</select>\r\n    </div>\r\n    <div class=\"form-group\">\r\n
-        \       <label for=\"pub-search-view-mode\">\r\n            Results View\r\n
-        \       </label>\r\n\t\t<select id=\"pub-search-view-mode\" name=\"viewMode-sm\"
-        class=\"form-control\">\r\n\t\t\t<option value=\"brief\">Brief</option>\r\n\t\t\t<option
-        value=\"summary\">Detailed Summary</option>\r\n\t\t</select>\r\n    </div>\r\n
-        \   <div class=\"form-group form-inline\">\r\n        <label for=\"pub-search-ipp\"
-        class=\"form-control-half\">\r\n            Items Per Page\r\n        </label>\r\n
-        \           <select id=\"pub-search-ipp\" name=\"ipp-sm\" class=\"form-control\">\r\n
-        \               <option>25</option>\r\n                <option>50</option>\r\n
-        \               <option>75</option>\r\n                <option>100</option>\r\n
-        \               <option value=\"ALL\">All</option>\r\n            </select>\r\n
-        \   </div>\r\n  \r\n    <div class=\"form-group\">\r\n      <p class=\"text-center\">\r\n
-        \       <a href=\"#\" data-form-show-name=\"newsAdvanced\">\r\n            Advanced
-        Search\r\n            <i class=\"fa fa-caret-down\" aria-hidden=\"true\" data-form-show-expanded=\"true\"
+        \       <label for=\"viewMode-sm\">\r\n            Results View\r\n        </label>\r\n\t\t<select
+        id=\"viewMode-sm\" name=\"viewMode-sm\" class=\"form-control\">\r\n\t\t\t<option
+        value=\"brief\">Brief</option>\r\n\t\t\t<option value=\"summary\">Detailed
+        Summary</option>\r\n\t\t</select>\r\n    </div>\r\n    <div class=\"form-group
+        form-inline\">\r\n        <label for=\"ipp-sm\" class=\"form-control-half\">\r\n
+        \           Items Per Page\r\n        </label>\r\n            <select id=\"ipp-sm\"
+        name=\"ipp-sm\" class=\"form-control\">\r\n                <option>25</option>\r\n
+        \               <option>50</option>\r\n                <option>75</option>\r\n
+        \               <option>100</option>\r\n                <option value=\"ALL\">All</option>\r\n
+        \           </select>\r\n    </div>\r\n  \r\n    <div class=\"form-group\">\r\n
+        \     <p class=\"text-center\">\r\n        <a href=\"#\" data-form-show-name=\"advancedSearch\"
+        id=\"advanced-search-link\">\r\n            Advanced Search\r\n            <i
+        class=\"fa fa-caret-down\" aria-hidden=\"true\" data-form-show-expanded=\"true\"
         style=\"display: none;\"></i>\r\n            <i class=\"fa fa-caret-up\" aria-hidden=\"true\"
         data-form-show-expanded=\"false\"></i>\r\n        </a>\r\n      </p>\r\n    </div>\r\n
-        \   <div style=\"display: none;\" data-form-show-trigger=\"newsAdvanced\"
+        \   <div style=\"display: none;\" data-form-show-trigger=\"advancedSearch\"
         data-form-show=\"false\">\r\n        <div class=\"form-group\">\r\n            <label
-        for=\"pubs-search-date-from\">\r\n                Date\r\n            </label>\r\n
-        \           <div class=\"form-inline form-date-inline\">\r\n                <div
-        class=\"input-group date\" data-date-picker=\"true\">\r\n                    <input
-        type=\"text\" \r\n                        id=\"pubs-search-date-from\" \r\n
-        \                       name=\"dateFrom-sm\" \r\n                        class=\"form-control\"
-        \r\n                        placeholder=\"  /  /    \"\r\n                        data-control-type=\"date\"
-        \r\n                        data-validation=\"true\"\r\n                        data-validation-message=\"From
-        date must be less than To date\"\r\n                        data-validation-type=\"less-than-date\"\r\n
-        \                       data-validation-compare-field=\"pubs-search-date-to\"
-        />\r\n                    <span class=\"input-group-addon\">\r\n                        <span
+        for=\"dateFrom-sm\">\r\n                Date\r\n            </label>\r\n            <div
+        class=\"form-inline form-date-inline\">\r\n                <div class=\"input-group
+        date\" data-date-picker=\"true\">\r\n                    <input type=\"text\"
+        \r\n                        id=\"dateFrom-sm\" \r\n                        name=\"dateFrom-sm\"
+        \r\n                        class=\"form-control\" \r\n                        placeholder=\"
+        \ /  /    \"\r\n                        data-control-type=\"date\" \r\n                        data-validation=\"true\"\r\n
+        \                       data-validation-message=\"From date must be less than
+        To date\"\r\n                        data-validation-type=\"less-than-date\"\r\n
+        \                       data-validation-compare-field=\"dateTo-sm\" />\r\n
+        \                   <span class=\"input-group-addon\">\r\n                        <span
         class=\"fa fa-calendar\">\r\n                        </span>\r\n                    </span>\r\n
         \               </div>\r\n                <div class=\"input-group date\"
         data-date-picker=\"true\">\r\n                    <input type=\"text\" \r\n
-        \                       id=\"pubs-search-date-to\" \r\n                        name=\"dateTo-sm\"
+        \                       id=\"dateTo-sm\" \r\n                        name=\"dateTo-sm\"
         \r\n                        class=\"form-control\" \r\n                        placeholder=\"
         \ /  /    \"\r\n                        data-control-type=\"date\" />\r\n
         \                   <span class=\"input-group-addon\">\r\n                        <span
         class=\"fa fa-calendar\">\r\n                        </span>\r\n                    </span>\r\n
         \               </div>\r\n            </div>\r\n        </div>\r\n        <div
         class=\"form-group\">\r\n            <label for=\"pub-search-status\">\r\n
-        \               Status\r\n                <button type=\"button\" id=\"status-all-btn\"
+        \               Status\r\n                <button type=\"button\" id=\"status-all-sm\"
         class=\"btn btn-sm btn-success\" data-check-all=\"status-sm\">Check All</button>\r\n
-        \               <button type=\"button\" id=\"status-clear-btn\" class=\"btn
+        \               <button type=\"button\" id=\"status-clear-sm\" class=\"btn
         btn-sm btn-success\" data-check-none=\"status-sm\">Clear</button>\r\n            </label>\r\n
         \           <div class=\"form-inline status-type\" style=\"margin-left: 1rem;\">\r\n
-        \               <input type=\"checkbox\" name=\"status-sm\" value=\"Draft\"
-        data-default-checked=\"true\" /> Draft<br/>\r\n                <input type=\"checkbox\"
-        name=\"status-sm\" value=\"Final\" data-default-checked=\"true\" /> Final<br/>\r\n
-        \               <input type=\"checkbox\" name=\"status-sm\" value=\"Retired
-        Draft\" /> Retired Draft<br/>\r\n                <input type=\"checkbox\"
-        name=\"status-sm\" value=\"Withdrawn\" /> Withdrawn\r\n            </div>\r\n
+        \               <input type=\"checkbox\" name=\"status-sm\" id=\"status-draft-sm\"
+        value=\"Draft\" data-default-checked=\"true\" /> Draft<br/>\r\n                <input
+        type=\"checkbox\" name=\"status-sm\" id=\"status-final-sm\" value=\"Final\"
+        data-default-checked=\"true\" /> Final<br/>\r\n                <input type=\"checkbox\"
+        name=\"status-sm\" id=\"status-retired-sm\" value=\"Retired Draft\" /> Retired
+        Draft<br/>\r\n                <input type=\"checkbox\" name=\"status-sm\"
+        id=\"status-withdrawn-sm\" value=\"Withdrawn\" /> Withdrawn\r\n            </div>\r\n
         \       </div>\r\n        <div class=\"form-group\">\r\n            <label
         for=\"pub-search-series\">\r\n                Series\r\n                <button
-        type=\"button\" id=\"series-all-btn\" class=\"btn btn-sm btn-success\" data-check-all=\"series-sm\">Check
-        All</button>\r\n                <button type=\"button\" id=\"series-clear-btn\"
+        type=\"button\" id=\"series-all-sm\" class=\"btn btn-sm btn-success\" data-check-all=\"series-sm\">Check
+        All</button>\r\n                <button type=\"button\" id=\"series-clear-sm\"
         class=\"btn btn-sm btn-success\" data-check-none=\"series-sm\">Clear</button>\r\n
         \           </label>\r\n            <div class=\"form-inline series-type\"
         style=\"margin-left: 1rem;\">\r\n                <input type=\"checkbox\"
-        name=\"series-sm\" value=\"FIPS\" data-default-checked=\"true\" /> FIPS<br/>\r\n
-        \               <input type=\"checkbox\" name=\"series-sm\" value=\"SP\" data-default-checked=\"true\"
-        /> SP<br/>\r\n                <input type=\"checkbox\" name=\"series-sm\"
+        name=\"series-sm\" id=\"series-fips-sm\" value=\"FIPS\" data-default-checked=\"true\"
+        /> FIPS<br/>\r\n                <input type=\"checkbox\" name=\"series-sm\"
+        id=\"series-sp-sm\" value=\"SP\" data-default-checked=\"true\" /> SP<br/>\r\n
+        \               <input type=\"checkbox\" name=\"series-sm\" id=\"series-nistir-sm\"
         value=\"NISTIR\" data-default-checked=\"true\" /> NISTIR<br/>\r\n                <input
-        type=\"checkbox\" name=\"series-sm\" value=\"ITL Bulletin\" data-default-checked=\"true\"
-        /> ITL Bulletin<br/>\r\n                <input type=\"checkbox\" name=\"series-sm\"
-        value=\"White Paper\" data-default-checked=\"true\" /> White Paper<br/>\r\n
-        \               <input type=\"checkbox\" name=\"series-sm\" value=\"Building
+        type=\"checkbox\" name=\"series-sm\" id=\"series-itl-bul-sm\" value=\"ITL
+        Bulletin\" data-default-checked=\"true\" /> ITL Bulletin<br/>\r\n                <input
+        type=\"checkbox\" name=\"series-sm\" id=\"series-white-paper-sm\" value=\"White
+        Paper\" data-default-checked=\"true\" /> White Paper<br/>\r\n                <input
+        type=\"checkbox\" name=\"series-sm\" id=\"series-build-block-sm\" value=\"Building
         Block\" data-default-checked=\"true\" /> Building Block<br/>\r\n                <input
-        type=\"checkbox\" name=\"series-sm\" value=\"Use Case\" data-default-checked=\"true\"
-        /> Use Case<br/>\r\n                <input type=\"checkbox\" name=\"series-sm\"
-        value=\"Journal Article\" data-default-checked=\"true\" /> Journal Article<br/>\r\n
-        \               <input type=\"checkbox\" name=\"series-sm\" value=\"Conference
+        type=\"checkbox\" name=\"series-sm\" id=\"series-use-case-sm\" value=\"Use
+        Case\" data-default-checked=\"true\" /> Use Case<br/>\r\n                <input
+        type=\"checkbox\" name=\"series-sm\" id=\"series-journal-sm\" value=\"Journal
+        Article\" data-default-checked=\"true\" /> Journal Article<br/>\r\n                <input
+        type=\"checkbox\" name=\"series-sm\" id=\"series-conf-paper-sm\" value=\"Conference
         Paper\" data-default-checked=\"true\" /> Conference Paper<br/>\r\n                <input
-        type=\"checkbox\" name=\"series-sm\" value=\"Book\" data-default-checked=\"true\"
-        /> Book<br/>\r\n            </div>\r\n        </div>\r\n        <div class=\"form-group\">\r\n
-        \           <label for=\"pub-search-topics\">\r\n                Topics\r\n
-        \           </label>\r\n            <input type=\"hidden\" name=\"topics-sm\"
-        />\r\n            <div class=\"form-control topics-selection\" \r\n                id=\"pub-search-topics\"
-        \r\n                contenteditable=\"true\" \r\n                data-drop-target=\"pub-search-topics-drop\"\r\n
-        \               data-field-name=\"topics-sm\"\r\n                aria-haspopup=\"true\"
-        \r\n                aria-expanded=\"false\">\r\n            </div>\r\n          <div
-        class=\"topics-selection-dropdown desktop\" id=\"pub-search-topics-drop\"
-        style=\"display: none;\"><div class=\"col-sm-4\"><strong>Security and Privacy</strong><br/>\n<ul><li><i
-        class=\"fa fa-plus fa-fw\" id=\"topics-expander-7809-10063\"></i> <a data-topic-id=\"10063\"
-        data-topic-text=\"cryptography\">cryptography</a><ul style=\"display: none;\"><li><i
-        class=\"fa fa-fw\"></i> <a data-topic-id=\"10312\" data-topic-text=\"digital
-        signatures\">digital signatures</a></li><li><i class=\"fa fa-fw\"></i> <a
-        data-topic-id=\"10298\" data-topic-text=\"encryption\">encryption</a></li><li><i
+        type=\"checkbox\" name=\"series-sm\" id=\"series-book-sm\" value=\"Book\"
+        data-default-checked=\"true\" /> Book<br/>\r\n            </div>\r\n        </div>\r\n
+        \       <div class=\"form-group\">\r\n            <label for=\"pub-search-topics-sm\">\r\n
+        \               Topics\r\n            </label>\r\n            <input type=\"hidden\"
+        id=\"topics-sm\" name=\"topics-sm\" />\r\n            <div class=\"form-control
+        topics-selection\" \r\n                id=\"pub-search-topics-sm\" \r\n                contenteditable=\"true\"
+        \r\n                data-drop-target=\"pub-search-topics-drop-sm\"\r\n                data-field-name=\"topics-sm\"\r\n
+        \               aria-haspopup=\"true\" \r\n                aria-expanded=\"false\">\r\n
+        \           </div>\r\n          <div class=\"topics-selection-dropdown desktop\"
+        id=\"pub-search-topics-drop-sm\" style=\"display: none;\"><div class=\"col-sm-4\"><strong>Security
+        and Privacy</strong><br/>\n<ul><li><i class=\"fa fa-plus fa-fw\" id=\"topics-expander-7809-10063\"></i>
+        <a data-topic-id=\"10063\" data-topic-text=\"cryptography\">cryptography</a><ul
+        style=\"display: none;\"><li><i class=\"fa fa-fw\"></i> <a data-topic-id=\"10312\"
+        data-topic-text=\"digital signatures\">digital signatures</a></li><li><i class=\"fa
+        fa-fw\"></i> <a data-topic-id=\"10298\" data-topic-text=\"encryption\">encryption</a></li><li><i
         class=\"fa fa-fw\"></i> <a data-topic-id=\"10299\" data-topic-text=\"key management\">key
         management</a></li><li><i class=\"fa fa-fw\"></i> <a data-topic-id=\"10300\"
         data-topic-text=\"message authentication\">message authentication</a></li><li><i
@@ -857,17 +872,18 @@ http_interactions:
         class=\"fa fa-fw\"></i> <a data-topic-id=\"10081\" data-topic-text=\"standards
         development\">standards development</a></li></ul></div></div>\r\n            <div
         class=\"form-inline topics-type\">\r\n                <label class=\"radio-label\">Match
-        ANY: <input type=\"radio\" name=\"topicsMatch-sm\" value=\"ANY\" checked=\"checked\"
-        /></label>\r\n                <label class=\"radio-label\">Match ALL: <input
-        type=\"radio\" name=\"topicsMatch-sm\" value=\"ALL\" /></label>\r\n            </div>\r\n
-        \       </div>\r\n        <div class=\"form-group\">\r\n            <label
-        for=\"pub-search-controls\">\r\n                Control Family (800-53)\r\n
-        \           </label>\r\n            <input type=\"hidden\" name=\"controls-sm\"
-        />\r\n            <div class=\"form-control controls-selection\" \r\n                id=\"pub-search-controls\"
-        \r\n                contenteditable=\"true\" \r\n                data-drop-target-ctrl=\"pub-search-controls-drop\"\r\n
+        ANY: <input type=\"radio\" name=\"topicsMatch-sm\" id=\"topicsMatch-any-sm\"
+        value=\"ANY\" checked=\"checked\" /></label>\r\n                <label class=\"radio-label\">Match
+        ALL: <input type=\"radio\" name=\"topicsMatch-sm\" id=\"topicsMatch-all-sm\"
+        value=\"ALL\" /></label>\r\n            </div>\r\n        </div>\r\n        <div
+        class=\"form-group\">\r\n            <label for=\"pub-search-controls-sm\">\r\n
+        \               Control Family (800-53)\r\n            </label>\r\n            <input
+        type=\"hidden\" id=\"controls-sm\" name=\"controls-sm\" />\r\n            <div
+        class=\"form-control controls-selection\" \r\n                id=\"pub-search-controls-sm\"
+        \r\n                contenteditable=\"true\" \r\n                data-drop-target-ctrl=\"pub-search-controls-drop-sm\"\r\n
         \               data-field-name=\"controls-sm\"\r\n                aria-haspopup=\"true\"
         \r\n                aria-expanded=\"false\">\r\n            </div>\r\n\t\t\t\r\n
-        \           <div class=\"controls-selection-dropdown desktop\" id=\"pub-search-controls-drop\"
+        \           <div class=\"controls-selection-dropdown desktop\" id=\"pub-search-controls-drop-sm\"
         style=\"display: none;\">\r\n                <strong>Control Families</strong>\r\n
         \             <ul>\r\n\t\t\t  \r\n\t\t\t\t<li><a data-control-id=\"63d54ae4-c6cf-4ae4-a398-f19298c74903\">AC
         - Access Control</a></li>\r\n\t\t\t  \r\n\t\t\t\t<li><a data-control-id=\"36fb0b10-f6ae-4e0e-803c-bece9c947fd8\">AT
@@ -893,16 +909,17 @@ http_interactions:
         data-control-id=\"660d9ce0-9cfe-4f5e-890a-41670d010846\">SI - System and Information
         Integrity</a></li>\r\n\t\t\t  \r\n              </ul>\r\n            </div>\r\n
         \           <div class=\"form-inline controls-type\">\r\n                <label
-        class=\"radio-label\">Match ANY: <input type=\"radio\" name=\"controlsMatch-sm\"
-        value=\"ANY\" checked=\"checked\" /></label>\r\n                <label class=\"radio-label\">Match
-        ALL: <input type=\"radio\" name=\"controlsMatch-sm\" value=\"ALL\" /></label>\r\n
+        class=\"radio-label\">Match ANY: <input type=\"radio\" id=\"controlsMatch-any-sm\"
+        name=\"controlsMatch-sm\" value=\"ANY\" checked=\"checked\" /></label>\r\n
+        \               <label class=\"radio-label\">Match ALL: <input type=\"radio\"
+        id=\"controlsMatch-all-sm\" name=\"controlsMatch-sm\" value=\"ALL\" /></label>\r\n
         \           </div>\r\n        </div>\r\n        <div style=\"display: none;\"
         data-form-error-pane=\"true\" class=\"text-danger\">\r\n            <strong
         class=\"text-danger\">Please fix the following:</strong>\r\n            <ul
         data-form-error-list=\"true\">\r\n            </ul>\r\n        </div>\r\n
         \   </div>\r\n    <div class=\"form-group\">\r\n        <button type=\"submit\"
-        id=\"pubs-search-submit\" name=\"submit-btn\" data-form-button=\"submit\"
-        class=\"btn\">Search</button>\r\n        <button type=\"reset\" id=\"pubs-search-reset\"
+        id=\"pubs-search-submit-sm\" name=\"submit-btn\" data-form-button=\"submit\"
+        class=\"btn\">Search</button>\r\n        <button type=\"reset\" id=\"pubs-search-reset-sm\"
         name=\"reset-btn\" data-form-button=\"reset\" class=\"btn\">Reset</button>\r\n
         \   </div>\r\n</div>\r\n<div id=\"search-criteria-container\"></div>\r\n\r\n<div
         class=\"row top-pagination-area\">\r\n\t<div class=\"col-lg-6 col-sm-12\">\r\n
@@ -914,175 +931,186 @@ http_interactions:
         data-total-pages='1' data-min-page='1' data-max-page='1' data-current-page='1'
         data-show-first='False' data-show-last='False'></span>\r\n\t\t</span>\r\n\t\t<p
         class=\"text-center hidden-md hidden-lg\">\r\n\t\t\t<span class='pagination-links'
-        id='top-pagination-container' data-total-pages='1' data-min-page='1' data-max-page='1'
-        data-current-page='1' data-show-first='False' data-show-last='False'></span>\r\n\t\t</p>\r\n\t</div>\r\n</div>\r\n<table
-        class=\"table table-striped table-condensed publications-table table-bordered\">\r\n\t<thead>\r\n\t\t<tr>\r\n\t\t\t<th
+        id='mobile-top-pagination-container' data-total-pages='1' data-min-page='1'
+        data-max-page='1' data-current-page='1' data-show-first='False' data-show-last='False'></span>\r\n\t\t</p>\r\n\t</div>\r\n</div>\r\n<table
+        class=\"table table-striped table-condensed publications-table table-bordered\"
+        \r\n    id=\"publications-results-table\"  data-total-records=\"1\" data-page=\"1\"
+        \r\n    data-first-record=\"1\" data-last-record=\"1\" data-ipp=\"25\">\r\n\t<thead>\r\n\t\t<tr>\r\n\t\t\t<th
         nowrap class=\"hidden-sm hidden-xs hidden-xxs\">Series</th>\r\n\t\t\t<th nowrap
         class=\"hidden-sm hidden-xs hidden-xxs\">Number</th>\r\n\t\t\t<th nowrap>\r\n\t\t\t\t<span
         class=\"hidden-sm hidden-xs hidden-xxs\">Title</span>\r\n\t\t\t\t<span class=\"hidden-md
         hidden-lg\">Publications</span>\r\n\t\t\t</th>\r\n\t\t\t<th nowrap class=\"hidden-sm
         hidden-xs hidden-xxs\">Status</th>\r\n\t\t\t<th nowrap class=\"hidden-sm hidden-xs
-        hidden-xxs\">Release Date</th>\r\n\t\t\t\r\n\t\t</tr>\r\n\t</thead>\r\n\t<tbody>\r\n\r\n\r\n\r\n
-        \ \r\n\t\t<tr>\r\n\t\t\t<td class=\"hidden-sm hidden-xs hidden-xxs\">NISTIR</td>\r\n\t\t\t<td
-        class=\"hidden-sm hidden-xs hidden-xxs\"> 7831</td>\r\n\t\t\t<td>\r\n\t\t\t\t\r\n\t\t\t\t<div
-        class=\"hidden-sm hidden-xs hidden-xxs\">\r\n\t\t\t\t\t<strong><a href=\"/publications/detail/nistir/7831/archive/2011-12-06\">Common
-        Remediation Enumeration (CRE) Version 1.0</a></strong>\r\n\t\t\t\t</div>\r\n\r\n\t\t\t\t<div
-        class=\"hidden-md hidden-lg\">\r\n\t\t\t\t\t<strong>NISTIR 7831 (RETIRED DRAFT)
-        (WITHDRAWN)<br />\r\n\t\t\t\t\t\t<a href=\"/publications/detail/nistir/7831/archive/2011-12-06\"
-        class=\"mobile-pub-title\">Common Remediation Enumeration (CRE) Version 1.0</a>\r\n\t\t\t\t\t</strong>\r\n\t\t\t\t</div>\r\n\t\t\t\t\r\n\t\t\t\t<div
-        class=\"hidden-md hidden-lg\">\r\n\t\t\t\t\t<strong>12/06/2011</strong>\r\n\t\t\t\t\t<br
-        />\r\n\t\t\t\t\tStatus: \r\n\t\t\t\t</div>\r\n\t\t\t\t\r\n\t\t\t\t\r\n                <div
-        class=\"control-value-no-block\">\r\n\t\t\t\tDownload: <a href=\"/CSRC/media/Publications/nistir/7831/archive/2011-12-06/documents/Draft-NISTIR-7831.pdf\">Draft
-        NISTIR 7831 (retired)</a>\r\n\t\t\t\t</div>\r\n\t\t\t</td>\r\n\t\t\t<td class=\"hidden-sm
-        hidden-xs hidden-xxs\">\r\n\t\t\t\tRetired Draft\r\n\t\t\t</td>\r\n\t\t\t<td
-        class=\"hidden-sm hidden-xs hidden-xxs\">\r\n\t\t\t\t 12/06/2011\r\n\t\t\t</td>\r\n\t\t\t\r\n\t\t</tr>\r\n\r\n\t</tbody>\r\n</table>\r\n<div
+        hidden-xxs\">Release Date</th>\r\n\t\t\t\r\n\t\t</tr>\r\n\t</thead>\r\n\t<tbody>\r\n\r\n\r\n
+        \ \r\n\t\t<tr id=\"result-1\">\r\n\t\t\t<td class=\"hidden-sm hidden-xs hidden-xxs\"
+        id=\"pub-series-1\">NISTIR</td>\r\n\t\t\t<td class=\"hidden-sm hidden-xs hidden-xxs\"
+        id=\"pub-number-1\"> 7831</td>\r\n\t\t\t<td>\r\n\t\t\t\t\r\n\t\t\t\t<div class=\"hidden-sm
+        hidden-xs hidden-xxs\">\r\n                        <strong><a href=\"/publications/detail/nistir/7831/archive/2011-12-06\"
+        id=\"pub-title-link-1\">Common Remediation Enumeration (CRE) Version 1.0</a></strong>\r\n\t\t\t\t</div>\r\n\r\n\t\t\t\t<div
+        class=\"hidden-md hidden-lg\">\r\n\t\t\t\t\t<strong><span id=\"pub-full-display-sm-1\">NISTIR
+        7831 (RETIRED DRAFT) (WITHDRAWN)</span><br />\r\n\t\t\t\t\t\t<a href=\"/publications/detail/nistir/7831/archive/2011-12-06\"
+        class=\"mobile-pub-title\" id=\"pub-title-link-sm-1\">Common Remediation Enumeration
+        (CRE) Version 1.0</a>\r\n\t\t\t\t\t</strong>\r\n\t\t\t\t</div>\r\n\t\t\t\t\r\n\t\t\t\t<div
+        class=\"hidden-md hidden-lg\">\r\n                    <strong id=\"pub-release-date-sm-1\">12/06/2011</strong>\r\n
+        \                   <br />\r\n                    Status: <span id=\"pub-status-sm-1\">Retired
+        Draft</span>\r\n\t\t\t\t</div>\r\n\t\t\t\t\r\n\t\t\t\t\r\n                <div
+        class=\"control-value-no-block\">\r\n                Download: <span id='download-values-1'><span
+        id='download-value-1-0'><a href=\"/CSRC/media/Publications/nistir/7831/archive/2011-12-06/documents/Draft-NISTIR-7831.pdf\">Draft
+        NISTIR 7831 (retired)</a></span></span>\r\n\t\t\t\t</div>\r\n\t\t\t</td>\r\n\t\t\t<td
+        class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-status-1\">\r\n\t\t\t\tRetired
+        Draft\r\n\t\t\t</td>\r\n\t\t\t<td class=\"hidden-sm hidden-xs hidden-xxs\"
+        id=\"pub-release-date-1\">\r\n\t\t\t\t 12/06/2011\r\n\t\t\t</td>\r\n\t\t\t\r\n\t\t</tr>\r\n\r\n\t</tbody>\r\n</table>\r\n<div
         class=\"row bottom-pagination-area\">\r\n  <p class=\"text-center\">\r\n      <span
         class='pagination-links' id='bottom-pagination-container' data-total-pages='1'
         data-min-page='1' data-max-page='1' data-current-page='1' data-show-first='False'
-        data-show-last='False'></span>\r\n  </p>\r\n</div> \r\n\r\n    <div id=\"publications-quicklinks\"
-        class=\"bs-callout bs-callout-subnav hidden-md hidden-lg\">\r\n        <h4>Quick
-        Links <i class=\"fa fa-bolt\"></i></h4>\r\n\t\t<p style=\"margin-left: 1rem;\">\r\n\t\t\t<!--<a
-        href=\"/publications/draft-pubs\">Draft Pubs</a>-->\r\n\t\t\t<a href=\"/publications/Search?requestControlFamilyList=&requestSeriesList=1,2,3,4,5,6,7,8,9,10,11,12,13,&requestStatusList=1,&requestDisplayOption=basic\">Draft
-        Pubs</a>\r\n\t\t\t<br/>\r\n\t\t\t<!--<a href=\"/publications/final-pubs\">Final
-        Pubs</a>-->\r\n\t\t\t<a href=\"/publications/Search?requestControlFamilyList=&requestSeriesList=1,2,3,4,7,8,13,&requestStatusList=3,&requestDisplayOption=basic\">Final
-        Pubs</a>\r\n\t\t\t<br/>\r\n\t\t\t<!--<a href=\"/publications/fips\">FIPS</a>-->\r\n\t\t\t<a
-        href=\"/publications/Search?requestControlFamilyList=&requestSeriesList=3,&requestStatusList=1,3,&requestDisplayOption=basic&requestSortOrder=5\">FIPS</a>\r\n\t\t\t<br/>\r\n\t\t\t<!--<a
-        href=\"/publications/special-pubs\">SPs (Special Pubs)</a>-->\r\n\t\t\t<a
-        href=\"/publications/Search?requestControlFamilyList=&requestSeriesList=1,&requestStatusList=1,3,&requestDisplayOption=basic&requestSortOrder=5\">SPs
-        (Special Pubs)</a>\r\n\t\t\t<br/>\r\n\t\t\t<!--<a href=\"/publications/nistirs\">NISTIRs</a>-->\r\n\t\t\t<a
-        href=\"/publications/Search?requestControlFamilyList=&requestSeriesList=4,&requestStatusList=1,3,&requestDisplayOption=basic&requestSortOrder=5\">NISTIRs</a>\r\n\t\t\t<br/>\r\n\t\t\t<!--<a
-        href=\"/publications/itl-bulletins\">ITL Bulletins</a>-->\r\n\t\t\t<a href=\"/publications/Search?requestControlFamilyList=&requestSeriesList=2,&requestStatusList=1,3,&requestDisplayOption=basic\">ITL
-        Bulletins</a>\r\n\t\t\t<br/>\r\n\t\t\t<!--<a href=\"/publications/white-papers\">White
-        Papers</a>-->\r\n\t\t\t<a href=\"/publications/Search?requestControlFamilyList=&requestSeriesList=7,8,13,&requestStatusList=1,3,&requestDisplayOption=basic\">White
-        Papers</a>\r\n\t\t\t<br/>\r\n\t\t\t<!--<a href=\"/publications/journal-articles\">Journal
-        Articles</a>-->\r\n\t\t\t<a href=\"/publications/Search?requestControlFamilyList=&requestSeriesList=9,&requestStatusList=3,&requestDisplayOption=basic\">Journal
-        Articles</a>\r\n\t\t\t<br/>\r\n\t\t\t<!--<a href=\"/publications/conference-papers\">Conference
-        Papers</a>-->\r\n\t\t\t<a href=\"/publications/Search?requestControlFamilyList=&requestSeriesList=5,6,&requestStatusList=3,&requestDisplayOption=basic\">Conference
-        Papers</a>\r\n\t\t\t<br/>\r\n\t\t\t<!--<a href=\"/publications/books\">Books</a>-->\r\n\t\t\t<a
-        href=\"/publications/Search?requestControlFamilyList=&requestSeriesList=10,11,12,&requestStatusList=3,&requestDisplayOption=basic\">Books</a>\r\n\t\t</p>\r\n
-        \   </div>\r\n    </div>\r\n</div>\r\n<script type=\"text/javascript\" src=\"/CSRC/media/js/publications.js\"></script>\r\n
-        \ \r\n      <div id=\"footer-pusher\"></div>\r\n  \r\n    </div>\r\n    \r\n<footer
-        id=\"footer\" >\r\n    <div class=\"container\">\r\n\r\n        <div class=\"row\">\r\n
-        \           <div class=\"col-sm-6\">\r\n                <span class=\"hidden-xs\">\r\n
-        \                   <a href=\"https://www.nist.gov\" title=\"National Institute
-        of Standards and Technology\" rel=\"home\" target=\"_blank\" class=\"footer-nist-logo\">\r\n
-        \                       <img src=\"/CSRC/Media/images/logo_rev.png\" alt=\"National
-        Institute of Standards and Technology logo\"/>\r\n                    </a>\r\n
-        \               </span>\r\n\r\n\t\t\t\t<div class=\"row footer-contact-container\">\r\n\t\t\t\t\t<div
-        class=\"col-sm-12\">\r\n\t\t\t\t\t\t<strong>HEADQUARTERS</strong><br>\r\n\t\t\t\t\t\t100
-        Bureau Drive<br>\r\n\t\t\t\t\t\tGaithersburg, MD 20899\r\n\t\t\t\t\t</div>\r\n\t\t\t\t</div>\r\n
-        \           </div>\r\n            <div class=\"col-sm-6\">\r\n\t\t\t\t<ul
-        class=\"social-list text-right\" style=\"display: block;\">\r\n\t\t\t\t\t<li
-        class=\"field-item service-twitter list-horiz\">\r\n\t\t\t\t\t\t<a href=\"https://twitter.com/USNISTGOV\"
-        target=\"_blank\" class=\"social-btn social-btn--large extlink ext\">\r\n\t\t\t\t\t\t<i
+        data-show-last='False'></span>\r\n  </p>\r\n</div> \r\n\r\n<div id=\"publications-quicklinks-sm\"
+        class=\"bs-callout bs-callout-subnav hidden-md hidden-lg\">\r\n    <h4>Quick
+        Links <i class=\"fa fa-bolt\"></i></h4>\r\n    <p style=\"margin-left: 1rem;\">\r\n
+        \       <a href=\"/publications/draft-pubs\" id=\"quick-link-draft-sm\">Draft
+        Pubs</a>\r\n        <br/>\r\n        <a href=\"/publications/final-pubs\"
+        id=\"quick-link-final-sm\">Final Pubs</a>\r\n        <br/>\r\n        <a href=\"/publications/fips\"
+        id=\"quick-link-fips-sm\">FIPS</a>\r\n        <br/>\r\n        <a href=\"/publications/sp800\"
+        id=\"quick-link-sp-800-sm\">SP 800 series</a>\r\n        <br/>\r\n        <a
+        href=\"/publications/sp\" id=\"quick-link-sp-sm\">All SP (Special Pubs) series</a>\r\n
+        \       <br/>\r\n        <a href=\"/publications/nistir\" id=\"quick-link-nistir-sm\">NISTIRs</a>\r\n
+        \       <br/>\r\n        <a href=\"/publications/itl-bulletin\" id=\"quick-link-itl-bul-sm\">ITL
+        Bulletins</a>\r\n        <br/>\r\n        <a href=\"/publications/white-paper\"
+        id=\"quick-link-white-papers-sm\">White Papers</a>\r\n        <br/>\r\n        <a
+        href=\"/publications/journal-article\" id=\"quick-link-journal-articles-sm\">Journal
+        Articles</a>\r\n        <br/>\r\n        <a href=\"/publications/conference-paper\"
+        id=\"quick-link-conference-papers-sm\">Conference Papers</a>\r\n        <br/>\r\n
+        \       <a href=\"/publications/book\" id=\"quick-link-books-sm\">Books</a>\r\n
+        \   </p>\r\n</div>\r\n    </div>\r\n</div>\r\n<script type=\"text/javascript\"
+        src=\"/CSRC/media/js/publications.js\"></script>\r\n\r\n  <div id=\"footer-pusher\"></div>\r\n\r\n</div>\r\n\r\n<footer
+        id=\"footer\">\r\n<div class=\"container\">\r\n\r\n    <div class=\"row\">\r\n
+        \       <div class=\"col-sm-6\">\r\n            <span class=\"hidden-xs\">\r\n
+        \               <a href=\"https://www.nist.gov\" title=\"National Institute
+        of Standards and Technology\" rel=\"home\" target=\"_blank\" class=\"footer-nist-logo\"
+        id=\"footer-nist-logo-link\">\r\n                    <img src=\"/CSRC/Media/images/logo_rev.png\"
+        alt=\"National Institute of Standards and Technology logo\" id=\"footer-nist-logo\"/>\r\n
+        \               </a>\r\n            </span>\r\n\r\n            <div class=\"row
+        footer-contact-container\">\r\n                <div class=\"col-sm-12\" id=\"footer-address\">\r\n
+        \                   <strong>HEADQUARTERS</strong><br>\r\n                    100
+        Bureau Drive<br>\r\n                    Gaithersburg, MD 20899\r\n                </div>\r\n
+        \           </div>\r\n        </div>\r\n        <div class=\"col-sm-6\">\r\n
+        \           <ul class=\"social-list text-right\" style=\"display: block;\">\r\n
+        \               <li class=\"field-item service-twitter list-horiz\">\r\n                    <a
+        href=\"https://twitter.com/USNISTGOV\" target=\"_blank\" class=\"social-btn
+        social-btn--large extlink ext\" id=\"footer-social-twitter-link\">\r\n                    <i
         class=\"fa fa-twitter fa-fw\"><span class=\"element-invisible\">twitter</span></i><span
-        class=\"ext\"><span class=\"element-invisible\"> (link is external)</span></span>\r\n\t\t\t\t\t</a>\r\n\t\t\t\t\t</li>\r\n\t\t\t\t\t<li
-        class=\"field-item service-facebook list-horiz\"><a href=\"https://www.facebook.com/USNISTGOV\"
-        target=\"_blank\" class=\"social-btn social-btn--large extlink ext\">\r\n\t\t\t\t\t\t<i
-        class=\"fa fa-facebook fa-fw\"><span class=\"element-invisible\">facebook</span></i><span
-        class=\"ext\"><span class=\"element-invisible\"> (link is external)</span></span></a>\r\n\r\n\t\t\t\t\t</li>\r\n\t\t\t\t\t<li
-        class=\"field-item service-linkedin list-horiz\"><a href=\"https://www.linkedin.com/company/nist\"
-        target=\"_blank\" class=\"social-btn social-btn--large extlink ext\">\r\n\t\t\t\t\t\t<i
-        class=\"fa fa-linkedin fa-fw\"><span class=\"element-invisible\">linkedin</span></i><span
-        class=\"ext\"><span class=\"element-invisible\"> (link is external)</span></span></a>\r\n\r\n\t\t\t\t\t</li>\r\n\t\t\t\t\t<li
-        class=\"field-item service-youtube list-horiz\"><a href=\"https://www.youtube.com/user/USNISTGOV\"
-        target=\"_blank\" class=\"social-btn social-btn--large extlink ext\">\r\n\t\t\t\t\t\t<i
-        class=\"fa fa-youtube fa-fw\"><span class=\"element-invisible\">youtube</span></i><span
-        class=\"ext\"><span class=\"element-invisible\"> (link is external)</span></span></a>\r\n\r\n\t\t\t\t\t</li>\r\n\t\t\t\t\t<li
-        class=\"field-item service-rss list-horiz\"><a href=\"https://www.nist.gov/news-events/nist-rss-feeds\"
-        target=\"_blank\" class=\"social-btn social-btn--large extlink\">\r\n\t\t\t\t\t\t<i
-        class=\"fa fa-rss fa-fw\"><span class=\"element-invisible\">rss</span></i></a>\r\n\r\n\t\t\t\t\t</li>\r\n\t\t\t\t\t<li
-        class=\"field-item service-govdelivery list-horiz last\">\r\n\t\t\t\t\t\t<a
-        href=\"https://public.govdelivery.com/accounts/USNIST/subscriber/new?qsp=USNIST_3\"
+        class=\"ext\"><span class=\"element-invisible\"> (link is external)</span></span>\r\n
+        \               </a>\r\n                </li>\r\n                <li class=\"field-item
+        service-facebook list-horiz\">\r\n                    <a href=\"https://www.facebook.com/USNISTGOV\"
+        target=\"_blank\" class=\"social-btn social-btn--large extlink ext\" id=\"footer-social-facebook-link\">\r\n
+        \                   <i class=\"fa fa-facebook fa-fw\"><span class=\"element-invisible\">facebook</span></i><span
+        class=\"ext\"><span class=\"element-invisible\"> (link is external)</span></span></a>\r\n\r\n
+        \               </li>\r\n                <li class=\"field-item service-linkedin
+        list-horiz\">\r\n                    <a href=\"https://www.linkedin.com/company/nist\"
+        target=\"_blank\" class=\"social-btn social-btn--large extlink ext\" id=\"footer-social-linkedin-link\">\r\n
+        \                   <i class=\"fa fa-linkedin fa-fw\"><span class=\"element-invisible\">linkedin</span></i><span
+        class=\"ext\"><span class=\"element-invisible\"> (link is external)</span></span></a>\r\n\r\n
+        \               </li>\r\n                <li class=\"field-item service-youtube
+        list-horiz\">\r\n                    <a href=\"https://www.youtube.com/user/USNISTGOV\"
+        target=\"_blank\" class=\"social-btn social-btn--large extlink ext\" id=\"footer-social-youtube-link\">\r\n
+        \                   <i class=\"fa fa-youtube fa-fw\"><span class=\"element-invisible\">youtube</span></i><span
+        class=\"ext\"><span class=\"element-invisible\"> (link is external)</span></span></a>\r\n\r\n
+        \               </li>\r\n                <li class=\"field-item service-rss
+        list-horiz\">\r\n                    <a href=\"https://www.nist.gov/news-events/nist-rss-feeds\"
+        target=\"_blank\" class=\"social-btn social-btn--large extlink\" id=\"footer-social-rss-link\">\r\n
+        \                   <i class=\"fa fa-rss fa-fw\"><span class=\"element-invisible\">rss</span></i></a>\r\n\r\n
+        \               </li>\r\n                <li class=\"field-item service-govdelivery
+        list-horiz last\">\r\n                    <a href=\"https://public.govdelivery.com/accounts/USNIST/subscriber/new?qsp=USNIST_3\"
         target=\"_blank\" class=\"social-btn social-btn--large extlink ext\" title=\"Subscribe
-        to CSRC and publication updates, and other NIST cybersecurity news\">\r\n\t\t\t\t\t\t\t<i
-        class=\"fa fa-envelope fa-fw\"><span class=\"element-invisible\">govdelivery</span></i><span
-        class=\"ext\"><span class=\"element-invisible\"> (link is external)</span></span>\r\n\t\t\t\t\t\t</a>\r\n\t\t\t\t\t</li>\r\n\t\t\t\t</ul>\r\n\t\t\t\t<p
-        class=\"text-right\">\r\n\t\t\t\t\tWant updates about CSRC and our publications?
-        \r\n\t\t\t\t\t<a href=\"https://public.govdelivery.com/accounts/USNIST/subscriber/new?qsp=USNIST_3\"
+        to CSRC and publication updates, and other NIST cybersecurity news\" id=\"footer-social-govdelivery-link\">\r\n
+        \                       <i class=\"fa fa-envelope fa-fw\"><span class=\"element-invisible\">govdelivery</span></i><span
+        class=\"ext\"><span class=\"element-invisible\"> (link is external)</span></span>\r\n
+        \                   </a>\r\n                </li>\r\n            </ul>\r\n
+        \           <p class=\"text-right\">\r\n                Want updates about
+        CSRC and our publications? \r\n                <a href=\"https://public.govdelivery.com/accounts/USNIST/subscriber/new?qsp=USNIST_3\"
         target=\"_blank\" class=\"btn btn-lg btn-info\" style=\"background-color:
-        #12659c!important; border-color: #12659c!important;\">Subscribe</a>\r\n\t\t\t\t</p>\r\n\t\t\t</div>\r\n
-        \       </div>\r\n        <div class=\"row hidden-sm hidden-md hidden-lg\">\r\n
-        \           <div class=\"col-sm-12\">\r\n                    <a href=\"https://www.nist.gov\"
-        title=\"National Institute of Standards and Technology\" rel=\"home\" target=\"_blank\"
-        class=\"footer-nist-logo\">\r\n                        <img src=\"/CSRC/Media/images/logo_rev.png\"
-        alt=\"National Institute of Standards and Technology logo\"/>\r\n                    </a>\r\n
-        \           </div>\r\n        </div>\r\n\r\n        <div class=\"row\">\r\n
-        \           <div class=\"col-sm-12\">\r\n                <p>\r\n                    <a
-        href=\"mailto:webmaster-csrc@nist.gov?subject=CSRC Inquiry\">Webmaster</a>
-        | \r\n                    <a href=\"/about/contact\">Contact Us</a> |\r\n
-        \                   <a href=\"https://www.nist.gov/about-nist/our-organization\"
-        style=\"display: inline-block;\">Our Other Offices</a>\r\n                </p>\r\n
-        \           </div>\r\n        </div>\r\n\r\n        <div id=\"footer-nav-menu\"
-        class=\"row\" role=\"navigation\">\r\n            <div class=\"col-md-8 col-sm-6
-        col-xs-12 col-xxs-12\">\r\n                <div class=\"row\">\r\n                    <div
-        class=\"col-md-4\">\r\n                        <p>\r\n                            <a
-        href=\"/projects\">PROJECTS</a>\r\n                        </p>\r\n                        <p>\r\n
-        \                           <a href=\"/publications\">PUBLICATIONS</a><br/>\r\n\t\t\t\t\t\t\t<a
-        href=\"/publications/draft-pubs\">Draft Pubs</a><br/>\r\n\t\t\t\t\t\t\t<a
-        href=\"/publications/final-pubs\">Final Pubs</a><br/>\r\n\t\t\t\t\t\t\t<a
-        href=\"/publications/fips\">FIPS</a><br/>\r\n\t\t\t\t\t\t\t<a href=\"/publications/sp\">Special
-        Publications (SPs)</a><br/>\r\n\t\t\t\t\t\t\t<a href=\"/publications/nistir\">NISTIRs</a><br/>\r\n\t\t\t\t\t\t\t<a
-        href=\"/publications/itl-bulletin\">ITL Bulletins</a><br/>\r\n\t\t\t\t\t\t\t<a
-        href=\"/publications/white-paper\">White Papers</a><br/>\r\n\t\t\t\t\t\t\t<a
-        href=\"/publications/journal-article\">Journal Articles</a><br/>\r\n\t\t\t\t\t\t\t<a
-        href=\"/publications/conference-paper\">Conference Papers</a><br/>\r\n\t\t\t\t\t\t\t<a
-        href=\"/publications/book\">Books</a>\r\n                        </p>\r\n
-        \                   </div>\r\n                    <div class=\"col-md-4\">\r\n
-        \                       <p>\r\n                            <a href=\"/topics\">TOPICS</a><br/>\r\n
-        \                           <a href=\"/Topics/Security-and-Privacy\">Security
-        &amp; Privacy</a><br/>\r\n                            <a href=\"/Topics/Applications\">Applications</a><br/>\r\n
-        \                           <a href=\"/Topics/Technologies\">Technologies</a><br/>\r\n
-        \                           <a href=\"/Topics/Sectors\">Sectors</a><br/>\r\n
-        \                           <a href=\"/Topics/Laws-and-Regulations\">Laws
-        &amp; Regulations</a><br/>\r\n                            <a href=\"/Topics/Activities-and-Products\">Activities
-        &amp; Products</a>\r\n                        </p>\r\n                        <p>\r\n
-        \                           <a href=\"/news\">NEWS &amp; UPDATES</a>\r\n                        </p>\r\n
-        \                       <p>\r\n                            <a href=\"/events\">EVENTS</a>\r\n
-        \                       </p>\r\n                        <p>\r\n                            <a
-        href=\"/glossary\">GLOSSARY</a>\r\n                        </p>\r\n                    </div>\r\n
-        \                   <div class=\"col-md-4\">\r\n                        <p>\r\n
-        \                           <a href=\"/about\">ABOUT CSRC</a><br/>\r\n                            <a
-        href=\"/about\">Computer Security Division</a><br/>\r\n                            <a
-        href=\"/about\">Applied Cybersecurity Division</a><br/>\r\n                            <a
-        href=\"/contact\">Contact Us</a>\r\n                        </p>\r\n                    </div>\r\n
-        \               </div>\r\n             </div>\r\n            <div class=\"col-md-4
-        col-sm-6 col-xs-12 col-xxs-12\">\r\n                    <span class=\"pull-right
-        text-right\">\r\n                        <p><strong>Information Technology
-        Laboratory<span class=\"hidden-xs\"> (ITL)</span></strong></p>\r\n                        <strong>Computer
+        #12659c!important; border-color: #12659c!important;\" id=\"footer-subscribe-link\">Subscribe</a>\r\n
+        \           </p>\r\n        </div>\r\n    </div>\r\n    <div class=\"row hidden-sm
+        hidden-md hidden-lg\">\r\n        <div class=\"col-sm-12\">\r\n                <a
+        href=\"https://www.nist.gov\" title=\"National Institute of Standards and
+        Technology\" rel=\"home\" target=\"_blank\" class=\"footer-nist-logo\" id=\"footer-bottom-nist-logo-link\">\r\n
+        \                   <img src=\"/CSRC/Media/images/logo_rev.png\" alt=\"National
+        Institute of Standards and Technology logo\" id=\"footer-bottom-nist-logo\"/>\r\n
+        \               </a>\r\n        </div>\r\n    </div>\r\n\r\n    <div class=\"row\">\r\n
+        \       <div class=\"col-sm-12\">\r\n            <p>\r\n                <a
+        href=\"mailto:webmaster-csrc@nist.gov?subject=CSRC Inquiry\" id=\"footer-webmaster-link\">Webmaster</a>
+        | \r\n                <a href=\"/about/contact\" id=\"footer-contact-us-link\">Contact
+        Us</a> |\r\n                <a href=\"https://www.nist.gov/about-nist/our-organization\"
+        style=\"display: inline-block;\" id=\"footer-org-link\">Our Other Offices</a>\r\n
+        \           </p>\r\n        </div>\r\n    </div>\r\n\r\n    <div id=\"footer-nav-menu\"
+        class=\"row\" role=\"navigation\">\r\n        <div class=\"col-md-8 col-sm-6
+        col-xs-12 col-xxs-12\">\r\n            <div class=\"row\">\r\n                <div
+        class=\"col-md-4\">\r\n                    <p>\r\n                        <a
+        href=\"/projects\">PROJECTS</a>\r\n                    </p>\r\n                    <p>\r\n
+        \                       <a href=\"/publications\">PUBLICATIONS</a><br/>\r\n
+        \                       <a href=\"/publications/draft-pubs\">Draft Pubs</a><br/>\r\n
+        \                       <a href=\"/publications/final-pubs\">Final Pubs</a><br/>\r\n
+        \                       <a href=\"/publications/fips\">FIPS</a><br/>\r\n                        <a
+        href=\"/publications/sp\">Special Publications (SPs)</a><br/>\r\n                        <a
+        href=\"/publications/nistir\">NISTIRs</a><br/>\r\n                        <a
+        href=\"/publications/itl-bulletin\">ITL Bulletins</a><br/>\r\n                        <a
+        href=\"/publications/white-paper\">White Papers</a><br/>\r\n                        <a
+        href=\"/publications/journal-article\">Journal Articles</a><br/>\r\n                        <a
+        href=\"/publications/conference-paper\">Conference Papers</a><br/>\r\n                        <a
+        href=\"/publications/book\">Books</a>\r\n                    </p>\r\n                </div>\r\n
+        \               <div class=\"col-md-4\">\r\n                    <p>\r\n                        <a
+        href=\"/topics\">TOPICS</a><br/>\r\n                        <a href=\"/Topics/Security-and-Privacy\">Security
+        &amp; Privacy</a><br/>\r\n                        <a href=\"/Topics/Applications\">Applications</a><br/>\r\n
+        \                       <a href=\"/Topics/Technologies\">Technologies</a><br/>\r\n
+        \                       <a href=\"/Topics/Sectors\">Sectors</a><br/>\r\n                        <a
+        href=\"/Topics/Laws-and-Regulations\">Laws &amp; Regulations</a><br/>\r\n
+        \                       <a href=\"/Topics/Activities-and-Products\">Activities
+        &amp; Products</a>\r\n                    </p>\r\n                    <p>\r\n
+        \                       <a href=\"/news\">NEWS &amp; UPDATES</a>\r\n                    </p>\r\n
+        \                   <p>\r\n                        <a href=\"/events\">EVENTS</a>\r\n
+        \                   </p>\r\n                    <p>\r\n                        <a
+        href=\"/glossary\">GLOSSARY</a>\r\n                    </p>\r\n                </div>\r\n
+        \               <div class=\"col-md-4\">\r\n                    <p>\r\n                        <a
+        href=\"/about\">ABOUT CSRC</a><br/>\r\n                        <a href=\"/about\">Computer
+        Security Division</a><br/>\r\n                        <a href=\"/about\">Applied
+        Cybersecurity Division</a><br/>\r\n                        <a href=\"/contact\">Contact
+        Us</a>\r\n                    </p>\r\n                </div>\r\n            </div>\r\n
+        \        </div>\r\n        <div class=\"col-md-4 col-sm-6 col-xs-12 col-xxs-12\">\r\n
+        \               <span class=\"pull-right text-right\">\r\n                    <p><strong
+        id=\"footer-info-itl\">Information Technology Laboratory<span class=\"hidden-xs\">
+        (ITL)</span></strong></p>\r\n                    <strong id=\"footer-info-csd\">Computer
         Security Division<span class=\"hidden-xs\"> (CSD)</span></strong><br/>\r\n
-        \                       TEL: 301.975.8443<br/>\r\n                        <strong>Applied
-        Cybersecurity Division<span class=\"hidden-xs\"> (ACD)</span></strong>\r\n
-        \                       <br /><br /><br />\r\n                        Contact
-        CSRC Webmaster: <a href=\"mailto:webmaster-csrc@nist.gov?subject=CSRC Inquiry\"
-        style=\"display: inline-block;\">webmaster-csrc@nist.gov</a>\r\n                    </span>\r\n
-        \           </div>\r\n        </div>\r\n\r\n        <div class=\"row\">\r\n
-        \           <div class=\"col-lg-12 footer-bottom-links-container\">\r\n                <p>\r\n
-        \                   <a target=\"_blank\" href=\"https://www.nist.gov/privacy-policy\">Privacy
-        Statement</a> |\r\n                    <a target=\"_blank\" href=\"https://www.nist.gov/privacy-policy#privpolicy\">Privacy
-        Policy</a> |\r\n                    <a target=\"_blank\" href=\"https://www.nist.gov/privacy-policy#secnot\">Security
-        Notice</a> |\r\n                    <a target=\"_blank\" href=\"https://www.nist.gov/privacy-policy#accesstate\">Accessibility
-        Statement</a> |\r\n                    <a target=\"_blank\" href=\"https://www.nist.gov/privacy\">NIST
-        Privacy Program</a> |\r\n                    <a target=\"_blank\" href=\"https://www.nist.gov/no-fear-act-policy\">No
-        Fear Act Policy</a>\r\n                </p>\r\n                <p>\r\n                    <a
+        \                   <span id=\"footer-info-csd-phone\">TEL: 301.975.8443</span><br/>\r\n
+        \                   <strong id=\"footer-info-acd\">Applied Cybersecurity Division<span
+        class=\"hidden-xs\"> (ACD)</span></strong>\r\n                    <br /><br
+        /><br />\r\n                    Contact CSRC Webmaster: <a href=\"mailto:webmaster-csrc@nist.gov?subject=CSRC
+        Inquiry\" style=\"display: inline-block;\"  id=\"footer-info-webmaster-link\">webmaster-csrc@nist.gov</a>\r\n
+        \               </span>\r\n        </div>\r\n    </div>\r\n\r\n    <div class=\"row\">\r\n
+        \       <div class=\"col-lg-12 footer-bottom-links-container\" id=\"footer-bottom-links-container\">\r\n
+        \           <p>\r\n                <a target=\"_blank\" href=\"https://www.nist.gov/privacy-policy\">Privacy
+        Statement</a> |\r\n                <a target=\"_blank\" href=\"https://www.nist.gov/privacy-policy#privpolicy\">Privacy
+        Policy</a> |\r\n                <a target=\"_blank\" href=\"https://www.nist.gov/privacy-policy#secnot\">Security
+        Notice</a> |\r\n                <a target=\"_blank\" href=\"https://www.nist.gov/privacy-policy#accesstate\">Accessibility
+        Statement</a> |\r\n                <a target=\"_blank\" href=\"https://www.nist.gov/privacy\">NIST
+        Privacy Program</a> |\r\n                <a target=\"_blank\" href=\"https://www.nist.gov/no-fear-act-policy\">No
+        Fear Act Policy</a>\r\n            </p>\r\n            <p>\r\n                <a
         target=\"_blank\" href=\"https://www.nist.gov/disclaimer\">Disclaimer</a>
-        |\r\n                    <a target=\"_blank\" href=\"https://www.nist.gov/office-director/freedom-information-act\">FOIA</a>
-        |\r\n                    <a target=\"_blank\" href=\"https://www.nist.gov/environmental-policy-statement\">Environmental
-        Policy Statement</a> |\r\n                    <a target=\"_blank\" href=\"https://www.nist.gov/privacy-policy#cookie\">Cookie
-        Disclaimer</a> |\r\n                    <a target=\"_blank\" href=\"https://www.nist.gov/summary-report-scientific-integrity\">Scientific
-        Integrity Summary</a> |\r\n                    <a target=\"_blank\" href=\"https://www.nist.gov/nist-information-quality-standards\">NIST
-        Information Quality Standards</a>\r\n                </p>\r\n                <p>\r\n
-        \                   <a target=\"_blank\" href=\"https://www.usa.gov/business\">Business
-        USA</a> |\r\n                    <a target=\"_blank\" href=\"https://www.commerce.gov/\">Commerce.gov</a>
-        |\r\n                    <a target=\"_blank\" href=\"https://www.healthcare.gov/\">Healthcare.gov</a>
-        |\r\n                    <a target=\"_blank\" href=\"http://www.science.gov/\">Science.gov</a>
-        |\r\n                    <a target=\"_blank\" href=\"http://www.usa.gov/\">USA.gov</a>\r\n
-        \               </p>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</footer>\r\n\r\n<script
-        type=\"text/javascript\">\r\n     (function() {\r\n       document.getElementsByTagName('html')[0].setAttribute('lang',
-        'en');\r\n       document.getElementsByTagName('html')[0].setAttribute('xml:lang',
-        'en')\r\n   })(); \r\n</script>\r\n\r\n    \r\n    </form>\r\n</body>\r\n</html>\r\n"
+        |\r\n                <a target=\"_blank\" href=\"https://www.nist.gov/office-director/freedom-information-act\">FOIA</a>
+        |\r\n                <a target=\"_blank\" href=\"https://www.nist.gov/environmental-policy-statement\">Environmental
+        Policy Statement</a> |\r\n                <a target=\"_blank\" href=\"https://www.nist.gov/privacy-policy#cookie\">Cookie
+        Disclaimer</a> |\r\n                <a target=\"_blank\" href=\"https://www.nist.gov/summary-report-scientific-integrity\">Scientific
+        Integrity Summary</a> |\r\n                <a target=\"_blank\" href=\"https://www.nist.gov/nist-information-quality-standards\">NIST
+        Information Quality Standards</a>\r\n            </p>\r\n            <p>\r\n
+        \               <a target=\"_blank\" href=\"https://www.usa.gov/business\">Business
+        USA</a> |\r\n                <a target=\"_blank\" href=\"https://www.commerce.gov/\">Commerce.gov</a>
+        |\r\n                <a target=\"_blank\" href=\"https://www.healthcare.gov/\">Healthcare.gov</a>
+        |\r\n                <a target=\"_blank\" href=\"http://www.science.gov/\">Science.gov</a>
+        |\r\n                <a target=\"_blank\" href=\"http://www.usa.gov/\">USA.gov</a>\r\n
+        \           </p>\r\n        </div>\r\n    </div>\r\n</div>\r\n</footer>\r\n\r\n<script
+        type=\"text/javascript\">\r\n (function() {\r\n   document.getElementsByTagName('html')[0].setAttribute('lang',
+        'en');\r\n   document.getElementsByTagName('html')[0].setAttribute('xml:lang',
+        'en')\r\n})(); \r\n</script>\r\n\r\n    \r\n    </form>\r\n</body>\r\n</html>\r\n"
     http_version: 
-  recorded_at: Thu, 02 May 2019 10:47:47 GMT
+  recorded_at: Thu, 09 May 2019 11:53:29 GMT
 - request:
     method: get
     uri: https://csrc.nist.gov/publications/detail/nistir/7831/archive/2011-12-06
@@ -1114,8 +1142,8 @@ http_interactions:
       Server:
       - Microsoft-IIS/8.5
       Set-Cookie:
-      - ASP.NET_SessionId=zoaroivaiconwhdnj1zsoare; path=/; secure; HttpOnly
-      - CMSCsrfCookie=+AZi/9qsyxN+aH2SD5hIaTKtIbi97quqxyhTp3Zq; path=/; secure; HttpOnly
+      - ASP.NET_SessionId=3dygoban5v4ougz5wm02gy3t; path=/; secure; HttpOnly
+      - CMSCsrfCookie=nT7FkRnICSdejUHQq4pmzH5YMurF4hprpDBu6Cz2; path=/; secure; HttpOnly
       - CMSPreferredCulture=en-US; path=/; HttpOnly; Secure
       X-Frame-Options:
       - SAMEORIGIN
@@ -1124,9 +1152,9 @@ http_interactions:
       X-Aspnet-Version:
       - 4.0.30319
       Date:
-      - Thu, 02 May 2019 10:47:46 GMT
+      - Thu, 09 May 2019 11:53:27 GMT
       Content-Length:
-      - '37893'
+      - '40409'
       Strict-Transport-Security:
       - max-age=31536000
     body:
@@ -1150,8 +1178,7 @@ http_interactions:
         sizes=\"32x32\" />\r\n<link rel=\"icon\" type=\"image/png\" href=\"/CSRC/Media/images/favicons/favicon-16x16.png\"
         sizes=\"16x16\" />\r\n<link rel=\"manifest\" href=\"/CSRC/Media/images/favicons/manifest.json\"
         />\r\n<link rel=\"mask-icon\" href=\"/CSRC/Media/images/favicons/safari-pinned-tab.svg\"
-        color=\"#000000\" />\r\n<link rel=\"shortcut icon\" href=\"/CSRC/Media/images/favicons/favicon.ico\"
-        />\r\n<meta name=\"msapplication-config\" content=\"/CSRC/Media/images/favicons/browserconfig.xml\"
+        color=\"#000000\" />\r\n<meta name=\"msapplication-config\" content=\"/CSRC/Media/images/favicons/browserconfig.xml\"
         />\r\n<meta name=\"theme-color\" content=\"#000000\" />\r\n\r\n<script src=\"/Scripts/jquery/dist/jquery.min.js\"></script>\r\n<script
         src=\"/Scripts/underscore/underscore-min.js\"></script>\r\n<script src=\"/Scripts/bootstrap/dist/js/bootstrap.min.js\"></script>\r\n<script
         src=\"/Scripts/moment/min/moment.min.js\" type=\"text/javascript\"></script>\r\n<script
@@ -1164,11 +1191,12 @@ http_interactions:
         src=\"/CSRC/media/js/forms-searchCriteria.js\" type=\"text/javascript\"></script>\r\n<script
         src=\"/CSRC/media/js/nist-exit-script.js\" type=\"text/javascript\"></script>\r\n\r\n<script
         async type=\"text/javascript\" id=\"_fed_an_ua_tag\" src=\"https://dap.digitalgov.gov/Universal-Federated-Analytics-Min.js?agency=nist&subagency=csrc&pua=UA-66610693-15&yt=true&exts=xsd,xml,wav,mpg,mpeg,avi,rtf,webm,ogg,ogv,oga,map,otf,eot,svg,ttf,woff\"></script>\r\n\r\n<style
-        id=\"antiClickjack\">body{display:none !important;}</style>\r\n<script type=\"text/javascript\">\r\n
-        \  if (self === top) {\r\n       var antiClickjack = document.getElementById(\"antiClickjack\");\r\n
-        \      antiClickjack.parentNode.removeChild(antiClickjack);\r\n   } else {\r\n
-        \      top.location = self.location;\r\n   }\r\n</script>\r\n \n<link href=\"/CSRC/Media/images/favicons/favicon.ico\"
-        type=\"image/x-icon\" rel=\"shortcut icon\"/>\r\n<link href=\"/CSRC/Media/images/favicons/favicon.ico\"
+        id=\"antiClickjack\">body{display:none !important;}</style>\r\n<script type=\"text/javascript\"
+        id=\"antiClickjackScript\">\r\n   if (self === top) {\r\n       var antiClickjack
+        = document.getElementById(\"antiClickjack\");\r\n       antiClickjack.parentNode.removeChild(antiClickjack);\r\n
+        \  } else {\r\n       top.location = self.location;\r\n   }\r\n</script>\r\n
+        \n<link href=\"/CSRC/Media/images/favicons/favicon.ico\" type=\"image/x-icon\"
+        rel=\"shortcut icon\"/>\r\n<link href=\"/CSRC/Media/images/favicons/favicon.ico\"
         type=\"image/x-icon\" rel=\"icon\"/>\r\n\r\n<meta description=\"NISTIR 7831
         defines the Common Remediation Enumeration (CRE) specification. CRE is part
         of an emerging suite of enterprise remediation specifications that enable
@@ -1230,8 +1258,8 @@ http_interactions:
         />\r\n</head>\r\n<body class=\"LTR Unknown ENUS ContentBody\" >\r\n    \r\n
         \   <form method=\"post\" action=\"/publications/detail/nistir/7831/archive/2011-12-06\"
         id=\"form\">\r\n<input type=\"hidden\" name=\"__CMSCsrfToken\" id=\"__CMSCsrfToken\"
-        value=\"nhJxSGA8zxGYv7L6Jr9WPEg+e3CrsGP/d8f/sM/eb5JGwK6CtsDxqVxuq5p2kskswZedpRhGfykA+DuVhXMx+h7ideNPCX0lblhLOX49H34=\"
-        />\r\n<input type=\"hidden\" name=\"__VIEWSTATE\" id=\"__VIEWSTATE\" value=\"FqAKojv4cTkw0iPtEVdksIBx8jrFowXy3iVsUdvMynX19JqrHwH/pfPOH9a9WB37WwWN1F7E25s5HXW6prXNirUqF9fGWJ/hRg4LEAHvBC+3UE5k9CKiZRRqhZgT416241QV97BqugaQD45bajus9CWhH4KFFvjaUl1FaY/2JIVsjwPMsEGcYvbnH6kqDqDP9CMcXm1I3w1C+36hoO3X+bmLjFjxUmwtvi5KGRl8mtu6OB8v95o4vTLnvg3VWVzPqZ8ocucjc5TIODlVS1LbEJSmOcfpGXeOAG23CbJylKqUCtazCag0SeDiR6VJ+x9v+3Dxh/nID0qN3x+ljJfZMDyD8p8a5cxRckluaVivHjA=\"
+        value=\"vwICYO+Q5/Yck+QSRW45LoH+BiQQcVRmnTLPeD0ovUw09g7CA2yLhE3+ZDESWWaJ5A7KSZcu4sUTwRtF7amSlYm4GyMTrGhDCaSUUteh88c=\"
+        />\r\n<input type=\"hidden\" name=\"__VIEWSTATE\" id=\"__VIEWSTATE\" value=\"1tC8xhPeZsOgLfNbpEx+mM91U4gCgPXFfuZQXZjzVZM0msdDBOvwi2F4AL9kjY4QFXDoP0+eiFxtTQ+sQB1trNgbxR/VRS1qeQxxALDgaYqrF+dnfmn9DMQOHEEWsg1qJksARURLKU1cHQJZoLl/WdMrpz+XjEneb2rVNa2PXLmyqdPMqfm8RJrBJVsHqDgWyfAF7L5tjeer66Kb8+Kttt7i0SDgRM+wr93V6SjFJn066gb12U6RLaE1CH0bjfNtvzLv7SZnZDzMlHD5235qV75ceKiDgmCOB4uGsPIDWN2Iv9rqynUat4t/I/4WIA7TPKoAJIPj+WVVu/MI/S2gORS3bjH9J/DrGPNVWL/13P0=\"
         />\r\n\r\n<input type=\"hidden\" name=\"lng\" id=\"lng\" value=\"en-US\" />\r\n<script
         type=\"text/javascript\">\r\n\t//<![CDATA[\n\r\nfunction PM_Postback(param)
         { if (window.top.HideScreenLockWarningAndSync) { window.top.HideScreenLockWarningAndSync(1080);
@@ -1247,161 +1275,168 @@ http_interactions:
         false,\r\n  \"applicationUrl\": \"/\",\r\n  \"isDialog\": false,\r\n  \"isRTL\":
         \"false\"\r\n};\r\n\n//]]>\r\n</script>\r\n<input type=\"hidden\" name=\"__VIEWSTATEGENERATOR\"
         id=\"__VIEWSTATEGENERATOR\" value=\"A5343185\" />\r\n    \r\n    <div id=\"ctxM\">\r\n\r\n</div>\r\n
-        \       <div id=\"antiClickjack\" style=\"display: none\">\r\n        <h1>You
-        are viewing this page in an unauthorized frame window.</h1>\r\n        <p>This
-        is a potential security issue, you are being redirected to <a href=\"https://csrc.nist.gov\">https://csrc.nist.gov</a></p>\r\n
-        \   </div>\r\n    <nav id=\"navbar\" class=\"navbar\">\r\n      <div id=\"nist-menu-container\"
-        class=\"container\">\r\n        <div class=\"row\">\r\n        <!-- Brand
-        -->\r\n        <div class=\"col-xs-6 col-md-4 navbar-header\">\r\n          <a
-        class=\"navbar-brand\" href=\"https://www.nist.gov\" target=\"_blank\" id=\"navbar-brand-image\">\r\n
-        \           <img src=\"/CSRC/Media/images/svg/nist-logo.svg\" alt=\"National
-        Institute of Standards and Technology\" width=\"110\" height=\"30\">\r\n          </a>\r\n
-        \       </div>\r\n        <div class=\"col-xs-6 col-md-8 navbar-nist-logo\">\r\n
-        \           <div class=\"form-inline hidden-sm hidden-xs\">\r\n                <label
-        for=\"search-csrc-query\" class=\"element-invisible\">Search</label>\r\n                <input
+        \   <div id=\"antiClickjack\" style=\"display: none\">\r\n    <h1>You are
+        viewing this page in an unauthorized frame window.</h1>\r\n    <p>This is
+        a potential security issue, you are being redirected to <a href=\"https://csrc.nist.gov\">https://csrc.nist.gov</a></p>\r\n</div>\r\n<nav
+        id=\"navbar\" class=\"navbar\">\r\n  <div id=\"nist-menu-container\" class=\"container\">\r\n
+        \   <div class=\"row\">\r\n    <!-- Brand -->\r\n    <div class=\"col-xs-6
+        col-md-4 navbar-header\">\r\n      <a class=\"navbar-brand\" href=\"https://www.nist.gov\"
+        target=\"_blank\" id=\"navbar-brand-image\">\r\n        <img src=\"/CSRC/Media/images/svg/nist-logo.svg\"
+        alt=\"National Institute of Standards and Technology\" width=\"110\" height=\"30\">\r\n
+        \     </a>\r\n    </div>\r\n    <div class=\"col-xs-6 col-md-8 navbar-nist-logo\">\r\n
+        \       <div class=\"form-inline hidden-sm hidden-xs\">\r\n            <label
+        for=\"search-csrc-query\" class=\"element-invisible\">Search</label>\r\n            <input
         autocomplete=\"off\" class=\"form-control\" id=\"search-csrc-query\" name=\"search-csrc-query\"
         type=\"text\" size=\"15\" maxlength=\"128\" placeholder=\"Search CSRC\"/>\r\n
-        \               <button type=\"button\" id=\"search-csrc-submit-btn\" name=\"op\"
-        class=\"form-submit\">\r\n                    <span class=\"element-invisible\">Search</span>\r\n
-        \                   <i class=\"fa fa-search\"></i>\r\n                </button>\r\n
-        \           </div>\r\n          <span id=\"nvd-menu-button\" class=\"pull-right\">\r\n
-        \           <a href=\"#\">\r\n              <span class=\"fa fa-bars\"></span>
-        \r\n              <span id=\"nvd-menu-full-text\"><span class=\"hidden-xxs\">CSRC
-        </span>MENU</span>\r\n            </a>\r\n          </span>\r\n        </div>\r\n
-        \       </div>\r\n      </div>\r\n        \r\n        <div class=\"form-inline
-        hidden-md hidden-lg\">\r\n            <label for=\"search-csrc-query\" class=\"element-invisible\">Search</label>\r\n
-        \           <input autocomplete=\"off\" class=\"form-control\" id=\"search-csrc-query-mobile\"
-        name=\"search-csrc-query\" type=\"text\" size=\"15\" maxlength=\"128\" placeholder=\"Search
-        CSRC\"/>\r\n            <button type=\"button\" id=\"search-csrc-submit-btn-mobile\"
-        name=\"op\" class=\"form-submit\">\r\n                <span class=\"element-invisible\">Search</span>\r\n
+        \           <button type=\"button\" id=\"search-csrc-submit-btn\" name=\"op\"
+        class=\"form-submit\">\r\n                <span class=\"element-invisible\">Search</span>\r\n
         \               <i class=\"fa fa-search\"></i>\r\n            </button>\r\n
-        \       </div>\r\n    <div class=\"main-menu-row container\">\r\n        <!--
-        Collect the nav links, forms, and other content for toggling -->\r\n        <div
-        id=\"main-menu-drop\" class=\"col-lg-12\" style=\"display: none;\">\r\n            <ul>\r\n\t\t
-        \       <li><a href=\"/projects\">Projects</a></li>\r\n\t\t        <li>\r\n
-        \                   <a href=\"/publications\">\r\n                        Publications\r\n
-        \                       <span class=\"expander fa fa-plus\" id=\"main-menu-expander-pubs\"
-        data-expander-name=\"publications\" data-expanded=\"false\">\r\n                            <span
-        class=\"element-invisible\">Expand or Collapse</span>\r\n                        </span>\r\n
-        \                   </a>\r\n                    <div style=\"display: none;\"
-        class=\"sub-menu\" data-expander-trigger=\"publications\">\r\n                        <div
-        class=\"row\">\r\n                            <div class=\"col-lg-4\">\r\n\t\t\t\t\t\t\t\t<p><a
-        href=\"/publications/draft-pubs\">Draft Pubs</a></p>\r\n\t\t\t\t\t\t\t\t<p><a
-        href=\"/publications/final-pubs\">Final Pubs</a></p>\r\n\t\t\t\t\t\t\t\t<p><a
-        href=\"/publications/fips\">FIPS</a></p>\r\n\t\t\t\t\t\t\t\t<p><a href=\"/publications/sp\">Special
-        Publications (SP<small>s</small>)</a></p>\r\n                            </div>\r\n
-        \                           <div class=\"col-lg-4\">\r\n\t\t\t\t\t\t\t\t<p><a
-        href=\"/publications/nistir\">NISTIR<small>s</small></a></p>\r\n\t\t\t\t\t\t\t\t<p><a
-        href=\"/publications/itl-bulletin\">ITL Bulletins</a></p>\r\n\t\t\t\t\t\t\t\t<p><a
-        href=\"/publications/white-paper\">White Papers</a></p>\r\n                            </div>\r\n
-        \                           <div class=\"col-lg-4\">\r\n\t\t\t\t\t\t\t\t<p><a
-        href=\"/publications/journal-article\">Journal Articles</a></p>\r\n\t\t\t\t\t\t\t\t<p><a
-        href=\"/publications/conference-paper\">Conference Papers</a></p>\r\n\t\t\t\t\t\t\t\t<p><a
-        href=\"/publications/book\">Books</a></p>\r\n                            </div>\r\n
-        \                       </div>\r\n                    </div>\r\n\t\t        </li>\r\n\t\t
-        \       <li>\r\n                    <a href=\"/topics\">\r\n                        Topics\r\n
-        \                       <span class=\"expander fa fa-plus\" id=\"main-menu-expander-topics\"
-        data-expander-name=\"topics\" data-expanded=\"false\">\r\n                            <span
-        class=\"element-invisible\">Expand or Collapse</span>\r\n                        </span>\r\n
-        \                   </a>\r\n                    <div style=\"display: none;\"
-        class=\"sub-menu\" data-expander-trigger=\"topics\">\r\n                        <div
-        class=\"row\">\r\n                            <div class=\"col-lg-4\">\r\n
-        \                               <p><a href=\"/Topics/Security-and-Privacy\">Security
-        &amp Privacy</a></p>\r\n                                <p><a href=\"/Topics/Applications\">Applications</a></p>\r\n
-        \                           </div>\r\n                            <div class=\"col-lg-4\">\r\n
-        \                               <p><a href=\"/Topics/Technologies\">Technologies</a></p>\r\n
-        \                               <p><a href=\"/Topics/Sectors\">Sectors</a></p>\r\n
-        \                           </div>\r\n                            <div class=\"col-lg-4\">\r\n
-        \                               <p><a href=\"/Topics/Laws-and-Regulations\">Laws
-        &amp; Regulations</a></p>\r\n                                <p><a href=\"/Topics/Activities-and-Products\">Activities
-        &amp; Products</a></p>\r\n                            </div>\r\n                        </div>\r\n
-        \                   </div>\r\n\t\t        </li>\r\n\t\t        <li><a href=\"/news\">News
-        &amp; Updates</a></li>\r\n\t\t        <li><a href=\"/events\">Events</a></li>\r\n
-        \               <li><a href=\"/glossary\">Glossary</a></li>\r\n\t\t        <li>\r\n
-        \                   <a href=\"/about\">\r\n                        About CSRC\r\n
-        \                       <span class=\"expander fa fa-plus\" id=\"main-menu-expander-about\"
-        data-expander-name=\"about\" data-expanded=\"false\">\r\n                            <span
-        class=\"element-invisible\">Expand or Collapse</span>\r\n                        </span>\r\n
-        \                   </a>\r\n                    <div style=\"display: none;\"
-        class=\"sub-menu\" data-expander-trigger=\"about\">\r\n                        <div
-        class=\"row\">\r\n                            <div class=\"col-lg-6\">\r\n
-        \                               <p>\r\n                                    <strong>Computer
-        Security Division</strong><br />\r\n                                    <ul>\r\n\t
-        \                                   <li><a href=\"/Groups/Computer-Security-Division/Cryptographic-Technology\">Cryptographic
-        Technology</a></li>\r\n\t                                    <li><a href=\"/Groups/Computer-Security-Division/Secure-Systems-and-Applications\">Secure
-        Systems and Applications</a></li>\r\n\t                                    <li><a
+        \       </div>\r\n      <span id=\"nvd-menu-button\" class=\"pull-right\">\r\n
+        \       <a href=\"#\" id=\"nvd-menu-button-link\">\r\n          <span class=\"fa
+        fa-bars\"></span> \r\n          <span id=\"nvd-menu-full-text\"><span class=\"hidden-xxs\">CSRC
+        </span>MENU</span>\r\n        </a>\r\n      </span>\r\n    </div>\r\n    </div>\r\n
+        \ </div>\r\n    \r\n    <div class=\"form-inline hidden-md hidden-lg\">\r\n
+        \       <label for=\"search-csrc-query\" class=\"element-invisible\">Search</label>\r\n
+        \       <input autocomplete=\"off\" class=\"form-control\" id=\"search-csrc-query-mobile\"
+        name=\"search-csrc-query\" type=\"text\" size=\"15\" maxlength=\"128\" placeholder=\"Search
+        CSRC\"/>\r\n        <button type=\"button\" id=\"search-csrc-submit-btn-mobile\"
+        name=\"op\" class=\"form-submit\">\r\n            <span class=\"element-invisible\">Search</span>\r\n
+        \           <i class=\"fa fa-search\"></i>\r\n        </button>\r\n    </div>\r\n<div
+        class=\"main-menu-row container\">\r\n    <!-- Collect the nav links, forms,
+        and other content for toggling -->\r\n    <div id=\"main-menu-drop\" class=\"col-lg-12\"
+        style=\"display: none;\">\r\n        <ul>\r\n            <li><a href=\"/projects\">Projects</a></li>\r\n
+        \           <li>\r\n                <a href=\"/publications\">\r\n                    Publications\r\n
+        \                   <span class=\"expander fa fa-plus\" id=\"main-menu-pubs-expander\"
+        data-expander-name=\"publications\" data-expanded=\"false\">\r\n                        <span
+        class=\"element-invisible\">Expand or Collapse</span>\r\n                    </span>\r\n
+        \               </a>\r\n                <div style=\"display: none;\" class=\"sub-menu\"
+        data-expander-trigger=\"publications\" id=\"main-menu-pubs-expanded\">\r\n
+        \                   <div class=\"row\">\r\n                        <div class=\"col-lg-4\">\r\n
+        \                           <p><a href=\"/publications/draft-pubs\">Draft
+        Pubs</a></p>\r\n                            <p><a href=\"/publications/final-pubs\">Final
+        Pubs</a></p>\r\n                            <p><a href=\"/publications/fips\">FIPS</a></p>\r\n
+        \                           <p><a href=\"/publications/sp\">Special Publications
+        (SP<small>s</small>)</a></p>\r\n                        </div>\r\n                        <div
+        class=\"col-lg-4\">\r\n                            <p><a href=\"/publications/nistir\">NISTIR<small>s</small></a></p>\r\n
+        \                           <p><a href=\"/publications/itl-bulletin\">ITL
+        Bulletins</a></p>\r\n                            <p><a href=\"/publications/white-paper\">White
+        Papers</a></p>\r\n                        </div>\r\n                        <div
+        class=\"col-lg-4\">\r\n                            <p><a href=\"/publications/journal-article\">Journal
+        Articles</a></p>\r\n                            <p><a href=\"/publications/conference-paper\">Conference
+        Papers</a></p>\r\n                            <p><a href=\"/publications/book\">Books</a></p>\r\n
+        \                       </div>\r\n                    </div>\r\n                </div>\r\n
+        \           </li>\r\n            <li>\r\n                <a href=\"/topics\">\r\n
+        \                   Topics\r\n                    <span class=\"expander fa
+        fa-plus\" id=\"main-menu-topics-expander\" data-expander-name=\"topics\" data-expanded=\"false\">\r\n
+        \                       <span class=\"element-invisible\">Expand or Collapse</span>\r\n
+        \                   </span>\r\n                </a>\r\n                <div
+        style=\"display: none;\" class=\"sub-menu\" data-expander-trigger=\"topics\"
+        id=\"main-menu-topics-expanded\">\r\n                    <div class=\"row\">\r\n
+        \                       <div class=\"col-lg-4\">\r\n                            <p><a
+        href=\"/Topics/Security-and-Privacy\">Security &amp Privacy</a></p>\r\n                            <p><a
+        href=\"/Topics/Applications\">Applications</a></p>\r\n                        </div>\r\n
+        \                       <div class=\"col-lg-4\">\r\n                            <p><a
+        href=\"/Topics/Technologies\">Technologies</a></p>\r\n                            <p><a
+        href=\"/Topics/Sectors\">Sectors</a></p>\r\n                        </div>\r\n
+        \                       <div class=\"col-lg-4\">\r\n                            <p><a
+        href=\"/Topics/Laws-and-Regulations\">Laws &amp; Regulations</a></p>\r\n                            <p><a
+        href=\"/Topics/Activities-and-Products\">Activities &amp; Products</a></p>\r\n
+        \                       </div>\r\n                    </div>\r\n                </div>\r\n
+        \           </li>\r\n            <li><a href=\"/news\">News &amp; Updates</a></li>\r\n
+        \           <li><a href=\"/events\">Events</a></li>\r\n            <li><a
+        href=\"/glossary\">Glossary</a></li>\r\n            <li>\r\n                <a
+        href=\"/about\">\r\n                    About CSRC\r\n                    <span
+        class=\"expander fa fa-plus\" id=\"main-menu-about-expander\" data-expander-name=\"about\"
+        data-expanded=\"false\">\r\n                        <span class=\"element-invisible\">Expand
+        or Collapse</span>\r\n                    </span>\r\n                </a>\r\n
+        \               <div style=\"display: none;\" class=\"sub-menu\" data-expander-trigger=\"about\"
+        id=\"main-menu-about-expanded\">\r\n                    <div class=\"row\">\r\n
+        \                       <div class=\"col-lg-6\">\r\n                            <p>\r\n
+        \                               <strong>Computer Security Division</strong><br
+        />\r\n                                <ul>\r\n                                    <li><a
+        href=\"/Groups/Computer-Security-Division/Cryptographic-Technology\">Cryptographic
+        Technology</a></li>\r\n                                    <li><a href=\"/Groups/Computer-Security-Division/Secure-Systems-and-Applications\">Secure
+        Systems and Applications</a></li>\r\n                                    <li><a
         href=\"/Groups/Computer-Security-Division/Security-Components-and-Mechanisms\">Security
-        Components and Mechanisms</a></li>\r\n\t                                    <li><a
+        Components and Mechanisms</a></li>\r\n                                    <li><a
         href=\"/Groups/Computer-Security-Division/Security-Engineering-and-Risk-Management\">Security
-        Engineering and Risk Management</a></li>\r\n\t                                    <li><a
+        Engineering and Risk Management</a></li>\r\n                                    <li><a
         href=\"/Groups/Computer-Security-Division/Security-Testing-Validation-and-Measurement\">Security
-        Testing, Validation, and Measurement</a></li>\r\n                                    </ul>\r\n
-        \                               </p>\r\n                            </div>\r\n
-        \                           <div class=\"col-lg-6\">\r\n                                <p>\r\n
-        \                                   <strong>Applied Cybersecurity Division</strong><br
-        />\r\n                                    <ul>\r\n\t                                    <li><a
-        href=\"/Groups/Applied-Cybersecurity-Division/Cybersecurity-and-Privacy-Applications\">Cybersecurity
-        and Privacy Applications</a></li>\r\n\t                                    <li><a
+        Testing, Validation, and Measurement</a></li>\r\n                                </ul>\r\n
+        \                           </p>\r\n                        </div>\r\n                        <div
+        class=\"col-lg-6\">\r\n                            <p>\r\n                                <strong>Applied
+        Cybersecurity Division</strong><br />\r\n                                <ul>\r\n
+        \                                   <li><a href=\"/Groups/Applied-Cybersecurity-Division/Cybersecurity-and-Privacy-Applications\">Cybersecurity
+        and Privacy Applications</a></li>\r\n                                    <li><a
         href=\"/Groups/Applied-Cybersecurity-Division/National-Cybersecurity-Center-of-Excellence\">National
-        Cybersecurity Center of Excellence (NCCoE)</a></li>\r\n\t                                    <li><a
+        Cybersecurity Center of Excellence (NCCoE)</a></li>\r\n                                    <li><a
         href=\"https://www.nist.gov/nice/\">National Initiative for Cybersecurity
-        Education (NICE)</a></li>\r\n\t                                    <li><a
-        href=\"/Groups/Applied-Cybersecurity-Division/Trusted-Identities-Group\">Trusted
-        Identities Group</a></li>\r\n                                    </ul>\r\n
-        \                               </p>\r\n                                <p>\r\n
-        \                                   <a href=\"/contact\">\r\n                                        Contact
-        Us\r\n                                    </a>\r\n                                </p>\r\n
-        \                           </div>\r\n                        </div>\r\n                    </div>\r\n\t\t
-        \       </li>\r\n            </ul>\r\n        </div><!-- /#mobile-nav-container
-        -->\r\n    </div>\r\n  \r\n    </nav>\r\n    <section id=\"itl-header\" class=\"has-menu\">\r\n
-        \       <div class=\"container\">\r\n            <div class=\"row\">\r\n                <div
-        class=\"col-sm-12 col-md-8\">\r\n                    <h2 class=\"hidden-xs
-        hidden-sm\">\r\n                        <a href=\"https://www.nist.gov/itl\"
-        target=\"_blank\">Information Technology Laboratory</a>\r\n                    </h2>\r\n
-        \                   <h1 class=\"hidden-xs hidden-sm\">\r\n                        <a
-        href=\"/\" id=\"csrc-header-link\">Computer Security Resource Center</a>\r\n
-        \                   </h1>\r\n                    <h1 class=\"hidden-xs text-center
-        hidden-md hidden-lg\">Computer Security Resource Center</h1>\r\n                    <h1
-        class=\"hidden-sm hidden-md hidden-lg text-center\">Computer Security<br />Resource
-        Center</h1>\r\n                </div>\r\n                <div class=\"col-sm-12
-        col-md-4\">\r\n                    <a href=\"/\" style=\"width: 100%; text-align:
-        center; display: block;\"><img src=\"/CSRC/Media/images/CSRC-white-134-38.png\"
-        alt=\"CSRC Logo\" class=\"csrc-header-logo\"></a>\r\n                </div>\r\n
-        \           </div>\r\n        </div>\r\n    </section>\r\n\r\n    <div id=\"body-section\"
+        Education (NICE)</a></li>\r\n                                    <li><a href=\"/Groups/Applied-Cybersecurity-Division/Trusted-Identities-Group\">Trusted
+        Identities Group</a></li>\r\n                                </ul>\r\n                            </p>\r\n
+        \                           <p>\r\n                                <a href=\"/contact\">\r\n
+        \                                   Contact Us\r\n                                </a>\r\n
+        \                           </p>\r\n                        </div>\r\n                    </div>\r\n
+        \               </div>\r\n            </li>\r\n        </ul>\r\n    </div><!--
+        /#mobile-nav-container -->\r\n</div>\r\n\r\n</nav>\r\n<section id=\"itl-header\"
+        class=\"has-menu\">\r\n    <div class=\"container\">\r\n        <div class=\"row\">\r\n
+        \           <div class=\"col-sm-12 col-md-8\">\r\n                <h2 class=\"hidden-xs
+        hidden-sm\">\r\n                    <a href=\"https://www.nist.gov/itl\" target=\"_blank\"
+        id=\"itl-header-link\">Information Technology Laboratory</a>\r\n                </h2>\r\n
+        \               <h1 class=\"hidden-xs hidden-sm\">\r\n                    <a
+        href=\"/\" id=\"csrc-header-link-lg\">Computer Security Resource Center</a>\r\n
+        \               </h1>\r\n                <h1 class=\"hidden-xs text-center
+        hidden-md hidden-lg\" id=\"csrc-header-link-md\">Computer Security Resource
+        Center</h1>\r\n                <h1 class=\"hidden-sm hidden-md hidden-lg text-center\"
+        id=\"csrc-header-link-sm\">Computer Security<br />Resource Center</h1>\r\n
+        \           </div>\r\n            <div class=\"col-sm-12 col-md-4\">\r\n                <a
+        id=\"logo-csrc\" href=\"/\" style=\"width: 100%; text-align: center; display:
+        block;\"><img id=\"img-logo-csrc\"src=\"/CSRC/Media/images/CSRC-white-134-38.png\"
+        alt=\"CSRC Logo\" class=\"csrc-header-logo\"></a>\r\n            </div>\r\n
+        \       </div>\r\n    </div>\r\n</section>\r\n\r\n<div id=\"body-section\"
         class=\"container\">\r\n\r\n\r\n  <div class=\"publications-detail\">\r\n
         \   <ol class=\"breadcrumb\"><a href=\"/Publications\" class=\"CMSBreadCrumbsLink\">Publications</a>
         <span class=\"fa fa-angle-right\"></span> <span  class=\"CMSBreadCrumbsCurrentItem\">Detail</span>\r\n</ol>
-        \r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n    <h3>\r\n        NISTIR 7831 (RETIRED DRAFT)\r\n
-        \       \r\n        <i class=\"fa fa-exclamation-triangle text-danger\" title=\"This
-        publication has been withdrawn. See details below.\"></i>\r\n        \r\n
-        \       \r\n    </h3>\r\n\r\n    <h1>Common Remediation Enumeration (CRE)
-        Version 1.0</h1>\r\n    \r\n    <div class=\"page-social-buttons\">\r\n        <a
-        href=\"#\" class=\"social-facebook\"><i class=\"fa fa-facebook fa-fw\" aria-hidden=\"true\"></i></a>\r\n
-        \       <a href=\"#\" class=\"social-google-plus\"><i class=\"fa fa-google-plus\"
-        aria-hidden=\"true\"></i></a>\r\n        <a href=\"#\" class=\"social-twitter\"><i
-        class=\"fa fa-twitter fa-fw\" aria-hidden=\"true\"></i></a>\r\n    </div>\r\n\r\n
-        \   <p class=\"hidden-lg hidden-md\">\r\n        &nbsp;&nbsp;&nbsp;\r\n        <a
-        href=\"#pubs-documentation\" class=\"btn btn-lg btn-info\">Documentation</a>\r\n
-        \       \r\n        &nbsp;&nbsp;&nbsp;\r\n        <a href=\"#pubs-topics\"
-        class=\"btn btn-lg btn-info\">Topics</a>\r\n        \r\n    </p>\r\n\r\n    <div
-        class=\"row\">\r\n        <div  class=\"col-md-8 col-sm-12 publication-panel\">\r\n
-        \           \r\n                \r\n                \r\n            <p>\r\n\t\t\t\r\n
-        \           \r\n                <strong>Date Published:</strong> December
-        2011 <br />\r\n            \r\n\r\n            \r\n\r\n            \r\n            \r\n
-        \               \r\n                    \r\n                       <strong>Comments
-        Due:</strong> January 20, 2012 (public comment period is CLOSED)<br />\r\n
-        \                       <strong>Email Questions to:</strong> <a href = \"mailto:
-        remediation-comments@nist.gov?Subject=\">remediation-comments@nist.gov</a><br
-        />\r\n                    \r\n                \r\n            \r\n            </p>\r\n
-        \           \r\n            <p><p><strong>Withdrawn:</strong> March 29, 2016
-        <i class='fa fa-exclamation-triangle text-danger'></i></p>\r\n\t\t\t\r\n\t\t\t\r\n
-        \           \r\n            \r\n            <p>\r\n            \r\n\r\n            \r\n
-        \           </p>\r\n\t\t\t\r\n            \r\n            <h4>Author(s)</h4>\r\n
-        \           <p><strong>Gerard McGuire (MITRE), David Waltermire (NIST), Jonathan
-        Baker (MITRE)</strong></p>\r\n            \r\n\r\n\r\n            \r\n\r\n\r\n
-        \           \r\n\r\n\r\n            \r\n\r\n\r\n            <div class=\"bs-callout
-        bs-callout-success pub-abstract-callout\">\r\n                <h4 id=\"pubs-abstract-header\">Abstract</h4>\r\n
-        \               <div class=\"hidden-sm hidden-xs hidden-xxs\">\r\n                    <p>NISTIR
+        \r\n\r\n\r\n\r\n    \r\n    \r\n    \r\n    \r\n    \r\n    \r\n    \r\n        <h3
+        id=\"pub-header-display-container\">\r\n            <span id=\"pub-header-full-display\">NISTIR
+        7831 (RETIRED DRAFT)</span>\r\n            \r\n            <i class=\"fa fa-exclamation-triangle
+        text-danger\" id=\"pub-header-withdrawn\" title=\"This publication has been
+        withdrawn. See details below.\"></i>\r\n            \r\n            \r\n        </h3>\r\n
+        \   \r\n        <h1 id=\"pub-title\">Common Remediation Enumeration (CRE)
+        Version 1.0</h1>\r\n        \r\n        <div class=\"page-social-buttons\">\r\n
+        \           <a href=\"#\" class=\"social-facebook\" id=\"socialFacebook\"><i
+        class=\"fa fa-facebook fa-fw\" aria-hidden=\"true\"></i></a>\r\n            <a
+        href=\"#\" class=\"social-google-plus\" id=\"socialGooglePlus\"><i class=\"fa
+        fa-google-plus\" aria-hidden=\"true\"></i></a>\r\n            <a href=\"#\"
+        class=\"social-twitter\" id=\"socialTwitter\"><i class=\"fa fa-twitter fa-fw\"
+        aria-hidden=\"true\"></i></a>\r\n        </div>\r\n    \r\n        <p class=\"hidden-lg
+        hidden-md\">\r\n            &nbsp;&nbsp;&nbsp;\r\n            <a href=\"#pubs-documentation\"
+        class=\"btn btn-lg btn-info\" id=\"pub-topics-anchor-sm\">Documentation</a>\r\n
+        \           \r\n            &nbsp;&nbsp;&nbsp;\r\n            <a href=\"#pubs-topics\"
+        class=\"btn btn-lg btn-info\" id=\"pub-topics-anchor-sm\">Topics</a>\r\n            \r\n
+        \       </p>\r\n    \r\n        <div class=\"row\">\r\n            <div  class=\"col-md-8
+        col-sm-12 publication-panel\">\r\n                \r\n                    \r\n
+        \                   \r\n                <p>\r\n                \r\n                \r\n
+        \                   <strong>Date Published:</strong> <span id=\"pub-release-date\">December
+        2011 </span><br />\r\n                \r\n    \r\n                \r\n    \r\n
+        \               \r\n                \r\n                    \r\n                        \r\n
+        \                          <strong>Comments Due:</strong> <span id=\"pub-comments-due\">January
+        20, 2012 (public comment period is CLOSED)</span><br />\r\n                            <strong>Email
+        Questions to:</strong> <span id=\"pub-comments-email\"><a href = \"mailto:
+        remediation-comments@nist.gov?Subject=\">remediation-comments@nist.gov</a></span><br
+        />\r\n                        \r\n                    \r\n                \r\n
+        \               </p>\r\n                \r\n                <p><p><strong>Withdrawn:</strong>
+        <span id='pub-withdrawn-info'>March 29, 2016 <i class='fa fa-exclamation-triangle
+        text-danger' id='pub-withdrawn-icon'></i></p>\r\n                \r\n                \r\n
+        \               \r\n                \r\n                <p>\r\n                \r\n
+        \   \r\n                \r\n                </p>\r\n                \r\n                \r\n
+        \               <h4>Author(s)</h4>\r\n                <p><strong id=\"pub-authors-container\"
+        data-total=\"3\"><span id='pub-author-0'>Gerard McGuire (MITRE)</span>, <span
+        id='pub-author-1'>David Waltermire (NIST)</span>, <span id='pub-author-2'>Jonathan
+        Baker (MITRE)</span></strong></p>\r\n                \r\n    \r\n    \r\n
+        \               \r\n    \r\n    \r\n                \r\n    \r\n    \r\n                \r\n
+        \   \r\n    \r\n                <div class=\"bs-callout bs-callout-success
+        pub-abstract-callout\">\r\n                    <h4 id=\"pubs-abstract-header\">Abstract</h4>\r\n
+        \                   <div class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-detail-abstract-info\"><p>NISTIR
         7831 defines the Common Remediation Enumeration (CRE) specification. CRE is
         part of an emerging suite of enterprise remediation specifications that enable
         automation and enhanced correlation of enterprise remediation activities.
@@ -1409,15 +1444,15 @@ http_interactions:
         globally unique CRE identifier (CRE-ID). This specification describes the
         core concepts of CRE and the technical components of a CRE entry, outlines
         how CRE entries are created, and defines the technical requirements for constructing
-        CRE entries.</p>\r\n                </div>\r\n                <div class=\"hidden-lg
-        hidden-md\">\r\n                    \r\n                    <div id=\"pub-detail-abstract-min\">\r\n
-        \                       NISTIR 7831 defines the Common Remediation Enumeration
+        CRE entries.</p></div>\r\n                    <div class=\"hidden-lg hidden-md\">\r\n
+        \                       \r\n                        <div id=\"pub-detail-abstract-min\">\r\n
+        \                           NISTIR 7831 defines the Common Remediation Enumeration
         (CRE) specification. CRE is part of an emerging suite of enterprise remediation
         specifications that enable automation and enhanced correlation of enterprise
         remediation activities. Each CRE entry represents a unique remediation activity
-        and...\r\n                        <a href=\"#pubs-abstract-header\" id=\"pub-detail-abs-show\">See
-        full abstract</a>\r\n                    </div>\r\n                    <div
-        id=\"pub-detail-abstract-all\" style=\"display: none;\">\r\n                        <p>NISTIR
+        and...\r\n                            <a href=\"#pubs-abstract-header\" id=\"pub-detail-abs-show\">See
+        full abstract</a>\r\n                        </div>\r\n                        <div
+        id=\"pub-detail-abstract-all\" style=\"display: none;\">\r\n                            <p>NISTIR
         7831 defines the Common Remediation Enumeration (CRE) specification. CRE is
         part of an emerging suite of enterprise remediation specifications that enable
         automation and enhanced correlation of enterprise remediation activities.
@@ -1425,162 +1460,182 @@ http_interactions:
         globally unique CRE identifier (CRE-ID). This specification describes the
         core concepts of CRE and the technical components of a CRE entry, outlines
         how CRE entries are created, and defines the technical requirements for constructing
-        CRE entries.</p><br />\r\n                        <a href=\"#pubs-abstract-header\"
-        id=\"pub-detail-abs-hide\">Hide full abstract</a>\r\n                    </div>\r\n
-        \                   \r\n                </div>\r\n                <h4>Keywords</h4>
-        Common Remediation Enumeration (CRE); enterprise security; security automation\r\n
-        \           </div>\r\n            \r\n            <h5>Control Families</h5>\r\n
-        \           <p>\r\n                \r\n                \r\n                    Audit
-        and Accountability; \r\n                \r\n                    Security Assessment
-        and Authorization; \r\n                \r\n                    Configuration
-        Management; \r\n                \r\n                    Incident Response;
-        \r\n                \r\n                    Maintenance; \r\n                \r\n
-        \                   Risk Assessment; \r\n                \r\n                    System
-        and Communications Protection; \r\n                \r\n                \r\n
-        \           </p>\r\n\r\n        </div>\r\n        <div class=\"col-md-4 col-sm-12\">\r\n\r\n
-        \           <div class=\"bs-callout bs-callout-success\" id=\"pubs-documentation\">\r\n
-        \               <h4>Documentation</h4>\r\n\r\n                <p>\r\n                    <strong>Publication:</strong><br
-        />\r\n                    <a href=\"/CSRC/media/Publications/nistir/7831/archive/2011-12-06/documents/Draft-NISTIR-7831.pdf\"
-        data-identity=\"first-link-display\"><i class=\"fa fa-file-pdf-o\"></i> Draft
-        NISTIR 7831 (retired)</a><br />\r\n                    \r\n                </p>\r\n\r\n
-        \               <p>\r\n                    <strong>Supplemental Material:</strong><br
-        />\r\n                    \r\n\t\t\t\t\t\tNone available<br />\r\n                    \r\n
-        \               </p>\r\n                \r\n                \r\n                \r\n
-        \               \r\n\r\n                \r\n\r\n            </div>\r\n\r\n
-        \           \r\n            \r\n            <div class=\"bs-callout bs-callout-danger\"
-        id=\"pubs-topics\">\r\n                <h4>Topics</h4>\r\n                \r\n
-        \                   <p>\r\n                        <strong>Security and Privacy</strong><br
-        /><a href='/Topics/Security-and-Privacy/security-programs-and-operations/audit-and-accountability'>audit
-        & accountability</a>; <a href='/Topics/Security-and-Privacy/security-programs-and-operations/incident-response'>incident
-        response</a>; <a href='/Topics/Security-and-Privacy/security-programs-and-operations/maintenance'>maintenance</a>;
-        <a href='/Topics/Security-and-Privacy/risk-management/risk-assessment'>risk
-        assessment</a>; <a href='/Topics/Security-and-Privacy/security-programs-and-operations/security-automation'>security
-        automation</a></p>\r\n                    </p>\r\n                \r\n                    <p>\r\n
-        \                       <strong>Laws and Regulations</strong><br /><a href='/Topics/Laws-and-Regulations/laws/FISMA'>Federal
-        Information Security Modernization Act</a>; <a href='/Topics/Laws-and-Regulations/executive-documents/OMB-A-130'>OMB
-        Circular A-130</a></p>\r\n                    </p>\r\n                \r\n
-        \           </div>\r\n            \r\n\r\n        </div>\r\n    </div>\r\n\r\n
-        \ </div>\r\n<script type=\"text/javascript\" src=\"/CSRC/media/js/publications.js\"></script>\r\n
-        \ \r\n      <div id=\"footer-pusher\"></div>\r\n  \r\n    </div>\r\n    \r\n<footer
-        id=\"footer\" >\r\n    <div class=\"container\">\r\n\r\n        <div class=\"row\">\r\n
-        \           <div class=\"col-sm-6\">\r\n                <span class=\"hidden-xs\">\r\n
-        \                   <a href=\"https://www.nist.gov\" title=\"National Institute
-        of Standards and Technology\" rel=\"home\" target=\"_blank\" class=\"footer-nist-logo\">\r\n
-        \                       <img src=\"/CSRC/Media/images/logo_rev.png\" alt=\"National
-        Institute of Standards and Technology logo\"/>\r\n                    </a>\r\n
-        \               </span>\r\n\r\n\t\t\t\t<div class=\"row footer-contact-container\">\r\n\t\t\t\t\t<div
-        class=\"col-sm-12\">\r\n\t\t\t\t\t\t<strong>HEADQUARTERS</strong><br>\r\n\t\t\t\t\t\t100
-        Bureau Drive<br>\r\n\t\t\t\t\t\tGaithersburg, MD 20899\r\n\t\t\t\t\t</div>\r\n\t\t\t\t</div>\r\n
-        \           </div>\r\n            <div class=\"col-sm-6\">\r\n\t\t\t\t<ul
-        class=\"social-list text-right\" style=\"display: block;\">\r\n\t\t\t\t\t<li
-        class=\"field-item service-twitter list-horiz\">\r\n\t\t\t\t\t\t<a href=\"https://twitter.com/USNISTGOV\"
-        target=\"_blank\" class=\"social-btn social-btn--large extlink ext\">\r\n\t\t\t\t\t\t<i
+        CRE entries.</p><br />\r\n                            <a href=\"#pubs-abstract-header\"
+        id=\"pub-detail-abs-hide\">Hide full abstract</a>\r\n                        </div>\r\n
+        \                       \r\n                    </div>\r\n                    <h4>Keywords</h4>
+        <span id='pub-keywords-container' data-total='3'><span id='pub-keyword-0'>Common
+        Remediation Enumeration (CRE)</span>; <span id='pub-keyword-1'>enterprise
+        security</span>; <span id='pub-keyword-2'>security automation</span></span>\r\n
+        \               </div>\r\n                \r\n                <h5>Control
+        Families</h5>\r\n                <p>\r\n                    \r\n                    <span
+        id=\"pub-control-fam-container\" data-total=\"7\">\r\n                    \r\n
+        \                       <span id=\"pub-control-fam-0\">Audit and Accountability</span>;
+        \r\n                    \r\n                        <span id=\"pub-control-fam-1\">Security
+        Assessment and Authorization</span>; \r\n                    \r\n                        <span
+        id=\"pub-control-fam-2\">Configuration Management</span>; \r\n                    \r\n
+        \                       <span id=\"pub-control-fam-3\">Incident Response</span>;
+        \r\n                    \r\n                        <span id=\"pub-control-fam-4\">Maintenance</span>;
+        \r\n                    \r\n                        <span id=\"pub-control-fam-5\">Risk
+        Assessment</span>; \r\n                    \r\n                        <span
+        id=\"pub-control-fam-6\">System and Communications Protection</span>; \r\n
+        \                   </span>\r\n                    \r\n                </p>\r\n
+        \   \r\n            </div>\r\n            <div class=\"col-md-4 col-sm-12\">\r\n
+        \   \r\n                <div class=\"bs-callout bs-callout-success\" id=\"pubs-documentation\">\r\n
+        \                   <h4>Documentation</h4>\r\n    \r\n                    <p>\r\n
+        \                       <strong>Publication:</strong><br />\r\n                        \r\n
+        \                       <a href=\"/CSRC/media/Publications/nistir/7831/archive/2011-12-06/documents/Draft-NISTIR-7831.pdf\"
+        data-identity=\"first-link-display\" id=\"pub-doc-0\"><i class=\"fa fa-file-pdf-o\"></i>
+        Draft NISTIR 7831 (retired)</a><br />\r\n                        \r\n                        \r\n
+        \                   </p>\r\n    \r\n                    <p>\r\n                        <strong>Supplemental
+        Material:</strong><br />\r\n                        \r\n                            <span
+        id=\"pub-supp-container\" data-total=\"0\">None available</span><br />\r\n
+        \                       \r\n                    </p>\r\n                    \r\n
+        \                   \r\n                    \r\n                    \r\n    \r\n
+        \                   \r\n    \r\n                </div>\r\n    \r\n           \r\n
+        \               \r\n                <div class=\"bs-callout bs-callout-danger\"
+        id=\"pubs-topics\">\r\n                    <h4>Topics</h4>\r\n                    <span
+        id=\"pub-categories-container\" data-total=\"2\">\r\n                    \r\n
+        \                       <p>\r\n                            <strong id=\"pub-cat-0\">Security
+        and Privacy</strong><br /><span id=\"pub-cat-top-container-0\" data-total=\"5\"></span><a
+        href='/Topics/Security-and-Privacy/security-programs-and-operations/audit-and-accountability'
+        id='pub-cat-top-0-0'>audit & accountability</a>; <a href='/Topics/Security-and-Privacy/security-programs-and-operations/maintenance'
+        id='pub-cat-top-0-2'>maintenance</a>; <a href='/Topics/Security-and-Privacy/security-programs-and-operations/security-automation'
+        id='pub-cat-top-0-4'>security automation</a>\r\n                        </p>\r\n
+        \                   \r\n                        <p>\r\n                            <strong
+        id=\"pub-cat-1\">Laws and Regulations</strong><br /><span id=\"pub-cat-top-container-1\"
+        data-total=\"2\"></span><a href='/Topics/Laws-and-Regulations/laws/FISMA'
+        id='pub-cat-top-1-0'>Federal Information Security Modernization Act</a>; \r\n
+        \                       </p>\r\n                    \r\n                    </span>\r\n
+        \               </div>\r\n                \r\n    \r\n            </div>\r\n
+        \       </div>\r\n    \r\n\r\n\r\n  </div>\r\n<script type=\"text/javascript\"
+        src=\"/CSRC/media/js/publications.js\"></script>\r\n\r\n  <div id=\"footer-pusher\"></div>\r\n\r\n</div>\r\n\r\n<footer
+        id=\"footer\">\r\n<div class=\"container\">\r\n\r\n    <div class=\"row\">\r\n
+        \       <div class=\"col-sm-6\">\r\n            <span class=\"hidden-xs\">\r\n
+        \               <a href=\"https://www.nist.gov\" title=\"National Institute
+        of Standards and Technology\" rel=\"home\" target=\"_blank\" class=\"footer-nist-logo\"
+        id=\"footer-nist-logo-link\">\r\n                    <img src=\"/CSRC/Media/images/logo_rev.png\"
+        alt=\"National Institute of Standards and Technology logo\" id=\"footer-nist-logo\"/>\r\n
+        \               </a>\r\n            </span>\r\n\r\n            <div class=\"row
+        footer-contact-container\">\r\n                <div class=\"col-sm-12\" id=\"footer-address\">\r\n
+        \                   <strong>HEADQUARTERS</strong><br>\r\n                    100
+        Bureau Drive<br>\r\n                    Gaithersburg, MD 20899\r\n                </div>\r\n
+        \           </div>\r\n        </div>\r\n        <div class=\"col-sm-6\">\r\n
+        \           <ul class=\"social-list text-right\" style=\"display: block;\">\r\n
+        \               <li class=\"field-item service-twitter list-horiz\">\r\n                    <a
+        href=\"https://twitter.com/USNISTGOV\" target=\"_blank\" class=\"social-btn
+        social-btn--large extlink ext\" id=\"footer-social-twitter-link\">\r\n                    <i
         class=\"fa fa-twitter fa-fw\"><span class=\"element-invisible\">twitter</span></i><span
-        class=\"ext\"><span class=\"element-invisible\"> (link is external)</span></span>\r\n\t\t\t\t\t</a>\r\n\t\t\t\t\t</li>\r\n\t\t\t\t\t<li
-        class=\"field-item service-facebook list-horiz\"><a href=\"https://www.facebook.com/USNISTGOV\"
-        target=\"_blank\" class=\"social-btn social-btn--large extlink ext\">\r\n\t\t\t\t\t\t<i
-        class=\"fa fa-facebook fa-fw\"><span class=\"element-invisible\">facebook</span></i><span
-        class=\"ext\"><span class=\"element-invisible\"> (link is external)</span></span></a>\r\n\r\n\t\t\t\t\t</li>\r\n\t\t\t\t\t<li
-        class=\"field-item service-linkedin list-horiz\"><a href=\"https://www.linkedin.com/company/nist\"
-        target=\"_blank\" class=\"social-btn social-btn--large extlink ext\">\r\n\t\t\t\t\t\t<i
-        class=\"fa fa-linkedin fa-fw\"><span class=\"element-invisible\">linkedin</span></i><span
-        class=\"ext\"><span class=\"element-invisible\"> (link is external)</span></span></a>\r\n\r\n\t\t\t\t\t</li>\r\n\t\t\t\t\t<li
-        class=\"field-item service-youtube list-horiz\"><a href=\"https://www.youtube.com/user/USNISTGOV\"
-        target=\"_blank\" class=\"social-btn social-btn--large extlink ext\">\r\n\t\t\t\t\t\t<i
-        class=\"fa fa-youtube fa-fw\"><span class=\"element-invisible\">youtube</span></i><span
-        class=\"ext\"><span class=\"element-invisible\"> (link is external)</span></span></a>\r\n\r\n\t\t\t\t\t</li>\r\n\t\t\t\t\t<li
-        class=\"field-item service-rss list-horiz\"><a href=\"https://www.nist.gov/news-events/nist-rss-feeds\"
-        target=\"_blank\" class=\"social-btn social-btn--large extlink\">\r\n\t\t\t\t\t\t<i
-        class=\"fa fa-rss fa-fw\"><span class=\"element-invisible\">rss</span></i></a>\r\n\r\n\t\t\t\t\t</li>\r\n\t\t\t\t\t<li
-        class=\"field-item service-govdelivery list-horiz last\">\r\n\t\t\t\t\t\t<a
-        href=\"https://public.govdelivery.com/accounts/USNIST/subscriber/new?qsp=USNIST_3\"
+        class=\"ext\"><span class=\"element-invisible\"> (link is external)</span></span>\r\n
+        \               </a>\r\n                </li>\r\n                <li class=\"field-item
+        service-facebook list-horiz\">\r\n                    <a href=\"https://www.facebook.com/USNISTGOV\"
+        target=\"_blank\" class=\"social-btn social-btn--large extlink ext\" id=\"footer-social-facebook-link\">\r\n
+        \                   <i class=\"fa fa-facebook fa-fw\"><span class=\"element-invisible\">facebook</span></i><span
+        class=\"ext\"><span class=\"element-invisible\"> (link is external)</span></span></a>\r\n\r\n
+        \               </li>\r\n                <li class=\"field-item service-linkedin
+        list-horiz\">\r\n                    <a href=\"https://www.linkedin.com/company/nist\"
+        target=\"_blank\" class=\"social-btn social-btn--large extlink ext\" id=\"footer-social-linkedin-link\">\r\n
+        \                   <i class=\"fa fa-linkedin fa-fw\"><span class=\"element-invisible\">linkedin</span></i><span
+        class=\"ext\"><span class=\"element-invisible\"> (link is external)</span></span></a>\r\n\r\n
+        \               </li>\r\n                <li class=\"field-item service-youtube
+        list-horiz\">\r\n                    <a href=\"https://www.youtube.com/user/USNISTGOV\"
+        target=\"_blank\" class=\"social-btn social-btn--large extlink ext\" id=\"footer-social-youtube-link\">\r\n
+        \                   <i class=\"fa fa-youtube fa-fw\"><span class=\"element-invisible\">youtube</span></i><span
+        class=\"ext\"><span class=\"element-invisible\"> (link is external)</span></span></a>\r\n\r\n
+        \               </li>\r\n                <li class=\"field-item service-rss
+        list-horiz\">\r\n                    <a href=\"https://www.nist.gov/news-events/nist-rss-feeds\"
+        target=\"_blank\" class=\"social-btn social-btn--large extlink\" id=\"footer-social-rss-link\">\r\n
+        \                   <i class=\"fa fa-rss fa-fw\"><span class=\"element-invisible\">rss</span></i></a>\r\n\r\n
+        \               </li>\r\n                <li class=\"field-item service-govdelivery
+        list-horiz last\">\r\n                    <a href=\"https://public.govdelivery.com/accounts/USNIST/subscriber/new?qsp=USNIST_3\"
         target=\"_blank\" class=\"social-btn social-btn--large extlink ext\" title=\"Subscribe
-        to CSRC and publication updates, and other NIST cybersecurity news\">\r\n\t\t\t\t\t\t\t<i
-        class=\"fa fa-envelope fa-fw\"><span class=\"element-invisible\">govdelivery</span></i><span
-        class=\"ext\"><span class=\"element-invisible\"> (link is external)</span></span>\r\n\t\t\t\t\t\t</a>\r\n\t\t\t\t\t</li>\r\n\t\t\t\t</ul>\r\n\t\t\t\t<p
-        class=\"text-right\">\r\n\t\t\t\t\tWant updates about CSRC and our publications?
-        \r\n\t\t\t\t\t<a href=\"https://public.govdelivery.com/accounts/USNIST/subscriber/new?qsp=USNIST_3\"
+        to CSRC and publication updates, and other NIST cybersecurity news\" id=\"footer-social-govdelivery-link\">\r\n
+        \                       <i class=\"fa fa-envelope fa-fw\"><span class=\"element-invisible\">govdelivery</span></i><span
+        class=\"ext\"><span class=\"element-invisible\"> (link is external)</span></span>\r\n
+        \                   </a>\r\n                </li>\r\n            </ul>\r\n
+        \           <p class=\"text-right\">\r\n                Want updates about
+        CSRC and our publications? \r\n                <a href=\"https://public.govdelivery.com/accounts/USNIST/subscriber/new?qsp=USNIST_3\"
         target=\"_blank\" class=\"btn btn-lg btn-info\" style=\"background-color:
-        #12659c!important; border-color: #12659c!important;\">Subscribe</a>\r\n\t\t\t\t</p>\r\n\t\t\t</div>\r\n
-        \       </div>\r\n        <div class=\"row hidden-sm hidden-md hidden-lg\">\r\n
-        \           <div class=\"col-sm-12\">\r\n                    <a href=\"https://www.nist.gov\"
-        title=\"National Institute of Standards and Technology\" rel=\"home\" target=\"_blank\"
-        class=\"footer-nist-logo\">\r\n                        <img src=\"/CSRC/Media/images/logo_rev.png\"
-        alt=\"National Institute of Standards and Technology logo\"/>\r\n                    </a>\r\n
-        \           </div>\r\n        </div>\r\n\r\n        <div class=\"row\">\r\n
-        \           <div class=\"col-sm-12\">\r\n                <p>\r\n                    <a
-        href=\"mailto:webmaster-csrc@nist.gov?subject=CSRC Inquiry\">Webmaster</a>
-        | \r\n                    <a href=\"/about/contact\">Contact Us</a> |\r\n
-        \                   <a href=\"https://www.nist.gov/about-nist/our-organization\"
-        style=\"display: inline-block;\">Our Other Offices</a>\r\n                </p>\r\n
-        \           </div>\r\n        </div>\r\n\r\n        <div id=\"footer-nav-menu\"
-        class=\"row\" role=\"navigation\">\r\n            <div class=\"col-md-8 col-sm-6
-        col-xs-12 col-xxs-12\">\r\n                <div class=\"row\">\r\n                    <div
-        class=\"col-md-4\">\r\n                        <p>\r\n                            <a
-        href=\"/projects\">PROJECTS</a>\r\n                        </p>\r\n                        <p>\r\n
-        \                           <a href=\"/publications\">PUBLICATIONS</a><br/>\r\n\t\t\t\t\t\t\t<a
-        href=\"/publications/draft-pubs\">Draft Pubs</a><br/>\r\n\t\t\t\t\t\t\t<a
-        href=\"/publications/final-pubs\">Final Pubs</a><br/>\r\n\t\t\t\t\t\t\t<a
-        href=\"/publications/fips\">FIPS</a><br/>\r\n\t\t\t\t\t\t\t<a href=\"/publications/sp\">Special
-        Publications (SPs)</a><br/>\r\n\t\t\t\t\t\t\t<a href=\"/publications/nistir\">NISTIRs</a><br/>\r\n\t\t\t\t\t\t\t<a
-        href=\"/publications/itl-bulletin\">ITL Bulletins</a><br/>\r\n\t\t\t\t\t\t\t<a
-        href=\"/publications/white-paper\">White Papers</a><br/>\r\n\t\t\t\t\t\t\t<a
-        href=\"/publications/journal-article\">Journal Articles</a><br/>\r\n\t\t\t\t\t\t\t<a
-        href=\"/publications/conference-paper\">Conference Papers</a><br/>\r\n\t\t\t\t\t\t\t<a
-        href=\"/publications/book\">Books</a>\r\n                        </p>\r\n
-        \                   </div>\r\n                    <div class=\"col-md-4\">\r\n
-        \                       <p>\r\n                            <a href=\"/topics\">TOPICS</a><br/>\r\n
-        \                           <a href=\"/Topics/Security-and-Privacy\">Security
-        &amp; Privacy</a><br/>\r\n                            <a href=\"/Topics/Applications\">Applications</a><br/>\r\n
-        \                           <a href=\"/Topics/Technologies\">Technologies</a><br/>\r\n
-        \                           <a href=\"/Topics/Sectors\">Sectors</a><br/>\r\n
-        \                           <a href=\"/Topics/Laws-and-Regulations\">Laws
-        &amp; Regulations</a><br/>\r\n                            <a href=\"/Topics/Activities-and-Products\">Activities
-        &amp; Products</a>\r\n                        </p>\r\n                        <p>\r\n
-        \                           <a href=\"/news\">NEWS &amp; UPDATES</a>\r\n                        </p>\r\n
-        \                       <p>\r\n                            <a href=\"/events\">EVENTS</a>\r\n
-        \                       </p>\r\n                        <p>\r\n                            <a
-        href=\"/glossary\">GLOSSARY</a>\r\n                        </p>\r\n                    </div>\r\n
-        \                   <div class=\"col-md-4\">\r\n                        <p>\r\n
-        \                           <a href=\"/about\">ABOUT CSRC</a><br/>\r\n                            <a
-        href=\"/about\">Computer Security Division</a><br/>\r\n                            <a
-        href=\"/about\">Applied Cybersecurity Division</a><br/>\r\n                            <a
-        href=\"/contact\">Contact Us</a>\r\n                        </p>\r\n                    </div>\r\n
-        \               </div>\r\n             </div>\r\n            <div class=\"col-md-4
-        col-sm-6 col-xs-12 col-xxs-12\">\r\n                    <span class=\"pull-right
-        text-right\">\r\n                        <p><strong>Information Technology
-        Laboratory<span class=\"hidden-xs\"> (ITL)</span></strong></p>\r\n                        <strong>Computer
+        #12659c!important; border-color: #12659c!important;\" id=\"footer-subscribe-link\">Subscribe</a>\r\n
+        \           </p>\r\n        </div>\r\n    </div>\r\n    <div class=\"row hidden-sm
+        hidden-md hidden-lg\">\r\n        <div class=\"col-sm-12\">\r\n                <a
+        href=\"https://www.nist.gov\" title=\"National Institute of Standards and
+        Technology\" rel=\"home\" target=\"_blank\" class=\"footer-nist-logo\" id=\"footer-bottom-nist-logo-link\">\r\n
+        \                   <img src=\"/CSRC/Media/images/logo_rev.png\" alt=\"National
+        Institute of Standards and Technology logo\" id=\"footer-bottom-nist-logo\"/>\r\n
+        \               </a>\r\n        </div>\r\n    </div>\r\n\r\n    <div class=\"row\">\r\n
+        \       <div class=\"col-sm-12\">\r\n            <p>\r\n                <a
+        href=\"mailto:webmaster-csrc@nist.gov?subject=CSRC Inquiry\" id=\"footer-webmaster-link\">Webmaster</a>
+        | \r\n                <a href=\"/about/contact\" id=\"footer-contact-us-link\">Contact
+        Us</a> |\r\n                <a href=\"https://www.nist.gov/about-nist/our-organization\"
+        style=\"display: inline-block;\" id=\"footer-org-link\">Our Other Offices</a>\r\n
+        \           </p>\r\n        </div>\r\n    </div>\r\n\r\n    <div id=\"footer-nav-menu\"
+        class=\"row\" role=\"navigation\">\r\n        <div class=\"col-md-8 col-sm-6
+        col-xs-12 col-xxs-12\">\r\n            <div class=\"row\">\r\n                <div
+        class=\"col-md-4\">\r\n                    <p>\r\n                        <a
+        href=\"/projects\">PROJECTS</a>\r\n                    </p>\r\n                    <p>\r\n
+        \                       <a href=\"/publications\">PUBLICATIONS</a><br/>\r\n
+        \                       <a href=\"/publications/draft-pubs\">Draft Pubs</a><br/>\r\n
+        \                       <a href=\"/publications/final-pubs\">Final Pubs</a><br/>\r\n
+        \                       <a href=\"/publications/fips\">FIPS</a><br/>\r\n                        <a
+        href=\"/publications/sp\">Special Publications (SPs)</a><br/>\r\n                        <a
+        href=\"/publications/nistir\">NISTIRs</a><br/>\r\n                        <a
+        href=\"/publications/itl-bulletin\">ITL Bulletins</a><br/>\r\n                        <a
+        href=\"/publications/white-paper\">White Papers</a><br/>\r\n                        <a
+        href=\"/publications/journal-article\">Journal Articles</a><br/>\r\n                        <a
+        href=\"/publications/conference-paper\">Conference Papers</a><br/>\r\n                        <a
+        href=\"/publications/book\">Books</a>\r\n                    </p>\r\n                </div>\r\n
+        \               <div class=\"col-md-4\">\r\n                    <p>\r\n                        <a
+        href=\"/topics\">TOPICS</a><br/>\r\n                        <a href=\"/Topics/Security-and-Privacy\">Security
+        &amp; Privacy</a><br/>\r\n                        <a href=\"/Topics/Applications\">Applications</a><br/>\r\n
+        \                       <a href=\"/Topics/Technologies\">Technologies</a><br/>\r\n
+        \                       <a href=\"/Topics/Sectors\">Sectors</a><br/>\r\n                        <a
+        href=\"/Topics/Laws-and-Regulations\">Laws &amp; Regulations</a><br/>\r\n
+        \                       <a href=\"/Topics/Activities-and-Products\">Activities
+        &amp; Products</a>\r\n                    </p>\r\n                    <p>\r\n
+        \                       <a href=\"/news\">NEWS &amp; UPDATES</a>\r\n                    </p>\r\n
+        \                   <p>\r\n                        <a href=\"/events\">EVENTS</a>\r\n
+        \                   </p>\r\n                    <p>\r\n                        <a
+        href=\"/glossary\">GLOSSARY</a>\r\n                    </p>\r\n                </div>\r\n
+        \               <div class=\"col-md-4\">\r\n                    <p>\r\n                        <a
+        href=\"/about\">ABOUT CSRC</a><br/>\r\n                        <a href=\"/about\">Computer
+        Security Division</a><br/>\r\n                        <a href=\"/about\">Applied
+        Cybersecurity Division</a><br/>\r\n                        <a href=\"/contact\">Contact
+        Us</a>\r\n                    </p>\r\n                </div>\r\n            </div>\r\n
+        \        </div>\r\n        <div class=\"col-md-4 col-sm-6 col-xs-12 col-xxs-12\">\r\n
+        \               <span class=\"pull-right text-right\">\r\n                    <p><strong
+        id=\"footer-info-itl\">Information Technology Laboratory<span class=\"hidden-xs\">
+        (ITL)</span></strong></p>\r\n                    <strong id=\"footer-info-csd\">Computer
         Security Division<span class=\"hidden-xs\"> (CSD)</span></strong><br/>\r\n
-        \                       TEL: 301.975.8443<br/>\r\n                        <strong>Applied
-        Cybersecurity Division<span class=\"hidden-xs\"> (ACD)</span></strong>\r\n
-        \                       <br /><br /><br />\r\n                        Contact
-        CSRC Webmaster: <a href=\"mailto:webmaster-csrc@nist.gov?subject=CSRC Inquiry\"
-        style=\"display: inline-block;\">webmaster-csrc@nist.gov</a>\r\n                    </span>\r\n
-        \           </div>\r\n        </div>\r\n\r\n        <div class=\"row\">\r\n
-        \           <div class=\"col-lg-12 footer-bottom-links-container\">\r\n                <p>\r\n
-        \                   <a target=\"_blank\" href=\"https://www.nist.gov/privacy-policy\">Privacy
-        Statement</a> |\r\n                    <a target=\"_blank\" href=\"https://www.nist.gov/privacy-policy#privpolicy\">Privacy
-        Policy</a> |\r\n                    <a target=\"_blank\" href=\"https://www.nist.gov/privacy-policy#secnot\">Security
-        Notice</a> |\r\n                    <a target=\"_blank\" href=\"https://www.nist.gov/privacy-policy#accesstate\">Accessibility
-        Statement</a> |\r\n                    <a target=\"_blank\" href=\"https://www.nist.gov/privacy\">NIST
-        Privacy Program</a> |\r\n                    <a target=\"_blank\" href=\"https://www.nist.gov/no-fear-act-policy\">No
-        Fear Act Policy</a>\r\n                </p>\r\n                <p>\r\n                    <a
+        \                   <span id=\"footer-info-csd-phone\">TEL: 301.975.8443</span><br/>\r\n
+        \                   <strong id=\"footer-info-acd\">Applied Cybersecurity Division<span
+        class=\"hidden-xs\"> (ACD)</span></strong>\r\n                    <br /><br
+        /><br />\r\n                    Contact CSRC Webmaster: <a href=\"mailto:webmaster-csrc@nist.gov?subject=CSRC
+        Inquiry\" style=\"display: inline-block;\"  id=\"footer-info-webmaster-link\">webmaster-csrc@nist.gov</a>\r\n
+        \               </span>\r\n        </div>\r\n    </div>\r\n\r\n    <div class=\"row\">\r\n
+        \       <div class=\"col-lg-12 footer-bottom-links-container\" id=\"footer-bottom-links-container\">\r\n
+        \           <p>\r\n                <a target=\"_blank\" href=\"https://www.nist.gov/privacy-policy\">Privacy
+        Statement</a> |\r\n                <a target=\"_blank\" href=\"https://www.nist.gov/privacy-policy#privpolicy\">Privacy
+        Policy</a> |\r\n                <a target=\"_blank\" href=\"https://www.nist.gov/privacy-policy#secnot\">Security
+        Notice</a> |\r\n                <a target=\"_blank\" href=\"https://www.nist.gov/privacy-policy#accesstate\">Accessibility
+        Statement</a> |\r\n                <a target=\"_blank\" href=\"https://www.nist.gov/privacy\">NIST
+        Privacy Program</a> |\r\n                <a target=\"_blank\" href=\"https://www.nist.gov/no-fear-act-policy\">No
+        Fear Act Policy</a>\r\n            </p>\r\n            <p>\r\n                <a
         target=\"_blank\" href=\"https://www.nist.gov/disclaimer\">Disclaimer</a>
-        |\r\n                    <a target=\"_blank\" href=\"https://www.nist.gov/office-director/freedom-information-act\">FOIA</a>
-        |\r\n                    <a target=\"_blank\" href=\"https://www.nist.gov/environmental-policy-statement\">Environmental
-        Policy Statement</a> |\r\n                    <a target=\"_blank\" href=\"https://www.nist.gov/privacy-policy#cookie\">Cookie
-        Disclaimer</a> |\r\n                    <a target=\"_blank\" href=\"https://www.nist.gov/summary-report-scientific-integrity\">Scientific
-        Integrity Summary</a> |\r\n                    <a target=\"_blank\" href=\"https://www.nist.gov/nist-information-quality-standards\">NIST
-        Information Quality Standards</a>\r\n                </p>\r\n                <p>\r\n
-        \                   <a target=\"_blank\" href=\"https://www.usa.gov/business\">Business
-        USA</a> |\r\n                    <a target=\"_blank\" href=\"https://www.commerce.gov/\">Commerce.gov</a>
-        |\r\n                    <a target=\"_blank\" href=\"https://www.healthcare.gov/\">Healthcare.gov</a>
-        |\r\n                    <a target=\"_blank\" href=\"http://www.science.gov/\">Science.gov</a>
-        |\r\n                    <a target=\"_blank\" href=\"http://www.usa.gov/\">USA.gov</a>\r\n
-        \               </p>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</footer>\r\n\r\n<script
-        type=\"text/javascript\">\r\n     (function() {\r\n       document.getElementsByTagName('html')[0].setAttribute('lang',
-        'en');\r\n       document.getElementsByTagName('html')[0].setAttribute('xml:lang',
-        'en')\r\n   })(); \r\n</script>\r\n\r\n    \r\n    </form>\r\n</body>\r\n</html>\r\n"
+        |\r\n                <a target=\"_blank\" href=\"https://www.nist.gov/office-director/freedom-information-act\">FOIA</a>
+        |\r\n                <a target=\"_blank\" href=\"https://www.nist.gov/environmental-policy-statement\">Environmental
+        Policy Statement</a> |\r\n                <a target=\"_blank\" href=\"https://www.nist.gov/privacy-policy#cookie\">Cookie
+        Disclaimer</a> |\r\n                <a target=\"_blank\" href=\"https://www.nist.gov/summary-report-scientific-integrity\">Scientific
+        Integrity Summary</a> |\r\n                <a target=\"_blank\" href=\"https://www.nist.gov/nist-information-quality-standards\">NIST
+        Information Quality Standards</a>\r\n            </p>\r\n            <p>\r\n
+        \               <a target=\"_blank\" href=\"https://www.usa.gov/business\">Business
+        USA</a> |\r\n                <a target=\"_blank\" href=\"https://www.commerce.gov/\">Commerce.gov</a>
+        |\r\n                <a target=\"_blank\" href=\"https://www.healthcare.gov/\">Healthcare.gov</a>
+        |\r\n                <a target=\"_blank\" href=\"http://www.science.gov/\">Science.gov</a>
+        |\r\n                <a target=\"_blank\" href=\"http://www.usa.gov/\">USA.gov</a>\r\n
+        \           </p>\r\n        </div>\r\n    </div>\r\n</div>\r\n</footer>\r\n\r\n<script
+        type=\"text/javascript\">\r\n (function() {\r\n   document.getElementsByTagName('html')[0].setAttribute('lang',
+        'en');\r\n   document.getElementsByTagName('html')[0].setAttribute('xml:lang',
+        'en')\r\n})(); \r\n</script>\r\n\r\n    \r\n    </form>\r\n</body>\r\n</html>\r\n"
     http_version: 
-  recorded_at: Thu, 02 May 2019 10:47:48 GMT
+  recorded_at: Thu, 09 May 2019 11:53:30 GMT
 recorded_with: VCR 4.0.0

@@ -18,7 +18,9 @@ RSpec.describe NistBib do
       hits = NistBib::NistBibliography.search("8011")
       file_path = "spec/examples/hit.xml"
       File.write file_path, hits.first.to_xml unless File.exist? file_path
-      expect(hits.first.to_xml).to be_equivalent_to File.open(file_path, "r:UTF-8", &:read).gsub(/2019-05-02/, Date.today.to_s)
+      expect(hits.first.to_xml).to be_equivalent_to File.
+        open(file_path, "r:UTF-8", &:read).
+        gsub(/(?<=<fetched>)\d{4}-\d{2}-\d{2}/, Date.today.to_s)
     end
   end
 
@@ -47,8 +49,9 @@ RSpec.describe NistBib do
         result = NistBib::NistBibliography.get("8200", "2018", {}).to_xml
         file_path = "spec/examples/get.xml"
         File.write file_path, result unless File.exist? file_path
-        expect(result).to be_equivalent_to File.open(file_path, "r:UTF-8", &:read)
-          .gsub(/(?<=<fetched>)\d{4}-\d{2}-\d{2}/, Date.today.to_s)
+        expect(result).to be_equivalent_to File.
+          open(file_path, "r:UTF-8", &:read).
+          gsub(/(?<=<fetched>)\d{4}-\d{2}-\d{2}/, Date.today.to_s)
       end
     end
 
@@ -84,8 +87,22 @@ RSpec.describe NistBib do
         result = NistBib::NistBibliography.get("SP 800-162", nil, {}).to_xml
         file_path = "spec/examples/issued_published_dates.xml"
         File.write file_path, result unless File.exist? file_path
-        expect(result).to be_equivalent_to File.open(file_path, "r:UTF-8", &:read)
-          .gsub(/(?<=<fetched>)\d{4}-\d{2}-\d{2}/, Date.today.to_s)
+        expect(result).to be_equivalent_to(
+          File.open(file_path, "r:UTF-8", &:read).
+            gsub(/(?<=<fetched>)\d{4}-\d{2}-\d{2}/, Date.today.to_s),
+        )
+      end
+    end
+
+    it "FIPS doc with full issued date" do
+      VCR.use_cassette "fips_140_3" do
+        result = NistBib::NistBibliography.get("FIPS 140-3", nil, {}).to_xml
+        file_path = "spec/examples/fips_140_3.xml"
+        File.write file_path, result unless File.exist? file_path
+        expect(result).to be_equivalent_to(
+          File.open(file_path, "r:UTF-8", &:read).
+            gsub(/(?<=<fetched>)\d{4}-\d{2}-\d{2}/, Date.today.to_s),
+        )
       end
     end
   end
@@ -111,8 +128,8 @@ RSpec.describe NistBib do
     end
   end
 
-  context "short citation get" do
-    context "NIST publications" do
+  context "short citation" do
+    context "without stage get" do
       it "undated reference" do
         VCR.use_cassette "undated_ref" do
           result = NistBib::NistBibliography.get("NIST SP 800-162")
@@ -121,9 +138,25 @@ RSpec.describe NistBib do
       end
 
       it "final without updated-date" do
-        VCR.use_cassette "final_without_upadate_date" do
-          result = NistBib::NistBibliography.get("NIST SP 800-162 (January 2014)")
+        VCR.use_cassette "final_without_updated_date" do
+          result = NistBib::NistBibliography.get("SP 800-162 (January 2014)")
           expect(result.id).to eq "SP800-162"
+        end
+      end
+
+      it "final where updated-date > original-release-date" do
+        VCR.use_cassette "final_with_updated_date" do
+          result = NistBib::NistBibliography.get "SP 800-162 (February 25, 2019)"
+          expect(result.id).to eq "SP800-162"
+        end
+      end
+    end
+
+    context "with stage get" do
+      it "draft without updated-date" do
+        VCR.use_cassette "draft_without_updated_date" do
+          result = NistBib::NistBibliography.get "SP 800-205 (February 2019) (2PD)"
+          expect(result.id).to eq "SP800-205(DRAFT)"
         end
       end
     end
