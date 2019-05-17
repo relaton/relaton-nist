@@ -1,5 +1,5 @@
-<bibdata type="standard">
-  <fetched>2019-05-17</fetched>
+<bibitem id="NISTIR8011Vol.3" type="standard">
+  <fetched>2019-05-16</fetched>
   <title format="text/plain" language="en" script="Latn">Automation Support for Security Control Assessments: Software Asset Management</title>
   <uri type="pdf">http://nvlpubs.nist.gov/nistpubs/ir/2018/NIST.IR.8011-3.pdf</uri>
   <uri type="doi">https://doi.org/10.6028/NIST.IR.8011-3</uri>
@@ -120,34 +120,4 @@
   <series>
     <formattedref format="text/plain" language="en" script="Latn">NISTIR 8011 Vol. 3 (IPD)</formattedref>
   </series>
-  <ext>
-    <doctype>stadard</doctype>
-    <keyword>actual state</keyword>
-    <keyword>assessment</keyword>
-    <keyword>authorization boundary</keyword>
-    <keyword>automation</keyword>
-    <keyword>capability</keyword>
-    <keyword>continuous diagnostics and mitigation</keyword>
-    <keyword>dashboard</keyword>
-    <keyword>defect</keyword>
-    <keyword>desired state specification</keyword>
-    <keyword>firmware</keyword>
-    <keyword>information security continuous monitoring</keyword>
-    <keyword>ISCM</keyword>
-    <keyword>inventory management</keyword>
-    <keyword>malicious code</keyword>
-    <keyword>malware</keyword>
-    <keyword>mitigation</keyword>
-    <keyword>mobile code</keyword>
-    <keyword>ongoing assessment</keyword>
-    <keyword>root cause analysis</keyword>
-    <keyword>security capability</keyword>
-    <keyword>security control</keyword>
-    <keyword>security control item</keyword>
-    <keyword>software</keyword>
-    <keyword>software asset management</keyword>
-    <keyword>software file</keyword>
-    <keyword>SWID tag</keyword>
-    <keyword>whitelisting</keyword>
-  </ext>
-</bibdata>
+</bibitem>

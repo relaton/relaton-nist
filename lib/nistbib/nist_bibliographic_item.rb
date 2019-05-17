@@ -1,7 +1,7 @@
 module NistBib
   class NistBibliographicItem < RelatonBib::BibliographicItem
-    # @return [NistBib::NistSeries, NilClass]
-    attr_reader :nistseries
+    # @return [String]
+    attr_reader :doctype
 
     # @return [Array<NistBib::Keyword>]
     attr_reader :keyword
@@ -29,6 +29,7 @@ module NistBib
     # @param classification [RelatonBib::Classification, NilClass]
     # @param validity [RelatonBib:Validity, NilClass]
     # @param fetched [Date, NilClass] default nil
+    # @param doctype [String]
     # @param keyword [Array<NistBib::Keyword>]
     # @param commentperiod [NistBib::CommentPeriod]
     #
@@ -54,21 +55,23 @@ module NistBib
     # @option relations [String] :type
     # @option relations [RelatonBib::BibliographicItem] :bibitem
     # @option relations [Array<RelatonBib::BibItemLocality>] :bib_locality
-    #
-    # @param nistseries [Nist::NistSeries, NilClass]
     def initialize(**args)
-      @nistseries = args.delete :nistseries
+      @doctype = "stadard"
       @keyword = args.delete(:keyword) || []
       @commentperiod = args.delete :commentperiod
       super
     end
 
     # @param builder [Nokogiri::XML::Builder]
-    def to_xml(builder = nil)
-      super builder, root: :bibitem, date_format: :short do |b|
-        nistseries&.to_xml b
-        keyword.each { |kw| kw.to_xml b }
-        commentperiod&.to_xml b
+    def to_xml(builder = nil, **opts)
+      super builder, date_format: :short, **opts do |b|
+        if opts[:bibdata]
+          b.ext do
+            b.doctype doctype
+            keyword.each { |kw| kw.to_xml b }
+            commentperiod&.to_xml b
+          end
+        end
       end
     end
   end

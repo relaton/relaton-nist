@@ -1,11 +1,11 @@
-<bibitem id="NISTIR7831(RETIREDDRAFT)" type="standard">
-  <fetched>2019-05-07</fetched>
+<bibdata type="standard">
+  <fetched>2019-05-17</fetched>
   <title format="text/plain" language="en" script="Latn">Common Remediation Enumeration (CRE) Version 1.0</title>
   <docidentifier type="nist">NISTIR 7831 (RETIRED DRAFT)</docidentifier>
-  <date type="issued">
+  <date type="published">
     <on>2011-12</on>
   </date>
-  <date type="published">
+  <date type="issued">
     <on>2011-12</on>
   </date>
   <contributor>
@@ -67,6 +67,7 @@
   <status>
     <stage>draft-public</stage>
     <substage>retired</substage>
+    <iteration>1</iteration>
   </status>
   <copyright>
     <from>2011</from>
@@ -78,11 +79,14 @@
       </organization>
     </owner>
   </copyright>
-  <keyword>Common Remediation Enumeration (CRE)</keyword>
-  <keyword>enterprise security</keyword>
-  <keyword>security automation</keyword>
-  <commentperiod>
-    <from>2011-12-01</from>
-    <to>2012-01-20</to>
-  </commentperiod>
-</bibitem>
+  <ext>
+    <doctype>stadard</doctype>
+    <keyword>Common Remediation Enumeration (CRE)</keyword>
+    <keyword>enterprise security</keyword>
+    <keyword>security automation</keyword>
+    <commentperiod>
+      <from>2011-12-01</from>
+      <to>2012-01-20</to>
+    </commentperiod>
+  </ext>
+</bibdata>

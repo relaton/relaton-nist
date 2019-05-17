@@ -1,13 +1,13 @@
-<bibitem id="NISTIR8200" type="standard">
-  <fetched>2019-05-07</fetched>
+<bibdata type="standard">
+  <fetched>2019-05-17</fetched>
   <title format="text/plain" language="en" script="Latn">Interagency Report on the Status of International Cybersecurity Standardization for the Internet of Things (IoT)</title>
   <uri type="pdf">https://nvlpubs.nist.gov/nistpubs/ir/2018/NIST.IR.8200.pdf</uri>
   <uri type="doi">https://doi.org/10.6028/NIST.IR.8200</uri>
   <docidentifier type="nist">NISTIR 8200</docidentifier>
-  <date type="issued">
+  <date type="published">
     <on>2018-11</on>
   </date>
-  <date type="published">
+  <date type="issued">
     <on>2018-11</on>
   </date>
   <contributor>
@@ -72,22 +72,24 @@
       </organization>
     </owner>
   </copyright>
-  <series type="main">
-    <title>NIST Interagency/Internal Report</title>
-    <abbreviation language="en" script="Latn">nistir</abbreviation>
+  <series>
+    <formattedref format="text/plain" language="en" script="Latn">NISTIR 8200 (IPD)</formattedref>
   </series>
-  <keyword>cybersecurity</keyword>
-  <keyword>cybersecurity objectives</keyword>
-  <keyword>cybersecurity risks</keyword>
-  <keyword>cybersecurity threats</keyword>
-  <keyword>IT</keyword>
-  <keyword>information technology</keyword>
-  <keyword>IoT</keyword>
-  <keyword>Internet of Things</keyword>
-  <keyword>IoT components</keyword>
-  <keyword>IoT systems</keyword>
-  <keyword>SDO</keyword>
-  <keyword>standards developing organizations</keyword>
-  <keyword>standards</keyword>
-  <keyword>standards gaps</keyword>
-</bibitem>
+  <ext>
+    <doctype>stadard</doctype>
+    <keyword>cybersecurity</keyword>
+    <keyword>cybersecurity objectives</keyword>
+    <keyword>cybersecurity risks</keyword>
+    <keyword>cybersecurity threats</keyword>
+    <keyword>IT</keyword>
+    <keyword>information technology</keyword>
+    <keyword>IoT</keyword>
+    <keyword>Internet of Things</keyword>
+    <keyword>IoT components</keyword>
+    <keyword>IoT systems</keyword>
+    <keyword>SDO</keyword>
+    <keyword>standards developing organizations</keyword>
+    <keyword>standards</keyword>
+    <keyword>standards gaps</keyword>
+  </ext>
+</bibdata>

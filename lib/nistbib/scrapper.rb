@@ -15,20 +15,20 @@ module NistBib
         NistBibliographicItem.new(
           fetched: Date.today.to_s,
           type: "standard",
-          id: fetch_id(doc),
+          # id: fetch_id(doc),
           titles: fetch_titles(hit_data),
           link: fetch_link(doc),
           docid: fetch_docid(doc),
           dates: fetch_dates(doc, hit_data[:release_date]),
           contributors: fetch_contributors(doc),
-          edition: nil,
+          edition: fetch_edition(hit_data[:code]),
           language: ["en"],
           script: ["Latn"],
           abstract: fetch_abstract(doc),
           docstatus: fetch_status(doc, hit_data[:status]),
           copyright: fetch_copyright(doc),
           relations: fetch_relations(doc),
-          nistseries: fetch_nistseries(doc),
+          series: fetch_series(doc),
           keyword: fetch_keywords(doc),
           commentperiod: fetch_commentperiod(doc),
         )
@@ -47,7 +47,7 @@ module NistBib
 
       # Fetch docid.
       # @param doc [Nokogiri::HTML::Document]
-      # @return [Hash]
+      # @return [Array<RelatonBib::DocumentIdentifier>]
       def fetch_docid(doc)
         item_ref = doc.at("//div[contains(@class, 'publications-detail')]/h3").
           text.strip
@@ -59,10 +59,10 @@ module NistBib
       # Fetch id.
       # @param doc [Nokogiri::HTML::Document]
       # @return [String]
-      def fetch_id(doc)
-        doc.at("//div[contains(@class, 'publications-detail')]/h3").text.
-          strip.gsub(/\s/, "")
-      end
+      # def fetch_id(doc)
+      #   doc.at("//div[contains(@class, 'publications-detail')]/h3").text.
+      #     strip.gsub(/\s/, "")
+      # end
 
       # Fetch status.
       # @param doc [Nokogiri::HTML::Document]
@@ -72,19 +72,36 @@ module NistBib
         case status
         when "draft (withdrawn)"
           stage = "draft-public"
-          substage = "withdrawn"
+          subst = "withdrawn"
         when "retired draft"
           stage = "draft-public"
-          substage = "retired"
+          subst = "retired"
         when "withdrawn"
           stage = "final"
-          substage = "withdrawn"
+          subst = "withdrawn"
         when "draft"
           stage = "draft-public"
-          substage = "active"
+          subst = "active"
         else
           stage = status
-          substage = "active"
+          subst = "active"
+        end
+
+        iter = nil
+        if stage.include? "draft"
+          iter = 1
+          history = doc.xpath("//span[@id='pub-history-container']/a"\
+            "|//span[@id='pub-history-container']/span")
+          history.each_with_index do |h, idx|
+            next if h.name == "a"
+
+            iter = idx + 1 if idx.positive?
+            # iter = if lsif idx < (history.size - 1) && !history.last.text.include?("Draft")
+            #          "final"
+            #        elsif idx.positive? then idx + 1
+            #        end
+            break
+          end
         end
 
         # if doc.at "//p/strong[text()='Withdrawn:']"
@@ -97,7 +114,7 @@ module NistBib
         #   wip = item_ref.match(/(?<=\()\w+/).to_s
         #   stage = "draft-public" if wip == "DRAFT"
         # end
-        NistBib::DocumentStatus.new(stage: stage, substage: substage)
+        NistBib::DocumentStatus.new stage: stage, substage: subst, iteration: iter
       end
 
       # Fetch titles.
@@ -140,6 +157,7 @@ module NistBib
         contribs + contributors(editors, "editor")
       end
 
+      # rubocop:disable Metrics/CyclomaticComplexity
       def contributors(doc, role)
         return [] if doc.nil?
 
@@ -170,6 +188,13 @@ module NistBib
           end
           RelatonBib::ContributionInfo.new entity: entity, role: [role]
         end
+      end
+      # rubocop:enable Metrics/CyclomaticComplexity
+
+      def fetch_edition(code)
+        return unless /(?<=Rev\.\s)(?<rev>\d+)/ =~ code
+
+        "Revision #{rev}"
       end
 
       # Fetch abstracts.
@@ -238,13 +263,28 @@ module NistBib
         )
       end
 
-      def fetch_nistseries(doc)
-        doc.xpath("//p/strong[.='Document History:']/following-sibling::*[not(self::br)]").each do |s|
-          NistSeries::ABBREVIATIONS.each do |k, _v|
-            return NistSeries.new k if s.text.include? k
-          end
-        end
-        nil
+      def fetch_series(doc)
+        series = doc.xpath "//span[@id='pub-history-container']/a"\
+          "|//span[@id='pub-history-container']/span"
+        series.map.with_index do |s, idx|
+          next if s.name == "span"
+
+          iter = if idx.zero? then "I"
+                #  elsif status == "final" && idx == (series.size - 1) then "F"
+                 else idx + 1
+                 end
+
+          content = s.text.match(/^[^\(]+/).to_s.strip.gsub "  ", " "
+
+          ref = case content.match(/\w+/).to_s
+                when "Draft" then content.match(/(?<=Draft\s).+/).to_s + " (#{iter}PD)"
+                end
+
+          fref = RelatonBib::FormattedRef.new(
+            content: ref, language: "en", script: "Latn", format: "text/plain",
+          )
+          RelatonBib::Series.new(formattedref: fref)
+        end.select { |s| s }
       end
 
       def fetch_keywords(doc)

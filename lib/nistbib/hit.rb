@@ -37,8 +37,8 @@ module NistBib
     end
 
     # @return [String]
-    def to_xml
-      fetch.to_xml
+    def to_xml(**opts)
+      fetch.to_xml **opts
     end
   end
 end

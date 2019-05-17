@@ -1,5 +1,5 @@
-<bibitem id="FIPS140-3" type="standard">
-  <fetched>2019-05-10</fetched>
+<bibdata type="standard">
+  <fetched>2019-05-17</fetched>
   <title format="text/plain" language="en" script="Latn">Security Requirements for Cryptographic Modules</title>
   <uri type="pdf">https://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.140-3.pdf</uri>
   <uri type="doi">https://doi.org/10.6028/NIST.FIPS.140-3</uri>
@@ -47,13 +47,22 @@
       <uri type="src">https://csrc.nist.gov/publications/detail/fips/140/2/final</uri>
     </bibitem>
   </relation>
-  <keyword>computer security</keyword>
-  <keyword>telecommunication security</keyword>
-  <keyword>physical security</keyword>
-  <keyword>software security</keyword>
-  <keyword>cryptography</keyword>
-  <keyword>cryptographic modules</keyword>
-  <keyword>Federal Information Processing Standard (FIPS)</keyword>
-  <keyword>ISO/IEC 19790:2012</keyword>
-  <keyword>ISO/IEC 24759:2014</keyword>
-</bibitem>
+  <series>
+    <formattedref format="text/plain" language="en" script="Latn">FIPS 140-3 (IPD)</formattedref>
+  </series>
+  <series>
+    <formattedref format="text/plain" language="en" script="Latn">FIPS 140-3 (2PD)</formattedref>
+  </series>
+  <ext>
+    <doctype>stadard</doctype>
+    <keyword>computer security</keyword>
+    <keyword>telecommunication security</keyword>
+    <keyword>physical security</keyword>
+    <keyword>software security</keyword>
+    <keyword>cryptography</keyword>
+    <keyword>cryptographic modules</keyword>
+    <keyword>Federal Information Processing Standard (FIPS)</keyword>
+    <keyword>ISO/IEC 19790:2012</keyword>
+    <keyword>ISO/IEC 24759:2014</keyword>
+  </ext>
+</bibdata>

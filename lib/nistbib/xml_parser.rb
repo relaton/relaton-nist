@@ -3,7 +3,7 @@ module NistBib
     class << self
       def from_xml(xml)
         doc = Nokogiri::XML xml
-        nistitem = doc.at("/bibitem") || doc.at("/bibdata")
+        nistitem = doc.at("/bibitem|/bibdata")
         NistBibliographicItem.new(item_data(nistitem))
       end
 
@@ -11,10 +11,11 @@ module NistBib
 
       def item_data(nistitem)
         data = super
-        data.delete :series
-        data[:nistseries] = fetch_nistseries(nistitem)
-        data[:keyword] = fetch_keyword(nistitem)
-        data[:commentperiod] = fetch_commentperiod(nistitem)
+        ext = nistitem.at "./ext"
+        return data unless ext
+
+        data[:keyword] = fetch_keyword(ext)
+        data[:commentperiod] = fetch_commentperiod(ext)
         data
       end
 
@@ -25,7 +26,7 @@ module NistBib
         DocumentStatus.new(
           stage: status.at("stage")&.text,
           substage: status.at("substage")&.text,
-          iteration: status.at("iteraton")&.text,
+          iteration: status.at("iteration")&.text,
         )
       end
 
@@ -40,13 +41,6 @@ module NistBib
         item.xpath("./keyword").map do |kw|
           Keyword.new kw.children.first.to_xml
         end
-      end
-
-      def fetch_nistseries(item)
-        series = item.at "./series"
-        return unless series
-
-        NistSeries.new series.at("./abbreviation").text.upcase.gsub("-", " ")
       end
     end
   end

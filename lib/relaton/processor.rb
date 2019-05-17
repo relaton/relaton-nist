@@ -11,7 +11,7 @@ module Relaton
         @idtype = "NIST"
       end
 
-      def get(code, date, opts)
+      def get(code, date = nil, opts = {})
         ::NistBib::NistBibliography.get(code, date, opts)
       end
 

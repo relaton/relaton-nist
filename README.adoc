@@ -48,13 +48,35 @@ hit_collection = NistBib::NistBibliography.search("8200")
 [source,ruby]
 ----
 item.to_xml
-=> "<nist-standard>
+=> "<bibitem id="NISTIR8200(DRAFT)" type="standard">
       <fetched>2019-05-03</fetched>
       <title format="text/plain" language="en" script="Latn">
         Interagency Report on Status of International Cybersecurity Standardization for the Internet of Things (IoT)
       </title>
       ...
-    </nist-standard>"
+    <bibitem>"
+----
+With argument `bibdata: true` it ouputs XML wrapped by `bibdata` element and adds flavour `ext` element.
+[source,ruby]
+----
+item.to_xml bibdata: true
+=> "<bibdata type="standard">
+    <fetched>2019-05-17</fetched>
+    <title format="text/plain" language="en" script="Latn">
+      Interagency Report on Status of International Cybersecurity Standardization for the Internet of Things (IoT)
+    </title>
+    ...
+    <ext>
+      <doctype>stadard</doctype>
+      <keyword>cybersecurity</keyword>
+      <keyword>cybersecurity objectives</keyword>
+      ...
+      <commentperiod>
+        <from>2018-02-01</from>
+        <to>2018-04-18</to>
+      </commentperiod>
+    </ext>
+  </bibdata>"
 ----
 
 === Get code, and year

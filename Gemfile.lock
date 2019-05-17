@@ -1,8 +1,8 @@
 PATH
   remote: .
   specs:
-    nistbib (0.1.5)
-      relaton-bib (~> 0.1.1)
+    nistbib (0.1.6)
+      relaton-bib (~> 0.1.5)
 
 GEM
   remote: https://rubygems.org/
@@ -34,7 +34,7 @@ GEM
       pry (~> 0.10)
     public_suffix (3.0.3)
     rake (10.5.0)
-    relaton-bib (0.1.3)
+    relaton-bib (0.1.5)
       addressable
       nokogiri (~> 1.8.4)
     rspec (3.8.0)

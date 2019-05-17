@@ -23,6 +23,7 @@ module NistBib
     # @param ref_nbr [String]
     # @param year [String]
     # @param opts [Hash]
+    # @option opts [String] :stage
     def initialize(ref_nbr, year = nil, opts)
       @text = ref_nbr
       @year = year
@@ -35,7 +36,7 @@ module NistBib
       url  = "#{DOMAIN}/publications/search?keywords-lg=#{ref_nbr}"
       url += "&dateFrom-lg=#{from}" if from
       url += "&dateTo-lg=#{to}" if to
-      url += "&status-lg=Draft" if /PD/ =~ opts[:stage]
+      url += "&status-lg=Draft,Withdrawn" if /PD/ =~ opts[:stage]
       doc  = Nokogiri::HTML OpenURI.open_uri(::Addressable::URI.parse(url).normalize)
       hits = doc.css("table.publications-table > tbody > tr").map do |h|
         link  = h.at("td/div/strong/a")

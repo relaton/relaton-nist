@@ -34,5 +34,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "vcr"
   spec.add_development_dependency "webmock"
 
-  spec.add_dependency "relaton-bib", "~> 0.1.1"
+  spec.add_dependency "relaton-bib", "~> 0.1.5"
 end

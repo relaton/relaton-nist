@@ -2,7 +2,6 @@ require "relaton_bib"
 require "nistbib/nist_bibliographic_item"
 require "nistbib/scrapper"
 require "nistbib/hit_collection"
-require "nistbib/nist_series"
 require "nistbib/xml_parser"
 require "nistbib/keyword"
 require "nistbib/comment_period"
@@ -22,10 +21,15 @@ module NistBib
 
       # @param code [String] the NIST standard Code to look up (e..g "8200")
       # @param year [String] the year the standard was published (optional)
-      # @param opts [Hash] options; restricted to :all_parts if all-parts reference is required
+      #
+      # @param opts [Hash] options
+      # @option opts [TrueClass, FalseClass] :all_parts restricted to all parts
+      #   if all-parts reference is required
+      # @option opts [TrueClass, FalseClass] :bibdata
+      #
       # @return [String] Relaton XML serialisation of reference
       def get(code, year = nil, opts = {})
-        /^(?<code2>[^\(]+)\((?<date2>\w+\s(\d{2},\s)?\d{4})\)(\s\()?(?<stage>[^\)]+)?/ =~ code
+        /^(?<code2>[^\(]+)(\((?<date2>\w+\s(\d{2},\s)?\d{4})\))?\s?\(?((?<=\()(?<stage>[^\)]+))?/ =~ code
         if code2
           code = code2.strip
           if date2
@@ -57,7 +61,7 @@ module NistBib
       private
 
       def nistbib_get1(code, year, opts)
-        result = nistbib_search_filter(code, year, opts) or return nil
+        result = nistbib_search_filter(code, year, opts) || (return nil)
         ret = nistbib_results_filter(result, year, opts)
         return ret[:ret] if ret[:ret]
 
@@ -70,18 +74,34 @@ module NistBib
       # Only expects the first page of results to be populated.
       # Does not match corrigenda etc (e.g. ISO 3166-1:2006/Cor 1:2007)
       # If no match, returns any years which caused mismatch, for error reporting
+      #
+      # @param opts [Hash] options
+      # @option opts [Time] :issued_date
+      # @option opts [Time] :issued_date
+      # @option opts [String] :stage
+      #
+      # @retur [Hash]
       def nistbib_results_filter(result, year, opts)
         missed_years = []
         result.each_slice(3) do |s| # ISO website only allows 3 connections
           fetch_pages(s, 3).each_with_index do |r, _i|
             if opts[:issued_date]
               r.dates.select { |d| d.type == "issued" }.each do |d|
-                return { ret: r } if opts[:issued_date] == d.on
+                next unless opts[:issued_date] == d.on
               end
             elsif opts[:updated_date]
               r.dates.select { |d| d.type == "published" }.each do |d|
-                return { ret: r } if opts[:updated_date] == d.on
+                next unless opts[:updated_date] == d.on
               end
+            end
+            if opts[:stage]
+              iter = opts[:stage][-3]
+              iteration = case iter
+                          when "I" then 1
+                          when "F" then "final"
+                          else iter.to_i
+                          end
+              next if iter && r.status.iteration != iteration
             end
             return { ret: r } if !year
 
