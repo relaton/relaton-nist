@@ -5,10 +5,11 @@ module NistBib
     class << self
       DOMAIN = "https://csrc.nist.gov".freeze
 
+      # rubocop:disable Metrics/AbcSize, Metrics/MethodLength
+
       # Parse page.
       # @param hit_data [Hash]
       # @return [Hash]
-      # rubocop:disable Metrics/AbcSize, Metrics/MethodLength
       def parse_page(hit_data)
         doc = get_page hit_data[:url]
 
@@ -33,6 +34,7 @@ module NistBib
           commentperiod: fetch_commentperiod(doc),
         )
       end
+      # rubocop:enable Metrics/AbcSize, Metrics/MethodLength
 
       private
 

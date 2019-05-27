@@ -116,7 +116,7 @@ module NistBib
       end
 
       def fetch_pages(s, n)
-        workers = WorkersPool.new n
+        workers = RelatonBib::WorkersPool.new n
         workers.worker { |w| { i: w[:i], hit: w[:hit].fetch } }
         s.each_with_index { |hit, i| workers << { i: i, hit: hit } }
         workers.end

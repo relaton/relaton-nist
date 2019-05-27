@@ -1,15 +1,14 @@
 # frozen_string_literal: true
 
-require 'nistbib/hit'
-require 'nistbib/workers_pool'
+require "nistbib/hit"
 require "addressable/uri"
-require 'open-uri'
+require "open-uri"
 
 module NistBib
   # Page of hit collection.
   class HitCollection < Array
 
-    DOMAIN = 'https://csrc.nist.gov'
+    DOMAIN = "https://csrc.nist.gov"
 
     # @return [TrueClass, FalseClass]
     attr_reader :fetched
@@ -61,7 +60,7 @@ module NistBib
 
     # @return [Iecbib::HitCollection]
     def fetch
-      workers = WorkersPool.new 4
+      workers = RelatonBib::WorkersPool.new 4
       workers.worker(&:fetch)
       each do |hit|
         workers << hit
