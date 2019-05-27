@@ -10,13 +10,13 @@ module NistBib
     # @param substage [String, NilClass]
     # @param iteration [String, NilClass]
     def initialize(stage:, substage: nil, iteration: nil)
-      unless STAGES.include? stage
-        raise ArgumentError, "invalid argument: stage (#{stage})"
-      end
+      # unless STAGES.include? stage
+      #   raise ArgumentError, "invalid argument: stage (#{stage})"
+      # end
 
-      if substage && !SUBSTAGES.include?(substage)
-        raise ArgumentError, "invalid argument: substage (#{substage})"
-      end
+      # if substage && !SUBSTAGES.include?(substage)
+      #   raise ArgumentError, "invalid argument: substage (#{substage})"
+      # end
 
       super
     end
