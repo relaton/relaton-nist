@@ -133,7 +133,7 @@ module NistBib
         d = doc.at("//span[@id='pub-release-date']").text.strip
         date = if /(?<date>\w+\s\d{4})/ =~ d
                  Date.strptime(date, "%B %Y")
-               elsif /(?<date>\w+\s\d{2},\s\d{4})/ =~ d
+               elsif /(?<date>\w+\s\d{1,2},\s\d{4})/ =~ d
                  Date.strptime(date, "%B %d, %Y")
                end
         dates << { type: "issued", on: date.to_s }

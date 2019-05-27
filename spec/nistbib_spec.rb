@@ -42,7 +42,7 @@ RSpec.describe NistBib do
       hits = NistBib::NistBibliography.search("8200", "2018").fetch
       expect(hits.first.to_s).to eq "<NistBib::Hit:"\
         "#{format('%#.14x', hits.first.object_id << 1)} "\
-        '@text="8200" @fetched="true" @fullIdentifier="NISTIR 8200:2018" '\
+        '@text="8200" @fetched="true" @fullIdentifier="NISTIR8200:2018" '\
         '@title="8200">'
     end
   end
