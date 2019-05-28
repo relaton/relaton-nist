@@ -3,7 +3,7 @@
   <title format="text/plain" language="en" script="Latn">Interagency Report on the Status of International Cybersecurity Standardization for the Internet of Things (IoT)</title>
   <uri type="pdf">https://nvlpubs.nist.gov/nistpubs/ir/2018/NIST.IR.8200.pdf</uri>
   <uri type="doi">https://doi.org/10.6028/NIST.IR.8200</uri>
-  <docidentifier type="nist">NISTIR 8200</docidentifier>
+  <docidentifier type="NIST">NISTIR 8200</docidentifier>
   <date type="published">
     <on>2018-11</on>
   </date>

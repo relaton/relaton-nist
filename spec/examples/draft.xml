@@ -3,7 +3,7 @@
   <title format="text/plain" language="en" script="Latn">Secure Interdomain Traffic Exchange: BGP Robustness and DDoS Mitigation</title>
   <uri type="pdf">https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-189-draft.pdf</uri>
   <uri type="doi">https://doi.org/10.6028/NIST.SP.800-189-draft</uri>
-  <docidentifier type="nist">SP 800-189 (DRAFT)</docidentifier>
+  <docidentifier type="NIST">SP 800-189 (DRAFT)</docidentifier>
   <date type="published">
     <on>2018-12</on>
   </date>

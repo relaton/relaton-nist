@@ -53,9 +53,9 @@ module NistBib
       def fetch_docid(doc)
         item_ref = doc.at("//div[contains(@class, 'publications-detail')]/h3").
           text.strip
-        return [RelatonBib::DocumentIdentifier.new(type: "nist", id: "?")] unless item_ref
+        return [RelatonBib::DocumentIdentifier.new(type: "NIST", id: "?")] unless item_ref
 
-        [RelatonBib::DocumentIdentifier.new(id: item_ref, type: "nist")]
+        [RelatonBib::DocumentIdentifier.new(id: item_ref, type: "NIST")]
       end
 
       # Fetch id.
