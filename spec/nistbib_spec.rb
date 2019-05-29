@@ -118,6 +118,18 @@ RSpec.describe NistBib do
         )
       end
     end
+
+    it "doc with White Paper as id" do
+      VCR.use_cassette "framework" do
+        result = NistBib::NistBibliography.get("NIST Framework for Improving Critical Infrastructure Cybersecurity Version 1.1", nil, {}).to_xml bibdata: true
+        file_path = "spec/examples/framework.xml"
+        File.write file_path, result unless File.exist? file_path
+        expect(result).to be_equivalent_to(
+          File.open(file_path, "r:UTF-8", &:read).
+            gsub(/(?<=<fetched>)\d{4}-\d{2}-\d{2}/, Date.today.to_s),
+        )
+      end
+    end
   end
 
   context "warns when" do
@@ -173,7 +185,7 @@ RSpec.describe NistBib do
         end
       end
 
-      it "draft with iitial iteration" do
+      it "draft with initial iteration" do
         VCR.use_cassette "sp_800_57" do
           result = NistBib::NistBibliography.get("SP 800-57 (IPD)").to_xml
           file_path = "spec/examples/sp_800_57.xml"

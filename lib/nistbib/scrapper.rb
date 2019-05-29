@@ -13,13 +13,21 @@ module NistBib
       def parse_page(hit_data)
         doc = get_page hit_data[:url]
 
+        docid = fetch_docid(doc)
+        doctype = "standard"
+        titles = fetch_titles(hit_data)
+        unless /^(SP|NISTIR|FIPS) /.match docid[0].id
+          doctype = id_cleanup(docid[0].id)
+          docid[0] = RelatonBib::DocumentIdentifier.new(id: titles[0][:content], type: "NIST")
+        end
+
         NistBibliographicItem.new(
           fetched: Date.today.to_s,
           type: "standard",
           # id: fetch_id(doc),
-          titles: fetch_titles(hit_data),
+          titles: titles,
           link: fetch_link(doc),
-          docid: fetch_docid(doc),
+          docid: docid,
           dates: fetch_dates(doc, hit_data[:release_date]),
           contributors: fetch_contributors(doc),
           edition: fetch_edition(hit_data[:code]),
@@ -32,9 +40,17 @@ module NistBib
           series: fetch_series(doc),
           keyword: fetch_keywords(doc),
           commentperiod: fetch_commentperiod(doc),
+          doctype: doctype,
         )
       end
       # rubocop:enable Metrics/AbcSize, Metrics/MethodLength
+
+      # Strip status from doc id
+      # @param id String
+      # @return String
+      def id_cleanup(id)
+        id.sub(/ \(WITHDRAWN\)/, "").sub(/ \(([^) ]+ )?DRAFT\)/i, "")
+      end
 
       private
 
@@ -54,7 +70,6 @@ module NistBib
         item_ref = doc.at("//div[contains(@class, 'publications-detail')]/h3").
           text.strip
         return [RelatonBib::DocumentIdentifier.new(type: "NIST", id: "?")] unless item_ref
-
         [RelatonBib::DocumentIdentifier.new(id: item_ref, type: "NIST")]
       end
 
@@ -93,7 +108,7 @@ module NistBib
         if stage.include? "draft"
           iter = 1
           history = doc.xpath("//span[@id='pub-history-container']/a"\
-            "|//span[@id='pub-history-container']/span")
+                              "|//span[@id='pub-history-container']/span")
           history.each_with_index do |h, idx|
             next if h.name == "a"
 
@@ -272,7 +287,7 @@ module NistBib
           next if s.name == "span"
 
           iter = if idx.zero? then "I"
-                #  elsif status == "final" && idx == (series.size - 1) then "F"
+                   #  elsif status == "final" && idx == (series.size - 1) then "F"
                  else idx + 1
                  end
 

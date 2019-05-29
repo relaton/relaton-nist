@@ -56,7 +56,7 @@ module NistBib
     # @option relations [RelatonBib::BibliographicItem] :bibitem
     # @option relations [Array<RelatonBib::BibItemLocality>] :bib_locality
     def initialize(**args)
-      @doctype = "stadard"
+      @doctype = args.delete(:doctype) || "standard"
       @keyword = args.delete(:keyword) || []
       @commentperiod = args.delete :commentperiod
       super

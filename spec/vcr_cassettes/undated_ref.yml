@@ -3246,4 +3246,651 @@ http_interactions:
         'en')\r\n})(); \r\n</script>\r\n\r\n    \r\n    </form>\r\n</body>\r\n</html>\r\n"
     http_version: 
   recorded_at: Thu, 09 May 2019 11:55:55 GMT
+- request:
+    method: get
+    uri: https://csrc.nist.gov/publications/detail/white-paper/2017/01/10/cybersecurity-framework-v11/draft
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - csrc.nist.gov
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-cache, no-store, must-revalidate
+      Pragma:
+      - no-cache
+      Content-Type:
+      - text/html; charset=utf-8
+      Expires:
+      - "-1"
+      Server:
+      - Microsoft-IIS/8.5
+      Set-Cookie:
+      - ASP.NET_SessionId=g0fxxep5qzzoflwqaja34g2q; path=/; secure; HttpOnly
+      - CMSCsrfCookie=ireQUmdbKdgfYyoGUVcmxAJQuw8AJPTAOkRrQZPC; path=/; secure; HttpOnly
+      - CMSPreferredCulture=en-US; path=/; HttpOnly; Secure
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Ua-Compatible:
+      - IE=Edge
+      X-Aspnet-Version:
+      - 4.0.30319
+      Date:
+      - Tue, 28 May 2019 23:14:45 GMT
+      Content-Length:
+      - '50533'
+      Strict-Transport-Security:
+      - max-age=31536000
+    body:
+      encoding: UTF-8
+      string: "<!DOCTYPE html>\r\n<html  >\r\n<head id=\"head\"><title>\r\n\tFramework
+        for Improving Critical Infrastructure Cybersecurity, Version 1.1 | CSRC\r\n</title><meta
+        charset=\"UTF-8\" /> \n<meta http-equiv=\"content-type\" content=\"text/html;
+        charset=UTF-8\" />\r\n<meta http-equiv=\"content-style-type\" content=\"text/css\"
+        />\r\n<meta http-equiv=\"content-script-type\" content=\"text/javascript\"
+        />\r\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"
+        />\r\n\r\n<link href=\"/Scripts/font-awesome/css/font-awesome.css\" type=\"text/css\"
+        rel=\"stylesheet\" />\r\n<link href=\"/CSRC/media/bootstrap/css/bootstrap.min.css\"
+        type=\"text/css\" rel=\"stylesheet\" />\r\n<link href=\"/CSRC/media/bootstrap/css/bootstrap-theme.min.css\"
+        type=\"text/css\" rel=\"stylesheet\" />\r\n<link href=\"/Scripts/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css\"
+        type=\"text/css\" rel=\"stylesheet\" />\r\n<link href=\"/CSRC/media/css/nist-fonts.css\"
+        type=\"text/css\" rel=\"stylesheet\" />\r\n<link href=\"/CSRC/media/css/csrc-style.css\"
+        type=\"text/css\" rel=\"stylesheet\" />\r\n<link href=\"/CSRC/media/css/media-resize.css\"
+        type=\"text/css\" rel=\"stylesheet\" />\r\n\r\n\r\n<link rel=\"apple-touch-icon\"
+        sizes=\"180x180\" href=\"/CSRC/Media/images/favicons/apple-touch-icon.png\"
+        />\r\n<link rel=\"icon\" type=\"image/png\" href=\"/CSRC/Media/images/favicons/favicon-32x32.png\"
+        sizes=\"32x32\" />\r\n<link rel=\"icon\" type=\"image/png\" href=\"/CSRC/Media/images/favicons/favicon-16x16.png\"
+        sizes=\"16x16\" />\r\n<link rel=\"manifest\" href=\"/CSRC/Media/images/favicons/manifest.json\"
+        />\r\n<link rel=\"mask-icon\" href=\"/CSRC/Media/images/favicons/safari-pinned-tab.svg\"
+        color=\"#000000\" />\r\n<meta name=\"msapplication-config\" content=\"/CSRC/Media/images/favicons/browserconfig.xml\"
+        />\r\n<meta name=\"theme-color\" content=\"#000000\" />\r\n\r\n<script src=\"/Scripts/jquery/dist/jquery.min.js\"></script>\r\n<script
+        src=\"/Scripts/underscore/underscore-min.js\"></script>\r\n<script src=\"/Scripts/bootstrap/dist/js/bootstrap.min.js\"></script>\r\n<script
+        src=\"/Scripts/moment/min/moment.min.js\" type=\"text/javascript\"></script>\r\n<script
+        src=\"/Scripts/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js\"
+        type=\"text/javascript\"></script>\r\n<script src=\"/CSRC/media/js/megamenu.js\"
+        type=\"text/javascript\"></script>\r\n<script src=\"/CSRC/media/js/main.js\"></script>\r\n<script
+        src=\"/CSRC/media/js/forms.js\" type=\"text/javascript\"></script>\r\n<script
+        src=\"/CSRC/media/js/forms-topics.js\" type=\"text/javascript\"></script>\r\n<script
+        src=\"/CSRC/media/js/forms-controlFamilies.js\" type=\"text/javascript\"></script>\r\n<script
+        src=\"/CSRC/media/js/forms-searchCriteria.js\" type=\"text/javascript\"></script>\r\n<script
+        src=\"/CSRC/media/js/nist-exit-script.js\" type=\"text/javascript\"></script>\r\n\r\n<script
+        async type=\"text/javascript\" id=\"_fed_an_ua_tag\" src=\"https://dap.digitalgov.gov/Universal-Federated-Analytics-Min.js?agency=nist&subagency=csrc&pua=UA-66610693-15&yt=true&exts=xsd,xml,wav,mpg,mpeg,avi,rtf,webm,ogg,ogv,oga,map,otf,eot,svg,ttf,woff\"></script>\r\n\r\n<style
+        id=\"antiClickjack\">body{display:none !important;}</style>\r\n<script type=\"text/javascript\"
+        id=\"antiClickjackScript\">\r\n   if (self === top) {\r\n       var antiClickjack
+        = document.getElementById(\"antiClickjack\");\r\n       antiClickjack.parentNode.removeChild(antiClickjack);\r\n
+        \  } else {\r\n       top.location = self.location;\r\n   }\r\n</script>\r\n
+        \n<link href=\"/CSRC/Media/images/favicons/favicon.ico\" type=\"image/x-icon\"
+        rel=\"shortcut icon\"/>\r\n<link href=\"/CSRC/Media/images/favicons/favicon.ico\"
+        type=\"image/x-icon\" rel=\"icon\"/>\r\n\r\n<meta description=\"The national
+        and economic security of the United States depends on the reliable functioning
+        of critical infrastructure. Cybersecurity threats take advantage of the increased
+        complexity and connectivity of critical infrastructure systems, placing the
+        Nation's security at risk. To better protect these systems, the President
+        issued Executive Order 13636, 'Improving Critical Infrastructure Cybersecurity,'
+        on February 12, 2013. The Executive Order established that '[i]t is the Policy
+        of the United States to enhance the security and resilience of the Nation's
+        critical infrastructure and to maintain a cyber environment that encourages
+        efficiency, innovation, and economic prosperity while promoting safety, security,
+        business confidentiality, privacy, and civil liberties.' In enacting this
+        policy, the Executive Order calls for the development of a voluntary risk-based
+        Cybersecurity Framework - a set of industry standards and best practices to
+        help organizations manage cybersecurity risks. The resulting Framework, created
+        through collaboration between government and the private sector, uses a common
+        language to address and manage cybersecurity risk in a cost-effective way
+        based on business needs without placing additional regulatory requirements
+        on businesses. The Framework enables organizations - regardless of size, degree
+        of cybersecurity risk, or cybersecurity sophistication - to apply the principles
+        and best practices of risk management to improving the security and resilience
+        of critical infrastructure. The Framework provides organization and structure
+        to today's multiple approaches to cybersecurity by assembling standards, guidelines,
+        and practices that are working effectively in industry today. Moreover, because
+        it references globally recognized standards for cybersecurity, the Framework
+        can also be used by organizations located outside the United States and can
+        serve as a model for international cooperation on strengthening critical infrastructure
+        cybersecurity.\"/>\r\n<meta name=\"dcterms.title\" content=\"Framework for
+        Improving Critical Infrastructure Cybersecurity, Version 1.1 (Draft)\"/>\r\n<meta
+        name=\"dcterms.description\" content=\"The national and economic security
+        of the United States depends on the reliable functioning of critical infrastructure.
+        Cybersecurity threats take advantage of the increased complexity and connectivity
+        of critical infrastructure systems, placing the Nation's security at risk.
+        To better protect these systems, the President issued Executive Order 13636,
+        'Improving Critical Infrastructure Cybersecurity,' on February 12, 2013. The
+        Executive Order established that '[i]t is the Policy of the United States
+        to enhance the security and resilience of the Nation's critical infrastructure
+        and to maintain a cyber environment that encourages efficiency, innovation,
+        and economic prosperity while promoting safety, security, business confidentiality,
+        privacy, and civil liberties.' In enacting this policy, the Executive Order
+        calls for the development of a voluntary risk-based Cybersecurity Framework
+        - a set of industry standards and best practices to help organizations manage
+        cybersecurity risks. The resulting Framework, created through collaboration
+        between government and the private sector, uses a common language to address
+        and manage cybersecurity risk in a cost-effective way based on business needs
+        without placing additional regulatory requirements on businesses. The Framework
+        enables organizations - regardless of size, degree of cybersecurity risk,
+        or cybersecurity sophistication - to apply the principles and best practices
+        of risk management to improving the security and resilience of critical infrastructure.
+        The Framework provides organization and structure to today's multiple approaches
+        to cybersecurity by assembling standards, guidelines, and practices that are
+        working effectively in industry today. Moreover, because it references globally
+        recognized standards for cybersecurity, the Framework can also be used by
+        organizations located outside the United States and can serve as a model for
+        international cooperation on strengthening critical infrastructure cybersecurity.\"/>\r\n\r\n<!--Authors-->\r\n<meta
+        name=\"dcterms.creator\" content=\"Author: National Institute of Standards
+        and Technology\"/>\r\n\r\n\r\n<meta name=\"dcterms.date.created\" scheme=\"ISO8601\"
+        content=\"2017-01-10\"/>\r\n<meta name=\"dcterms.identifier\" content=\"https://content.csrc.e1c.nist.gov/publications/detail/white-paper/2017/01\"/>\r\n<meta
+        name=\"dcterms.language\" scheme=\"DCTERMS.RFC1766\" content=\"EN-US\"/>\r\n\r\n<!--Google
+        Scholar Info-->\r\n<meta name=\"citation_title\" content=\"Framework for Improving
+        Critical Infrastructure Cybersecurity, Version 1.1 (Draft)\" />\r\n<meta name=\"citation_publication_date\"
+        content=\"2017/01/10\" />\r\n\r\n\r\n<meta name=\"citation_technical_report_institution\"
+        content=\"National Institute of Standards and Technology\" />\r\n\r\n\r\n<meta
+        name=\"citation_firstpage\" content=\"61\" />\r\n<meta name=\"citation_lastpage\"
+        content=\"61\" />\r\n<meta name=\"citation_keywords\" content=\"critical infrastructure;
+        cybersecurity; Executive Order 13636; framework; security; \" />\r\n<meta
+        name=\"citation_language\" content=\"en\" />\r\n<meta name=\"citation_pdf_url\"
+        content=\"https://www.nist.gov/file/344211\" />\r\n<meta name=\"citation_abstract_html_url\"
+        content=\"https://csrc.nist.gov/publications/detail/white-paper/2017/01/10/cybersecurity-framework-v11/draft\"
+        />\r\n\r\n\r\n<!--Google Scholar Authors-->\r\n\r\n<meta name=\"citation_author\"
+        content=\"National Institute of Standards and Technology\" />\r\n\r\n\r\n<!--
+        Facebook OpenGraph -->\r\n<meta name=\"og:site_name\" content=\"CSRC | NIST\"
+        />\r\n<meta name=\"og:type\" content=\"article\" />\r\n<meta name=\"og:url\"
+        content=\"https://csrc.nist.gov/publications/detail/white-paper/2017/01/10/cybersecurity-framework-v11/draft\"
+        />\r\n<meta name=\"og:title\" content=\"Framework for Improving Critical Infrastructure
+        Cybersecurity, Version 1.1 (Draft)\" />\r\n<meta name=\"og:description\" content=\"The
+        national and economic security of the United States depends on the reliable
+        functioning of critical infrastructure. Cybersecurity threats take advantage
+        of the increased complexity and connectivity of critical infrastructure systems,
+        placing the Nation's security at risk. To better protect these systems, the
+        President issued Executive Order 13636, 'Improving Critical Infrastructure
+        Cybersecurity,' on February 12, 2013. The Executive Order established that
+        '[i]t is the Policy of the United States to enhance the security and resilience
+        of the Nation's critical infrastructure and to maintain a cyber environment
+        that encourages efficiency, innovation, and economic prosperity while promoting
+        safety, security, business confidentiality, privacy, and civil liberties.'
+        In enacting this policy, the Executive Order calls for the development of
+        a voluntary risk-based Cybersecurity Framework - a set of industry standards
+        and best practices to help organizations manage cybersecurity risks. The r...\"
+        />\r\n\r\n\r\n<meta name=\"article:author\" content=\"National Institute of
+        Standards and Technology\" />\r\n\r\n\r\n<meta name=\"article:tag\" content=\"critical
+        infrastructure\" />\r\n<meta name=\"article:tag\" content=\"cybersecurity\"
+        />\r\n<meta name=\"article:tag\" content=\"Executive Order 13636\" />\r\n<meta
+        name=\"article:tag\" content=\"framework\" />\r\n<meta name=\"article:tag\"
+        content=\"security\" />\r\n<meta name=\"article:published_time\" content=\"2017-01-10\"
+        />\r\n<meta name=\"og:image\" content=\"https://csrc.nist.gov/CSRC/media/images/CSRC-logo-open-graph.png\"
+        />\r\n</head>\r\n<body class=\"LTR Unknown ENUS ContentBody\" >\r\n    \r\n
+        \   <form method=\"post\" action=\"/publications/detail/white-paper/2017/01/10/cybersecurity-framework-v11/draft\"
+        id=\"form\">\r\n<input type=\"hidden\" name=\"__CMSCsrfToken\" id=\"__CMSCsrfToken\"
+        value=\"SRaxm5UoM2obizva8VvO9XExpP/HHTtYO0hgkvlGI6MgaQUXtERFyIGXHJA14Hwj/J1+aU4p6LR+EYhkSMGlSYxnJiUe1DRTEQHn/Idu/1c=\"
+        />\r\n<input type=\"hidden\" name=\"__VIEWSTATE\" id=\"__VIEWSTATE\" value=\"MRMhivjlVJGs7cC4pQ9ZxRqGuE4tdWEodLRUsBPUeV+qbqS1jLmV3uYOOq4crv/Rceu/twJzgzzVm9ZxuNqMQ1GvxwrYilHSjD66cIdMTbCzWHUj23UjJfOBwmCvcByxmsQJDKCBcaFcbHa0VNtRxHPiVHKc6jIO+Ota1TkEu/MxZkJB9MLKWBUwJ3JF0uC/p2QbeMWiintkfA0Zdt2y7rFZ9MWD86hBzwlZYceVYFFuxX1BqGJkVMPDoD/JJuAMzegbidW5LcF+MPiYIGd4mLy7FT88GbaBpnBuuKZX9HRGG5HOdIDbJWTJLkJWYb94cstKZIrpmChBn3/6jOOaWeMwzqectdAZ+NOFjDDMY9M7dyrnjZawPyUAAYfTUeGYuuTLxN+fOdNAcv9SfhBmrQ==\"
+        />\r\n\r\n<input type=\"hidden\" name=\"lng\" id=\"lng\" value=\"en-US\" />\r\n<script
+        type=\"text/javascript\">\r\n\t//<![CDATA[\n\r\nfunction PM_Postback(param)
+        { if (window.top.HideScreenLockWarningAndSync) { window.top.HideScreenLockWarningAndSync(1080);
+        } if(window.CMSContentManager) { CMSContentManager.allowSubmit = true; };
+        __doPostBack('m$am',param); }\r\nfunction PM_Callback(param, callback, ctx)
+        { if (window.top.HideScreenLockWarningAndSync) { window.top.HideScreenLockWarningAndSync(1080);
+        }if (window.CMSContentManager) { CMSContentManager.storeContentChangedStatus();
+        };WebForm_DoCallback('m$am',param,callback,ctx,null,true); }\n//]]>\r\n</script>\r\n<script
+        src=\"/ScriptResource.axd?d=uHIkleVeDJf4xS50Krz-yMWQZeGP2sm-Aq3NELwaxLyRV5MLstP6oKPsgcxAMA_B5Rb0vJDp22Z_bRWP2R1u4GeOGOnfB6yFqEaF1omatfxKIy6cR0X-mq0MtLyuYewZftIpOCSKIMvufh01FAiTz7nCibHma6Ja3rEhvUYLJco1&amp;t=ffffffff999c3159\"
+        type=\"text/javascript\"></script>\r\n<script type=\"text/javascript\">\r\n\t//<![CDATA[\n\r\nvar
+        CMS = CMS || {};\r\nCMS.Application = {\r\n  \"language\": \"en\",\r\n  \"imagesUrl\":
+        \"/CMSPages/GetResource.ashx?image=%5bImages.zip%5d%2f\",\r\n  \"isDebuggingEnabled\":
+        false,\r\n  \"applicationUrl\": \"/\",\r\n  \"isDialog\": false,\r\n  \"isRTL\":
+        \"false\"\r\n};\r\n\n//]]>\r\n</script>\r\n<input type=\"hidden\" name=\"__VIEWSTATEGENERATOR\"
+        id=\"__VIEWSTATEGENERATOR\" value=\"A5343185\" />\r\n    \r\n    <div id=\"ctxM\">\r\n\r\n</div>\r\n
+        \   <div id=\"antiClickjack\" style=\"display: none\">\r\n    <h1>You are
+        viewing this page in an unauthorized frame window.</h1>\r\n    <p>This is
+        a potential security issue, you are being redirected to <a href=\"https://csrc.nist.gov\">https://csrc.nist.gov</a></p>\r\n</div>\r\n<nav
+        id=\"navbar\" class=\"navbar\">\r\n  <div id=\"nist-menu-container\" class=\"container\">\r\n
+        \   <div class=\"row\">\r\n    <!-- Brand -->\r\n    <div class=\"col-xs-6
+        col-md-4 navbar-header\">\r\n      <a class=\"navbar-brand\" href=\"https://www.nist.gov\"
+        target=\"_blank\" id=\"navbar-brand-image\">\r\n        <img src=\"/CSRC/Media/images/svg/nist-logo.svg\"
+        alt=\"National Institute of Standards and Technology\" width=\"110\" height=\"30\">\r\n
+        \     </a>\r\n    </div>\r\n    <div class=\"col-xs-6 col-md-8 navbar-nist-logo\">\r\n
+        \       <div class=\"form-inline hidden-sm hidden-xs\">\r\n            <label
+        for=\"search-csrc-query\" class=\"element-invisible\">Search</label>\r\n            <input
+        autocomplete=\"off\" class=\"form-control\" id=\"search-csrc-query\" name=\"search-csrc-query\"
+        type=\"text\" size=\"15\" maxlength=\"128\" placeholder=\"Search CSRC\"/>\r\n
+        \           <button type=\"button\" id=\"search-csrc-submit-btn\" name=\"op\"
+        class=\"form-submit\">\r\n                <span class=\"element-invisible\">Search</span>\r\n
+        \               <i class=\"fa fa-search\"></i>\r\n            </button>\r\n
+        \       </div>\r\n      <span id=\"nvd-menu-button\" class=\"pull-right\">\r\n
+        \       <a href=\"#\" id=\"nvd-menu-button-link\">\r\n          <span class=\"fa
+        fa-bars\"></span> \r\n          <span id=\"nvd-menu-full-text\"><span class=\"hidden-xxs\">CSRC
+        </span>MENU</span>\r\n        </a>\r\n      </span>\r\n    </div>\r\n    </div>\r\n
+        \ </div>\r\n    \r\n    <div class=\"form-inline hidden-md hidden-lg\">\r\n
+        \       <label for=\"search-csrc-query\" class=\"element-invisible\">Search</label>\r\n
+        \       <input autocomplete=\"off\" class=\"form-control\" id=\"search-csrc-query-mobile\"
+        name=\"search-csrc-query\" type=\"text\" size=\"15\" maxlength=\"128\" placeholder=\"Search
+        CSRC\"/>\r\n        <button type=\"button\" id=\"search-csrc-submit-btn-mobile\"
+        name=\"op\" class=\"form-submit\">\r\n            <span class=\"element-invisible\">Search</span>\r\n
+        \           <i class=\"fa fa-search\"></i>\r\n        </button>\r\n    </div>\r\n<div
+        class=\"main-menu-row container\">\r\n    <!-- Collect the nav links, forms,
+        and other content for toggling -->\r\n    <div id=\"main-menu-drop\" class=\"col-lg-12\"
+        style=\"display: none;\">\r\n        <ul>\r\n            <li><a href=\"/projects\">Projects</a></li>\r\n
+        \           <li>\r\n                <a href=\"/publications\">\r\n                    Publications\r\n
+        \                   <span class=\"expander fa fa-plus\" id=\"main-menu-pubs-expander\"
+        data-expander-name=\"publications\" data-expanded=\"false\">\r\n                        <span
+        class=\"element-invisible\">Expand or Collapse</span>\r\n                    </span>\r\n
+        \               </a>\r\n                <div style=\"display: none;\" class=\"sub-menu\"
+        data-expander-trigger=\"publications\" id=\"main-menu-pubs-expanded\">\r\n
+        \                   <div class=\"row\">\r\n                        <div class=\"col-lg-4\">\r\n
+        \                           <p><a href=\"/publications/draft-pubs\">Draft
+        Pubs</a></p>\r\n                            <p><a href=\"/publications/final-pubs\">Final
+        Pubs</a></p>\r\n                            <p><a href=\"/publications/fips\">FIPS</a></p>\r\n
+        \                           <p><a href=\"/publications/sp\">Special Publications
+        (SP<small>s</small>)</a></p>\r\n                        </div>\r\n                        <div
+        class=\"col-lg-4\">\r\n                            <p><a href=\"/publications/nistir\">NISTIR<small>s</small></a></p>\r\n
+        \                           <p><a href=\"/publications/itl-bulletin\">ITL
+        Bulletins</a></p>\r\n                            <p><a href=\"/publications/white-paper\">White
+        Papers</a></p>\r\n                        </div>\r\n                        <div
+        class=\"col-lg-4\">\r\n                            <p><a href=\"/publications/journal-article\">Journal
+        Articles</a></p>\r\n                            <p><a href=\"/publications/conference-paper\">Conference
+        Papers</a></p>\r\n                            <p><a href=\"/publications/book\">Books</a></p>\r\n
+        \                       </div>\r\n                    </div>\r\n                </div>\r\n
+        \           </li>\r\n            <li>\r\n                <a href=\"/topics\">\r\n
+        \                   Topics\r\n                    <span class=\"expander fa
+        fa-plus\" id=\"main-menu-topics-expander\" data-expander-name=\"topics\" data-expanded=\"false\">\r\n
+        \                       <span class=\"element-invisible\">Expand or Collapse</span>\r\n
+        \                   </span>\r\n                </a>\r\n                <div
+        style=\"display: none;\" class=\"sub-menu\" data-expander-trigger=\"topics\"
+        id=\"main-menu-topics-expanded\">\r\n                    <div class=\"row\">\r\n
+        \                       <div class=\"col-lg-4\">\r\n                            <p><a
+        href=\"/Topics/Security-and-Privacy\">Security &amp Privacy</a></p>\r\n                            <p><a
+        href=\"/Topics/Applications\">Applications</a></p>\r\n                        </div>\r\n
+        \                       <div class=\"col-lg-4\">\r\n                            <p><a
+        href=\"/Topics/Technologies\">Technologies</a></p>\r\n                            <p><a
+        href=\"/Topics/Sectors\">Sectors</a></p>\r\n                        </div>\r\n
+        \                       <div class=\"col-lg-4\">\r\n                            <p><a
+        href=\"/Topics/Laws-and-Regulations\">Laws &amp; Regulations</a></p>\r\n                            <p><a
+        href=\"/Topics/Activities-and-Products\">Activities &amp; Products</a></p>\r\n
+        \                       </div>\r\n                    </div>\r\n                </div>\r\n
+        \           </li>\r\n            <li><a href=\"/news\">News &amp; Updates</a></li>\r\n
+        \           <li><a href=\"/events\">Events</a></li>\r\n            <li><a
+        href=\"/glossary\">Glossary</a></li>\r\n            <li>\r\n                <a
+        href=\"/about\">\r\n                    About CSRC\r\n                    <span
+        class=\"expander fa fa-plus\" id=\"main-menu-about-expander\" data-expander-name=\"about\"
+        data-expanded=\"false\">\r\n                        <span class=\"element-invisible\">Expand
+        or Collapse</span>\r\n                    </span>\r\n                </a>\r\n
+        \               <div style=\"display: none;\" class=\"sub-menu\" data-expander-trigger=\"about\"
+        id=\"main-menu-about-expanded\">\r\n                    <div class=\"row\">\r\n
+        \                       <div class=\"col-lg-6\">\r\n                            <p>\r\n
+        \                               <strong>Computer Security Division</strong><br
+        />\r\n                                <ul>\r\n                                    <li><a
+        href=\"/Groups/Computer-Security-Division/Cryptographic-Technology\">Cryptographic
+        Technology</a></li>\r\n                                    <li><a href=\"/Groups/Computer-Security-Division/Secure-Systems-and-Applications\">Secure
+        Systems and Applications</a></li>\r\n                                    <li><a
+        href=\"/Groups/Computer-Security-Division/Security-Components-and-Mechanisms\">Security
+        Components and Mechanisms</a></li>\r\n                                    <li><a
+        href=\"/Groups/Computer-Security-Division/Security-Engineering-and-Risk-Management\">Security
+        Engineering and Risk Management</a></li>\r\n                                    <li><a
+        href=\"/Groups/Computer-Security-Division/Security-Testing-Validation-and-Measurement\">Security
+        Testing, Validation, and Measurement</a></li>\r\n                                </ul>\r\n
+        \                           </p>\r\n                        </div>\r\n                        <div
+        class=\"col-lg-6\">\r\n                            <p>\r\n                                <strong>Applied
+        Cybersecurity Division</strong><br />\r\n                                <ul>\r\n
+        \                                   <li><a href=\"/Groups/Applied-Cybersecurity-Division/Cybersecurity-and-Privacy-Applications\">Cybersecurity
+        and Privacy Applications</a></li>\r\n                                    <li><a
+        href=\"/Groups/Applied-Cybersecurity-Division/National-Cybersecurity-Center-of-Excellence\">National
+        Cybersecurity Center of Excellence (NCCoE)</a></li>\r\n                                    <li><a
+        href=\"https://www.nist.gov/nice/\">National Initiative for Cybersecurity
+        Education (NICE)</a></li>\r\n                                    <li><a href=\"/Groups/Applied-Cybersecurity-Division/Trusted-Identities-Group\">Trusted
+        Identities Group</a></li>\r\n                                </ul>\r\n                            </p>\r\n
+        \                           <p>\r\n                                <a href=\"/contact\">\r\n
+        \                                   Contact Us\r\n                                </a>\r\n
+        \                           </p>\r\n                        </div>\r\n                    </div>\r\n
+        \               </div>\r\n            </li>\r\n        </ul>\r\n    </div><!--
+        /#mobile-nav-container -->\r\n</div>\r\n\r\n</nav>\r\n<section id=\"itl-header\"
+        class=\"has-menu\">\r\n    <div class=\"container\">\r\n        <div class=\"row\">\r\n
+        \           <div class=\"col-sm-12 col-md-8\">\r\n                <h2 class=\"hidden-xs
+        hidden-sm\">\r\n                    <a href=\"https://www.nist.gov/itl\" target=\"_blank\"
+        id=\"itl-header-link\">Information Technology Laboratory</a>\r\n                </h2>\r\n
+        \               <h1 class=\"hidden-xs hidden-sm\">\r\n                    <a
+        href=\"/\" id=\"csrc-header-link-lg\">Computer Security Resource Center</a>\r\n
+        \               </h1>\r\n                <h1 class=\"hidden-xs text-center
+        hidden-md hidden-lg\" id=\"csrc-header-link-md\">Computer Security Resource
+        Center</h1>\r\n                <h1 class=\"hidden-sm hidden-md hidden-lg text-center\"
+        id=\"csrc-header-link-sm\">Computer Security<br />Resource Center</h1>\r\n
+        \           </div>\r\n            <div class=\"col-sm-12 col-md-4\">\r\n                <a
+        id=\"logo-csrc\" href=\"/\" style=\"width: 100%; text-align: center; display:
+        block;\"><img id=\"img-logo-csrc\"src=\"/CSRC/Media/images/CSRC-white-134-38.png\"
+        alt=\"CSRC Logo\" class=\"csrc-header-logo\"></a>\r\n            </div>\r\n
+        \       </div>\r\n    </div>\r\n</section>\r\n\r\n<div id=\"body-section\"
+        class=\"container\">\r\n\r\n\r\n  <div class=\"publications-detail\">\r\n
+        \   <ol class=\"breadcrumb\"><a href=\"/Publications\" class=\"CMSBreadCrumbsLink\">Publications</a>
+        <span class=\"fa fa-angle-right\"></span> <span  class=\"CMSBreadCrumbsCurrentItem\">Detail</span>\r\n</ol>
+        \r\n\r\n\r\n\r\n    \r\n    \r\n    \r\n    \r\n    \r\n    \r\n    \r\n        <h3
+        id=\"pub-header-display-container\">\r\n            <span id=\"pub-header-full-display\">White
+        Paper (DRAFT)</span>\r\n            \r\n            <i class=\"fa fa-exclamation-triangle
+        text-danger\" id=\"pub-header-withdrawn\" title=\"This publication has been
+        withdrawn. See details below.\"></i>\r\n            \r\n            \r\n        </h3>\r\n
+        \   \r\n        <h1 id=\"pub-title\">Framework for Improving Critical Infrastructure
+        Cybersecurity, Version 1.1</h1>\r\n        \r\n        <div class=\"page-social-buttons\">\r\n
+        \           <a href=\"#\" class=\"social-facebook\" id=\"socialFacebook\"><i
+        class=\"fa fa-facebook fa-fw\" aria-hidden=\"true\"></i></a>\r\n            <a
+        href=\"#\" class=\"social-google-plus\" id=\"socialGooglePlus\"><i class=\"fa
+        fa-google-plus\" aria-hidden=\"true\"></i></a>\r\n            <a href=\"#\"
+        class=\"social-twitter\" id=\"socialTwitter\"><i class=\"fa fa-twitter fa-fw\"
+        aria-hidden=\"true\"></i></a>\r\n        </div>\r\n    \r\n        <p class=\"hidden-lg
+        hidden-md\">\r\n            &nbsp;&nbsp;&nbsp;\r\n            <a href=\"#pubs-documentation\"
+        class=\"btn btn-lg btn-info\" id=\"pub-topics-anchor-sm\">Documentation</a>\r\n
+        \           \r\n            &nbsp;&nbsp;&nbsp;\r\n            <a href=\"#pubs-topics\"
+        class=\"btn btn-lg btn-info\" id=\"pub-topics-anchor-sm\">Topics</a>\r\n            \r\n
+        \       </p>\r\n    \r\n        <div class=\"row\">\r\n            <div  class=\"col-md-8
+        col-sm-12 publication-panel\">\r\n                \r\n                    \r\n
+        \                   \r\n                <p>\r\n                \r\n                \r\n
+        \                   <strong>Date Published:</strong> <span id=\"pub-release-date\">January
+        2017</span><br />\r\n                \r\n    \r\n                \r\n    \r\n
+        \               \r\n                \r\n                    \r\n                        \r\n
+        \                          <strong>Comments Due:</strong> <span id=\"pub-comments-due\">April
+        10, 2017 (public comment period is CLOSED)</span><br />\r\n                            <strong>Email
+        Questions to:</strong> <span id=\"pub-comments-email\"><a href = \"mailto:
+        cyberframework@nist.gov?Subject=\">cyberframework@nist.gov</a></span><br />\r\n
+        \                       \r\n                    \r\n                \r\n                </p>\r\n
+        \               \r\n                <p><p><strong>Withdrawn:</strong> <span
+        id='pub-withdrawn-info'>December 05, 2017 <i class='fa fa-exclamation-triangle
+        text-danger' id='pub-withdrawn-icon'></i></p>\r\n                \r\n                \r\n
+        \               \r\n                \r\n                <p>\r\n                \r\n
+        \   \r\n                \r\n                </p>\r\n                \r\n                \r\n
+        \               <h4>Author(s)</h4>\r\n                <p><strong id=\"pub-authors-container\"
+        data-total=\"1\"><span id='pub-author-0'>National Institute of Standards and
+        Technology</span></strong></p>\r\n                \r\n    \r\n    \r\n                \r\n
+        \   \r\n    \r\n                \r\n    \r\n    \r\n                \r\n                <h4>Announcement</h4>\r\n
+        \               <p id=\"pub-announcement\"><p>On January 10, 2017, NIST released
+        proposed updates to the Cybersecurity Framework. This draft Version 1.1 of
+        the Cybersecurity Framework seeks to clarify, refine, and enhance the Framework,
+        making it easier to use.&nbsp; Updates were derived from feedback NIST received
+        since the publication of Cybersecurity Framework Version 1.0, including responses
+        to a December 2015 Request for Information (RFI), <a href=\"https://www.federalregister.gov/articles/2015/12/11/2015-31217/views-on-the-framework-for-improving-critical-infrastructure-cybersecurity\"><em>Views
+        on the Framework for Improving Critical Infrastructure Cybersecurity</em></a>,
+        and discourse at <a href=\"https://www.nist.gov/news-events/events/2016/04/cybersecurity-framework-workshop-2016\">Cybersecurity
+        Framework Workshop 2016</a>.&nbsp; More information can be found at the <a
+        href=\"https://www.nist.gov/cyberframework\">Cybersecurity Framework site</a>.</p>\n\n<p>See
+        the \"Note to Reviewers on the Update and Next Steps\" on pp. ii-iii for additional
+        review guidance.</p>\n</p>\r\n                \r\n    \r\n    \r\n                <div
+        class=\"bs-callout bs-callout-success pub-abstract-callout\">\r\n                    <h4
+        id=\"pubs-abstract-header\">Abstract</h4>\r\n                    <div class=\"hidden-sm
+        hidden-xs hidden-xxs\" id=\"pub-detail-abstract-info\"><p>The national and
+        economic security of the United States depends on the reliable functioning
+        of critical infrastructure. Cybersecurity threats take advantage of the increased
+        complexity and connectivity of critical infrastructure systems, placing the
+        Nation's security at risk. To better protect these systems, the President
+        issued Executive Order 13636, \"Improving Critical Infrastructure Cybersecurity,\"
+        on February 12, 2013. The Executive Order established that \"[i]t is the Policy
+        of the United States to enhance the security and resilience of the Nation's
+        critical infrastructure and to maintain a cyber environment that encourages
+        efficiency, innovation, and economic prosperity while promoting safety, security,
+        business confidentiality, privacy, and civil liberties.\" In enacting this
+        policy, the Executive Order calls for the development of a voluntary risk-based
+        Cybersecurity Framework - a set of industry standards and best practices to
+        help organizations manage cybersecurity risks. The resulting Framework, created
+        through collaboration between government and the private sector, uses a common
+        language to address and manage cybersecurity risk in a cost-effective way
+        based on business needs without placing additional regulatory requirements
+        on businesses. The Framework enables organizations - regardless of size, degree
+        of cybersecurity risk, or cybersecurity sophistication - to apply the principles
+        and best practices of risk management to improving the security and resilience
+        of critical infrastructure. The Framework provides organization and structure
+        to today's multiple approaches to cybersecurity by assembling standards, guidelines,
+        and practices that are working effectively in industry today. Moreover, because
+        it references globally recognized standards for cybersecurity, the Framework
+        can also be used by organizations located outside the United States and can
+        serve as a model for international cooperation on strengthening critical infrastructure
+        cybersecurity.</p></div>\r\n                    <div class=\"hidden-lg hidden-md\">\r\n
+        \                       \r\n                        <div id=\"pub-detail-abstract-min\">\r\n
+        \                           The national and economic security of the United
+        States depends on the reliable functioning of critical infrastructure. Cybersecurity
+        threats take advantage of the increased complexity and connectivity of critical
+        infrastructure systems, placing the Nation's security at risk. To better protect...\r\n
+        \                           <a href=\"#pubs-abstract-header\" id=\"pub-detail-abs-show\">See
+        full abstract</a>\r\n                        </div>\r\n                        <div
+        id=\"pub-detail-abstract-all\" style=\"display: none;\">\r\n                            <p>The
+        national and economic security of the United States depends on the reliable
+        functioning of critical infrastructure. Cybersecurity threats take advantage
+        of the increased complexity and connectivity of critical infrastructure systems,
+        placing the Nation's security at risk. To better protect these systems, the
+        President issued Executive Order 13636, \"Improving Critical Infrastructure
+        Cybersecurity,\" on February 12, 2013. The Executive Order established that
+        \"[i]t is the Policy of the United States to enhance the security and resilience
+        of the Nation's critical infrastructure and to maintain a cyber environment
+        that encourages efficiency, innovation, and economic prosperity while promoting
+        safety, security, business confidentiality, privacy, and civil liberties.\"
+        In enacting this policy, the Executive Order calls for the development of
+        a voluntary risk-based Cybersecurity Framework - a set of industry standards
+        and best practices to help organizations manage cybersecurity risks. The resulting
+        Framework, created through collaboration between government and the private
+        sector, uses a common language to address and manage cybersecurity risk in
+        a cost-effective way based on business needs without placing additional regulatory
+        requirements on businesses. The Framework enables organizations - regardless
+        of size, degree of cybersecurity risk, or cybersecurity sophistication - to
+        apply the principles and best practices of risk management to improving the
+        security and resilience of critical infrastructure. The Framework provides
+        organization and structure to today's multiple approaches to cybersecurity
+        by assembling standards, guidelines, and practices that are working effectively
+        in industry today. Moreover, because it references globally recognized standards
+        for cybersecurity, the Framework can also be used by organizations located
+        outside the United States and can serve as a model for international cooperation
+        on strengthening critical infrastructure cybersecurity.</p><br />\r\n                            <a
+        href=\"#pubs-abstract-header\" id=\"pub-detail-abs-hide\">Hide full abstract</a>\r\n
+        \                       </div>\r\n                        \r\n                    </div>\r\n
+        \                   <h4>Keywords</h4> <span id='pub-keywords-container' data-total='5'><span
+        id='pub-keyword-0'>critical infrastructure</span>; <span id='pub-keyword-1'>cybersecurity</span>;
+        <span id='pub-keyword-2'>Executive Order 13636</span>; <span id='pub-keyword-3'>framework</span>;
+        <span id='pub-keyword-4'>security</span></span>\r\n                </div>\r\n
+        \               \r\n                <h5>Control Families</h5>\r\n                <p>\r\n
+        \                   \r\n                    <span id=\"pub-control-fam-container\"
+        data-total=\"18\">\r\n                    \r\n                        <span
+        id=\"pub-control-fam-0\">Access Control</span>; \r\n                    \r\n
+        \                       <span id=\"pub-control-fam-1\">Audit and Accountability</span>;
+        \r\n                    \r\n                        <span id=\"pub-control-fam-2\">Awareness
+        and Training</span>; \r\n                    \r\n                        <span
+        id=\"pub-control-fam-3\">Configuration Management</span>; \r\n                    \r\n
+        \                       <span id=\"pub-control-fam-4\">Contingency Planning</span>;
+        \r\n                    \r\n                        <span id=\"pub-control-fam-5\">Identification
+        and Authentication</span>; \r\n                    \r\n                        <span
+        id=\"pub-control-fam-6\">Incident Response</span>; \r\n                    \r\n
+        \                       <span id=\"pub-control-fam-7\">Maintenance</span>;
+        \r\n                    \r\n                        <span id=\"pub-control-fam-8\">Media
+        Protection</span>; \r\n                    \r\n                        <span
+        id=\"pub-control-fam-9\">Personnel Security</span>; \r\n                    \r\n
+        \                       <span id=\"pub-control-fam-10\">Physical and Environmental
+        Protection</span>; \r\n                    \r\n                        <span
+        id=\"pub-control-fam-11\">Planning</span>; \r\n                    \r\n                        <span
+        id=\"pub-control-fam-12\">Program Management</span>; \r\n                    \r\n
+        \                       <span id=\"pub-control-fam-13\">Risk Assessment</span>;
+        \r\n                    \r\n                        <span id=\"pub-control-fam-14\">Security
+        Assessment and Authorization</span>; \r\n                    \r\n                        <span
+        id=\"pub-control-fam-15\">System and Communications Protection</span>; \r\n
+        \                   \r\n                        <span id=\"pub-control-fam-16\">System
+        and Information Integrity</span>; \r\n                    \r\n                        <span
+        id=\"pub-control-fam-17\">System and Services Acquisition</span>; \r\n                    </span>\r\n
+        \                   \r\n                </p>\r\n    \r\n            </div>\r\n
+        \           <div class=\"col-md-4 col-sm-12\">\r\n    \r\n                <div
+        class=\"bs-callout bs-callout-success\" id=\"pubs-documentation\">\r\n                    <h4>Documentation</h4>\r\n
+        \   \r\n                    <p>\r\n                        <strong>Publication:</strong><br
+        />\r\n                        \r\n                        <a href=\"https://www.nist.gov/file/344211\"
+        data-identity=\"first-link-display\" id=\"pub-doc-0\"><i class=\"fa fa-file-pdf-o\"></i>
+        Draft Cybersecurity Framework v1.1 (with markup)</a><br />\r\n                        \r\n
+        \                       \r\n                    </p>\r\n    \r\n                    <p>\r\n
+        \                       <strong>Supplemental Material:</strong><br />\r\n
+        \                       \r\n                            <span id=\"pub-supp-container\"
+        data-total=\"3\">\r\n                            \r\n                                <a
+        href=\"https://www.nist.gov/file/344206\" id=\"pub-supp-link-0\"><i class=\"fa
+        fa-file-pdf-o\"></i> Draft Cybersecurity Framework v1.1 (no markup) (pdf)</a><br
+        />\r\n                            \r\n                                <a href=\"https://www.nist.gov/file/344216\"
+        id=\"pub-supp-link-1\"><i class=\"fa fa-file-excel-o\"></i> Draft Cybersecurity
+        Framework v1.1 Core (xls)</a><br />\r\n                            \r\n                                <a
+        href=\"https://www.nist.gov/cyberframework/draft-version-11\" id=\"pub-supp-link-2\"><i
+        class=\"fa fa-file\"></i> Cybersecurity Framework Draft v1.1 homepage (other)</a><br
+        />\r\n                            </span>\r\n                        \r\n
+        \                   </p>\r\n                    \r\n                    \r\n
+        \                   \r\n                    \r\n    \r\n                    \r\n
+        \                   <p>\r\n                        <strong>Document History:</strong><br
+        />\r\n                        <span id=\"pub-history-container\" data-total=\"3\">\r\n
+        \                       <span id='pub-history-link-0' data-current-document='true'>Draft
+        White Paper   (1/10/17)</span><br/><a href='/publications/detail/white-paper/2017/12/05/cybersecurity-framework-v11/draft'
+        id='pub-history-link-1' data-current-document='false'>Draft White Paper   (12/5/17)</a><br/><a
+        href='/publications/detail/white-paper/2018/04/16/cybersecurity-framework-v11/final'
+        id='pub-history-link-2' data-current-document='false'>White Paper   (4/16/18)</a><br/>\r\n
+        \                       </span>\r\n                    </p>\r\n                    \r\n
+        \   \r\n                </div>\r\n    \r\n           \r\n                \r\n
+        \               <div class=\"bs-callout bs-callout-danger\" id=\"pubs-topics\">\r\n
+        \                   <h4>Topics</h4>\r\n                    <span id=\"pub-categories-container\"
+        data-total=\"3\">\r\n                    \r\n                        <p>\r\n
+        \                           <strong id=\"pub-cat-0\">Security and Privacy</strong><br
+        /><span id=\"pub-cat-top-container-0\" data-total=\"6\"></span><a href='/Topics/Security-and-Privacy/security-programs-and-operations/audit-and-accountability'
+        id='pub-cat-top-0-0'>audit & accountability</a>; <a href='/Topics/Security-and-Privacy/security-programs-and-operations/contingency-planning'
+        id='pub-cat-top-0-2'>contingency planning</a>; <a href='/Topics/Security-and-Privacy/risk-management/risk-assessment'
+        id='pub-cat-top-0-4'>risk assessment</a>; \r\n                        </p>\r\n
+        \                   \r\n                        <p>\r\n                            <strong
+        id=\"pub-cat-1\">Applications</strong><br /><span id=\"pub-cat-top-container-1\"
+        data-total=\"1\"></span><a href='/Topics/Applications/cybersecurity-framework'
+        id='pub-cat-top-1-0'>cybersecurity framework</a>\r\n                        </p>\r\n
+        \                   \r\n                        <p>\r\n                            <strong
+        id=\"pub-cat-2\">Laws and Regulations</strong><br /><span id=\"pub-cat-top-container-2\"
+        data-total=\"4\"></span><a href='/Topics/Laws-and-Regulations/executive-documents/CNCI'
+        id='pub-cat-top-2-0'>Comprehensive National Cybersecurity Initiative</a>;
+        <a href='/Topics/Laws-and-Regulations/executive-documents/EO-13636' id='pub-cat-top-2-2'>Executive
+        Order 13636</a>; \r\n                        </p>\r\n                    \r\n
+        \                   </span>\r\n                </div>\r\n                \r\n
+        \   \r\n            </div>\r\n        </div>\r\n    \r\n\r\n\r\n  </div>\r\n<script
+        type=\"text/javascript\" src=\"/CSRC/media/js/publications.js\"></script>\r\n\r\n
+        \ <div id=\"footer-pusher\"></div>\r\n\r\n</div>\r\n\r\n<footer id=\"footer\">\r\n<div
+        class=\"container\">\r\n\r\n    <div class=\"row\">\r\n        <div class=\"col-sm-6\">\r\n
+        \           <span class=\"hidden-xs\">\r\n                <a href=\"https://www.nist.gov\"
+        title=\"National Institute of Standards and Technology\" rel=\"home\" target=\"_blank\"
+        class=\"footer-nist-logo\" id=\"footer-nist-logo-link\">\r\n                    <img
+        src=\"/CSRC/Media/images/logo_rev.png\" alt=\"National Institute of Standards
+        and Technology logo\" id=\"footer-nist-logo\"/>\r\n                </a>\r\n
+        \           </span>\r\n\r\n            <div class=\"row footer-contact-container\">\r\n
+        \               <div class=\"col-sm-12\" id=\"footer-address\">\r\n                    <strong>HEADQUARTERS</strong><br>\r\n
+        \                   100 Bureau Drive<br>\r\n                    Gaithersburg,
+        MD 20899\r\n                </div>\r\n            </div>\r\n        </div>\r\n
+        \       <div class=\"col-sm-6\">\r\n            <ul class=\"social-list text-right\"
+        style=\"display: block;\">\r\n                <li class=\"field-item service-twitter
+        list-horiz\">\r\n                    <a href=\"https://twitter.com/USNISTGOV\"
+        target=\"_blank\" class=\"social-btn social-btn--large extlink ext\" id=\"footer-social-twitter-link\">\r\n
+        \                   <i class=\"fa fa-twitter fa-fw\"><span class=\"element-invisible\">twitter</span></i><span
+        class=\"ext\"><span class=\"element-invisible\"> (link is external)</span></span>\r\n
+        \               </a>\r\n                </li>\r\n                <li class=\"field-item
+        service-facebook list-horiz\">\r\n                    <a href=\"https://www.facebook.com/USNISTGOV\"
+        target=\"_blank\" class=\"social-btn social-btn--large extlink ext\" id=\"footer-social-facebook-link\">\r\n
+        \                   <i class=\"fa fa-facebook fa-fw\"><span class=\"element-invisible\">facebook</span></i><span
+        class=\"ext\"><span class=\"element-invisible\"> (link is external)</span></span></a>\r\n\r\n
+        \               </li>\r\n                <li class=\"field-item service-linkedin
+        list-horiz\">\r\n                    <a href=\"https://www.linkedin.com/company/nist\"
+        target=\"_blank\" class=\"social-btn social-btn--large extlink ext\" id=\"footer-social-linkedin-link\">\r\n
+        \                   <i class=\"fa fa-linkedin fa-fw\"><span class=\"element-invisible\">linkedin</span></i><span
+        class=\"ext\"><span class=\"element-invisible\"> (link is external)</span></span></a>\r\n\r\n
+        \               </li>\r\n                <li class=\"field-item service-youtube
+        list-horiz\">\r\n                    <a href=\"https://www.youtube.com/user/USNISTGOV\"
+        target=\"_blank\" class=\"social-btn social-btn--large extlink ext\" id=\"footer-social-youtube-link\">\r\n
+        \                   <i class=\"fa fa-youtube fa-fw\"><span class=\"element-invisible\">youtube</span></i><span
+        class=\"ext\"><span class=\"element-invisible\"> (link is external)</span></span></a>\r\n\r\n
+        \               </li>\r\n                <li class=\"field-item service-rss
+        list-horiz\">\r\n                    <a href=\"https://www.nist.gov/news-events/nist-rss-feeds\"
+        target=\"_blank\" class=\"social-btn social-btn--large extlink\" id=\"footer-social-rss-link\">\r\n
+        \                   <i class=\"fa fa-rss fa-fw\"><span class=\"element-invisible\">rss</span></i></a>\r\n\r\n
+        \               </li>\r\n                <li class=\"field-item service-govdelivery
+        list-horiz last\">\r\n                    <a href=\"https://public.govdelivery.com/accounts/USNIST/subscriber/new?qsp=USNIST_3\"
+        target=\"_blank\" class=\"social-btn social-btn--large extlink ext\" title=\"Subscribe
+        to CSRC and publication updates, and other NIST cybersecurity news\" id=\"footer-social-govdelivery-link\">\r\n
+        \                       <i class=\"fa fa-envelope fa-fw\"><span class=\"element-invisible\">govdelivery</span></i><span
+        class=\"ext\"><span class=\"element-invisible\"> (link is external)</span></span>\r\n
+        \                   </a>\r\n                </li>\r\n            </ul>\r\n
+        \           <p class=\"text-right\">\r\n                Want updates about
+        CSRC and our publications? \r\n                <a href=\"https://public.govdelivery.com/accounts/USNIST/subscriber/new?qsp=USNIST_3\"
+        target=\"_blank\" class=\"btn btn-lg btn-info\" style=\"background-color:
+        #12659c!important; border-color: #12659c!important;\" id=\"footer-subscribe-link\">Subscribe</a>\r\n
+        \           </p>\r\n        </div>\r\n    </div>\r\n    <div class=\"row hidden-sm
+        hidden-md hidden-lg\">\r\n        <div class=\"col-sm-12\">\r\n                <a
+        href=\"https://www.nist.gov\" title=\"National Institute of Standards and
+        Technology\" rel=\"home\" target=\"_blank\" class=\"footer-nist-logo\" id=\"footer-bottom-nist-logo-link\">\r\n
+        \                   <img src=\"/CSRC/Media/images/logo_rev.png\" alt=\"National
+        Institute of Standards and Technology logo\" id=\"footer-bottom-nist-logo\"/>\r\n
+        \               </a>\r\n        </div>\r\n    </div>\r\n\r\n    <div class=\"row\">\r\n
+        \       <div class=\"col-sm-12\">\r\n            <p>\r\n                <a
+        href=\"mailto:webmaster-csrc@nist.gov?subject=CSRC Inquiry\" id=\"footer-webmaster-link\">Webmaster</a>
+        | \r\n                <a href=\"/about/contact\" id=\"footer-contact-us-link\">Contact
+        Us</a> |\r\n                <a href=\"https://www.nist.gov/about-nist/our-organization\"
+        style=\"display: inline-block;\" id=\"footer-org-link\">Our Other Offices</a>\r\n
+        \           </p>\r\n        </div>\r\n    </div>\r\n\r\n    <div id=\"footer-nav-menu\"
+        class=\"row\" role=\"navigation\">\r\n        <div class=\"col-md-8 col-sm-6
+        col-xs-12 col-xxs-12\">\r\n            <div class=\"row\">\r\n                <div
+        class=\"col-md-4\">\r\n                    <p>\r\n                        <a
+        href=\"/projects\">PROJECTS</a>\r\n                    </p>\r\n                    <p>\r\n
+        \                       <a href=\"/publications\">PUBLICATIONS</a><br/>\r\n
+        \                       <a href=\"/publications/draft-pubs\">Draft Pubs</a><br/>\r\n
+        \                       <a href=\"/publications/final-pubs\">Final Pubs</a><br/>\r\n
+        \                       <a href=\"/publications/fips\">FIPS</a><br/>\r\n                        <a
+        href=\"/publications/sp\">Special Publications (SPs)</a><br/>\r\n                        <a
+        href=\"/publications/nistir\">NISTIRs</a><br/>\r\n                        <a
+        href=\"/publications/itl-bulletin\">ITL Bulletins</a><br/>\r\n                        <a
+        href=\"/publications/white-paper\">White Papers</a><br/>\r\n                        <a
+        href=\"/publications/journal-article\">Journal Articles</a><br/>\r\n                        <a
+        href=\"/publications/conference-paper\">Conference Papers</a><br/>\r\n                        <a
+        href=\"/publications/book\">Books</a>\r\n                    </p>\r\n                </div>\r\n
+        \               <div class=\"col-md-4\">\r\n                    <p>\r\n                        <a
+        href=\"/topics\">TOPICS</a><br/>\r\n                        <a href=\"/Topics/Security-and-Privacy\">Security
+        &amp; Privacy</a><br/>\r\n                        <a href=\"/Topics/Applications\">Applications</a><br/>\r\n
+        \                       <a href=\"/Topics/Technologies\">Technologies</a><br/>\r\n
+        \                       <a href=\"/Topics/Sectors\">Sectors</a><br/>\r\n                        <a
+        href=\"/Topics/Laws-and-Regulations\">Laws &amp; Regulations</a><br/>\r\n
+        \                       <a href=\"/Topics/Activities-and-Products\">Activities
+        &amp; Products</a>\r\n                    </p>\r\n                    <p>\r\n
+        \                       <a href=\"/news\">NEWS &amp; UPDATES</a>\r\n                    </p>\r\n
+        \                   <p>\r\n                        <a href=\"/events\">EVENTS</a>\r\n
+        \                   </p>\r\n                    <p>\r\n                        <a
+        href=\"/glossary\">GLOSSARY</a>\r\n                    </p>\r\n                </div>\r\n
+        \               <div class=\"col-md-4\">\r\n                    <p>\r\n                        <a
+        href=\"/about\">ABOUT CSRC</a><br/>\r\n                        <a href=\"/about\">Computer
+        Security Division</a><br/>\r\n                        <a href=\"/about\">Applied
+        Cybersecurity Division</a><br/>\r\n                        <a href=\"/contact\">Contact
+        Us</a>\r\n                    </p>\r\n                </div>\r\n            </div>\r\n
+        \        </div>\r\n        <div class=\"col-md-4 col-sm-6 col-xs-12 col-xxs-12\">\r\n
+        \               <span class=\"pull-right text-right\">\r\n                    <p><strong
+        id=\"footer-info-itl\">Information Technology Laboratory<span class=\"hidden-xs\">
+        (ITL)</span></strong></p>\r\n                    <strong id=\"footer-info-csd\">Computer
+        Security Division<span class=\"hidden-xs\"> (CSD)</span></strong><br/>\r\n
+        \                   <span id=\"footer-info-csd-phone\">TEL: 301.975.8443</span><br/>\r\n
+        \                   <strong id=\"footer-info-acd\">Applied Cybersecurity Division<span
+        class=\"hidden-xs\"> (ACD)</span></strong>\r\n                    <br /><br
+        /><br />\r\n                    Contact CSRC Webmaster: <a href=\"mailto:webmaster-csrc@nist.gov?subject=CSRC
+        Inquiry\" style=\"display: inline-block;\"  id=\"footer-info-webmaster-link\">webmaster-csrc@nist.gov</a>\r\n
+        \               </span>\r\n        </div>\r\n    </div>\r\n\r\n    <div class=\"row\">\r\n
+        \       <div class=\"col-lg-12 footer-bottom-links-container\" id=\"footer-bottom-links-container\">\r\n
+        \           <p>\r\n                <a target=\"_blank\" href=\"https://www.nist.gov/privacy-policy\">Privacy
+        Statement</a> |\r\n                <a target=\"_blank\" href=\"https://www.nist.gov/privacy-policy#privpolicy\">Privacy
+        Policy</a> |\r\n                <a target=\"_blank\" href=\"https://www.nist.gov/privacy-policy#secnot\">Security
+        Notice</a> |\r\n                <a target=\"_blank\" href=\"https://www.nist.gov/privacy-policy#accesstate\">Accessibility
+        Statement</a> |\r\n                <a target=\"_blank\" href=\"https://www.nist.gov/privacy\">NIST
+        Privacy Program</a> |\r\n                <a target=\"_blank\" href=\"https://www.nist.gov/no-fear-act-policy\">No
+        Fear Act Policy</a>\r\n            </p>\r\n            <p>\r\n                <a
+        target=\"_blank\" href=\"https://www.nist.gov/disclaimer\">Disclaimer</a>
+        |\r\n                <a target=\"_blank\" href=\"https://www.nist.gov/office-director/freedom-information-act\">FOIA</a>
+        |\r\n                <a target=\"_blank\" href=\"https://www.nist.gov/environmental-policy-statement\">Environmental
+        Policy Statement</a> |\r\n                <a target=\"_blank\" href=\"https://www.nist.gov/privacy-policy#cookie\">Cookie
+        Disclaimer</a> |\r\n                <a target=\"_blank\" href=\"https://www.nist.gov/summary-report-scientific-integrity\">Scientific
+        Integrity Summary</a> |\r\n                <a target=\"_blank\" href=\"https://www.nist.gov/nist-information-quality-standards\">NIST
+        Information Quality Standards</a>\r\n            </p>\r\n            <p>\r\n
+        \               <a target=\"_blank\" href=\"https://www.usa.gov/business\">Business
+        USA</a> |\r\n                <a target=\"_blank\" href=\"https://www.commerce.gov/\">Commerce.gov</a>
+        |\r\n                <a target=\"_blank\" href=\"https://www.healthcare.gov/\">Healthcare.gov</a>
+        |\r\n                <a target=\"_blank\" href=\"http://www.science.gov/\">Science.gov</a>
+        |\r\n                <a target=\"_blank\" href=\"http://www.usa.gov/\">USA.gov</a>\r\n
+        \           </p>\r\n        </div>\r\n    </div>\r\n</div>\r\n</footer>\r\n\r\n<script
+        type=\"text/javascript\">\r\n (function() {\r\n   document.getElementsByTagName('html')[0].setAttribute('lang',
+        'en');\r\n   document.getElementsByTagName('html')[0].setAttribute('xml:lang',
+        'en')\r\n})(); \r\n</script>\r\n\r\n    \r\n    </form>\r\n</body>\r\n</html>\r\n"
+    http_version: 
+  recorded_at: Tue, 28 May 2019 23:14:46 GMT
 recorded_with: VCR 4.0.0
