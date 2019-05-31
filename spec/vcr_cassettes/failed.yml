@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://csrc.nist.gov/publications/search?keywords-lg=2222
+    uri: https://csrc.nist.gov/publications/search?keywords-lg=2222&status-lg=Final,Withdrawn
     body:
       encoding: US-ASCII
       string: ''
@@ -29,8 +29,8 @@ http_interactions:
       Server:
       - Microsoft-IIS/8.5
       Set-Cookie:
-      - ASP.NET_SessionId=0luxop511ttzpdijwb2yiect; path=/; secure; HttpOnly
-      - CMSCsrfCookie=OYPfgcxlbCAWo19U7e3iIKgzbFARzkQ5ngnIAotF; path=/; secure; HttpOnly
+      - ASP.NET_SessionId=syfxv3sxylqgdiyt12znwjc5; path=/; secure; HttpOnly
+      - CMSCsrfCookie=vily8Ojn2yhijX9YCbxIgtuJoRpz2EOt98t6HM+c; path=/; secure; HttpOnly
       - CMSPreferredCulture=en-US; path=/; HttpOnly; Secure
       X-Frame-Options:
       - SAMEORIGIN
@@ -39,9 +39,9 @@ http_interactions:
       X-Aspnet-Version:
       - 4.0.30319
       Date:
-      - Thu, 09 May 2019 11:55:10 GMT
+      - Fri, 31 May 2019 11:41:38 GMT
       Content-Length:
-      - '84519'
+      - '84591'
       Strict-Transport-Security:
       - max-age=31536000
     body:
@@ -84,10 +84,10 @@ http_interactions:
         \n<link href=\"/CSRC/Media/images/favicons/favicon.ico\" type=\"image/x-icon\"
         rel=\"shortcut icon\"/>\r\n<link href=\"/CSRC/Media/images/favicons/favicon.ico\"
         type=\"image/x-icon\" rel=\"icon\"/>\r\n</head>\r\n<body class=\"LTR Unknown
-        ENUS ContentBody\" >\r\n    \r\n    <form method=\"post\" action=\"/publications/search?keywords-lg=2222\"
+        ENUS ContentBody\" >\r\n    \r\n    <form method=\"post\" action=\"/publications/search?keywords-lg=2222&amp;status-lg=Final%2cWithdrawn\"
         id=\"form\">\r\n<input type=\"hidden\" name=\"__CMSCsrfToken\" id=\"__CMSCsrfToken\"
-        value=\"s1n5TiY9AT7RvFovcaMfNXrOEng9gSFSGPwg7JUcz7QgErdUS7ZwV5ai5BkJpoAcPfe7dDTPZIaunzPsshj/8yumcKzFKfdAd/vxd1ctqpA=\"
-        />\r\n<input type=\"hidden\" name=\"__VIEWSTATE\" id=\"__VIEWSTATE\" value=\"0fCeFvYEuUUx+X4qfo2oHCH2EiIvDGjhRS3XTU0c87Fb+x8HYsDdEclRWq2SmzfYo1+JYDVmRXFz2bM1rldToxbrSHXdfdiGZ1Y55xXBu0oY6FKfOecCxjUA05aIsCuROSn8kjhuijfE90v8e3yF1ptW2yZAZNWs8WOQgHQWZdNlfoHMRtgvCqFF6okWU3ICIe8qmonf+kWS7hB3xUUQcMq+pkNi4XNyOcYZ8f8e9kbk57yxvT5bRapH/mdO8l2C/UIN0qQzXDyVjp5n2hxtK7f6iH+kvimplL+l0GeM/t4BEnr4ZF8nT9cqDjXgwwxx1VvKGsRGKkvSqlw/3tNUwA==\"
+        value=\"QhMr95BTNt/dDycYlA/HlmaxyQo9Csn12lC2l8MNg7HQweoWYfSubZZb7jiwKpHWJuh1ltJsiGjq+b8QXLqGOEykk+TdE+csUz9pXFeDkTs=\"
+        />\r\n<input type=\"hidden\" name=\"__VIEWSTATE\" id=\"__VIEWSTATE\" value=\"6x2npeHGB/eMRQ477ZCjQhZuEwseV9JPtupcbLBNOd+y1BwS17jZ/U/akOvUUyCExt0/2KY5Yesd5d2JkVcujXXlC81Z0hHShheHGPe4CJdfdW05KgXosNjzbMo8z1KiXvivjuV28l4J2loSIWCOXwxiMgunu48u+tCP0Bd2roT6v2Cowd7uFfwDLCmNOAl4h7jATNvr+qHEMZRYg3AIdq1z7fSXgbz+/kGghACtzicrmVzBHQeOHM8hY47Aa1D6UMJjMGa/u+81Yw1Ki3vK587GsNTa+tfVSIEQq1mAGkozascFVp0+B+BVH3yfYtdYfdQ4XyPem3j9CPhODn1q3LCthqq7/MeYf1yHFNOjlySoTVKm+pWh3w2aEh38meWw\"
         />\r\n\r\n<input type=\"hidden\" name=\"lng\" id=\"lng\" value=\"en-US\" />\r\n<script
         type=\"text/javascript\">\r\n\t//<![CDATA[\n\r\nfunction PM_Postback(param)
         { if (window.top.HideScreenLockWarningAndSync) { window.top.HideScreenLockWarningAndSync(1080);
@@ -1069,5 +1069,5 @@ http_interactions:
         'en');\r\n   document.getElementsByTagName('html')[0].setAttribute('xml:lang',
         'en')\r\n})(); \r\n</script>\r\n\r\n    \r\n    </form>\r\n</body>\r\n</html>\r\n"
     http_version: 
-  recorded_at: Thu, 09 May 2019 11:55:13 GMT
-recorded_with: VCR 4.0.0
+  recorded_at: Fri, 31 May 2019 11:41:40 GMT
+recorded_with: VCR 5.0.0

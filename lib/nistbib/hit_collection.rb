@@ -19,11 +19,13 @@ module NistBib
     # @return [String]
     attr_reader :year
 
+    # rubocop:disable Metrics/AbcSize, Metrics/MethodLength
+
     # @param ref_nbr [String]
     # @param year [String]
     # @param opts [Hash]
     # @option opts [String] :stage
-    def initialize(ref_nbr, year = nil, opts)
+    def initialize(ref_nbr, year = nil, opts = {})
       @text = ref_nbr
       @year = year
       from, to = nil
@@ -35,7 +37,12 @@ module NistBib
       url  = "#{DOMAIN}/publications/search?keywords-lg=#{ref_nbr}"
       url += "&dateFrom-lg=#{from}" if from
       url += "&dateTo-lg=#{to}" if to
-      url += "&status-lg=Draft,Withdrawn" if /PD/ =~ opts[:stage]
+      url += if /PD/ =~ opts[:stage]
+               "&status-lg=Draft,Retired Draft,Withdrawn"
+             else
+               "&status-lg=Final,Withdrawn"
+             end
+
       doc  = Nokogiri::HTML OpenURI.open_uri(::Addressable::URI.parse(url).normalize)
       hits = doc.css("table.publications-table > tbody > tr").map do |h|
         link  = h.at("td/div/strong/a")
@@ -52,11 +59,12 @@ module NistBib
           }, self
         )
       end
-      concat hits
+      concat(hits.sort { |a, b| a.sort_value - b.sort_value })
       # concat(hits.map { |h| Hit.new(h, self) })
       @fetched = false
       # @hit_pages = hit_pages
     end
+    # rubocop:enable Metrics/AbcSize, Metrics/MethodLength
 
     # @return [Iecbib::HitCollection]
     def fetch

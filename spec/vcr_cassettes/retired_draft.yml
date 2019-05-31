@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://csrc.nist.gov/publications/search?keywords-lg=7831
+    uri: https://csrc.nist.gov/publications/search?keywords-lg=7831&status-lg=Draft,Retired%20Draft,Withdrawn
     body:
       encoding: US-ASCII
       string: ''
@@ -29,8 +29,8 @@ http_interactions:
       Server:
       - Microsoft-IIS/8.5
       Set-Cookie:
-      - ASP.NET_SessionId=mnx2qwztbsn1lw5mp2qctiby; path=/; secure; HttpOnly
-      - CMSCsrfCookie=aLWf7eNz8gu8yybtB7Uwu+IZ30TTLRiEfVW4eeYw; path=/; secure; HttpOnly
+      - ASP.NET_SessionId=ge0w1li31gf1ybfp0glxlkeu; path=/; secure; HttpOnly
+      - CMSCsrfCookie=nMGmMPEh3qsSxOoqWVkktZsJ9NTS2Nh0/GD0/rfy; path=/; secure; HttpOnly
       - CMSPreferredCulture=en-US; path=/; HttpOnly; Secure
       X-Frame-Options:
       - SAMEORIGIN
@@ -39,9 +39,9 @@ http_interactions:
       X-Aspnet-Version:
       - 4.0.30319
       Date:
-      - Thu, 09 May 2019 11:53:25 GMT
+      - Fri, 31 May 2019 11:44:22 GMT
       Content-Length:
-      - '87911'
+      - '88023'
       Strict-Transport-Security:
       - max-age=31536000
     body:
@@ -84,10 +84,10 @@ http_interactions:
         \n<link href=\"/CSRC/Media/images/favicons/favicon.ico\" type=\"image/x-icon\"
         rel=\"shortcut icon\"/>\r\n<link href=\"/CSRC/Media/images/favicons/favicon.ico\"
         type=\"image/x-icon\" rel=\"icon\"/>\r\n</head>\r\n<body class=\"LTR Unknown
-        ENUS ContentBody\" >\r\n    \r\n    <form method=\"post\" action=\"/publications/search?keywords-lg=7831\"
+        ENUS ContentBody\" >\r\n    \r\n    <form method=\"post\" action=\"/publications/search?keywords-lg=7831&amp;status-lg=Draft%2cRetired+Draft%2cWithdrawn\"
         id=\"form\">\r\n<input type=\"hidden\" name=\"__CMSCsrfToken\" id=\"__CMSCsrfToken\"
-        value=\"+krExQrjdpSDf47kEkCNAlaZ61ozkSfR1fR4Ug2y8Mitog2PsWaNHhmNgzVmDu05bQnHoRQ++8GFFl/s37974qiuA+xxfw7K9/tl72McEm8=\"
-        />\r\n<input type=\"hidden\" name=\"__VIEWSTATE\" id=\"__VIEWSTATE\" value=\"vnnZ5p1DNV+TXroMIVdSlLFJdI2fRq3pc20Ml0wXtwsMA6NASnj5QprcZ2X1fSAFbtcmPeAsi5upJOwohXET/paQ5SovpRPto0Z8ePUWs5bC02crh+QSvKnL2RciS6x/tW+qlKi8q75B6KWpe//Wn5l+usxYjry6b/kZBTEwsVINUDKQuLKqmB21X7FirQX+8YilqwknPokxv/pfJK6iNcw9Zhd21ZimYuKwXAMVrgQzWPlZi6eWN89DHN+cVZNCnENzkQxy06iH9UPFvV/xt8+FuMKjbNLR3Zel7kcNPXvh39BhRA2aJmE0jgLsEri4k0Xdky9YL+ggCzgBotcVjA==\"
+        value=\"NESDrQs9zHepXOwXv1iUcqPq1/fnea/0hkbaWS/1IHNyjlvqVKLdVDViJSXzjZqdYH/fkXgFWOkyszMtObuAOLjZtH/PpQT+KBXZymy7cQs=\"
+        />\r\n<input type=\"hidden\" name=\"__VIEWSTATE\" id=\"__VIEWSTATE\" value=\"IoYtsLmOKWZlpTllNBG/sOhomNvbbnrSSJo4IykSKkMpGzRz5sdMaryJWLE7eYsHzfDtSAoOeFD2SD62kFBByFgj1kEKOe1FUzIYIVG5UQH8FCgTB6p8G1PrWBthVSdOTkgWH2LmgJCxjvubYvto4MTtdB4F2SY3u+PsCWFjpLhViUUkI1i6Zz1lHNGCm6kw38ZmME4IItRgSMRHuNuxJCcGBVeEfIRXa5BX54iQapvdInzujt4RgevMW7P8MuN+fejM1B2/Pg2FjwgbrfE6NBGzLeItexr5xeevvN4Ji7vyEsQWiay7/D1CPIZnIcQLB6kikIqmKjOJ3MLHK8Omm3YGV2LxmT4tB2416et30EtykgyyoANYvTt0utyMZj4mHhuXm28EcCYUwB3oxpK3Wg==\"
         />\r\n\r\n<input type=\"hidden\" name=\"lng\" id=\"lng\" value=\"en-US\" />\r\n<script
         type=\"text/javascript\">\r\n\t//<![CDATA[\n\r\nfunction PM_Postback(param)
         { if (window.top.HideScreenLockWarningAndSync) { window.top.HideScreenLockWarningAndSync(1080);
@@ -1110,7 +1110,7 @@ http_interactions:
         'en');\r\n   document.getElementsByTagName('html')[0].setAttribute('xml:lang',
         'en')\r\n})(); \r\n</script>\r\n\r\n    \r\n    </form>\r\n</body>\r\n</html>\r\n"
     http_version: 
-  recorded_at: Thu, 09 May 2019 11:53:29 GMT
+  recorded_at: Fri, 31 May 2019 11:44:25 GMT
 - request:
     method: get
     uri: https://csrc.nist.gov/publications/detail/nistir/7831/archive/2011-12-06
@@ -1142,8 +1142,8 @@ http_interactions:
       Server:
       - Microsoft-IIS/8.5
       Set-Cookie:
-      - ASP.NET_SessionId=3dygoban5v4ougz5wm02gy3t; path=/; secure; HttpOnly
-      - CMSCsrfCookie=nT7FkRnICSdejUHQq4pmzH5YMurF4hprpDBu6Cz2; path=/; secure; HttpOnly
+      - ASP.NET_SessionId=rb0unktgyapvei1wcwgbfzyk; path=/; secure; HttpOnly
+      - CMSCsrfCookie=PK2ap30v3m8tyii0lX/p0Q0c8dp0kntXabgQuUwg; path=/; secure; HttpOnly
       - CMSPreferredCulture=en-US; path=/; HttpOnly; Secure
       X-Frame-Options:
       - SAMEORIGIN
@@ -1152,7 +1152,7 @@ http_interactions:
       X-Aspnet-Version:
       - 4.0.30319
       Date:
-      - Thu, 09 May 2019 11:53:27 GMT
+      - Fri, 31 May 2019 11:44:23 GMT
       Content-Length:
       - '40409'
       Strict-Transport-Security:
@@ -1258,8 +1258,8 @@ http_interactions:
         />\r\n</head>\r\n<body class=\"LTR Unknown ENUS ContentBody\" >\r\n    \r\n
         \   <form method=\"post\" action=\"/publications/detail/nistir/7831/archive/2011-12-06\"
         id=\"form\">\r\n<input type=\"hidden\" name=\"__CMSCsrfToken\" id=\"__CMSCsrfToken\"
-        value=\"vwICYO+Q5/Yck+QSRW45LoH+BiQQcVRmnTLPeD0ovUw09g7CA2yLhE3+ZDESWWaJ5A7KSZcu4sUTwRtF7amSlYm4GyMTrGhDCaSUUteh88c=\"
-        />\r\n<input type=\"hidden\" name=\"__VIEWSTATE\" id=\"__VIEWSTATE\" value=\"1tC8xhPeZsOgLfNbpEx+mM91U4gCgPXFfuZQXZjzVZM0msdDBOvwi2F4AL9kjY4QFXDoP0+eiFxtTQ+sQB1trNgbxR/VRS1qeQxxALDgaYqrF+dnfmn9DMQOHEEWsg1qJksARURLKU1cHQJZoLl/WdMrpz+XjEneb2rVNa2PXLmyqdPMqfm8RJrBJVsHqDgWyfAF7L5tjeer66Kb8+Kttt7i0SDgRM+wr93V6SjFJn066gb12U6RLaE1CH0bjfNtvzLv7SZnZDzMlHD5235qV75ceKiDgmCOB4uGsPIDWN2Iv9rqynUat4t/I/4WIA7TPKoAJIPj+WVVu/MI/S2gORS3bjH9J/DrGPNVWL/13P0=\"
+        value=\"vAU5R4/wSHxqUvU0WTDTLD6kJJ6sDAbnSAOZ1tX6MU0TX2fX/rgmLa4tBvzJSMk1sFMP5wrhouTQrIZSplsBXZpjAlLCE+sKHydQ7sHC0R8=\"
+        />\r\n<input type=\"hidden\" name=\"__VIEWSTATE\" id=\"__VIEWSTATE\" value=\"MjFlwZgL5dBvguwerAcb8EE9Ekgy4wl3bU9hKcq1aUSyMujSc20MFmITm5+lZWoDq0bCbprgRVL2trjAcS65vlnhrpVVrKjd/H/quuwrqBnB2+X3WHXcmTo0qupw2t0JUmIcRlTu/rVJ2db2pnJSKG1Xcw74VobhwRqmRoFczCRJdG1wft6fRBOWOwDdOW64l634QLkEoM2NOCpL0f4fyvqXiyhkDhE5eVLznSdiv3iHkXbvsPbRmCJ7KN3kzB7+lqyV4hecu/vPf+UO1BP8qR8buu8HDTZcqKFRJc/RxpPx6XnfqNId4+EJtRrVLxUvfErU387kzYJ9Jn26Oo2TZl/6eDu8HVG2shsLx/RGT2g=\"
         />\r\n\r\n<input type=\"hidden\" name=\"lng\" id=\"lng\" value=\"en-US\" />\r\n<script
         type=\"text/javascript\">\r\n\t//<![CDATA[\n\r\nfunction PM_Postback(param)
         { if (window.top.HideScreenLockWarningAndSync) { window.top.HideScreenLockWarningAndSync(1080);
@@ -1637,5 +1637,5 @@ http_interactions:
         'en');\r\n   document.getElementsByTagName('html')[0].setAttribute('xml:lang',
         'en')\r\n})(); \r\n</script>\r\n\r\n    \r\n    </form>\r\n</body>\r\n</html>\r\n"
     http_version: 
-  recorded_at: Thu, 09 May 2019 11:53:30 GMT
-recorded_with: VCR 4.0.0
+  recorded_at: Fri, 31 May 2019 11:44:26 GMT
+recorded_with: VCR 5.0.0

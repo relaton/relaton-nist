@@ -1,5 +1,5 @@
 <bibdata type="standard">
-  <fetched>2019-05-17</fetched>
+  <fetched>2019-05-31</fetched>
   <title format="text/plain" language="en" script="Latn">Security Requirements for Cryptographic Modules</title>
   <uri type="pdf">https://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.140-3.pdf</uri>
   <uri type="doi">https://doi.org/10.6028/NIST.FIPS.140-3</uri>
@@ -45,6 +45,12 @@
     <bibitem>
       <formattedref format="text/plain" language="en" script="Latn">FIPS  140-2 (May 25, 2001 (Change Notice 2, 12/3/2002))</formattedref>
       <uri type="src">https://csrc.nist.gov/publications/detail/fips/140/2/final</uri>
+    </bibitem>
+  </relation>
+  <relation type="updates">
+    <bibitem>
+      <formattedref format="text/plain" language="en" script="Latn">ITL Bulletin </formattedref>
+      <uri type="src">https://csrc.nist.gov/publications/detail/itl-bulletin/2019/05/fips-140-3-adopts-iso/iec-standards/final</uri>
     </bibitem>
   </relation>
   <series>

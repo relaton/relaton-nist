@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://csrc.nist.gov/publications/search?keywords-lg=8011
+    uri: https://csrc.nist.gov/publications/search?keywords-lg=8011&status-lg=Final,Withdrawn
     body:
       encoding: US-ASCII
       string: ''
@@ -29,8 +29,8 @@ http_interactions:
       Server:
       - Microsoft-IIS/8.5
       Set-Cookie:
-      - ASP.NET_SessionId=13ioy5nn1askuyl0bqxlfe22; path=/; secure; HttpOnly
-      - CMSCsrfCookie=XGcC1lHpuFjRGMnil1+20C3My1amNOY31DObmscD; path=/; secure; HttpOnly
+      - ASP.NET_SessionId=ruolgvhqdu41nprhvb13jw0w; path=/; secure; HttpOnly
+      - CMSCsrfCookie=4euJFSwyMkTz1TnM4XEqA1iEZNF84oF5ATkptz8e; path=/; secure; HttpOnly
       - CMSPreferredCulture=en-US; path=/; HttpOnly; Secure
       X-Frame-Options:
       - SAMEORIGIN
@@ -39,9 +39,9 @@ http_interactions:
       X-Aspnet-Version:
       - 4.0.30319
       Date:
-      - Tue, 14 May 2019 10:10:23 GMT
+      - Fri, 31 May 2019 11:34:33 GMT
       Content-Length:
-      - '96042'
+      - '96114'
       Strict-Transport-Security:
       - max-age=31536000
     body:
@@ -84,10 +84,10 @@ http_interactions:
         \n<link href=\"/CSRC/Media/images/favicons/favicon.ico\" type=\"image/x-icon\"
         rel=\"shortcut icon\"/>\r\n<link href=\"/CSRC/Media/images/favicons/favicon.ico\"
         type=\"image/x-icon\" rel=\"icon\"/>\r\n</head>\r\n<body class=\"LTR Unknown
-        ENUS ContentBody\" >\r\n    \r\n    <form method=\"post\" action=\"/publications/search?keywords-lg=8011\"
+        ENUS ContentBody\" >\r\n    \r\n    <form method=\"post\" action=\"/publications/search?keywords-lg=8011&amp;status-lg=Final%2cWithdrawn\"
         id=\"form\">\r\n<input type=\"hidden\" name=\"__CMSCsrfToken\" id=\"__CMSCsrfToken\"
-        value=\"1wG06CIRQq9bBjBy/EWi/CnQ0OQc3cyYB4Q44GLsthBlZIL1qiiOZsWK9QS7auwrZ06iyFyNy6rTRx2l2zRdTLRtfpZaxI9+FA2x/2xuZ38=\"
-        />\r\n<input type=\"hidden\" name=\"__VIEWSTATE\" id=\"__VIEWSTATE\" value=\"2ZDVfTBOXyPnd/ATA6Jk9cH0Cmgw3imwh0YLWBvXVku/+iK3Jy3GZIijztJ8ZeK7GrDiCARqLXhXPPeLAqMxO02UKmWAhlPcVv7+2WMPyu6t0yE/7uNA133fDMW7KbfYrbR+rC6BnRSU4BxHnsivo10uCss912xEM+FdO+vXHPP2bQiw5pn0eAWjT0CWPO4dGZlKOSlJON7I3ynNUyEN13V65szyI1H2WDKwrmdmCb7VmRe9PdIj846+beqkBJHlbIZWuRKMYrDVLcxipnNpwdD9wTsvhqr9wZ+asNAUtuKZ9cgOinYqB8x1IyDxnfg3egX1JYTsITFuuhgKNRKYWQ==\"
+        value=\"Iacj1kWhRvuMNrOysQHEnDU1bwkdJ1xfpAPfO5s/cEo0gwgbP0nuMAu9d7PT0r3Qk3Hi+jmYZhxN0UQcQi6JLSoGdCBIJqC2lAGGz88TtFQ=\"
+        />\r\n<input type=\"hidden\" name=\"__VIEWSTATE\" id=\"__VIEWSTATE\" value=\"GvJXUleNB5DlQ/wHFrvB/+rd2CCzgG9Bggxj+Z/BhYf1Lu2ld6Dq1SBBXQvUY/kHn8x1lA8CJyV9+1KPAy4itQnzFGN5iufkfbBRgXWGZRrh2ofBOs0ZTuwXWwpa575KAdr6Yxqd6ooKcOJcflPGa/R6gtgax2HHOqX7SYqI0jtJhz0SJgOi+lDwpXJPiKaJYB2/H01Azi3jOEjtHbQlQk1gPIYUwrouug5BsFBLJcnQjpd3hBG4ziYHs7jss/2t4nehRuchzItt0TBochOdylnEK9NZyQ/IIfDgg76Ha139JiLPYnmf5neuEwxPEsFu4MCFo8QZx4p8HrYxabcAGGuHl5hcnzTwDngQZHcN2gzBFl+moZAOrpIYZzPf/Wgi\"
         />\r\n\r\n<input type=\"hidden\" name=\"lng\" id=\"lng\" value=\"en-US\" />\r\n<script
         type=\"text/javascript\">\r\n\t//<![CDATA[\n\r\nfunction PM_Postback(param)
         { if (window.top.HideScreenLockWarningAndSync) { window.top.HideScreenLockWarningAndSync(1080);
@@ -946,113 +946,114 @@ http_interactions:
         id=\"pub-series-1\">NISTIR</td>\r\n\t\t\t<td class=\"hidden-sm hidden-xs hidden-xxs\"
         id=\"pub-number-1\"> 8011 Vol. 3</td>\r\n\t\t\t<td>\r\n\t\t\t\t\r\n\t\t\t\t<div
         class=\"hidden-sm hidden-xs hidden-xxs\">\r\n                        <strong><a
-        href=\"/publications/detail/nistir/8011/vol-3/final\" id=\"pub-title-link-1\">Automation
+        href=\"/publications/detail/nistir/8011/vol-3/draft\" id=\"pub-title-link-1\">Automation
         Support for Security Control Assessments: Software Asset Management</a></strong>\r\n\t\t\t\t</div>\r\n\r\n\t\t\t\t<div
         class=\"hidden-md hidden-lg\">\r\n\t\t\t\t\t<strong><span id=\"pub-full-display-sm-1\">NISTIR
-        8011 Vol. 3</span><br />\r\n\t\t\t\t\t\t<a href=\"/publications/detail/nistir/8011/vol-3/final\"
+        8011 Vol. 3 (DRAFT) (WITHDRAWN)</span><br />\r\n\t\t\t\t\t\t<a href=\"/publications/detail/nistir/8011/vol-3/draft\"
         class=\"mobile-pub-title\" id=\"pub-title-link-sm-1\">Automation Support for
         Security Control Assessments: Software Asset Management</a>\r\n\t\t\t\t\t</strong>\r\n\t\t\t\t</div>\r\n\t\t\t\t\r\n\t\t\t\t<div
-        class=\"hidden-md hidden-lg\">\r\n                    <strong id=\"pub-release-date-sm-1\">12/06/2018</strong>\r\n
-        \                   <br />\r\n                    Status: <span id=\"pub-status-sm-1\">Final</span>\r\n\t\t\t\t</div>\r\n\t\t\t\t\r\n\t\t\t\t\r\n
-        \               <div class=\"control-value-no-block\">\r\n                Download:
-        <span id='download-values-1'><span id='download-value-1-0'><a href=\"https://doi.org/10.6028/NIST.IR.8011-3\">NISTIR
-        8011 Vol. 3 (DOI)</a></span>; <span id='download-value-1-1'><a href=\"http://nvlpubs.nist.gov/nistpubs/ir/2018/NIST.IR.8011-3.pdf\">Local
-        Download</a></span></span>\r\n\t\t\t\t</div>\r\n\t\t\t</td>\r\n\t\t\t<td class=\"hidden-sm
-        hidden-xs hidden-xxs\" id=\"pub-status-1\">\r\n\t\t\t\tFinal\r\n\t\t\t</td>\r\n\t\t\t<td
-        class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-release-date-1\">\r\n\t\t\t\t
-        12/06/2018\r\n\t\t\t</td>\r\n\t\t\t\r\n\t\t</tr>\r\n\r\n  \r\n\t\t<tr id=\"result-2\">\r\n\t\t\t<td
-        class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-series-2\">NISTIR</td>\r\n\t\t\t<td
-        class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-number-2\"> 8011 Vol. 3</td>\r\n\t\t\t<td>\r\n\t\t\t\t\r\n\t\t\t\t<div
+        class=\"hidden-md hidden-lg\">\r\n                    <strong id=\"pub-release-date-sm-1\">4/05/2018</strong>\r\n
+        \                   <br />\r\n                    Status: <span id=\"pub-status-sm-1\">Draft
+        (Withdrawn)</span>\r\n\t\t\t\t</div>\r\n\t\t\t\t\r\n\t\t\t\t\r\n                <div
+        class=\"control-value-no-block\">\r\n                Download: <span id='download-values-1'><span
+        id='download-value-1-0'><a href=\"/CSRC/media/Publications/nistir/8011/vol-3/draft/documents/nistir-8011-vol3-draft.pdf\">Draft
+        NISTIR 8011 Vol. 3</a></span></span>\r\n\t\t\t\t</div>\r\n\t\t\t</td>\r\n\t\t\t<td
+        class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-status-1\">\r\n\t\t\t\tDraft
+        (Withdrawn)\r\n\t\t\t</td>\r\n\t\t\t<td class=\"hidden-sm hidden-xs hidden-xxs\"
+        id=\"pub-release-date-1\">\r\n\t\t\t\t 4/05/2018\r\n\t\t\t</td>\r\n\t\t\t\r\n\t\t</tr>\r\n\r\n
+        \ \r\n\t\t<tr id=\"result-2\">\r\n\t\t\t<td class=\"hidden-sm hidden-xs hidden-xxs\"
+        id=\"pub-series-2\">NISTIR</td>\r\n\t\t\t<td class=\"hidden-sm hidden-xs hidden-xxs\"
+        id=\"pub-number-2\"> 8011 Vol. 2</td>\r\n\t\t\t<td>\r\n\t\t\t\t\r\n\t\t\t\t<div
         class=\"hidden-sm hidden-xs hidden-xxs\">\r\n                        <strong><a
-        href=\"/publications/detail/nistir/8011/vol-3/draft\" id=\"pub-title-link-2\">Automation
-        Support for Security Control Assessments: Software Asset Management</a></strong>\r\n\t\t\t\t</div>\r\n\r\n\t\t\t\t<div
+        href=\"/publications/detail/nistir/8011/vol-2/draft\" id=\"pub-title-link-2\">Automation
+        Support for Security Control Assessments: Hardware Asset Management</a></strong>\r\n\t\t\t\t</div>\r\n\r\n\t\t\t\t<div
         class=\"hidden-md hidden-lg\">\r\n\t\t\t\t\t<strong><span id=\"pub-full-display-sm-2\">NISTIR
-        8011 Vol. 3 (DRAFT) (WITHDRAWN)</span><br />\r\n\t\t\t\t\t\t<a href=\"/publications/detail/nistir/8011/vol-3/draft\"
+        8011 Vol. 2 (DRAFT) (WITHDRAWN)</span><br />\r\n\t\t\t\t\t\t<a href=\"/publications/detail/nistir/8011/vol-2/draft\"
         class=\"mobile-pub-title\" id=\"pub-title-link-sm-2\">Automation Support for
-        Security Control Assessments: Software Asset Management</a>\r\n\t\t\t\t\t</strong>\r\n\t\t\t\t</div>\r\n\t\t\t\t\r\n\t\t\t\t<div
-        class=\"hidden-md hidden-lg\">\r\n                    <strong id=\"pub-release-date-sm-2\">4/05/2018</strong>\r\n
+        Security Control Assessments: Hardware Asset Management</a>\r\n\t\t\t\t\t</strong>\r\n\t\t\t\t</div>\r\n\t\t\t\t\r\n\t\t\t\t<div
+        class=\"hidden-md hidden-lg\">\r\n                    <strong id=\"pub-release-date-sm-2\">2/02/2016</strong>\r\n
         \                   <br />\r\n                    Status: <span id=\"pub-status-sm-2\">Draft
         (Withdrawn)</span>\r\n\t\t\t\t</div>\r\n\t\t\t\t\r\n\t\t\t\t\r\n                <div
         class=\"control-value-no-block\">\r\n                Download: <span id='download-values-2'><span
-        id='download-value-2-0'><a href=\"/CSRC/media/Publications/nistir/8011/vol-3/draft/documents/nistir-8011-vol3-draft.pdf\">Draft
-        NISTIR 8011 Vol. 3</a></span></span>\r\n\t\t\t\t</div>\r\n\t\t\t</td>\r\n\t\t\t<td
+        id='download-value-2-0'><a href=\"/CSRC/media/Publications/nistir/8011/vol-2/draft/documents/nistir_8011_ipd-draft_vol2-hwam.pdf\">Draft
+        NISTIR 8011 Vol. 2: Hardware Asset Management</a></span></span>\r\n\t\t\t\t</div>\r\n\t\t\t</td>\r\n\t\t\t<td
         class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-status-2\">\r\n\t\t\t\tDraft
         (Withdrawn)\r\n\t\t\t</td>\r\n\t\t\t<td class=\"hidden-sm hidden-xs hidden-xxs\"
-        id=\"pub-release-date-2\">\r\n\t\t\t\t 4/05/2018\r\n\t\t\t</td>\r\n\t\t\t\r\n\t\t</tr>\r\n\r\n
+        id=\"pub-release-date-2\">\r\n\t\t\t\t 2/02/2016\r\n\t\t\t</td>\r\n\t\t\t\r\n\t\t</tr>\r\n\r\n
         \ \r\n\t\t<tr id=\"result-3\">\r\n\t\t\t<td class=\"hidden-sm hidden-xs hidden-xxs\"
         id=\"pub-series-3\">NISTIR</td>\r\n\t\t\t<td class=\"hidden-sm hidden-xs hidden-xxs\"
         id=\"pub-number-3\"> 8011 Vol. 1</td>\r\n\t\t\t<td>\r\n\t\t\t\t\r\n\t\t\t\t<div
         class=\"hidden-sm hidden-xs hidden-xxs\">\r\n                        <strong><a
-        href=\"/publications/detail/nistir/8011/vol-1/final\" id=\"pub-title-link-3\">Automation
+        href=\"/publications/detail/nistir/8011/vol-1/draft\" id=\"pub-title-link-3\">Automation
         Support for Security Control Assessments: Overview</a></strong>\r\n\t\t\t\t</div>\r\n\r\n\t\t\t\t<div
         class=\"hidden-md hidden-lg\">\r\n\t\t\t\t\t<strong><span id=\"pub-full-display-sm-3\">NISTIR
-        8011 Vol. 1</span><br />\r\n\t\t\t\t\t\t<a href=\"/publications/detail/nistir/8011/vol-1/final\"
+        8011 Vol. 1 (DRAFT) (WITHDRAWN)</span><br />\r\n\t\t\t\t\t\t<a href=\"/publications/detail/nistir/8011/vol-1/draft\"
         class=\"mobile-pub-title\" id=\"pub-title-link-sm-3\">Automation Support for
         Security Control Assessments: Overview</a>\r\n\t\t\t\t\t</strong>\r\n\t\t\t\t</div>\r\n\t\t\t\t\r\n\t\t\t\t<div
-        class=\"hidden-md hidden-lg\">\r\n                    <strong id=\"pub-release-date-sm-3\">6/06/2017</strong>\r\n
-        \                   <br />\r\n                    Status: <span id=\"pub-status-sm-3\">Final</span>\r\n\t\t\t\t</div>\r\n\t\t\t\t\r\n\t\t\t\t\r\n
-        \               <div class=\"control-value-no-block\">\r\n                Download:
-        <span id='download-values-3'><span id='download-value-3-0'><a href=\"https://doi.org/10.6028/NIST.IR.8011-1\">NISTIR
-        8011 Vol. 1 (DOI)</a></span>; <span id='download-value-3-1'><a href=\"https://nvlpubs.nist.gov/nistpubs/ir/2017/NIST.IR.8011-1.pdf\">Local
-        Download</a></span></span>\r\n\t\t\t\t</div>\r\n\t\t\t</td>\r\n\t\t\t<td class=\"hidden-sm
-        hidden-xs hidden-xxs\" id=\"pub-status-3\">\r\n\t\t\t\tFinal\r\n\t\t\t</td>\r\n\t\t\t<td
-        class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-release-date-3\">\r\n\t\t\t\t
-        6/06/2017\r\n\t\t\t</td>\r\n\t\t\t\r\n\t\t</tr>\r\n\r\n  \r\n\t\t<tr id=\"result-4\">\r\n\t\t\t<td
-        class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-series-4\">NISTIR</td>\r\n\t\t\t<td
-        class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-number-4\"> 8011 Vol. 2</td>\r\n\t\t\t<td>\r\n\t\t\t\t\r\n\t\t\t\t<div
+        class=\"hidden-md hidden-lg\">\r\n                    <strong id=\"pub-release-date-sm-3\">2/02/2016</strong>\r\n
+        \                   <br />\r\n                    Status: <span id=\"pub-status-sm-3\">Draft
+        (Withdrawn)</span>\r\n\t\t\t\t</div>\r\n\t\t\t\t\r\n\t\t\t\t\r\n                <div
+        class=\"control-value-no-block\">\r\n                Download: <span id='download-values-3'><span
+        id='download-value-3-0'><a href=\"/CSRC/media/Publications/nistir/8011/vol-1/draft/documents/nistir_8011_ipd-draft_vol1_overview.pdf\">Draft
+        NISTIR 8011 Vol. 1: Overview</a></span></span>\r\n\t\t\t\t</div>\r\n\t\t\t</td>\r\n\t\t\t<td
+        class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-status-3\">\r\n\t\t\t\tDraft
+        (Withdrawn)\r\n\t\t\t</td>\r\n\t\t\t<td class=\"hidden-sm hidden-xs hidden-xxs\"
+        id=\"pub-release-date-3\">\r\n\t\t\t\t 2/02/2016\r\n\t\t\t</td>\r\n\t\t\t\r\n\t\t</tr>\r\n\r\n
+        \ \r\n\t\t<tr id=\"result-4\">\r\n\t\t\t<td class=\"hidden-sm hidden-xs hidden-xxs\"
+        id=\"pub-series-4\">NISTIR</td>\r\n\t\t\t<td class=\"hidden-sm hidden-xs hidden-xxs\"
+        id=\"pub-number-4\"> 8011 Vol. 3</td>\r\n\t\t\t<td>\r\n\t\t\t\t\r\n\t\t\t\t<div
         class=\"hidden-sm hidden-xs hidden-xxs\">\r\n                        <strong><a
-        href=\"/publications/detail/nistir/8011/vol-2/final\" id=\"pub-title-link-4\">Automation
-        Support for Security Control Assessments: Hardware Asset Management</a></strong>\r\n\t\t\t\t</div>\r\n\r\n\t\t\t\t<div
+        href=\"/publications/detail/nistir/8011/vol-3/final\" id=\"pub-title-link-4\">Automation
+        Support for Security Control Assessments: Software Asset Management</a></strong>\r\n\t\t\t\t</div>\r\n\r\n\t\t\t\t<div
         class=\"hidden-md hidden-lg\">\r\n\t\t\t\t\t<strong><span id=\"pub-full-display-sm-4\">NISTIR
-        8011 Vol. 2</span><br />\r\n\t\t\t\t\t\t<a href=\"/publications/detail/nistir/8011/vol-2/final\"
+        8011 Vol. 3</span><br />\r\n\t\t\t\t\t\t<a href=\"/publications/detail/nistir/8011/vol-3/final\"
         class=\"mobile-pub-title\" id=\"pub-title-link-sm-4\">Automation Support for
-        Security Control Assessments: Hardware Asset Management</a>\r\n\t\t\t\t\t</strong>\r\n\t\t\t\t</div>\r\n\t\t\t\t\r\n\t\t\t\t<div
-        class=\"hidden-md hidden-lg\">\r\n                    <strong id=\"pub-release-date-sm-4\">6/06/2017</strong>\r\n
+        Security Control Assessments: Software Asset Management</a>\r\n\t\t\t\t\t</strong>\r\n\t\t\t\t</div>\r\n\t\t\t\t\r\n\t\t\t\t<div
+        class=\"hidden-md hidden-lg\">\r\n                    <strong id=\"pub-release-date-sm-4\">12/06/2018</strong>\r\n
         \                   <br />\r\n                    Status: <span id=\"pub-status-sm-4\">Final</span>\r\n\t\t\t\t</div>\r\n\t\t\t\t\r\n\t\t\t\t\r\n
         \               <div class=\"control-value-no-block\">\r\n                Download:
-        <span id='download-values-4'><span id='download-value-4-0'><a href=\"https://doi.org/10.6028/NIST.IR.8011-2\">NISTIR
-        8011 Vol. 2 (DOI)</a></span>; <span id='download-value-4-1'><a href=\"https://nvlpubs.nist.gov/nistpubs/ir/2017/NIST.IR.8011-2.pdf\">Local
+        <span id='download-values-4'><span id='download-value-4-0'><a href=\"https://doi.org/10.6028/NIST.IR.8011-3\">NISTIR
+        8011 Vol. 3 (DOI)</a></span>; <span id='download-value-4-1'><a href=\"http://nvlpubs.nist.gov/nistpubs/ir/2018/NIST.IR.8011-3.pdf\">Local
         Download</a></span></span>\r\n\t\t\t\t</div>\r\n\t\t\t</td>\r\n\t\t\t<td class=\"hidden-sm
         hidden-xs hidden-xxs\" id=\"pub-status-4\">\r\n\t\t\t\tFinal\r\n\t\t\t</td>\r\n\t\t\t<td
         class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-release-date-4\">\r\n\t\t\t\t
-        6/06/2017\r\n\t\t\t</td>\r\n\t\t\t\r\n\t\t</tr>\r\n\r\n  \r\n\t\t<tr id=\"result-5\">\r\n\t\t\t<td
+        12/06/2018\r\n\t\t\t</td>\r\n\t\t\t\r\n\t\t</tr>\r\n\r\n  \r\n\t\t<tr id=\"result-5\">\r\n\t\t\t<td
         class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-series-5\">NISTIR</td>\r\n\t\t\t<td
-        class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-number-5\"> 8011 Vol. 2</td>\r\n\t\t\t<td>\r\n\t\t\t\t\r\n\t\t\t\t<div
+        class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-number-5\"> 8011 Vol. 1</td>\r\n\t\t\t<td>\r\n\t\t\t\t\r\n\t\t\t\t<div
         class=\"hidden-sm hidden-xs hidden-xxs\">\r\n                        <strong><a
-        href=\"/publications/detail/nistir/8011/vol-2/draft\" id=\"pub-title-link-5\">Automation
-        Support for Security Control Assessments: Hardware Asset Management</a></strong>\r\n\t\t\t\t</div>\r\n\r\n\t\t\t\t<div
-        class=\"hidden-md hidden-lg\">\r\n\t\t\t\t\t<strong><span id=\"pub-full-display-sm-5\">NISTIR
-        8011 Vol. 2 (DRAFT) (WITHDRAWN)</span><br />\r\n\t\t\t\t\t\t<a href=\"/publications/detail/nistir/8011/vol-2/draft\"
-        class=\"mobile-pub-title\" id=\"pub-title-link-sm-5\">Automation Support for
-        Security Control Assessments: Hardware Asset Management</a>\r\n\t\t\t\t\t</strong>\r\n\t\t\t\t</div>\r\n\t\t\t\t\r\n\t\t\t\t<div
-        class=\"hidden-md hidden-lg\">\r\n                    <strong id=\"pub-release-date-sm-5\">2/02/2016</strong>\r\n
-        \                   <br />\r\n                    Status: <span id=\"pub-status-sm-5\">Draft
-        (Withdrawn)</span>\r\n\t\t\t\t</div>\r\n\t\t\t\t\r\n\t\t\t\t\r\n                <div
-        class=\"control-value-no-block\">\r\n                Download: <span id='download-values-5'><span
-        id='download-value-5-0'><a href=\"/CSRC/media/Publications/nistir/8011/vol-2/draft/documents/nistir_8011_ipd-draft_vol2-hwam.pdf\">Draft
-        NISTIR 8011 Vol. 2: Hardware Asset Management</a></span></span>\r\n\t\t\t\t</div>\r\n\t\t\t</td>\r\n\t\t\t<td
-        class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-status-5\">\r\n\t\t\t\tDraft
-        (Withdrawn)\r\n\t\t\t</td>\r\n\t\t\t<td class=\"hidden-sm hidden-xs hidden-xxs\"
-        id=\"pub-release-date-5\">\r\n\t\t\t\t 2/02/2016\r\n\t\t\t</td>\r\n\t\t\t\r\n\t\t</tr>\r\n\r\n
-        \ \r\n\t\t<tr id=\"result-6\">\r\n\t\t\t<td class=\"hidden-sm hidden-xs hidden-xxs\"
-        id=\"pub-series-6\">NISTIR</td>\r\n\t\t\t<td class=\"hidden-sm hidden-xs hidden-xxs\"
-        id=\"pub-number-6\"> 8011 Vol. 1</td>\r\n\t\t\t<td>\r\n\t\t\t\t\r\n\t\t\t\t<div
-        class=\"hidden-sm hidden-xs hidden-xxs\">\r\n                        <strong><a
-        href=\"/publications/detail/nistir/8011/vol-1/draft\" id=\"pub-title-link-6\">Automation
+        href=\"/publications/detail/nistir/8011/vol-1/final\" id=\"pub-title-link-5\">Automation
         Support for Security Control Assessments: Overview</a></strong>\r\n\t\t\t\t</div>\r\n\r\n\t\t\t\t<div
-        class=\"hidden-md hidden-lg\">\r\n\t\t\t\t\t<strong><span id=\"pub-full-display-sm-6\">NISTIR
-        8011 Vol. 1 (DRAFT) (WITHDRAWN)</span><br />\r\n\t\t\t\t\t\t<a href=\"/publications/detail/nistir/8011/vol-1/draft\"
-        class=\"mobile-pub-title\" id=\"pub-title-link-sm-6\">Automation Support for
+        class=\"hidden-md hidden-lg\">\r\n\t\t\t\t\t<strong><span id=\"pub-full-display-sm-5\">NISTIR
+        8011 Vol. 1</span><br />\r\n\t\t\t\t\t\t<a href=\"/publications/detail/nistir/8011/vol-1/final\"
+        class=\"mobile-pub-title\" id=\"pub-title-link-sm-5\">Automation Support for
         Security Control Assessments: Overview</a>\r\n\t\t\t\t\t</strong>\r\n\t\t\t\t</div>\r\n\t\t\t\t\r\n\t\t\t\t<div
-        class=\"hidden-md hidden-lg\">\r\n                    <strong id=\"pub-release-date-sm-6\">2/02/2016</strong>\r\n
-        \                   <br />\r\n                    Status: <span id=\"pub-status-sm-6\">Draft
-        (Withdrawn)</span>\r\n\t\t\t\t</div>\r\n\t\t\t\t\r\n\t\t\t\t\r\n                <div
-        class=\"control-value-no-block\">\r\n                Download: <span id='download-values-6'><span
-        id='download-value-6-0'><a href=\"/CSRC/media/Publications/nistir/8011/vol-1/draft/documents/nistir_8011_ipd-draft_vol1_overview.pdf\">Draft
-        NISTIR 8011 Vol. 1: Overview</a></span></span>\r\n\t\t\t\t</div>\r\n\t\t\t</td>\r\n\t\t\t<td
-        class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-status-6\">\r\n\t\t\t\tDraft
-        (Withdrawn)\r\n\t\t\t</td>\r\n\t\t\t<td class=\"hidden-sm hidden-xs hidden-xxs\"
-        id=\"pub-release-date-6\">\r\n\t\t\t\t 2/02/2016\r\n\t\t\t</td>\r\n\t\t\t\r\n\t\t</tr>\r\n\r\n\t</tbody>\r\n</table>\r\n<div
+        class=\"hidden-md hidden-lg\">\r\n                    <strong id=\"pub-release-date-sm-5\">6/06/2017</strong>\r\n
+        \                   <br />\r\n                    Status: <span id=\"pub-status-sm-5\">Final</span>\r\n\t\t\t\t</div>\r\n\t\t\t\t\r\n\t\t\t\t\r\n
+        \               <div class=\"control-value-no-block\">\r\n                Download:
+        <span id='download-values-5'><span id='download-value-5-0'><a href=\"https://doi.org/10.6028/NIST.IR.8011-1\">NISTIR
+        8011 Vol. 1 (DOI)</a></span>; <span id='download-value-5-1'><a href=\"https://nvlpubs.nist.gov/nistpubs/ir/2017/NIST.IR.8011-1.pdf\">Local
+        Download</a></span></span>\r\n\t\t\t\t</div>\r\n\t\t\t</td>\r\n\t\t\t<td class=\"hidden-sm
+        hidden-xs hidden-xxs\" id=\"pub-status-5\">\r\n\t\t\t\tFinal\r\n\t\t\t</td>\r\n\t\t\t<td
+        class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-release-date-5\">\r\n\t\t\t\t
+        6/06/2017\r\n\t\t\t</td>\r\n\t\t\t\r\n\t\t</tr>\r\n\r\n  \r\n\t\t<tr id=\"result-6\">\r\n\t\t\t<td
+        class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-series-6\">NISTIR</td>\r\n\t\t\t<td
+        class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-number-6\"> 8011 Vol. 2</td>\r\n\t\t\t<td>\r\n\t\t\t\t\r\n\t\t\t\t<div
+        class=\"hidden-sm hidden-xs hidden-xxs\">\r\n                        <strong><a
+        href=\"/publications/detail/nistir/8011/vol-2/final\" id=\"pub-title-link-6\">Automation
+        Support for Security Control Assessments: Hardware Asset Management</a></strong>\r\n\t\t\t\t</div>\r\n\r\n\t\t\t\t<div
+        class=\"hidden-md hidden-lg\">\r\n\t\t\t\t\t<strong><span id=\"pub-full-display-sm-6\">NISTIR
+        8011 Vol. 2</span><br />\r\n\t\t\t\t\t\t<a href=\"/publications/detail/nistir/8011/vol-2/final\"
+        class=\"mobile-pub-title\" id=\"pub-title-link-sm-6\">Automation Support for
+        Security Control Assessments: Hardware Asset Management</a>\r\n\t\t\t\t\t</strong>\r\n\t\t\t\t</div>\r\n\t\t\t\t\r\n\t\t\t\t<div
+        class=\"hidden-md hidden-lg\">\r\n                    <strong id=\"pub-release-date-sm-6\">6/06/2017</strong>\r\n
+        \                   <br />\r\n                    Status: <span id=\"pub-status-sm-6\">Final</span>\r\n\t\t\t\t</div>\r\n\t\t\t\t\r\n\t\t\t\t\r\n
+        \               <div class=\"control-value-no-block\">\r\n                Download:
+        <span id='download-values-6'><span id='download-value-6-0'><a href=\"https://doi.org/10.6028/NIST.IR.8011-2\">NISTIR
+        8011 Vol. 2 (DOI)</a></span>; <span id='download-value-6-1'><a href=\"https://nvlpubs.nist.gov/nistpubs/ir/2017/NIST.IR.8011-2.pdf\">Local
+        Download</a></span></span>\r\n\t\t\t\t</div>\r\n\t\t\t</td>\r\n\t\t\t<td class=\"hidden-sm
+        hidden-xs hidden-xxs\" id=\"pub-status-6\">\r\n\t\t\t\tFinal\r\n\t\t\t</td>\r\n\t\t\t<td
+        class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-release-date-6\">\r\n\t\t\t\t
+        6/06/2017\r\n\t\t\t</td>\r\n\t\t\t\r\n\t\t</tr>\r\n\r\n\t</tbody>\r\n</table>\r\n<div
         class=\"row bottom-pagination-area\">\r\n  <p class=\"text-center\">\r\n      <span
         class='pagination-links' id='bottom-pagination-container' data-total-pages='1'
         data-min-page='1' data-max-page='1' data-current-page='1' data-show-first='False'
@@ -1203,7 +1204,7 @@ http_interactions:
         'en');\r\n   document.getElementsByTagName('html')[0].setAttribute('xml:lang',
         'en')\r\n})(); \r\n</script>\r\n\r\n    \r\n    </form>\r\n</body>\r\n</html>\r\n"
     http_version: 
-  recorded_at: Tue, 14 May 2019 10:10:25 GMT
+  recorded_at: Fri, 31 May 2019 11:34:36 GMT
 - request:
     method: get
     uri: https://csrc.nist.gov/publications/detail/nistir/8011/vol-3/final
@@ -1235,8 +1236,8 @@ http_interactions:
       Server:
       - Microsoft-IIS/8.5
       Set-Cookie:
-      - ASP.NET_SessionId=f3lqynsc2d0kfvpooxrfkryk; path=/; secure; HttpOnly
-      - CMSCsrfCookie=Jnynk6hu4UgxdElmkiIDQjKcLr/o7WU35rms4B3W; path=/; secure; HttpOnly
+      - ASP.NET_SessionId=r0gij23uazx4xrunf2u55aes; path=/; secure; HttpOnly
+      - CMSCsrfCookie=zFAECrDHxwad+qfbVIjR6oFU2OcTWdaMhCBRcCiK; path=/; secure; HttpOnly
       - CMSPreferredCulture=en-US; path=/; HttpOnly; Secure
       X-Frame-Options:
       - SAMEORIGIN
@@ -1245,7 +1246,7 @@ http_interactions:
       X-Aspnet-Version:
       - 4.0.30319
       Date:
-      - Tue, 14 May 2019 10:10:25 GMT
+      - Fri, 31 May 2019 11:34:34 GMT
       Content-Length:
       - '44990'
       Strict-Transport-Security:
@@ -1377,8 +1378,8 @@ http_interactions:
         />\r\n</head>\r\n<body class=\"LTR Unknown ENUS ContentBody\" >\r\n    \r\n
         \   <form method=\"post\" action=\"/publications/detail/nistir/8011/vol-3/final\"
         id=\"form\">\r\n<input type=\"hidden\" name=\"__CMSCsrfToken\" id=\"__CMSCsrfToken\"
-        value=\"1Bd0EaQ1VyhzBW27YmePQXHbADAz7cyR9rGEpHLtankAvEl4pmQzfnj9f/ACN51EKfXP61Sv61xdfIo+w9Ptvo8+b55BJtj4J6OlTjnke2s=\"
-        />\r\n<input type=\"hidden\" name=\"__VIEWSTATE\" id=\"__VIEWSTATE\" value=\"09mEkgl719y2vJOPoAVcSSfJL3M223ExrWDiUfLR77VTs2cfCxbQXFMGo38KBktpFP339+qLVREHppO+GOjLVTrmJBbfH7dkGwE+1SXXpflJwWN0r1ZptYUREdWHGRHzFpRQabEX+Uxhf7HpO5mheLSav8BiGcwHxOf9qtAy+P5iw9PIA82lja+TYR4Fv2+4y15d/3rGTzdfwpyMoAzLqnbdYwmMjS4FrVIEX2h+Q0zXTzZUATDutnlc2TJ9DO8W7DqYx46JwSH6MBgC6aMwMTWkWun9rAQOKc8CHG6lkkyox5/LXg8zs/aYSPJXvSLoyRjKyolL+JuyZan5Q+d/VwbuatMO1pRqVrMN20Rbnwk=\"
+        value=\"QW9392kOYHyXvexA6kZ2lwsv9WpweQewYP2wMVfNy0hIplonVOFDV2oTqVcQa9VDI7SGhaAIV3ItSYeqHEkhzGr0VeW+cnOofWX5dTTz64o=\"
+        />\r\n<input type=\"hidden\" name=\"__VIEWSTATE\" id=\"__VIEWSTATE\" value=\"mUEmWd3jpdH/e4wr59xwyQQ8xXyl93fm3ZlaZoRHL0H7A2yucSpjgwgDQVa00xNGTzctEyy2zwKPXf09BCNGWuNJqaeVO2ZXxGkaMV7jItU6S70hhsO1KQsIqEuA/Dl1eRjqO/5QhZBJ3QjL9Qd7/wzb9m7136s81O38W6oGUkpNJSrGwuHu/br8M9P1DrtWC6iL/igmooqXkPve+lXZD0jBUUbtxwjwQJPjAI4JlfZrs9q4x5u+hffxgjbxYwbSOeo8ZfxxJDhHEGy4M1TbtD2oMe4phq0x0xaZDRnQ/ZS6UJVydpW4xvGr34GP2LSZz/GxLoopNL6CHrRQ4TvEvsGsJubSbTThJuU1KMNAbhI=\"
         />\r\n\r\n<input type=\"hidden\" name=\"lng\" id=\"lng\" value=\"en-US\" />\r\n<script
         type=\"text/javascript\">\r\n\t//<![CDATA[\n\r\nfunction PM_Postback(param)
         { if (window.top.HideScreenLockWarningAndSync) { window.top.HideScreenLockWarningAndSync(1080);
@@ -1785,5 +1786,5 @@ http_interactions:
         'en');\r\n   document.getElementsByTagName('html')[0].setAttribute('xml:lang',
         'en')\r\n})(); \r\n</script>\r\n\r\n    \r\n    </form>\r\n</body>\r\n</html>\r\n"
     http_version: 
-  recorded_at: Tue, 14 May 2019 10:10:26 GMT
-recorded_with: VCR 4.0.0
+  recorded_at: Fri, 31 May 2019 11:34:37 GMT
+recorded_with: VCR 5.0.0

@@ -14,7 +14,7 @@ module NistBib
       # @return [NistBib::HitCollection]
       def search(text, year = nil, opts = {})
         HitCollection.new text, year, opts
-      rescue
+      rescue OpenURI::HTTPError, SocketError
         warn "Could not access https://www.nist.gov"
         []
       end

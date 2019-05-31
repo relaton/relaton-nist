@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://csrc.nist.gov/publications/search?keywords-lg=SP%20800-205&status-lg=Draft,Withdrawn
+    uri: https://csrc.nist.gov/publications/search?keywords-lg=SP%20800-205&status-lg=Draft,Retired%20Draft,Withdrawn
     body:
       encoding: US-ASCII
       string: ''
@@ -29,8 +29,8 @@ http_interactions:
       Server:
       - Microsoft-IIS/8.5
       Set-Cookie:
-      - ASP.NET_SessionId=0taxonqhdkpdntf5xcsvlaw4; path=/; secure; HttpOnly
-      - CMSCsrfCookie=EknjFuBDtXAa3+O3fJ36fz9EfxTugNqKCbdIJp8a; path=/; secure; HttpOnly
+      - ASP.NET_SessionId=i2zr4mgopaj2tpjjywwf4mle; path=/; secure; HttpOnly
+      - CMSCsrfCookie=YgqN1uZeyjonN0iJOQBlw4sv9FwTi/YpxHj4+sYy; path=/; secure; HttpOnly
       - CMSPreferredCulture=en-US; path=/; HttpOnly; Secure
       X-Frame-Options:
       - SAMEORIGIN
@@ -39,9 +39,9 @@ http_interactions:
       X-Aspnet-Version:
       - 4.0.30319
       Date:
-      - Wed, 15 May 2019 10:09:55 GMT
+      - Fri, 31 May 2019 11:38:27 GMT
       Content-Length:
-      - '135595'
+      - '136149'
       Strict-Transport-Security:
       - max-age=31536000
     body:
@@ -84,10 +84,10 @@ http_interactions:
         \n<link href=\"/CSRC/Media/images/favicons/favicon.ico\" type=\"image/x-icon\"
         rel=\"shortcut icon\"/>\r\n<link href=\"/CSRC/Media/images/favicons/favicon.ico\"
         type=\"image/x-icon\" rel=\"icon\"/>\r\n</head>\r\n<body class=\"LTR Unknown
-        ENUS ContentBody\" >\r\n    \r\n    <form method=\"post\" action=\"/publications/search?keywords-lg=SP+800-205&amp;status-lg=Draft%2cWithdrawn\"
+        ENUS ContentBody\" >\r\n    \r\n    <form method=\"post\" action=\"/publications/search?keywords-lg=SP+800-205&amp;status-lg=Draft%2cRetired+Draft%2cWithdrawn\"
         id=\"form\">\r\n<input type=\"hidden\" name=\"__CMSCsrfToken\" id=\"__CMSCsrfToken\"
-        value=\"SeY0KookUN9hwmff/Qcm8uyDQEdiBBjSXacerycKOjQdxR/cQmfEKyl2bczKxkWT+5wZ0BZpu5fPOEx3r9QVUbbSWbo5JDK7iOlQ8wN7A7g=\"
-        />\r\n<input type=\"hidden\" name=\"__VIEWSTATE\" id=\"__VIEWSTATE\" value=\"BkkEhy7z4JN7MkmqRSv9qBGz+pZASSOvBR7ieTLKH1IMzA/R6DiN7MonIboMLysDs7zrgAQYEBvimVt/fUANNKCyKTgipUhhKGlJrgVeWTtsbqukkpGdDYhP3fJ3VxqEaag8De3z5G1S01OiGzZZ3d0xEHofBnhBsamq19zMA4zoAELbBEpFpqL/JjNscADkCw0lUEyHtthBWe5BvDUM6V9Yw74v1CpZ+rnBa1wuoWeYFoFUs/22Fih902FHG5kf3abptw3F7CTor0CkyTVTizysh29wMF/0bqKsXP08qhZ/PSvCW11xD8hRUgvKMdp4ZYcxSOvaDnobvpDmr28xQ21IDL6AeH4hW6o6XDZ276OLnsxYVTLrVJZkCPwWTOFgnhJxe1SvlpZNdwnSk3uvGA==\"
+        value=\"qZcqSLMim5saqYogC8upu+g0i4hlc68SfjritPo7IuM4sFz+X8Fr0jjXWwM38xYngcrfeXvCxs1iiytYWKMCZ6tJCmjRJusv//UoC3655vI=\"
+        />\r\n<input type=\"hidden\" name=\"__VIEWSTATE\" id=\"__VIEWSTATE\" value=\"SY/GAldMG+fCQguJ9lwOSMJB3gF6TFD/dxjBZFLO/f1qHkMAhd0O0MFIr+U8XnMuFzyIBqNswQ4mm3qlLIo8SzzYj0MkObSHUBfKSzPrI53bqn/HlohLzSQ4MzZS4dRFPTdjhwsg3seudgQvohdzc3lof5q+XVIxYZ+wxq6u4BTtOrhdQxaEQ73ECQ1iiJ5SZmtZPOafzN2+r+Wn7ABPA15jxBAhm+QN/oSh+TpD1q7uHDlKLQnmqSb+rx9hvkKqtapL4LXp8uYhaS5boz5/5q1XxfnAgV3pxwSruioVqn5GQ82lGj2jtlkHkf5i4lyRNSGrvSPgIM6vWecERMimKuRKVyCaS24DEQBKCmFZ2grGn4xk9y+dGghiESQ5SpDQXDAajPc9fLypNzCyRTQ5kP4yvSRMAkAdsbjWwzgO/Dc=\"
         />\r\n\r\n<input type=\"hidden\" name=\"lng\" id=\"lng\" value=\"en-US\" />\r\n<script
         type=\"text/javascript\">\r\n\t//<![CDATA[\n\r\nfunction PM_Postback(param)
         { if (window.top.HideScreenLockWarningAndSync) { window.top.HideScreenLockWarningAndSync(1080);
@@ -923,45 +923,45 @@ http_interactions:
         name=\"reset-btn\" data-form-button=\"reset\" class=\"btn\">Reset</button>\r\n
         \   </div>\r\n</div>\r\n<div id=\"search-criteria-container\"></div>\r\n\r\n<div
         class=\"row top-pagination-area\">\r\n\t<div class=\"col-lg-6 col-sm-12\">\r\n
-        \       <span id='showing-results-text' data-total-pages='18' data-first-record='1'
-        data-last-record='25' data-current-page='1' data-items-per-page='25' data-total-results='445'>Showing
+        \       <span id='showing-results-text' data-total-pages='19' data-first-record='1'
+        data-last-record='25' data-current-page='1' data-items-per-page='25' data-total-results='464'>Showing
         <strong id='showing-results-first'>1</strong> through <strong id='showing-results-last'>25</strong>
-        of <strong id='showing-results-total'>445</strong> matching records.</span>\r\n\t</div>\r\n\t<div
+        of <strong id='showing-results-total'>464</strong> matching records.</span>\r\n\t</div>\r\n\t<div
         class=\"col-lg-6 col-sm-12\">\r\n\t\t<span class=\"pull-right hidden-sm hidden-xs
         hidden-xxs\">\r\n\t\t\t<span class='pagination-links' id='top-pagination-container'
-        data-total-pages='18' data-min-page='1' data-max-page='10' data-current-page='1'
+        data-total-pages='19' data-min-page='1' data-max-page='10' data-current-page='1'
         data-show-first='False' data-show-last='True'><strong aria-label=\"Page 1\"
-        id=\"top-page-1\">1</strong> |  <a href=\"/publications/search?keywords-lg=SP+800-205&status-lg=Draft%2cWithdrawn&page=2\"
-        aria-label=\"Page 2\" id=\"top-page-2\">2</a> |  <a href=\"/publications/search?keywords-lg=SP+800-205&status-lg=Draft%2cWithdrawn&page=3\"
-        aria-label=\"Page 3\" id=\"top-page-3\">3</a> |  <a href=\"/publications/search?keywords-lg=SP+800-205&status-lg=Draft%2cWithdrawn&page=4\"
-        aria-label=\"Page 4\" id=\"top-page-4\">4</a> |  <a href=\"/publications/search?keywords-lg=SP+800-205&status-lg=Draft%2cWithdrawn&page=5\"
-        aria-label=\"Page 5\" id=\"top-page-5\">5</a> |  <a href=\"/publications/search?keywords-lg=SP+800-205&status-lg=Draft%2cWithdrawn&page=6\"
-        aria-label=\"Page 6\" id=\"top-page-6\">6</a> |  <a href=\"/publications/search?keywords-lg=SP+800-205&status-lg=Draft%2cWithdrawn&page=7\"
-        aria-label=\"Page 7\" id=\"top-page-7\">7</a> |  <a href=\"/publications/search?keywords-lg=SP+800-205&status-lg=Draft%2cWithdrawn&page=8\"
-        aria-label=\"Page 8\" id=\"top-page-8\">8</a> |  <a href=\"/publications/search?keywords-lg=SP+800-205&status-lg=Draft%2cWithdrawn&page=9\"
-        aria-label=\"Page 9\" id=\"top-page-9\">9</a> |  <a href=\"/publications/search?keywords-lg=SP+800-205&status-lg=Draft%2cWithdrawn&page=10\"
-        aria-label=\"Page 10\" id=\"top-page-10\">10</a>&nbsp;&nbsp;<a href=\"/publications/search?keywords-lg=SP+800-205&status-lg=Draft%2cWithdrawn&page=2\"
-        aria-label=\"Next Page\" id=\"top-page-next\">&gt;</a>&nbsp;&nbsp;<a href=\"/publications/search?keywords-lg=SP+800-205&status-lg=Draft%2cWithdrawn&page=18\"
-        aria-label=\"Last Page\" id=\"top-page-last\" data-last-page-number=\"18\">&gt;&gt;</a></span>\r\n\t\t</span>\r\n\t\t<p
+        id=\"top-page-1\">1</strong> |  <a href=\"/publications/search?keywords-lg=SP+800-205&status-lg=Draft%2cRetired+Draft%2cWithdrawn&page=2\"
+        aria-label=\"Page 2\" id=\"top-page-2\">2</a> |  <a href=\"/publications/search?keywords-lg=SP+800-205&status-lg=Draft%2cRetired+Draft%2cWithdrawn&page=3\"
+        aria-label=\"Page 3\" id=\"top-page-3\">3</a> |  <a href=\"/publications/search?keywords-lg=SP+800-205&status-lg=Draft%2cRetired+Draft%2cWithdrawn&page=4\"
+        aria-label=\"Page 4\" id=\"top-page-4\">4</a> |  <a href=\"/publications/search?keywords-lg=SP+800-205&status-lg=Draft%2cRetired+Draft%2cWithdrawn&page=5\"
+        aria-label=\"Page 5\" id=\"top-page-5\">5</a> |  <a href=\"/publications/search?keywords-lg=SP+800-205&status-lg=Draft%2cRetired+Draft%2cWithdrawn&page=6\"
+        aria-label=\"Page 6\" id=\"top-page-6\">6</a> |  <a href=\"/publications/search?keywords-lg=SP+800-205&status-lg=Draft%2cRetired+Draft%2cWithdrawn&page=7\"
+        aria-label=\"Page 7\" id=\"top-page-7\">7</a> |  <a href=\"/publications/search?keywords-lg=SP+800-205&status-lg=Draft%2cRetired+Draft%2cWithdrawn&page=8\"
+        aria-label=\"Page 8\" id=\"top-page-8\">8</a> |  <a href=\"/publications/search?keywords-lg=SP+800-205&status-lg=Draft%2cRetired+Draft%2cWithdrawn&page=9\"
+        aria-label=\"Page 9\" id=\"top-page-9\">9</a> |  <a href=\"/publications/search?keywords-lg=SP+800-205&status-lg=Draft%2cRetired+Draft%2cWithdrawn&page=10\"
+        aria-label=\"Page 10\" id=\"top-page-10\">10</a>&nbsp;&nbsp;<a href=\"/publications/search?keywords-lg=SP+800-205&status-lg=Draft%2cRetired+Draft%2cWithdrawn&page=2\"
+        aria-label=\"Next Page\" id=\"top-page-next\">&gt;</a>&nbsp;&nbsp;<a href=\"/publications/search?keywords-lg=SP+800-205&status-lg=Draft%2cRetired+Draft%2cWithdrawn&page=19\"
+        aria-label=\"Last Page\" id=\"top-page-last\" data-last-page-number=\"19\">&gt;&gt;</a></span>\r\n\t\t</span>\r\n\t\t<p
         class=\"text-center hidden-md hidden-lg\">\r\n\t\t\t<span class='pagination-links'
-        id='mobile-top-pagination-container' data-total-pages='18' data-min-page='1'
+        id='mobile-top-pagination-container' data-total-pages='19' data-min-page='1'
         data-max-page='10' data-current-page='1' data-show-first='False' data-show-last='True'><strong
         aria-label=\"Page 1\" id=\"mobile-top-page-1\">1</strong> &nbsp;|&nbsp;  <a
-        href=\"/publications/search?keywords-lg=SP+800-205&status-lg=Draft%2cWithdrawn&page=2\"
-        aria-label=\"Page 2\" id=\"mobile-top-page-2\">2</a> &nbsp;|&nbsp;  <a href=\"/publications/search?keywords-lg=SP+800-205&status-lg=Draft%2cWithdrawn&page=3\"
-        aria-label=\"Page 3\" id=\"mobile-top-page-3\">3</a> &nbsp;|&nbsp;  <a href=\"/publications/search?keywords-lg=SP+800-205&status-lg=Draft%2cWithdrawn&page=4\"
-        aria-label=\"Page 4\" id=\"mobile-top-page-4\">4</a> &nbsp;|&nbsp;  <a href=\"/publications/search?keywords-lg=SP+800-205&status-lg=Draft%2cWithdrawn&page=5\"
-        aria-label=\"Page 5\" id=\"mobile-top-page-5\">5</a> &nbsp;|&nbsp;  <a href=\"/publications/search?keywords-lg=SP+800-205&status-lg=Draft%2cWithdrawn&page=6\"
-        aria-label=\"Page 6\" id=\"mobile-top-page-6\">6</a> &nbsp;|&nbsp;  <a href=\"/publications/search?keywords-lg=SP+800-205&status-lg=Draft%2cWithdrawn&page=7\"
-        aria-label=\"Page 7\" id=\"mobile-top-page-7\">7</a> &nbsp;|&nbsp;  <a href=\"/publications/search?keywords-lg=SP+800-205&status-lg=Draft%2cWithdrawn&page=8\"
-        aria-label=\"Page 8\" id=\"mobile-top-page-8\">8</a> &nbsp;|&nbsp;  <a href=\"/publications/search?keywords-lg=SP+800-205&status-lg=Draft%2cWithdrawn&page=9\"
-        aria-label=\"Page 9\" id=\"mobile-top-page-9\">9</a> &nbsp;|&nbsp;  <a href=\"/publications/search?keywords-lg=SP+800-205&status-lg=Draft%2cWithdrawn&page=10\"
-        aria-label=\"Page 10\" id=\"mobile-top-page-10\">10</a>&nbsp;&nbsp;<a href=\"/publications/search?keywords-lg=SP+800-205&status-lg=Draft%2cWithdrawn&page=2\"
+        href=\"/publications/search?keywords-lg=SP+800-205&status-lg=Draft%2cRetired+Draft%2cWithdrawn&page=2\"
+        aria-label=\"Page 2\" id=\"mobile-top-page-2\">2</a> &nbsp;|&nbsp;  <a href=\"/publications/search?keywords-lg=SP+800-205&status-lg=Draft%2cRetired+Draft%2cWithdrawn&page=3\"
+        aria-label=\"Page 3\" id=\"mobile-top-page-3\">3</a> &nbsp;|&nbsp;  <a href=\"/publications/search?keywords-lg=SP+800-205&status-lg=Draft%2cRetired+Draft%2cWithdrawn&page=4\"
+        aria-label=\"Page 4\" id=\"mobile-top-page-4\">4</a> &nbsp;|&nbsp;  <a href=\"/publications/search?keywords-lg=SP+800-205&status-lg=Draft%2cRetired+Draft%2cWithdrawn&page=5\"
+        aria-label=\"Page 5\" id=\"mobile-top-page-5\">5</a> &nbsp;|&nbsp;  <a href=\"/publications/search?keywords-lg=SP+800-205&status-lg=Draft%2cRetired+Draft%2cWithdrawn&page=6\"
+        aria-label=\"Page 6\" id=\"mobile-top-page-6\">6</a> &nbsp;|&nbsp;  <a href=\"/publications/search?keywords-lg=SP+800-205&status-lg=Draft%2cRetired+Draft%2cWithdrawn&page=7\"
+        aria-label=\"Page 7\" id=\"mobile-top-page-7\">7</a> &nbsp;|&nbsp;  <a href=\"/publications/search?keywords-lg=SP+800-205&status-lg=Draft%2cRetired+Draft%2cWithdrawn&page=8\"
+        aria-label=\"Page 8\" id=\"mobile-top-page-8\">8</a> &nbsp;|&nbsp;  <a href=\"/publications/search?keywords-lg=SP+800-205&status-lg=Draft%2cRetired+Draft%2cWithdrawn&page=9\"
+        aria-label=\"Page 9\" id=\"mobile-top-page-9\">9</a> &nbsp;|&nbsp;  <a href=\"/publications/search?keywords-lg=SP+800-205&status-lg=Draft%2cRetired+Draft%2cWithdrawn&page=10\"
+        aria-label=\"Page 10\" id=\"mobile-top-page-10\">10</a>&nbsp;&nbsp;<a href=\"/publications/search?keywords-lg=SP+800-205&status-lg=Draft%2cRetired+Draft%2cWithdrawn&page=2\"
         aria-label=\"Next Page\" id=\"mobile-top-page-next\">&gt;</a>&nbsp;&nbsp;<a
-        href=\"/publications/search?keywords-lg=SP+800-205&status-lg=Draft%2cWithdrawn&page=18\"
-        aria-label=\"Last Page\" id=\"mobile-top-page-last\" data-last-page-number=\"18\">&gt;&gt;</a></span>\r\n\t\t</p>\r\n\t</div>\r\n</div>\r\n<table
+        href=\"/publications/search?keywords-lg=SP+800-205&status-lg=Draft%2cRetired+Draft%2cWithdrawn&page=19\"
+        aria-label=\"Last Page\" id=\"mobile-top-page-last\" data-last-page-number=\"19\">&gt;&gt;</a></span>\r\n\t\t</p>\r\n\t</div>\r\n</div>\r\n<table
         class=\"table table-striped table-condensed publications-table table-bordered\"
-        \r\n    id=\"publications-results-table\"  data-total-records=\"445\" data-page=\"1\"
+        \r\n    id=\"publications-results-table\"  data-total-records=\"464\" data-page=\"1\"
         \r\n    data-first-record=\"1\" data-last-record=\"25\" data-ipp=\"25\">\r\n\t<thead>\r\n\t\t<tr>\r\n\t\t\t<th
         nowrap class=\"hidden-sm hidden-xs hidden-xxs\">Series</th>\r\n\t\t\t<th nowrap
         class=\"hidden-sm hidden-xs hidden-xxs\">Number</th>\r\n\t\t\t<th nowrap>\r\n\t\t\t\t<span
@@ -989,44 +989,45 @@ http_interactions:
         class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-release-date-1\">\r\n\t\t\t\t
         2/13/2019\r\n\t\t\t</td>\r\n\t\t\t\r\n\t\t</tr>\r\n\r\n  \r\n\t\t<tr id=\"result-2\">\r\n\t\t\t<td
         class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-series-2\">SP</td>\r\n\t\t\t<td
-        class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-number-2\"> 1800-12</td>\r\n\t\t\t<td>\r\n\t\t\t\t\r\n\t\t\t\t<div
+        class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-number-2\"> 1800-13</td>\r\n\t\t\t<td>\r\n\t\t\t\t\r\n\t\t\t\t<div
         class=\"hidden-sm hidden-xs hidden-xxs\">\r\n                        <strong><a
-        href=\"/publications/detail/sp/1800-12/draft\" id=\"pub-title-link-2\">Derived
-        Personal Identity Verification (PIV) Credentials (2nd Draft)</a></strong>\r\n\t\t\t\t</div>\r\n\r\n\t\t\t\t<div
+        href=\"/publications/detail/sp/1800-13/draft\" id=\"pub-title-link-2\">Mobile
+        Application Single Sign-On: Improving Authentication for Public Safety First
+        Responders (2nd Draft)</a></strong>\r\n\t\t\t\t</div>\r\n\r\n\t\t\t\t<div
         class=\"hidden-md hidden-lg\">\r\n\t\t\t\t\t<strong><span id=\"pub-full-display-sm-2\">SP
-        1800-12 (DRAFT)</span><br />\r\n\t\t\t\t\t\t<a href=\"/publications/detail/sp/1800-12/draft\"
-        class=\"mobile-pub-title\" id=\"pub-title-link-sm-2\">Derived Personal Identity
-        Verification (PIV) Credentials (2nd Draft)</a>\r\n\t\t\t\t\t</strong>\r\n\t\t\t\t</div>\r\n\t\t\t\t\r\n\t\t\t\t<div
-        class=\"hidden-md hidden-lg\">\r\n                    <strong id=\"pub-release-date-sm-2\">8/02/2018</strong>\r\n
+        1800-13 (DRAFT)</span><br />\r\n\t\t\t\t\t\t<a href=\"/publications/detail/sp/1800-13/draft\"
+        class=\"mobile-pub-title\" id=\"pub-title-link-sm-2\">Mobile Application Single
+        Sign-On: Improving Authentication for Public Safety First Responders (2nd
+        Draft)</a>\r\n\t\t\t\t\t</strong>\r\n\t\t\t\t</div>\r\n\t\t\t\t\r\n\t\t\t\t<div
+        class=\"hidden-md hidden-lg\">\r\n                    <strong id=\"pub-release-date-sm-2\">5/29/2019</strong>\r\n
         \                   <br />\r\n                    Status: <span id=\"pub-status-sm-2\">Draft</span>\r\n\t\t\t\t</div>\r\n\t\t\t\t\r\n\t\t\t\t\r\n
         \               <div class=\"control-value-no-block\">\r\n                Download:
-        <span id='download-values-2'><span id='download-value-2-0'><a href=\"https://nccoe.nist.gov/projects/building-blocks/piv-credentials\">Draft
-        SP 1800-12 volumes and Project Homepage</a></span>; <span id='download-value-2-1'><a
-        href=\"https://www.nccoe.nist.gov/webform/comments-second-draft-sp-1800-12-derived-piv-credentials\">Submit
+        <span id='download-values-2'><span id='download-value-2-0'><a href=\"https://www.nccoe.nist.gov/projects/use-cases/mobile-sso\">Second
+        Draft SP 1800-13 volumes and Project Homepage</a></span>; <span id='download-value-2-1'><a
+        href=\"https://www.nccoe.nist.gov/webform/comments-sp-1800-13-mobile-application-single-sign-second-draft\">Submit
         Comments</a></span></span>\r\n\t\t\t\t</div>\r\n\t\t\t</td>\r\n\t\t\t<td class=\"hidden-sm
         hidden-xs hidden-xxs\" id=\"pub-status-2\">\r\n\t\t\t\tDraft\r\n\t\t\t</td>\r\n\t\t\t<td
         class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-release-date-2\">\r\n\t\t\t\t
-        8/02/2018\r\n\t\t\t</td>\r\n\t\t\t\r\n\t\t</tr>\r\n\r\n  \r\n\t\t<tr id=\"result-3\">\r\n\t\t\t<td
+        5/29/2019\r\n\t\t\t</td>\r\n\t\t\t\r\n\t\t</tr>\r\n\r\n  \r\n\t\t<tr id=\"result-3\">\r\n\t\t\t<td
         class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-series-3\">SP</td>\r\n\t\t\t<td
-        class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-number-3\"> 1800-13</td>\r\n\t\t\t<td>\r\n\t\t\t\t\r\n\t\t\t\t<div
+        class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-number-3\"> 1800-12</td>\r\n\t\t\t<td>\r\n\t\t\t\t\r\n\t\t\t\t<div
         class=\"hidden-sm hidden-xs hidden-xxs\">\r\n                        <strong><a
-        href=\"/publications/detail/sp/1800-13/draft\" id=\"pub-title-link-3\">Mobile
-        Application Single Sign-On: Improving Authentication for Public Safety and
-        First Responders</a></strong>\r\n\t\t\t\t</div>\r\n\r\n\t\t\t\t<div class=\"hidden-md
-        hidden-lg\">\r\n\t\t\t\t\t<strong><span id=\"pub-full-display-sm-3\">SP 1800-13
-        (DRAFT)</span><br />\r\n\t\t\t\t\t\t<a href=\"/publications/detail/sp/1800-13/draft\"
-        class=\"mobile-pub-title\" id=\"pub-title-link-sm-3\">Mobile Application Single
-        Sign-On: Improving Authentication for Public Safety and First Responders</a>\r\n\t\t\t\t\t</strong>\r\n\t\t\t\t</div>\r\n\t\t\t\t\r\n\t\t\t\t<div
-        class=\"hidden-md hidden-lg\">\r\n                    <strong id=\"pub-release-date-sm-3\">4/16/2018</strong>\r\n
+        href=\"/publications/detail/sp/1800-12/draft\" id=\"pub-title-link-3\">Derived
+        Personal Identity Verification (PIV) Credentials (2nd Draft)</a></strong>\r\n\t\t\t\t</div>\r\n\r\n\t\t\t\t<div
+        class=\"hidden-md hidden-lg\">\r\n\t\t\t\t\t<strong><span id=\"pub-full-display-sm-3\">SP
+        1800-12 (DRAFT)</span><br />\r\n\t\t\t\t\t\t<a href=\"/publications/detail/sp/1800-12/draft\"
+        class=\"mobile-pub-title\" id=\"pub-title-link-sm-3\">Derived Personal Identity
+        Verification (PIV) Credentials (2nd Draft)</a>\r\n\t\t\t\t\t</strong>\r\n\t\t\t\t</div>\r\n\t\t\t\t\r\n\t\t\t\t<div
+        class=\"hidden-md hidden-lg\">\r\n                    <strong id=\"pub-release-date-sm-3\">8/02/2018</strong>\r\n
         \                   <br />\r\n                    Status: <span id=\"pub-status-sm-3\">Draft</span>\r\n\t\t\t\t</div>\r\n\t\t\t\t\r\n\t\t\t\t\r\n
         \               <div class=\"control-value-no-block\">\r\n                Download:
-        <span id='download-values-3'><span id='download-value-3-0'><a href=\"https://www.nccoe.nist.gov/projects/use-cases/mobile-sso\">Draft
-        SP 1800-13 volumes and Project Homepage</a></span>; <span id='download-value-3-1'><a
-        href=\"https://www.nccoe.nist.gov/webform/comments-sp-1800-13-mobile-application-single-sign\">Submit
+        <span id='download-values-3'><span id='download-value-3-0'><a href=\"https://nccoe.nist.gov/projects/building-blocks/piv-credentials\">Draft
+        SP 1800-12 volumes and Project Homepage</a></span>; <span id='download-value-3-1'><a
+        href=\"https://www.nccoe.nist.gov/webform/comments-second-draft-sp-1800-12-derived-piv-credentials\">Submit
         Comments</a></span></span>\r\n\t\t\t\t</div>\r\n\t\t\t</td>\r\n\t\t\t<td class=\"hidden-sm
         hidden-xs hidden-xxs\" id=\"pub-status-3\">\r\n\t\t\t\tDraft\r\n\t\t\t</td>\r\n\t\t\t<td
         class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-release-date-3\">\r\n\t\t\t\t
-        4/16/2018\r\n\t\t\t</td>\r\n\t\t\t\r\n\t\t</tr>\r\n\r\n  \r\n\t\t<tr id=\"result-4\">\r\n\t\t\t<td
+        8/02/2018\r\n\t\t\t</td>\r\n\t\t\t\r\n\t\t</tr>\r\n\r\n  \r\n\t\t<tr id=\"result-4\">\r\n\t\t\t<td
         class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-series-4\">SP</td>\r\n\t\t\t<td
         class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-number-4\"> 1800-15</td>\r\n\t\t\t<td>\r\n\t\t\t\t\r\n\t\t\t\t<div
         class=\"hidden-sm hidden-xs hidden-xxs\">\r\n                        <strong><a
@@ -1145,336 +1146,335 @@ http_interactions:
         class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-release-date-9\">\r\n\t\t\t\t
         11/29/2018\r\n\t\t\t</td>\r\n\t\t\t\r\n\t\t</tr>\r\n\r\n  \r\n\t\t<tr id=\"result-10\">\r\n\t\t\t<td
         class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-series-10\">SP</td>\r\n\t\t\t<td
-        class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-number-10\"> 800-57 Part
-        2 Rev. 1</td>\r\n\t\t\t<td>\r\n\t\t\t\t\r\n\t\t\t\t<div class=\"hidden-sm
-        hidden-xs hidden-xxs\">\r\n                        <strong><a href=\"/publications/detail/sp/800-57-part-2/rev-1/draft\"
-        id=\"pub-title-link-10\">Recommendation for Key Management, Part 2: Best Practices
-        for Key Management Organizations (2nd Draft)</a></strong>\r\n\t\t\t\t</div>\r\n\r\n\t\t\t\t<div
+        class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-number-10\"> 1800-19</td>\r\n\t\t\t<td>\r\n\t\t\t\t\r\n\t\t\t\t<div
+        class=\"hidden-sm hidden-xs hidden-xxs\">\r\n                        <strong><a
+        href=\"/publications/detail/sp/1800-19/draft\" id=\"pub-title-link-10\">Trusted
+        Cloud: Security Practice Guide for VMware Hybrid Cloud Infrastructure as a
+        Service (IaaS) Environments</a></strong>\r\n\t\t\t\t</div>\r\n\r\n\t\t\t\t<div
         class=\"hidden-md hidden-lg\">\r\n\t\t\t\t\t<strong><span id=\"pub-full-display-sm-10\">SP
-        800-57 Part 2 Rev. 1 (DRAFT)</span><br />\r\n\t\t\t\t\t\t<a href=\"/publications/detail/sp/800-57-part-2/rev-1/draft\"
-        class=\"mobile-pub-title\" id=\"pub-title-link-sm-10\">Recommendation for
-        Key Management, Part 2: Best Practices for Key Management Organizations (2nd
-        Draft)</a>\r\n\t\t\t\t\t</strong>\r\n\t\t\t\t</div>\r\n\t\t\t\t\r\n\t\t\t\t<div
+        1800-19 (DRAFT)</span><br />\r\n\t\t\t\t\t\t<a href=\"/publications/detail/sp/1800-19/draft\"
+        class=\"mobile-pub-title\" id=\"pub-title-link-sm-10\">Trusted Cloud: Security
+        Practice Guide for VMware Hybrid Cloud Infrastructure as a Service (IaaS)
+        Environments</a>\r\n\t\t\t\t\t</strong>\r\n\t\t\t\t</div>\r\n\t\t\t\t\r\n\t\t\t\t<div
         class=\"hidden-md hidden-lg\">\r\n                    <strong id=\"pub-release-date-sm-10\">11/20/2018</strong>\r\n
         \                   <br />\r\n                    Status: <span id=\"pub-status-sm-10\">Draft</span>\r\n\t\t\t\t</div>\r\n\t\t\t\t\r\n\t\t\t\t\r\n
         \               <div class=\"control-value-no-block\">\r\n                Download:
-        <span id='download-values-10'><span id='download-value-10-0'><a href=\"/CSRC/media/Publications/sp/800-57-part-2/rev-1/draft/documents/sp800-57pt2-r1-draft2.pdf\">Draft
-        (2nd) SP 800-57 Part 2 Rev. 1</a></span></span>\r\n\t\t\t\t</div>\r\n\t\t\t</td>\r\n\t\t\t<td
-        class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-status-10\">\r\n\t\t\t\tDraft\r\n\t\t\t</td>\r\n\t\t\t<td
+        <span id='download-values-10'><span id='download-value-10-0'><a href=\"https://www.nccoe.nist.gov/sites/default/files/library/sp1800/tc-hybrid-nist-sp1800-19b-preliminary-draft.pdf\">SP
+        1800-19B (Preliminary Draft 1)</a></span>; <span id='download-value-10-1'><a
+        href=\"https://www.nccoe.nist.gov/webform/comments-draft-sp-1800-19b-trusted-cloud-hybrid\">Submit
+        Comments on 1800-19B</a></span>; <span id='download-value-10-2'><a href=\"https://www.nccoe.nist.gov/sites/default/files/library/sp1800/tc-hybrid-sp1800-19a-preliminary-draft.pdf\">SP
+        1800-19A (Preliminary Draft 1)</a></span>; <span id='download-value-10-3'><a
+        href=\"https://www.nccoe.nist.gov/projects/building-blocks/trusted-cloud/hybrid\">Project
+        Homepage</a></span></span>\r\n\t\t\t\t</div>\r\n\t\t\t</td>\r\n\t\t\t<td class=\"hidden-sm
+        hidden-xs hidden-xxs\" id=\"pub-status-10\">\r\n\t\t\t\tDraft\r\n\t\t\t</td>\r\n\t\t\t<td
         class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-release-date-10\">\r\n\t\t\t\t
         11/20/2018\r\n\t\t\t</td>\r\n\t\t\t\r\n\t\t</tr>\r\n\r\n  \r\n\t\t<tr id=\"result-11\">\r\n\t\t\t<td
         class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-series-11\">SP</td>\r\n\t\t\t<td
-        class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-number-11\"> 1800-19</td>\r\n\t\t\t<td>\r\n\t\t\t\t\r\n\t\t\t\t<div
-        class=\"hidden-sm hidden-xs hidden-xxs\">\r\n                        <strong><a
-        href=\"/publications/detail/sp/1800-19/draft\" id=\"pub-title-link-11\">Trusted
-        Cloud: Security Practice Guide for VMware Hybrid Cloud Infrastructure as a
-        Service (IaaS) Environments</a></strong>\r\n\t\t\t\t</div>\r\n\r\n\t\t\t\t<div
-        class=\"hidden-md hidden-lg\">\r\n\t\t\t\t\t<strong><span id=\"pub-full-display-sm-11\">SP
-        1800-19 (DRAFT)</span><br />\r\n\t\t\t\t\t\t<a href=\"/publications/detail/sp/1800-19/draft\"
-        class=\"mobile-pub-title\" id=\"pub-title-link-sm-11\">Trusted Cloud: Security
-        Practice Guide for VMware Hybrid Cloud Infrastructure as a Service (IaaS)
-        Environments</a>\r\n\t\t\t\t\t</strong>\r\n\t\t\t\t</div>\r\n\t\t\t\t\r\n\t\t\t\t<div
-        class=\"hidden-md hidden-lg\">\r\n                    <strong id=\"pub-release-date-sm-11\">11/20/2018</strong>\r\n
-        \                   <br />\r\n                    Status: <span id=\"pub-status-sm-11\">Draft</span>\r\n\t\t\t\t</div>\r\n\t\t\t\t\r\n\t\t\t\t\r\n
-        \               <div class=\"control-value-no-block\">\r\n                Download:
-        <span id='download-values-11'><span id='download-value-11-0'><a href=\"https://www.nccoe.nist.gov/sites/default/files/library/sp1800/tc-hybrid-nist-sp1800-19b-preliminary-draft.pdf\">SP
-        1800-19B (Preliminary Draft 1)</a></span>; <span id='download-value-11-1'><a
-        href=\"https://www.nccoe.nist.gov/webform/comments-draft-sp-1800-19b-trusted-cloud-hybrid\">Submit
-        Comments on 1800-19B</a></span>; <span id='download-value-11-2'><a href=\"https://www.nccoe.nist.gov/sites/default/files/library/sp1800/tc-hybrid-sp1800-19a-preliminary-draft.pdf\">SP
-        1800-19A (Preliminary Draft 1)</a></span>; <span id='download-value-11-3'><a
-        href=\"https://www.nccoe.nist.gov/projects/building-blocks/trusted-cloud/hybrid\">Project
-        Homepage</a></span></span>\r\n\t\t\t\t</div>\r\n\t\t\t</td>\r\n\t\t\t<td class=\"hidden-sm
-        hidden-xs hidden-xxs\" id=\"pub-status-11\">\r\n\t\t\t\tDraft\r\n\t\t\t</td>\r\n\t\t\t<td
-        class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-release-date-11\">\r\n\t\t\t\t
-        11/20/2018\r\n\t\t\t</td>\r\n\t\t\t\r\n\t\t</tr>\r\n\r\n  \r\n\t\t<tr id=\"result-12\">\r\n\t\t\t<td
-        class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-series-12\">SP</td>\r\n\t\t\t<td
-        class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-number-12\"> 800-179 Rev.
+        class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-number-11\"> 800-179 Rev.
         1</td>\r\n\t\t\t<td>\r\n\t\t\t\t\r\n\t\t\t\t<div class=\"hidden-sm hidden-xs
         hidden-xxs\">\r\n                        <strong><a href=\"/publications/detail/sp/800-179/rev-1/draft\"
-        id=\"pub-title-link-12\">Guide to Securing Apple macOS 10.12 Systems for IT
+        id=\"pub-title-link-11\">Guide to Securing Apple macOS 10.12 Systems for IT
         Professionals: A NIST Security Configuration Checklist</a></strong>\r\n\t\t\t\t</div>\r\n\r\n\t\t\t\t<div
-        class=\"hidden-md hidden-lg\">\r\n\t\t\t\t\t<strong><span id=\"pub-full-display-sm-12\">SP
+        class=\"hidden-md hidden-lg\">\r\n\t\t\t\t\t<strong><span id=\"pub-full-display-sm-11\">SP
         800-179 Rev. 1 (DRAFT)</span><br />\r\n\t\t\t\t\t\t<a href=\"/publications/detail/sp/800-179/rev-1/draft\"
-        class=\"mobile-pub-title\" id=\"pub-title-link-sm-12\">Guide to Securing Apple
+        class=\"mobile-pub-title\" id=\"pub-title-link-sm-11\">Guide to Securing Apple
         macOS 10.12 Systems for IT Professionals: A NIST Security Configuration Checklist</a>\r\n\t\t\t\t\t</strong>\r\n\t\t\t\t</div>\r\n\t\t\t\t\r\n\t\t\t\t<div
-        class=\"hidden-md hidden-lg\">\r\n                    <strong id=\"pub-release-date-sm-12\">10/19/2018</strong>\r\n
-        \                   <br />\r\n                    Status: <span id=\"pub-status-sm-12\">Draft</span>\r\n\t\t\t\t</div>\r\n\t\t\t\t\r\n\t\t\t\t\r\n
+        class=\"hidden-md hidden-lg\">\r\n                    <strong id=\"pub-release-date-sm-11\">10/19/2018</strong>\r\n
+        \                   <br />\r\n                    Status: <span id=\"pub-status-sm-11\">Draft</span>\r\n\t\t\t\t</div>\r\n\t\t\t\t\r\n\t\t\t\t\r\n
         \               <div class=\"control-value-no-block\">\r\n                Download:
-        <span id='download-values-12'><span id='download-value-12-0'><a href=\"/CSRC/media/Publications/sp/800-179/rev-1/draft/documents/sp800-179r1-draft.pdf\">Draft
-        SP 800-179 Rev. 1</a></span>; <span id='download-value-12-1'><a href=\"/CSRC/media/Publications/sp/800-179/rev-1/draft/documents/sp800-179r1-draft-comment-template.xlsx\">Comment
-        template</a></span>; <span id='download-value-12-2'><a href=\"https://github.com/usnistgov/applesec\">Supplemental
+        <span id='download-values-11'><span id='download-value-11-0'><a href=\"/CSRC/media/Publications/sp/800-179/rev-1/draft/documents/sp800-179r1-draft.pdf\">Draft
+        SP 800-179 Rev. 1</a></span>; <span id='download-value-11-1'><a href=\"/CSRC/media/Publications/sp/800-179/rev-1/draft/documents/sp800-179r1-draft-comment-template.xlsx\">Comment
+        template</a></span>; <span id='download-value-11-2'><a href=\"https://github.com/usnistgov/applesec\">Supplemental
         Content (GitHub)</a></span></span>\r\n\t\t\t\t</div>\r\n\t\t\t</td>\r\n\t\t\t<td
-        class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-status-12\">\r\n\t\t\t\tDraft\r\n\t\t\t</td>\r\n\t\t\t<td
-        class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-release-date-12\">\r\n\t\t\t\t
-        10/19/2018\r\n\t\t\t</td>\r\n\t\t\t\r\n\t\t</tr>\r\n\r\n  \r\n\t\t<tr id=\"result-13\">\r\n\t\t\t<td
-        class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-series-13\">SP</td>\r\n\t\t\t<td
-        class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-number-13\"> 800-52 Rev.
+        class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-status-11\">\r\n\t\t\t\tDraft\r\n\t\t\t</td>\r\n\t\t\t<td
+        class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-release-date-11\">\r\n\t\t\t\t
+        10/19/2018\r\n\t\t\t</td>\r\n\t\t\t\r\n\t\t</tr>\r\n\r\n  \r\n\t\t<tr id=\"result-12\">\r\n\t\t\t<td
+        class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-series-12\">SP</td>\r\n\t\t\t<td
+        class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-number-12\"> 800-52 Rev.
         2</td>\r\n\t\t\t<td>\r\n\t\t\t\t\r\n\t\t\t\t<div class=\"hidden-sm hidden-xs
         hidden-xxs\">\r\n                        <strong><a href=\"/publications/detail/sp/800-52/rev-2/draft\"
-        id=\"pub-title-link-13\">Guidelines for the Selection, Configuration, and
+        id=\"pub-title-link-12\">Guidelines for the Selection, Configuration, and
         Use of Transport Layer Security (TLS) Implementations (2nd Draft)</a></strong>\r\n\t\t\t\t</div>\r\n\r\n\t\t\t\t<div
-        class=\"hidden-md hidden-lg\">\r\n\t\t\t\t\t<strong><span id=\"pub-full-display-sm-13\">SP
+        class=\"hidden-md hidden-lg\">\r\n\t\t\t\t\t<strong><span id=\"pub-full-display-sm-12\">SP
         800-52 Rev. 2 (DRAFT)</span><br />\r\n\t\t\t\t\t\t<a href=\"/publications/detail/sp/800-52/rev-2/draft\"
-        class=\"mobile-pub-title\" id=\"pub-title-link-sm-13\">Guidelines for the
+        class=\"mobile-pub-title\" id=\"pub-title-link-sm-12\">Guidelines for the
         Selection, Configuration, and Use of Transport Layer Security (TLS) Implementations
         (2nd Draft)</a>\r\n\t\t\t\t\t</strong>\r\n\t\t\t\t</div>\r\n\t\t\t\t\r\n\t\t\t\t<div
-        class=\"hidden-md hidden-lg\">\r\n                    <strong id=\"pub-release-date-sm-13\">10/15/2018</strong>\r\n
+        class=\"hidden-md hidden-lg\">\r\n                    <strong id=\"pub-release-date-sm-12\">10/15/2018</strong>\r\n
+        \                   <br />\r\n                    Status: <span id=\"pub-status-sm-12\">Draft</span>\r\n\t\t\t\t</div>\r\n\t\t\t\t\r\n\t\t\t\t\r\n
+        \               <div class=\"control-value-no-block\">\r\n                Download:
+        <span id='download-values-12'><span id='download-value-12-0'><a href=\"/CSRC/media/Publications/sp/800-52/rev-2/draft/documents/sp800-52r2-draft2.pdf\">Draft
+        (2nd) SP 800-52 Rev. 2</a></span>; <span id='download-value-12-1'><a href=\"/CSRC/media/Publications/sp/800-52/rev-2/draft/documents/sp800-52r2-draft2-comments-received.pdf\">Comments
+        received</a></span></span>\r\n\t\t\t\t</div>\r\n\t\t\t</td>\r\n\t\t\t<td class=\"hidden-sm
+        hidden-xs hidden-xxs\" id=\"pub-status-12\">\r\n\t\t\t\tDraft\r\n\t\t\t</td>\r\n\t\t\t<td
+        class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-release-date-12\">\r\n\t\t\t\t
+        10/15/2018\r\n\t\t\t</td>\r\n\t\t\t\r\n\t\t</tr>\r\n\r\n  \r\n\t\t<tr id=\"result-13\">\r\n\t\t\t<td
+        class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-series-13\">SP</td>\r\n\t\t\t<td
+        class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-number-13\"> 1800-18</td>\r\n\t\t\t<td>\r\n\t\t\t\t\r\n\t\t\t\t<div
+        class=\"hidden-sm hidden-xs hidden-xxs\">\r\n                        <strong><a
+        href=\"/publications/detail/sp/1800-18/draft\" id=\"pub-title-link-13\">Privileged
+        Account Management for the Financial Services Sector</a></strong>\r\n\t\t\t\t</div>\r\n\r\n\t\t\t\t<div
+        class=\"hidden-md hidden-lg\">\r\n\t\t\t\t\t<strong><span id=\"pub-full-display-sm-13\">SP
+        1800-18 (DRAFT)</span><br />\r\n\t\t\t\t\t\t<a href=\"/publications/detail/sp/1800-18/draft\"
+        class=\"mobile-pub-title\" id=\"pub-title-link-sm-13\">Privileged Account
+        Management for the Financial Services Sector</a>\r\n\t\t\t\t\t</strong>\r\n\t\t\t\t</div>\r\n\t\t\t\t\r\n\t\t\t\t<div
+        class=\"hidden-md hidden-lg\">\r\n                    <strong id=\"pub-release-date-sm-13\">9/28/2018</strong>\r\n
         \                   <br />\r\n                    Status: <span id=\"pub-status-sm-13\">Draft</span>\r\n\t\t\t\t</div>\r\n\t\t\t\t\r\n\t\t\t\t\r\n
         \               <div class=\"control-value-no-block\">\r\n                Download:
-        <span id='download-values-13'><span id='download-value-13-0'><a href=\"/CSRC/media/Publications/sp/800-52/rev-2/draft/documents/sp800-52r2-draft2.pdf\">Draft
-        (2nd) SP 800-52 Rev. 2</a></span>; <span id='download-value-13-1'><a href=\"/CSRC/media/Publications/sp/800-52/rev-2/draft/documents/sp800-52r2-draft2-comments-received.pdf\">Comments
-        received</a></span></span>\r\n\t\t\t\t</div>\r\n\t\t\t</td>\r\n\t\t\t<td class=\"hidden-sm
+        <span id='download-values-13'><span id='download-value-13-0'><a href=\"https://www.nccoe.nist.gov/projects/use-cases/privileged-account-management\">Draft
+        SP 1800-18 volumes and Project Homepage</a></span>; <span id='download-value-13-1'><a
+        href=\"https://www.nccoe.nist.gov/webform/comments-sp-1800-18-privileged-account-management\">Submit
+        Comments</a></span></span>\r\n\t\t\t\t</div>\r\n\t\t\t</td>\r\n\t\t\t<td class=\"hidden-sm
         hidden-xs hidden-xxs\" id=\"pub-status-13\">\r\n\t\t\t\tDraft\r\n\t\t\t</td>\r\n\t\t\t<td
         class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-release-date-13\">\r\n\t\t\t\t
-        10/15/2018\r\n\t\t\t</td>\r\n\t\t\t\r\n\t\t</tr>\r\n\r\n  \r\n\t\t<tr id=\"result-14\">\r\n\t\t\t<td
+        9/28/2018\r\n\t\t\t</td>\r\n\t\t\t\r\n\t\t</tr>\r\n\r\n  \r\n\t\t<tr id=\"result-14\">\r\n\t\t\t<td
         class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-series-14\">SP</td>\r\n\t\t\t<td
-        class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-number-14\"> 1800-18</td>\r\n\t\t\t<td>\r\n\t\t\t\t\r\n\t\t\t\t<div
+        class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-number-14\"> 1800-14</td>\r\n\t\t\t<td>\r\n\t\t\t\t\r\n\t\t\t\t<div
         class=\"hidden-sm hidden-xs hidden-xxs\">\r\n                        <strong><a
-        href=\"/publications/detail/sp/1800-18/draft\" id=\"pub-title-link-14\">Privileged
-        Account Management for the Financial Services Sector</a></strong>\r\n\t\t\t\t</div>\r\n\r\n\t\t\t\t<div
-        class=\"hidden-md hidden-lg\">\r\n\t\t\t\t\t<strong><span id=\"pub-full-display-sm-14\">SP
-        1800-18 (DRAFT)</span><br />\r\n\t\t\t\t\t\t<a href=\"/publications/detail/sp/1800-18/draft\"
-        class=\"mobile-pub-title\" id=\"pub-title-link-sm-14\">Privileged Account
-        Management for the Financial Services Sector</a>\r\n\t\t\t\t\t</strong>\r\n\t\t\t\t</div>\r\n\t\t\t\t\r\n\t\t\t\t<div
-        class=\"hidden-md hidden-lg\">\r\n                    <strong id=\"pub-release-date-sm-14\">9/28/2018</strong>\r\n
+        href=\"/publications/detail/sp/1800-14/draft\" id=\"pub-title-link-14\">Protecting
+        the Integrity of Internet Routing: Border Gateway Protocol (BGP) Route Origin
+        Validation</a></strong>\r\n\t\t\t\t</div>\r\n\r\n\t\t\t\t<div class=\"hidden-md
+        hidden-lg\">\r\n\t\t\t\t\t<strong><span id=\"pub-full-display-sm-14\">SP 1800-14
+        (DRAFT)</span><br />\r\n\t\t\t\t\t\t<a href=\"/publications/detail/sp/1800-14/draft\"
+        class=\"mobile-pub-title\" id=\"pub-title-link-sm-14\">Protecting the Integrity
+        of Internet Routing: Border Gateway Protocol (BGP) Route Origin Validation</a>\r\n\t\t\t\t\t</strong>\r\n\t\t\t\t</div>\r\n\t\t\t\t\r\n\t\t\t\t<div
+        class=\"hidden-md hidden-lg\">\r\n                    <strong id=\"pub-release-date-sm-14\">9/04/2018</strong>\r\n
         \                   <br />\r\n                    Status: <span id=\"pub-status-sm-14\">Draft</span>\r\n\t\t\t\t</div>\r\n\t\t\t\t\r\n\t\t\t\t\r\n
         \               <div class=\"control-value-no-block\">\r\n                Download:
-        <span id='download-values-14'><span id='download-value-14-0'><a href=\"https://www.nccoe.nist.gov/projects/use-cases/privileged-account-management\">Draft
-        SP 1800-18 volumes and Project Homepage</a></span>; <span id='download-value-14-1'><a
-        href=\"https://www.nccoe.nist.gov/webform/comments-sp-1800-18-privileged-account-management\">Submit
+        <span id='download-values-14'><span id='download-value-14-0'><a href=\"https://www.nccoe.nist.gov/projects/building-blocks/secure-inter-domain-routing\">Draft
+        SP 1800-14 volumes and Project Homepage</a></span>; <span id='download-value-14-1'><a
+        href=\"https://www.nccoe.nist.gov/webform/comments-draft-sp-1800-14-protecting-integrity-internet-routing\">Submit
         Comments</a></span></span>\r\n\t\t\t\t</div>\r\n\t\t\t</td>\r\n\t\t\t<td class=\"hidden-sm
         hidden-xs hidden-xxs\" id=\"pub-status-14\">\r\n\t\t\t\tDraft\r\n\t\t\t</td>\r\n\t\t\t<td
         class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-release-date-14\">\r\n\t\t\t\t
-        9/28/2018\r\n\t\t\t</td>\r\n\t\t\t\r\n\t\t</tr>\r\n\r\n  \r\n\t\t<tr id=\"result-15\">\r\n\t\t\t<td
+        9/04/2018\r\n\t\t\t</td>\r\n\t\t\t\r\n\t\t</tr>\r\n\r\n  \r\n\t\t<tr id=\"result-15\">\r\n\t\t\t<td
         class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-series-15\">SP</td>\r\n\t\t\t<td
-        class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-number-15\"> 1800-14</td>\r\n\t\t\t<td>\r\n\t\t\t\t\r\n\t\t\t\t<div
+        class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-number-15\"> 1800-17</td>\r\n\t\t\t<td>\r\n\t\t\t\t\r\n\t\t\t\t<div
         class=\"hidden-sm hidden-xs hidden-xxs\">\r\n                        <strong><a
-        href=\"/publications/detail/sp/1800-14/draft\" id=\"pub-title-link-15\">Protecting
-        the Integrity of Internet Routing: Border Gateway Protocol (BGP) Route Origin
-        Validation</a></strong>\r\n\t\t\t\t</div>\r\n\r\n\t\t\t\t<div class=\"hidden-md
-        hidden-lg\">\r\n\t\t\t\t\t<strong><span id=\"pub-full-display-sm-15\">SP 1800-14
-        (DRAFT)</span><br />\r\n\t\t\t\t\t\t<a href=\"/publications/detail/sp/1800-14/draft\"
-        class=\"mobile-pub-title\" id=\"pub-title-link-sm-15\">Protecting the Integrity
-        of Internet Routing: Border Gateway Protocol (BGP) Route Origin Validation</a>\r\n\t\t\t\t\t</strong>\r\n\t\t\t\t</div>\r\n\t\t\t\t\r\n\t\t\t\t<div
-        class=\"hidden-md hidden-lg\">\r\n                    <strong id=\"pub-release-date-sm-15\">9/04/2018</strong>\r\n
+        href=\"/publications/detail/sp/1800-17/draft\" id=\"pub-title-link-15\">Multifactor
+        Authentication for E-Commerce</a></strong>\r\n\t\t\t\t</div>\r\n\r\n\t\t\t\t<div
+        class=\"hidden-md hidden-lg\">\r\n\t\t\t\t\t<strong><span id=\"pub-full-display-sm-15\">SP
+        1800-17 (DRAFT)</span><br />\r\n\t\t\t\t\t\t<a href=\"/publications/detail/sp/1800-17/draft\"
+        class=\"mobile-pub-title\" id=\"pub-title-link-sm-15\">Multifactor Authentication
+        for E-Commerce</a>\r\n\t\t\t\t\t</strong>\r\n\t\t\t\t</div>\r\n\t\t\t\t\r\n\t\t\t\t<div
+        class=\"hidden-md hidden-lg\">\r\n                    <strong id=\"pub-release-date-sm-15\">8/22/2018</strong>\r\n
         \                   <br />\r\n                    Status: <span id=\"pub-status-sm-15\">Draft</span>\r\n\t\t\t\t</div>\r\n\t\t\t\t\r\n\t\t\t\t\r\n
         \               <div class=\"control-value-no-block\">\r\n                Download:
-        <span id='download-values-15'><span id='download-value-15-0'><a href=\"https://www.nccoe.nist.gov/projects/building-blocks/secure-inter-domain-routing\">Draft
-        SP 1800-14 volumes and Project Homepage</a></span>; <span id='download-value-15-1'><a
-        href=\"https://www.nccoe.nist.gov/webform/comments-draft-sp-1800-14-protecting-integrity-internet-routing\">Submit
+        <span id='download-values-15'><span id='download-value-15-0'><a href=\"https://www.nccoe.nist.gov/projects/use-cases/multifactor-authentication-ecommerce\">Draft
+        SP 1800-17 volumes and Project Homepage</a></span>; <span id='download-value-15-1'><a
+        href=\"https://www.nccoe.nist.gov/webform/comments-draft-sp-1800-17-retail-sector-multifactor-authentication\">Submit
         Comments</a></span></span>\r\n\t\t\t\t</div>\r\n\t\t\t</td>\r\n\t\t\t<td class=\"hidden-sm
         hidden-xs hidden-xxs\" id=\"pub-status-15\">\r\n\t\t\t\tDraft\r\n\t\t\t</td>\r\n\t\t\t<td
         class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-release-date-15\">\r\n\t\t\t\t
-        9/04/2018\r\n\t\t\t</td>\r\n\t\t\t\r\n\t\t</tr>\r\n\r\n  \r\n\t\t<tr id=\"result-16\">\r\n\t\t\t<td
+        8/22/2018\r\n\t\t\t</td>\r\n\t\t\t\r\n\t\t</tr>\r\n\r\n  \r\n\t\t<tr id=\"result-16\">\r\n\t\t\t<td
         class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-series-16\">SP</td>\r\n\t\t\t<td
-        class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-number-16\"> 1800-17</td>\r\n\t\t\t<td>\r\n\t\t\t\t\r\n\t\t\t\t<div
+        class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-number-16\"> 800-71</td>\r\n\t\t\t<td>\r\n\t\t\t\t\r\n\t\t\t\t<div
         class=\"hidden-sm hidden-xs hidden-xxs\">\r\n                        <strong><a
-        href=\"/publications/detail/sp/1800-17/draft\" id=\"pub-title-link-16\">Multifactor
-        Authentication for E-Commerce</a></strong>\r\n\t\t\t\t</div>\r\n\r\n\t\t\t\t<div
+        href=\"/publications/detail/sp/800-71/draft\" id=\"pub-title-link-16\">Recommendation
+        for Key Establishment Using Symmetric Block Ciphers</a></strong>\r\n\t\t\t\t</div>\r\n\r\n\t\t\t\t<div
         class=\"hidden-md hidden-lg\">\r\n\t\t\t\t\t<strong><span id=\"pub-full-display-sm-16\">SP
-        1800-17 (DRAFT)</span><br />\r\n\t\t\t\t\t\t<a href=\"/publications/detail/sp/1800-17/draft\"
-        class=\"mobile-pub-title\" id=\"pub-title-link-sm-16\">Multifactor Authentication
-        for E-Commerce</a>\r\n\t\t\t\t\t</strong>\r\n\t\t\t\t</div>\r\n\t\t\t\t\r\n\t\t\t\t<div
-        class=\"hidden-md hidden-lg\">\r\n                    <strong id=\"pub-release-date-sm-16\">8/22/2018</strong>\r\n
+        800-71 (DRAFT)</span><br />\r\n\t\t\t\t\t\t<a href=\"/publications/detail/sp/800-71/draft\"
+        class=\"mobile-pub-title\" id=\"pub-title-link-sm-16\">Recommendation for
+        Key Establishment Using Symmetric Block Ciphers</a>\r\n\t\t\t\t\t</strong>\r\n\t\t\t\t</div>\r\n\t\t\t\t\r\n\t\t\t\t<div
+        class=\"hidden-md hidden-lg\">\r\n                    <strong id=\"pub-release-date-sm-16\">7/02/2018</strong>\r\n
         \                   <br />\r\n                    Status: <span id=\"pub-status-sm-16\">Draft</span>\r\n\t\t\t\t</div>\r\n\t\t\t\t\r\n\t\t\t\t\r\n
         \               <div class=\"control-value-no-block\">\r\n                Download:
-        <span id='download-values-16'><span id='download-value-16-0'><a href=\"https://www.nccoe.nist.gov/projects/use-cases/multifactor-authentication-ecommerce\">Draft
-        SP 1800-17 volumes and Project Homepage</a></span>; <span id='download-value-16-1'><a
-        href=\"https://www.nccoe.nist.gov/webform/comments-draft-sp-1800-17-retail-sector-multifactor-authentication\">Submit
-        Comments</a></span></span>\r\n\t\t\t\t</div>\r\n\t\t\t</td>\r\n\t\t\t<td class=\"hidden-sm
-        hidden-xs hidden-xxs\" id=\"pub-status-16\">\r\n\t\t\t\tDraft\r\n\t\t\t</td>\r\n\t\t\t<td
-        class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-release-date-16\">\r\n\t\t\t\t
-        8/22/2018\r\n\t\t\t</td>\r\n\t\t\t\r\n\t\t</tr>\r\n\r\n  \r\n\t\t<tr id=\"result-17\">\r\n\t\t\t<td
-        class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-series-17\">SP</td>\r\n\t\t\t<td
-        class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-number-17\"> 800-71</td>\r\n\t\t\t<td>\r\n\t\t\t\t\r\n\t\t\t\t<div
-        class=\"hidden-sm hidden-xs hidden-xxs\">\r\n                        <strong><a
-        href=\"/publications/detail/sp/800-71/draft\" id=\"pub-title-link-17\">Recommendation
-        for Key Establishment Using Symmetric Block Ciphers</a></strong>\r\n\t\t\t\t</div>\r\n\r\n\t\t\t\t<div
-        class=\"hidden-md hidden-lg\">\r\n\t\t\t\t\t<strong><span id=\"pub-full-display-sm-17\">SP
-        800-71 (DRAFT)</span><br />\r\n\t\t\t\t\t\t<a href=\"/publications/detail/sp/800-71/draft\"
-        class=\"mobile-pub-title\" id=\"pub-title-link-sm-17\">Recommendation for
-        Key Establishment Using Symmetric Block Ciphers</a>\r\n\t\t\t\t\t</strong>\r\n\t\t\t\t</div>\r\n\t\t\t\t\r\n\t\t\t\t<div
-        class=\"hidden-md hidden-lg\">\r\n                    <strong id=\"pub-release-date-sm-17\">7/02/2018</strong>\r\n
-        \                   <br />\r\n                    Status: <span id=\"pub-status-sm-17\">Draft</span>\r\n\t\t\t\t</div>\r\n\t\t\t\t\r\n\t\t\t\t\r\n
-        \               <div class=\"control-value-no-block\">\r\n                Download:
-        <span id='download-values-17'><span id='download-value-17-0'><a href=\"/CSRC/media/Publications/sp/800-71/draft/documents/sp800-71-draft.pdf\">Draft
+        <span id='download-values-16'><span id='download-value-16-0'><a href=\"/CSRC/media/Publications/sp/800-71/draft/documents/sp800-71-draft.pdf\">Draft
         SP 800-71</a></span></span>\r\n\t\t\t\t</div>\r\n\t\t\t</td>\r\n\t\t\t<td
-        class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-status-17\">\r\n\t\t\t\tDraft\r\n\t\t\t</td>\r\n\t\t\t<td
-        class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-release-date-17\">\r\n\t\t\t\t
-        7/02/2018\r\n\t\t\t</td>\r\n\t\t\t\r\n\t\t</tr>\r\n\r\n  \r\n\t\t<tr id=\"result-18\">\r\n\t\t\t<td
-        class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-series-18\">SP</td>\r\n\t\t\t<td
-        class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-number-18\"> 800-160 Vol.
+        class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-status-16\">\r\n\t\t\t\tDraft\r\n\t\t\t</td>\r\n\t\t\t<td
+        class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-release-date-16\">\r\n\t\t\t\t
+        7/02/2018\r\n\t\t\t</td>\r\n\t\t\t\r\n\t\t</tr>\r\n\r\n  \r\n\t\t<tr id=\"result-17\">\r\n\t\t\t<td
+        class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-series-17\">SP</td>\r\n\t\t\t<td
+        class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-number-17\"> 800-160 Vol.
         2</td>\r\n\t\t\t<td>\r\n\t\t\t\t\r\n\t\t\t\t<div class=\"hidden-sm hidden-xs
         hidden-xxs\">\r\n                        <strong><a href=\"/publications/detail/sp/800-160/vol-2/draft\"
-        id=\"pub-title-link-18\">Systems Security Engineering: Cyber Resiliency Considerations
+        id=\"pub-title-link-17\">Systems Security Engineering: Cyber Resiliency Considerations
         for the Engineering of Trustworthy Secure Systems</a></strong>\r\n\t\t\t\t</div>\r\n\r\n\t\t\t\t<div
-        class=\"hidden-md hidden-lg\">\r\n\t\t\t\t\t<strong><span id=\"pub-full-display-sm-18\">SP
+        class=\"hidden-md hidden-lg\">\r\n\t\t\t\t\t<strong><span id=\"pub-full-display-sm-17\">SP
         800-160 Vol. 2 (DRAFT)</span><br />\r\n\t\t\t\t\t\t<a href=\"/publications/detail/sp/800-160/vol-2/draft\"
-        class=\"mobile-pub-title\" id=\"pub-title-link-sm-18\">Systems Security Engineering:
+        class=\"mobile-pub-title\" id=\"pub-title-link-sm-17\">Systems Security Engineering:
         Cyber Resiliency Considerations for the Engineering of Trustworthy Secure
         Systems</a>\r\n\t\t\t\t\t</strong>\r\n\t\t\t\t</div>\r\n\t\t\t\t\r\n\t\t\t\t<div
-        class=\"hidden-md hidden-lg\">\r\n                    <strong id=\"pub-release-date-sm-18\">3/21/2018</strong>\r\n
+        class=\"hidden-md hidden-lg\">\r\n                    <strong id=\"pub-release-date-sm-17\">3/21/2018</strong>\r\n
+        \                   <br />\r\n                    Status: <span id=\"pub-status-sm-17\">Draft</span>\r\n\t\t\t\t</div>\r\n\t\t\t\t\r\n\t\t\t\t\r\n
+        \               <div class=\"control-value-no-block\">\r\n                Download:
+        <span id='download-values-17'><span id='download-value-17-0'><a href=\"/CSRC/media/Publications/sp/800-160/vol-2/draft/documents/sp800-160-vol2-draft.pdf\">Draft
+        SP 800-160 Vol. 2</a></span>; <span id='download-value-17-1'><a href=\"/CSRC/media/Publications/sp/800-160/vol-2/draft/documents/sp800-160-vol2-comment-template.xlsx\">Comment
+        Template</a></span>; <span id='download-value-17-2'><a href=\"/presentations/2018/building-cyber-resilient-systems\">Presentation:
+        \"Building Cyber Resilient Systems\"</a></span></span>\r\n\t\t\t\t</div>\r\n\t\t\t</td>\r\n\t\t\t<td
+        class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-status-17\">\r\n\t\t\t\tDraft\r\n\t\t\t</td>\r\n\t\t\t<td
+        class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-release-date-17\">\r\n\t\t\t\t
+        3/21/2018\r\n\t\t\t</td>\r\n\t\t\t\r\n\t\t</tr>\r\n\r\n  \r\n\t\t<tr id=\"result-18\">\r\n\t\t\t<td
+        class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-series-18\">SP</td>\r\n\t\t\t<td
+        class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-number-18\"> 1800-3</td>\r\n\t\t\t<td>\r\n\t\t\t\t\r\n\t\t\t\t<div
+        class=\"hidden-sm hidden-xs hidden-xxs\">\r\n                        <strong><a
+        href=\"/publications/detail/sp/1800-3/draft\" id=\"pub-title-link-18\">Attribute
+        Based Access Control (2nd Draft)</a></strong>\r\n\t\t\t\t</div>\r\n\r\n\t\t\t\t<div
+        class=\"hidden-md hidden-lg\">\r\n\t\t\t\t\t<strong><span id=\"pub-full-display-sm-18\">SP
+        1800-3 (DRAFT)</span><br />\r\n\t\t\t\t\t\t<a href=\"/publications/detail/sp/1800-3/draft\"
+        class=\"mobile-pub-title\" id=\"pub-title-link-sm-18\">Attribute Based Access
+        Control (2nd Draft)</a>\r\n\t\t\t\t\t</strong>\r\n\t\t\t\t</div>\r\n\t\t\t\t\r\n\t\t\t\t<div
+        class=\"hidden-md hidden-lg\">\r\n                    <strong id=\"pub-release-date-sm-18\">9/20/2017</strong>\r\n
         \                   <br />\r\n                    Status: <span id=\"pub-status-sm-18\">Draft</span>\r\n\t\t\t\t</div>\r\n\t\t\t\t\r\n\t\t\t\t\r\n
         \               <div class=\"control-value-no-block\">\r\n                Download:
-        <span id='download-values-18'><span id='download-value-18-0'><a href=\"/CSRC/media/Publications/sp/800-160/vol-2/draft/documents/sp800-160-vol2-draft.pdf\">Draft
-        SP 800-160 Vol. 2</a></span>; <span id='download-value-18-1'><a href=\"/CSRC/media/Publications/sp/800-160/vol-2/draft/documents/sp800-160-vol2-comment-template.xlsx\">Comment
-        Template</a></span>; <span id='download-value-18-2'><a href=\"/presentations/2018/building-cyber-resilient-systems\">Presentation:
-        \"Building Cyber Resilient Systems\"</a></span></span>\r\n\t\t\t\t</div>\r\n\t\t\t</td>\r\n\t\t\t<td
-        class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-status-18\">\r\n\t\t\t\tDraft\r\n\t\t\t</td>\r\n\t\t\t<td
+        <span id='download-values-18'><span id='download-value-18-0'><a href=\"https://nccoe.nist.gov/projects/building-blocks/attribute-based-access-control\">Draft
+        SP 1800-3 volumes and Project Homepage</a></span>; <span id='download-value-18-1'><a
+        href=\"https://nccoe.nist.gov/webform/comments-sp-1800-3-abac-second-draft\">Submit
+        Comments</a></span></span>\r\n\t\t\t\t</div>\r\n\t\t\t</td>\r\n\t\t\t<td class=\"hidden-sm
+        hidden-xs hidden-xxs\" id=\"pub-status-18\">\r\n\t\t\t\tDraft\r\n\t\t\t</td>\r\n\t\t\t<td
         class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-release-date-18\">\r\n\t\t\t\t
-        3/21/2018\r\n\t\t\t</td>\r\n\t\t\t\r\n\t\t</tr>\r\n\r\n  \r\n\t\t<tr id=\"result-19\">\r\n\t\t\t<td
+        9/20/2017\r\n\t\t\t</td>\r\n\t\t\t\r\n\t\t</tr>\r\n\r\n  \r\n\t\t<tr id=\"result-19\">\r\n\t\t\t<td
         class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-series-19\">SP</td>\r\n\t\t\t<td
-        class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-number-19\"> 1800-3</td>\r\n\t\t\t<td>\r\n\t\t\t\t\r\n\t\t\t\t<div
+        class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-number-19\"> 1800-11</td>\r\n\t\t\t<td>\r\n\t\t\t\t\r\n\t\t\t\t<div
         class=\"hidden-sm hidden-xs hidden-xxs\">\r\n                        <strong><a
-        href=\"/publications/detail/sp/1800-3/draft\" id=\"pub-title-link-19\">Attribute
-        Based Access Control (2nd Draft)</a></strong>\r\n\t\t\t\t</div>\r\n\r\n\t\t\t\t<div
+        href=\"/publications/detail/sp/1800-11/draft\" id=\"pub-title-link-19\">Data
+        Integrity: Recovering from Ransomware and Other Destructive Events</a></strong>\r\n\t\t\t\t</div>\r\n\r\n\t\t\t\t<div
         class=\"hidden-md hidden-lg\">\r\n\t\t\t\t\t<strong><span id=\"pub-full-display-sm-19\">SP
-        1800-3 (DRAFT)</span><br />\r\n\t\t\t\t\t\t<a href=\"/publications/detail/sp/1800-3/draft\"
-        class=\"mobile-pub-title\" id=\"pub-title-link-sm-19\">Attribute Based Access
-        Control (2nd Draft)</a>\r\n\t\t\t\t\t</strong>\r\n\t\t\t\t</div>\r\n\t\t\t\t\r\n\t\t\t\t<div
-        class=\"hidden-md hidden-lg\">\r\n                    <strong id=\"pub-release-date-sm-19\">9/20/2017</strong>\r\n
+        1800-11 (DRAFT)</span><br />\r\n\t\t\t\t\t\t<a href=\"/publications/detail/sp/1800-11/draft\"
+        class=\"mobile-pub-title\" id=\"pub-title-link-sm-19\">Data Integrity: Recovering
+        from Ransomware and Other Destructive Events</a>\r\n\t\t\t\t\t</strong>\r\n\t\t\t\t</div>\r\n\t\t\t\t\r\n\t\t\t\t<div
+        class=\"hidden-md hidden-lg\">\r\n                    <strong id=\"pub-release-date-sm-19\">9/06/2017</strong>\r\n
         \                   <br />\r\n                    Status: <span id=\"pub-status-sm-19\">Draft</span>\r\n\t\t\t\t</div>\r\n\t\t\t\t\r\n\t\t\t\t\r\n
         \               <div class=\"control-value-no-block\">\r\n                Download:
-        <span id='download-values-19'><span id='download-value-19-0'><a href=\"https://nccoe.nist.gov/projects/building-blocks/attribute-based-access-control\">Draft
-        SP 1800-3 volumes and Project Homepage</a></span>; <span id='download-value-19-1'><a
-        href=\"https://nccoe.nist.gov/webform/comments-sp-1800-3-abac-second-draft\">Submit
+        <span id='download-values-19'><span id='download-value-19-0'><a href=\"https://nccoe.nist.gov/projects/building-blocks/data-integrity\">Draft
+        SP 1800-11 volumes and Project Homepage</a></span>; <span id='download-value-19-1'><a
+        href=\"https://nccoe.nist.gov/webform/comments-sp-1800-11-data-integrity\">Submit
         Comments</a></span></span>\r\n\t\t\t\t</div>\r\n\t\t\t</td>\r\n\t\t\t<td class=\"hidden-sm
         hidden-xs hidden-xxs\" id=\"pub-status-19\">\r\n\t\t\t\tDraft\r\n\t\t\t</td>\r\n\t\t\t<td
         class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-release-date-19\">\r\n\t\t\t\t
-        9/20/2017\r\n\t\t\t</td>\r\n\t\t\t\r\n\t\t</tr>\r\n\r\n  \r\n\t\t<tr id=\"result-20\">\r\n\t\t\t<td
+        9/06/2017\r\n\t\t\t</td>\r\n\t\t\t\r\n\t\t</tr>\r\n\r\n  \r\n\t\t<tr id=\"result-20\">\r\n\t\t\t<td
         class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-series-20\">SP</td>\r\n\t\t\t<td
-        class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-number-20\"> 1800-11</td>\r\n\t\t\t<td>\r\n\t\t\t\t\r\n\t\t\t\t<div
+        class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-number-20\"> 1800-9</td>\r\n\t\t\t<td>\r\n\t\t\t\t\r\n\t\t\t\t<div
         class=\"hidden-sm hidden-xs hidden-xxs\">\r\n                        <strong><a
-        href=\"/publications/detail/sp/1800-11/draft\" id=\"pub-title-link-20\">Data
-        Integrity: Recovering from Ransomware and Other Destructive Events</a></strong>\r\n\t\t\t\t</div>\r\n\r\n\t\t\t\t<div
+        href=\"/publications/detail/sp/1800-9/draft\" id=\"pub-title-link-20\">Access
+        Rights Management for the Financial Services Sector</a></strong>\r\n\t\t\t\t</div>\r\n\r\n\t\t\t\t<div
         class=\"hidden-md hidden-lg\">\r\n\t\t\t\t\t<strong><span id=\"pub-full-display-sm-20\">SP
-        1800-11 (DRAFT)</span><br />\r\n\t\t\t\t\t\t<a href=\"/publications/detail/sp/1800-11/draft\"
-        class=\"mobile-pub-title\" id=\"pub-title-link-sm-20\">Data Integrity: Recovering
-        from Ransomware and Other Destructive Events</a>\r\n\t\t\t\t\t</strong>\r\n\t\t\t\t</div>\r\n\t\t\t\t\r\n\t\t\t\t<div
-        class=\"hidden-md hidden-lg\">\r\n                    <strong id=\"pub-release-date-sm-20\">9/06/2017</strong>\r\n
+        1800-9 (DRAFT)</span><br />\r\n\t\t\t\t\t\t<a href=\"/publications/detail/sp/1800-9/draft\"
+        class=\"mobile-pub-title\" id=\"pub-title-link-sm-20\">Access Rights Management
+        for the Financial Services Sector</a>\r\n\t\t\t\t\t</strong>\r\n\t\t\t\t</div>\r\n\t\t\t\t\r\n\t\t\t\t<div
+        class=\"hidden-md hidden-lg\">\r\n                    <strong id=\"pub-release-date-sm-20\">8/31/2017</strong>\r\n
         \                   <br />\r\n                    Status: <span id=\"pub-status-sm-20\">Draft</span>\r\n\t\t\t\t</div>\r\n\t\t\t\t\r\n\t\t\t\t\r\n
         \               <div class=\"control-value-no-block\">\r\n                Download:
-        <span id='download-values-20'><span id='download-value-20-0'><a href=\"https://nccoe.nist.gov/projects/building-blocks/data-integrity\">Draft
-        SP 1800-11 volumes and Project Homepage</a></span>; <span id='download-value-20-1'><a
-        href=\"https://nccoe.nist.gov/webform/comments-sp-1800-11-data-integrity\">Submit
-        Comments</a></span></span>\r\n\t\t\t\t</div>\r\n\t\t\t</td>\r\n\t\t\t<td class=\"hidden-sm
-        hidden-xs hidden-xxs\" id=\"pub-status-20\">\r\n\t\t\t\tDraft\r\n\t\t\t</td>\r\n\t\t\t<td
-        class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-release-date-20\">\r\n\t\t\t\t
-        9/06/2017\r\n\t\t\t</td>\r\n\t\t\t\r\n\t\t</tr>\r\n\r\n  \r\n\t\t<tr id=\"result-21\">\r\n\t\t\t<td
-        class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-series-21\">SP</td>\r\n\t\t\t<td
-        class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-number-21\"> 1800-9</td>\r\n\t\t\t<td>\r\n\t\t\t\t\r\n\t\t\t\t<div
-        class=\"hidden-sm hidden-xs hidden-xxs\">\r\n                        <strong><a
-        href=\"/publications/detail/sp/1800-9/draft\" id=\"pub-title-link-21\">Access
-        Rights Management for the Financial Services Sector</a></strong>\r\n\t\t\t\t</div>\r\n\r\n\t\t\t\t<div
-        class=\"hidden-md hidden-lg\">\r\n\t\t\t\t\t<strong><span id=\"pub-full-display-sm-21\">SP
-        1800-9 (DRAFT)</span><br />\r\n\t\t\t\t\t\t<a href=\"/publications/detail/sp/1800-9/draft\"
-        class=\"mobile-pub-title\" id=\"pub-title-link-sm-21\">Access Rights Management
-        for the Financial Services Sector</a>\r\n\t\t\t\t\t</strong>\r\n\t\t\t\t</div>\r\n\t\t\t\t\r\n\t\t\t\t<div
-        class=\"hidden-md hidden-lg\">\r\n                    <strong id=\"pub-release-date-sm-21\">8/31/2017</strong>\r\n
-        \                   <br />\r\n                    Status: <span id=\"pub-status-sm-21\">Draft</span>\r\n\t\t\t\t</div>\r\n\t\t\t\t\r\n\t\t\t\t\r\n
-        \               <div class=\"control-value-no-block\">\r\n                Download:
-        <span id='download-values-21'><span id='download-value-21-0'><a href=\"https://nccoe.nist.gov/projects/use-cases/access-rights-management\">Draft
-        1800-9 volumes and homepage</a></span>; <span id='download-value-21-1'><a
+        <span id='download-values-20'><span id='download-value-20-0'><a href=\"https://nccoe.nist.gov/projects/use-cases/access-rights-management\">Draft
+        1800-9 volumes and homepage</a></span>; <span id='download-value-20-1'><a
         href=\"https://nccoe.nist.gov/webform/comments-sp-1800-9-access-rights-management\">Submit
-        Comments</a></span>; <span id='download-value-21-2'><a href=\"https://nccoe.nist.gov/news/managing-user-access-financial-services-sector\">Learn
+        Comments</a></span>; <span id='download-value-20-2'><a href=\"https://nccoe.nist.gov/news/managing-user-access-financial-services-sector\">Learn
         more about this project</a></span></span>\r\n\t\t\t\t</div>\r\n\t\t\t</td>\r\n\t\t\t<td
-        class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-status-21\">\r\n\t\t\t\tDraft\r\n\t\t\t</td>\r\n\t\t\t<td
-        class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-release-date-21\">\r\n\t\t\t\t
-        8/31/2017\r\n\t\t\t</td>\r\n\t\t\t\r\n\t\t</tr>\r\n\r\n  \r\n\t\t<tr id=\"result-22\">\r\n\t\t\t<td
-        class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-series-22\">SP</td>\r\n\t\t\t<td
-        class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-number-22\"> 800-53 Rev.
+        class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-status-20\">\r\n\t\t\t\tDraft\r\n\t\t\t</td>\r\n\t\t\t<td
+        class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-release-date-20\">\r\n\t\t\t\t
+        8/31/2017\r\n\t\t\t</td>\r\n\t\t\t\r\n\t\t</tr>\r\n\r\n  \r\n\t\t<tr id=\"result-21\">\r\n\t\t\t<td
+        class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-series-21\">SP</td>\r\n\t\t\t<td
+        class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-number-21\"> 800-53 Rev.
         5</td>\r\n\t\t\t<td>\r\n\t\t\t\t\r\n\t\t\t\t<div class=\"hidden-sm hidden-xs
         hidden-xxs\">\r\n                        <strong><a href=\"/publications/detail/sp/800-53/rev-5/draft\"
-        id=\"pub-title-link-22\">Security and Privacy Controls for Information Systems
+        id=\"pub-title-link-21\">Security and Privacy Controls for Information Systems
         and Organizations</a></strong>\r\n\t\t\t\t</div>\r\n\r\n\t\t\t\t<div class=\"hidden-md
-        hidden-lg\">\r\n\t\t\t\t\t<strong><span id=\"pub-full-display-sm-22\">SP 800-53
+        hidden-lg\">\r\n\t\t\t\t\t<strong><span id=\"pub-full-display-sm-21\">SP 800-53
         Rev. 5 (DRAFT)</span><br />\r\n\t\t\t\t\t\t<a href=\"/publications/detail/sp/800-53/rev-5/draft\"
-        class=\"mobile-pub-title\" id=\"pub-title-link-sm-22\">Security and Privacy
+        class=\"mobile-pub-title\" id=\"pub-title-link-sm-21\">Security and Privacy
         Controls for Information Systems and Organizations</a>\r\n\t\t\t\t\t</strong>\r\n\t\t\t\t</div>\r\n\t\t\t\t\r\n\t\t\t\t<div
-        class=\"hidden-md hidden-lg\">\r\n                    <strong id=\"pub-release-date-sm-22\">8/15/2017</strong>\r\n
-        \                   <br />\r\n                    Status: <span id=\"pub-status-sm-22\">Draft</span>\r\n\t\t\t\t</div>\r\n\t\t\t\t\r\n\t\t\t\t\r\n
+        class=\"hidden-md hidden-lg\">\r\n                    <strong id=\"pub-release-date-sm-21\">8/15/2017</strong>\r\n
+        \                   <br />\r\n                    Status: <span id=\"pub-status-sm-21\">Draft</span>\r\n\t\t\t\t</div>\r\n\t\t\t\t\r\n\t\t\t\t\r\n
         \               <div class=\"control-value-no-block\">\r\n                Download:
-        <span id='download-values-22'><span id='download-value-22-0'><a href=\"/CSRC/media//Publications/sp/800-53/rev-5/draft/documents/sp800-53r5-draft.pdf\">Draft
-        SP 800-53 Rev. 5</a></span>; <span id='download-value-22-1'><a href=\"/CSRC/media/Publications/sp/800-53/rev-5/draft/documents/sp800-53r5-draft-controls-markup.pdf\">Draft
-        SP 800-53 Rev. 5 Controls Markup</a></span>; <span id='download-value-22-2'><a
+        <span id='download-values-21'><span id='download-value-21-0'><a href=\"/CSRC/media//Publications/sp/800-53/rev-5/draft/documents/sp800-53r5-draft.pdf\">Draft
+        SP 800-53 Rev. 5</a></span>; <span id='download-value-21-1'><a href=\"/CSRC/media/Publications/sp/800-53/rev-5/draft/documents/sp800-53r5-draft-controls-markup.pdf\">Draft
+        SP 800-53 Rev. 5 Controls Markup</a></span>; <span id='download-value-21-2'><a
         href=\"/CSRC/media/Publications/sp/800-53/rev-5/draft/documents/sp800-53r5-draft-baselines-markup.pdf\">Draft
         SP 800-53 Rev. 5 Baseline Markup</a></span></span>\r\n\t\t\t\t</div>\r\n\t\t\t</td>\r\n\t\t\t<td
+        class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-status-21\">\r\n\t\t\t\tDraft\r\n\t\t\t</td>\r\n\t\t\t<td
+        class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-release-date-21\">\r\n\t\t\t\t
+        8/15/2017\r\n\t\t\t</td>\r\n\t\t\t\r\n\t\t</tr>\r\n\r\n  \r\n\t\t<tr id=\"result-22\">\r\n\t\t\t<td
+        class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-series-22\">SP</td>\r\n\t\t\t<td
+        class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-number-22\"> 1800-7</td>\r\n\t\t\t<td>\r\n\t\t\t\t\r\n\t\t\t\t<div
+        class=\"hidden-sm hidden-xs hidden-xxs\">\r\n                        <strong><a
+        href=\"/publications/detail/sp/1800-7/draft\" id=\"pub-title-link-22\">Situational
+        Awareness for Electric Utilities</a></strong>\r\n\t\t\t\t</div>\r\n\r\n\t\t\t\t<div
+        class=\"hidden-md hidden-lg\">\r\n\t\t\t\t\t<strong><span id=\"pub-full-display-sm-22\">SP
+        1800-7 (DRAFT)</span><br />\r\n\t\t\t\t\t\t<a href=\"/publications/detail/sp/1800-7/draft\"
+        class=\"mobile-pub-title\" id=\"pub-title-link-sm-22\">Situational Awareness
+        for Electric Utilities</a>\r\n\t\t\t\t\t</strong>\r\n\t\t\t\t</div>\r\n\t\t\t\t\r\n\t\t\t\t<div
+        class=\"hidden-md hidden-lg\">\r\n                    <strong id=\"pub-release-date-sm-22\">2/16/2017</strong>\r\n
+        \                   <br />\r\n                    Status: <span id=\"pub-status-sm-22\">Draft</span>\r\n\t\t\t\t</div>\r\n\t\t\t\t\r\n\t\t\t\t\r\n
+        \               <div class=\"control-value-no-block\">\r\n                Download:
+        <span id='download-values-22'><span id='download-value-22-0'><a href=\"https://nccoe.nist.gov/projects/use_cases/situational_awareness\">Draft
+        SP 1800-7 volumes and Project Homepage</a></span>; <span id='download-value-22-1'><a
+        href=\"https://nccoe.nist.gov/webform/comments-situational-awareness-practice-guide-draft\">Submit
+        Comments</a></span>; <span id='download-value-22-2'><a href=\"https://nccoe.nist.gov/news/new-guide-help-electric-utilities-improve-cybersecurity-situational-awareness\">Learn
+        more about this project</a></span></span>\r\n\t\t\t\t</div>\r\n\t\t\t</td>\r\n\t\t\t<td
         class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-status-22\">\r\n\t\t\t\tDraft\r\n\t\t\t</td>\r\n\t\t\t<td
         class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-release-date-22\">\r\n\t\t\t\t
-        8/15/2017\r\n\t\t\t</td>\r\n\t\t\t\r\n\t\t</tr>\r\n\r\n  \r\n\t\t<tr id=\"result-23\">\r\n\t\t\t<td
+        2/16/2017\r\n\t\t\t</td>\r\n\t\t\t\r\n\t\t</tr>\r\n\r\n  \r\n\t\t<tr id=\"result-23\">\r\n\t\t\t<td
         class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-series-23\">SP</td>\r\n\t\t\t<td
-        class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-number-23\"> 1800-7</td>\r\n\t\t\t<td>\r\n\t\t\t\t\r\n\t\t\t\t<div
+        class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-number-23\"> 800-188</td>\r\n\t\t\t<td>\r\n\t\t\t\t\r\n\t\t\t\t<div
         class=\"hidden-sm hidden-xs hidden-xxs\">\r\n                        <strong><a
-        href=\"/publications/detail/sp/1800-7/draft\" id=\"pub-title-link-23\">Situational
-        Awareness for Electric Utilities</a></strong>\r\n\t\t\t\t</div>\r\n\r\n\t\t\t\t<div
+        href=\"/publications/detail/sp/800-188/draft\" id=\"pub-title-link-23\">De-Identifying
+        Government Datasets (2nd Draft)</a></strong>\r\n\t\t\t\t</div>\r\n\r\n\t\t\t\t<div
         class=\"hidden-md hidden-lg\">\r\n\t\t\t\t\t<strong><span id=\"pub-full-display-sm-23\">SP
-        1800-7 (DRAFT)</span><br />\r\n\t\t\t\t\t\t<a href=\"/publications/detail/sp/1800-7/draft\"
-        class=\"mobile-pub-title\" id=\"pub-title-link-sm-23\">Situational Awareness
-        for Electric Utilities</a>\r\n\t\t\t\t\t</strong>\r\n\t\t\t\t</div>\r\n\t\t\t\t\r\n\t\t\t\t<div
-        class=\"hidden-md hidden-lg\">\r\n                    <strong id=\"pub-release-date-sm-23\">2/16/2017</strong>\r\n
+        800-188 (DRAFT)</span><br />\r\n\t\t\t\t\t\t<a href=\"/publications/detail/sp/800-188/draft\"
+        class=\"mobile-pub-title\" id=\"pub-title-link-sm-23\">De-Identifying Government
+        Datasets (2nd Draft)</a>\r\n\t\t\t\t\t</strong>\r\n\t\t\t\t</div>\r\n\t\t\t\t\r\n\t\t\t\t<div
+        class=\"hidden-md hidden-lg\">\r\n                    <strong id=\"pub-release-date-sm-23\">12/15/2016</strong>\r\n
         \                   <br />\r\n                    Status: <span id=\"pub-status-sm-23\">Draft</span>\r\n\t\t\t\t</div>\r\n\t\t\t\t\r\n\t\t\t\t\r\n
         \               <div class=\"control-value-no-block\">\r\n                Download:
-        <span id='download-values-23'><span id='download-value-23-0'><a href=\"https://nccoe.nist.gov/projects/use_cases/situational_awareness\">Draft
-        SP 1800-7 volumes and Project Homepage</a></span>; <span id='download-value-23-1'><a
-        href=\"https://nccoe.nist.gov/webform/comments-situational-awareness-practice-guide-draft\">Submit
-        Comments</a></span>; <span id='download-value-23-2'><a href=\"https://nccoe.nist.gov/news/new-guide-help-electric-utilities-improve-cybersecurity-situational-awareness\">Learn
-        more about this project</a></span></span>\r\n\t\t\t\t</div>\r\n\t\t\t</td>\r\n\t\t\t<td
-        class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-status-23\">\r\n\t\t\t\tDraft\r\n\t\t\t</td>\r\n\t\t\t<td
+        <span id='download-values-23'><span id='download-value-23-0'><a href=\"/CSRC/media/Publications/sp/800-188/draft/documents/sp800_188_draft2.pdf\">Draft
+        SP 800-188</a></span>; <span id='download-value-23-1'><a href=\"/CSRC/media/Publications/sp/800-188/draft/documents/sp800_188_draft2_comment-template-form.docx\">Comment
+        Template</a></span></span>\r\n\t\t\t\t</div>\r\n\t\t\t</td>\r\n\t\t\t<td class=\"hidden-sm
+        hidden-xs hidden-xxs\" id=\"pub-status-23\">\r\n\t\t\t\tDraft\r\n\t\t\t</td>\r\n\t\t\t<td
         class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-release-date-23\">\r\n\t\t\t\t
-        2/16/2017\r\n\t\t\t</td>\r\n\t\t\t\r\n\t\t</tr>\r\n\r\n  \r\n\t\t<tr id=\"result-24\">\r\n\t\t\t<td
+        12/15/2016\r\n\t\t\t</td>\r\n\t\t\t\r\n\t\t</tr>\r\n\r\n  \r\n\t\t<tr id=\"result-24\">\r\n\t\t\t<td
         class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-series-24\">SP</td>\r\n\t\t\t<td
-        class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-number-24\"> 800-188</td>\r\n\t\t\t<td>\r\n\t\t\t\t\r\n\t\t\t\t<div
+        class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-number-24\"> 800-90C</td>\r\n\t\t\t<td>\r\n\t\t\t\t\r\n\t\t\t\t<div
         class=\"hidden-sm hidden-xs hidden-xxs\">\r\n                        <strong><a
-        href=\"/publications/detail/sp/800-188/draft\" id=\"pub-title-link-24\">De-Identifying
-        Government Datasets (2nd Draft)</a></strong>\r\n\t\t\t\t</div>\r\n\r\n\t\t\t\t<div
+        href=\"/publications/detail/sp/800-90c/draft\" id=\"pub-title-link-24\">Recommendation
+        for Random Bit Generator (RBG) Constructions</a></strong>\r\n\t\t\t\t</div>\r\n\r\n\t\t\t\t<div
         class=\"hidden-md hidden-lg\">\r\n\t\t\t\t\t<strong><span id=\"pub-full-display-sm-24\">SP
-        800-188 (DRAFT)</span><br />\r\n\t\t\t\t\t\t<a href=\"/publications/detail/sp/800-188/draft\"
-        class=\"mobile-pub-title\" id=\"pub-title-link-sm-24\">De-Identifying Government
-        Datasets (2nd Draft)</a>\r\n\t\t\t\t\t</strong>\r\n\t\t\t\t</div>\r\n\t\t\t\t\r\n\t\t\t\t<div
-        class=\"hidden-md hidden-lg\">\r\n                    <strong id=\"pub-release-date-sm-24\">12/15/2016</strong>\r\n
+        800-90C (DRAFT)</span><br />\r\n\t\t\t\t\t\t<a href=\"/publications/detail/sp/800-90c/draft\"
+        class=\"mobile-pub-title\" id=\"pub-title-link-sm-24\">Recommendation for
+        Random Bit Generator (RBG) Constructions</a>\r\n\t\t\t\t\t</strong>\r\n\t\t\t\t</div>\r\n\t\t\t\t\r\n\t\t\t\t<div
+        class=\"hidden-md hidden-lg\">\r\n                    <strong id=\"pub-release-date-sm-24\">4/13/2016</strong>\r\n
         \                   <br />\r\n                    Status: <span id=\"pub-status-sm-24\">Draft</span>\r\n\t\t\t\t</div>\r\n\t\t\t\t\r\n\t\t\t\t\r\n
         \               <div class=\"control-value-no-block\">\r\n                Download:
-        <span id='download-values-24'><span id='download-value-24-0'><a href=\"/CSRC/media/Publications/sp/800-188/draft/documents/sp800_188_draft2.pdf\">Draft
-        SP 800-188</a></span>; <span id='download-value-24-1'><a href=\"/CSRC/media/Publications/sp/800-188/draft/documents/sp800_188_draft2_comment-template-form.docx\">Comment
+        <span id='download-values-24'><span id='download-value-24-0'><a href=\"/CSRC/media/Publications/sp/800-90c/draft/documents/sp800_90c_second_draft.pdf\">Second
+        Draft SP 800-90C</a></span>; <span id='download-value-24-1'><a href=\"/CSRC/media/Publications/sp/800-90c/draft/documents/sp800_90c_second_draft_comment_template.docx\">Comment
         Template</a></span></span>\r\n\t\t\t\t</div>\r\n\t\t\t</td>\r\n\t\t\t<td class=\"hidden-sm
         hidden-xs hidden-xxs\" id=\"pub-status-24\">\r\n\t\t\t\tDraft\r\n\t\t\t</td>\r\n\t\t\t<td
         class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-release-date-24\">\r\n\t\t\t\t
-        12/15/2016\r\n\t\t\t</td>\r\n\t\t\t\r\n\t\t</tr>\r\n\r\n  \r\n\t\t<tr id=\"result-25\">\r\n\t\t\t<td
+        4/13/2016\r\n\t\t\t</td>\r\n\t\t\t\r\n\t\t</tr>\r\n\r\n  \r\n\t\t<tr id=\"result-25\">\r\n\t\t\t<td
         class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-series-25\">SP</td>\r\n\t\t\t<td
-        class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-number-25\"> 800-90C</td>\r\n\t\t\t<td>\r\n\t\t\t\t\r\n\t\t\t\t<div
+        class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-number-25\"> 800-154</td>\r\n\t\t\t<td>\r\n\t\t\t\t\r\n\t\t\t\t<div
         class=\"hidden-sm hidden-xs hidden-xxs\">\r\n                        <strong><a
-        href=\"/publications/detail/sp/800-90c/draft\" id=\"pub-title-link-25\">Recommendation
-        for Random Bit Generator (RBG) Constructions</a></strong>\r\n\t\t\t\t</div>\r\n\r\n\t\t\t\t<div
+        href=\"/publications/detail/sp/800-154/draft\" id=\"pub-title-link-25\">Guide
+        to Data-Centric System Threat Modeling</a></strong>\r\n\t\t\t\t</div>\r\n\r\n\t\t\t\t<div
         class=\"hidden-md hidden-lg\">\r\n\t\t\t\t\t<strong><span id=\"pub-full-display-sm-25\">SP
-        800-90C (DRAFT)</span><br />\r\n\t\t\t\t\t\t<a href=\"/publications/detail/sp/800-90c/draft\"
-        class=\"mobile-pub-title\" id=\"pub-title-link-sm-25\">Recommendation for
-        Random Bit Generator (RBG) Constructions</a>\r\n\t\t\t\t\t</strong>\r\n\t\t\t\t</div>\r\n\t\t\t\t\r\n\t\t\t\t<div
-        class=\"hidden-md hidden-lg\">\r\n                    <strong id=\"pub-release-date-sm-25\">4/13/2016</strong>\r\n
+        800-154 (DRAFT)</span><br />\r\n\t\t\t\t\t\t<a href=\"/publications/detail/sp/800-154/draft\"
+        class=\"mobile-pub-title\" id=\"pub-title-link-sm-25\">Guide to Data-Centric
+        System Threat Modeling</a>\r\n\t\t\t\t\t</strong>\r\n\t\t\t\t</div>\r\n\t\t\t\t\r\n\t\t\t\t<div
+        class=\"hidden-md hidden-lg\">\r\n                    <strong id=\"pub-release-date-sm-25\">3/14/2016</strong>\r\n
         \                   <br />\r\n                    Status: <span id=\"pub-status-sm-25\">Draft</span>\r\n\t\t\t\t</div>\r\n\t\t\t\t\r\n\t\t\t\t\r\n
         \               <div class=\"control-value-no-block\">\r\n                Download:
-        <span id='download-values-25'><span id='download-value-25-0'><a href=\"/CSRC/media/Publications/sp/800-90c/draft/documents/sp800_90c_second_draft.pdf\">Second
-        Draft SP 800-90C</a></span>; <span id='download-value-25-1'><a href=\"/CSRC/media/Publications/sp/800-90c/draft/documents/sp800_90c_second_draft_comment_template.docx\">Comment
+        <span id='download-values-25'><span id='download-value-25-0'><a href=\"/CSRC/media/Publications/sp/800-154/draft/documents/sp800_154_draft.pdf\">Draft
+        SP 800-154</a></span>; <span id='download-value-25-1'><a href=\"/CSRC/media/Publications/sp/800-154/draft/documents/sp800_154_draft_comment-template.xls\">Comment
         Template</a></span></span>\r\n\t\t\t\t</div>\r\n\t\t\t</td>\r\n\t\t\t<td class=\"hidden-sm
         hidden-xs hidden-xxs\" id=\"pub-status-25\">\r\n\t\t\t\tDraft\r\n\t\t\t</td>\r\n\t\t\t<td
         class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-release-date-25\">\r\n\t\t\t\t
-        4/13/2016\r\n\t\t\t</td>\r\n\t\t\t\r\n\t\t</tr>\r\n\r\n\t</tbody>\r\n</table>\r\n<div
+        3/14/2016\r\n\t\t\t</td>\r\n\t\t\t\r\n\t\t</tr>\r\n\r\n\t</tbody>\r\n</table>\r\n<div
         class=\"row bottom-pagination-area\">\r\n  <p class=\"text-center\">\r\n      <span
-        class='pagination-links' id='bottom-pagination-container' data-total-pages='18'
+        class='pagination-links' id='bottom-pagination-container' data-total-pages='19'
         data-min-page='1' data-max-page='10' data-current-page='1' data-show-first='False'
         data-show-last='True'><strong aria-label=\"Page 1\" id=\"bottom-page-1\">1</strong>
-        &nbsp;&nbsp;&nbsp;  <a href=\"/publications/search?keywords-lg=SP+800-205&status-lg=Draft%2cWithdrawn&page=2\"
-        aria-label=\"Page 2\" id=\"bottom-page-2\">2</a> &nbsp;&nbsp;&nbsp;  <a href=\"/publications/search?keywords-lg=SP+800-205&status-lg=Draft%2cWithdrawn&page=3\"
-        aria-label=\"Page 3\" id=\"bottom-page-3\">3</a> &nbsp;&nbsp;&nbsp;  <a href=\"/publications/search?keywords-lg=SP+800-205&status-lg=Draft%2cWithdrawn&page=4\"
-        aria-label=\"Page 4\" id=\"bottom-page-4\">4</a> &nbsp;&nbsp;&nbsp;  <a href=\"/publications/search?keywords-lg=SP+800-205&status-lg=Draft%2cWithdrawn&page=5\"
-        aria-label=\"Page 5\" id=\"bottom-page-5\">5</a> &nbsp;&nbsp;&nbsp;  <a href=\"/publications/search?keywords-lg=SP+800-205&status-lg=Draft%2cWithdrawn&page=6\"
-        aria-label=\"Page 6\" id=\"bottom-page-6\">6</a> &nbsp;&nbsp;&nbsp;  <a href=\"/publications/search?keywords-lg=SP+800-205&status-lg=Draft%2cWithdrawn&page=7\"
-        aria-label=\"Page 7\" id=\"bottom-page-7\">7</a> &nbsp;&nbsp;&nbsp;  <a href=\"/publications/search?keywords-lg=SP+800-205&status-lg=Draft%2cWithdrawn&page=8\"
-        aria-label=\"Page 8\" id=\"bottom-page-8\">8</a> &nbsp;&nbsp;&nbsp;  <a href=\"/publications/search?keywords-lg=SP+800-205&status-lg=Draft%2cWithdrawn&page=9\"
-        aria-label=\"Page 9\" id=\"bottom-page-9\">9</a> &nbsp;&nbsp;&nbsp;  <a href=\"/publications/search?keywords-lg=SP+800-205&status-lg=Draft%2cWithdrawn&page=10\"
-        aria-label=\"Page 10\" id=\"bottom-page-10\">10</a>&nbsp;&nbsp;<a href=\"/publications/search?keywords-lg=SP+800-205&status-lg=Draft%2cWithdrawn&page=2\"
+        &nbsp;&nbsp;&nbsp;  <a href=\"/publications/search?keywords-lg=SP+800-205&status-lg=Draft%2cRetired+Draft%2cWithdrawn&page=2\"
+        aria-label=\"Page 2\" id=\"bottom-page-2\">2</a> &nbsp;&nbsp;&nbsp;  <a href=\"/publications/search?keywords-lg=SP+800-205&status-lg=Draft%2cRetired+Draft%2cWithdrawn&page=3\"
+        aria-label=\"Page 3\" id=\"bottom-page-3\">3</a> &nbsp;&nbsp;&nbsp;  <a href=\"/publications/search?keywords-lg=SP+800-205&status-lg=Draft%2cRetired+Draft%2cWithdrawn&page=4\"
+        aria-label=\"Page 4\" id=\"bottom-page-4\">4</a> &nbsp;&nbsp;&nbsp;  <a href=\"/publications/search?keywords-lg=SP+800-205&status-lg=Draft%2cRetired+Draft%2cWithdrawn&page=5\"
+        aria-label=\"Page 5\" id=\"bottom-page-5\">5</a> &nbsp;&nbsp;&nbsp;  <a href=\"/publications/search?keywords-lg=SP+800-205&status-lg=Draft%2cRetired+Draft%2cWithdrawn&page=6\"
+        aria-label=\"Page 6\" id=\"bottom-page-6\">6</a> &nbsp;&nbsp;&nbsp;  <a href=\"/publications/search?keywords-lg=SP+800-205&status-lg=Draft%2cRetired+Draft%2cWithdrawn&page=7\"
+        aria-label=\"Page 7\" id=\"bottom-page-7\">7</a> &nbsp;&nbsp;&nbsp;  <a href=\"/publications/search?keywords-lg=SP+800-205&status-lg=Draft%2cRetired+Draft%2cWithdrawn&page=8\"
+        aria-label=\"Page 8\" id=\"bottom-page-8\">8</a> &nbsp;&nbsp;&nbsp;  <a href=\"/publications/search?keywords-lg=SP+800-205&status-lg=Draft%2cRetired+Draft%2cWithdrawn&page=9\"
+        aria-label=\"Page 9\" id=\"bottom-page-9\">9</a> &nbsp;&nbsp;&nbsp;  <a href=\"/publications/search?keywords-lg=SP+800-205&status-lg=Draft%2cRetired+Draft%2cWithdrawn&page=10\"
+        aria-label=\"Page 10\" id=\"bottom-page-10\">10</a>&nbsp;&nbsp;<a href=\"/publications/search?keywords-lg=SP+800-205&status-lg=Draft%2cRetired+Draft%2cWithdrawn&page=2\"
         aria-label=\"Next Page\" id=\"bottom-page-next\">next &gt;</a>&nbsp;&nbsp;<a
-        href=\"/publications/search?keywords-lg=SP+800-205&status-lg=Draft%2cWithdrawn&page=18\"
-        aria-label=\"Last Page\" id=\"bottom-page-last\" data-last-page-number=\"18\">last
+        href=\"/publications/search?keywords-lg=SP+800-205&status-lg=Draft%2cRetired+Draft%2cWithdrawn&page=19\"
+        aria-label=\"Last Page\" id=\"bottom-page-last\" data-last-page-number=\"19\">last
         &gt;&gt;</a></span>\r\n  </p>\r\n</div> \r\n\r\n<div id=\"publications-quicklinks-sm\"
         class=\"bs-callout bs-callout-subnav hidden-md hidden-lg\">\r\n    <h4>Quick
         Links <i class=\"fa fa-bolt\"></i></h4>\r\n    <p style=\"margin-left: 1rem;\">\r\n
@@ -1622,7 +1622,7 @@ http_interactions:
         'en');\r\n   document.getElementsByTagName('html')[0].setAttribute('xml:lang',
         'en')\r\n})(); \r\n</script>\r\n\r\n    \r\n    </form>\r\n</body>\r\n</html>\r\n"
     http_version: 
-  recorded_at: Wed, 15 May 2019 10:09:56 GMT
+  recorded_at: Fri, 31 May 2019 11:38:30 GMT
 - request:
     method: get
     uri: https://csrc.nist.gov/publications/detail/sp/800-205/draft
@@ -1654,8 +1654,8 @@ http_interactions:
       Server:
       - Microsoft-IIS/8.5
       Set-Cookie:
-      - ASP.NET_SessionId=qymiwvzzgpdd34qo2thbx52g; path=/; secure; HttpOnly
-      - CMSCsrfCookie=EfzO1IiP5cradzY/0K4ifqrpoanXn6cEf8P1h6Lt; path=/; secure; HttpOnly
+      - ASP.NET_SessionId=z1wjt0cvcnuyfei1focaz11t; path=/; secure; HttpOnly
+      - CMSCsrfCookie=Z0DbfMF+RlO9dm9gbxqotWaP+9GiMugyBOt0HUBv; path=/; secure; HttpOnly
       - CMSPreferredCulture=en-US; path=/; HttpOnly; Secure
       X-Frame-Options:
       - SAMEORIGIN
@@ -1664,7 +1664,7 @@ http_interactions:
       X-Aspnet-Version:
       - 4.0.30319
       Date:
-      - Wed, 15 May 2019 10:09:56 GMT
+      - Fri, 31 May 2019 11:38:28 GMT
       Content-Length:
       - '41473'
       Strict-Transport-Security:
@@ -1778,8 +1778,8 @@ http_interactions:
         />\r\n</head>\r\n<body class=\"LTR Unknown ENUS ContentBody\" >\r\n    \r\n
         \   <form method=\"post\" action=\"/publications/detail/sp/800-205/draft\"
         id=\"form\">\r\n<input type=\"hidden\" name=\"__CMSCsrfToken\" id=\"__CMSCsrfToken\"
-        value=\"OSDo1yIJzUw0+Dc/eU+6ZLJjXUrmoktXm5XYVazlkdj8PCScNl3vjUDLN2jb8pP+oKzNPYlWisEgUlUbFreszjWSVVRQ5/sIbdiSu18v4Vk=\"
-        />\r\n<input type=\"hidden\" name=\"__VIEWSTATE\" id=\"__VIEWSTATE\" value=\"KxJzeS6n8H2hxqmNYB6shdmuL6sHpzmGPz9eMEaBVWVmTY8VU4CJigrNr+3qqhEfyURBMPTMgADZVq11a3WmMDUWNWO6uk9jl+SSIhAm8+yRn4fL0/kgfLKUOWoxO7QPeibl2SnQNdoFXjAbogVNeEKdeTljBH8gahGwVWkrkZG6WZ6bpg9i47cT7Bt/PQjRWgXauCc5IPU5FCPm+mbUCe69x2RUPW84ONxB0QqrXn/rihXvvZRDR45paFgXd8SK6rEnNGWN6UOPxfpjevdgjT4oUjxn9eS/ChuDCMg030mBQIR9CDiHSG93t00EaV/REkJL4FRAnTWX5KZt+T3XyQ==\"
+        value=\"788FvViNGcusryVL3WxHKTWIniOl1nV8Qmt5kmWupJGO/0lob5E40MWunytcDAHg14tGiIiaGkILgOdwoIMN79ghJUzEml0Jguly4YlxGqU=\"
+        />\r\n<input type=\"hidden\" name=\"__VIEWSTATE\" id=\"__VIEWSTATE\" value=\"iPh+ThhpCnPljdpJuSMh61RdrAMR5kmWEkB9wNCuqpI1iGcx47t1gYM2lgoLQ6a9x+vhZBlvLCzg9TV06PqpkwrKkglf4bGCscyf4CPRlgALXemBSWIIunyL6PTyMXa20GVjiewI/xwHbajBN/wG1Zc8faCT8n2UHl+7TOuI5pAbiAYa71t2sREH0/x0/lFCKNTeu4DX5t1dAGTOx5Zcdotd4twE/jaRDcqwsUlf6EffkTutgIM9h3GCmitso2qsX34dpoZp7+Ew2xvvt/yKQdLYrKZRGl07cl2XX7s+63MXDAZh/QAGwYGm9MIckSOcw9Z2oViZRN0hGEtBWvSRfw==\"
         />\r\n\r\n<input type=\"hidden\" name=\"lng\" id=\"lng\" value=\"en-US\" />\r\n<script
         type=\"text/javascript\">\r\n\t//<![CDATA[\n\r\nfunction PM_Postback(param)
         { if (window.top.HideScreenLockWarningAndSync) { window.top.HideScreenLockWarningAndSync(1080);
@@ -2161,5 +2161,5 @@ http_interactions:
         'en');\r\n   document.getElementsByTagName('html')[0].setAttribute('xml:lang',
         'en')\r\n})(); \r\n</script>\r\n\r\n    \r\n    </form>\r\n</body>\r\n</html>\r\n"
     http_version: 
-  recorded_at: Wed, 15 May 2019 10:09:57 GMT
-recorded_with: VCR 4.0.0
+  recorded_at: Fri, 31 May 2019 11:38:31 GMT
+recorded_with: VCR 5.0.0

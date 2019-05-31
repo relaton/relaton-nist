@@ -18,9 +18,9 @@ RSpec.describe NistBib do
       VCR.use_cassette "8011" do
         hits = NistBib::NistBibliography.search("8011")
         file_path = "spec/examples/hit.xml"
-        File.write file_path, hits.first.to_xml(bibdata: true) unless File.exist? file_path
-        expect(hits.first.to_xml(bibdata: true)).to be_equivalent_to File.
-          open(file_path, "r:UTF-8", &:read).
+        xml = hits.first.to_xml bibdata: true
+        File.write file_path, xml unless File.exist? file_path
+        expect(xml).to be_equivalent_to File.open(file_path, "r:UTF-8", &:read).
           gsub(/(?<=<fetched>)\d{4}-\d{2}-\d{2}/, Date.today.to_s)
       end
     end
@@ -77,7 +77,7 @@ RSpec.describe NistBib do
 
     it "DRAFT" do
       VCR.use_cassette "draft" do
-        result = NistBib::NistBibliography.get("800-189", nil, {}).to_xml bibdata: true
+        result = NistBib::NistBibliography.get("800-189(PD)", nil, {}).to_xml bibdata: true
         file_path = "spec/examples/draft.xml"
         File.write file_path, result unless File.exist? file_path
         expect(result).to be_equivalent_to File.open(file_path, "r:UTF-8", &:read)
@@ -87,7 +87,7 @@ RSpec.describe NistBib do
 
     it "RETIRED DRAFT" do
       VCR.use_cassette "retired_draft" do
-        result = NistBib::NistBibliography.get("7831", nil, {}).to_xml bibdata: true
+        result = NistBib::NistBibliography.get("7831(PD)", nil, {}).to_xml bibdata: true
         file_path = "spec/examples/retired_draft.xml"
         File.write file_path, result unless File.exist? file_path
         expect(result).to be_equivalent_to File.open(file_path, "r:UTF-8", &:read)

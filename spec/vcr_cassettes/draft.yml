@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://csrc.nist.gov/publications/search?keywords-lg=800-189
+    uri: https://csrc.nist.gov/publications/search?keywords-lg=800-189&status-lg=Draft,Retired%20Draft,Withdrawn
     body:
       encoding: US-ASCII
       string: ''
@@ -29,8 +29,8 @@ http_interactions:
       Server:
       - Microsoft-IIS/8.5
       Set-Cookie:
-      - ASP.NET_SessionId=00czfohjpaxfbzuqttyyzumb; path=/; secure; HttpOnly
-      - CMSCsrfCookie=K+5yrDMNa4BzSWtlu2LEoOQ6GK2qc7xHnr/7cjf6; path=/; secure; HttpOnly
+      - ASP.NET_SessionId=skbpsyk1akougrclewvelbls; path=/; secure; HttpOnly
+      - CMSCsrfCookie=jGWMt2dEBRbNJn+PSAKZu18cvshDkDMyF+Sx6XVV; path=/; secure; HttpOnly
       - CMSPreferredCulture=en-US; path=/; HttpOnly; Secure
       X-Frame-Options:
       - SAMEORIGIN
@@ -39,9 +39,9 @@ http_interactions:
       X-Aspnet-Version:
       - 4.0.30319
       Date:
-      - Thu, 09 May 2019 11:52:54 GMT
+      - Fri, 31 May 2019 11:44:59 GMT
       Content-Length:
-      - '89814'
+      - '88108'
       Strict-Transport-Security:
       - max-age=31536000
     body:
@@ -84,10 +84,10 @@ http_interactions:
         \n<link href=\"/CSRC/Media/images/favicons/favicon.ico\" type=\"image/x-icon\"
         rel=\"shortcut icon\"/>\r\n<link href=\"/CSRC/Media/images/favicons/favicon.ico\"
         type=\"image/x-icon\" rel=\"icon\"/>\r\n</head>\r\n<body class=\"LTR Unknown
-        ENUS ContentBody\" >\r\n    \r\n    <form method=\"post\" action=\"/publications/search?keywords-lg=800-189\"
+        ENUS ContentBody\" >\r\n    \r\n    <form method=\"post\" action=\"/publications/search?keywords-lg=800-189&amp;status-lg=Draft%2cRetired+Draft%2cWithdrawn\"
         id=\"form\">\r\n<input type=\"hidden\" name=\"__CMSCsrfToken\" id=\"__CMSCsrfToken\"
-        value=\"LtyLAVggN/CUsMODD0uFFIBqpRvWFfbNtLakKkX2tyOtJ/tDuw2wryKPi/u/o02AdcGK9wpkhytW/W9t9dc8NCtj6nxtA1kR42jlDITcMcQ=\"
-        />\r\n<input type=\"hidden\" name=\"__VIEWSTATE\" id=\"__VIEWSTATE\" value=\"qbH1MpbEIBU/FkdUb6Z1E9uqo4HChenjf5uN4WBrCKtGPLSKEAo2YkY8C96tQP51cNuBeKF0xxyPU4RELJIlHUjF+2NsgB4+jHZ0mPxY0qmAxVLa6G5oVKcMSzqn6RUrryW+wiynnrpWar7KpcNaUIUNsGO566xVAlzoB4US+4y1SB2YOyh1ZzpjRtAF6NEuLDZA0Ctmun+Z+oAwU1FRzZYeC7iY3C/C4r37/qFqH+Gmsw2jd1KYyass9q8dQqYsJhYMmK2XJjW0kGMml1ubHKudi/yGWwCVz/v8RG2gcT2o3xfUgQMtrgMH56c2eAkRVY66CiCOOpyYUrGhuA52hET132CL0+5Vq4rt0ECUGMs=\"
+        value=\"lWIHdUGYvQE2TGMhaKGY/Ebih4XEWXvO7KGdMS5TTJg8yLHwSf9sKS2FXTkWZclXtq6mEnuv1F5zGar+aMEWVXnHwcmGYfYBLByXVpgFXkw=\"
+        />\r\n<input type=\"hidden\" name=\"__VIEWSTATE\" id=\"__VIEWSTATE\" value=\"BPKF9brZxojqACww9Xf2euQyzF4ru47UhFqsXDrH8Yb3gLoU/RiWw3mZgHCFlwNwRCao1jWXbyIggbO0G5CbRfBowWk7u1S2nWsK7NanMwtfapAPHcV6B5M3TOQ/sC3rthecv9uZ03iQbvEXdSgv+saksVTPjhv41WAjGDnwOpYZ2DaJq7UUEa3KbDto7ywzlVwK8lMDITWegcRNiXsfUj1/PvzSHI4VMqRO6MLk/wVx4Be4jQC/c18Q+aDosCzRRtLSeAiLTF17YUNYi027YF0/393o1GExosdWLod347zdR+54Ufv8jZsS2CGAsrQgveULGjAcKkGlT/gOnd2+wGfE9HpP3nTj9KSBbYmU9g9BsS9WChPbXj4OTQxWEVVK2EoViRjA6kLSJDi4CHdbxQ==\"
         />\r\n\r\n<input type=\"hidden\" name=\"lng\" id=\"lng\" value=\"en-US\" />\r\n<script
         type=\"text/javascript\">\r\n\t//<![CDATA[\n\r\nfunction PM_Postback(param)
         { if (window.top.HideScreenLockWarningAndSync) { window.top.HideScreenLockWarningAndSync(1080);
@@ -924,8 +924,8 @@ http_interactions:
         \   </div>\r\n</div>\r\n<div id=\"search-criteria-container\"></div>\r\n\r\n<div
         class=\"row top-pagination-area\">\r\n\t<div class=\"col-lg-6 col-sm-12\">\r\n
         \       <span id='showing-results-text' data-total-pages='1' data-first-record='1'
-        data-last-record='2' data-current-page='1' data-items-per-page='25' data-total-results='2'>Showing
-        <strong id=\"showing-results-total\">2</strong> matching records.</span>\r\n\t</div>\r\n\t<div
+        data-last-record='1' data-current-page='1' data-items-per-page='25' data-total-results='1'>Showing
+        <strong id=\"showing-results-total\">1</strong> matching records.</span>\r\n\t</div>\r\n\t<div
         class=\"col-lg-6 col-sm-12\">\r\n\t\t<span class=\"pull-right hidden-sm hidden-xs
         hidden-xxs\">\r\n\t\t\t<span class='pagination-links' id='top-pagination-container'
         data-total-pages='1' data-min-page='1' data-max-page='1' data-current-page='1'
@@ -934,8 +934,8 @@ http_interactions:
         id='mobile-top-pagination-container' data-total-pages='1' data-min-page='1'
         data-max-page='1' data-current-page='1' data-show-first='False' data-show-last='False'></span>\r\n\t\t</p>\r\n\t</div>\r\n</div>\r\n<table
         class=\"table table-striped table-condensed publications-table table-bordered\"
-        \r\n    id=\"publications-results-table\"  data-total-records=\"2\" data-page=\"1\"
-        \r\n    data-first-record=\"1\" data-last-record=\"2\" data-ipp=\"25\">\r\n\t<thead>\r\n\t\t<tr>\r\n\t\t\t<th
+        \r\n    id=\"publications-results-table\"  data-total-records=\"1\" data-page=\"1\"
+        \r\n    data-first-record=\"1\" data-last-record=\"1\" data-ipp=\"25\">\r\n\t<thead>\r\n\t\t<tr>\r\n\t\t\t<th
         nowrap class=\"hidden-sm hidden-xs hidden-xxs\">Series</th>\r\n\t\t\t<th nowrap
         class=\"hidden-sm hidden-xs hidden-xxs\">Number</th>\r\n\t\t\t<th nowrap>\r\n\t\t\t\t<span
         class=\"hidden-sm hidden-xs hidden-xxs\">Title</span>\r\n\t\t\t\t<span class=\"hidden-md
@@ -960,26 +960,7 @@ http_interactions:
         Download</a></span></span>\r\n\t\t\t\t</div>\r\n\t\t\t</td>\r\n\t\t\t<td class=\"hidden-sm
         hidden-xs hidden-xxs\" id=\"pub-status-1\">\r\n\t\t\t\tDraft\r\n\t\t\t</td>\r\n\t\t\t<td
         class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-release-date-1\">\r\n\t\t\t\t
-        12/17/2018\r\n\t\t\t</td>\r\n\t\t\t\r\n\t\t</tr>\r\n\r\n  \r\n\t\t<tr id=\"result-2\">\r\n\t\t\t<td
-        class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-series-2\">White Paper</td>\r\n\t\t\t<td
-        class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-number-2\"> </td>\r\n\t\t\t<td>\r\n\t\t\t\t\r\n\t\t\t\t<div
-        class=\"hidden-sm hidden-xs hidden-xxs\">\r\n                        <strong><a
-        href=\"/publications/detail/white-paper/2017/07/06/secure-inter-domain-routing--part-1-route-hijacks/final\"
-        id=\"pub-title-link-2\">[Project Description] Secure Inter-Domain Routing--Part
-        1: Route Hijacks</a></strong>\r\n\t\t\t\t</div>\r\n\r\n\t\t\t\t<div class=\"hidden-md
-        hidden-lg\">\r\n\t\t\t\t\t<strong><span id=\"pub-full-display-sm-2\">White
-        Paper </span><br />\r\n\t\t\t\t\t\t<a href=\"/publications/detail/white-paper/2017/07/06/secure-inter-domain-routing--part-1-route-hijacks/final\"
-        class=\"mobile-pub-title\" id=\"pub-title-link-sm-2\">[Project Description]
-        Secure Inter-Domain Routing--Part 1: Route Hijacks</a>\r\n\t\t\t\t\t</strong>\r\n\t\t\t\t</div>\r\n\t\t\t\t\r\n\t\t\t\t<div
-        class=\"hidden-md hidden-lg\">\r\n                    <strong id=\"pub-release-date-sm-2\">7/06/2017</strong>\r\n
-        \                   <br />\r\n                    Status: <span id=\"pub-status-sm-2\">Final</span>\r\n\t\t\t\t</div>\r\n\t\t\t\t\r\n\t\t\t\t\r\n
-        \               <div class=\"control-value-no-block\">\r\n                Download:
-        <span id='download-values-2'><span id='download-value-2-0'><a href=\"https://nccoe.nist.gov/sites/default/files/library/project-descriptions/sidr-project-description-final.pdf\">Project
-        Description</a></span>; <span id='download-value-2-1'><a href=\"https://nccoe.nist.gov/projects/building-blocks/secure-inter-domain-routing\">Project
-        Homepage</a></span></span>\r\n\t\t\t\t</div>\r\n\t\t\t</td>\r\n\t\t\t<td class=\"hidden-sm
-        hidden-xs hidden-xxs\" id=\"pub-status-2\">\r\n\t\t\t\tFinal\r\n\t\t\t</td>\r\n\t\t\t<td
-        class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-release-date-2\">\r\n\t\t\t\t
-        7/06/2017\r\n\t\t\t</td>\r\n\t\t\t\r\n\t\t</tr>\r\n\r\n\t</tbody>\r\n</table>\r\n<div
+        12/17/2018\r\n\t\t\t</td>\r\n\t\t\t\r\n\t\t</tr>\r\n\r\n\t</tbody>\r\n</table>\r\n<div
         class=\"row bottom-pagination-area\">\r\n  <p class=\"text-center\">\r\n      <span
         class='pagination-links' id='bottom-pagination-container' data-total-pages='1'
         data-min-page='1' data-max-page='1' data-current-page='1' data-show-first='False'
@@ -1130,7 +1111,7 @@ http_interactions:
         'en');\r\n   document.getElementsByTagName('html')[0].setAttribute('xml:lang',
         'en')\r\n})(); \r\n</script>\r\n\r\n    \r\n    </form>\r\n</body>\r\n</html>\r\n"
     http_version: 
-  recorded_at: Thu, 09 May 2019 11:52:57 GMT
+  recorded_at: Fri, 31 May 2019 11:45:03 GMT
 - request:
     method: get
     uri: https://csrc.nist.gov/publications/detail/sp/800-189/draft
@@ -1162,8 +1143,8 @@ http_interactions:
       Server:
       - Microsoft-IIS/8.5
       Set-Cookie:
-      - ASP.NET_SessionId=sn2uc0iternbr4ej12iobzm0; path=/; secure; HttpOnly
-      - CMSCsrfCookie=kkOijleF639N+ILfYkzwi8KsjUK32rBXHbsS/3hf; path=/; secure; HttpOnly
+      - ASP.NET_SessionId=nqaodpf0yuzjjkiaxx0k1x0f; path=/; secure; HttpOnly
+      - CMSCsrfCookie=AKSwFFGdHInEIkTyD7aJJDMamQW803jAx8un3O+/; path=/; secure; HttpOnly
       - CMSPreferredCulture=en-US; path=/; HttpOnly; Secure
       X-Frame-Options:
       - SAMEORIGIN
@@ -1172,7 +1153,7 @@ http_interactions:
       X-Aspnet-Version:
       - 4.0.30319
       Date:
-      - Thu, 09 May 2019 11:52:55 GMT
+      - Fri, 31 May 2019 11:45:00 GMT
       Content-Length:
       - '50997'
       Strict-Transport-Security:
@@ -1334,8 +1315,8 @@ http_interactions:
         />\r\n</head>\r\n<body class=\"LTR Unknown ENUS ContentBody\" >\r\n    \r\n
         \   <form method=\"post\" action=\"/publications/detail/sp/800-189/draft\"
         id=\"form\">\r\n<input type=\"hidden\" name=\"__CMSCsrfToken\" id=\"__CMSCsrfToken\"
-        value=\"vC3x9Ot6Ysx5prtd5v3pYfY3CuASRY8TkDWwHptcO+wKDur+eYfFzE9N2p/VFmFGGwBEDmZEBDqGj1xcIQ2QZ/BCoQdOWyIig+JWdpus4j4=\"
-        />\r\n<input type=\"hidden\" name=\"__VIEWSTATE\" id=\"__VIEWSTATE\" value=\"AV/8iP06gwVqO0bEatHYu5/Z60BndLaOy5yHAJ7rKLpULd+QrFCTx6DWiL6L7VfZX3zrZstfRlJHbI6N7CXpc2981/W8QcwfhjIuKGGBSC8eVLy9HVLSTOxQkQmHYPbyZwYKETSuPjgrKQ9ktdqsCQNvxPKkbLD1EZd8c0+CbVGY2EdbFQ8K2hRWDUOlDqPEphDBB3jaum02aV4Qv3su6UyEk0qWIIfqz9tg3gXDCrm/D0ec1XljP6HfixZVRV9oMvxABbrx/NW6ZOlyIwIcVUZLaTC+v693pZK0dXeAH3j9drSLqpqoSDOJEOkBXwNse/HpnLX+WxNFYMb3lHo7bA==\"
+        value=\"QJ4BahG9OKjxJCBqONLG+bMKQ/8EKPmhH2h7HIh5w2l6LA/7O4rwX/t12Kit2sRm6IDzMAFCPe57aMpqkPiTWHq651tH46HR5Ge9tClsy2o=\"
+        />\r\n<input type=\"hidden\" name=\"__VIEWSTATE\" id=\"__VIEWSTATE\" value=\"rh7Al5snikoGyNgRetsdmQSSdmd4HZh4WWGczKv1ThHM+TQGs4zWtndKdnDXLqn/b53mwveKpiBk/+ggFAPqURu/wllX+R7vicm+eZlLcGKj3CwD/5T1j2/4SIcw4Mqwb7uqxgPdR9OGegDQ2VMmt/f+KA5O8Qa1slRx1UKczX4SEL/BNF7GPJePufYo+gSx6teEcIIsKZ+Z+f8rgCrS7MyHVYJTSiEW7DPSeeRFPfmn31B98GCgk5CYTHcHtpShL6R7uaqJb6bzVZx2HAEPYz2uQmLPxzdss52Uw1W/oK+XXHqox+1rxm1/Yl7wdwz7GqjkmxbJTSlrosz4nsAWQg==\"
         />\r\n\r\n<input type=\"hidden\" name=\"lng\" id=\"lng\" value=\"en-US\" />\r\n<script
         type=\"text/javascript\">\r\n\t//<![CDATA[\n\r\nfunction PM_Postback(param)
         { if (window.top.HideScreenLockWarningAndSync) { window.top.HideScreenLockWarningAndSync(1080);
@@ -1790,5 +1771,5 @@ http_interactions:
         'en');\r\n   document.getElementsByTagName('html')[0].setAttribute('xml:lang',
         'en')\r\n})(); \r\n</script>\r\n\r\n    \r\n    </form>\r\n</body>\r\n</html>\r\n"
     http_version: 
-  recorded_at: Thu, 09 May 2019 11:52:58 GMT
-recorded_with: VCR 4.0.0
+  recorded_at: Fri, 31 May 2019 11:45:04 GMT
+recorded_with: VCR 5.0.0

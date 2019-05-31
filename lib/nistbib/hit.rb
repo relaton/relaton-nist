@@ -40,5 +40,15 @@ module NistBib
     def to_xml(**opts)
       fetch.to_xml **opts
     end
+
+    # @return [Iteger]
+    def sort_value
+      case hit[:status]
+      when "final" then 1
+      when "withdrawn" then 2
+      when "draft (withdrawn)" then 3
+      else 4
+      end
+    end
   end
 end

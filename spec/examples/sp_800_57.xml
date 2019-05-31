@@ -1,5 +1,5 @@
 <bibitem id="SP800-57Part2Rev.1(DRAFT)" type="standard">
-  <fetched>2019-05-17</fetched>
+  <fetched>2019-05-31</fetched>
   <title format="text/plain" language="en" script="Latn">Recommendation for Key Management, Part 2: Best Practices for Key Management Organization</title>
   <docidentifier type="NIST">SP 800-57 Part 2 Rev. 1 (DRAFT)</docidentifier>
   <date type="published">
@@ -79,5 +79,8 @@
   </relation>
   <series>
     <formattedref format="text/plain" language="en" script="Latn">SP 800-57 Part 2 Rev. 1 (2PD)</formattedref>
+  </series>
+  <series>
+    <formattedref format="text/plain"/>
   </series>
 </bibitem>
