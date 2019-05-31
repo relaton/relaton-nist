@@ -1,4 +1,4 @@
-module NistBib
+module RelatonNist
   class DocumentStatus < RelatonBib::DocumentStatus
     STAGES = %w[
       draft-internal draft-wip draft-prelim draft-public final final-review

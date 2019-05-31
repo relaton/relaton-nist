@@ -1,12 +1,12 @@
-module NistBib
+module RelatonNist
   class NistBibliographicItem < RelatonBib::BibliographicItem
     # @return [String]
     attr_reader :doctype
 
-    # @return [Array<NistBib::Keyword>]
+    # @return [Array<RelatonNist::Keyword>]
     attr_reader :keyword
 
-    # @return [NistBib::CommentPeriod]
+    # @return [RelatonNist::CommentPeriod]
     attr_reader :commentperiod
 
     # @param id [String, NilClass]
@@ -17,7 +17,7 @@ module NistBib
     # @param docnumber [String, NilClass]
     # @param language [Arra<String>]
     # @param script [Array<String>]
-    # @param docstatus [NistBib::DocumentStatus, NilClass]
+    # @param docstatus [RelatonNist::DocumentStatus, NilClass]
     # @param edition [String, NilClass]
     # @param version [RelatonBib::BibliographicItem::Version, NilClass]
     # @param biblionote [Array<RelatonBib::FormattedStrong>]
@@ -30,8 +30,8 @@ module NistBib
     # @param validity [RelatonBib:Validity, NilClass]
     # @param fetched [Date, NilClass] default nil
     # @param doctype [String]
-    # @param keyword [Array<NistBib::Keyword>]
-    # @param commentperiod [NistBib::CommentPeriod]
+    # @param keyword [Array<RelatonNist::Keyword>]
+    # @param commentperiod [RelatonNist::CommentPeriod]
     #
     # @param dates [Array<Hash>]
     # @option dates [String] :type

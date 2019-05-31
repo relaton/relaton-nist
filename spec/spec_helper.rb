@@ -4,7 +4,7 @@ SimpleCov.start do
 end
 
 require "bundler/setup"
-require "nistbib"
+require "relaton_nist"
 require "vcr"
 require 'rspec/matchers'
 require 'equivalent-xml'

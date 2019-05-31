@@ -1,4 +1,4 @@
-module NistBib
+module RelatonNist
   class Keyword
     # @return [Nokogiri::XML::DocumentFragment]
     attr_reader :element

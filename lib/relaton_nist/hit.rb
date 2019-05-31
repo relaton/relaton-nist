@@ -1,23 +1,23 @@
 # frozen_string_literal: true
 
-module NistBib
+module RelatonNist
   # Hit.
   class Hit
-    # @return [NistBib::HitCollection]
+    # @return [RelatonNist::HitCollection]
     attr_reader :hit_collection
 
     # @return [Array<Hash>]
     attr_reader :hit
 
     # @param hit [Hash]
-    # @param hit_collection [NistBib:HitCollection]
+    # @param hit_collection [RelatonNist:HitCollection]
     def initialize(hit, hit_collection = nil)
       @hit            = hit
       @hit_collection = hit_collection
     end
 
     # Parse page.
-    # @return [NistBib::NistBliographicItem]
+    # @return [RelatonNist::NistBliographicItem]
     def fetch
       @fetch ||= Scrapper.parse_page @hit
     end

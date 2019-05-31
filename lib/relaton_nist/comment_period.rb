@@ -1,4 +1,4 @@
-module NistBib
+module RelatonNist
   class CommentPeriod
     # @return [Date]
     attr_reader :from

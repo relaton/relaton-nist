@@ -1,7 +1,7 @@
-RSpec.describe NistBib::NistBibliography do
+RSpec.describe RelatonNist::NistBibliography do
   it "raise error when search" do
     expect(OpenURI).to receive(:open_uri).and_raise SocketError
-    expect { NistBib::NistBibliography.get("7831") }.to output(
+    expect { RelatonNist::NistBibliography.get("7831") }.to output(
       "fetching 7831...\n"\
       "Could not access https://www.nist.gov\n"\
       "WARNING: no match found online for 7831. "\

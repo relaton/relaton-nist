@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
-require "nistbib/hit"
+require "relaton_nist/hit"
 require "addressable/uri"
 require "open-uri"
 
-module NistBib
+module RelatonNist
   # Page of hit collection.
   class HitCollection < Array
 

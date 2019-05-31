@@ -1,12 +1,12 @@
-= NistBib: retrieve NIST Standards for bibliographic use using the BibliographicItem model
+= RelatonNist: retrieve NIST Standards for bibliographic use using the BibliographicItem model
 
-image:https://img.shields.io/gem/v/nistbib.svg["Gem Version", link="https://rubygems.org/gems/nistbib"]
-image:https://img.shields.io/travis/metanorma/nistbib/master.svg["Build Status", link="https://travis-ci.com/metanorma/nistbib"]
-image:https://ci.appveyor.com/api/projects/status/vk85u3df4f3kertr?svg=true["Appveyor Build Status", link="https://ci.appveyor.com/project/ribose/nistbib"]
-image:https://codeclimate.com/github/metanorma/nistbib/badges/gpa.svg["Code Climate", link="https://codeclimate.com/github/metanorma/nistbib"]
+image:https://img.shields.io/gem/v/relaton-nist.svg["Gem Version", link="https://rubygems.org/gems/relaton-nist"]
+image:https://img.shields.io/travis/metanorma/relaton-nist/master.svg["Build Status", link="https://travis-ci.com/metanorma/relaton-nist"]
+image:https://ci.appveyor.com/api/projects/status/vk85u3df4f3kertr?svg=true["Appveyor Build Status", link="https://ci.appveyor.com/project/ribose/relaton-nist"]
+image:https://codeclimate.com/github/metanorma/relaton-nist/badges/gpa.svg["Code Climate", link="https://codeclimate.com/github/metanorma/relaton-nist"]
 
 
-NistBib is a Ruby gem that implements the https://github.com/metanorma/metanorma-model-iso#iso-bibliographic-item[IsoBibliographicItem model].
+RelatonNist is a Ruby gem that implements the https://github.com/metanorma/metanorma-model-iso#iso-bibliographic-item[IsoBibliographicItem model].
 
 You can use it to retrieve metadata of NIST Standards from https://csrc.nist.gov, and access such metadata through the `IsoBibliographicItem` object.
 
@@ -16,7 +16,7 @@ Add this line to your application's Gemfile:
 
 [source,ruby]
 ----
-gem 'nistbib'
+gem 'relaton_nist'
 ----
 
 And then execute:
@@ -25,7 +25,7 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install nistbib
+    $ gem install relaton_nist
 
 == Usage
 
@@ -33,14 +33,14 @@ Or install it yourself as:
 
 [source,ruby]
 ----
-require 'nistbib'
+require 'relaton_nist'
 
-hit_collection = NistBib::NistBibliography.search("8200")
-=> [<NistBib::Hit:0x007f82b9b2b298 @text="8200" @fetched="false" @fullIdentifier="" @title="8200">,
- <NistBib::Hit:0x007f82b9b2a1e0 @text="8200" @fetched="false" @fullIdentifier="" @title="8200">]
+hit_collection = RelatonNist::NistBibliography.search("8200")
+=> [<RelatonNist::Hit:0x007f82b9b2b298 @text="8200" @fetched="false" @fullIdentifier="" @title="8200">,
+ <RelatonNist::Hit:0x007f82b9b2a1e0 @text="8200" @fetched="false" @fullIdentifier="" @title="8200">]
 
  item = hit_collection[1].fetch
- => #<NistBib::NistBibliographicItem:0x007f82b986e668
+ => #<RelatonNist::NistBibliographicItem:0x007f82b986e668
  ...
 ----
 
@@ -82,9 +82,9 @@ item.to_xml bibdata: true
 === Get code, and year
 [source,ruby]
 ----
-NistBib::NistBibliography.get("8200", "2018", {})
+RelatonNist::NistBibliography.get("8200", "2018", {})
 fetching 8200...
-=> #<NistBib::NistBibliographicItem:0x007f82bb3370a8
+=> #<RelatonNist::NistBibliographicItem:0x007f82bb3370a8
 ...
 ----
 
@@ -107,9 +107,9 @@ NIST FIPS {docnumber}
 ----
 [source,ruby]
 ----
-NistBib::NistBibliography.get("8200", "2018", {})
+RelatonNist::NistBibliography.get("8200", "2018", {})
 fetching 8200...
-=> #<NistBib::NistBibliographicItem:0x007f82bb3370a8
+=> #<RelatonNist::NistBibliographicItem:0x007f82bb3370a8
 ...
 ----
 
@@ -121,7 +121,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 == Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/metanorma/nistbib.
+Bug reports and pull requests are welcome on GitHub at https://github.com/metanorma/relaton-nist.
 
 == License
 

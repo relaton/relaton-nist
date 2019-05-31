@@ -1,6 +1,6 @@
 require "relaton_bib"
 
-module NistBib
+module RelatonNist
   class Scrapper
     class << self
       DOMAIN = "https://csrc.nist.gov".freeze
@@ -132,7 +132,7 @@ module NistBib
         #   wip = item_ref.match(/(?<=\()\w+/).to_s
         #   stage = "draft-public" if wip == "DRAFT"
         # end
-        NistBib::DocumentStatus.new stage: stage, substage: subst, iteration: iter
+        RelatonNist::DocumentStatus.new stage: stage, substage: subst, iteration: iter
       end
 
       # Fetch titles.

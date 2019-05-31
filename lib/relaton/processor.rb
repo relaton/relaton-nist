@@ -1,22 +1,22 @@
 require "relaton/processor"
 
 module Relaton
-  module NistBib
+  module RelatonNist
     class Processor < Relaton::Processor
 
       def initialize
-        @short = :nistbib
+        @short = :relaton_nist
         @prefix = "NIST"
         @defaultprefix = %r{^(NIST|NISTGCR|ITL Bulletin|JPCRD|NISTIR|CSRC)[ /]}
         @idtype = "NIST"
       end
 
       def get(code, date = nil, opts = {})
-        ::NistBib::NistBibliography.get(code, date, opts)
+        ::RelatonNist::NistBibliography.get(code, date, opts)
       end
 
       def from_xml(xml)
-        ::NistBib::XMLParser.from_xml xml
+        ::RelatonNist::XMLParser.from_xml xml
       end
     end
   end

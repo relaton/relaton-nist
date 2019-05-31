@@ -1,17 +1,17 @@
 require "relaton_bib"
-require "nistbib/nist_bibliographic_item"
-require "nistbib/scrapper"
-require "nistbib/hit_collection"
-require "nistbib/xml_parser"
-require "nistbib/keyword"
-require "nistbib/comment_period"
-require "nistbib/document_status"
+require "relaton_nist/nist_bibliographic_item"
+require "relaton_nist/scrapper"
+require "relaton_nist/hit_collection"
+require "relaton_nist/xml_parser"
+require "relaton_nist/keyword"
+require "relaton_nist/comment_period"
+require "relaton_nist/document_status"
 
-module NistBib
+module RelatonNist
   class NistBibliography
     class << self
       # @param text [String]
-      # @return [NistBib::HitCollection]
+      # @return [RelatonNist::HitCollection]
       def search(text, year = nil, opts = {})
         HitCollection.new text, year, opts
       rescue OpenURI::HTTPError, SocketError
@@ -68,7 +68,7 @@ module NistBib
         fetch_ref_err(code, year, ret[:years])
       end
 
-      # Sort through the results from NistBib, fetching them three at a time,
+      # Sort through the results from RelatonNist, fetching them three at a time,
       # and return the first result that matches the code,
       # matches the year (if provided), and which # has a title (amendments do not).
       # Only expects the first page of results to be populated.

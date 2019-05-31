@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    nistbib (0.1.9)
+    relaton-nist (0.1.9)
       relaton-bib (~> 0.1.6)
 
 GEM
@@ -72,9 +72,9 @@ DEPENDENCIES
   byebug
   debase
   equivalent-xml (~> 0.6)
-  nistbib!
   pry-byebug
   rake (~> 10.0)
+  relaton-nist!
   rspec (~> 3.0)
   ruby-debug-ide
   simplecov

@@ -1,4 +1,4 @@
-module NistBib
+module RelatonNist
   class XMLParser < RelatonBib::XMLParser
     class << self
       def from_xml(xml)
