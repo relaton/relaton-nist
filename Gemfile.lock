@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    relaton-nist (0.1.9)
+    relaton-nist (0.1.0)
       relaton-bib (~> 0.1.6)
 
 GEM
