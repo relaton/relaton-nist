@@ -43,11 +43,21 @@ module RelatonNist
 
     # @return [Iteger]
     def sort_value
-      case hit[:status]
-      when "final" then 1
-      when "withdrawn" then 2
-      when "draft (withdrawn)" then 3
-      else 4
+      @sort_value ||= begin
+        sort_phrase = [hit[:serie], hit[:code], hit[:title]].join " "
+        corr = hit_collection.text.split.map do |w|
+          if w =~ /\w+/ &&
+              sort_phrase =~ Regexp.new(Regexp.escape(w), Regexp::IGNORECASE)
+            0
+          else 10
+          end
+        end.sum
+        corr + case hit[:status]
+               when "final" then 1
+               when "withdrawn" then 2
+               when "draft (withdrawn)" then 3
+               else 4
+               end
       end
     end
   end

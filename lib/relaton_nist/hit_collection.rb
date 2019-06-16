@@ -59,7 +59,14 @@ module RelatonNist
           }, self
         )
       end
-      concat(hits.sort { |a, b| a.sort_value - b.sort_value })
+      hits.sort! do |a, b|
+        if a.sort_value != b.sort_value
+          a.sort_value - b.sort_value
+        else
+          (b.hit[:release_date] - a.hit[:release_date]).to_i
+        end
+      end
+      concat hits
       # concat(hits.map { |h| Hit.new(h, self) })
       @fetched = false
       # @hit_pages = hit_pages

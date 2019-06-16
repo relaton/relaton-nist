@@ -1,12 +1,14 @@
 <bibdata type="standard">
-  <fetched>2019-05-31</fetched>
-  <title format="text/plain" language="en" script="Latn">Framework for Improving Critical Infrastructure Cybersecurity, Version 1.0</title>
-  <uri type="doi">https://doi.org/10.6028/NIST.CSWP.02122014</uri>
-  <docidentifier type="NIST">Framework for Improving Critical Infrastructure Cybersecurity, Version 1.0</docidentifier>
+  <fetched>2019-06-16</fetched>
+  <title format="text/plain" language="en" script="Latn">Framework for Improving Critical Infrastructure Cybersecurity, Version 1.1</title>
+  <uri type="doi">https://doi.org/10.6028/NIST.CSWP.04162018</uri>
+  <docidentifier type="NIST">Framework for Improving Critical Infrastructure Cybersecurity, Version 1.1</docidentifier>
   <date type="published">
-    <on>2014-02</on>
+    <on>2018-04</on>
   </date>
-  <date type="issued"/>
+  <date type="issued">
+    <on>2018-04</on>
+  </date>
   <contributor>
     <role type="publisher"/>
     <organization>
@@ -23,13 +25,13 @@
   </contributor>
   <language>en</language>
   <script>Latn</script>
-  <abstract format="text/plain" language="en" script="Latn">The national and economic security of the United States depends on the reliable functioning of critical infrastructure. Cybersecurity threats take advantage of the increased complexity and connectivity of critical infrastructure systems, placing the Nation's security at risk. To better protect these systems, the President issued Executive Order 13636, "Improving Critical Infrastructure Cybersecurity," on February 12, 2013. The Executive Order established that "[i]t is the Policy of the United States to enhance the security and resilience of the Nation's critical infrastructure and to maintain a cyber environment that encourages efficiency, innovation, and economic prosperity while promoting safety, security, business confidentiality, privacy, and civil liberties." In enacting this policy, the Executive Order calls for the development of a voluntary risk-based Cybersecurity Framework - a set of industry standards and best practices to help organizations manage cybersecurity risks. The resulting Framework, created through collaboration between government and the private sector, uses a common language to address and manage cybersecurity risk in a cost-effective way based on business needs without placing additional regulatory requirements on businesses. The Framework enables organizations - regardless of size, degree of cybersecurity risk, or cybersecurity sophistication - to apply the principles and best practices of risk management to improving the security and resilience of critical infrastructure. The Framework provides organization and structure to today‰s multiple approaches to cybersecurity by assembling standards, guidelines, and practices that are working effectively in industry today. Moreover, because it references globally recognized standards for cybersecurity, the Framework can also be used by organizations located outside the United States and can serve as a model for international cooperation on strengthening critical infrastructure cybersecurity.</abstract>
+  <abstract format="text/plain" language="en" script="Latn">This publication describes a voluntary risk management framework (“the Framework”) that consists of standards, guidelines, and best practices to manage cybersecurity-related risk.  The Framework’s prioritized, flexible, and cost-effective approach helps to promote the protection and resilience of critical infrastructure and other sectors important to the economy and national security.This release, Version 1.1, includes a number of updates from the original Version 1.0 (from February 2014), including: a new section on self-assessment; expanded explanation of using the Framework for cyber supply chain risk management purposes; refinements to better account for authentication, authorization, and identity proofing; explanation of the relationship between implementation tiers and profiles; and consideration of coordinated vulnerability disclosure. Complete information about the Framework is available at https://www.nist.gov/cyberframework.</abstract>
   <status>
     <stage>final</stage>
     <substage>active</substage>
   </status>
   <copyright>
-    <from>2014</from>
+    <from>2018</from>
     <owner>
       <organization>
         <name>National Institute of Standards and Technology</name>
@@ -40,40 +42,35 @@
   </copyright>
   <relation type="updates">
     <bibitem>
-      <formattedref format="text/plain" language="en" script="Latn">NISTIR 8183</formattedref>
-      <uri type="src">https://csrc.nist.gov/publications/detail/nistir/8183/final</uri>
+      <formattedref format="text/plain" language="en" script="Latn">NISTIR 8204 (DRAFT)</formattedref>
+      <uri type="src">https://csrc.nist.gov/publications/detail/nistir/8204/draft</uri>
     </bibitem>
   </relation>
   <relation type="updates">
     <bibitem>
-      <formattedref format="text/plain" language="en" script="Latn">NISTIR 8170 (DRAFT)</formattedref>
-      <uri type="src">https://csrc.nist.gov/publications/detail/nistir/8170/draft</uri>
+      <formattedref format="text/plain" language="en" script="Latn">NISTIR 8204</formattedref>
+      <uri type="src">https://csrc.nist.gov/publications/detail/nistir/8204/archive/2019-04-26</uri>
     </bibitem>
   </relation>
   <relation type="updates">
     <bibitem>
-      <formattedref format="text/plain" language="en" script="Latn">White Paper </formattedref>
-      <uri type="src">https://csrc.nist.gov/publications/detail/white-paper/2017/04/02/baldrige-cybersecurity-excellence-builder-v10/final</uri>
+      <formattedref format="text/plain" language="en" script="Latn">NISTIR 8204</formattedref>
+      <uri type="src">https://csrc.nist.gov/publications/detail/nistir/8204/final</uri>
     </bibitem>
   </relation>
-  <relation type="updates">
-    <bibitem>
-      <formattedref format="text/plain" language="en" script="Latn">White Paper </formattedref>
-      <uri type="src">https://csrc.nist.gov/publications/detail/white-paper/2017/03/09/[project-description]-securing-manufacturing-ics/final</uri>
-    </bibitem>
-  </relation>
-  <relation type="updates">
-    <bibitem>
-      <formattedref format="text/plain" language="en" script="Latn">NISTIR 8183</formattedref>
-      <uri type="src">https://csrc.nist.gov/publications/detail/nistir/8183/archive/2017-09-08</uri>
-    </bibitem>
-  </relation>
+  <series>
+    <formattedref format="text/plain" language="en" script="Latn">White Paper (IPD)</formattedref>
+  </series>
+  <series>
+    <formattedref format="text/plain" language="en" script="Latn">White Paper (2PD)</formattedref>
+  </series>
   <ext>
     <doctype>White Paper</doctype>
     <keyword>critical infrastructure</keyword>
     <keyword>cybersecurity</keyword>
-    <keyword>Executive Order 13636</keyword>
+    <keyword>Cybersecurity Enhancement Act of 2014</keyword>
     <keyword>framework</keyword>
+    <keyword>risk management</keyword>
     <keyword>security</keyword>
   </ext>
 </bibdata>
