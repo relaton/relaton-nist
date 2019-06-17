@@ -48,15 +48,15 @@ module RelatonNist
         corr = hit_collection.text.split.map do |w|
           if w =~ /\w+/ &&
               sort_phrase =~ Regexp.new(Regexp.escape(w), Regexp::IGNORECASE)
-            0
-          else 10
+            1
+          else 0
           end
         end.sum
         corr + case hit[:status]
-               when "final" then 1
+               when "final" then 3
                when "withdrawn" then 2
-               when "draft (withdrawn)" then 3
-               else 4
+               when "draft (withdrawn)" then 1
+               else 0
                end
       end
     end

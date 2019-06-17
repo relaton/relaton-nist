@@ -61,7 +61,7 @@ module RelatonNist
       end
       hits.sort! do |a, b|
         if a.sort_value != b.sort_value
-          a.sort_value - b.sort_value
+          b.sort_value - a.sort_value
         else
           (b.hit[:release_date] - a.hit[:release_date]).to_i
         end
