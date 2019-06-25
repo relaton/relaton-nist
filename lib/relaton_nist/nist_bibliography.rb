@@ -83,26 +83,22 @@ module RelatonNist
       # @retur [Hash]
       def nistbib_results_filter(result, year, opts)
         missed_years = []
+        iter = opts[:stage]&.slice(-3, 1)
+        iteration = case iter
+                    when "I" then "1"
+                    when "F" then "final"
+                    else iter
+                    end
         result.each_slice(3) do |s| # ISO website only allows 3 connections
           fetch_pages(s, 3).each_with_index do |r, _i|
             if opts[:issued_date]
-              r.dates.select { |d| d.type == "issued" }.each do |d|
-                next unless opts[:issued_date] == d.on
-              end
+              ids = r.dates.select { |d| d.type == "issued" && d.on == opts[:issued_date] }
+              next if ids.empty?
             elsif opts[:updated_date]
-              r.dates.select { |d| d.type == "published" }.each do |d|
-                next unless opts[:updated_date] == d.on
-              end
+              pds = r.dates.select { |d| d.type == "published" && d.on == opts[:updated_date] }
+              next if pds.empty?
             end
-            if opts[:stage]
-              iter = opts[:stage][-3]
-              iteration = case iter
-                          when "I" then 1
-                          when "F" then "final"
-                          else iter.to_i
-                          end
-              next if iter && r.status.iteration != iteration
-            end
+            next if iter && r.status.iteration != iteration
             return { ret: r } if !year
 
             r.dates.select { |d| d.type == "published" }.each do |d|

@@ -1,7 +1,7 @@
 <bibdata type="standard">
-  <fetched>2019-05-31</fetched>
+  <fetched>2019-06-21</fetched>
   <title format="text/plain" language="en" script="Latn">Security Requirements for Cryptographic Modules</title>
-  <uri type="pdf">https://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.140-3.pdf</uri>
+  <uri type="uri">https://csrc.nist.gov/publications/detail/fips/140/3/final</uri>
   <uri type="doi">https://doi.org/10.6028/NIST.FIPS.140-3</uri>
   <docidentifier type="NIST">FIPS 140-3</docidentifier>
   <date type="published">
@@ -11,14 +11,6 @@
     <on>2019-03</on>
   </date>
   <contributor>
-    <role type="publisher"/>
-    <organization>
-      <name>National Institute of Standards and Technology</name>
-      <abbreviation>NIST</abbreviation>
-      <uri>www.nist.gov</uri>
-    </organization>
-  </contributor>
-  <contributor>
     <role type="author"/>
     <organization>
       <name>National Institute of Standards and Technology</name>
@@ -26,7 +18,6 @@
   </contributor>
   <language>en</language>
   <script>Latn</script>
-  <abstract format="text/plain" language="en" script="Latn">The selective application of technological and related procedural safeguards is an important responsibility of every federal organization in providing adequate security in its computer and telecommunication systems.   This standard is applicable to all federal agencies that use cryptographic-based security systems to protect sensitive information in computer and telecommunication systems (including voice systems) as defined in Section 5131 of the Information Technology Management Reform Act of 1996, Public Law 104-106 and the Federal Information Security Management Act of 2002, Public Law 107-347. This standard shall be used in designing and implementing cryptographic modules that federal departments and agencies operate or are operated for them under contract.  The standard provides four increasing, qualitative levels of security intended to cover a wide range of potential applications and environments.  The security requirements cover areas related to the secure design, implementation and operation of a cryptographic module.  These areas include cryptographic module specification; cryptographic module interfaces; roles, services, and authentication; software/firmware security; operating environment; physical security; non-invasive security; sensitive security parameter management; self-tests; life-cycle assurance; and mitigation of other attacks.</abstract>
   <status>
     <stage>final</stage>
     <substage>active</substage>
@@ -43,22 +34,10 @@
   </copyright>
   <relation type="supersedes">
     <bibitem>
-      <formattedref format="text/plain" language="en" script="Latn">FIPS  140-2 (May 25, 2001 (Change Notice 2, 12/3/2002))</formattedref>
+      <formattedref format="text/plain" language="en" script="Latn">FIPS 140-2</formattedref>
       <uri type="src">https://csrc.nist.gov/publications/detail/fips/140/2/final</uri>
     </bibitem>
   </relation>
-  <relation type="updates">
-    <bibitem>
-      <formattedref format="text/plain" language="en" script="Latn">ITL Bulletin </formattedref>
-      <uri type="src">https://csrc.nist.gov/publications/detail/itl-bulletin/2019/05/fips-140-3-adopts-iso/iec-standards/final</uri>
-    </bibitem>
-  </relation>
-  <series>
-    <formattedref format="text/plain" language="en" script="Latn">FIPS 140-3 (IPD)</formattedref>
-  </series>
-  <series>
-    <formattedref format="text/plain" language="en" script="Latn">FIPS 140-3 (2PD)</formattedref>
-  </series>
   <ext>
     <doctype>standard</doctype>
     <keyword>computer security</keyword>

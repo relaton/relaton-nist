@@ -11,23 +11,55 @@ module RelatonNist
       # @param hit_data [Hash]
       # @return [Hash]
       def parse_page(hit_data)
-        doc = get_page hit_data[:url]
-
-        docid = fetch_docid(doc)
+        item_data = if hit_data[:json]
+                      from_json hit_data
+                    else
+                      from_csrs hit_data
+                    end
         doctype = "standard"
         titles = fetch_titles(hit_data)
-        unless /^(SP|NISTIR|FIPS) /.match docid[0].id
-          doctype = id_cleanup(docid[0].id)
-          docid[0] = RelatonBib::DocumentIdentifier.new(id: titles[0][:content], type: "NIST")
+        unless /^(SP|NISTIR|FIPS) / =~ item_data[:docid][0].id
+          doctype = id_cleanup(item_data[:docid][0].id)
+          item_data[:docid][0] = RelatonBib::DocumentIdentifier.new(
+            id: titles[0][:content], type: "NIST",
+          )
         end
+        item_data[:fetched] = Date.today.to_s
+        item_data[:type] = "standard"
+        item_data[:titles] = titles
+        item_data[:doctype] = doctype
 
-        NistBibliographicItem.new(
-          fetched: Date.today.to_s,
-          type: "standard",
+        NistBibliographicItem.new(**item_data)
+      end
+
+      private
+
+      def from_json(hit_data)
+        json = hit_data[:json]
+        {
+          link: fetch_link(json),
+          docid: fetch_docid(json["docidentifier"]),
+          dates: fetch_dates(json, hit_data[:release_date]),
+          contributors: fetch_contributors(json),
+          edition: fetch_edition(json),
+          language: [json["language"]],
+          script: [json["script"]],
+          # abstract: fetch_abstract(doc),
+          docstatus: fetch_status(json, hit_data[:status]),
+          copyright: fetch_copyright(json["published-date"]),
+          relations: fetch_relations_json(json),
+          # series: fetch_series(json),
+          keyword: fetch_keywords(json),
+          commentperiod: fetch_commentperiod_json(json),
+        }
+      end
+
+      def from_csrs(hit_data)
+        doc = get_page hit_data[:url]
+        {
           # id: fetch_id(doc),
-          titles: titles,
           link: fetch_link(doc),
-          docid: docid,
+          docid: fetch_docid(doc),
           dates: fetch_dates(doc, hit_data[:release_date]),
           contributors: fetch_contributors(doc),
           edition: fetch_edition(hit_data[:code]),
@@ -40,8 +72,7 @@ module RelatonNist
           series: fetch_series(doc),
           keyword: fetch_keywords(doc),
           commentperiod: fetch_commentperiod(doc),
-          doctype: doctype,
-        )
+        }
       end
       # rubocop:enable Metrics/AbcSize, Metrics/MethodLength
 
@@ -51,8 +82,6 @@ module RelatonNist
       def id_cleanup(id)
         id.sub(/ \(WITHDRAWN\)/, "").sub(/ \(([^) ]+ )?DRAFT\)/i, "")
       end
-
-      private
 
       # Get page.
       # @param path [String] page's path
@@ -64,13 +93,17 @@ module RelatonNist
       end
 
       # Fetch docid.
-      # @param doc [Nokogiri::HTML::Document]
+      # @param doc [Nokogiri::HTML::Document, String]
       # @return [Array<RelatonBib::DocumentIdentifier>]
       def fetch_docid(doc)
-        item_ref = doc.at("//div[contains(@class, 'publications-detail')]/h3").
-          text.strip
-        return [RelatonBib::DocumentIdentifier.new(type: "NIST", id: "?")] unless item_ref
-
+        item_ref = if doc.is_a? String
+                     doc
+                   else
+                     doc.at(
+                       "//div[contains(@class, 'publications-detail')]/h3",
+                     )&.text&.strip
+                   end
+        item_ref ||= "?"
         [RelatonBib::DocumentIdentifier.new(id: item_ref, type: "NIST")]
       end
 
@@ -83,56 +116,48 @@ module RelatonNist
       # end
 
       # Fetch status.
-      # @param doc [Nokogiri::HTML::Document]
+      # @param doc [Nokogiri::HTML::Document, Hash]
       # @param status [String]
-      # @return [Hash]
+      # @return [RelatonNist::DocumentStatus]
       def fetch_status(doc, status)
-        case status
-        when "draft (withdrawn)"
-          stage = "draft-public"
-          subst = "withdrawn"
-        when "retired draft"
-          stage = "draft-public"
-          subst = "retired"
-        when "withdrawn"
-          stage = "final"
-          subst = "withdrawn"
-        when "draft"
-          stage = "draft-public"
-          subst = "active"
+        if doc.is_a? Hash
+          stage = doc["status"]
+          subst = doc["substage"]
+          iter = doc["iteration"] == "initial" ? 1 : doc["iteration"]
         else
-          stage = status
-          subst = "active"
-        end
+          case status
+          when "draft (withdrawn)"
+            stage = "draft-public"
+            subst = "withdrawn"
+          when "retired draft"
+            stage = "draft-public"
+            subst = "retired"
+          when "withdrawn"
+            stage = "final"
+            subst = "withdrawn"
+          when "draft"
+            stage = "draft-public"
+            subst = "active"
+          else
+            stage = status
+            subst = "active"
+          end
 
-        iter = nil
-        if stage.include? "draft"
-          iter = 1
-          history = doc.xpath("//span[@id='pub-history-container']/a"\
-                              "|//span[@id='pub-history-container']/span")
-          history.each_with_index do |h, idx|
-            next if h.name == "a"
+          iter = nil
+          if stage.include? "draft"
+            iter = 1
+            history = doc.xpath("//span[@id='pub-history-container']/a"\
+                                "|//span[@id='pub-history-container']/span")
+            history.each_with_index do |h, idx|
+              next if h.name == "a"
 
-            iter = idx + 1 if idx.positive?
-            # iter = if lsif idx < (history.size - 1) && !history.last.text.include?("Draft")
-            #          "final"
-            #        elsif idx.positive? then idx + 1
-            #        end
-            break
+              iter = idx + 1 if idx.positive?
+              break
+            end
           end
         end
 
-        # if doc.at "//p/strong[text()='Withdrawn:']"
-        #   substage = "withdrawn"
-        # else
-        #   substage = "active"
-        #   item_ref = doc.at(
-        #     "//div[contains(@class, 'publications-detail')]/h3",
-        #   ).text.strip
-        #   wip = item_ref.match(/(?<=\()\w+/).to_s
-        #   stage = "draft-public" if wip == "DRAFT"
-        # end
-        RelatonNist::DocumentStatus.new stage: stage, substage: subst, iteration: iter
+        RelatonNist::DocumentStatus.new stage: stage, substage: subst, iteration: iter.to_s
       end
 
       # Fetch titles.
@@ -144,46 +169,87 @@ module RelatonNist
 
       # Fetch dates
       # @param doc [Nokogiri::HTML::Document]
+      # @param release_date [Date]
       # @return [Array<Hash>]
       def fetch_dates(doc, release_date)
         dates = [{ type: "published", on: release_date.to_s }]
 
-        d = doc.at("//span[@id='pub-release-date']").text.strip
-        date = if /(?<date>\w+\s\d{4})/ =~ d
-                 Date.strptime(date, "%B %Y")
-               elsif /(?<date>\w+\s\d{1,2},\s\d{4})/ =~ d
-                 Date.strptime(date, "%B %d, %Y")
-               end
-        dates << { type: "issued", on: date.to_s }
-
+        if doc.is_a? Hash
+          issued = RelatonNist.parse_date doc["issued-date"]
+          updated = RelatonNist.parse_date doc["updated-date"]
+          dates << { type: "updated", on: updated.to_s } if updated
+          obsoleted = RelatonNist.parse_date doc["obsoleted-date"]
+          dates << { type: "obsoleted", on: obsoleted.to_s } if obsoleted
+        else
+          d = doc.at("//span[@id='pub-release-date']").text.strip
+          issued = RelatonNist.parse_date d
+        end
+        dates << { type: "issued", on: issued.to_s }
         dates
       end
 
+      # rubocop:disable Metrics/AbcSize, Metrics/MethodLength
+      # @param doc [Nokogiri::HTML::Document, Hash]
+      # @return [Array<RelatonBib::ContributionInfo>]
       def fetch_contributors(doc)
-        name = "National Institute of Standards and Technology"
-        org = RelatonBib::Organization.new(
-          name: name, url: "www.nist.gov", abbreviation: "NIST",
-        )
-        contribs = [
-          RelatonBib::ContributionInfo.new(entity: org, role: ["publisher"]),
-        ]
+        contribs = []
+        if doc.is_a? Hash
+          contribs += contributors_json(
+            doc["authors"], "author", doc["language"], doc["script"]
+          )
+          contribs + contributors_json(
+            doc["editors"], "editor", doc["language"], doc["script"]
+          )
+        else
+          name = "National Institute of Standards and Technology"
+          org = RelatonBib::Organization.new(
+            name: name, url: "www.nist.gov", abbreviation: "NIST",
+          )
+          contribs << RelatonBib::ContributionInfo.new(entity: org, role: ["publisher"])
+          authors = doc.at('//h4[.="Author(s)"]/following-sibling::p')
+          contribs += contributors(authors, "author")
+          editors = doc.at('//h4[.="Editor(s)"]/following-sibling::p')
+          contribs + contributors(editors, "editor")
+        end
+      end
 
-        authors = doc.at('//h4[.="Author(s)"]/following-sibling::p')
-        contribs += contributors(authors, "author")
-
-        editors = doc.at('//h4[.="Editor(s)"]/following-sibling::p')
-        contribs + contributors(editors, "editor")
+      # @param doc [Array<Hash>]
+      # @param role [String]
+      # @return [Array<RelatonBib::ContributionInfo>]
+      def contributors_json(doc, role, lang = "en", script = "Latn")
+        doc.map do |contr|
+          if contr["affiliation"]
+            if contr["affiliation"]["acronym"]
+              abbrev = RelatonBib::LocalizedString.new(contr["affiliation"]["acronym"])
+            end
+            org = RelatonBib::Organization.new(
+              name: contr["affiliation"]["name"], abbreviation: abbrev,
+            )
+          end
+          if contr["surname"]
+            affiliation = RelatonBib::Affilation.new org
+            entity = RelatonBib::Person.new(
+              name: full_name(contr, lang, script), affiliation: [affiliation],
+            )
+          else
+            entity = org
+          end
+          RelatonBib::ContributionInfo.new entity: entity, role: [role]
+        end
       end
 
       # rubocop:disable Metrics/CyclomaticComplexity
-      def contributors(doc, role)
+      # @param doc [Nokogiri::HTML::Element, Array<Hash>]
+      # @param role [String]
+      # @return [Array<RelatonBib::ContributionInfo>]
+      def contributors(doc, role, lang = "en", script = "Latn")
         return [] if doc.nil?
 
         doc.text.split(", ").map do |contr|
           /(?<an>.+?)(\s+\((?<abbrev>.+?)\))?$/ =~ contr
           if abbrev && an.downcase !~ /(task|force|group)/ && an.split.size.between?(2, 3)
             fullname = RelatonBib::FullName.new(
-              completename: RelatonBib::LocalizedString.new(an, "en", "Latn"),
+              completename: RelatonBib::LocalizedString.new(an, lang, script),
             )
             case abbrev
             when "NIST"
@@ -199,7 +265,7 @@ module RelatonNist
             org = RelatonBib::Organization.new name: org_name, url: url, abbreviation: abbrev
             affiliation = RelatonBib::Affilation.new org
             entity = RelatonBib::Person.new(
-              name: fullname, affiliation: [affiliation], contacts: [],
+              name: fullname, affiliation: [affiliation],
             )
           else
             entity = RelatonBib::Organization.new name: an, abbreviation: abbrev
@@ -207,17 +273,49 @@ module RelatonNist
           RelatonBib::ContributionInfo.new entity: entity, role: [role]
         end
       end
-      # rubocop:enable Metrics/CyclomaticComplexity
+      # rubocop:enable Metrics/CyclomaticComplexity, Metrics/AbcSize, Metrics/MethodLength
 
-      def fetch_edition(code)
-        return unless /(?<=Rev\.\s)(?<rev>\d+)/ =~ code
+      # @param name [Hash]
+      # @param lang [Strong]
+      # @param script [String]
+      # @return [RelatonBib::FullName]
+      def full_name(name, lang, script)
+        RelatonBib::FullName.new(
+          surname: RelatonBib::LocalizedString.new(name["surname"], lang, script),
+          forenames: name_parts(name["givenName"], lang, script),
+          additions: name_parts(name["suffix"], lang, script),
+          prefix: name_parts(name["title"], lang, script),
+          completename: RelatonBib::LocalizedString.new(name["fullName"], lang, script),
+        )
+      end
+
+      # @param part [String, NilClass]
+      # @param lang [Strong]
+      # @param script [String]
+      # @return [Array<RelatonBib::LocalizedString>]
+      def name_parts(part, lang, script)
+        return [] unless part
+
+        [RelatonBib::LocalizedString.new(name[part], lang, script)]
+      end
+
+      # @param doc [String, Hash]
+      # @return [String, NilClass]
+      def fetch_edition(doc)
+        if doc.is_a? Hash
+          return unless doc["edition"]
+
+          rev = doc["edition"]
+        else
+          return unless /(?<=Rev\.\s)(?<rev>\d+)/ =~ doc
+        end
 
         "Revision #{rev}"
       end
 
       # Fetch abstracts.
       # @param doc [Nokigiri::HTML::Document]
-      # @return [Array<Array>]
+      # @return [Array<Hash>]
       def fetch_abstract(doc)
         abstract_content = doc.xpath('//div[contains(@class, "pub-abstract-callout")]/div[1]/p').text
         [{
@@ -229,58 +327,82 @@ module RelatonNist
       end
 
       # Fetch copyright.
-      # @param title [String]
+      # @param doc [Nokogiri::HTL::Document, String]
       # @return [Hash]
       def fetch_copyright(doc)
         name = "National Institute of Standards and Technology"
         url = "www.nist.gov"
-        d = doc.at("//span[@id='pub-release-date']").text.strip
+        d = if doc.is_a? String then doc
+            else
+              doc.at("//span[@id='pub-release-date']").text.strip
+            end
         from = d.match(/\d{4}/).to_s
         { owner: { name: name, abbreviation: "NIST", url: url }, from: from }
       end
 
       # Fetch links.
-      # @param doc [Nokogiri::HTML::Document]
+      # @param doc [Nokogiri::HTML::Document, Hash]
       # @return [Array<Hash>]
       def fetch_link(doc)
-        pub = doc.at "//p/strong[.='Publication:']"
         links = []
-        pdf = pub.at "./following-sibling::a[.=' Local Download']"
-        links << { type: "pdf", content: pdf[:href] } if pdf
-        doi = pub.at("./following-sibling::a[contains(.,'(DOI)')]")
-        links << { type: "doi", content: doi[:href] } if doi
+        if doc.is_a? Hash
+          links << { type: "uri", content: doc["uri"] } if doc["uri"]
+          doi = "https://doi.org/" + doc["doi"] if doc["doi"]
+        else
+          pub = doc.at "//p/strong[.='Publication:']"
+          pdf = pub.at "./following-sibling::a[.=' Local Download']"
+          doi = pub.at("./following-sibling::a[contains(.,'(DOI)')]")&.attr :href
+          links << { type: "pdf", content: pdf[:href] } if pdf
+        end
+        links << { type: "doi", content: doi } if doi
         links
       end
 
       # Fetch relations.
       # @param doc [Nokogiri::HTML::Document]
-      # @return [Array<Hash>]
+      # @return [Array<RelatonBib::DocumentRelation>]
       def fetch_relations(doc)
         relations = doc.xpath('//span[@id="pub-supersedes-container"]/a').map do |r|
-          doc_relation "supersedes", r
+          doc_relation "supersedes", r.text, DOMAIN + r[:href]
         end
 
         relations += doc.xpath('//span[@id="pub-part-container"]/a').map do |r|
-          doc_relation "partOf", r
+          doc_relation "partOf", r.text, DOMAIN + r[:href]
         end
 
         relations + doc.xpath('//span[@id="pub-related-container"]/a').map do |r|
-          doc_relation "updates", r
+          doc_relation "updates", r.text, DOMAIN + r[:href]
         end
       end
 
-      def doc_relation(type, ref)
+      def fetch_relations_json(doc)
+        relations = doc["supersedes"].map do |r|
+          doc_relation "supersedes", r["docidentifier"], r["uri"]
+        end
+
+        relations + doc["superseded-by"].map do |r|
+          doc_relation "updates", r["docidentifier"], r["uri"]
+        end
+      end
+
+      # @param type [String]
+      # @param ref [String]
+      # @param uri [String]
+      # @return [RelatonBib::DocumentRelation]
+      def doc_relation(type, ref, uri, lang = "en", script = "Latn")
         RelatonBib::DocumentRelation.new(
           type: type,
           bibitem: RelatonBib::BibliographicItem.new(
             formattedref: RelatonBib::FormattedRef.new(
-              content: ref.text, language: "en", script: "Latn", format: "text/plain",
+              content: ref, language: lang, script: script, format: "text/plain",
             ),
-            link: [RelatonBib::TypedUri.new(type: "src", content: DOMAIN + ref[:href])],
+            link: [RelatonBib::TypedUri.new(type: "src", content: uri)],
           ),
         )
       end
 
+      # @param doc [Nokogiri::HTML::Document]
+      # @return [Array<RelatonBib::Series>]
       def fetch_series(doc)
         series = doc.xpath "//span[@id='pub-history-container']/a"\
           "|//span[@id='pub-history-container']/span"
@@ -305,11 +427,19 @@ module RelatonNist
         end.select { |s| s }
       end
 
+      # @param doc [Nokogiri::HTML::Document, Hash]
+      # @return [Array<RelatonNist::Keyword>]
       def fetch_keywords(doc)
-        kws = doc.xpath "//span[@id='pub-keywords-container']/span"
-        kws.map { |kw| Keyword.new kw.text }
+        kws = if doc.is_a? Hash
+                doc["keywords"]
+              else
+                doc.xpath "//span[@id='pub-keywords-container']/span"
+              end
+        kws.map { |kw| Keyword.new kw.is_a?(String) ? kw : kw.text }
       end
 
+      # @param doc [Nokogiri::HTML::Document]
+      # @return [RelatonNist::CommentPeriod, NilClass]
       def fetch_commentperiod(doc)
         cp = doc.at "//span[@id='pub-comments-due']"
         return unless cp
@@ -323,6 +453,12 @@ module RelatonNist
         ext = ex&.text&.match(/\w+\s\d{2},\s\d{4}/).to_s
         extended = ext.empty? ? nil : Date.strptime(ext, "%B %d, %Y")
         CommentPeriod.new from, to, extended
+      end
+
+      # @param json [Hash]
+      # @return [RelatonNist::CommentPeriod, NilClass]
+      def fetch_commentperiod_json(json)
+        CommentPeriod.new json["comment-from"], json["comment-to"] if json["comment-from"]
       end
     end
   end

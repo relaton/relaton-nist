@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://csrc.nist.gov/publications/search?keywords-lg=8011&status-lg=Final,Withdrawn
+    uri: https://csrc.nist.gov/publications/search?keywords-lg=NISTIR%208011&status-lg=Final,Withdrawn
     body:
       encoding: US-ASCII
       string: ''
@@ -29,8 +29,8 @@ http_interactions:
       Server:
       - Microsoft-IIS/8.5
       Set-Cookie:
-      - ASP.NET_SessionId=ruolgvhqdu41nprhvb13jw0w; path=/; secure; HttpOnly
-      - CMSCsrfCookie=4euJFSwyMkTz1TnM4XEqA1iEZNF84oF5ATkptz8e; path=/; secure; HttpOnly
+      - ASP.NET_SessionId=zn33qnzs1duuq3l3l1h1dqdv; path=/; secure; HttpOnly
+      - CMSCsrfCookie=vzmitEedeAj5sicpWfXvXvAUD8oQ7wEOmYsfupQh; path=/; secure; HttpOnly
       - CMSPreferredCulture=en-US; path=/; HttpOnly; Secure
       X-Frame-Options:
       - SAMEORIGIN
@@ -39,9 +39,9 @@ http_interactions:
       X-Aspnet-Version:
       - 4.0.30319
       Date:
-      - Fri, 31 May 2019 11:34:33 GMT
+      - Tue, 11 Jun 2019 10:51:48 GMT
       Content-Length:
-      - '96114'
+      - '133653'
       Strict-Transport-Security:
       - max-age=31536000
     body:
@@ -84,10 +84,10 @@ http_interactions:
         \n<link href=\"/CSRC/Media/images/favicons/favicon.ico\" type=\"image/x-icon\"
         rel=\"shortcut icon\"/>\r\n<link href=\"/CSRC/Media/images/favicons/favicon.ico\"
         type=\"image/x-icon\" rel=\"icon\"/>\r\n</head>\r\n<body class=\"LTR Unknown
-        ENUS ContentBody\" >\r\n    \r\n    <form method=\"post\" action=\"/publications/search?keywords-lg=8011&amp;status-lg=Final%2cWithdrawn\"
+        ENUS ContentBody\" >\r\n    \r\n    <form method=\"post\" action=\"/publications/search?keywords-lg=NISTIR+8011&amp;status-lg=Final%2cWithdrawn\"
         id=\"form\">\r\n<input type=\"hidden\" name=\"__CMSCsrfToken\" id=\"__CMSCsrfToken\"
-        value=\"Iacj1kWhRvuMNrOysQHEnDU1bwkdJ1xfpAPfO5s/cEo0gwgbP0nuMAu9d7PT0r3Qk3Hi+jmYZhxN0UQcQi6JLSoGdCBIJqC2lAGGz88TtFQ=\"
-        />\r\n<input type=\"hidden\" name=\"__VIEWSTATE\" id=\"__VIEWSTATE\" value=\"GvJXUleNB5DlQ/wHFrvB/+rd2CCzgG9Bggxj+Z/BhYf1Lu2ld6Dq1SBBXQvUY/kHn8x1lA8CJyV9+1KPAy4itQnzFGN5iufkfbBRgXWGZRrh2ofBOs0ZTuwXWwpa575KAdr6Yxqd6ooKcOJcflPGa/R6gtgax2HHOqX7SYqI0jtJhz0SJgOi+lDwpXJPiKaJYB2/H01Azi3jOEjtHbQlQk1gPIYUwrouug5BsFBLJcnQjpd3hBG4ziYHs7jss/2t4nehRuchzItt0TBochOdylnEK9NZyQ/IIfDgg76Ha139JiLPYnmf5neuEwxPEsFu4MCFo8QZx4p8HrYxabcAGGuHl5hcnzTwDngQZHcN2gzBFl+moZAOrpIYZzPf/Wgi\"
+        value=\"AuYYQ59ULBM88p8iSNqcJPqLtLvmzZj4LrFhQKPSW7RIEt5W6xgAt7ZTQ/vvR69HWM2O4QiPU0Ojktr7jx68346D40lba7hL6M/OeDe1r3Y=\"
+        />\r\n<input type=\"hidden\" name=\"__VIEWSTATE\" id=\"__VIEWSTATE\" value=\"zw8s5GF0ABfppmJI4qAU+wHHV02J07A4CIWt0q0miTklJ/Z+aM0FFEIQ8ii0zaae2OWICClnWdtNjAVTXHfu+MlYE/Df5Uqf41GqNY7wW0K8JLQivY3fPjbzLOLdAkGoTJuCdvNa/6Y7xk65yX8cIeUpnzSYyE+vtG/BwytgmQDjrlL5r5NyE77GaLB5vgC+wRFuceeZ3Dbet/6K1kK7848VCh9CB3AFbUUL8OELDXpRUZadSXASOzOrog5pJX2xAaFWYxG+OMGkMAWoSsKHR65p0g1eGU+0LPji0WVgo5hZIY2ODUHLF6sueQd0fyvzcIpFBS3M8Eg/+XG8iEVqOFHjy83n2EDOmeWNjK28TaeI+6QBIDkPTbylvXTQHyqwPw+9PEo07qVv5parb54m6Q==\"
         />\r\n\r\n<input type=\"hidden\" name=\"lng\" id=\"lng\" value=\"en-US\" />\r\n<script
         type=\"text/javascript\">\r\n\t//<![CDATA[\n\r\nfunction PM_Postback(param)
         { if (window.top.HideScreenLockWarningAndSync) { window.top.HideScreenLockWarningAndSync(1080);
@@ -923,19 +923,46 @@ http_interactions:
         name=\"reset-btn\" data-form-button=\"reset\" class=\"btn\">Reset</button>\r\n
         \   </div>\r\n</div>\r\n<div id=\"search-criteria-container\"></div>\r\n\r\n<div
         class=\"row top-pagination-area\">\r\n\t<div class=\"col-lg-6 col-sm-12\">\r\n
-        \       <span id='showing-results-text' data-total-pages='1' data-first-record='1'
-        data-last-record='6' data-current-page='1' data-items-per-page='25' data-total-results='6'>Showing
-        <strong id=\"showing-results-total\">6</strong> matching records.</span>\r\n\t</div>\r\n\t<div
+        \       <span id='showing-results-text' data-total-pages='12' data-first-record='1'
+        data-last-record='25' data-current-page='1' data-items-per-page='25' data-total-results='278'>Showing
+        <strong id='showing-results-first'>1</strong> through <strong id='showing-results-last'>25</strong>
+        of <strong id='showing-results-total'>278</strong> matching records.</span>\r\n\t</div>\r\n\t<div
         class=\"col-lg-6 col-sm-12\">\r\n\t\t<span class=\"pull-right hidden-sm hidden-xs
         hidden-xxs\">\r\n\t\t\t<span class='pagination-links' id='top-pagination-container'
-        data-total-pages='1' data-min-page='1' data-max-page='1' data-current-page='1'
-        data-show-first='False' data-show-last='False'></span>\r\n\t\t</span>\r\n\t\t<p
+        data-total-pages='12' data-min-page='1' data-max-page='10' data-current-page='1'
+        data-show-first='False' data-show-last='True'><strong aria-label=\"Page 1\"
+        id=\"top-page-1\">1</strong> |  <a href=\"/publications/search?keywords-lg=NISTIR+8011&status-lg=Final%2cWithdrawn&page=2\"
+        aria-label=\"Page 2\" id=\"top-page-2\">2</a> |  <a href=\"/publications/search?keywords-lg=NISTIR+8011&status-lg=Final%2cWithdrawn&page=3\"
+        aria-label=\"Page 3\" id=\"top-page-3\">3</a> |  <a href=\"/publications/search?keywords-lg=NISTIR+8011&status-lg=Final%2cWithdrawn&page=4\"
+        aria-label=\"Page 4\" id=\"top-page-4\">4</a> |  <a href=\"/publications/search?keywords-lg=NISTIR+8011&status-lg=Final%2cWithdrawn&page=5\"
+        aria-label=\"Page 5\" id=\"top-page-5\">5</a> |  <a href=\"/publications/search?keywords-lg=NISTIR+8011&status-lg=Final%2cWithdrawn&page=6\"
+        aria-label=\"Page 6\" id=\"top-page-6\">6</a> |  <a href=\"/publications/search?keywords-lg=NISTIR+8011&status-lg=Final%2cWithdrawn&page=7\"
+        aria-label=\"Page 7\" id=\"top-page-7\">7</a> |  <a href=\"/publications/search?keywords-lg=NISTIR+8011&status-lg=Final%2cWithdrawn&page=8\"
+        aria-label=\"Page 8\" id=\"top-page-8\">8</a> |  <a href=\"/publications/search?keywords-lg=NISTIR+8011&status-lg=Final%2cWithdrawn&page=9\"
+        aria-label=\"Page 9\" id=\"top-page-9\">9</a> |  <a href=\"/publications/search?keywords-lg=NISTIR+8011&status-lg=Final%2cWithdrawn&page=10\"
+        aria-label=\"Page 10\" id=\"top-page-10\">10</a>&nbsp;&nbsp;<a href=\"/publications/search?keywords-lg=NISTIR+8011&status-lg=Final%2cWithdrawn&page=2\"
+        aria-label=\"Next Page\" id=\"top-page-next\">&gt;</a>&nbsp;&nbsp;<a href=\"/publications/search?keywords-lg=NISTIR+8011&status-lg=Final%2cWithdrawn&page=12\"
+        aria-label=\"Last Page\" id=\"top-page-last\" data-last-page-number=\"12\">&gt;&gt;</a></span>\r\n\t\t</span>\r\n\t\t<p
         class=\"text-center hidden-md hidden-lg\">\r\n\t\t\t<span class='pagination-links'
-        id='mobile-top-pagination-container' data-total-pages='1' data-min-page='1'
-        data-max-page='1' data-current-page='1' data-show-first='False' data-show-last='False'></span>\r\n\t\t</p>\r\n\t</div>\r\n</div>\r\n<table
+        id='mobile-top-pagination-container' data-total-pages='12' data-min-page='1'
+        data-max-page='10' data-current-page='1' data-show-first='False' data-show-last='True'><strong
+        aria-label=\"Page 1\" id=\"mobile-top-page-1\">1</strong> &nbsp;|&nbsp;  <a
+        href=\"/publications/search?keywords-lg=NISTIR+8011&status-lg=Final%2cWithdrawn&page=2\"
+        aria-label=\"Page 2\" id=\"mobile-top-page-2\">2</a> &nbsp;|&nbsp;  <a href=\"/publications/search?keywords-lg=NISTIR+8011&status-lg=Final%2cWithdrawn&page=3\"
+        aria-label=\"Page 3\" id=\"mobile-top-page-3\">3</a> &nbsp;|&nbsp;  <a href=\"/publications/search?keywords-lg=NISTIR+8011&status-lg=Final%2cWithdrawn&page=4\"
+        aria-label=\"Page 4\" id=\"mobile-top-page-4\">4</a> &nbsp;|&nbsp;  <a href=\"/publications/search?keywords-lg=NISTIR+8011&status-lg=Final%2cWithdrawn&page=5\"
+        aria-label=\"Page 5\" id=\"mobile-top-page-5\">5</a> &nbsp;|&nbsp;  <a href=\"/publications/search?keywords-lg=NISTIR+8011&status-lg=Final%2cWithdrawn&page=6\"
+        aria-label=\"Page 6\" id=\"mobile-top-page-6\">6</a> &nbsp;|&nbsp;  <a href=\"/publications/search?keywords-lg=NISTIR+8011&status-lg=Final%2cWithdrawn&page=7\"
+        aria-label=\"Page 7\" id=\"mobile-top-page-7\">7</a> &nbsp;|&nbsp;  <a href=\"/publications/search?keywords-lg=NISTIR+8011&status-lg=Final%2cWithdrawn&page=8\"
+        aria-label=\"Page 8\" id=\"mobile-top-page-8\">8</a> &nbsp;|&nbsp;  <a href=\"/publications/search?keywords-lg=NISTIR+8011&status-lg=Final%2cWithdrawn&page=9\"
+        aria-label=\"Page 9\" id=\"mobile-top-page-9\">9</a> &nbsp;|&nbsp;  <a href=\"/publications/search?keywords-lg=NISTIR+8011&status-lg=Final%2cWithdrawn&page=10\"
+        aria-label=\"Page 10\" id=\"mobile-top-page-10\">10</a>&nbsp;&nbsp;<a href=\"/publications/search?keywords-lg=NISTIR+8011&status-lg=Final%2cWithdrawn&page=2\"
+        aria-label=\"Next Page\" id=\"mobile-top-page-next\">&gt;</a>&nbsp;&nbsp;<a
+        href=\"/publications/search?keywords-lg=NISTIR+8011&status-lg=Final%2cWithdrawn&page=12\"
+        aria-label=\"Last Page\" id=\"mobile-top-page-last\" data-last-page-number=\"12\">&gt;&gt;</a></span>\r\n\t\t</p>\r\n\t</div>\r\n</div>\r\n<table
         class=\"table table-striped table-condensed publications-table table-bordered\"
-        \r\n    id=\"publications-results-table\"  data-total-records=\"6\" data-page=\"1\"
-        \r\n    data-first-record=\"1\" data-last-record=\"6\" data-ipp=\"25\">\r\n\t<thead>\r\n\t\t<tr>\r\n\t\t\t<th
+        \r\n    id=\"publications-results-table\"  data-total-records=\"278\" data-page=\"1\"
+        \r\n    data-first-record=\"1\" data-last-record=\"25\" data-ipp=\"25\">\r\n\t<thead>\r\n\t\t<tr>\r\n\t\t\t<th
         nowrap class=\"hidden-sm hidden-xs hidden-xxs\">Series</th>\r\n\t\t\t<th nowrap
         class=\"hidden-sm hidden-xs hidden-xxs\">Number</th>\r\n\t\t\t<th nowrap>\r\n\t\t\t\t<span
         class=\"hidden-sm hidden-xs hidden-xxs\">Title</span>\r\n\t\t\t\t<span class=\"hidden-md
@@ -1019,45 +1046,442 @@ http_interactions:
         class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-release-date-4\">\r\n\t\t\t\t
         12/06/2018\r\n\t\t\t</td>\r\n\t\t\t\r\n\t\t</tr>\r\n\r\n  \r\n\t\t<tr id=\"result-5\">\r\n\t\t\t<td
         class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-series-5\">NISTIR</td>\r\n\t\t\t<td
-        class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-number-5\"> 8011 Vol. 1</td>\r\n\t\t\t<td>\r\n\t\t\t\t\r\n\t\t\t\t<div
+        class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-number-5\"> 8011 Vol. 2</td>\r\n\t\t\t<td>\r\n\t\t\t\t\r\n\t\t\t\t<div
         class=\"hidden-sm hidden-xs hidden-xxs\">\r\n                        <strong><a
-        href=\"/publications/detail/nistir/8011/vol-1/final\" id=\"pub-title-link-5\">Automation
-        Support for Security Control Assessments: Overview</a></strong>\r\n\t\t\t\t</div>\r\n\r\n\t\t\t\t<div
+        href=\"/publications/detail/nistir/8011/vol-2/final\" id=\"pub-title-link-5\">Automation
+        Support for Security Control Assessments: Volume 2: Hardware Asset Management</a></strong>\r\n\t\t\t\t</div>\r\n\r\n\t\t\t\t<div
         class=\"hidden-md hidden-lg\">\r\n\t\t\t\t\t<strong><span id=\"pub-full-display-sm-5\">NISTIR
-        8011 Vol. 1</span><br />\r\n\t\t\t\t\t\t<a href=\"/publications/detail/nistir/8011/vol-1/final\"
+        8011 Vol. 2</span><br />\r\n\t\t\t\t\t\t<a href=\"/publications/detail/nistir/8011/vol-2/final\"
         class=\"mobile-pub-title\" id=\"pub-title-link-sm-5\">Automation Support for
-        Security Control Assessments: Overview</a>\r\n\t\t\t\t\t</strong>\r\n\t\t\t\t</div>\r\n\t\t\t\t\r\n\t\t\t\t<div
+        Security Control Assessments: Volume 2: Hardware Asset Management</a>\r\n\t\t\t\t\t</strong>\r\n\t\t\t\t</div>\r\n\t\t\t\t\r\n\t\t\t\t<div
         class=\"hidden-md hidden-lg\">\r\n                    <strong id=\"pub-release-date-sm-5\">6/06/2017</strong>\r\n
         \                   <br />\r\n                    Status: <span id=\"pub-status-sm-5\">Final</span>\r\n\t\t\t\t</div>\r\n\t\t\t\t\r\n\t\t\t\t\r\n
         \               <div class=\"control-value-no-block\">\r\n                Download:
-        <span id='download-values-5'><span id='download-value-5-0'><a href=\"https://doi.org/10.6028/NIST.IR.8011-1\">NISTIR
-        8011 Vol. 1 (DOI)</a></span>; <span id='download-value-5-1'><a href=\"https://nvlpubs.nist.gov/nistpubs/ir/2017/NIST.IR.8011-1.pdf\">Local
+        <span id='download-values-5'><span id='download-value-5-0'><a href=\"https://doi.org/10.6028/NIST.IR.8011-2\">NISTIR
+        8011 Vol. 2 (DOI)</a></span>; <span id='download-value-5-1'><a href=\"https://nvlpubs.nist.gov/nistpubs/ir/2017/NIST.IR.8011-2.pdf\">Local
         Download</a></span></span>\r\n\t\t\t\t</div>\r\n\t\t\t</td>\r\n\t\t\t<td class=\"hidden-sm
         hidden-xs hidden-xxs\" id=\"pub-status-5\">\r\n\t\t\t\tFinal\r\n\t\t\t</td>\r\n\t\t\t<td
         class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-release-date-5\">\r\n\t\t\t\t
         6/06/2017\r\n\t\t\t</td>\r\n\t\t\t\r\n\t\t</tr>\r\n\r\n  \r\n\t\t<tr id=\"result-6\">\r\n\t\t\t<td
         class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-series-6\">NISTIR</td>\r\n\t\t\t<td
-        class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-number-6\"> 8011 Vol. 2</td>\r\n\t\t\t<td>\r\n\t\t\t\t\r\n\t\t\t\t<div
+        class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-number-6\"> 8011 Vol. 1</td>\r\n\t\t\t<td>\r\n\t\t\t\t\r\n\t\t\t\t<div
         class=\"hidden-sm hidden-xs hidden-xxs\">\r\n                        <strong><a
-        href=\"/publications/detail/nistir/8011/vol-2/final\" id=\"pub-title-link-6\">Automation
-        Support for Security Control Assessments: Hardware Asset Management</a></strong>\r\n\t\t\t\t</div>\r\n\r\n\t\t\t\t<div
+        href=\"/publications/detail/nistir/8011/vol-1/final\" id=\"pub-title-link-6\">Automation
+        Support for Security Control Assessments: Volume 1: Overview</a></strong>\r\n\t\t\t\t</div>\r\n\r\n\t\t\t\t<div
         class=\"hidden-md hidden-lg\">\r\n\t\t\t\t\t<strong><span id=\"pub-full-display-sm-6\">NISTIR
-        8011 Vol. 2</span><br />\r\n\t\t\t\t\t\t<a href=\"/publications/detail/nistir/8011/vol-2/final\"
+        8011 Vol. 1</span><br />\r\n\t\t\t\t\t\t<a href=\"/publications/detail/nistir/8011/vol-1/final\"
         class=\"mobile-pub-title\" id=\"pub-title-link-sm-6\">Automation Support for
-        Security Control Assessments: Hardware Asset Management</a>\r\n\t\t\t\t\t</strong>\r\n\t\t\t\t</div>\r\n\t\t\t\t\r\n\t\t\t\t<div
+        Security Control Assessments: Volume 1: Overview</a>\r\n\t\t\t\t\t</strong>\r\n\t\t\t\t</div>\r\n\t\t\t\t\r\n\t\t\t\t<div
         class=\"hidden-md hidden-lg\">\r\n                    <strong id=\"pub-release-date-sm-6\">6/06/2017</strong>\r\n
         \                   <br />\r\n                    Status: <span id=\"pub-status-sm-6\">Final</span>\r\n\t\t\t\t</div>\r\n\t\t\t\t\r\n\t\t\t\t\r\n
         \               <div class=\"control-value-no-block\">\r\n                Download:
-        <span id='download-values-6'><span id='download-value-6-0'><a href=\"https://doi.org/10.6028/NIST.IR.8011-2\">NISTIR
-        8011 Vol. 2 (DOI)</a></span>; <span id='download-value-6-1'><a href=\"https://nvlpubs.nist.gov/nistpubs/ir/2017/NIST.IR.8011-2.pdf\">Local
+        <span id='download-values-6'><span id='download-value-6-0'><a href=\"https://doi.org/10.6028/NIST.IR.8011-1\">NISTIR
+        8011 Vol. 1 (DOI)</a></span>; <span id='download-value-6-1'><a href=\"https://nvlpubs.nist.gov/nistpubs/ir/2017/NIST.IR.8011-1.pdf\">Local
         Download</a></span></span>\r\n\t\t\t\t</div>\r\n\t\t\t</td>\r\n\t\t\t<td class=\"hidden-sm
         hidden-xs hidden-xxs\" id=\"pub-status-6\">\r\n\t\t\t\tFinal\r\n\t\t\t</td>\r\n\t\t\t<td
         class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-release-date-6\">\r\n\t\t\t\t
-        6/06/2017\r\n\t\t\t</td>\r\n\t\t\t\r\n\t\t</tr>\r\n\r\n\t</tbody>\r\n</table>\r\n<div
+        6/06/2017\r\n\t\t\t</td>\r\n\t\t\t\r\n\t\t</tr>\r\n\r\n  \r\n\t\t<tr id=\"result-7\">\r\n\t\t\t<td
+        class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-series-7\">NISTIR</td>\r\n\t\t\t<td
+        class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-number-7\"> 8204</td>\r\n\t\t\t<td>\r\n\t\t\t\t\r\n\t\t\t\t<div
+        class=\"hidden-sm hidden-xs hidden-xxs\">\r\n                        <strong><a
+        href=\"/publications/detail/nistir/8204/archive/2019-04-26\" id=\"pub-title-link-7\">Cybersecurity
+        Framework Online Informative References (OLIR) Submissions: Specification
+        for Completing the OLIR Template</a></strong>\r\n\t\t\t\t</div>\r\n\r\n\t\t\t\t<div
+        class=\"hidden-md hidden-lg\">\r\n\t\t\t\t\t<strong><span id=\"pub-full-display-sm-7\">NISTIR
+        8204 (WITHDRAWN)</span><br />\r\n\t\t\t\t\t\t<a href=\"/publications/detail/nistir/8204/archive/2019-04-26\"
+        class=\"mobile-pub-title\" id=\"pub-title-link-sm-7\">Cybersecurity Framework
+        Online Informative References (OLIR) Submissions: Specification for Completing
+        the OLIR Template</a>\r\n\t\t\t\t\t</strong>\r\n\t\t\t\t</div>\r\n\t\t\t\t\r\n\t\t\t\t<div
+        class=\"hidden-md hidden-lg\">\r\n                    <strong id=\"pub-release-date-sm-7\">4/26/2019</strong>\r\n
+        \                   <br />\r\n                    Status: <span id=\"pub-status-sm-7\">Withdrawn</span>\r\n\t\t\t\t</div>\r\n\t\t\t\t\r\n\t\t\t\t\r\n
+        \               <div class=\"control-value-no-block\">\r\n                Download:
+        <span id='download-values-7'><span id='download-value-7-0'><a href=\"/CSRC/media/Publications/nistir/8204/archive/2019-04-26/documents/NIST.IR.8204-20190426.pdf\">NISTIR
+        8204 (April 2019)</a></span></span>\r\n\t\t\t\t</div>\r\n\t\t\t</td>\r\n\t\t\t<td
+        class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-status-7\">\r\n\t\t\t\tWithdrawn\r\n\t\t\t</td>\r\n\t\t\t<td
+        class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-release-date-7\">\r\n\t\t\t\t
+        4/26/2019\r\n\t\t\t</td>\r\n\t\t\t\r\n\t\t</tr>\r\n\r\n  \r\n\t\t<tr id=\"result-8\">\r\n\t\t\t<td
+        class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-series-8\">NISTIR</td>\r\n\t\t\t<td
+        class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-number-8\"> 8221</td>\r\n\t\t\t<td>\r\n\t\t\t\t\r\n\t\t\t\t<div
+        class=\"hidden-sm hidden-xs hidden-xxs\">\r\n                        <strong><a
+        href=\"/publications/detail/nistir/8221/draft\" id=\"pub-title-link-8\">A
+        Methodology for Determining Forensic Data Requirements for Detecting Hypervisor
+        Attacks</a></strong>\r\n\t\t\t\t</div>\r\n\r\n\t\t\t\t<div class=\"hidden-md
+        hidden-lg\">\r\n\t\t\t\t\t<strong><span id=\"pub-full-display-sm-8\">NISTIR
+        8221 (DRAFT) (WITHDRAWN)</span><br />\r\n\t\t\t\t\t\t<a href=\"/publications/detail/nistir/8221/draft\"
+        class=\"mobile-pub-title\" id=\"pub-title-link-sm-8\">A Methodology for Determining
+        Forensic Data Requirements for Detecting Hypervisor Attacks</a>\r\n\t\t\t\t\t</strong>\r\n\t\t\t\t</div>\r\n\t\t\t\t\r\n\t\t\t\t<div
+        class=\"hidden-md hidden-lg\">\r\n                    <strong id=\"pub-release-date-sm-8\">9/21/2018</strong>\r\n
+        \                   <br />\r\n                    Status: <span id=\"pub-status-sm-8\">Draft
+        (Withdrawn)</span>\r\n\t\t\t\t</div>\r\n\t\t\t\t\r\n\t\t\t\t\r\n                <div
+        class=\"control-value-no-block\">\r\n                Download: <span id='download-values-8'><span
+        id='download-value-8-0'><a href=\"/CSRC/media/Publications/nistir/8221/draft/documents/nistir-8221-draft.pdf\">Draft
+        NISTIR 8221</a></span></span>\r\n\t\t\t\t</div>\r\n\t\t\t</td>\r\n\t\t\t<td
+        class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-status-8\">\r\n\t\t\t\tDraft
+        (Withdrawn)\r\n\t\t\t</td>\r\n\t\t\t<td class=\"hidden-sm hidden-xs hidden-xxs\"
+        id=\"pub-release-date-8\">\r\n\t\t\t\t 9/21/2018\r\n\t\t\t</td>\r\n\t\t\t\r\n\t\t</tr>\r\n\r\n
+        \ \r\n\t\t<tr id=\"result-9\">\r\n\t\t\t<td class=\"hidden-sm hidden-xs hidden-xxs\"
+        id=\"pub-series-9\">NISTIR</td>\r\n\t\t\t<td class=\"hidden-sm hidden-xs hidden-xxs\"
+        id=\"pub-number-9\"> 8214</td>\r\n\t\t\t<td>\r\n\t\t\t\t\r\n\t\t\t\t<div class=\"hidden-sm
+        hidden-xs hidden-xxs\">\r\n                        <strong><a href=\"/publications/detail/nistir/8214/draft\"
+        id=\"pub-title-link-9\">Threshold Schemes for Cryptographic Primitives: Challenges
+        and Opportunities in Standardization and Validation of Threshold Cryptography</a></strong>\r\n\t\t\t\t</div>\r\n\r\n\t\t\t\t<div
+        class=\"hidden-md hidden-lg\">\r\n\t\t\t\t\t<strong><span id=\"pub-full-display-sm-9\">NISTIR
+        8214 (DRAFT) (WITHDRAWN)</span><br />\r\n\t\t\t\t\t\t<a href=\"/publications/detail/nistir/8214/draft\"
+        class=\"mobile-pub-title\" id=\"pub-title-link-sm-9\">Threshold Schemes for
+        Cryptographic Primitives: Challenges and Opportunities in Standardization
+        and Validation of Threshold Cryptography</a>\r\n\t\t\t\t\t</strong>\r\n\t\t\t\t</div>\r\n\t\t\t\t\r\n\t\t\t\t<div
+        class=\"hidden-md hidden-lg\">\r\n                    <strong id=\"pub-release-date-sm-9\">7/26/2018</strong>\r\n
+        \                   <br />\r\n                    Status: <span id=\"pub-status-sm-9\">Draft
+        (Withdrawn)</span>\r\n\t\t\t\t</div>\r\n\t\t\t\t\r\n\t\t\t\t\r\n                <div
+        class=\"control-value-no-block\">\r\n                Download: <span id='download-values-9'><span
+        id='download-value-9-0'><a href=\"/CSRC/media/Publications/nistir/8214/draft/documents/nistir-8214-draft.pdf\">Draft
+        NISTIR 8214</a></span></span>\r\n\t\t\t\t</div>\r\n\t\t\t</td>\r\n\t\t\t<td
+        class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-status-9\">\r\n\t\t\t\tDraft
+        (Withdrawn)\r\n\t\t\t</td>\r\n\t\t\t<td class=\"hidden-sm hidden-xs hidden-xxs\"
+        id=\"pub-release-date-9\">\r\n\t\t\t\t 7/26/2018\r\n\t\t\t</td>\r\n\t\t\t\r\n\t\t</tr>\r\n\r\n
+        \ \r\n\t\t<tr id=\"result-10\">\r\n\t\t\t<td class=\"hidden-sm hidden-xs hidden-xxs\"
+        id=\"pub-series-10\">NISTIR</td>\r\n\t\t\t<td class=\"hidden-sm hidden-xs
+        hidden-xxs\" id=\"pub-number-10\"> 8204</td>\r\n\t\t\t<td>\r\n\t\t\t\t\r\n\t\t\t\t<div
+        class=\"hidden-sm hidden-xs hidden-xxs\">\r\n                        <strong><a
+        href=\"/publications/detail/nistir/8204/draft\" id=\"pub-title-link-10\">Cybersecurity
+        Framework Online Informative References (OLIR) Submissions: Specification
+        for Completing the OLIR Template</a></strong>\r\n\t\t\t\t</div>\r\n\r\n\t\t\t\t<div
+        class=\"hidden-md hidden-lg\">\r\n\t\t\t\t\t<strong><span id=\"pub-full-display-sm-10\">NISTIR
+        8204 (DRAFT) (WITHDRAWN)</span><br />\r\n\t\t\t\t\t\t<a href=\"/publications/detail/nistir/8204/draft\"
+        class=\"mobile-pub-title\" id=\"pub-title-link-sm-10\">Cybersecurity Framework
+        Online Informative References (OLIR) Submissions: Specification for Completing
+        the OLIR Template</a>\r\n\t\t\t\t\t</strong>\r\n\t\t\t\t</div>\r\n\t\t\t\t\r\n\t\t\t\t<div
+        class=\"hidden-md hidden-lg\">\r\n                    <strong id=\"pub-release-date-sm-10\">5/17/2018</strong>\r\n
+        \                   <br />\r\n                    Status: <span id=\"pub-status-sm-10\">Draft
+        (Withdrawn)</span>\r\n\t\t\t\t</div>\r\n\t\t\t\t\r\n\t\t\t\t\r\n                <div
+        class=\"control-value-no-block\">\r\n                Download: <span id='download-values-10'><span
+        id='download-value-10-0'><a href=\"/CSRC/media/Publications/nistir/8204/draft/documents/nistir-8204-draft.pdf\">Draft
+        NISTIR 8204</a></span>; <span id='download-value-10-1'><a href=\"https://www.nist.gov/cyberframework/informative-references\">Informative
+        References homepage</a></span></span>\r\n\t\t\t\t</div>\r\n\t\t\t</td>\r\n\t\t\t<td
+        class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-status-10\">\r\n\t\t\t\tDraft
+        (Withdrawn)\r\n\t\t\t</td>\r\n\t\t\t<td class=\"hidden-sm hidden-xs hidden-xxs\"
+        id=\"pub-release-date-10\">\r\n\t\t\t\t 5/17/2018\r\n\t\t\t</td>\r\n\t\t\t\r\n\t\t</tr>\r\n\r\n
+        \ \r\n\t\t<tr id=\"result-11\">\r\n\t\t\t<td class=\"hidden-sm hidden-xs hidden-xxs\"
+        id=\"pub-series-11\">NISTIR</td>\r\n\t\t\t<td class=\"hidden-sm hidden-xs
+        hidden-xxs\" id=\"pub-number-11\"> 8200</td>\r\n\t\t\t<td>\r\n\t\t\t\t\r\n\t\t\t\t<div
+        class=\"hidden-sm hidden-xs hidden-xxs\">\r\n                        <strong><a
+        href=\"/publications/detail/nistir/8200/draft\" id=\"pub-title-link-11\">Interagency
+        Report on Status of International Cybersecurity Standardization for the Internet
+        of Things (IoT)</a></strong>\r\n\t\t\t\t</div>\r\n\r\n\t\t\t\t<div class=\"hidden-md
+        hidden-lg\">\r\n\t\t\t\t\t<strong><span id=\"pub-full-display-sm-11\">NISTIR
+        8200 (DRAFT) (WITHDRAWN)</span><br />\r\n\t\t\t\t\t\t<a href=\"/publications/detail/nistir/8200/draft\"
+        class=\"mobile-pub-title\" id=\"pub-title-link-sm-11\">Interagency Report
+        on Status of International Cybersecurity Standardization for the Internet
+        of Things (IoT)</a>\r\n\t\t\t\t\t</strong>\r\n\t\t\t\t</div>\r\n\t\t\t\t\r\n\t\t\t\t<div
+        class=\"hidden-md hidden-lg\">\r\n                    <strong id=\"pub-release-date-sm-11\">2/14/2018</strong>\r\n
+        \                   <br />\r\n                    Status: <span id=\"pub-status-sm-11\">Draft
+        (Withdrawn)</span>\r\n\t\t\t\t</div>\r\n\t\t\t\t\r\n\t\t\t\t\r\n                <div
+        class=\"control-value-no-block\">\r\n                Download: <span id='download-values-11'><span
+        id='download-value-11-0'><a href=\"/CSRC/media/Publications/nistir/8200/draft/documents/nistir8200-draft.pdf\">Draft
+        NISTIR 8200</a></span>; <span id='download-value-11-1'><a href=\"/CSRC/media/Publications/nistir/8200/draft/documents/nistir8200-draft-comment-template.docx\">Comment
+        template</a></span>; <span id='download-value-11-2'><a href=\"https://www.nist.gov/itl/comments-draft-nistir-8200\">View
+        comments received to-date</a></span></span>\r\n\t\t\t\t</div>\r\n\t\t\t</td>\r\n\t\t\t<td
+        class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-status-11\">\r\n\t\t\t\tDraft
+        (Withdrawn)\r\n\t\t\t</td>\r\n\t\t\t<td class=\"hidden-sm hidden-xs hidden-xxs\"
+        id=\"pub-release-date-11\">\r\n\t\t\t\t 2/14/2018\r\n\t\t\t</td>\r\n\t\t\t\r\n\t\t</tr>\r\n\r\n
+        \ \r\n\t\t<tr id=\"result-12\">\r\n\t\t\t<td class=\"hidden-sm hidden-xs hidden-xxs\"
+        id=\"pub-series-12\">NISTIR</td>\r\n\t\t\t<td class=\"hidden-sm hidden-xs
+        hidden-xxs\" id=\"pub-number-12\"> 8202</td>\r\n\t\t\t<td>\r\n\t\t\t\t\r\n\t\t\t\t<div
+        class=\"hidden-sm hidden-xs hidden-xxs\">\r\n                        <strong><a
+        href=\"/publications/detail/nistir/8202/draft\" id=\"pub-title-link-12\">Blockchain
+        Technology Overview</a></strong>\r\n\t\t\t\t</div>\r\n\r\n\t\t\t\t<div class=\"hidden-md
+        hidden-lg\">\r\n\t\t\t\t\t<strong><span id=\"pub-full-display-sm-12\">NISTIR
+        8202 (DRAFT) (WITHDRAWN)</span><br />\r\n\t\t\t\t\t\t<a href=\"/publications/detail/nistir/8202/draft\"
+        class=\"mobile-pub-title\" id=\"pub-title-link-sm-12\">Blockchain Technology
+        Overview</a>\r\n\t\t\t\t\t</strong>\r\n\t\t\t\t</div>\r\n\t\t\t\t\r\n\t\t\t\t<div
+        class=\"hidden-md hidden-lg\">\r\n                    <strong id=\"pub-release-date-sm-12\">1/24/2018</strong>\r\n
+        \                   <br />\r\n                    Status: <span id=\"pub-status-sm-12\">Draft
+        (Withdrawn)</span>\r\n\t\t\t\t</div>\r\n\t\t\t\t\r\n\t\t\t\t\r\n                <div
+        class=\"control-value-no-block\">\r\n                Download: <span id='download-values-12'><span
+        id='download-value-12-0'><a href=\"/CSRC/media/Publications/nistir/8202/draft/documents/nistir8202-draft.pdf\">Draft
+        NISTIR 8202</a></span>; <span id='download-value-12-1'><a href=\"https://www.nist.gov/news-events/news/2018/01/nist-report-blockchain-technology-aims-go-beyond-hype\">NIST
+        News Release</a></span></span>\r\n\t\t\t\t</div>\r\n\t\t\t</td>\r\n\t\t\t<td
+        class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-status-12\">\r\n\t\t\t\tDraft
+        (Withdrawn)\r\n\t\t\t</td>\r\n\t\t\t<td class=\"hidden-sm hidden-xs hidden-xxs\"
+        id=\"pub-release-date-12\">\r\n\t\t\t\t 1/24/2018\r\n\t\t\t</td>\r\n\t\t\t\r\n\t\t</tr>\r\n\r\n
+        \ \r\n\t\t<tr id=\"result-13\">\r\n\t\t\t<td class=\"hidden-sm hidden-xs hidden-xxs\"
+        id=\"pub-series-13\">NISTIR</td>\r\n\t\t\t<td class=\"hidden-sm hidden-xs
+        hidden-xxs\" id=\"pub-number-13\"> 7511 Rev. 5</td>\r\n\t\t\t<td>\r\n\t\t\t\t\r\n\t\t\t\t<div
+        class=\"hidden-sm hidden-xs hidden-xxs\">\r\n                        <strong><a
+        href=\"/publications/detail/nistir/7511/rev-5/draft\" id=\"pub-title-link-13\">Security
+        Content Automation Protocol (SCAP) Version 1.3 Validation Program Test Requirements</a></strong>\r\n\t\t\t\t</div>\r\n\r\n\t\t\t\t<div
+        class=\"hidden-md hidden-lg\">\r\n\t\t\t\t\t<strong><span id=\"pub-full-display-sm-13\">NISTIR
+        7511 Rev. 5 (DRAFT) (WITHDRAWN)</span><br />\r\n\t\t\t\t\t\t<a href=\"/publications/detail/nistir/7511/rev-5/draft\"
+        class=\"mobile-pub-title\" id=\"pub-title-link-sm-13\">Security Content Automation
+        Protocol (SCAP) Version 1.3 Validation Program Test Requirements</a>\r\n\t\t\t\t\t</strong>\r\n\t\t\t\t</div>\r\n\t\t\t\t\r\n\t\t\t\t<div
+        class=\"hidden-md hidden-lg\">\r\n                    <strong id=\"pub-release-date-sm-13\">1/16/2018</strong>\r\n
+        \                   <br />\r\n                    Status: <span id=\"pub-status-sm-13\">Draft
+        (Withdrawn)</span>\r\n\t\t\t\t</div>\r\n\t\t\t\t\r\n\t\t\t\t\r\n                <div
+        class=\"control-value-no-block\">\r\n                Download: <span id='download-values-13'><span
+        id='download-value-13-0'><a href=\"/CSRC/media/Publications/nistir/7511/rev-5/draft/documents/nistir7511r5-draft.pdf\">Draft
+        NISTIR 7511 Rev. 5</a></span></span>\r\n\t\t\t\t</div>\r\n\t\t\t</td>\r\n\t\t\t<td
+        class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-status-13\">\r\n\t\t\t\tDraft
+        (Withdrawn)\r\n\t\t\t</td>\r\n\t\t\t<td class=\"hidden-sm hidden-xs hidden-xxs\"
+        id=\"pub-release-date-13\">\r\n\t\t\t\t 1/16/2018\r\n\t\t\t</td>\r\n\t\t\t\r\n\t\t</tr>\r\n\r\n
+        \ \r\n\t\t<tr id=\"result-14\">\r\n\t\t\t<td class=\"hidden-sm hidden-xs hidden-xxs\"
+        id=\"pub-series-14\">NISTIR</td>\r\n\t\t\t<td class=\"hidden-sm hidden-xs
+        hidden-xxs\" id=\"pub-number-14\"> 8183</td>\r\n\t\t\t<td>\r\n\t\t\t\t\r\n\t\t\t\t<div
+        class=\"hidden-sm hidden-xs hidden-xxs\">\r\n                        <strong><a
+        href=\"/publications/detail/nistir/8183/archive/2017-09-08\" id=\"pub-title-link-14\">Cybersecurity
+        Framework Manufacturing Profile</a></strong>\r\n\t\t\t\t</div>\r\n\r\n\t\t\t\t<div
+        class=\"hidden-md hidden-lg\">\r\n\t\t\t\t\t<strong><span id=\"pub-full-display-sm-14\">NISTIR
+        8183 (WITHDRAWN)</span><br />\r\n\t\t\t\t\t\t<a href=\"/publications/detail/nistir/8183/archive/2017-09-08\"
+        class=\"mobile-pub-title\" id=\"pub-title-link-sm-14\">Cybersecurity Framework
+        Manufacturing Profile</a>\r\n\t\t\t\t\t</strong>\r\n\t\t\t\t</div>\r\n\t\t\t\t\r\n\t\t\t\t<div
+        class=\"hidden-md hidden-lg\">\r\n                    <strong id=\"pub-release-date-sm-14\">9/08/2017</strong>\r\n
+        \                   <br />\r\n                    Status: <span id=\"pub-status-sm-14\">Withdrawn</span>\r\n\t\t\t\t</div>\r\n\t\t\t\t\r\n\t\t\t\t\r\n
+        \               <div class=\"control-value-no-block\">\r\n                Download:
+        <span id='download-values-14'><span id='download-value-14-0'><a href=\"/CSRC/media/Publications/nistir/8183/archive/2017-09-08/documents/NIST.IR.8183.pdf\">NISTIR
+        8183 (Sep. 2017)</a></span></span>\r\n\t\t\t\t</div>\r\n\t\t\t</td>\r\n\t\t\t<td
+        class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-status-14\">\r\n\t\t\t\tWithdrawn\r\n\t\t\t</td>\r\n\t\t\t<td
+        class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-release-date-14\">\r\n\t\t\t\t
+        9/08/2017\r\n\t\t\t</td>\r\n\t\t\t\r\n\t\t</tr>\r\n\r\n  \r\n\t\t<tr id=\"result-15\">\r\n\t\t\t<td
+        class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-series-15\">NISTIR</td>\r\n\t\t\t<td
+        class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-number-15\"> 8176</td>\r\n\t\t\t<td>\r\n\t\t\t\t\r\n\t\t\t\t<div
+        class=\"hidden-sm hidden-xs hidden-xxs\">\r\n                        <strong><a
+        href=\"/publications/detail/nistir/8176/draft\" id=\"pub-title-link-15\">Security
+        Assurance Challenges for Container Deployment</a></strong>\r\n\t\t\t\t</div>\r\n\r\n\t\t\t\t<div
+        class=\"hidden-md hidden-lg\">\r\n\t\t\t\t\t<strong><span id=\"pub-full-display-sm-15\">NISTIR
+        8176 (DRAFT) (WITHDRAWN)</span><br />\r\n\t\t\t\t\t\t<a href=\"/publications/detail/nistir/8176/draft\"
+        class=\"mobile-pub-title\" id=\"pub-title-link-sm-15\">Security Assurance
+        Challenges for Container Deployment</a>\r\n\t\t\t\t\t</strong>\r\n\t\t\t\t</div>\r\n\t\t\t\t\r\n\t\t\t\t<div
+        class=\"hidden-md hidden-lg\">\r\n                    <strong id=\"pub-release-date-sm-15\">8/01/2017</strong>\r\n
+        \                   <br />\r\n                    Status: <span id=\"pub-status-sm-15\">Draft
+        (Withdrawn)</span>\r\n\t\t\t\t</div>\r\n\t\t\t\t\r\n\t\t\t\t\r\n                <div
+        class=\"control-value-no-block\">\r\n                Download: <span id='download-values-15'><span
+        id='download-value-15-0'><a href=\"/CSRC/media/Publications/nistir/8176/draft/documents/nistir8176-draft.pdf\">Draft
+        NISTIR 8176</a></span></span>\r\n\t\t\t\t</div>\r\n\t\t\t</td>\r\n\t\t\t<td
+        class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-status-15\">\r\n\t\t\t\tDraft
+        (Withdrawn)\r\n\t\t\t</td>\r\n\t\t\t<td class=\"hidden-sm hidden-xs hidden-xxs\"
+        id=\"pub-release-date-15\">\r\n\t\t\t\t 8/01/2017\r\n\t\t\t</td>\r\n\t\t\t\r\n\t\t</tr>\r\n\r\n
+        \ \r\n\t\t<tr id=\"result-16\">\r\n\t\t\t<td class=\"hidden-sm hidden-xs hidden-xxs\"
+        id=\"pub-series-16\">NISTIR</td>\r\n\t\t\t<td class=\"hidden-sm hidden-xs
+        hidden-xxs\" id=\"pub-number-16\"> 8179</td>\r\n\t\t\t<td>\r\n\t\t\t\t\r\n\t\t\t\t<div
+        class=\"hidden-sm hidden-xs hidden-xxs\">\r\n                        <strong><a
+        href=\"/publications/detail/nistir/8179/draft\" id=\"pub-title-link-16\">Criticality
+        Analysis Process Model: Prioritizing Systems and Components</a></strong>\r\n\t\t\t\t</div>\r\n\r\n\t\t\t\t<div
+        class=\"hidden-md hidden-lg\">\r\n\t\t\t\t\t<strong><span id=\"pub-full-display-sm-16\">NISTIR
+        8179 (DRAFT) (WITHDRAWN)</span><br />\r\n\t\t\t\t\t\t<a href=\"/publications/detail/nistir/8179/draft\"
+        class=\"mobile-pub-title\" id=\"pub-title-link-sm-16\">Criticality Analysis
+        Process Model: Prioritizing Systems and Components</a>\r\n\t\t\t\t\t</strong>\r\n\t\t\t\t</div>\r\n\t\t\t\t\r\n\t\t\t\t<div
+        class=\"hidden-md hidden-lg\">\r\n                    <strong id=\"pub-release-date-sm-16\">7/10/2017</strong>\r\n
+        \                   <br />\r\n                    Status: <span id=\"pub-status-sm-16\">Draft
+        (Withdrawn)</span>\r\n\t\t\t\t</div>\r\n\t\t\t\t\r\n\t\t\t\t\r\n                <div
+        class=\"control-value-no-block\">\r\n                Download: <span id='download-values-16'><span
+        id='download-value-16-0'><a href=\"/CSRC/media/Publications/nistir/8179/draft/documents/nistir-8179-draft.pdf\">Draft
+        NISTIR 8179</a></span>; <span id='download-value-16-1'><a href=\"/CSRC/media/Publications/nistir/8179/draft/documents/criticality-analysis-process-model-image.pdf\">Process
+        Model Diagram</a></span>; <span id='download-value-16-2'><a href=\"/CSRC/media/Publications/nistir/8179/draft/documents/criticality-analysis-process-model-image.svg\">Process
+        Model Diagram (SVG)</a></span>; <span id='download-value-16-3'><a href=\"https://www.nist.gov/news-events/news/2017/07/new-nist-guidance-help-organizations-better-assess-risk-allocate-resources\">Press
+        Release</a></span></span>\r\n\t\t\t\t</div>\r\n\t\t\t</td>\r\n\t\t\t<td class=\"hidden-sm
+        hidden-xs hidden-xxs\" id=\"pub-status-16\">\r\n\t\t\t\tDraft (Withdrawn)\r\n\t\t\t</td>\r\n\t\t\t<td
+        class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-release-date-16\">\r\n\t\t\t\t
+        7/10/2017\r\n\t\t\t</td>\r\n\t\t\t\r\n\t\t</tr>\r\n\r\n  \r\n\t\t<tr id=\"result-17\">\r\n\t\t\t<td
+        class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-series-17\">NISTIR</td>\r\n\t\t\t<td
+        class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-number-17\"> 8151</td>\r\n\t\t\t<td>\r\n\t\t\t\t\r\n\t\t\t\t<div
+        class=\"hidden-sm hidden-xs hidden-xxs\">\r\n                        <strong><a
+        href=\"/publications/detail/nistir/8151/draft\" id=\"pub-title-link-17\">Dramatically
+        Reducing Software Vulnerabilities: Report to the White House Office of Science
+        and Technology Policy</a></strong>\r\n\t\t\t\t</div>\r\n\r\n\t\t\t\t<div class=\"hidden-md
+        hidden-lg\">\r\n\t\t\t\t\t<strong><span id=\"pub-full-display-sm-17\">NISTIR
+        8151 (DRAFT) (WITHDRAWN)</span><br />\r\n\t\t\t\t\t\t<a href=\"/publications/detail/nistir/8151/draft\"
+        class=\"mobile-pub-title\" id=\"pub-title-link-sm-17\">Dramatically Reducing
+        Software Vulnerabilities: Report to the White House Office of Science and
+        Technology Policy</a>\r\n\t\t\t\t\t</strong>\r\n\t\t\t\t</div>\r\n\t\t\t\t\r\n\t\t\t\t<div
+        class=\"hidden-md hidden-lg\">\r\n                    <strong id=\"pub-release-date-sm-17\">10/04/2016</strong>\r\n
+        \                   <br />\r\n                    Status: <span id=\"pub-status-sm-17\">Draft
+        (Withdrawn)</span>\r\n\t\t\t\t</div>\r\n\t\t\t\t\r\n\t\t\t\t\r\n                <div
+        class=\"control-value-no-block\">\r\n                Download: <span id='download-values-17'><span
+        id='download-value-17-0'><a href=\"/CSRC/media/Publications/nistir/8151/draft/documents/nistir8151_draft.pdf\">Draft
+        NISTIR 8151</a></span></span>\r\n\t\t\t\t</div>\r\n\t\t\t</td>\r\n\t\t\t<td
+        class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-status-17\">\r\n\t\t\t\tDraft
+        (Withdrawn)\r\n\t\t\t</td>\r\n\t\t\t<td class=\"hidden-sm hidden-xs hidden-xxs\"
+        id=\"pub-release-date-17\">\r\n\t\t\t\t 10/04/2016\r\n\t\t\t</td>\r\n\t\t\t\r\n\t\t</tr>\r\n\r\n
+        \ \r\n\t\t<tr id=\"result-18\">\r\n\t\t\t<td class=\"hidden-sm hidden-xs hidden-xxs\"
+        id=\"pub-series-18\">NISTIR</td>\r\n\t\t\t<td class=\"hidden-sm hidden-xs
+        hidden-xxs\" id=\"pub-number-18\"> 8149</td>\r\n\t\t\t<td>\r\n\t\t\t\t\r\n\t\t\t\t<div
+        class=\"hidden-sm hidden-xs hidden-xxs\">\r\n                        <strong><a
+        href=\"/publications/detail/nistir/8149/draft\" id=\"pub-title-link-18\">Developing
+        Trust Frameworks to Support Identity Federations</a></strong>\r\n\t\t\t\t</div>\r\n\r\n\t\t\t\t<div
+        class=\"hidden-md hidden-lg\">\r\n\t\t\t\t\t<strong><span id=\"pub-full-display-sm-18\">NISTIR
+        8149 (DRAFT) (WITHDRAWN)</span><br />\r\n\t\t\t\t\t\t<a href=\"/publications/detail/nistir/8149/draft\"
+        class=\"mobile-pub-title\" id=\"pub-title-link-sm-18\">Developing Trust Frameworks
+        to Support Identity Federations</a>\r\n\t\t\t\t\t</strong>\r\n\t\t\t\t</div>\r\n\t\t\t\t\r\n\t\t\t\t<div
+        class=\"hidden-md hidden-lg\">\r\n                    <strong id=\"pub-release-date-sm-18\">9/30/2016</strong>\r\n
+        \                   <br />\r\n                    Status: <span id=\"pub-status-sm-18\">Draft
+        (Withdrawn)</span>\r\n\t\t\t\t</div>\r\n\t\t\t\t\r\n\t\t\t\t\r\n                <div
+        class=\"control-value-no-block\">\r\n                Download: <span id='download-values-18'><span
+        id='download-value-18-0'><a href=\"https://pages.nist.gov/NISTIR-8149/\">Draft
+        NISTIR 8149 (HTML on GitHub)</a></span>; <span id='download-value-18-1'><a
+        href=\"https://pages.nist.gov/NISTIR-8149/comment_help.html\">How to Submit
+        Comments (GitHub)</a></span>; <span id='download-value-18-2'><a href=\"https://github.com/usnistgov/NISTIR-8149/issues\">Submitted
+        Issues (GitHub)</a></span>; <span id='download-value-18-3'><a href=\"/CSRC/media/Publications/nistir/8149/draft/documents/nistir_8149_draft.pdf\">Draft
+        NISTIR 8149 (PDF)</a></span>; <span id='download-value-18-4'><a href=\"/CSRC/media/Publications/nistir/8149/draft/documents/nistir_8149_draft_comment_matrix.xls\">Comment
+        Template</a></span></span>\r\n\t\t\t\t</div>\r\n\t\t\t</td>\r\n\t\t\t<td class=\"hidden-sm
+        hidden-xs hidden-xxs\" id=\"pub-status-18\">\r\n\t\t\t\tDraft (Withdrawn)\r\n\t\t\t</td>\r\n\t\t\t<td
+        class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-release-date-18\">\r\n\t\t\t\t
+        9/30/2016\r\n\t\t\t</td>\r\n\t\t\t\r\n\t\t</tr>\r\n\r\n  \r\n\t\t<tr id=\"result-19\">\r\n\t\t\t<td
+        class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-series-19\">NISTIR</td>\r\n\t\t\t<td
+        class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-number-19\"> 8114</td>\r\n\t\t\t<td>\r\n\t\t\t\t\r\n\t\t\t\t<div
+        class=\"hidden-sm hidden-xs hidden-xxs\">\r\n                        <strong><a
+        href=\"/publications/detail/nistir/8114/draft\" id=\"pub-title-link-19\">Report
+        on Lightweight Cryptography</a></strong>\r\n\t\t\t\t</div>\r\n\r\n\t\t\t\t<div
+        class=\"hidden-md hidden-lg\">\r\n\t\t\t\t\t<strong><span id=\"pub-full-display-sm-19\">NISTIR
+        8114 (DRAFT) (WITHDRAWN)</span><br />\r\n\t\t\t\t\t\t<a href=\"/publications/detail/nistir/8114/draft\"
+        class=\"mobile-pub-title\" id=\"pub-title-link-sm-19\">Report on Lightweight
+        Cryptography</a>\r\n\t\t\t\t\t</strong>\r\n\t\t\t\t</div>\r\n\t\t\t\t\r\n\t\t\t\t<div
+        class=\"hidden-md hidden-lg\">\r\n                    <strong id=\"pub-release-date-sm-19\">8/11/2016</strong>\r\n
+        \                   <br />\r\n                    Status: <span id=\"pub-status-sm-19\">Draft
+        (Withdrawn)</span>\r\n\t\t\t\t</div>\r\n\t\t\t\t\r\n\t\t\t\t\r\n                <div
+        class=\"control-value-no-block\">\r\n                Download: <span id='download-values-19'><span
+        id='download-value-19-0'><a href=\"/CSRC/media/Publications/nistir/8114/draft/documents/nistir_8114_draft.pdf\">Draft
+        NISTIR 8114</a></span>; <span id='download-value-19-1'><a href=\"/CSRC/media/Publications/nistir/8114/draft/documents/comments-on-draft-nistir-8114.pdf\">Comments
+        received on Draft (Aug. 2016)</a></span></span>\r\n\t\t\t\t</div>\r\n\t\t\t</td>\r\n\t\t\t<td
+        class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-status-19\">\r\n\t\t\t\tDraft
+        (Withdrawn)\r\n\t\t\t</td>\r\n\t\t\t<td class=\"hidden-sm hidden-xs hidden-xxs\"
+        id=\"pub-release-date-19\">\r\n\t\t\t\t 8/11/2016\r\n\t\t\t</td>\r\n\t\t\t\r\n\t\t</tr>\r\n\r\n
+        \ \r\n\t\t<tr id=\"result-20\">\r\n\t\t\t<td class=\"hidden-sm hidden-xs hidden-xxs\"
+        id=\"pub-series-20\">NISTIR</td>\r\n\t\t\t<td class=\"hidden-sm hidden-xs
+        hidden-xxs\" id=\"pub-number-20\"> 8112</td>\r\n\t\t\t<td>\r\n\t\t\t\t\r\n\t\t\t\t<div
+        class=\"hidden-sm hidden-xs hidden-xxs\">\r\n                        <strong><a
+        href=\"/publications/detail/nistir/8112/draft\" id=\"pub-title-link-20\">Attribute
+        Metadata</a></strong>\r\n\t\t\t\t</div>\r\n\r\n\t\t\t\t<div class=\"hidden-md
+        hidden-lg\">\r\n\t\t\t\t\t<strong><span id=\"pub-full-display-sm-20\">NISTIR
+        8112 (DRAFT) (WITHDRAWN)</span><br />\r\n\t\t\t\t\t\t<a href=\"/publications/detail/nistir/8112/draft\"
+        class=\"mobile-pub-title\" id=\"pub-title-link-sm-20\">Attribute Metadata</a>\r\n\t\t\t\t\t</strong>\r\n\t\t\t\t</div>\r\n\t\t\t\t\r\n\t\t\t\t<div
+        class=\"hidden-md hidden-lg\">\r\n                    <strong id=\"pub-release-date-sm-20\">8/01/2016</strong>\r\n
+        \                   <br />\r\n                    Status: <span id=\"pub-status-sm-20\">Draft
+        (Withdrawn)</span>\r\n\t\t\t\t</div>\r\n\t\t\t\t\r\n\t\t\t\t\r\n                <div
+        class=\"control-value-no-block\">\r\n                Download: <span id='download-values-20'><span
+        id='download-value-20-0'><a href=\"https://pages.nist.gov/NISTIR-8112\">Draft
+        NISTIR 8112 (HTML on GitHub)</a></span>; <span id='download-value-20-1'><a
+        href=\"https://pages.nist.gov/NISTIR-8112/comment_help.html\">How to Submit
+        Comments (GitHub)</a></span>; <span id='download-value-20-2'><a href=\"/CSRC/media/Publications/nistir/8112/draft/documents/nistir_8112_draft.pdf\">Draft
+        NISTIR 8112 (PDF)</a></span>; <span id='download-value-20-3'><a href=\"/CSRC/media/Publications/nistir/8112/draft/documents/nistir-8112_draft_comment-form.xlsx\">Comment
+        Template</a></span>; <span id='download-value-20-4'><a href=\"https://github.com/usnistgov/NISTIR-8112/issues\">Submitted
+        issues (GitHub)</a></span></span>\r\n\t\t\t\t</div>\r\n\t\t\t</td>\r\n\t\t\t<td
+        class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-status-20\">\r\n\t\t\t\tDraft
+        (Withdrawn)\r\n\t\t\t</td>\r\n\t\t\t<td class=\"hidden-sm hidden-xs hidden-xxs\"
+        id=\"pub-release-date-20\">\r\n\t\t\t\t 8/01/2016\r\n\t\t\t</td>\r\n\t\t\t\r\n\t\t</tr>\r\n\r\n
+        \ \r\n\t\t<tr id=\"result-21\">\r\n\t\t\t<td class=\"hidden-sm hidden-xs hidden-xxs\"
+        id=\"pub-series-21\">NISTIR</td>\r\n\t\t\t<td class=\"hidden-sm hidden-xs
+        hidden-xxs\" id=\"pub-number-21\"> 8136</td>\r\n\t\t\t<td>\r\n\t\t\t\t\r\n\t\t\t\t<div
+        class=\"hidden-sm hidden-xs hidden-xxs\">\r\n                        <strong><a
+        href=\"/publications/detail/nistir/8136/draft\" id=\"pub-title-link-21\">Mobile
+        Application Vetting Services for Public Safety: an Informal Survey</a></strong>\r\n\t\t\t\t</div>\r\n\r\n\t\t\t\t<div
+        class=\"hidden-md hidden-lg\">\r\n\t\t\t\t\t<strong><span id=\"pub-full-display-sm-21\">NISTIR
+        8136 (DRAFT) (WITHDRAWN)</span><br />\r\n\t\t\t\t\t\t<a href=\"/publications/detail/nistir/8136/draft\"
+        class=\"mobile-pub-title\" id=\"pub-title-link-sm-21\">Mobile Application
+        Vetting Services for Public Safety: an Informal Survey</a>\r\n\t\t\t\t\t</strong>\r\n\t\t\t\t</div>\r\n\t\t\t\t\r\n\t\t\t\t<div
+        class=\"hidden-md hidden-lg\">\r\n                    <strong id=\"pub-release-date-sm-21\">6/01/2016</strong>\r\n
+        \                   <br />\r\n                    Status: <span id=\"pub-status-sm-21\">Draft
+        (Withdrawn)</span>\r\n\t\t\t\t</div>\r\n\t\t\t\t\r\n\t\t\t\t\r\n                <div
+        class=\"control-value-no-block\">\r\n                Download: <span id='download-values-21'><span
+        id='download-value-21-0'><a href=\"/CSRC/media/Publications/nistir/8136/draft/documents/nistir_8136_draft.pdf\">Draft
+        NISTIR 8136</a></span></span>\r\n\t\t\t\t</div>\r\n\t\t\t</td>\r\n\t\t\t<td
+        class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-status-21\">\r\n\t\t\t\tDraft
+        (Withdrawn)\r\n\t\t\t</td>\r\n\t\t\t<td class=\"hidden-sm hidden-xs hidden-xxs\"
+        id=\"pub-release-date-21\">\r\n\t\t\t\t 6/01/2016\r\n\t\t\t</td>\r\n\t\t\t\r\n\t\t</tr>\r\n\r\n
+        \ \r\n\t\t<tr id=\"result-22\">\r\n\t\t\t<td class=\"hidden-sm hidden-xs hidden-xxs\"
+        id=\"pub-series-22\">NISTIR</td>\r\n\t\t\t<td class=\"hidden-sm hidden-xs
+        hidden-xxs\" id=\"pub-number-22\"> 8071</td>\r\n\t\t\t<td>\r\n\t\t\t\t\r\n\t\t\t\t<div
+        class=\"hidden-sm hidden-xs hidden-xxs\">\r\n                        <strong><a
+        href=\"/publications/detail/nistir/8071/draft\" id=\"pub-title-link-22\">LTE
+        Architecture Overview and Security Analysis</a></strong>\r\n\t\t\t\t</div>\r\n\r\n\t\t\t\t<div
+        class=\"hidden-md hidden-lg\">\r\n\t\t\t\t\t<strong><span id=\"pub-full-display-sm-22\">NISTIR
+        8071 (DRAFT) (WITHDRAWN)</span><br />\r\n\t\t\t\t\t\t<a href=\"/publications/detail/nistir/8071/draft\"
+        class=\"mobile-pub-title\" id=\"pub-title-link-sm-22\">LTE Architecture Overview
+        and Security Analysis</a>\r\n\t\t\t\t\t</strong>\r\n\t\t\t\t</div>\r\n\t\t\t\t\r\n\t\t\t\t<div
+        class=\"hidden-md hidden-lg\">\r\n                    <strong id=\"pub-release-date-sm-22\">4/12/2016</strong>\r\n
+        \                   <br />\r\n                    Status: <span id=\"pub-status-sm-22\">Draft
+        (Withdrawn)</span>\r\n\t\t\t\t</div>\r\n\t\t\t\t\r\n\t\t\t\t\r\n                <div
+        class=\"control-value-no-block\">\r\n                Download: <span id='download-values-22'><span
+        id='download-value-22-0'><a href=\"/CSRC/media/Publications/nistir/8071/archive/2016-04-12/documents/nistir_8071_draft.pdf\">Draft
+        NISTIR 8071</a></span></span>\r\n\t\t\t\t</div>\r\n\t\t\t</td>\r\n\t\t\t<td
+        class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-status-22\">\r\n\t\t\t\tDraft
+        (Withdrawn)\r\n\t\t\t</td>\r\n\t\t\t<td class=\"hidden-sm hidden-xs hidden-xxs\"
+        id=\"pub-release-date-22\">\r\n\t\t\t\t 4/12/2016\r\n\t\t\t</td>\r\n\t\t\t\r\n\t\t</tr>\r\n\r\n
+        \ \r\n\t\t<tr id=\"result-23\">\r\n\t\t\t<td class=\"hidden-sm hidden-xs hidden-xxs\"
+        id=\"pub-series-23\">NISTIR</td>\r\n\t\t\t<td class=\"hidden-sm hidden-xs
+        hidden-xxs\" id=\"pub-number-23\"> 8103</td>\r\n\t\t\t<td>\r\n\t\t\t\t\r\n\t\t\t\t<div
+        class=\"hidden-sm hidden-xs hidden-xxs\">\r\n                        <strong><a
+        href=\"/publications/detail/nistir/8103/draft\" id=\"pub-title-link-23\">Advanced
+        Identity Workshop on Applying Measurement Science in the Identity Ecosystem:
+        \ Summary and Next Steps</a></strong>\r\n\t\t\t\t</div>\r\n\r\n\t\t\t\t<div
+        class=\"hidden-md hidden-lg\">\r\n\t\t\t\t\t<strong><span id=\"pub-full-display-sm-23\">NISTIR
+        8103 (DRAFT) (WITHDRAWN)</span><br />\r\n\t\t\t\t\t\t<a href=\"/publications/detail/nistir/8103/draft\"
+        class=\"mobile-pub-title\" id=\"pub-title-link-sm-23\">Advanced Identity Workshop
+        on Applying Measurement Science in the Identity Ecosystem:  Summary and Next
+        Steps</a>\r\n\t\t\t\t\t</strong>\r\n\t\t\t\t</div>\r\n\t\t\t\t\r\n\t\t\t\t<div
+        class=\"hidden-md hidden-lg\">\r\n                    <strong id=\"pub-release-date-sm-23\">2/17/2016</strong>\r\n
+        \                   <br />\r\n                    Status: <span id=\"pub-status-sm-23\">Draft
+        (Withdrawn)</span>\r\n\t\t\t\t</div>\r\n\t\t\t\t\r\n\t\t\t\t\r\n                <div
+        class=\"control-value-no-block\">\r\n                Download: <span id='download-values-23'><span
+        id='download-value-23-0'><a href=\"drafts/nistir-8103/nistir_8103_draft.pdf\">Draft
+        NISTIR 8103</a></span></span>\r\n\t\t\t\t</div>\r\n\t\t\t</td>\r\n\t\t\t<td
+        class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-status-23\">\r\n\t\t\t\tDraft
+        (Withdrawn)\r\n\t\t\t</td>\r\n\t\t\t<td class=\"hidden-sm hidden-xs hidden-xxs\"
+        id=\"pub-release-date-23\">\r\n\t\t\t\t 2/17/2016\r\n\t\t\t</td>\r\n\t\t\t\r\n\t\t</tr>\r\n\r\n
+        \ \r\n\t\t<tr id=\"result-24\">\r\n\t\t\t<td class=\"hidden-sm hidden-xs hidden-xxs\"
+        id=\"pub-series-24\">NISTIR</td>\r\n\t\t\t<td class=\"hidden-sm hidden-xs
+        hidden-xxs\" id=\"pub-number-24\"> 8063</td>\r\n\t\t\t<td>\r\n\t\t\t\t\r\n\t\t\t\t<div
+        class=\"hidden-sm hidden-xs hidden-xxs\">\r\n                        <strong><a
+        href=\"/publications/detail/nistir/8063/draft\" id=\"pub-title-link-24\">Primitives
+        and Elements of Internet of Things (IoT) Trustworthiness</a></strong>\r\n\t\t\t\t</div>\r\n\r\n\t\t\t\t<div
+        class=\"hidden-md hidden-lg\">\r\n\t\t\t\t\t<strong><span id=\"pub-full-display-sm-24\">NISTIR
+        8063 (DRAFT) (WITHDRAWN)</span><br />\r\n\t\t\t\t\t\t<a href=\"/publications/detail/nistir/8063/draft\"
+        class=\"mobile-pub-title\" id=\"pub-title-link-sm-24\">Primitives and Elements
+        of Internet of Things (IoT) Trustworthiness</a>\r\n\t\t\t\t\t</strong>\r\n\t\t\t\t</div>\r\n\t\t\t\t\r\n\t\t\t\t<div
+        class=\"hidden-md hidden-lg\">\r\n                    <strong id=\"pub-release-date-sm-24\">2/16/2016</strong>\r\n
+        \                   <br />\r\n                    Status: <span id=\"pub-status-sm-24\">Draft
+        (Withdrawn)</span>\r\n\t\t\t\t</div>\r\n\t\t\t\t\r\n\t\t\t\t\r\n                <div
+        class=\"control-value-no-block\">\r\n                Download: <span id='download-values-24'><span
+        id='download-value-24-0'><a href=\"/CSRC/media/Publications/nistir/8063/archive/2016-02-16/documents/nistir_8063_draft.pdf\">Draft
+        NISTIR 8063</a></span></span>\r\n\t\t\t\t</div>\r\n\t\t\t</td>\r\n\t\t\t<td
+        class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-status-24\">\r\n\t\t\t\tDraft
+        (Withdrawn)\r\n\t\t\t</td>\r\n\t\t\t<td class=\"hidden-sm hidden-xs hidden-xxs\"
+        id=\"pub-release-date-24\">\r\n\t\t\t\t 2/16/2016\r\n\t\t\t</td>\r\n\t\t\t\r\n\t\t</tr>\r\n\r\n
+        \ \r\n\t\t<tr id=\"result-25\">\r\n\t\t\t<td class=\"hidden-sm hidden-xs hidden-xxs\"
+        id=\"pub-series-25\">NISTIR</td>\r\n\t\t\t<td class=\"hidden-sm hidden-xs
+        hidden-xxs\" id=\"pub-number-25\"> 8080</td>\r\n\t\t\t<td>\r\n\t\t\t\t\r\n\t\t\t\t<div
+        class=\"hidden-sm hidden-xs hidden-xxs\">\r\n                        <strong><a
+        href=\"/publications/detail/nistir/8080/draft\" id=\"pub-title-link-25\">Usability
+        and Security Considerations for Public Safety Mobile Authentication</a></strong>\r\n\t\t\t\t</div>\r\n\r\n\t\t\t\t<div
+        class=\"hidden-md hidden-lg\">\r\n\t\t\t\t\t<strong><span id=\"pub-full-display-sm-25\">NISTIR
+        8080 (DRAFT) (WITHDRAWN)</span><br />\r\n\t\t\t\t\t\t<a href=\"/publications/detail/nistir/8080/draft\"
+        class=\"mobile-pub-title\" id=\"pub-title-link-sm-25\">Usability and Security
+        Considerations for Public Safety Mobile Authentication</a>\r\n\t\t\t\t\t</strong>\r\n\t\t\t\t</div>\r\n\t\t\t\t\r\n\t\t\t\t<div
+        class=\"hidden-md hidden-lg\">\r\n                    <strong id=\"pub-release-date-sm-25\">11/19/2015</strong>\r\n
+        \                   <br />\r\n                    Status: <span id=\"pub-status-sm-25\">Draft
+        (Withdrawn)</span>\r\n\t\t\t\t</div>\r\n\t\t\t\t\r\n\t\t\t\t\r\n                <div
+        class=\"control-value-no-block\">\r\n                Download: <span id='download-values-25'><span
+        id='download-value-25-0'><a href=\"/CSRC/media/Publications/nistir/8080/draft/documents/nistir_8080_draft.pdf\">Draft
+        NISTIR 8080</a></span></span>\r\n\t\t\t\t</div>\r\n\t\t\t</td>\r\n\t\t\t<td
+        class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-status-25\">\r\n\t\t\t\tDraft
+        (Withdrawn)\r\n\t\t\t</td>\r\n\t\t\t<td class=\"hidden-sm hidden-xs hidden-xxs\"
+        id=\"pub-release-date-25\">\r\n\t\t\t\t 11/19/2015\r\n\t\t\t</td>\r\n\t\t\t\r\n\t\t</tr>\r\n\r\n\t</tbody>\r\n</table>\r\n<div
         class=\"row bottom-pagination-area\">\r\n  <p class=\"text-center\">\r\n      <span
-        class='pagination-links' id='bottom-pagination-container' data-total-pages='1'
-        data-min-page='1' data-max-page='1' data-current-page='1' data-show-first='False'
-        data-show-last='False'></span>\r\n  </p>\r\n</div> \r\n\r\n<div id=\"publications-quicklinks-sm\"
+        class='pagination-links' id='bottom-pagination-container' data-total-pages='12'
+        data-min-page='1' data-max-page='10' data-current-page='1' data-show-first='False'
+        data-show-last='True'><strong aria-label=\"Page 1\" id=\"bottom-page-1\">1</strong>
+        &nbsp;&nbsp;&nbsp;  <a href=\"/publications/search?keywords-lg=NISTIR+8011&status-lg=Final%2cWithdrawn&page=2\"
+        aria-label=\"Page 2\" id=\"bottom-page-2\">2</a> &nbsp;&nbsp;&nbsp;  <a href=\"/publications/search?keywords-lg=NISTIR+8011&status-lg=Final%2cWithdrawn&page=3\"
+        aria-label=\"Page 3\" id=\"bottom-page-3\">3</a> &nbsp;&nbsp;&nbsp;  <a href=\"/publications/search?keywords-lg=NISTIR+8011&status-lg=Final%2cWithdrawn&page=4\"
+        aria-label=\"Page 4\" id=\"bottom-page-4\">4</a> &nbsp;&nbsp;&nbsp;  <a href=\"/publications/search?keywords-lg=NISTIR+8011&status-lg=Final%2cWithdrawn&page=5\"
+        aria-label=\"Page 5\" id=\"bottom-page-5\">5</a> &nbsp;&nbsp;&nbsp;  <a href=\"/publications/search?keywords-lg=NISTIR+8011&status-lg=Final%2cWithdrawn&page=6\"
+        aria-label=\"Page 6\" id=\"bottom-page-6\">6</a> &nbsp;&nbsp;&nbsp;  <a href=\"/publications/search?keywords-lg=NISTIR+8011&status-lg=Final%2cWithdrawn&page=7\"
+        aria-label=\"Page 7\" id=\"bottom-page-7\">7</a> &nbsp;&nbsp;&nbsp;  <a href=\"/publications/search?keywords-lg=NISTIR+8011&status-lg=Final%2cWithdrawn&page=8\"
+        aria-label=\"Page 8\" id=\"bottom-page-8\">8</a> &nbsp;&nbsp;&nbsp;  <a href=\"/publications/search?keywords-lg=NISTIR+8011&status-lg=Final%2cWithdrawn&page=9\"
+        aria-label=\"Page 9\" id=\"bottom-page-9\">9</a> &nbsp;&nbsp;&nbsp;  <a href=\"/publications/search?keywords-lg=NISTIR+8011&status-lg=Final%2cWithdrawn&page=10\"
+        aria-label=\"Page 10\" id=\"bottom-page-10\">10</a>&nbsp;&nbsp;<a href=\"/publications/search?keywords-lg=NISTIR+8011&status-lg=Final%2cWithdrawn&page=2\"
+        aria-label=\"Next Page\" id=\"bottom-page-next\">next &gt;</a>&nbsp;&nbsp;<a
+        href=\"/publications/search?keywords-lg=NISTIR+8011&status-lg=Final%2cWithdrawn&page=12\"
+        aria-label=\"Last Page\" id=\"bottom-page-last\" data-last-page-number=\"12\">last
+        &gt;&gt;</a></span>\r\n  </p>\r\n</div> \r\n\r\n<div id=\"publications-quicklinks-sm\"
         class=\"bs-callout bs-callout-subnav hidden-md hidden-lg\">\r\n    <h4>Quick
         Links <i class=\"fa fa-bolt\"></i></h4>\r\n    <p style=\"margin-left: 1rem;\">\r\n
         \       <a href=\"/publications/draft-pubs\" id=\"quick-link-draft-sm\">Draft
@@ -1204,7 +1628,7 @@ http_interactions:
         'en');\r\n   document.getElementsByTagName('html')[0].setAttribute('xml:lang',
         'en')\r\n})(); \r\n</script>\r\n\r\n    \r\n    </form>\r\n</body>\r\n</html>\r\n"
     http_version: 
-  recorded_at: Fri, 31 May 2019 11:34:36 GMT
+  recorded_at: Tue, 11 Jun 2019 10:51:52 GMT
 - request:
     method: get
     uri: https://csrc.nist.gov/publications/detail/nistir/8011/vol-3/final
@@ -1236,8 +1660,8 @@ http_interactions:
       Server:
       - Microsoft-IIS/8.5
       Set-Cookie:
-      - ASP.NET_SessionId=r0gij23uazx4xrunf2u55aes; path=/; secure; HttpOnly
-      - CMSCsrfCookie=zFAECrDHxwad+qfbVIjR6oFU2OcTWdaMhCBRcCiK; path=/; secure; HttpOnly
+      - ASP.NET_SessionId=ml2d42zfqdjwi1v2mo5osd3a; path=/; secure; HttpOnly
+      - CMSCsrfCookie=poLUHzkFg9gLF2TKWUAyWTQe0eerVqHe/W0i6fJH; path=/; secure; HttpOnly
       - CMSPreferredCulture=en-US; path=/; HttpOnly; Secure
       X-Frame-Options:
       - SAMEORIGIN
@@ -1246,7 +1670,7 @@ http_interactions:
       X-Aspnet-Version:
       - 4.0.30319
       Date:
-      - Fri, 31 May 2019 11:34:34 GMT
+      - Tue, 11 Jun 2019 10:51:50 GMT
       Content-Length:
       - '44990'
       Strict-Transport-Security:
@@ -1378,8 +1802,8 @@ http_interactions:
         />\r\n</head>\r\n<body class=\"LTR Unknown ENUS ContentBody\" >\r\n    \r\n
         \   <form method=\"post\" action=\"/publications/detail/nistir/8011/vol-3/final\"
         id=\"form\">\r\n<input type=\"hidden\" name=\"__CMSCsrfToken\" id=\"__CMSCsrfToken\"
-        value=\"QW9392kOYHyXvexA6kZ2lwsv9WpweQewYP2wMVfNy0hIplonVOFDV2oTqVcQa9VDI7SGhaAIV3ItSYeqHEkhzGr0VeW+cnOofWX5dTTz64o=\"
-        />\r\n<input type=\"hidden\" name=\"__VIEWSTATE\" id=\"__VIEWSTATE\" value=\"mUEmWd3jpdH/e4wr59xwyQQ8xXyl93fm3ZlaZoRHL0H7A2yucSpjgwgDQVa00xNGTzctEyy2zwKPXf09BCNGWuNJqaeVO2ZXxGkaMV7jItU6S70hhsO1KQsIqEuA/Dl1eRjqO/5QhZBJ3QjL9Qd7/wzb9m7136s81O38W6oGUkpNJSrGwuHu/br8M9P1DrtWC6iL/igmooqXkPve+lXZD0jBUUbtxwjwQJPjAI4JlfZrs9q4x5u+hffxgjbxYwbSOeo8ZfxxJDhHEGy4M1TbtD2oMe4phq0x0xaZDRnQ/ZS6UJVydpW4xvGr34GP2LSZz/GxLoopNL6CHrRQ4TvEvsGsJubSbTThJuU1KMNAbhI=\"
+        value=\"MD41cIA+YjZRxc5AP1M+fM3IR7u4rMZTQ97A5VA7gojdxtyJLBKDpjOlmWgjIBBa+oS7jJtrpvLI0vtEdR2bAh9n526+t8H/54p09/Jqz8U=\"
+        />\r\n<input type=\"hidden\" name=\"__VIEWSTATE\" id=\"__VIEWSTATE\" value=\"kM0vO8U7AL9niRGvDrGgKfsMa8CzHu9iL+fIrEQ30+zbyh56OuwGXLbsq9nttn4kq0Obq5Kpm2eZi3zezRqpJ/xA0QryzhcPAtSaBLwougIy+QbRNzWoUDcGct7pI29l4t/TRai5q/fjcl38jaRCkcdQPPMaTtTVUzNeidn4zgTHR7iWhV/ghQidm5Pj8Pi/D4HoamRRXbgbM8CSAJFm9xSxpOGBtzZXMoGemFM8oDYvkqhf8WEgXqwGWKyjedSFXNypWk8srrqIwB9Yh1n6jYLa+MipdIrzc+ejdLdBbrG4scVjVtBmRtjlm8aT6fIGxP7xyMaB2wLwKfX7m9oXVgEBpRVA0TZ0cuexDWx3SSU=\"
         />\r\n\r\n<input type=\"hidden\" name=\"lng\" id=\"lng\" value=\"en-US\" />\r\n<script
         type=\"text/javascript\">\r\n\t//<![CDATA[\n\r\nfunction PM_Postback(param)
         { if (window.top.HideScreenLockWarningAndSync) { window.top.HideScreenLockWarningAndSync(1080);
@@ -1786,5 +2210,5 @@ http_interactions:
         'en');\r\n   document.getElementsByTagName('html')[0].setAttribute('xml:lang',
         'en')\r\n})(); \r\n</script>\r\n\r\n    \r\n    </form>\r\n</body>\r\n</html>\r\n"
     http_version: 
-  recorded_at: Fri, 31 May 2019 11:34:37 GMT
+  recorded_at: Tue, 11 Jun 2019 10:51:53 GMT
 recorded_with: VCR 5.0.0

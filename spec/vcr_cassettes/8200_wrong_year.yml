@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://csrc.nist.gov/publications/search?dateFrom-lg=01/01/2017&dateTo-lg=12/31/2017&keywords-lg=8200&status-lg=Final,Withdrawn
+    uri: https://csrc.nist.gov/publications/search?dateFrom-lg=01/01/2017&dateTo-lg=12/31/2017&keywords-lg=NISTIR%208200&status-lg=Final,Withdrawn
     body:
       encoding: US-ASCII
       string: ''
@@ -29,8 +29,8 @@ http_interactions:
       Server:
       - Microsoft-IIS/8.5
       Set-Cookie:
-      - ASP.NET_SessionId=3l1cxu1uugt2trayl2h3za5j; path=/; secure; HttpOnly
-      - CMSCsrfCookie=PiAbPfzYpvmoMabAel4XiBhj8ZzaV7dYdLmVH+3/; path=/; secure; HttpOnly
+      - ASP.NET_SessionId=j4mcuj3p5wptsnn5lhifo5ik; path=/; secure; HttpOnly
+      - CMSCsrfCookie=9cxdxwsC3tjDe0xRn61LW5O6QWON+4rKVP/z6xU4; path=/; secure; HttpOnly
       - CMSPreferredCulture=en-US; path=/; HttpOnly; Secure
       X-Frame-Options:
       - SAMEORIGIN
@@ -39,9 +39,9 @@ http_interactions:
       X-Aspnet-Version:
       - 4.0.30319
       Date:
-      - Fri, 31 May 2019 11:42:01 GMT
+      - Tue, 11 Jun 2019 11:01:29 GMT
       Content-Length:
-      - '84715'
+      - '116425'
       Strict-Transport-Security:
       - max-age=31536000
     body:
@@ -84,10 +84,10 @@ http_interactions:
         \n<link href=\"/CSRC/Media/images/favicons/favicon.ico\" type=\"image/x-icon\"
         rel=\"shortcut icon\"/>\r\n<link href=\"/CSRC/Media/images/favicons/favicon.ico\"
         type=\"image/x-icon\" rel=\"icon\"/>\r\n</head>\r\n<body class=\"LTR Unknown
-        ENUS ContentBody\" >\r\n    \r\n    <form method=\"post\" action=\"/publications/search?keywords-lg=8200&amp;dateFrom-lg=01%2f01%2f2017&amp;dateTo-lg=12%2f31%2f2017&amp;status-lg=Final%2cWithdrawn\"
+        ENUS ContentBody\" >\r\n    \r\n    <form method=\"post\" action=\"/publications/search?keywords-lg=NISTIR+8200&amp;dateFrom-lg=01%2f01%2f2017&amp;dateTo-lg=12%2f31%2f2017&amp;status-lg=Final%2cWithdrawn\"
         id=\"form\">\r\n<input type=\"hidden\" name=\"__CMSCsrfToken\" id=\"__CMSCsrfToken\"
-        value=\"GYow5R9QLG0SUHzEkf7GAQsn0izuZxn/yO2+uSvPjGcU75X5aDA73JGNgVCycHVmLbuizrNO8xqLknogslZOMxjPfyoHnGjTXRb23OIHlak=\"
-        />\r\n<input type=\"hidden\" name=\"__VIEWSTATE\" id=\"__VIEWSTATE\" value=\"pV0KFNiXJdC8yA/34h6gdr0+IkD8R2PxOPR8Amb/Ba+7ri0Xokqb3VttBwW+nqqgvElfgWvCtE9p9In02AKaVS2GiMwFc8Gpz3FUz26RWAFB1h3ljM+E2KKqsaUumkrPahF5ljzZs67WbxbO6G+eZbjr78ikyn3UWtgdRArThNE+xBtNnm1mUl6fTbblOqryJbnkD3b7orjzGNXbeWu018TWEFmTKantNoV3KV1jqr+54cr0GYJskJqdNQSITn94u4t6miIhSRvyGv8Y6PoQF/JCJu5ReJnIIRqldnQekrQJmntxjB3T4tBSqDa8Ogmhihzi7AJdoxpMg0qcZ+LGiIkhHVyxw2bMyn+vC7l+ZlXcy3ZDWh0yzG2y9raBvgeyBp1XOMZgKDYXkSe5YkdUUHwbvtGtZc/dw2A+vUJo0W5qejXhfE+JFBslDQ/87UPR\"
+        value=\"oXJO6URzISGJdD2ag2EH8E+kExzEs4hAVOrj+ZAdZVHzPq2iz5SgBtjZb+GJt0/hOtTDlDxEKbUh1nNXVi7nHmSmdQ36wtFRtxFRUzbtbOQ=\"
+        />\r\n<input type=\"hidden\" name=\"__VIEWSTATE\" id=\"__VIEWSTATE\" value=\"9np3xaN4rQBNqCNKeL5RuUhrmeU2YEuEceQhsqUYn5zHtouLDH3WNdLUhY7Eun5OB4jbaRvCmMNywEuSUghzg1GBROeaPkkRsdL4KPwAMUZXequSV5DrKELJO7r9WRuzCeQ6qT3UsCthaD3J1+chSauh0QcK4KM1i5N9DWjRRTzSbq3m8YJf62RdPI1qJP+byKysCNZUoy/n8fQ766I88R1b2gHW7uSMilfq2omxePOMafA7ZPBAGDnH2ogZt0A2hJzjAOnJ/SHFLsod9FQXHDt+ThBVdDYCllKOfelz74esVNsHKGvpk1e4wyyd46XWe1h5aBUMUR/oMLeQz/AuGIKgwrosskYW3Z7VpKVYuTMYAmYSj88xlNZs+GLHg+GabrSofX3DobKJ6c7Juu2JZpsuJUqiqDE6BrS5lYtIZkqMJH4QXtco/k2zlvb3f3ewan++Q02ZfYPGYfoTClSeVg==\"
         />\r\n\r\n<input type=\"hidden\" name=\"lng\" id=\"lng\" value=\"en-US\" />\r\n<script
         type=\"text/javascript\">\r\n\t//<![CDATA[\n\r\nfunction PM_Postback(param)
         { if (window.top.HideScreenLockWarningAndSync) { window.top.HideScreenLockWarningAndSync(1080);
@@ -921,12 +921,363 @@ http_interactions:
         id=\"pubs-search-submit-sm\" name=\"submit-btn\" data-form-button=\"submit\"
         class=\"btn\">Search</button>\r\n        <button type=\"reset\" id=\"pubs-search-reset-sm\"
         name=\"reset-btn\" data-form-button=\"reset\" class=\"btn\">Reset</button>\r\n
-        \   </div>\r\n</div>\r\n<div id=\"search-criteria-container\"></div>\r\n\r\nNo
-        results were found, try changing your keyword(s) or broaden your search options.\r\n<div
-        id=\"publications-quicklinks-sm\" class=\"bs-callout bs-callout-subnav hidden-md
-        hidden-lg\">\r\n    <h4>Quick Links <i class=\"fa fa-bolt\"></i></h4>\r\n
-        \   <p style=\"margin-left: 1rem;\">\r\n        <a href=\"/publications/draft-pubs\"
-        id=\"quick-link-draft-sm\">Draft Pubs</a>\r\n        <br/>\r\n        <a href=\"/publications/final-pubs\"
+        \   </div>\r\n</div>\r\n<div id=\"search-criteria-container\"></div>\r\n\r\n<div
+        class=\"row top-pagination-area\">\r\n\t<div class=\"col-lg-6 col-sm-12\">\r\n
+        \       <span id='showing-results-text' data-total-pages='1' data-first-record='1'
+        data-last-record='18' data-current-page='1' data-items-per-page='25' data-total-results='18'>Showing
+        <strong id=\"showing-results-total\">18</strong> matching records.</span>\r\n\t</div>\r\n\t<div
+        class=\"col-lg-6 col-sm-12\">\r\n\t\t<span class=\"pull-right hidden-sm hidden-xs
+        hidden-xxs\">\r\n\t\t\t<span class='pagination-links' id='top-pagination-container'
+        data-total-pages='1' data-min-page='1' data-max-page='1' data-current-page='1'
+        data-show-first='False' data-show-last='False'></span>\r\n\t\t</span>\r\n\t\t<p
+        class=\"text-center hidden-md hidden-lg\">\r\n\t\t\t<span class='pagination-links'
+        id='mobile-top-pagination-container' data-total-pages='1' data-min-page='1'
+        data-max-page='1' data-current-page='1' data-show-first='False' data-show-last='False'></span>\r\n\t\t</p>\r\n\t</div>\r\n</div>\r\n<table
+        class=\"table table-striped table-condensed publications-table table-bordered\"
+        \r\n    id=\"publications-results-table\"  data-total-records=\"18\" data-page=\"1\"
+        \r\n    data-first-record=\"1\" data-last-record=\"18\" data-ipp=\"25\">\r\n\t<thead>\r\n\t\t<tr>\r\n\t\t\t<th
+        nowrap class=\"hidden-sm hidden-xs hidden-xxs\">Series</th>\r\n\t\t\t<th nowrap
+        class=\"hidden-sm hidden-xs hidden-xxs\">Number</th>\r\n\t\t\t<th nowrap>\r\n\t\t\t\t<span
+        class=\"hidden-sm hidden-xs hidden-xxs\">Title</span>\r\n\t\t\t\t<span class=\"hidden-md
+        hidden-lg\">Publications</span>\r\n\t\t\t</th>\r\n\t\t\t<th nowrap class=\"hidden-sm
+        hidden-xs hidden-xxs\">Status</th>\r\n\t\t\t<th nowrap class=\"hidden-sm hidden-xs
+        hidden-xxs\">Release Date</th>\r\n\t\t\t\r\n\t\t</tr>\r\n\t</thead>\r\n\t<tbody>\r\n\r\n\r\n
+        \ \r\n\t\t<tr id=\"result-1\">\r\n\t\t\t<td class=\"hidden-sm hidden-xs hidden-xxs\"
+        id=\"pub-series-1\">NISTIR</td>\r\n\t\t\t<td class=\"hidden-sm hidden-xs hidden-xxs\"
+        id=\"pub-number-1\"> 8183</td>\r\n\t\t\t<td>\r\n\t\t\t\t\r\n\t\t\t\t<div class=\"hidden-sm
+        hidden-xs hidden-xxs\">\r\n                        <strong><a href=\"/publications/detail/nistir/8183/archive/2017-09-08\"
+        id=\"pub-title-link-1\">Cybersecurity Framework Manufacturing Profile</a></strong>\r\n\t\t\t\t</div>\r\n\r\n\t\t\t\t<div
+        class=\"hidden-md hidden-lg\">\r\n\t\t\t\t\t<strong><span id=\"pub-full-display-sm-1\">NISTIR
+        8183 (WITHDRAWN)</span><br />\r\n\t\t\t\t\t\t<a href=\"/publications/detail/nistir/8183/archive/2017-09-08\"
+        class=\"mobile-pub-title\" id=\"pub-title-link-sm-1\">Cybersecurity Framework
+        Manufacturing Profile</a>\r\n\t\t\t\t\t</strong>\r\n\t\t\t\t</div>\r\n\t\t\t\t\r\n\t\t\t\t<div
+        class=\"hidden-md hidden-lg\">\r\n                    <strong id=\"pub-release-date-sm-1\">9/08/2017</strong>\r\n
+        \                   <br />\r\n                    Status: <span id=\"pub-status-sm-1\">Withdrawn</span>\r\n\t\t\t\t</div>\r\n\t\t\t\t\r\n\t\t\t\t\r\n
+        \               <div class=\"control-value-no-block\">\r\n                Download:
+        <span id='download-values-1'><span id='download-value-1-0'><a href=\"/CSRC/media/Publications/nistir/8183/archive/2017-09-08/documents/NIST.IR.8183.pdf\">NISTIR
+        8183 (Sep. 2017)</a></span></span>\r\n\t\t\t\t</div>\r\n\t\t\t</td>\r\n\t\t\t<td
+        class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-status-1\">\r\n\t\t\t\tWithdrawn\r\n\t\t\t</td>\r\n\t\t\t<td
+        class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-release-date-1\">\r\n\t\t\t\t
+        9/08/2017\r\n\t\t\t</td>\r\n\t\t\t\r\n\t\t</tr>\r\n\r\n  \r\n\t\t<tr id=\"result-2\">\r\n\t\t\t<td
+        class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-series-2\">NISTIR</td>\r\n\t\t\t<td
+        class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-number-2\"> 8176</td>\r\n\t\t\t<td>\r\n\t\t\t\t\r\n\t\t\t\t<div
+        class=\"hidden-sm hidden-xs hidden-xxs\">\r\n                        <strong><a
+        href=\"/publications/detail/nistir/8176/draft\" id=\"pub-title-link-2\">Security
+        Assurance Challenges for Container Deployment</a></strong>\r\n\t\t\t\t</div>\r\n\r\n\t\t\t\t<div
+        class=\"hidden-md hidden-lg\">\r\n\t\t\t\t\t<strong><span id=\"pub-full-display-sm-2\">NISTIR
+        8176 (DRAFT) (WITHDRAWN)</span><br />\r\n\t\t\t\t\t\t<a href=\"/publications/detail/nistir/8176/draft\"
+        class=\"mobile-pub-title\" id=\"pub-title-link-sm-2\">Security Assurance Challenges
+        for Container Deployment</a>\r\n\t\t\t\t\t</strong>\r\n\t\t\t\t</div>\r\n\t\t\t\t\r\n\t\t\t\t<div
+        class=\"hidden-md hidden-lg\">\r\n                    <strong id=\"pub-release-date-sm-2\">8/01/2017</strong>\r\n
+        \                   <br />\r\n                    Status: <span id=\"pub-status-sm-2\">Draft
+        (Withdrawn)</span>\r\n\t\t\t\t</div>\r\n\t\t\t\t\r\n\t\t\t\t\r\n                <div
+        class=\"control-value-no-block\">\r\n                Download: <span id='download-values-2'><span
+        id='download-value-2-0'><a href=\"/CSRC/media/Publications/nistir/8176/draft/documents/nistir8176-draft.pdf\">Draft
+        NISTIR 8176</a></span></span>\r\n\t\t\t\t</div>\r\n\t\t\t</td>\r\n\t\t\t<td
+        class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-status-2\">\r\n\t\t\t\tDraft
+        (Withdrawn)\r\n\t\t\t</td>\r\n\t\t\t<td class=\"hidden-sm hidden-xs hidden-xxs\"
+        id=\"pub-release-date-2\">\r\n\t\t\t\t 8/01/2017\r\n\t\t\t</td>\r\n\t\t\t\r\n\t\t</tr>\r\n\r\n
+        \ \r\n\t\t<tr id=\"result-3\">\r\n\t\t\t<td class=\"hidden-sm hidden-xs hidden-xxs\"
+        id=\"pub-series-3\">NISTIR</td>\r\n\t\t\t<td class=\"hidden-sm hidden-xs hidden-xxs\"
+        id=\"pub-number-3\"> 8179</td>\r\n\t\t\t<td>\r\n\t\t\t\t\r\n\t\t\t\t<div class=\"hidden-sm
+        hidden-xs hidden-xxs\">\r\n                        <strong><a href=\"/publications/detail/nistir/8179/draft\"
+        id=\"pub-title-link-3\">Criticality Analysis Process Model: Prioritizing Systems
+        and Components</a></strong>\r\n\t\t\t\t</div>\r\n\r\n\t\t\t\t<div class=\"hidden-md
+        hidden-lg\">\r\n\t\t\t\t\t<strong><span id=\"pub-full-display-sm-3\">NISTIR
+        8179 (DRAFT) (WITHDRAWN)</span><br />\r\n\t\t\t\t\t\t<a href=\"/publications/detail/nistir/8179/draft\"
+        class=\"mobile-pub-title\" id=\"pub-title-link-sm-3\">Criticality Analysis
+        Process Model: Prioritizing Systems and Components</a>\r\n\t\t\t\t\t</strong>\r\n\t\t\t\t</div>\r\n\t\t\t\t\r\n\t\t\t\t<div
+        class=\"hidden-md hidden-lg\">\r\n                    <strong id=\"pub-release-date-sm-3\">7/10/2017</strong>\r\n
+        \                   <br />\r\n                    Status: <span id=\"pub-status-sm-3\">Draft
+        (Withdrawn)</span>\r\n\t\t\t\t</div>\r\n\t\t\t\t\r\n\t\t\t\t\r\n                <div
+        class=\"control-value-no-block\">\r\n                Download: <span id='download-values-3'><span
+        id='download-value-3-0'><a href=\"/CSRC/media/Publications/nistir/8179/draft/documents/nistir-8179-draft.pdf\">Draft
+        NISTIR 8179</a></span>; <span id='download-value-3-1'><a href=\"/CSRC/media/Publications/nistir/8179/draft/documents/criticality-analysis-process-model-image.pdf\">Process
+        Model Diagram</a></span>; <span id='download-value-3-2'><a href=\"/CSRC/media/Publications/nistir/8179/draft/documents/criticality-analysis-process-model-image.svg\">Process
+        Model Diagram (SVG)</a></span>; <span id='download-value-3-3'><a href=\"https://www.nist.gov/news-events/news/2017/07/new-nist-guidance-help-organizations-better-assess-risk-allocate-resources\">Press
+        Release</a></span></span>\r\n\t\t\t\t</div>\r\n\t\t\t</td>\r\n\t\t\t<td class=\"hidden-sm
+        hidden-xs hidden-xxs\" id=\"pub-status-3\">\r\n\t\t\t\tDraft (Withdrawn)\r\n\t\t\t</td>\r\n\t\t\t<td
+        class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-release-date-3\">\r\n\t\t\t\t
+        7/10/2017\r\n\t\t\t</td>\r\n\t\t\t\r\n\t\t</tr>\r\n\r\n  \r\n\t\t<tr id=\"result-4\">\r\n\t\t\t<td
+        class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-series-4\">NISTIR</td>\r\n\t\t\t<td
+        class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-number-4\"> 8201</td>\r\n\t\t\t<td>\r\n\t\t\t\t\r\n\t\t\t\t<div
+        class=\"hidden-sm hidden-xs hidden-xxs\">\r\n                        <strong><a
+        href=\"/publications/detail/nistir/8201/final\" id=\"pub-title-link-4\">Internet
+        of Things (IoT) Cybersecurity Colloquium: A NIST Workshop Proceedings</a></strong>\r\n\t\t\t\t</div>\r\n\r\n\t\t\t\t<div
+        class=\"hidden-md hidden-lg\">\r\n\t\t\t\t\t<strong><span id=\"pub-full-display-sm-4\">NISTIR
+        8201</span><br />\r\n\t\t\t\t\t\t<a href=\"/publications/detail/nistir/8201/final\"
+        class=\"mobile-pub-title\" id=\"pub-title-link-sm-4\">Internet of Things (IoT)
+        Cybersecurity Colloquium: A NIST Workshop Proceedings</a>\r\n\t\t\t\t\t</strong>\r\n\t\t\t\t</div>\r\n\t\t\t\t\r\n\t\t\t\t<div
+        class=\"hidden-md hidden-lg\">\r\n                    <strong id=\"pub-release-date-sm-4\">12/22/2017</strong>\r\n
+        \                   <br />\r\n                    Status: <span id=\"pub-status-sm-4\">Final</span>\r\n\t\t\t\t</div>\r\n\t\t\t\t\r\n\t\t\t\t\r\n
+        \               <div class=\"control-value-no-block\">\r\n                Download:
+        <span id='download-values-4'><span id='download-value-4-0'><a href=\"https://doi.org/10.6028/NIST.IR.8201\">NISTIR
+        8201 (DOI)</a></span>; <span id='download-value-4-1'><a href=\"https://nvlpubs.nist.gov/nistpubs/ir/2017/NIST.IR.8201.pdf\">Local
+        Download</a></span>; <span id='download-value-4-2'><a href=\"https://www.nist.gov/news-events/events/2017/10/iot-cybersecurity-colloquium\">IoT
+        Cybersecurity Colloquium Event Page</a></span></span>\r\n\t\t\t\t</div>\r\n\t\t\t</td>\r\n\t\t\t<td
+        class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-status-4\">\r\n\t\t\t\tFinal\r\n\t\t\t</td>\r\n\t\t\t<td
+        class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-release-date-4\">\r\n\t\t\t\t
+        12/22/2017\r\n\t\t\t</td>\r\n\t\t\t\r\n\t\t</tr>\r\n\r\n  \r\n\t\t<tr id=\"result-5\">\r\n\t\t\t<td
+        class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-series-5\">NISTIR</td>\r\n\t\t\t<td
+        class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-number-5\"> 8176</td>\r\n\t\t\t<td>\r\n\t\t\t\t\r\n\t\t\t\t<div
+        class=\"hidden-sm hidden-xs hidden-xxs\">\r\n                        <strong><a
+        href=\"/publications/detail/nistir/8176/final\" id=\"pub-title-link-5\">Security
+        Assurance Requirements for Linux Application Container Deployments</a></strong>\r\n\t\t\t\t</div>\r\n\r\n\t\t\t\t<div
+        class=\"hidden-md hidden-lg\">\r\n\t\t\t\t\t<strong><span id=\"pub-full-display-sm-5\">NISTIR
+        8176</span><br />\r\n\t\t\t\t\t\t<a href=\"/publications/detail/nistir/8176/final\"
+        class=\"mobile-pub-title\" id=\"pub-title-link-sm-5\">Security Assurance Requirements
+        for Linux Application Container Deployments</a>\r\n\t\t\t\t\t</strong>\r\n\t\t\t\t</div>\r\n\t\t\t\t\r\n\t\t\t\t<div
+        class=\"hidden-md hidden-lg\">\r\n                    <strong id=\"pub-release-date-sm-5\">10/11/2017</strong>\r\n
+        \                   <br />\r\n                    Status: <span id=\"pub-status-sm-5\">Final</span>\r\n\t\t\t\t</div>\r\n\t\t\t\t\r\n\t\t\t\t\r\n
+        \               <div class=\"control-value-no-block\">\r\n                Download:
+        <span id='download-values-5'><span id='download-value-5-0'><a href=\"https://doi.org/10.6028/NIST.IR.8176\">NISTIR
+        8176 (DOI)</a></span>; <span id='download-value-5-1'><a href=\"https://nvlpubs.nist.gov/nistpubs/ir/2017/NIST.IR.8176.pdf\">Local
+        Download</a></span></span>\r\n\t\t\t\t</div>\r\n\t\t\t</td>\r\n\t\t\t<td class=\"hidden-sm
+        hidden-xs hidden-xxs\" id=\"pub-status-5\">\r\n\t\t\t\tFinal\r\n\t\t\t</td>\r\n\t\t\t<td
+        class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-release-date-5\">\r\n\t\t\t\t
+        10/11/2017\r\n\t\t\t</td>\r\n\t\t\t\r\n\t\t</tr>\r\n\r\n  \r\n\t\t<tr id=\"result-6\">\r\n\t\t\t<td
+        class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-series-6\">NISTIR</td>\r\n\t\t\t<td
+        class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-number-6\"> 8194</td>\r\n\t\t\t<td>\r\n\t\t\t\t\r\n\t\t\t\t<div
+        class=\"hidden-sm hidden-xs hidden-xxs\">\r\n                        <strong><a
+        href=\"/publications/detail/nistir/8194/final\" id=\"pub-title-link-6\">Exploratory
+        Lens Model of Decision-Making in a Potential Phishing Attack Scenario</a></strong>\r\n\t\t\t\t</div>\r\n\r\n\t\t\t\t<div
+        class=\"hidden-md hidden-lg\">\r\n\t\t\t\t\t<strong><span id=\"pub-full-display-sm-6\">NISTIR
+        8194</span><br />\r\n\t\t\t\t\t\t<a href=\"/publications/detail/nistir/8194/final\"
+        class=\"mobile-pub-title\" id=\"pub-title-link-sm-6\">Exploratory Lens Model
+        of Decision-Making in a Potential Phishing Attack Scenario</a>\r\n\t\t\t\t\t</strong>\r\n\t\t\t\t</div>\r\n\t\t\t\t\r\n\t\t\t\t<div
+        class=\"hidden-md hidden-lg\">\r\n                    <strong id=\"pub-release-date-sm-6\">10/10/2017</strong>\r\n
+        \                   <br />\r\n                    Status: <span id=\"pub-status-sm-6\">Final</span>\r\n\t\t\t\t</div>\r\n\t\t\t\t\r\n\t\t\t\t\r\n
+        \               <div class=\"control-value-no-block\">\r\n                Download:
+        <span id='download-values-6'><span id='download-value-6-0'><a href=\"https://doi.org/10.6028/NIST.IR.8194\">NISTIR
+        8194 (DOI)</a></span>; <span id='download-value-6-1'><a href=\"https://nvlpubs.nist.gov/nistpubs/ir/2017/NIST.IR.8194.pdf\">Local
+        Download</a></span></span>\r\n\t\t\t\t</div>\r\n\t\t\t</td>\r\n\t\t\t<td class=\"hidden-sm
+        hidden-xs hidden-xxs\" id=\"pub-status-6\">\r\n\t\t\t\tFinal\r\n\t\t\t</td>\r\n\t\t\t<td
+        class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-release-date-6\">\r\n\t\t\t\t
+        10/10/2017\r\n\t\t\t</td>\r\n\t\t\t\r\n\t\t</tr>\r\n\r\n  \r\n\t\t<tr id=\"result-7\">\r\n\t\t\t<td
+        class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-series-7\">NISTIR</td>\r\n\t\t\t<td
+        class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-number-7\"> 8192</td>\r\n\t\t\t<td>\r\n\t\t\t\t\r\n\t\t\t\t<div
+        class=\"hidden-sm hidden-xs hidden-xxs\">\r\n                        <strong><a
+        href=\"/publications/detail/nistir/8192/final\" id=\"pub-title-link-7\">Enhancing
+        Resilience of the Internet and Communications Ecosystem: a NIST Workshop Proceedings</a></strong>\r\n\t\t\t\t</div>\r\n\r\n\t\t\t\t<div
+        class=\"hidden-md hidden-lg\">\r\n\t\t\t\t\t<strong><span id=\"pub-full-display-sm-7\">NISTIR
+        8192</span><br />\r\n\t\t\t\t\t\t<a href=\"/publications/detail/nistir/8192/final\"
+        class=\"mobile-pub-title\" id=\"pub-title-link-sm-7\">Enhancing Resilience
+        of the Internet and Communications Ecosystem: a NIST Workshop Proceedings</a>\r\n\t\t\t\t\t</strong>\r\n\t\t\t\t</div>\r\n\t\t\t\t\r\n\t\t\t\t<div
+        class=\"hidden-md hidden-lg\">\r\n                    <strong id=\"pub-release-date-sm-7\">9/18/2017</strong>\r\n
+        \                   <br />\r\n                    Status: <span id=\"pub-status-sm-7\">Final</span>\r\n\t\t\t\t</div>\r\n\t\t\t\t\r\n\t\t\t\t\r\n
+        \               <div class=\"control-value-no-block\">\r\n                Download:
+        <span id='download-values-7'><span id='download-value-7-0'><a href=\"https://doi.org/10.6028/NIST.IR.8192\">NISTIR
+        8192 (DOI)</a></span>; <span id='download-value-7-1'><a href=\"https://nvlpubs.nist.gov/nistpubs/ir/2017/NIST.IR.8192.pdf\">Local
+        Download</a></span>; <span id='download-value-7-2'><a href=\"https://www.ntia.doc.gov/federal-register-notice/2017/report-responses-ntia-s-request-comments-promoting-stakeholder-action\">NTIA
+        Report on Promoting Stakeholder Action Against Botnets and Other Automated
+        Threats</a></span></span>\r\n\t\t\t\t</div>\r\n\t\t\t</td>\r\n\t\t\t<td class=\"hidden-sm
+        hidden-xs hidden-xxs\" id=\"pub-status-7\">\r\n\t\t\t\tFinal\r\n\t\t\t</td>\r\n\t\t\t<td
+        class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-release-date-7\">\r\n\t\t\t\t
+        9/18/2017\r\n\t\t\t</td>\r\n\t\t\t\r\n\t\t</tr>\r\n\r\n  \r\n\t\t<tr id=\"result-8\">\r\n\t\t\t<td
+        class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-series-8\">NISTIR</td>\r\n\t\t\t<td
+        class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-number-8\"> 8011 Vol. 2</td>\r\n\t\t\t<td>\r\n\t\t\t\t\r\n\t\t\t\t<div
+        class=\"hidden-sm hidden-xs hidden-xxs\">\r\n                        <strong><a
+        href=\"/publications/detail/nistir/8011/vol-2/final\" id=\"pub-title-link-8\">Automation
+        Support for Security Control Assessments: Volume 2: Hardware Asset Management</a></strong>\r\n\t\t\t\t</div>\r\n\r\n\t\t\t\t<div
+        class=\"hidden-md hidden-lg\">\r\n\t\t\t\t\t<strong><span id=\"pub-full-display-sm-8\">NISTIR
+        8011 Vol. 2</span><br />\r\n\t\t\t\t\t\t<a href=\"/publications/detail/nistir/8011/vol-2/final\"
+        class=\"mobile-pub-title\" id=\"pub-title-link-sm-8\">Automation Support for
+        Security Control Assessments: Volume 2: Hardware Asset Management</a>\r\n\t\t\t\t\t</strong>\r\n\t\t\t\t</div>\r\n\t\t\t\t\r\n\t\t\t\t<div
+        class=\"hidden-md hidden-lg\">\r\n                    <strong id=\"pub-release-date-sm-8\">6/06/2017</strong>\r\n
+        \                   <br />\r\n                    Status: <span id=\"pub-status-sm-8\">Final</span>\r\n\t\t\t\t</div>\r\n\t\t\t\t\r\n\t\t\t\t\r\n
+        \               <div class=\"control-value-no-block\">\r\n                Download:
+        <span id='download-values-8'><span id='download-value-8-0'><a href=\"https://doi.org/10.6028/NIST.IR.8011-2\">NISTIR
+        8011 Vol. 2 (DOI)</a></span>; <span id='download-value-8-1'><a href=\"https://nvlpubs.nist.gov/nistpubs/ir/2017/NIST.IR.8011-2.pdf\">Local
+        Download</a></span></span>\r\n\t\t\t\t</div>\r\n\t\t\t</td>\r\n\t\t\t<td class=\"hidden-sm
+        hidden-xs hidden-xxs\" id=\"pub-status-8\">\r\n\t\t\t\tFinal\r\n\t\t\t</td>\r\n\t\t\t<td
+        class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-release-date-8\">\r\n\t\t\t\t
+        6/06/2017\r\n\t\t\t</td>\r\n\t\t\t\r\n\t\t</tr>\r\n\r\n  \r\n\t\t<tr id=\"result-9\">\r\n\t\t\t<td
+        class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-series-9\">NISTIR</td>\r\n\t\t\t<td
+        class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-number-9\"> 8011 Vol. 1</td>\r\n\t\t\t<td>\r\n\t\t\t\t\r\n\t\t\t\t<div
+        class=\"hidden-sm hidden-xs hidden-xxs\">\r\n                        <strong><a
+        href=\"/publications/detail/nistir/8011/vol-1/final\" id=\"pub-title-link-9\">Automation
+        Support for Security Control Assessments: Volume 1: Overview</a></strong>\r\n\t\t\t\t</div>\r\n\r\n\t\t\t\t<div
+        class=\"hidden-md hidden-lg\">\r\n\t\t\t\t\t<strong><span id=\"pub-full-display-sm-9\">NISTIR
+        8011 Vol. 1</span><br />\r\n\t\t\t\t\t\t<a href=\"/publications/detail/nistir/8011/vol-1/final\"
+        class=\"mobile-pub-title\" id=\"pub-title-link-sm-9\">Automation Support for
+        Security Control Assessments: Volume 1: Overview</a>\r\n\t\t\t\t\t</strong>\r\n\t\t\t\t</div>\r\n\t\t\t\t\r\n\t\t\t\t<div
+        class=\"hidden-md hidden-lg\">\r\n                    <strong id=\"pub-release-date-sm-9\">6/06/2017</strong>\r\n
+        \                   <br />\r\n                    Status: <span id=\"pub-status-sm-9\">Final</span>\r\n\t\t\t\t</div>\r\n\t\t\t\t\r\n\t\t\t\t\r\n
+        \               <div class=\"control-value-no-block\">\r\n                Download:
+        <span id='download-values-9'><span id='download-value-9-0'><a href=\"https://doi.org/10.6028/NIST.IR.8011-1\">NISTIR
+        8011 Vol. 1 (DOI)</a></span>; <span id='download-value-9-1'><a href=\"https://nvlpubs.nist.gov/nistpubs/ir/2017/NIST.IR.8011-1.pdf\">Local
+        Download</a></span></span>\r\n\t\t\t\t</div>\r\n\t\t\t</td>\r\n\t\t\t<td class=\"hidden-sm
+        hidden-xs hidden-xxs\" id=\"pub-status-9\">\r\n\t\t\t\tFinal\r\n\t\t\t</td>\r\n\t\t\t<td
+        class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-release-date-9\">\r\n\t\t\t\t
+        6/06/2017\r\n\t\t\t</td>\r\n\t\t\t\r\n\t\t</tr>\r\n\r\n  \r\n\t\t<tr id=\"result-10\">\r\n\t\t\t<td
+        class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-series-10\">NISTIR</td>\r\n\t\t\t<td
+        class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-number-10\"> 8114</td>\r\n\t\t\t<td>\r\n\t\t\t\t\r\n\t\t\t\t<div
+        class=\"hidden-sm hidden-xs hidden-xxs\">\r\n                        <strong><a
+        href=\"/publications/detail/nistir/8114/final\" id=\"pub-title-link-10\">Report
+        on Lightweight Cryptography</a></strong>\r\n\t\t\t\t</div>\r\n\r\n\t\t\t\t<div
+        class=\"hidden-md hidden-lg\">\r\n\t\t\t\t\t<strong><span id=\"pub-full-display-sm-10\">NISTIR
+        8114</span><br />\r\n\t\t\t\t\t\t<a href=\"/publications/detail/nistir/8114/final\"
+        class=\"mobile-pub-title\" id=\"pub-title-link-sm-10\">Report on Lightweight
+        Cryptography</a>\r\n\t\t\t\t\t</strong>\r\n\t\t\t\t</div>\r\n\t\t\t\t\r\n\t\t\t\t<div
+        class=\"hidden-md hidden-lg\">\r\n                    <strong id=\"pub-release-date-sm-10\">3/28/2017</strong>\r\n
+        \                   <br />\r\n                    Status: <span id=\"pub-status-sm-10\">Final</span>\r\n\t\t\t\t</div>\r\n\t\t\t\t\r\n\t\t\t\t\r\n
+        \               <div class=\"control-value-no-block\">\r\n                Download:
+        <span id='download-values-10'><span id='download-value-10-0'><a href=\"https://doi.org/10.6028/NIST.IR.8114\">NISTIR
+        8114 (DOI)</a></span>; <span id='download-value-10-1'><a href=\"https://nvlpubs.nist.gov/nistpubs/ir/2017/NIST.IR.8114.pdf\">Local
+        Download</a></span>; <span id='download-value-10-2'><a href=\"/CSRC/media/Publications/nistir/8114/draft/documents/comments-on-draft-nistir-8114.pdf\">Comments
+        received on Draft (Aug. 2016)</a></span></span>\r\n\t\t\t\t</div>\r\n\t\t\t</td>\r\n\t\t\t<td
+        class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-status-10\">\r\n\t\t\t\tFinal\r\n\t\t\t</td>\r\n\t\t\t<td
+        class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-release-date-10\">\r\n\t\t\t\t
+        3/28/2017\r\n\t\t\t</td>\r\n\t\t\t\r\n\t\t</tr>\r\n\r\n  \r\n\t\t<tr id=\"result-11\">\r\n\t\t\t<td
+        class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-series-11\">NISTIR</td>\r\n\t\t\t<td
+        class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-number-11\"> 8165</td>\r\n\t\t\t<td>\r\n\t\t\t\t\r\n\t\t\t\t<div
+        class=\"hidden-sm hidden-xs hidden-xxs\">\r\n                        <strong><a
+        href=\"/publications/detail/nistir/8165/final\" id=\"pub-title-link-11\">Impact
+        of Code Complexity on Software Analysis</a></strong>\r\n\t\t\t\t</div>\r\n\r\n\t\t\t\t<div
+        class=\"hidden-md hidden-lg\">\r\n\t\t\t\t\t<strong><span id=\"pub-full-display-sm-11\">NISTIR
+        8165</span><br />\r\n\t\t\t\t\t\t<a href=\"/publications/detail/nistir/8165/final\"
+        class=\"mobile-pub-title\" id=\"pub-title-link-sm-11\">Impact of Code Complexity
+        on Software Analysis</a>\r\n\t\t\t\t\t</strong>\r\n\t\t\t\t</div>\r\n\t\t\t\t\r\n\t\t\t\t<div
+        class=\"hidden-md hidden-lg\">\r\n                    <strong id=\"pub-release-date-sm-11\">2/09/2017</strong>\r\n
+        \                   <br />\r\n                    Status: <span id=\"pub-status-sm-11\">Final</span>\r\n\t\t\t\t</div>\r\n\t\t\t\t\r\n\t\t\t\t\r\n
+        \               <div class=\"control-value-no-block\">\r\n                Download:
+        <span id='download-values-11'><span id='download-value-11-0'><a href=\"https://doi.org/10.6028/NIST.IR.8165\">NISTIR
+        8165 (DOI)</a></span>; <span id='download-value-11-1'><a href=\"https://nvlpubs.nist.gov/nistpubs/ir/2017/NIST.IR.8165.pdf\">Local
+        Download</a></span></span>\r\n\t\t\t\t</div>\r\n\t\t\t</td>\r\n\t\t\t<td class=\"hidden-sm
+        hidden-xs hidden-xxs\" id=\"pub-status-11\">\r\n\t\t\t\tFinal\r\n\t\t\t</td>\r\n\t\t\t<td
+        class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-release-date-11\">\r\n\t\t\t\t
+        2/09/2017\r\n\t\t\t</td>\r\n\t\t\t\r\n\t\t</tr>\r\n\r\n  \r\n\t\t<tr id=\"result-12\">\r\n\t\t\t<td
+        class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-series-12\">NISTIR</td>\r\n\t\t\t<td
+        class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-number-12\"> 8136</td>\r\n\t\t\t<td>\r\n\t\t\t\t\r\n\t\t\t\t<div
+        class=\"hidden-sm hidden-xs hidden-xxs\">\r\n                        <strong><a
+        href=\"/publications/detail/nistir/8136/final\" id=\"pub-title-link-12\">An
+        Overview of Mobile Application Vetting Services for Public Safety</a></strong>\r\n\t\t\t\t</div>\r\n\r\n\t\t\t\t<div
+        class=\"hidden-md hidden-lg\">\r\n\t\t\t\t\t<strong><span id=\"pub-full-display-sm-12\">NISTIR
+        8136</span><br />\r\n\t\t\t\t\t\t<a href=\"/publications/detail/nistir/8136/final\"
+        class=\"mobile-pub-title\" id=\"pub-title-link-sm-12\">An Overview of Mobile
+        Application Vetting Services for Public Safety</a>\r\n\t\t\t\t\t</strong>\r\n\t\t\t\t</div>\r\n\t\t\t\t\r\n\t\t\t\t<div
+        class=\"hidden-md hidden-lg\">\r\n                    <strong id=\"pub-release-date-sm-12\">1/27/2017</strong>\r\n
+        \                   <br />\r\n                    Status: <span id=\"pub-status-sm-12\">Final</span>\r\n\t\t\t\t</div>\r\n\t\t\t\t\r\n\t\t\t\t\r\n
+        \               <div class=\"control-value-no-block\">\r\n                Download:
+        <span id='download-values-12'><span id='download-value-12-0'><a href=\"https://doi.org/10.6028/NIST.IR.8136\">NISTIR
+        8136 (DOI)</a></span>; <span id='download-value-12-1'><a href=\"https://nvlpubs.nist.gov/nistpubs/ir/2017/NIST.IR.8136.pdf\">Local
+        Download</a></span></span>\r\n\t\t\t\t</div>\r\n\t\t\t</td>\r\n\t\t\t<td class=\"hidden-sm
+        hidden-xs hidden-xxs\" id=\"pub-status-12\">\r\n\t\t\t\tFinal\r\n\t\t\t</td>\r\n\t\t\t<td
+        class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-release-date-12\">\r\n\t\t\t\t
+        1/27/2017\r\n\t\t\t</td>\r\n\t\t\t\r\n\t\t</tr>\r\n\r\n  \r\n\t\t<tr id=\"result-13\">\r\n\t\t\t<td
+        class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-series-13\">NISTIR</td>\r\n\t\t\t<td
+        class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-number-13\"> 8062</td>\r\n\t\t\t<td>\r\n\t\t\t\t\r\n\t\t\t\t<div
+        class=\"hidden-sm hidden-xs hidden-xxs\">\r\n                        <strong><a
+        href=\"/publications/detail/nistir/8062/final\" id=\"pub-title-link-13\">An
+        Introduction to Privacy Engineering and Risk Management in Federal Systems</a></strong>\r\n\t\t\t\t</div>\r\n\r\n\t\t\t\t<div
+        class=\"hidden-md hidden-lg\">\r\n\t\t\t\t\t<strong><span id=\"pub-full-display-sm-13\">NISTIR
+        8062</span><br />\r\n\t\t\t\t\t\t<a href=\"/publications/detail/nistir/8062/final\"
+        class=\"mobile-pub-title\" id=\"pub-title-link-sm-13\">An Introduction to
+        Privacy Engineering and Risk Management in Federal Systems</a>\r\n\t\t\t\t\t</strong>\r\n\t\t\t\t</div>\r\n\t\t\t\t\r\n\t\t\t\t<div
+        class=\"hidden-md hidden-lg\">\r\n                    <strong id=\"pub-release-date-sm-13\">1/04/2017</strong>\r\n
+        \                   <br />\r\n                    Status: <span id=\"pub-status-sm-13\">Final</span>\r\n\t\t\t\t</div>\r\n\t\t\t\t\r\n\t\t\t\t\r\n
+        \               <div class=\"control-value-no-block\">\r\n                Download:
+        <span id='download-values-13'><span id='download-value-13-0'><a href=\"https://doi.org/10.6028/NIST.IR.8062\">NISTIR
+        8062 (DOI)</a></span>; <span id='download-value-13-1'><a href=\"https://nvlpubs.nist.gov/nistpubs/ir/2017/NIST.IR.8062.pdf\">Local
+        Download</a></span>; <span id='download-value-13-2'><a href=\"http://nstic.blogs.govdelivery.com/2017/01/04/making-privacy-concrete-three-words-not-usually-found-together/\">\"Making
+        Privacy Concrete (three words not usually found together)\" (blog post)</a></span></span>\r\n\t\t\t\t</div>\r\n\t\t\t</td>\r\n\t\t\t<td
+        class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-status-13\">\r\n\t\t\t\tFinal\r\n\t\t\t</td>\r\n\t\t\t<td
+        class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-release-date-13\">\r\n\t\t\t\t
+        1/04/2017\r\n\t\t\t</td>\r\n\t\t\t\r\n\t\t</tr>\r\n\r\n  \r\n\t\t<tr id=\"result-14\">\r\n\t\t\t<td
+        class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-series-14\">ITL Bulletin</td>\r\n\t\t\t<td
+        class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-number-14\"></td>\r\n\t\t\t<td>\r\n\t\t\t\t\r\n\t\t\t\t<div
+        class=\"hidden-sm hidden-xs hidden-xxs\">\r\n                        <strong><a
+        href=\"/publications/detail/itl-bulletin/2017/10/application-container-security/final\"
+        id=\"pub-title-link-14\">NIST Guidance on Application Container Security</a></strong>\r\n\t\t\t\t</div>\r\n\r\n\t\t\t\t<div
+        class=\"hidden-md hidden-lg\">\r\n\t\t\t\t\t<strong><span id=\"pub-full-display-sm-14\">ITL
+        Bulletin </span><br />\r\n\t\t\t\t\t\t<a href=\"/publications/detail/itl-bulletin/2017/10/application-container-security/final\"
+        class=\"mobile-pub-title\" id=\"pub-title-link-sm-14\">NIST Guidance on Application
+        Container Security</a>\r\n\t\t\t\t\t</strong>\r\n\t\t\t\t</div>\r\n\t\t\t\t\r\n\t\t\t\t<div
+        class=\"hidden-md hidden-lg\">\r\n                    <strong id=\"pub-release-date-sm-14\">10/24/2017</strong>\r\n
+        \                   <br />\r\n                    Status: <span id=\"pub-status-sm-14\">Final</span>\r\n\t\t\t\t</div>\r\n\t\t\t\t\r\n\t\t\t\t\r\n
+        \               <div class=\"control-value-no-block\">\r\n                Download:
+        <span id='download-values-14'><span id='download-value-14-0'><a href=\"/CSRC/media/Publications/Shared/documents/itl-bulletin/itlbul2017-10.pdf\">October
+        2017 ITL Bulletin</a></span></span>\r\n\t\t\t\t</div>\r\n\t\t\t</td>\r\n\t\t\t<td
+        class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-status-14\">\r\n\t\t\t\tFinal\r\n\t\t\t</td>\r\n\t\t\t<td
+        class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-release-date-14\">\r\n\t\t\t\t
+        10/24/2017\r\n\t\t\t</td>\r\n\t\t\t\r\n\t\t</tr>\r\n\r\n  \r\n\t\t<tr id=\"result-15\">\r\n\t\t\t<td
+        class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-series-15\">ITL Bulletin</td>\r\n\t\t\t<td
+        class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-number-15\"></td>\r\n\t\t\t<td>\r\n\t\t\t\t\r\n\t\t\t\t<div
+        class=\"hidden-sm hidden-xs hidden-xxs\">\r\n                        <strong><a
+        href=\"/publications/detail/itl-bulletin/2017/06/toward-standardizing-lightweight-cryptography/final\"
+        id=\"pub-title-link-15\">Toward Standardizing Lightweight Cryptography</a></strong>\r\n\t\t\t\t</div>\r\n\r\n\t\t\t\t<div
+        class=\"hidden-md hidden-lg\">\r\n\t\t\t\t\t<strong><span id=\"pub-full-display-sm-15\">ITL
+        Bulletin </span><br />\r\n\t\t\t\t\t\t<a href=\"/publications/detail/itl-bulletin/2017/06/toward-standardizing-lightweight-cryptography/final\"
+        class=\"mobile-pub-title\" id=\"pub-title-link-sm-15\">Toward Standardizing
+        Lightweight Cryptography</a>\r\n\t\t\t\t\t</strong>\r\n\t\t\t\t</div>\r\n\t\t\t\t\r\n\t\t\t\t<div
+        class=\"hidden-md hidden-lg\">\r\n                    <strong id=\"pub-release-date-sm-15\">6/20/2017</strong>\r\n
+        \                   <br />\r\n                    Status: <span id=\"pub-status-sm-15\">Final</span>\r\n\t\t\t\t</div>\r\n\t\t\t\t\r\n\t\t\t\t\r\n
+        \               <div class=\"control-value-no-block\">\r\n                Download:
+        <span id='download-values-15'><span id='download-value-15-0'><a href=\"/CSRC/media/Publications/Shared/documents/itl-bulletin/itlbul2017-06.pdf\">June
+        2017 ITL Bulletin</a></span></span>\r\n\t\t\t\t</div>\r\n\t\t\t</td>\r\n\t\t\t<td
+        class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-status-15\">\r\n\t\t\t\tFinal\r\n\t\t\t</td>\r\n\t\t\t<td
+        class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-release-date-15\">\r\n\t\t\t\t
+        6/20/2017\r\n\t\t\t</td>\r\n\t\t\t\r\n\t\t</tr>\r\n\r\n  \r\n\t\t<tr id=\"result-16\">\r\n\t\t\t<td
+        class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-series-16\">ITL Bulletin</td>\r\n\t\t\t<td
+        class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-number-16\"></td>\r\n\t\t\t<td>\r\n\t\t\t\t\r\n\t\t\t\t<div
+        class=\"hidden-sm hidden-xs hidden-xxs\">\r\n                        <strong><a
+        href=\"/publications/detail/itl-bulletin/2017/04/building-bridge-b/w-privacy--cybersecurity-for-federal-systems/final\"
+        id=\"pub-title-link-16\">Building the Bridge Between Privacy and Cybersecurity
+        for Federal Systems</a></strong>\r\n\t\t\t\t</div>\r\n\r\n\t\t\t\t<div class=\"hidden-md
+        hidden-lg\">\r\n\t\t\t\t\t<strong><span id=\"pub-full-display-sm-16\">ITL
+        Bulletin </span><br />\r\n\t\t\t\t\t\t<a href=\"/publications/detail/itl-bulletin/2017/04/building-bridge-b/w-privacy--cybersecurity-for-federal-systems/final\"
+        class=\"mobile-pub-title\" id=\"pub-title-link-sm-16\">Building the Bridge
+        Between Privacy and Cybersecurity for Federal Systems</a>\r\n\t\t\t\t\t</strong>\r\n\t\t\t\t</div>\r\n\t\t\t\t\r\n\t\t\t\t<div
+        class=\"hidden-md hidden-lg\">\r\n                    <strong id=\"pub-release-date-sm-16\">4/18/2017</strong>\r\n
+        \                   <br />\r\n                    Status: <span id=\"pub-status-sm-16\">Final</span>\r\n\t\t\t\t</div>\r\n\t\t\t\t\r\n\t\t\t\t\r\n
+        \               <div class=\"control-value-no-block\">\r\n                Download:
+        <span id='download-values-16'><span id='download-value-16-0'><a href=\"/CSRC/media/Publications/Shared/documents/itl-bulletin/itlbul2017-04.pdf\">April
+        2017 ITL Bulletin</a></span></span>\r\n\t\t\t\t</div>\r\n\t\t\t</td>\r\n\t\t\t<td
+        class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-status-16\">\r\n\t\t\t\tFinal\r\n\t\t\t</td>\r\n\t\t\t<td
+        class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-release-date-16\">\r\n\t\t\t\t
+        4/18/2017\r\n\t\t\t</td>\r\n\t\t\t\r\n\t\t</tr>\r\n\r\n  \r\n\t\t<tr id=\"result-17\">\r\n\t\t\t<td
+        class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-series-17\">ITL Bulletin</td>\r\n\t\t\t<td
+        class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-number-17\"></td>\r\n\t\t\t<td>\r\n\t\t\t\t\r\n\t\t\t\t<div
+        class=\"hidden-sm hidden-xs hidden-xxs\">\r\n                        <strong><a
+        href=\"/publications/detail/itl-bulletin/2017/03/fundamentals-of-small-business-information-security/final\"
+        id=\"pub-title-link-17\">Fundamentals of Small Business Information Security</a></strong>\r\n\t\t\t\t</div>\r\n\r\n\t\t\t\t<div
+        class=\"hidden-md hidden-lg\">\r\n\t\t\t\t\t<strong><span id=\"pub-full-display-sm-17\">ITL
+        Bulletin </span><br />\r\n\t\t\t\t\t\t<a href=\"/publications/detail/itl-bulletin/2017/03/fundamentals-of-small-business-information-security/final\"
+        class=\"mobile-pub-title\" id=\"pub-title-link-sm-17\">Fundamentals of Small
+        Business Information Security</a>\r\n\t\t\t\t\t</strong>\r\n\t\t\t\t</div>\r\n\t\t\t\t\r\n\t\t\t\t<div
+        class=\"hidden-md hidden-lg\">\r\n                    <strong id=\"pub-release-date-sm-17\">3/13/2017</strong>\r\n
+        \                   <br />\r\n                    Status: <span id=\"pub-status-sm-17\">Final</span>\r\n\t\t\t\t</div>\r\n\t\t\t\t\r\n\t\t\t\t\r\n
+        \               <div class=\"control-value-no-block\">\r\n                Download:
+        <span id='download-values-17'><span id='download-value-17-0'><a href=\"/CSRC/media/Publications/Shared/documents/itl-bulletin/itlbul2017-03.pdf\">March
+        2017 ITL Bulletin</a></span></span>\r\n\t\t\t\t</div>\r\n\t\t\t</td>\r\n\t\t\t<td
+        class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-status-17\">\r\n\t\t\t\tFinal\r\n\t\t\t</td>\r\n\t\t\t<td
+        class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-release-date-17\">\r\n\t\t\t\t
+        3/13/2017\r\n\t\t\t</td>\r\n\t\t\t\r\n\t\t</tr>\r\n\r\n  \r\n\t\t<tr id=\"result-18\">\r\n\t\t\t<td
+        class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-series-18\">ITL Bulletin</td>\r\n\t\t\t<td
+        class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-number-18\"></td>\r\n\t\t\t<td>\r\n\t\t\t\t\r\n\t\t\t\t<div
+        class=\"hidden-sm hidden-xs hidden-xxs\">\r\n                        <strong><a
+        href=\"/publications/detail/itl-bulletin/2017/01/dramatically-reducing-software-vulnerabilities/final\"
+        id=\"pub-title-link-18\">Dramatically Reducing Software Vulnerabilities</a></strong>\r\n\t\t\t\t</div>\r\n\r\n\t\t\t\t<div
+        class=\"hidden-md hidden-lg\">\r\n\t\t\t\t\t<strong><span id=\"pub-full-display-sm-18\">ITL
+        Bulletin </span><br />\r\n\t\t\t\t\t\t<a href=\"/publications/detail/itl-bulletin/2017/01/dramatically-reducing-software-vulnerabilities/final\"
+        class=\"mobile-pub-title\" id=\"pub-title-link-sm-18\">Dramatically Reducing
+        Software Vulnerabilities</a>\r\n\t\t\t\t\t</strong>\r\n\t\t\t\t</div>\r\n\t\t\t\t\r\n\t\t\t\t<div
+        class=\"hidden-md hidden-lg\">\r\n                    <strong id=\"pub-release-date-sm-18\">1/17/2017</strong>\r\n
+        \                   <br />\r\n                    Status: <span id=\"pub-status-sm-18\">Final</span>\r\n\t\t\t\t</div>\r\n\t\t\t\t\r\n\t\t\t\t\r\n
+        \               <div class=\"control-value-no-block\">\r\n                Download:
+        <span id='download-values-18'><span id='download-value-18-0'><a href=\"/CSRC/media/Publications/Shared/documents/itl-bulletin/itlbul2017-01.pdf\">January
+        2017 ITL Bulletin</a></span></span>\r\n\t\t\t\t</div>\r\n\t\t\t</td>\r\n\t\t\t<td
+        class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-status-18\">\r\n\t\t\t\tFinal\r\n\t\t\t</td>\r\n\t\t\t<td
+        class=\"hidden-sm hidden-xs hidden-xxs\" id=\"pub-release-date-18\">\r\n\t\t\t\t
+        1/17/2017\r\n\t\t\t</td>\r\n\t\t\t\r\n\t\t</tr>\r\n\r\n\t</tbody>\r\n</table>\r\n<div
+        class=\"row bottom-pagination-area\">\r\n  <p class=\"text-center\">\r\n      <span
+        class='pagination-links' id='bottom-pagination-container' data-total-pages='1'
+        data-min-page='1' data-max-page='1' data-current-page='1' data-show-first='False'
+        data-show-last='False'></span>\r\n  </p>\r\n</div> \r\n\r\n<div id=\"publications-quicklinks-sm\"
+        class=\"bs-callout bs-callout-subnav hidden-md hidden-lg\">\r\n    <h4>Quick
+        Links <i class=\"fa fa-bolt\"></i></h4>\r\n    <p style=\"margin-left: 1rem;\">\r\n
+        \       <a href=\"/publications/draft-pubs\" id=\"quick-link-draft-sm\">Draft
+        Pubs</a>\r\n        <br/>\r\n        <a href=\"/publications/final-pubs\"
         id=\"quick-link-final-sm\">Final Pubs</a>\r\n        <br/>\r\n        <a href=\"/publications/fips\"
         id=\"quick-link-fips-sm\">FIPS</a>\r\n        <br/>\r\n        <a href=\"/publications/sp800\"
         id=\"quick-link-sp-800-sm\">SP 800 series</a>\r\n        <br/>\r\n        <a
@@ -1069,5 +1420,5 @@ http_interactions:
         'en');\r\n   document.getElementsByTagName('html')[0].setAttribute('xml:lang',
         'en')\r\n})(); \r\n</script>\r\n\r\n    \r\n    </form>\r\n</body>\r\n</html>\r\n"
     http_version: 
-  recorded_at: Fri, 31 May 2019 11:42:04 GMT
+  recorded_at: Tue, 11 Jun 2019 11:01:32 GMT
 recorded_with: VCR 5.0.0

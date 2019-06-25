@@ -19,7 +19,7 @@ RSpec.describe RelatonNist::XMLParser do
 
   it "get document" do
     VCR.use_cassette "8200" do
-      item = Relaton::RelatonNist::Processor.new.get "8200", "2018"
+      item = Relaton::RelatonNist::Processor.new.get "NISTIR 8200", "2018"
       expect(item.docidentifier.first.id).to eq "NISTIR 8200"
     end
   end

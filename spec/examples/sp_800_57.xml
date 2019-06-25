@@ -1,55 +1,25 @@
-<bibitem id="SP800-57Part2Rev.1(DRAFT)" type="standard">
-  <fetched>2019-05-31</fetched>
-  <title format="text/plain" language="en" script="Latn">Recommendation for Key Management, Part 2: Best Practices for Key Management Organization</title>
-  <docidentifier type="NIST">SP 800-57 Part 2 Rev. 1 (DRAFT)</docidentifier>
+<bibitem id="SP800-37Rev.2(DRAFT)" type="standard">
+  <fetched>2019-06-21</fetched>
+  <title format="text/plain" language="en" script="Latn">Risk Management Framework for Information Systems and Organizations - A System Life Cycle Approach for Security and Privacy</title>
+  <uri type="uri">https://csrc.nist.gov/publications/detail/sp/800-37/rev-2/archive/2018-05-09</uri>
+  <docidentifier type="NIST">SP 800-37 Rev. 2 (DRAFT)</docidentifier>
   <date type="published">
-    <on>2018-04</on>
+    <on>2018-05</on>
+  </date>
+  <date type="obsoleted">
+    <on>2018-10</on>
   </date>
   <date type="issued">
-    <on>2018-04</on>
+    <on>2018-05</on>
   </date>
   <contributor>
-    <role type="publisher"/>
+    <role type="author"/>
     <organization>
-      <name>National Institute of Standards and Technology</name>
-      <abbreviation>NIST</abbreviation>
-      <uri>www.nist.gov</uri>
+      <name>Joint Task Force</name>
     </organization>
   </contributor>
-  <contributor>
-    <role type="author"/>
-    <person>
-      <name>
-        <completename language="en" script="Latn">Elaine Barker</completename>
-      </name>
-      <affiliation>
-        <organization>
-          <name>National Institute of Standards and Technology</name>
-          <abbreviation>NIST</abbreviation>
-          <uri>www.nist.gov</uri>
-        </organization>
-      </affiliation>
-    </person>
-  </contributor>
-  <contributor>
-    <role type="author"/>
-    <person>
-      <name>
-        <completename language="en" script="Latn">William Barker</completename>
-      </name>
-      <affiliation>
-        <organization>
-          <name>National Institute of Standards and Technology</name>
-          <abbreviation>NIST</abbreviation>
-          <uri>www.nist.gov</uri>
-        </organization>
-      </affiliation>
-    </person>
-  </contributor>
-  <edition>Revision 1</edition>
   <language>en</language>
   <script>Latn</script>
-  <abstract format="text/plain" language="en" script="Latn">Special Publication (SP) 800-57 provides cryptographic key management guidance. It consists of three parts. Part 1, Recommendation for Key Management, Part 1: General, provides general guidance and best practices for the management of cryptographic keying material. Part 2, Best Practices for Key Management Organization, provides guidance on policy and security planning requirements. Finally, Part 3,  Recommendation for Key Management, Part 3: Application-Specific Key Management Guidance, provides guidance when using the cryptographic features of current systems.Part 2 (this document)  1) introduces key management concepts that must be addressed in key management policies, practice statements and planning documents by any organization that uses cryptography to protect its information; 2) provides guidance for the development of organizational key management policy statements and key management practices statements; and 3) identifies key management information that needs to be documented for all federal applications of cryptography. Appendices provide examples of key management infrastructures and supplemental documentation and planning materials.</abstract>
   <status>
     <stage>draft-public</stage>
     <substage>withdrawn</substage>
@@ -65,22 +35,4 @@
       </organization>
     </owner>
   </copyright>
-  <relation type="partOf">
-    <bibitem>
-      <formattedref format="text/plain" language="en" script="Latn">SP 800-57 Part 1 Rev. 4</formattedref>
-      <uri type="src">https://csrc.nist.gov/publications/detail/sp/800-57-part-1/rev-4/final</uri>
-    </bibitem>
-  </relation>
-  <relation type="partOf">
-    <bibitem>
-      <formattedref format="text/plain" language="en" script="Latn">SP 800-57 Part 3 Rev. 1</formattedref>
-      <uri type="src">https://csrc.nist.gov/publications/detail/sp/800-57-part-3/rev-1/final</uri>
-    </bibitem>
-  </relation>
-  <series>
-    <formattedref format="text/plain" language="en" script="Latn">SP 800-57 Part 2 Rev. 1 (2PD)</formattedref>
-  </series>
-  <series>
-    <formattedref format="text/plain"/>
-  </series>
 </bibitem>

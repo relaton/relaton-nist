@@ -3,6 +3,7 @@ PATH
   specs:
     relaton-nist (0.2.1)
       relaton-bib (~> 0.2.0)
+      rubyzip
 
 GEM
   remote: https://rubygems.org/
@@ -52,6 +53,7 @@ GEM
     rspec-support (3.8.2)
     ruby-debug-ide (0.7.0)
       rake (>= 0.8.1)
+    rubyzip (1.2.3)
     safe_yaml (1.0.5)
     simplecov (0.16.1)
       docile (~> 1.1)
