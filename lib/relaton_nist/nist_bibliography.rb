@@ -15,8 +15,7 @@ module RelatonNist
       def search(text, year = nil, opts = {})
         HitCollection.new text, year, opts
       rescue OpenURI::HTTPError, SocketError
-        warn "Could not access https://www.nist.gov"
-        []
+        raise RelatonBib::RequestError, "Could not access https://www.nist.gov"
       end
 
       # @param code [String] the NIST standard Code to look up (e..g "8200")

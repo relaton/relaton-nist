@@ -90,6 +90,9 @@ module RelatonNist
         uri = URI url
         resp = Net::HTTP.get_response(uri) # .encode("UTF-8")
         Nokogiri::HTML(resp.body)
+      rescue SocketError, Timeout::Error, Errno::EINVAL, Errno::ECONNRESET, EOFError,
+             Net::HTTPBadResponse, Net::HTTPHeaderSyntaxError, Net::ProtocolError
+        raise RelatonBib::RequestError, "Could not access #{url}"
       end
 
       # Fetch docid.
