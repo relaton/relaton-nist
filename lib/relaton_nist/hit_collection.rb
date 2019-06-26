@@ -10,7 +10,7 @@ module RelatonNist
   # Page of hit collection.
   class HitCollection < Array
     DOMAIN = "https://csrc.nist.gov"
-    DATAFILE = "lib/relaton_nist/data/pubs-export.zip"
+    DATAFILE = File.expand_path "data/pubs-export.zip", __dir__
 
     # @return [TrueClass, FalseClass]
     attr_reader :fetched
