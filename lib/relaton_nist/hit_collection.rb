@@ -146,6 +146,7 @@ module RelatonNist
         if !ctime || ctime < resp.last_modified
           @data = nil
           zip = OpenURI.open_uri "https://csrc.nist.gov/CSRC/media/feeds/metanorma/pubs-export.zip"
+          zip.close
           FileUtils.mv zip.path, DATAFILE
         end
       end
