@@ -33,17 +33,17 @@ module RelatonNist
     # @param keyword [Array<RelatonNist::Keyword>]
     # @param commentperiod [RelatonNist::CommentPeriod]
     #
-    # @param dates [Array<Hash>]
-    # @option dates [String] :type
-    # @option dates [String] :from
-    # @option dates [String] :to
+    # @param date [Array<Hash>]
+    # @option date [String] :type
+    # @option date [String] :from
+    # @option date [String] :to
     #
-    # @param contributors [Array<Hash>]
-    # @option contributors [String] :type
-    # @option contributors [String] :from
-    # @option contributirs [String] :to
-    # @option contributors [String] :abbreviation
-    # @option contributors [Array<String>] :roles
+    # @param contributor [Array<Hash>]
+    # @option contributor [String] :type
+    # @option contributor [String] :from
+    # @option contributor [String] :to
+    # @option contributor [String] :abbreviation
+    # @option contributor [Array<String>] :role
     #
     # @param abstract [Array<Hash>]
     # @option abstract [String] :content
@@ -51,10 +51,10 @@ module RelatonNist
     # @option abstract [String] :script
     # @option abstract [String] :type
     #
-    # @param relations [Array<Hash>]
-    # @option relations [String] :type
-    # @option relations [RelatonBib::BibliographicItem] :bibitem
-    # @option relations [Array<RelatonBib::BibItemLocality>] :bib_locality
+    # @param relation [Array<Hash>]
+    # @option relation [String] :type
+    # @option relation [RelatonBib::BibliographicItem] :bibitem
+    # @option relation [Array<RelatonBib::BibItemLocality>] :bib_locality
     def initialize(**args)
       @doctype = args.delete(:doctype) || "standard"
       @keyword = args.delete(:keyword) || []

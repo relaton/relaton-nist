@@ -1,8 +1,8 @@
 PATH
   remote: .
   specs:
-    relaton-nist (0.2.3)
-      relaton-bib (~> 0.2.0)
+    relaton-nist (0.3.0)
+      relaton-bib (~> 0.3.0)
       rubyzip
 
 GEM
@@ -35,7 +35,7 @@ GEM
       pry (~> 0.10)
     public_suffix (3.1.1)
     rake (10.5.0)
-    relaton-bib (0.2.5)
+    relaton-bib (0.3.0)
       addressable
       nokogiri (~> 1.10)
     rspec (3.8.0)

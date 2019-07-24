@@ -26,7 +26,7 @@ module RelatonNist
         end
         item_data[:fetched] = Date.today.to_s
         item_data[:type] = "standard"
-        item_data[:titles] = titles
+        item_data[:title] = titles
         item_data[:doctype] = doctype
 
         NistBibliographicItem.new(**item_data)
@@ -39,15 +39,15 @@ module RelatonNist
         {
           link: fetch_link(json),
           docid: fetch_docid(json["docidentifier"]),
-          dates: fetch_dates(json, hit_data[:release_date]),
-          contributors: fetch_contributors(json),
+          date: fetch_dates(json, hit_data[:release_date]),
+          contributor: fetch_contributors(json),
           edition: fetch_edition(json),
           language: [json["language"]],
           script: [json["script"]],
           # abstract: fetch_abstract(doc),
           docstatus: fetch_status(json, hit_data[:status]),
           copyright: fetch_copyright(json["published-date"]),
-          relations: fetch_relations_json(json),
+          relation: fetch_relations_json(json),
           # series: fetch_series(json),
           keyword: fetch_keywords(json),
           commentperiod: fetch_commentperiod_json(json),
@@ -60,15 +60,15 @@ module RelatonNist
           # id: fetch_id(doc),
           link: fetch_link(doc),
           docid: fetch_docid(doc),
-          dates: fetch_dates(doc, hit_data[:release_date]),
-          contributors: fetch_contributors(doc),
+          date: fetch_dates(doc, hit_data[:release_date]),
+          contributor: fetch_contributors(doc),
           edition: fetch_edition(hit_data[:code]),
           language: ["en"],
           script: ["Latn"],
           abstract: fetch_abstract(doc),
           docstatus: fetch_status(doc, hit_data[:status]),
           copyright: fetch_copyright(doc),
-          relations: fetch_relations(doc),
+          relation: fetch_relations(doc),
           series: fetch_series(doc),
           keyword: fetch_keywords(doc),
           commentperiod: fetch_commentperiod(doc),
@@ -285,8 +285,8 @@ module RelatonNist
       def full_name(name, lang, script)
         RelatonBib::FullName.new(
           surname: RelatonBib::LocalizedString.new(name["surname"], lang, script),
-          forenames: name_parts(name["givenName"], lang, script),
-          additions: name_parts(name["suffix"], lang, script),
+          forename: name_parts(name["givenName"], lang, script),
+          addition: name_parts(name["suffix"], lang, script),
           prefix: name_parts(name["title"], lang, script),
           completename: RelatonBib::LocalizedString.new(name["fullName"], lang, script),
         )

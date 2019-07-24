@@ -137,7 +137,7 @@ RSpec.describe RelatonNist do
     it "doc with supersedes" do
       VCR.use_cassette "nistir_8204" do
         result = RelatonNist::NistBibliography.get "NISTIR 8204"
-        expect(result.relations.first).to be_instance_of RelatonBib::DocumentRelation
+        expect(result.relation.first).to be_instance_of RelatonBib::DocumentRelation
       end
     end
 
