@@ -208,7 +208,7 @@ module RelatonNist
           org = RelatonBib::Organization.new(
             name: name, url: "www.nist.gov", abbreviation: "NIST",
           )
-          contribs << RelatonBib::ContributionInfo.new(entity: org, role: ["publisher"])
+          contribs << RelatonBib::ContributionInfo.new(entity: org, role: [type: "publisher"])
           authors = doc.at('//h4[.="Author(s)"]/following-sibling::p')
           contribs += contributors(authors, "author")
           editors = doc.at('//h4[.="Editor(s)"]/following-sibling::p')
@@ -237,7 +237,7 @@ module RelatonNist
           else
             entity = org
           end
-          RelatonBib::ContributionInfo.new entity: entity, role: [role]
+          RelatonBib::ContributionInfo.new entity: entity, role: [type: role]
         end
       end
 
@@ -273,7 +273,7 @@ module RelatonNist
           else
             entity = RelatonBib::Organization.new name: an, abbreviation: abbrev
           end
-          RelatonBib::ContributionInfo.new entity: entity, role: [role]
+          RelatonBib::ContributionInfo.new entity: entity, role: [type: role]
         end
       end
       # rubocop:enable Metrics/CyclomaticComplexity, Metrics/AbcSize, Metrics/MethodLength
@@ -455,13 +455,15 @@ module RelatonNist
         ex = doc.at "//strong[contains(.,'The comment closing date has been extended to')]"
         ext = ex&.text&.match(/\w+\s\d{2},\s\d{4}/).to_s
         extended = ext.empty? ? nil : Date.strptime(ext, "%B %d, %Y")
-        CommentPeriod.new from, to, extended
+        CommentPeriod.new from: from, to: to, extended: extended
       end
 
       # @param json [Hash]
       # @return [RelatonNist::CommentPeriod, NilClass]
       def fetch_commentperiod_json(json)
-        CommentPeriod.new json["comment-from"], json["comment-to"] if json["comment-from"]
+        return unless json["comment-from"]
+
+        CommentPeriod.new from: json["comment-from"], to: json["comment-to"]
       end
     end
   end

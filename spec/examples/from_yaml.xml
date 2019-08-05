@@ -1,0 +1,66 @@
+<bibdata type="standard">
+  <fetched>2019-08-01</fetched>
+  <title format="text/plain" language="en" script="Latn">Automation Support for Security Control Assessments: Software Asset Management</title>
+  <uri type="src">http://nvlpubs.nist.gov/nistpubs/ir/2018/NIST.IR.8011-3.pdf</uri>
+  <uri type="obp">https://doi.org/10.6028/NIST.IR.8011-3</uri>
+  <docidentifier type="NISTIR">8011 Vol. 3</docidentifier>
+  <docnumber>8011</docnumber>
+  <date type="published">
+    <on>2018-12</on>
+  </date>
+  <date type="issued">
+    <on>2018-12</on>
+  </date>
+  <contributor>
+    <role type="publisher"/>
+    <organization>
+      <name>National Institute of Standards and Technology</name>
+      <abbreviation>NIST</abbreviation>
+      <uri>www.nist.gov</uri>
+    </organization>
+  </contributor>
+  <language>en</language>
+  <script>Latn</script>
+  <abstract format="text/plain" language="en" script="Latn">The NISTIR 8011 volumes each focus on an individual information security capability, adding tangible detail to the more general overview given in NISTIR 8011 Volume 1, and providing a template for transition to a detailed, NIST guidance-based automated assessment. This document, Volume 3 of NISTIR 8011, addresses the Software Asset Management (SWAM) information security capability. The focus of the SWAM capability is to manage risk created by unmanaged or unauthorized software on a network. Unmanaged or unauthorized software is a target that attackers can use as a platform from which to attack components on the network.</abstract>
+  <status>
+    <stage>final</stage>
+    <substage>active</substage>
+  </status>
+  <copyright>
+    <from>2018</from>
+    <owner>
+      <organization>
+        <name>National Institute of Standards and Technology</name>
+        <abbreviation>NIST</abbreviation>
+        <uri>www.nist.gov</uri>
+      </organization>
+    </owner>
+  </copyright>
+  <relation type="partOf">
+    <bibitem>
+      <formattedref format="text/plain">NISTIR 8011 Vol. 1</formattedref>
+      <uri type="src">https://csrc.nist.gov/publications/detail/nistir/8011/vol-1/final</uri>
+    </bibitem>
+  </relation>
+  <relation type="updates">
+    <bibitem>
+      <formattedref format="text/plain">SP 800-53A Rev. 4</formattedref>
+      <uri type="src">https://csrc.nist.gov/publications/detail/sp/800-53a/rev-4/final</uri>
+    </bibitem>
+  </relation>
+  <series>
+    <formattedref format="text/plain" language="en" script="Latn">NISTIR 8011 Vol. 3 (IPD)</formattedref>
+  </series>
+  <ext>
+    <doctype>standard</doctype>
+    <keyword>actual state</keyword>
+    <keyword>assessment</keyword>
+    <keyword>authorization boundary</keyword>
+    <keyword>automation</keyword>
+    <commentperiod>
+      <from>2018-12-17</from>
+      <to>2019-03-15</to>
+      <extended>2019-05-15</extended>
+    </commentperiod>
+  </ext>
+</bibdata>

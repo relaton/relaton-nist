@@ -34,7 +34,10 @@ module RelatonNist
         cp = item.at "./commentperiod"
         return unless cp
 
-        CommentPeriod.new cp.at("from").text, cp.at("to")&.text, cp.at("extended")&.text
+        CommentPeriod.new(
+          from: cp.at("from").text, to: cp.at("to")&.text,
+          extended: cp.at("extended")&.text
+        )
       end
 
       def fetch_keyword(item)

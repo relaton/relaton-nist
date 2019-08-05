@@ -6,6 +6,7 @@ require "relaton_nist/xml_parser"
 require "relaton_nist/keyword"
 require "relaton_nist/comment_period"
 require "relaton_nist/document_status"
+require "relaton_nist/hash_converter"
 
 module RelatonNist
   class NistBibliography

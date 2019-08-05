@@ -12,7 +12,7 @@ module RelatonNist
     # @param from [Date]
     # @param to [Date, NilClass]
     # @param extended [Date, NilClass]
-    def initialize(from, to = nil, extended = nil)
+    def initialize(from:, to: nil, extended: nil)
       @from = from
       @to = to
       @extended = extended

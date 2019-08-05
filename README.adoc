@@ -113,6 +113,22 @@ fetching 8200...
 ...
 ----
 
+=== Create bibliographic item form YAML
+[source,ruby]
+----
+hash = YAML.load_file 'spec/examples/nist_bib_item.yml'
+=> {"id"=>"NISTIR 8011 Vol. 3",
+...
+
+bib_hash = RelatonNist::HashConverter.hash_to_bib hash
+=> {:id=>"NISTIR 8011 Vol. 3",
+...
+
+RelatonNist::NistBibliographicItem.new bib_hash
+=> #<RelatonNist::NistBibliographicItem:0x007f8b708505b8
+...
+----
+
 == Development
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
