@@ -15,7 +15,7 @@ module RelatonNist
       # @return [RelatonNist::HitCollection]
       def search(text, year = nil, opts = {})
         HitCollection.new text, year, opts
-      rescue OpenURI::HTTPError, SocketError
+      rescue OpenURI::HTTPError, SocketError, OpenSSL::SSL::SSLError
         raise RelatonBib::RequestError, "Could not access https://www.nist.gov"
       end
 
