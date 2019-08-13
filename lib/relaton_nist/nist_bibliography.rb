@@ -34,9 +34,9 @@ module RelatonNist
           code = code2.strip
           if date2
             if /\w+\s\d{4}/ =~ date2
-              opts[:issued_date] = Time.strptime date2, "%B %Y"
+              opts[:issued_date] = Date.strptime date2, "%B %Y"
             elsif /\w+\s\d{2},\s\d{4}/ =~ date2
-              opts[:updated_date] = Time.strptime date2, "%B %d, %Y"
+              opts[:updated_date] = Date.strptime date2, "%B %d, %Y"
             end
           end
           opts[:stage] = stage if stage
