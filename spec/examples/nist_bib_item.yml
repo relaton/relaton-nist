@@ -1,23 +1,22 @@
 id: NISTIR 8011 Vol. 3
 
 title:
-  - content: "Automation Support for Security Control Assessments: Software Asset Management"
-    language: en
-    script: Latn
+  content: "Automation Support for Security Control Assessments: Software Asset Management"
+  language: en
+  script: Latn
+  format: text/plain
 
 type: standard
 
 docid:
-  - id: 8011 Vol. 3
-    type: NISTIR
+  id: 8011 Vol. 3
+  type: NISTIR
 
 docnumber: "8011"
 
-language:
-  - en
+language: en
 
-script:
-  - Latn
+script: Latn
 
 docstatus:
   stage: final
@@ -25,23 +24,22 @@ docstatus:
 
 date:
   - type: published
-    value: "2018-12"
+    value: "2018-12-01"
   - type: issued
-    value: "2018-12"
+    value: "2018-12-01"
 
 abstract:
-  - content: The NISTIR 8011 volumes each focus on an individual information security capability, adding tangible detail to the more general overview given in NISTIR 8011 Volume 1, and providing a template for transition to a detailed, NIST guidance-based automated assessment. This document, Volume 3 of NISTIR 8011, addresses the Software Asset Management (SWAM) information security capability. The focus of the SWAM capability is to manage risk created by unmanaged or unauthorized software on a network. Unmanaged or unauthorized software is a target that attackers can use as a platform from which to attack components on the network.
-    language: en
-    script: Latn
-    format: text/plain
+  content: The NISTIR 8011 volumes each focus on an individual information security capability, adding tangible detail to the more general overview given in NISTIR 8011 Volume 1, and providing a template for transition to a detailed, NIST guidance-based automated assessment. This document, Volume 3 of NISTIR 8011, addresses the Software Asset Management (SWAM) information security capability. The focus of the SWAM capability is to manage risk created by unmanaged or unauthorized software on a network. Unmanaged or unauthorized software is a target that attackers can use as a platform from which to attack components on the network.
+  language: en
+  script: Latn
+  format: text/plain
 
 contributor:
-  - organization:
-      name: National Institute of Standards and Technology
-      url: www.nist.gov
-      abbreviation: NIST
-    role:
-      - publisher
+  organization:
+    name: National Institute of Standards and Technology
+    url: www.nist.gov
+    abbreviation: NIST
+  role: publisher
 
 copyright:
   owner:
@@ -59,23 +57,27 @@ link:
 relation:
   - type: partOf
     bibitem:
-      formattedref: NISTIR 8011 Vol. 1
+      formattedref:
+        content: NISTIR 8011 Vol. 1
+        format: text/plain
       link:
-        - type: src
-          content: https://csrc.nist.gov/publications/detail/nistir/8011/vol-1/final
+        type: src
+        content: https://csrc.nist.gov/publications/detail/nistir/8011/vol-1/final
   - type: updates
     bibitem:
-      formattedref: SP 800-53A Rev. 4
+      formattedref:
+        content: SP 800-53A Rev. 4
+        format: text/plain
       link:
-        - type: src
-          content: https://csrc.nist.gov/publications/detail/sp/800-53a/rev-4/final
+        type: src
+        content: https://csrc.nist.gov/publications/detail/sp/800-53a/rev-4/final
 
 series:
-  - formattedref:
-      content: NISTIR 8011 Vol. 3 (IPD)
-      language: en
-      script: Latn
-      format: text/plain
+  formattedref:
+    content: NISTIR 8011 Vol. 3 (IPD)
+    language: en
+    script: Latn
+    format: text/plain
 
 keyword:
   - actual state

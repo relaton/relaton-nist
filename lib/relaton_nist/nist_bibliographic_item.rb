@@ -6,7 +6,7 @@ module RelatonNist
     # @return [Array<RelatonNist::Keyword>]
     attr_reader :keyword
 
-    # @return [RelatonNist::CommentPeriod]
+    # @return [RelatonNist::CommentPeriod, NilClass]
     attr_reader :commentperiod
 
     # @param id [String, NilClass]
@@ -31,7 +31,7 @@ module RelatonNist
     # @param fetched [Date, NilClass] default nil
     # @param doctype [String]
     # @param keyword [Array<RelatonNist::Keyword>]
-    # @param commentperiod [RelatonNist::CommentPeriod]
+    # @param commentperiod [RelatonNist::CommentPeriod, NilClass]
     #
     # @param date [Array<Hash>]
     # @option date [String] :type
@@ -73,6 +73,14 @@ module RelatonNist
           end
         end
       end
+    end
+
+    # @return [Hash]
+    def to_hash
+      hash = super
+      hash["keyword"] = single_element_array(keyword) if keyword&.any?
+      hash["commentperiod"] = commentperiod.to_hash if commentperiod
+      hash
     end
   end
 end
