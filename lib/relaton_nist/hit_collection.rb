@@ -8,18 +8,9 @@ require "open-uri"
 
 module RelatonNist
   # Page of hit collection.
-  class HitCollection < Array
+  class HitCollection < RelatonBib::HitCollection
     DOMAIN = "https://csrc.nist.gov"
     DATAFILE = File.expand_path "data/pubs-export.zip", __dir__
-
-    # @return [TrueClass, FalseClass]
-    attr_reader :fetched
-
-    # @return [String]
-    attr_reader :text
-
-    # @return [String]
-    attr_reader :year
 
     # rubocop:disable Metrics/AbcSize, Metrics/MethodLength
 
@@ -45,28 +36,6 @@ module RelatonNist
       @fetched = false
     end
     # rubocop:enable Metrics/AbcSize, Metrics/MethodLength
-
-    # @return [Iecbib::HitCollection]
-    def fetch
-      workers = RelatonBib::WorkersPool.new 4
-      workers.worker(&:fetch)
-      each do |hit|
-        workers << hit
-      end
-      workers.end
-      workers.result
-      @fetched = true
-      self
-    end
-
-    def to_s
-      inspect
-    end
-
-    # @return [String]
-    def inspect
-      "<#{self.class}:#{format('%#.14x', object_id << 1)} @fetched=#{@fetched}>"
-    end
 
     private
 
@@ -107,50 +76,78 @@ module RelatonNist
         )
       end
     end
+    # rubocop:enable Metrics/AbcSize, Metrics/MethodLength
 
     # Fetches data form json
     # @param docid [String]
+    # @param stage [String]
+    # @return [Array<RelatonNist::Hit>]
     def from_json(docid, **opts)
+      select_data(docid, **opts).map do |h|
+        /(?<serie>(?<=-)\w+$)/ =~ h["series"]
+        title = [h["title-main"], h["title-sub"]].compact.join " - "
+        release_date = RelatonBib.parse_date h["published-date"]
+        Hit.new({ code: h["docidentifier"], serie: serie.upcase, title: title,
+                  url: h["uri"], status: h["status"],
+                  release_date: release_date, json: h }, self)
+      end
+    end
+
+    # @param docid [String]
+    # @param stage [String]
+    # @return [Array<Hach>]
+    def select_data(docid, **opts)
+      d = Date.strptime year, "%Y" if year
       data.select do |doc|
-        if year
-          d = Date.strptime year, "%Y"
-          idate = RelatonNist.parse_date doc["issued-date"]
-          next unless idate.between? d, d.next_year.prev_day
-        end
+        next unless match_year?(doc, d)
+
         if /PD/ =~ opts[:stage]
           next unless %w[draft-public draft-prelim].include? doc["status"]
         else
           next unless doc["status"] == "final"
         end
         doc["docidentifier"] =~ Regexp.new(docid)
-      end.map do |h|
-        /(?<serie>(?<=-)\w+$)/ =~ h["series"]
-        title = [h["title-main"], h["title-sub"]].compact.join " - "
-        release_date = RelatonNist.parse_date h["published-date"]
-        Hit.new(
-          {
-            code: h["docidentifier"], serie: serie.upcase, title: title,
-            url: h["uri"], status: h["status"], release_date: release_date,
-            json: h
-          }, self
-        )
       end
     end
 
-    # Fetches json data
+    # @param doc [Hash]
+    # @param date [Date] first day of year
+    # @return [TrueClass, FalseClass]
+    def match_year?(doc, date)
+      return true unless year
+
+      idate = RelatonBib.parse_date doc["issued-date"]
+      idate.between? date, date.next_year.prev_day
+    end
+
+    # Fetches json data form server
     # @return [Hash]
     def data
       ctime = File.ctime DATAFILE if File.exist? DATAFILE
       if !ctime || ctime.to_date < Date.today
-        resp = OpenURI.open_uri("https://csrc.nist.gov/CSRC/media/feeds/metanorma/pubs-export.meta")
-        if !ctime || ctime < resp.last_modified
-          @data = nil
-          zip = OpenURI.open_uri "https://csrc.nist.gov/CSRC/media/feeds/metanorma/pubs-export.zip"
-          zip.close
-          FileUtils.mv zip.path, DATAFILE
-        end
+        fetch_data(ctime)
       end
-      return if @data
+      unzip
+    end
+
+    # Fetch data form server and save it to file
+    #
+    # @prarm ctime [Time, NilClass]
+    def fetch_data(ctime)
+      resp = OpenURI.open_uri("https://csrc.nist.gov/CSRC/media/feeds/metanorma/pubs-export.meta")
+      if !ctime || ctime < resp.last_modified
+        @data = nil
+        zip = OpenURI.open_uri "https://csrc.nist.gov/CSRC/media/feeds/metanorma/pubs-export.zip"
+        zip.close
+        FileUtils.mv zip.path, DATAFILE
+      end
+    end
+
+    # upack zip file
+    #
+    # @return [Hash]
+    def unzip
+      return @data if @data
 
       Zip::File.open(DATAFILE) do |zf|
         zf.each do |f|
@@ -160,6 +157,5 @@ module RelatonNist
       end
       @data
     end
-    # rubocop:enable Metrics/AbcSize, Metrics/MethodLength
   end
 end

@@ -44,11 +44,9 @@ module RelatonNist
           edition: fetch_edition(json),
           language: [json["language"]],
           script: [json["script"]],
-          # abstract: fetch_abstract(doc),
           docstatus: fetch_status(json, hit_data[:status]),
           copyright: fetch_copyright(json["published-date"]),
           relation: fetch_relations_json(json),
-          # series: fetch_series(json),
           keyword: fetch_keywords(json),
           commentperiod: fetch_commentperiod_json(json),
         }
@@ -179,14 +177,14 @@ module RelatonNist
         dates = [{ type: "published", on: release_date.to_s }]
 
         if doc.is_a? Hash
-          issued = RelatonNist.parse_date doc["issued-date"]
-          updated = RelatonNist.parse_date doc["updated-date"]
+          issued = RelatonBib.parse_date doc["issued-date"]
+          updated = RelatonBib.parse_date doc["updated-date"]
           dates << { type: "updated", on: updated.to_s } if updated
-          obsoleted = RelatonNist.parse_date doc["obsoleted-date"]
+          obsoleted = RelatonBib.parse_date doc["obsoleted-date"]
           dates << { type: "obsoleted", on: obsoleted.to_s } if obsoleted
         else
           d = doc.at("//span[@id='pub-release-date']").text.strip
-          issued = RelatonNist.parse_date d
+          issued = RelatonBib.parse_date d
         end
         dates << { type: "issued", on: issued.to_s }
         dates

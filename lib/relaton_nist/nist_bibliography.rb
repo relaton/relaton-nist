@@ -51,11 +51,7 @@ module RelatonNist
         end
 
         code += "-1" if opts[:all_parts]
-        ret = nistbib_get1(code, year, opts)
-        # return nil if ret.nil?
-        # ret.to_most_recent_reference unless year || opts[:keep_year]
-        # ret.to_all_parts if opts[:all_parts]
-        ret
+        nistbib_get1(code, year, opts)
       end
 
       private

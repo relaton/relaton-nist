@@ -113,7 +113,7 @@ fetching 8200...
 ...
 ----
 
-=== Create bibliographic item form YAML
+=== Create bibliographic item from YAML
 [source,ruby]
 ----
 hash = YAML.load_file 'spec/examples/nist_bib_item.yml'
