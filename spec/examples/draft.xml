@@ -1,14 +1,14 @@
 <bibdata type="standard">
-  <fetched>2019-06-21</fetched>
-  <title format="text/plain" language="en" script="Latn">Secure Interdomain Traffic Exchange - BGP Robustness and DDoS Mitigation</title>
+  <fetched>2019-10-21</fetched>
+  <title format="text/plain" language="en" script="Latn">Resilient Interdomain Traffic Exchange - BGP Security and DDoS Mitigation</title>
   <uri type="uri">https://csrc.nist.gov/publications/detail/sp/800-189/draft</uri>
-  <uri type="doi">https://doi.org/10.6028/NIST.SP.800-189-draft</uri>
-  <docidentifier type="NIST">SP 800-189 (DRAFT)</docidentifier>
+  <uri type="doi">https://doi.org/10.6028/NIST.SP.800-189-draft2</uri>
+  <docidentifier type="NIST">SP 800-189 (Draft)</docidentifier>
   <date type="published">
-    <on>2018-12</on>
+    <on>2019-10</on>
   </date>
   <date type="issued">
-    <on>2018-12</on>
+    <on>2019-10</on>
   </date>
   <contributor>
     <role type="author"/>
@@ -43,9 +43,10 @@
   <status>
     <stage>draft-public</stage>
     <substage>active</substage>
+    <iteration>2</iteration>
   </status>
   <copyright>
-    <from>2018</from>
+    <from>2019</from>
     <owner>
       <organization>
         <name>National Institute of Standards and Technology</name>
@@ -56,24 +57,25 @@
   </copyright>
   <ext>
     <doctype>standard</doctype>
-    <keyword>Routing security and robustness</keyword>
+    <keyword>routing security and robustness</keyword>
     <keyword>Internet infrastructure security</keyword>
     <keyword>Border Gateway Protocol (BGP) security</keyword>
-    <keyword>prefix hijacks, IP address spoofing</keyword>
-    <keyword>Distributed DoS (DDoS) attacks</keyword>
+    <keyword>prefix hijacks</keyword>
+    <keyword>IP address spoofing</keyword>
+    <keyword>distributed denial-of-service (DDoS)</keyword>
     <keyword>Resource Public Key Infrastructure (RPKI)</keyword>
     <keyword>BGP origin validation (BGP-OV)</keyword>
     <keyword>prefix filtering</keyword>
     <keyword>BGP path validation (BGP-PV)</keyword>
     <keyword>BGPsec</keyword>
     <keyword>route leaks</keyword>
-    <keyword>Source Address Validation (SAV)</keyword>
+    <keyword>source address validation (SAV)</keyword>
     <keyword>unicast Reverse Path Forwarding (uRPF)</keyword>
-    <keyword>Remotely Triggered Black Hole (RTBH) filtering</keyword>
-    <keyword>Flow Specification (Flowspec)</keyword>
+    <keyword>remotely triggered black hole (RTBH) filtering</keyword>
+    <keyword>flow specification (Flowspec)</keyword>
     <commentperiod>
-      <from>2018-12-17</from>
-      <to>2019-03-15</to>
+      <from>2019-10-17</from>
+      <to>2019-11-15</to>
     </commentperiod>
   </ext>
 </bibdata>

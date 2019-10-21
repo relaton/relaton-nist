@@ -211,7 +211,7 @@ RSpec.describe RelatonNist do
       it "draft without updated-date" do
         VCR.use_cassette "json_data" do
           result = RelatonNist::NistBibliography.get "SP 800-205 (February 2019) (PD)"
-          expect(result.id).to eq "SP800-205(DRAFT)"
+          expect(result.id).to eq "SP800-205(Draft)"
         end
       end
 

@@ -1,14 +1,14 @@
 <bibdata type="standard">
-  <fetched>2019-06-21</fetched>
+  <fetched>2019-10-21</fetched>
   <title format="text/plain" language="en" script="Latn">Guide to Attribute Based Access Control (ABAC) Definition and Considerations</title>
   <uri type="uri">https://csrc.nist.gov/publications/detail/sp/800-162/final</uri>
   <uri type="doi">https://doi.org/10.6028/NIST.SP.800-162</uri>
   <docidentifier type="NIST">SP 800-162</docidentifier>
   <date type="published">
-    <on>2019-02</on>
+    <on>2019-08</on>
   </date>
   <date type="updated">
-    <on>2019-02</on>
+    <on>2019-08</on>
   </date>
   <date type="issued">
     <on>2014-01</on>
@@ -129,7 +129,7 @@
   <relation type="supersedes">
     <bibitem>
       <formattedref format="text/plain" language="en" script="Latn">SP 800-162</formattedref>
-      <uri type="src">https://csrc.nist.gov/publications/detail/sp/800-162/archive/2014-01-16</uri>
+      <uri type="src">https://csrc.nist.gov/publications/detail/sp/800-162/archive/2019-02-25</uri>
     </bibitem>
   </relation>
   <ext>

@@ -21,7 +21,7 @@ module RelatonNist
         unless /^(SP|NISTIR|FIPS) / =~ item_data[:docid][0].id
           doctype = id_cleanup(item_data[:docid][0].id)
           item_data[:docid][0] = RelatonBib::DocumentIdentifier.new(
-            id: titles[0][:content], type: "NIST",
+            id: titles[0][:content].upcase, type: "NIST",
           )
         end
         item_data[:fetched] = Date.today.to_s
