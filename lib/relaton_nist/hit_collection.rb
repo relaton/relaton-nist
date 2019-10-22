@@ -10,7 +10,7 @@ module RelatonNist
   # Page of hit collection.
   class HitCollection < RelatonBib::HitCollection
     DOMAIN = "https://csrc.nist.gov"
-    DATAFILE = File.expand_path "pubs-export.zip", ".relaton", Dir.home
+    DATAFILE = File.expand_path ".relaton/nist/pubs-export.zip", Dir.home
 
     # rubocop:disable Metrics/AbcSize, Metrics/MethodLength
 
