@@ -10,7 +10,8 @@ module RelatonNist
   # Page of hit collection.
   class HitCollection < RelatonBib::HitCollection
     DOMAIN = "https://csrc.nist.gov"
-    DATAFILE = File.expand_path ".relaton/nist/pubs-export.zip", Dir.home
+    DATAFILEDIR = File.expand_path ".relaton/nist", Dir.home
+    DATAFILE = File.expand_path "pubs-export.zip", DATAFILEDIR
 
     # rubocop:disable Metrics/AbcSize, Metrics/MethodLength
 
@@ -139,6 +140,7 @@ module RelatonNist
         @data = nil
         zip = OpenURI.open_uri "https://csrc.nist.gov/CSRC/media/feeds/metanorma/pubs-export.zip"
         zip.close
+        FileUtils.mkdir_p DATAFILEDIR unless Dir.exist? DATAFILEDIR
         FileUtils.mv zip.path, DATAFILE
       end
     end
