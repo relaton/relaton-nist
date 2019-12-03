@@ -5,7 +5,7 @@ module RelatonNist
     def initialize
       @short = :relaton_nist
       @prefix = "NIST"
-      @defaultprefix = %r{^(NIST|NISTGCR|ITL Bulletin|JPCRD|NISTIR|CSRC)(/[^\s])?\s}
+      @defaultprefix = %r{^(NIST|NISTGCR|ITL Bulletin|JPCRD|NISTIR|CSRC|FIPS)(/[^\s])?\s}
       @idtype = "NIST"
     end
 

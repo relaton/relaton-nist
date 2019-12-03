@@ -29,6 +29,8 @@ module RelatonNist
       #
       # @return [String] Relaton XML serialisation of reference
       def get(code, year = nil, opts = {})
+        return fetch_ref_err(code, year, []) if code =~ /\sEP$/
+
         /^(?<code2>[^\(]+)(\((?<date2>\w+\s(\d{2},\s)?\d{4})\))?\s?\(?((?<=\()(?<stage>[^\)]+))?/ =~ code
         if code2
           code = code2.strip

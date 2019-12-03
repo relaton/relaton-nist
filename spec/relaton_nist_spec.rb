@@ -181,6 +181,12 @@ RSpec.describe RelatonNist do
         ).to_stderr
       end
     end
+
+    it "contains EP at the end" do
+      expect { RelatonNist::NistBibliography.get "FIPS 201 EP" }.to output(
+        /WARNING: no match found online for FIPS 201 EP/
+      ).to_stderr
+    end
   end
 
   context "short citation" do
