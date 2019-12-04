@@ -29,5 +29,11 @@ module RelatonNist
       item_hash = ::RelatonNist::HashConverter.hash_to_bib(hash)
       ::RelatonNist::NistBibliographicItem.new item_hash
     end
+
+    # Returns hash of XML grammar
+    # @return [String]
+    def grammar_hash
+      @grammar_hash ||= ::RelatonNist.grammar_hash
+    end
   end
 end

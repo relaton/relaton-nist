@@ -1,3 +1,5 @@
+require "jing"
+
 RSpec.describe RelatonNist do
   it "has a version number" do
     expect(RelatonNist::VERSION).not_to be nil
@@ -22,6 +24,9 @@ RSpec.describe RelatonNist do
         File.write file_path, xml unless File.exist? file_path
         expect(xml).to be_equivalent_to File.open(file_path, "r:UTF-8", &:read).
           gsub(/(?<=<fetched>)\d{4}-\d{2}-\d{2}/, Date.today.to_s)
+        schema = Jing.new "spec/examples/isobib.rng"
+        errors = schema.validate file_path
+        expect(errors).to eq []
       end
     end
 
@@ -63,9 +68,11 @@ RSpec.describe RelatonNist do
         result = RelatonNist::NistBibliography.get("NISTIR 8200", "2018", {}).to_xml bibdata: true
         file_path = "spec/examples/get.xml"
         File.write file_path, result unless File.exist? file_path
-        expect(result).to be_equivalent_to File.
-          open(file_path, "r:UTF-8", &:read).
+        expect(result).to be_equivalent_to File.open(file_path, "r:UTF-8", &:read).
           gsub(/(?<=<fetched>)\d{4}-\d{2}-\d{2}/, Date.today.to_s)
+        schema = Jing.new "spec/examples/isobib.rng"
+        errors = schema.validate file_path
+        expect(errors).to eq []
       end
     end
 
@@ -90,6 +97,9 @@ RSpec.describe RelatonNist do
         File.write file_path, result unless File.exist? file_path
         expect(result).to be_equivalent_to File.open(file_path, "r:UTF-8", &:read).
           gsub(/(?<=<fetched>)\d{4}-\d{2}-\d{2}/, Date.today.to_s)
+        schema = Jing.new "spec/examples/isobib.rng"
+        errors = schema.validate file_path
+        expect(errors).to eq []
       end
     end
 
@@ -100,6 +110,9 @@ RSpec.describe RelatonNist do
         File.write file_path, result unless File.exist? file_path
         expect(result).to be_equivalent_to File.open(file_path, "r:UTF-8", &:read)
           .gsub(/(?<=<fetched>)\d{4}-\d{2}-\d{2}/, Date.today.to_s)
+        schema = Jing.new "spec/examples/isobib.rng"
+        errors = schema.validate file_path
+        expect(errors).to eq []
       end
     end
 
@@ -112,6 +125,9 @@ RSpec.describe RelatonNist do
           File.open(file_path, "r:UTF-8", &:read).
             gsub(/(?<=<fetched>)\d{4}-\d{2}-\d{2}/, Date.today.to_s),
         )
+        schema = Jing.new "spec/examples/isobib.rng"
+        errors = schema.validate file_path
+        expect(errors).to eq []
       end
     end
 
@@ -124,6 +140,9 @@ RSpec.describe RelatonNist do
           File.open(file_path, "r:UTF-8", &:read).
             gsub(/(?<=<fetched>)\d{4}-\d{2}-\d{2}/, Date.today.to_s),
         )
+        schema = Jing.new "spec/examples/isobib.rng"
+        errors = schema.validate file_path
+        expect(errors).to eq []
       end
     end
 
@@ -158,6 +177,9 @@ RSpec.describe RelatonNist do
           File.open(file_path, "r:UTF-8", &:read).
             gsub(/(?<=<fetched>)\d{4}-\d{2}-\d{2}/, Date.today.to_s),
         )
+        schema = Jing.new "spec/examples/isobib.rng"
+        errors = schema.validate file_path
+        expect(errors).to eq []
       end
     end
   end

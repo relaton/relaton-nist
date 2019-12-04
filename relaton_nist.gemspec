@@ -34,6 +34,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "simplecov"
   spec.add_development_dependency "vcr"
   spec.add_development_dependency "webmock"
+  spec.add_development_dependency "ruby-jing"
 
   spec.add_dependency "relaton-bib", "~> 0.3.0"
   spec.add_dependency "rubyzip"

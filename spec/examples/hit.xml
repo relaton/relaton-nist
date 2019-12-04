@@ -122,32 +122,5 @@
   </series>
   <ext>
     <doctype>standard</doctype>
-    <keyword>actual state</keyword>
-    <keyword>assessment</keyword>
-    <keyword>authorization boundary</keyword>
-    <keyword>automation</keyword>
-    <keyword>capability</keyword>
-    <keyword>continuous diagnostics and mitigation</keyword>
-    <keyword>dashboard</keyword>
-    <keyword>defect</keyword>
-    <keyword>desired state specification</keyword>
-    <keyword>firmware</keyword>
-    <keyword>information security continuous monitoring</keyword>
-    <keyword>ISCM</keyword>
-    <keyword>inventory management</keyword>
-    <keyword>malicious code</keyword>
-    <keyword>malware</keyword>
-    <keyword>mitigation</keyword>
-    <keyword>mobile code</keyword>
-    <keyword>ongoing assessment</keyword>
-    <keyword>root cause analysis</keyword>
-    <keyword>security capability</keyword>
-    <keyword>security control</keyword>
-    <keyword>security control item</keyword>
-    <keyword>software</keyword>
-    <keyword>software asset management</keyword>
-    <keyword>software file</keyword>
-    <keyword>SWID tag</keyword>
-    <keyword>whitelisting</keyword>
   </ext>
 </bibdata>

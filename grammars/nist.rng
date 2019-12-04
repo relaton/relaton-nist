@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<grammar xmlns="http://relaxng.org/ns/structure/1.0" datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
+  <!--
+    Currently we inherit from a namespaced grammar, isostandard. Until we inherit from isodoc,
+    we cannot have a new default namespace: we will end up with a grammar with two different
+    namespaces, one for isostandard and one for csand additions. And we do not want that.
+  -->
+  <include href="isostandard.rng">
+    <start>
+      <ref name="nist-standard"/>
+    </start>
+    <define name="figure">
+      <element name="figure">
+        <attribute name="id">
+          <data type="ID"/>
+        </attribute>
+        <optional>
+          <ref name="tname"/>
+        </optional>
+        <choice>
+          <ref name="image"/>
+          <ref name="pre"/>
+          <oneOrMore>
+            <ref name="subfigure"/>
+          </oneOrMore>
+        </choice>
+        <zeroOrMore>
+          <ref name="fn"/>
+        </zeroOrMore>
+        <optional>
+          <ref name="dl"/>
+        </optional>
+        <zeroOrMore>
+          <ref name="note"/>
+        </zeroOrMore>
+      </element>
+    </define>
+    <define name="subfigure">
+      <element name="figure">
+        <attribute name="id">
+          <data type="ID"/>
+        </attribute>
+        <optional>
+          <ref name="tname"/>
+        </optional>
+        <choice>
+          <ref name="image"/>
+          <ref name="pre"/>
+        </choice>
+      </element>
+    </define>
+    <define name="DocumentType">
+      <value>standard</value>
+    </define>
+    <define name="TitleType">
+      <choice>
+        <value>alternative</value>
+        <value>original</value>
+        <value>unofficial</value>
+        <value>subtitle</value>
+        <value>main</value>
+      </choice>
+    </define>
+    <!-- DocRelationType |= "obsoletedBy" | "supersedes" | "supersededBy" -->
+    <define name="DocRelationType">
+      <choice>
+        <value>obsoletes</value>
+        <value>updates</value>
+        <value>updatedBy</value>
+        <value>complements</value>
+        <value>derivedFrom</value>
+        <value>translatedFrom</value>
+        <value>adoptedFrom</value>
+        <value>equivalent</value>
+        <value>identical</value>
+        <value>nonequivalent</value>
+        <value>includedIn</value>
+        <value>includes</value>
+        <value>instance</value>
+        <value>partOf</value>
+        <value>hasDraft</value>
+        <value>obsoletedBy</value>
+        <value>supersedes</value>
+        <value>supersededBy</value>
+      </choice>
+    </define>
+    <!-- BibliographicDateType |= "abandoned" | "superseded" -->
+    <define name="BibliographicDateType">
+      <choice>
+        <value>published</value>
+        <value>accessed</value>
+        <value>created</value>
+        <value>implemented</value>
+        <value>obsoleted</value>
+        <value>confirmed</value>
+        <value>updated</value>
+        <value>issued</value>
+        <value>transmitted</value>
+        <value>copied</value>
+        <value>unchanged</value>
+        <value>circulated</value>
+        <value>abandoned</value>
+        <value>superseded</value>
+      </choice>
+    </define>
+    <define name="preface">
+      <element name="preface">
+        <optional>
+          <ref name="preface_abstract"/>
+        </optional>
+        <optional>
+          <ref name="foreword"/>
+        </optional>
+        <zeroOrMore>
+          <ref name="clause"/>
+        </zeroOrMore>
+        <optional>
+          <ref name="reviewernote"/>
+        </optional>
+        <optional>
+          <ref name="executivesummary"/>
+        </optional>
+      </element>
+    </define>
+    <define name="annex">
+      <element name="annex">
+        <optional>
+          <attribute name="id">
+            <data type="ID"/>
+          </attribute>
+        </optional>
+        <optional>
+          <attribute name="language"/>
+        </optional>
+        <optional>
+          <attribute name="script"/>
+        </optional>
+        <optional>
+          <attribute name="inline-header">
+            <data type="boolean"/>
+          </attribute>
+        </optional>
+        <optional>
+          <attribute name="obligation">
+            <choice>
+              <value>normative</value>
+              <value>informative</value>
+            </choice>
+          </attribute>
+        </optional>
+        <optional>
+          <ref name="section-title"/>
+        </optional>
+        <zeroOrMore>
+          <!--
+            allow hanging paragraps in annexes: they introduce lists
+            ( paragraph-with-footnote | table | note | formula | admonition | ol | ul | dl | figure | quote | sourcecode | review | example )*,
+          -->
+          <ref name="BasicBlock"/>
+        </zeroOrMore>
+        <zeroOrMore>
+          <ref name="note"/>
+        </zeroOrMore>
+        <choice>
+          <zeroOrMore>
+            <ref name="clause-hanging-paragraph-with-footnote"/>
+          </zeroOrMore>
+          <ref name="terms"/>
+        </choice>
+      </element>
+    </define>
+    <define name="BibDataExtensionType">
+      <optional>
+        <ref name="doctype"/>
+      </optional>
+      <optional>
+        <ref name="commentperiod"/>
+      </optional>
+    </define>
+  </include>
+  <define name="commentperiod">
+    <element name="commentperiod">
+      <element name="from">
+        <ref name="ISO8601Date"/>
+      </element>
+      <optional>
+        <element name="to">
+          <ref name="ISO8601Date"/>
+        </element>
+      </optional>
+      <optional>
+        <element name="extended">
+          <ref name="ISO8601Date"/>
+        </element>
+      </optional>
+    </element>
+  </define>
+  <define name="reviewernote">
+    <element name="reviewernote">
+      <ref name="Basic-Section"/>
+    </element>
+  </define>
+  <define name="executivesummary">
+    <element name="executivesummary">
+      <ref name="Basic-Section"/>
+    </element>
+  </define>
+  <define name="nist-standard">
+    <element name="nist-standard">
+      <ref name="bibdata"/>
+      <zeroOrMore>
+        <ref name="termdocsource"/>
+      </zeroOrMore>
+      <optional>
+        <ref name="boilerplate"/>
+      </optional>
+      <ref name="preface"/>
+      <oneOrMore>
+        <ref name="sections"/>
+      </oneOrMore>
+      <zeroOrMore>
+        <ref name="annex"/>
+      </zeroOrMore>
+      <ref name="bibliography"/>
+    </element>
+  </define>
+</grammar>

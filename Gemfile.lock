@@ -27,6 +27,7 @@ GEM
     mini_portile2 (2.4.0)
     nokogiri (1.10.4)
       mini_portile2 (~> 2.4.0)
+    optout (0.0.2)
     pry (0.12.2)
       coderay (~> 1.1.0)
       method_source (~> 0.9.0)
@@ -53,6 +54,8 @@ GEM
     rspec-support (3.8.2)
     ruby-debug-ide (0.7.0)
       rake (>= 0.8.1)
+    ruby-jing (0.0.1)
+      optout (>= 0.0.2)
     rubyzip (2.0.0)
     safe_yaml (1.0.5)
     simplecov (0.16.1)
@@ -79,6 +82,7 @@ DEPENDENCIES
   relaton-nist!
   rspec (~> 3.0)
   ruby-debug-ide
+  ruby-jing
   simplecov
   vcr
   webmock

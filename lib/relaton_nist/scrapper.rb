@@ -27,7 +27,7 @@ module RelatonNist
         item_data[:fetched] = Date.today.to_s
         item_data[:type] = "standard"
         item_data[:title] = titles
-        item_data[:doctype] = doctype
+        item_data[:doctype] = "standard" # doctype
 
         NistBibliographicItem.new(**item_data)
       end

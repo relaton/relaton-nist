@@ -68,7 +68,7 @@ module RelatonNist
         if opts[:bibdata]
           b.ext do
             b.doctype doctype
-            keyword.each { |kw| kw.to_xml b }
+            # keyword.each { |kw| kw.to_xml b }
             commentperiod&.to_xml b
           end
         end

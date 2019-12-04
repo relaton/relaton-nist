@@ -57,22 +57,6 @@
   </copyright>
   <ext>
     <doctype>standard</doctype>
-    <keyword>routing security and robustness</keyword>
-    <keyword>Internet infrastructure security</keyword>
-    <keyword>Border Gateway Protocol (BGP) security</keyword>
-    <keyword>prefix hijacks</keyword>
-    <keyword>IP address spoofing</keyword>
-    <keyword>distributed denial-of-service (DDoS)</keyword>
-    <keyword>Resource Public Key Infrastructure (RPKI)</keyword>
-    <keyword>BGP origin validation (BGP-OV)</keyword>
-    <keyword>prefix filtering</keyword>
-    <keyword>BGP path validation (BGP-PV)</keyword>
-    <keyword>BGPsec</keyword>
-    <keyword>route leaks</keyword>
-    <keyword>source address validation (SAV)</keyword>
-    <keyword>unicast Reverse Path Forwarding (uRPF)</keyword>
-    <keyword>remotely triggered black hole (RTBH) filtering</keyword>
-    <keyword>flow specification (Flowspec)</keyword>
     <commentperiod>
       <from>2019-10-17</from>
       <to>2019-11-15</to>
