@@ -5,6 +5,12 @@ RSpec.describe RelatonNist do
     expect(RelatonNist::VERSION).not_to be nil
   end
 
+  it "returs grammar hash" do
+    hash = RelatonNist.grammar_hash
+    expect(hash).to be_instance_of String
+    expect(hash.size).to eq 32
+  end
+
   it "fetch hit" do
     VCR.use_cassette "8200" do
       hit_collection = RelatonNist::NistBibliography.search("NISTIR 8200", "2018")
