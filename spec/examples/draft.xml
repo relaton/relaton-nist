@@ -1,5 +1,5 @@
 <bibdata type="standard">
-  <fetched>2019-10-21</fetched>
+  <fetched>2019-12-18</fetched>
   <title format="text/plain" language="en" script="Latn">Resilient Interdomain Traffic Exchange - BGP Security and DDoS Mitigation</title>
   <uri type="uri">https://csrc.nist.gov/publications/detail/sp/800-189/draft</uri>
   <uri type="doi">https://doi.org/10.6028/NIST.SP.800-189-draft2</uri>
@@ -55,6 +55,7 @@
       </organization>
     </owner>
   </copyright>
+  <place>Gaithersburg, MD</place>
   <ext>
     <doctype>standard</doctype>
     <commentperiod>

@@ -1,5 +1,5 @@
 <bibdata type="standard">
-  <fetched>2019-06-21</fetched>
+  <fetched>2019-12-18</fetched>
   <title format="text/plain" language="en" script="Latn">Security Requirements for Cryptographic Modules</title>
   <uri type="uri">https://csrc.nist.gov/publications/detail/fips/140/3/final</uri>
   <uri type="doi">https://doi.org/10.6028/NIST.FIPS.140-3</uri>
@@ -38,6 +38,7 @@
       <uri type="src">https://csrc.nist.gov/publications/detail/fips/140/2/final</uri>
     </bibitem>
   </relation>
+  <place>Gaithersburg, MD</place>
   <ext>
     <doctype>standard</doctype>
   </ext>

@@ -1,5 +1,5 @@
 <bibdata type="standard">
-  <fetched>2019-10-21</fetched>
+  <fetched>2019-12-18</fetched>
   <title format="text/plain" language="en" script="Latn">Guide to Attribute Based Access Control (ABAC) Definition and Considerations</title>
   <uri type="uri">https://csrc.nist.gov/publications/detail/sp/800-162/final</uri>
   <uri type="doi">https://doi.org/10.6028/NIST.SP.800-162</uri>
@@ -132,6 +132,7 @@
       <uri type="src">https://csrc.nist.gov/publications/detail/sp/800-162/archive/2019-02-25</uri>
     </bibitem>
   </relation>
+  <place>Gaithersburg, MD</place>
   <ext>
     <doctype>standard</doctype>
   </ext>

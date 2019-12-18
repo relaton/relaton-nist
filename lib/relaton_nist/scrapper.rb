@@ -47,6 +47,7 @@ module RelatonNist
           docstatus: fetch_status(json, hit_data[:status]),
           copyright: fetch_copyright(json["published-date"]),
           relation: fetch_relations_json(json),
+          place: ["Gaithersburg, MD"],
           keyword: fetch_keywords(json),
           commentperiod: fetch_commentperiod_json(json),
         }
