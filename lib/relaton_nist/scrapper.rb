@@ -87,7 +87,12 @@ module RelatonNist
       # @return [Array<Nokogiri::HTML::Document, String>]
       def get_page(url)
         uri = URI url
-        resp = Net::HTTP.get_response(uri) # .encode("UTF-8")
+        resp = Net::HTTP.get_response(uri)
+        %r{(?<=newLocation = 'https://' \+ window.location.hostname \+ ')(?<path>[^']+)} =~ resp.body
+        if path
+          uri = URI HitCollection::DOMAIN + path
+          resp = Net::HTTP.get_response(uri)
+        end
         Nokogiri::HTML(resp.body)
       rescue SocketError, Timeout::Error, Errno::EINVAL, Errno::ECONNRESET, EOFError,
              Net::HTTPBadResponse, Net::HTTPHeaderSyntaxError, Net::ProtocolError,
@@ -104,7 +109,7 @@ module RelatonNist
                    else
                      doc.at(
                        "//div[contains(@class, 'publications-detail')]/h3",
-                     )&.text&.strip
+                     )&.text&.strip.sub(/(?<=\w)\([^\)]+\)$/) { |m| " " + m.upcase}.squeeze " "
                    end
         item_ref ||= "?"
         [RelatonBib::DocumentIdentifier.new(id: item_ref, type: "NIST")]
@@ -138,7 +143,7 @@ module RelatonNist
           when "withdrawn"
             stage = "final"
             subst = "withdrawn"
-          when "draft"
+          when /^draft/
             stage = "draft-public"
             subst = "active"
           else
@@ -352,9 +357,9 @@ module RelatonNist
           links << { type: "uri", content: doc["uri"] } if doc["uri"]
           doi = "https://doi.org/" + doc["doi"] if doc["doi"]
         else
-          pub = doc.at "//p/strong[.='Publication:']"
-          pdf = pub.at "./following-sibling::a[.=' Local Download']"
-          doi = pub.at("./following-sibling::a[contains(.,'(DOI)')]")&.attr :href
+          pub = doc.at "//p/strong[contains(., 'Publication:')]"
+          pdf = pub&.at "./following-sibling::a[.=' Local Download']"
+          doi = pub&.at("./following-sibling::a[contains(.,'(DOI)')]")&.attr :href
           links << { type: "pdf", content: pdf[:href] } if pdf
         end
         links << { type: "doi", content: doi } if doi
@@ -417,10 +422,12 @@ module RelatonNist
                  else idx + 1
                  end
 
-          content = s.text.match(/^[^\(]+/).to_s.strip.gsub "  ", " "
+          content = s.text.match(/^[^\(]+/).to_s.strip.squeeze " "
 
-          ref = case content.match(/\w+/).to_s
-                when "Draft" then content.match(/(?<=Draft\s).+/).to_s + " (#{iter}PD)"
+          ref = case s.text
+                when /^Draft/ then content.match(/(?<=Draft\s).+/).to_s + " (#{iter}PD)"
+                when /\(Draft\)/ then content + " (#{iter}PD)"
+                else content
                 end
 
           fref = RelatonBib::FormattedRef.new(

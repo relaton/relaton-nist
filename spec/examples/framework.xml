@@ -1,5 +1,5 @@
 <bibdata type="standard">
-  <fetched>2019-10-21</fetched>
+  <fetched>2020-01-16</fetched>
   <title format="text/plain" language="en" script="Latn">Framework for Improving Critical Infrastructure Cybersecurity, Version 1.1</title>
   <uri type="doi">https://doi.org/10.6028/NIST.CSWP.04162018</uri>
   <docidentifier type="NIST">FRAMEWORK FOR IMPROVING CRITICAL INFRASTRUCTURE CYBERSECURITY, VERSION 1.1</docidentifier>
@@ -42,20 +42,20 @@
   </copyright>
   <relation type="updates">
     <bibitem>
-      <formattedref format="text/plain" language="en" script="Latn">NISTIR 8204 (DRAFT)</formattedref>
-      <uri type="src">https://csrc.nist.gov/publications/detail/nistir/8204/draft</uri>
-    </bibitem>
-  </relation>
-  <relation type="updates">
-    <bibitem>
-      <formattedref format="text/plain" language="en" script="Latn">NISTIR 8204</formattedref>
-      <uri type="src">https://csrc.nist.gov/publications/detail/nistir/8204/archive/2019-04-26</uri>
-    </bibitem>
-  </relation>
-  <relation type="updates">
-    <bibitem>
       <formattedref format="text/plain" language="en" script="Latn">NISTIR 8204</formattedref>
       <uri type="src">https://csrc.nist.gov/publications/detail/nistir/8204/final</uri>
+    </bibitem>
+  </relation>
+  <relation type="updates">
+    <bibitem>
+      <formattedref format="text/plain" language="en" script="Latn">NISTIR 8183</formattedref>
+      <uri type="src">https://csrc.nist.gov/publications/detail/nistir/8183/final</uri>
+    </bibitem>
+  </relation>
+  <relation type="updates">
+    <bibitem>
+      <formattedref format="text/plain" language="en" script="Latn">White Paper NIST Technical Note (TN) 2051</formattedref>
+      <uri type="src">https://csrc.nist.gov/publications/detail/white-paper/2019/07/09/nist-tn-2051-cybersecurity-framework-smart-grid-profile/final</uri>
     </bibitem>
   </relation>
   <series>
