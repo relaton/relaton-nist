@@ -1,5 +1,5 @@
 <bibitem id="SP800-37Rev.2(Draft)" type="standard">
-  <fetched>2019-12-18</fetched>
+  <fetched>2020-02-13</fetched>
   <title format="text/plain" language="en" script="Latn">Risk Management Framework for Information Systems and Organizations - A System Life Cycle Approach for Security and Privacy</title>
   <uri type="uri">https://csrc.nist.gov/publications/detail/sp/800-37/rev-2/archive/2018-05-09</uri>
   <docidentifier type="NIST">SP 800-37 Rev. 2 (Draft)</docidentifier>
@@ -36,4 +36,40 @@
     </owner>
   </copyright>
   <place>Gaithersburg, MD</place>
+  <keyword>assess</keyword>
+  <keyword>authorization to operate</keyword>
+  <keyword>common control authorization</keyword>
+  <keyword>authorization to use</keyword>
+  <keyword>authorizing official</keyword>
+  <keyword>categorize</keyword>
+  <keyword>common control</keyword>
+  <keyword>common control provider</keyword>
+  <keyword>continuous monitoring</keyword>
+  <keyword>control baseline</keyword>
+  <keyword>hybrid control</keyword>
+  <keyword>information owner or steward</keyword>
+  <keyword>monitor</keyword>
+  <keyword>ongoing authorization</keyword>
+  <keyword>plan of action and milestones</keyword>
+  <keyword>privacy assessment report</keyword>
+  <keyword>privacy control</keyword>
+  <keyword>privacy plan</keyword>
+  <keyword>privacy risk</keyword>
+  <keyword>profile</keyword>
+  <keyword>risk assessment</keyword>
+  <keyword>risk executive function</keyword>
+  <keyword>risk management</keyword>
+  <keyword>risk management framework</keyword>
+  <keyword>security assessment report</keyword>
+  <keyword>security control</keyword>
+  <keyword>security plan</keyword>
+  <keyword>security risk</keyword>
+  <keyword>senior agency official for privacy</keyword>
+  <keyword>senior agency information security officer</keyword>
+  <keyword>senior agency official for privacy</keyword>
+  <keyword>supply chain risk management</keyword>
+  <keyword>system development life cycle</keyword>
+  <keyword>system owner</keyword>
+  <keyword>system privacy officer</keyword>
+  <keyword>system security officer</keyword>
 </bibitem>

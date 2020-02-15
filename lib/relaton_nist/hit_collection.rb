@@ -66,12 +66,12 @@ module RelatonNist
         serie = h.at("td[1]").text.strip
         code  = h.at("td[2]").text.strip
         title = link.text
-        url   = DOMAIN + link[:href]
+        doc_url   = DOMAIN + link[:href]
         status = h.at("td[4]").text.strip.downcase
         release_date = Date.strptime h.at("td[5]").text.strip, "%m/%d/%Y"
         Hit.new(
           {
-            code: code, serie: serie, title: title, url: url, status: status,
+            code: code, serie: serie, title: title, url: doc_url, status: status,
             release_date: release_date
           }, self
         )

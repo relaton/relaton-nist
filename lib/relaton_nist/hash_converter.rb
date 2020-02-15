@@ -9,16 +9,11 @@ module RelatonNist
         ret = super
         return if ret.nil?
 
-        keyword_hash_to_bib(ret)
         commentperiod_hash_to_bib(ret)
         ret
       end
 
       private
-
-      def keyword_hash_to_bib(ret)
-        ret[:keyword]&.map! { |kw| Keyword.new kw }
-      end
 
       def commentperiod_hash_to_bib(ret)
         return unless ret[:commentperiod]

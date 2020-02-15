@@ -14,7 +14,6 @@ module RelatonNist
         ext = nistitem.at "./ext"
         return data unless ext
 
-        data[:keyword] = fetch_keyword(ext)
         data[:commentperiod] = fetch_commentperiod(ext)
         data
       end
@@ -38,12 +37,6 @@ module RelatonNist
           from: cp.at("from").text, to: cp.at("to")&.text,
           extended: cp.at("extended")&.text
         )
-      end
-
-      def fetch_keyword(item)
-        item.xpath("./keyword").map do |kw|
-          Keyword.new kw.children.first.to_xml
-        end
       end
     end
   end

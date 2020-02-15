@@ -134,7 +134,7 @@ module RelatonNist
           iter = doc["iteration"] == "initial" ? 1 : doc["iteration"]
         else
           case status
-          when "draft (withdrawn)"
+          when "draft (obsolete)"
             stage = "draft-public"
             subst = "withdrawn"
           when "retired draft"
@@ -445,7 +445,7 @@ module RelatonNist
               else
                 doc.xpath "//span[@id='pub-keywords-container']/span"
               end
-        kws.map { |kw| Keyword.new kw.is_a?(String) ? kw : kw.text }
+        kws.map { |kw| kw.is_a?(String) ? kw : kw.text }
       end
 
       # @param doc [Nokogiri::HTML::Document]

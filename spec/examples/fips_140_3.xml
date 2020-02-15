@@ -1,5 +1,5 @@
 <bibdata type="standard">
-  <fetched>2019-12-18</fetched>
+  <fetched>2020-02-13</fetched>
   <title format="text/plain" language="en" script="Latn">Security Requirements for Cryptographic Modules</title>
   <uri type="uri">https://csrc.nist.gov/publications/detail/fips/140/3/final</uri>
   <uri type="doi">https://doi.org/10.6028/NIST.FIPS.140-3</uri>
@@ -39,6 +39,15 @@
     </bibitem>
   </relation>
   <place>Gaithersburg, MD</place>
+  <keyword>computer security</keyword>
+  <keyword>telecommunication security</keyword>
+  <keyword>physical security</keyword>
+  <keyword>software security</keyword>
+  <keyword>cryptography</keyword>
+  <keyword>cryptographic modules</keyword>
+  <keyword>Federal Information Processing Standard (FIPS)</keyword>
+  <keyword>ISO/IEC 19790:2012</keyword>
+  <keyword>ISO/IEC 24759:2014</keyword>
   <ext>
     <doctype>standard</doctype>
   </ext>

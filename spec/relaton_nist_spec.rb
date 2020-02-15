@@ -122,6 +122,19 @@ RSpec.describe RelatonNist do
       end
     end
 
+    it "DRAFT OBSOLETE" do
+      VCR.use_cassette "draft_obsolete" do
+        result = RelatonNist::NistBibliography.get("SP 800-189(PD)", nil, {}).to_xml bibdata: true
+        file_path = "spec/examples/draft_obsolete.xml"
+        File.write file_path, result unless File.exist? file_path
+        expect(result).to be_equivalent_to File.open(file_path, "r:UTF-8", &:read)
+          .gsub(/(?<=<fetched>)\d{4}-\d{2}-\d{2}/, Date.today.to_s)
+        schema = Jing.new "spec/examples/isobib.rng"
+        errors = schema.validate file_path
+        expect(errors).to eq []
+      end
+    end
+
     it "doc with issued & published dates" do
       VCR.use_cassette "json_data" do
         result = RelatonNist::NistBibliography.get("SP 800-162", nil, {}).to_xml bibdata: true
@@ -167,8 +180,8 @@ RSpec.describe RelatonNist do
     end
 
     it "draft active" do
-      VCR.use_cassette "nistir_8228" do
-        result = RelatonNist::NistBibliography.get "NISTIR 8228 (PD)"
+      VCR.use_cassette "nistir_8259_pd" do
+        result = RelatonNist::NistBibliography.get "NISTIR 8259 (PD)"
         expect(result.status.stage).to eq "draft-public"
         expect(result.status.substage).to eq "active"
       end

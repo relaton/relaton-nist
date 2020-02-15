@@ -4,7 +4,7 @@ module RelatonNist
     attr_reader :doctype
 
     # @return [Array<RelatonNist::Keyword>]
-    attr_reader :keyword
+    # attr_reader :keyword
 
     # @return [RelatonNist::CommentPeriod, NilClass]
     attr_reader :commentperiod
@@ -57,7 +57,7 @@ module RelatonNist
     # @option relation [Array<RelatonBib::BibItemLocality>] :bib_locality
     def initialize(**args)
       @doctype = args.delete(:doctype) || "standard"
-      @keyword = args.delete(:keyword) || []
+      # @keyword = args.delete(:keyword) || []
       @commentperiod = args.delete :commentperiod
       super
     end
@@ -78,7 +78,7 @@ module RelatonNist
     # @return [Hash]
     def to_hash
       hash = super
-      hash["keyword"] = single_element_array(keyword) if keyword&.any?
+      # hash["keyword"] = single_element_array(keyword) if keyword&.any?
       hash["commentperiod"] = commentperiod.to_hash if commentperiod
       hash
     end
