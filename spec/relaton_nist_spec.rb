@@ -64,7 +64,7 @@ RSpec.describe RelatonNist do
       hits = RelatonNist::NistBibliography.search("NISTIR 8200", "2018").fetch
       expect(hits.to_s).to eq "<RelatonNist::HitCollection:"\
         "#{format('%#.14x', hits.object_id << 1)} "\
-        "@fetched=true>"
+        "@ref=NISTIR 8200 @fetched=true>"
     end
   end
 

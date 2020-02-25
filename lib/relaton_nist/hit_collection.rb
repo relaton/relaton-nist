@@ -13,30 +13,24 @@ module RelatonNist
     DATAFILEDIR = File.expand_path ".relaton/nist", Dir.home
     DATAFILE = File.expand_path "pubs-export.zip", DATAFILEDIR
 
-    # rubocop:disable Metrics/AbcSize, Metrics/MethodLength
-
     # @param ref_nbr [String]
     # @param year [String]
     # @param opts [Hash]
     # @option opts [String] :stage
     def initialize(ref_nbr, year = nil, opts = {})
-      @text = ref_nbr
-      @year = year
+      super ref_nbr, year
 
       /(?<docid>(SP|FIPS)\s[0-9-]+)/ =~ text
-      hits = docid ? from_json(docid, **opts) : from_csrc(**opts)
+      @array = docid ? from_json(docid, **opts) : from_csrc(**opts)
 
-      hits.sort! do |a, b|
+      @array.sort! do |a, b|
         if a.sort_value != b.sort_value
           b.sort_value - a.sort_value
         else
           (b.hit[:release_date] - a.hit[:release_date]).to_i
         end
       end
-      concat hits
-      @fetched = false
     end
-    # rubocop:enable Metrics/AbcSize, Metrics/MethodLength
 
     private
 
