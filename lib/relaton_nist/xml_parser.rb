@@ -3,11 +3,12 @@ module RelatonNist
     class << self
       def from_xml(xml)
         doc = Nokogiri::XML xml
+        doc.remove_namespaces!
         nistitem = doc.at("/bibitem|/bibdata")
         if nistitem
           NistBibliographicItem.new(item_data(nistitem))
         elsif
-          warn "[relato-nist] can't find bibitem or bibdata element in the XML"
+          warn "[relaton-nist] can't find bibitem or bibdata element in the XML"
         end
       end
 
