@@ -60,9 +60,12 @@ module RelatonNist
       def nistbib_get1(code, year, opts)
         result = nistbib_search_filter(code, year, opts) || (return nil)
         ret = nistbib_results_filter(result, year, opts)
-        return ret[:ret] if ret[:ret]
-
-        fetch_ref_err(code, year, ret[:years])
+        if ret[:ret]
+          warn "[relaton-nist] (\"#{code}\") found #{ret[:ret].docidentifier.first.id}"
+          ret[:ret]
+        else
+          fetch_ref_err(code, year, ret[:years])
+        end
       end
 
       # Sort through the results from RelatonNist, fetching them three at a time,
@@ -119,7 +122,7 @@ module RelatonNist
       def nistbib_search_filter(code, year, opts)
         docid = code.match(%r{[0-9-]{3,}}).to_s
         serie = code.match(%r{(FISP|SP|NISTIR)(?=\s)})
-        warn "fetching #{code}..."
+        warn "[relaton-nist] (\"#{code}\") fetching..."
         result = search(code, year, opts)
         result.select do |i|
           i.hit[:code]&.include?(docid) && (!serie || i.hit[:serie] == serie.to_s)
@@ -128,12 +131,12 @@ module RelatonNist
 
       def fetch_ref_err(code, year, missed_years)
         id = year ? "#{code}:#{year}" : code
-        warn "WARNING: no match found online for #{id}. "\
+        warn "[relaton-nist] WARNING: no match found online for #{id}. "\
           "The code must be exactly like it is on the standards website."
-        warn "(There was no match for #{year}, though there were matches "\
+        warn "[relaton-nist] (There was no match for #{year}, though there were matches "\
           "found for #{missed_years.join(', ')}.)" unless missed_years.empty?
         if /\d-\d/ =~ code
-          warn "The provided document part may not exist, or the document "\
+          warn "[relaton-nist] The provided document part may not exist, or the document "\
             "may no longer be published in parts."
         end
         nil

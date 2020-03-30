@@ -235,7 +235,7 @@ module RelatonNist
             )
           end
           if contr["surname"]
-            affiliation = RelatonBib::Affilation.new organization: org
+            affiliation = RelatonBib::Affiliation.new organization: org
             entity = RelatonBib::Person.new(
               name: full_name(contr, lang, script), affiliation: [affiliation],
             )
@@ -271,7 +271,7 @@ module RelatonNist
               url = nil
             end
             org = RelatonBib::Organization.new name: org_name, url: url, abbreviation: abbrev
-            affiliation = RelatonBib::Affilation.new organization: org
+            affiliation = RelatonBib::Affiliation.new organization: org
             entity = RelatonBib::Person.new(
               name: fullname, affiliation: [affiliation],
             )

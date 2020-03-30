@@ -206,19 +206,20 @@ RSpec.describe RelatonNist do
   context "warns when" do
     it "a code matches a resource but the year does not" do
       VCR.use_cassette "8200_wrong_year" do
-        expect { RelatonNist::NistBibliography.get("NISTIR 8200", "2017", {}) }.to output(
-          "fetching NISTIR 8200...\nWARNING: no match found online for NISTIR 8200:2017. "\
-          "The code must be exactly like it is on the standards website.\n",
+        expect do
+          RelatonNist::NistBibliography.get("NISTIR 8200", "2017", {})
+        end.to output(
+          /\[relaton-nist\] WARNING: no match found online for NISTIR 8200:2017/,
         ).to_stderr
       end
     end
 
     it "search failed" do
       VCR.use_cassette "json_data" do
-        expect { RelatonNist::NistBibliography.get("SP 2222", nil, {}) }.to output(
-          "fetching SP 2222...\n"\
-          "WARNING: no match found online for SP 2222. The code must be exactly "\
-          "like it is on the standards website.\n",
+        expect do
+          RelatonNist::NistBibliography.get("SP 2222", nil, {})
+        end.to output(
+          /\[relaton-nist\] WARNING: no match found online for SP 2222/,
         ).to_stderr
       end
     end
