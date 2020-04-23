@@ -201,6 +201,13 @@ RSpec.describe RelatonNist do
         expect(errors).to eq []
       end
     end
+
+    it "get NIST SP 800-12" do
+      VCR.use_cassette "nist_sp_800_12" do
+        result = RelatonNist::NistBibliography.get "NIST SP 800-12"
+        expect(result.docidentifier.first.id).to eq "SP 800-12"
+      end
+    end
   end
 
   context "warns when" do
@@ -226,7 +233,7 @@ RSpec.describe RelatonNist do
 
     it "contains EP at the end" do
       expect { RelatonNist::NistBibliography.get "FIPS 201 EP" }.to output(
-        /WARNING: no match found online for FIPS 201 EP/
+        /WARNING: no match found online for FIPS 201 EP/,
       ).to_stderr
     end
   end

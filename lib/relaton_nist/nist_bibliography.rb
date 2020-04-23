@@ -111,21 +111,22 @@ module RelatonNist
         { years: missed_years }
       end
 
-      def fetch_pages(s, n)
-        workers = RelatonBib::WorkersPool.new n
+      def fetch_pages(hits, threads)
+        workers = RelatonBib::WorkersPool.new threads
         workers.worker { |w| { i: w[:i], hit: w[:hit].fetch } }
-        s.each_with_index { |hit, i| workers << { i: i, hit: hit } }
+        hits.each_with_index { |hit, i| workers << { i: i, hit: hit } }
         workers.end
-        workers.result.sort { |x, y| x[:i] <=> y[:i] }.map { |x| x[:hit] }
+        workers.result.sort_by { |a| a[:i] }.map { |x| x[:hit] }
       end
 
       def nistbib_search_filter(code, year, opts)
-        docid = code.match(%r{[0-9-]{3,}}).to_s
+        idregex = %r{[0-9-]{3,}}
+        docid = code.match(idregex).to_s
         serie = code.match(%r{(FISP|SP|NISTIR)(?=\s)})
         warn "[relaton-nist] (\"#{code}\") fetching..."
         result = search(code, year, opts)
         result.select do |i|
-          i.hit[:code]&.include?(docid) && (!serie || i.hit[:serie] == serie.to_s)
+          i.hit[:code]&.match(idregex).to_s == docid && (!serie || i.hit[:serie] == serie.to_s)
         end
       end
 
