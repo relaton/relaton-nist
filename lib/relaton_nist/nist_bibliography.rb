@@ -137,8 +137,8 @@ module RelatonNist
         warn "[relaton-nist] (There was no match for #{year}, though there were matches "\
           "found for #{missed_years.join(', ')}.)" unless missed_years.empty?
         if /\d-\d/ =~ code
-          warn "[relaton-nist] The provided document part may not exist, or the document "\
-            "may no longer be published in parts."
+          warn "[relaton-nist] The provided document part may not exist, "\
+            "or the document may no longer be published in parts."
         end
         nil
       end

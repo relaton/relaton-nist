@@ -5,104 +5,14 @@
     we cannot have a new default namespace: we will end up with a grammar with two different
     namespaces, one for isostandard and one for csand additions. And we do not want that.
   -->
-  <include href="isostandard.rng">
+  <include href="isodoc.rng">
     <start>
       <ref name="nist-standard"/>
     </start>
-    <define name="figure">
-      <element name="figure">
-        <attribute name="id">
-          <data type="ID"/>
-        </attribute>
-        <optional>
-          <ref name="tname"/>
-        </optional>
-        <choice>
-          <ref name="image"/>
-          <ref name="pre"/>
-          <oneOrMore>
-            <ref name="subfigure"/>
-          </oneOrMore>
-        </choice>
-        <zeroOrMore>
-          <ref name="fn"/>
-        </zeroOrMore>
-        <optional>
-          <ref name="dl"/>
-        </optional>
-        <zeroOrMore>
-          <ref name="note"/>
-        </zeroOrMore>
-      </element>
-    </define>
-    <define name="subfigure">
-      <element name="figure">
-        <attribute name="id">
-          <data type="ID"/>
-        </attribute>
-        <optional>
-          <ref name="tname"/>
-        </optional>
-        <choice>
-          <ref name="image"/>
-          <ref name="pre"/>
-        </choice>
-      </element>
-    </define>
     <define name="DocumentType">
       <value>standard</value>
     </define>
-    <define name="TitleType">
-      <choice>
-        <value>alternative</value>
-        <value>original</value>
-        <value>unofficial</value>
-        <value>subtitle</value>
-        <value>main</value>
-      </choice>
-    </define>
-    <!-- DocRelationType |= "obsoletedBy" | "supersedes" | "supersededBy" -->
-    <define name="DocRelationType">
-      <choice>
-        <value>obsoletes</value>
-        <value>updates</value>
-        <value>updatedBy</value>
-        <value>complements</value>
-        <value>derivedFrom</value>
-        <value>translatedFrom</value>
-        <value>adoptedFrom</value>
-        <value>equivalent</value>
-        <value>identical</value>
-        <value>nonequivalent</value>
-        <value>includedIn</value>
-        <value>includes</value>
-        <value>instance</value>
-        <value>partOf</value>
-        <value>hasDraft</value>
-        <value>obsoletedBy</value>
-        <value>supersedes</value>
-        <value>supersededBy</value>
-      </choice>
-    </define>
-    <!-- BibliographicDateType |= "abandoned" | "superseded" -->
-    <define name="BibliographicDateType">
-      <choice>
-        <value>published</value>
-        <value>accessed</value>
-        <value>created</value>
-        <value>implemented</value>
-        <value>obsoleted</value>
-        <value>confirmed</value>
-        <value>updated</value>
-        <value>issued</value>
-        <value>transmitted</value>
-        <value>copied</value>
-        <value>unchanged</value>
-        <value>circulated</value>
-        <value>abandoned</value>
-        <value>superseded</value>
-      </choice>
-    </define>
+    <!-- TitleType = ( "alternative" | "original" | "unofficial" | "subtitle" | "main" ) -->
     <define name="preface">
       <element name="preface">
         <optional>
@@ -112,7 +22,10 @@
           <ref name="foreword"/>
         </optional>
         <zeroOrMore>
-          <ref name="clause"/>
+          <choice>
+            <ref name="clause"/>
+            <ref name="errata_clause"/>
+          </choice>
         </zeroOrMore>
         <optional>
           <ref name="reviewernote"/>
@@ -122,51 +35,11 @@
         </optional>
       </element>
     </define>
-    <define name="annex">
-      <element name="annex">
-        <optional>
-          <attribute name="id">
-            <data type="ID"/>
-          </attribute>
-        </optional>
-        <optional>
-          <attribute name="language"/>
-        </optional>
-        <optional>
-          <attribute name="script"/>
-        </optional>
-        <optional>
-          <attribute name="inline-header">
-            <data type="boolean"/>
-          </attribute>
-        </optional>
-        <optional>
-          <attribute name="obligation">
-            <choice>
-              <value>normative</value>
-              <value>informative</value>
-            </choice>
-          </attribute>
-        </optional>
-        <optional>
-          <ref name="section-title"/>
-        </optional>
-        <zeroOrMore>
-          <!--
-            allow hanging paragraps in annexes: they introduce lists
-            ( paragraph-with-footnote | table | note | formula | admonition | ol | ul | dl | figure | quote | sourcecode | review | example )*,
-          -->
-          <ref name="BasicBlock"/>
-        </zeroOrMore>
-        <zeroOrMore>
-          <ref name="note"/>
-        </zeroOrMore>
-        <choice>
-          <zeroOrMore>
-            <ref name="clause-hanging-paragraph-with-footnote"/>
-          </zeroOrMore>
-          <ref name="terms"/>
-        </choice>
+    <define name="editorialgroup">
+      <element name="editorialgroup">
+        <oneOrMore>
+          <ref name="committee"/>
+        </oneOrMore>
       </element>
     </define>
     <define name="BibDataExtensionType">
@@ -174,10 +47,29 @@
         <ref name="doctype"/>
       </optional>
       <optional>
+        <ref name="editorialgroup"/>
+      </optional>
+      <zeroOrMore>
+        <ref name="ics"/>
+      </zeroOrMore>
+      <optional>
         <ref name="commentperiod"/>
       </optional>
     </define>
   </include>
+  <define name="DocRelationType" combine="choice">
+    <choice>
+      <value>obsoletedBy</value>
+      <value>supersedes</value>
+      <value>supersededBy</value>
+    </choice>
+  </define>
+  <define name="BibliographicDateType" combine="choice">
+    <choice>
+      <value>abandoned</value>
+      <value>superseded</value>
+    </choice>
+  </define>
   <define name="commentperiod">
     <element name="commentperiod">
       <element name="from">
@@ -205,6 +97,71 @@
       <ref name="Basic-Section"/>
     </element>
   </define>
+  <define name="committee">
+    <element name="committee">
+      <text/>
+    </element>
+  </define>
+  <define name="errata">
+    <element name="errata">
+      <oneOrMore>
+        <ref name="erratarow"/>
+      </oneOrMore>
+    </element>
+  </define>
+  <define name="erratarow">
+    <element name="row">
+      <element name="date">
+        <ref name="ISO8601Date"/>
+      </element>
+      <element name="type">
+        <text/>
+      </element>
+      <element name="change">
+        <oneOrMore>
+          <ref name="TextElement"/>
+        </oneOrMore>
+      </element>
+      <element name="pages">
+        <text/>
+      </element>
+    </element>
+  </define>
+  <define name="errata_clause">
+    <element name="clause">
+      <optional>
+        <attribute name="id">
+          <data type="ID"/>
+        </attribute>
+      </optional>
+      <optional>
+        <attribute name="language"/>
+      </optional>
+      <optional>
+        <attribute name="script"/>
+      </optional>
+      <optional>
+        <attribute name="obligation">
+          <choice>
+            <value>normative</value>
+            <value>informative</value>
+          </choice>
+        </attribute>
+      </optional>
+      <optional>
+        <ref name="section-title"/>
+      </optional>
+      <group>
+        <zeroOrMore>
+          <ref name="BasicBlock"/>
+        </zeroOrMore>
+        <zeroOrMore>
+          <ref name="note"/>
+        </zeroOrMore>
+      </group>
+      <ref name="errata"/>
+    </element>
+  </define>
   <define name="nist-standard">
     <element name="nist-standard">
       <ref name="bibdata"/>
@@ -221,7 +178,9 @@
       <zeroOrMore>
         <ref name="annex"/>
       </zeroOrMore>
-      <ref name="bibliography"/>
+      <optional>
+        <ref name="bibliography"/>
+      </optional>
     </element>
   </define>
 </grammar>
