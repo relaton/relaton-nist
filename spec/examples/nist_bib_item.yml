@@ -19,8 +19,10 @@ language: en
 script: Latn
 
 docstatus:
-  stage: final
-  substage: active
+  stage:
+    value: final
+  substage:
+    value: active
 
 date:
   - type: published

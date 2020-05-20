@@ -182,8 +182,8 @@ RSpec.describe RelatonNist do
     it "draft active" do
       VCR.use_cassette "nistir_8259_pd" do
         result = RelatonNist::NistBibliography.get "NISTIR 8259 (PD)"
-        expect(result.status.stage).to eq "draft-public"
-        expect(result.status.substage).to eq "active"
+        expect(result.status.stage.value).to eq "draft-public"
+        expect(result.status.substage.value).to eq "active"
       end
     end
 
