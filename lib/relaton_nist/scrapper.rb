@@ -16,10 +16,10 @@ module RelatonNist
                     else
                       from_csrs hit_data
                     end
-        doctype = "standard"
+        # doctype = "standard"
         titles = fetch_titles(hit_data)
         unless /^(SP|NISTIR|FIPS) / =~ item_data[:docid][0].id
-          doctype = id_cleanup(item_data[:docid][0].id)
+          # doctype = id_cleanup(item_data[:docid][0].id)
           item_data[:docid][0] = RelatonBib::DocumentIdentifier.new(
             id: titles[0][:content].upcase, type: "NIST",
           )
@@ -78,9 +78,9 @@ module RelatonNist
       # Strip status from doc id
       # @param id String
       # @return String
-      def id_cleanup(id)
-        id.sub(/ \(WITHDRAWN\)/, "").sub(/ \(([^) ]+ )?DRAFT\)/i, "")
-      end
+      # def id_cleanup(id)
+      #   id.sub(/ \(WITHDRAWN\)/, "").sub(/ \(([^) ]+ )?DRAFT\)/i, "")
+      # end
 
       # Get page.
       # @param path [String] page's path
@@ -304,7 +304,7 @@ module RelatonNist
       def name_parts(part, lang, script)
         return [] unless part
 
-        [RelatonBib::LocalizedString.new(name[part], lang, script)]
+        [RelatonBib::LocalizedString.new(part, lang, script)]
       end
 
       # @param doc [String, Hash]
