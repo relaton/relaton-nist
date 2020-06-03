@@ -325,7 +325,9 @@ module RelatonNist
       # @param doc [Nokigiri::HTML::Document]
       # @return [Array<Hash>]
       def fetch_abstract(doc)
-        abstract_content = doc.xpath('//div[contains(@class, "pub-abstract-callout")]/div[1]/p').text
+        abstract_content = doc.xpath(
+          '//div[contains(@class, "pub-abstract-callout")]/div[1]/p',
+        ).text
         [{
           content: abstract_content,
           language: "en",
@@ -336,7 +338,7 @@ module RelatonNist
 
       # Fetch copyright.
       # @param doc [Nokogiri::HTL::Document, String]
-      # @return [Hash]
+      # @return [Array<Hash>]
       def fetch_copyright(doc)
         name = "National Institute of Standards and Technology"
         url = "www.nist.gov"
@@ -345,8 +347,10 @@ module RelatonNist
               doc.at("//span[@id='pub-release-date']").text.strip
             end
         from = d.match(/\d{4}/).to_s
-        { owner: { name: name, abbreviation: "NIST", url: url }, from: from }
+        [{ owner: [{ name: name, abbreviation: "NIST", url: url }], from: from }]
       end
+
+      # rubocop:disable Metrics/MethodLength, Metrics/AbcSize
 
       # Fetch links.
       # @param doc [Nokogiri::HTML::Document, Hash]
@@ -365,6 +369,7 @@ module RelatonNist
         links << { type: "doi", content: doi } if doi
         links
       end
+      # rubocop:enable Metrics/MethodLength
 
       # Fetch relations.
       # @param doc [Nokogiri::HTML::Document]
@@ -382,6 +387,7 @@ module RelatonNist
           doc_relation "updates", r.text, DOMAIN + r[:href]
         end
       end
+      # rubocop:enable Metrics/AbcSize
 
       def fetch_relations_json(doc)
         relations = doc["supersedes"].map do |r|
@@ -409,6 +415,8 @@ module RelatonNist
         )
       end
 
+      # rubocop:disable Metrics/MethodLength, Metrics/AbcSize
+
       # @param doc [Nokogiri::HTML::Document]
       # @return [Array<RelatonBib::Series>]
       def fetch_series(doc)
@@ -418,14 +426,14 @@ module RelatonNist
           next if s.name == "span"
 
           iter = if idx.zero? then "I"
-                   #  elsif status == "final" && idx == (series.size - 1) then "F"
                  else idx + 1
                  end
 
           content = s.text.match(/^[^\(]+/).to_s.strip.squeeze " "
 
           ref = case s.text
-                when /^Draft/ then content.match(/(?<=Draft\s).+/).to_s + " (#{iter}PD)"
+                when /^Draft/
+                  content.match(/(?<=Draft\s).+/).to_s + " (#{iter}PD)"
                 when /\(Draft\)/ then content + " (#{iter}PD)"
                 else content
                 end
@@ -436,6 +444,7 @@ module RelatonNist
           RelatonBib::Series.new(formattedref: fref)
         end.select { |s| s }
       end
+      # rubocop:enable Metrics/MethodLength, Metrics/AbcSize
 
       # @param doc [Nokogiri::HTML::Document, Hash]
       # @return [Array<RelatonNist::Keyword>]
@@ -448,6 +457,7 @@ module RelatonNist
         kws.map { |kw| kw.is_a?(String) ? kw : kw.text }
       end
 
+      # rubocop:disable Metrics/AbcSize
       # @param doc [Nokogiri::HTML::Document]
       # @return [RelatonNist::CommentPeriod, NilClass]
       def fetch_commentperiod(doc)
@@ -459,11 +469,13 @@ module RelatonNist
         d = doc.at("//span[@id='pub-release-date']").text.strip
         from = Date.strptime(d, "%B %Y").to_s
 
-        ex = doc.at "//strong[contains(.,'The comment closing date has been extended to')]"
+        ex = doc.at "//strong[contains(.,'The comment closing date has been "\
+        "extended to')]"
         ext = ex&.text&.match(/\w+\s\d{2},\s\d{4}/).to_s
         extended = ext.empty? ? nil : Date.strptime(ext, "%B %d, %Y")
         CommentPeriod.new from: from, to: to, extended: extended
       end
+      # rubocop:enable Metrics/AbcSize
 
       # @param json [Hash]
       # @return [RelatonNist::CommentPeriod, NilClass]
