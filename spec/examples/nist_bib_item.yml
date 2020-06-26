@@ -24,6 +24,8 @@ docstatus:
   substage:
     value: active
 
+doctype: standard
+
 date:
   - type: published
     value: "2018-12-01"
@@ -61,6 +63,7 @@ link:
 relation:
   - type: partOf
     bibitem:
+      doctype: standard
       formattedref:
         content: NISTIR 8011 Vol. 1
         format: text/plain
@@ -69,6 +72,7 @@ relation:
         content: https://csrc.nist.gov/publications/detail/nistir/8011/vol-1/final
   - type: updates
     bibitem:
+      doctype: standard
       formattedref:
         content: SP 800-53A Rev. 4
         format: text/plain

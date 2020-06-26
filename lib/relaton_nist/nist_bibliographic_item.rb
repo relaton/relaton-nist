@@ -30,7 +30,7 @@ module RelatonNist
     # @param validity [RelatonBib:Validity, NilClass]
     # @param fetched [Date, NilClass] default nil
     # @param doctype [String]
-    # @param keyword [Array<RelatonNist::Keyword>]
+    # @param keyword [Array<RelatonBib::Keyword>]
     # @param commentperiod [RelatonNist::CommentPeriod, NilClass]
     #
     # @param date [Array<Hash>]
@@ -56,7 +56,8 @@ module RelatonNist
     # @option relation [RelatonBib::BibliographicItem] :bibitem
     # @option relation [Array<RelatonBib::BibItemLocality>] :bib_locality
     def initialize(**args)
-      @doctype = args.delete(:doctype) || "standard"
+      # @doctype = args.delete(:doctype) || "standard"
+      # args[:doctype] ||= "standard"
       # @keyword = args.delete(:keyword) || []
       @commentperiod = args.delete :commentperiod
       super
@@ -67,8 +68,8 @@ module RelatonNist
       super builder, date_format: :short, **opts do |b|
         if opts[:bibdata]
           b.ext do
-            b.doctype doctype
-            # keyword.each { |kw| kw.to_xml b }
+            b.doctype doctype if doctype
+            # keyword.each { |kw| b.keyword { kw.to_xml b } }
             commentperiod&.to_xml b
           end
         end
