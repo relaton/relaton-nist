@@ -1,0 +1,54 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://csrc.nist.gov/CSRC/media/feeds/metanorma/pubs-export.meta
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - text/plain
+      Last-Modified:
+      - Mon, 22 Jun 2020 05:05:57 GMT
+      Accept-Ranges:
+      - bytes
+      Etag:
+      - '"80a81bd05248d61:0"'
+      Server:
+      - Microsoft-IIS/8.5
+      X-Frame-Options:
+      - DENY
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Security-Policy:
+      - frame-ancestors 'self'
+      Date:
+      - Sun, 28 Jun 2020 13:47:40 GMT
+      Content-Length:
+      - '151'
+      Strict-Transport-Security:
+      - max-age=31536000
+    body:
+      encoding: UTF-8
+      string: |-
+        lastModifiedDate:2020-06-22T05:01:18.1102193-04:00
+        size: 917614
+        zipSize: 75341
+        sha256: 5123C2A2665C6D6A6029615E0D466222F901C3352BFFFFF8953F3D0BA0AE8DAA
+    http_version: 
+  recorded_at: Sun, 28 Jun 2020 13:47:41 GMT
+recorded_with: VCR 5.0.0

@@ -208,6 +208,13 @@ RSpec.describe RelatonNist do
         expect(result.docidentifier.first.id).to eq "SP 800-12"
       end
     end
+
+    it "get NIST SP 800-55 Rev. 1" do
+      VCR.use_cassette "nist_sp_800_55_rev_1" do
+        result = RelatonNist::NistBibliography.get "NIST SP 800-55 Rev. 1"
+        expect(result.contributor.last.entity.affiliation).to be_none
+      end
+    end
   end
 
   context "warns when" do

@@ -235,15 +235,18 @@ module RelatonNist
             )
           end
           if contr["surname"]
-            affiliation = RelatonBib::Affiliation.new organization: org
+            affiliation = []
+            affiliation << RelatonBib::Affiliation.new(organization: org) if org
             entity = RelatonBib::Person.new(
-              name: full_name(contr, lang, script), affiliation: [affiliation],
+              name: full_name(contr, lang, script), affiliation: affiliation,
             )
-          else
+          elsif org
             entity = org
           end
-          RelatonBib::ContributionInfo.new entity: entity, role: [type: role]
-        end
+          if entity
+            RelatonBib::ContributionInfo.new entity: entity, role: [type: role]
+          end
+        end.compact
       end
 
       # rubocop:disable Metrics/CyclomaticComplexity
