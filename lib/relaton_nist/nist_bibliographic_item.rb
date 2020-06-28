@@ -51,7 +51,7 @@ module RelatonNist
     # @option abstract [String] :script
     # @option abstract [String] :type
     #
-    # @param relation [Array<Hash>]
+    # @param relation [Array<Hash, RelatonNist::DocumentRelation>]
     # @option relation [String] :type
     # @option relation [RelatonBib::BibliographicItem] :bibitem
     # @option relation [Array<RelatonBib::BibItemLocality>] :bib_locality

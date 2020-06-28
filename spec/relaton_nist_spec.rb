@@ -52,7 +52,7 @@ RSpec.describe RelatonNist do
     VCR.use_cassette "8200" do
       hits = RelatonNist::NistBibliography.search("NISTIR 8200", "2018").fetch
       expect(hits.first.to_s).to eq "<RelatonNist::Hit:"\
-        "#{format('%#.14x', hits.first.object_id << 1)} "\
+        "#{format('%<id>#.14x', id: hits.first.object_id << 1)} "\
         '@text="NISTIR 8200" @fetched="true" '\
         '@fullIdentifier="NISTIR8200:2018" '\
         '@title="8200">'
@@ -175,7 +175,7 @@ RSpec.describe RelatonNist do
     it "doc with supersedes" do
       VCR.use_cassette "nistir_8204" do
         result = RelatonNist::NistBibliography.get "NISTIR 8204"
-        expect(result.relation.first).to be_instance_of RelatonBib::DocumentRelation
+        expect(result.relation.first).to be_instance_of RelatonNist::DocumentRelation
       end
     end
 

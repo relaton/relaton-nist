@@ -1,5 +1,6 @@
 require "relaton_bib"
 require "relaton_nist/nist_bibliographic_item"
+require "relaton_nist/document_relation"
 require "relaton_nist/scrapper"
 require "relaton_nist/hit_collection"
 require "relaton_nist/xml_parser"

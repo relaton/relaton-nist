@@ -376,7 +376,7 @@ module RelatonNist
 
       # Fetch relations.
       # @param doc [Nokogiri::HTML::Document]
-      # @return [Array<RelatonBib::DocumentRelation>]
+      # @return [Array<RelatonNist::DocumentRelation>]
       def fetch_relations(doc)
         relations = doc.xpath('//span[@id="pub-supersedes-container"]/a').map do |r|
           doc_relation "supersedes", r.text, DOMAIN + r[:href]
@@ -405,9 +405,9 @@ module RelatonNist
       # @param type [String]
       # @param ref [String]
       # @param uri [String]
-      # @return [RelatonBib::DocumentRelation]
+      # @return [RelatonNist::DocumentRelation]
       def doc_relation(type, ref, uri, lang = "en", script = "Latn")
-        RelatonBib::DocumentRelation.new(
+        DocumentRelation.new(
           type: type,
           bibitem: RelatonBib::BibliographicItem.new(
             formattedref: RelatonBib::FormattedRef.new(
