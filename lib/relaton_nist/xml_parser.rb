@@ -43,6 +43,20 @@ module RelatonNist
           extended: cp.at("extended")&.text
         )
       end
+
+      # @param item [Nokogiri::XML::Element]
+      # @return [Array<RelatonBib::DocumentRelation>]
+      def fetch_relations(item)
+        item.xpath("./relation").map do |rel|
+          DocumentRelation.new(
+            type: rel[:type]&.empty? ? nil : rel[:type],
+            description: relation_description(rel),
+            bibitem: bib_item(item_data(rel.at("./bibitem"))),
+            locality: localities(rel),
+            source_locality: source_localities(rel),
+          )
+        end
+      end
     end
   end
 end
