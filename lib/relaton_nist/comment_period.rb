@@ -34,5 +34,16 @@ module RelatonNist
       hash["extended"] = extended.to_s if extended
       hash
     end
+
+    # @param prefix [String]
+    # @return [String]
+    def to_asciibib(prefix)
+      pref = prefix.empty? ? prefix : prefix + "."
+      pref += "commentperiod"
+      out = "#{pref}.from:: #{from}\n"
+      out += "#{pref}.to:: #{to}\n" if to
+      out += "#{pref}.extended:: #{extended}\n" if extended
+      out
+    end
   end
 end

@@ -1,26 +1,23 @@
 module RelatonNist
   class XMLParser < RelatonBib::XMLParser
     class << self
-      def from_xml(xml)
-        doc = Nokogiri::XML xml
-        doc.remove_namespaces!
-        nistitem = doc.at("/bibitem|/bibdata")
-        if nistitem
-          NistBibliographicItem.new(item_data(nistitem))
-        elsif
-          warn "[relaton-nist] can't find bibitem or bibdata element in the XML"
-        end
-      end
-
       private
 
-      def item_data(nistitem)
+      # @param intem [Nokogiri::XML::Document]
+      # @return [Hash]
+      def item_data(item)
         data = super
-        ext = nistitem.at "./ext"
+        ext = item.at "./ext"
         return data unless ext
 
         data[:commentperiod] = fetch_commentperiod(ext)
         data
+      end
+
+      # @param item_hash [Hash]
+      # @return [RelatonNist::NistBibliographicItem]
+      def bib_item(item_hash)
+        NistBibliographicItem.new item_hash
       end
 
       def fetch_status(item)
@@ -47,15 +44,7 @@ module RelatonNist
       # @param item [Nokogiri::XML::Element]
       # @return [Array<RelatonBib::DocumentRelation>]
       def fetch_relations(item)
-        item.xpath("./relation").map do |rel|
-          DocumentRelation.new(
-            type: rel[:type]&.empty? ? nil : rel[:type],
-            description: relation_description(rel),
-            bibitem: bib_item(item_data(rel.at("./bibitem"))),
-            locality: localities(rel),
-            source_locality: source_localities(rel),
-          )
-        end
+        super item, DocumentRelation
       end
     end
   end

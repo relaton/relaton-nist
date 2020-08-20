@@ -48,6 +48,17 @@ RSpec.describe RelatonNist do
     end
   end
 
+  it "return AsciiBib" do
+    hash = YAML.load_file "spec/examples/nist_bib_item.yml"
+    item_hash = RelatonNist::HashConverter.hash_to_bib hash
+    item = RelatonNist::NistBibliographicItem.new item_hash
+    bib = item.to_asciibib
+    file = "spec/examples/ascii.bib"
+    File.write file, bib, encoding: "UTF-8" unless File.exist? file
+    expect(bib).to eq File.read(file, encoding: "UTF-8")
+      .gsub(/(?<=fetched::\s)\d{4}-\d{2}-\d{2}/, Date.today.to_s)
+  end
+
   it "return string of hit" do
     VCR.use_cassette "8200" do
       hits = RelatonNist::NistBibliography.search("NISTIR 8200", "2018").fetch

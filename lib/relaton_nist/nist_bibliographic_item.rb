@@ -83,5 +83,13 @@ module RelatonNist
       hash["commentperiod"] = commentperiod.to_hash if commentperiod
       hash
     end
+
+    # @param prefix [String]
+    # @return [String]
+    def to_asciibib(prefix = "")
+      out = super
+      out += commentperiod.to_asciibib prefix if commentperiod
+      out
+    end
   end
 end
