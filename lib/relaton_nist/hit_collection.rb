@@ -17,10 +17,10 @@ module RelatonNist
     # @param year [String]
     # @param opts [Hash]
     # @option opts [String] :stage
-    def initialize(ref_nbr, year = nil, opts = {})
+    def initialize(ref_nbr, year = nil, opts = {}) # rubocop:disable Metrics/AbcSize
       super ref_nbr, year
 
-      /(?<docid>(SP|FIPS)\s[0-9-]+)/ =~ text
+      /(?<docid>(SP|FIPS)\s[0-9-]+\w?)/ =~ text
       @array = docid ? from_json(docid, **opts) : from_csrc(**opts)
 
       @array.sort! do |a, b|
@@ -45,28 +45,28 @@ module RelatonNist
         from = d.strftime "%m/%d/%Y"
         to   = d.next_year.prev_day.strftime "%m/%d/%Y"
       end
-      url  = "#{DOMAIN}/publications/search?keywords-lg=#{text}"
+      url = "#{DOMAIN}/publications/search?keywords-lg=#{text}"
       url += "&dateFrom-lg=#{from}" if from
       url += "&dateTo-lg=#{to}" if to
-      url += if /PD/ =~ opts[:stage]
+      url += if /PD/.match? opts[:stage]
                "&status-lg=Draft,Retired Draft,Withdrawn"
              else
                "&status-lg=Final,Withdrawn"
              end
 
-      doc  = Nokogiri::HTML OpenURI.open_uri(::Addressable::URI.parse(url).normalize)
+      doc = Nokogiri::HTML OpenURI.open_uri(::Addressable::URI.parse(url).normalize)
       doc.css("table.publications-table > tbody > tr").map do |h|
         link  = h.at("td/div/strong/a")
         serie = h.at("td[1]").text.strip
         code  = h.at("td[2]").text.strip
         title = link.text
-        doc_url   = DOMAIN + link[:href]
+        doc_url = DOMAIN + link[:href]
         status = h.at("td[4]").text.strip.downcase
         release_date = Date.strptime h.at("td[5]").text.strip, "%m/%d/%Y"
         Hit.new(
           {
-            code: code, serie: serie, title: title, url: doc_url, status: status,
-            release_date: release_date
+            code: code, serie: serie, title: title, url: doc_url,
+            status: status, release_date: release_date
           }, self
         )
       end
@@ -91,17 +91,18 @@ module RelatonNist
     # @param docid [String]
     # @param stage [String]
     # @return [Array<Hach>]
-    def select_data(docid, **opts)
+    def select_data(docid, **opts) # rubocop:disable Metrics/AbcSize, Metrics/CyclomaticComplexity, Metrics/MethodLength,Metrics/PerceivedComplexity
       d = Date.strptime year, "%Y" if year
+      didrx = Regexp.new(docid)
       data.select do |doc|
         next unless match_year?(doc, d)
 
-        if /PD/ =~ opts[:stage]
+        if /PD/.match? opts[:stage]
           next unless %w[draft-public draft-prelim].include? doc["status"]
         else
           next unless doc["status"] == "final"
         end
-        doc["docidentifier"] =~ Regexp.new(docid)
+        doc["docidentifier"] =~ didrx
       end
     end
 
@@ -129,7 +130,9 @@ module RelatonNist
     #
     # @prarm ctime [Time, NilClass]
     def fetch_data(ctime)
-      resp = OpenURI.open_uri("https://csrc.nist.gov/CSRC/media/feeds/metanorma/pubs-export.meta")
+      resp = OpenURI.open_uri(
+        "https://csrc.nist.gov/CSRC/media/feeds/metanorma/pubs-export.meta"
+      )
       if !ctime || ctime < resp.last_modified
         @data = nil
         zip = OpenURI.open_uri "https://csrc.nist.gov/CSRC/media/feeds/metanorma/pubs-export.zip"

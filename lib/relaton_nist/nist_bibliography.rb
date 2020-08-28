@@ -121,7 +121,7 @@ module RelatonNist
       end
 
       def nistbib_search_filter(code, year, opts)
-        idregex = %r{[0-9-]{3,}}
+        idregex = %r{[0-9-]{3,}\w?}
         docid = code.match(idregex).to_s
         serie = code.match(%r{(FISP|SP|NISTIR)(?=\s)})
         warn "[relaton-nist] (\"#{code}\") fetching..."
