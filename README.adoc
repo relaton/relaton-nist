@@ -39,11 +39,10 @@ Or install it yourself as:
 require 'relaton_nist'
 
 hit_collection = RelatonNist::NistBibliography.search("8200")
-=> [<RelatonNist::Hit:0x007f82b9b2b298 @text="8200" @fetched="false" @fullIdentifier="" @title="8200">,
- <RelatonNist::Hit:0x007f82b9b2a1e0 @text="8200" @fetched="false" @fullIdentifier="" @title="8200">]
+=> <RelatonNist::HitCollection:0x007fc069d19da0 @ref=8200 @fetched=false>
 
  item = hit_collection[1].fetch
- => #<RelatonNist::NistBibliographicItem:0x007f82b986e668
+=> #<RelatonNist::NistBibliographicItem:0x007fc049aa6778
  ...
 ----
 
@@ -71,9 +70,6 @@ item.to_xml bibdata: true
     ...
     <ext>
       <doctype>stadard</doctype>
-      <keyword>cybersecurity</keyword>
-      <keyword>cybersecurity objectives</keyword>
-      ...
       <commentperiod>
         <from>2018-02-01</from>
         <to>2018-04-18</to>
@@ -86,8 +82,9 @@ item.to_xml bibdata: true
 [source,ruby]
 ----
 RelatonNist::NistBibliography.get("8200", "2018", {})
-fetching 8200...
-=> #<RelatonNist::NistBibliographicItem:0x007f82bb3370a8
+[relaton-nist] ("8200") fetching...
+[relaton-nist] ("8200") found NISTIR 8200
+=> #<RelatonNist::NistBibliographicItem:0x007fc06aa2b480
 ...
 ----
 
@@ -110,9 +107,10 @@ NIST FIPS {docnumber}
 ----
 [source,ruby]
 ----
-RelatonNist::NistBibliography.get("8200", "2018", {})
-fetching 8200...
-=> #<RelatonNist::NistBibliographicItem:0x007f82bb3370a8
+RelatonNist::NistBibliography.get("SP 800-205 (February 2019) (PD)")
+[relaton-nist] ("SP 800-205") fetching...
+[relaton-nist] ("SP 800-205") found SP 800-205 (Draft)
+=> #<RelatonNist::NistBibliographicItem:0x007fc059934768
 ...
 ----
 
