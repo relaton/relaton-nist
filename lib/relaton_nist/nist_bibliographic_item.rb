@@ -63,13 +63,16 @@ module RelatonNist
       super
     end
 
-    # @param builder [Nokogiri::XML::Builder]
-    def to_xml(builder = nil, **opts)
-      super builder, date_format: :short, **opts do |b|
+    # @param opts [Hash]
+    # @option opts [Nokogiri::XML::Builder] :builder XML builder
+    # @option opts [Boolean] :bibdata
+    # @option opts [String] :lang language
+    # @return [String] XML
+    def to_xml(**opts)
+      super date_format: :short, **opts do |b|
         if opts[:bibdata]
           b.ext do
             b.doctype doctype if doctype
-            # keyword.each { |kw| b.keyword { kw.to_xml b } }
             commentperiod&.to_xml b
           end
         end

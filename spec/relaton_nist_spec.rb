@@ -15,9 +15,9 @@ RSpec.describe RelatonNist do
     VCR.use_cassette "8200" do
       hit_collection = RelatonNist::NistBibliography
         .search("NISTIR 8200", "2018")
-      expect(hit_collection.fetched).to be_falsy
+      expect(hit_collection.fetched).to be false
       expect(hit_collection.fetch).to be_instance_of RelatonNist::HitCollection
-      expect(hit_collection.fetched).to be_truthy
+      expect(hit_collection.fetched).to be true
       expect(hit_collection.first).to be_instance_of RelatonNist::Hit
     end
   end
