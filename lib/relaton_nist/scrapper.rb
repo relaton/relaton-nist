@@ -18,10 +18,10 @@ module RelatonNist
                     end
         # doctype = "standard"
         titles = fetch_titles(hit_data)
-        unless /^(SP|NISTIR|FIPS) / =~ item_data[:docid][0].id
+        unless /^(SP|NISTIR|FIPS) /.match? item_data[:docid][0].id
           # doctype = id_cleanup(item_data[:docid][0].id)
           item_data[:docid][0] = RelatonBib::DocumentIdentifier.new(
-            id: titles[0][:content].upcase, type: "NIST",
+            id: titles[0][:content].upcase, type: "NIST"
           )
         end
         item_data[:fetched] = Date.today.to_s
@@ -172,14 +172,15 @@ module RelatonNist
       # @param hit_data [Hash]
       # @return [Array<Hash>]
       def fetch_titles(hit_data)
-        [{ content: hit_data[:title], language: "en", script: "Latn", format: "text/plain" }]
+        [{ content: hit_data[:title], language: "en", script: "Latn",
+           format: "text/plain" }]
       end
 
       # Fetch dates
       # @param doc [Nokogiri::HTML::Document]
       # @param release_date [Date]
       # @return [Array<Hash>]
-      def fetch_dates(doc, release_date)
+      def fetch_dates(doc, release_date) # rubocop:disable Metrics/AbcSize,Metrics/MethodLength
         dates = [{ type: "published", on: release_date.to_s }]
 
         if doc.is_a? Hash
