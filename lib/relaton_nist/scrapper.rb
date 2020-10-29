@@ -94,9 +94,9 @@ module RelatonNist
           resp = Net::HTTP.get_response(uri)
         end
         Nokogiri::HTML(resp.body)
-      rescue SocketError, Timeout::Error, Errno::EINVAL, Errno::ECONNRESET, EOFError,
-             Net::HTTPBadResponse, Net::HTTPHeaderSyntaxError, Net::ProtocolError,
-             OpenSSL::SSL::SSLError
+      rescue SocketError, Timeout::Error, Errno::EINVAL, Errno::ECONNRESET,
+             EOFError, Net::HTTPBadResponse, Net::HTTPHeaderSyntaxError,
+             Net::ProtocolError, OpenSSL::SSL::SSLError
         raise RelatonBib::RequestError, "Could not access #{url}"
       end
 
@@ -104,12 +104,13 @@ module RelatonNist
       # @param doc [Nokogiri::HTML::Document, String]
       # @return [Array<RelatonBib::DocumentIdentifier>]
       def fetch_docid(doc)
-        item_ref = if doc.is_a? String
-                     doc
+        item_ref = if doc.is_a? String then doc
                    else
                      doc.at(
-                       "//div[contains(@class, 'publications-detail')]/h3",
-                     )&.text&.strip.sub(/(?<=\w)\([^\)]+\)$/) { |m| " " + m.upcase}.squeeze " "
+                       "//div[contains(@class, 'publications-detail')]/h3"
+                     )&.text&.strip&.sub(/(?<=\w)\([^\)]+\)$/) do |m|
+                       " " + m.upcase
+                     end&.squeeze(" ")&.gsub /&#13;|\n|\r/, ""
                    end
         item_ref ||= "?"
         [RelatonBib::DocumentIdentifier.new(id: item_ref, type: "NIST")]
@@ -190,7 +191,7 @@ module RelatonNist
           obsoleted = RelatonBib.parse_date doc["obsoleted-date"]
           dates << { type: "obsoleted", on: obsoleted.to_s } if obsoleted
         else
-          d = doc.at("//span[@id='pub-release-date']").text.strip
+          d = doc.at("//span[@id='pub-release-date']")&.text&.strip
           issued = RelatonBib.parse_date d
         end
         dates << { type: "issued", on: issued.to_s }
@@ -258,10 +259,10 @@ module RelatonNist
         return [] if doc.nil?
 
         doc.text.split(", ").map do |contr|
-          /(?<an>.+?)(\s+\((?<abbrev>.+?)\))?$/ =~ contr
+          /(?<an>.+?)(\s+\((?<abbrev>.+?)\))?$/ =~ contr.strip
           if abbrev && an.downcase !~ /(task|force|group)/ && an.split.size.between?(2, 3)
             fullname = RelatonBib::FullName.new(
-              completename: RelatonBib::LocalizedString.new(an, lang, script),
+              completename: RelatonBib::LocalizedString.new(an, lang, script)
             )
             case abbrev
             when "NIST"
@@ -348,9 +349,9 @@ module RelatonNist
         url = "www.nist.gov"
         d = if doc.is_a? String then doc
             else
-              doc.at("//span[@id='pub-release-date']").text.strip
+              doc.at("//span[@id='pub-release-date']")&.text&.strip
             end
-        from = d.match(/\d{4}/).to_s
+        from = d&.match(/\d{4}/)&.to_s
         [{ owner: [{ name: name, abbreviation: "NIST", url: url }], from: from }]
       end
 

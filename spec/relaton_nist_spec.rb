@@ -12,7 +12,7 @@ RSpec.describe RelatonNist do
   end
 
   it "fetch hit" do
-    VCR.use_cassette "8200" do
+    VCR.use_cassette "8200_2018" do
       hit_collection = RelatonNist::NistBibliography
         .search("NISTIR 8200", "2018")
       expect(hit_collection.fetched).to be false
@@ -25,7 +25,7 @@ RSpec.describe RelatonNist do
   context "return xml of hit" do
     it "with bibdata root elemen" do
       VCR.use_cassette "8011" do
-        hits = RelatonNist::NistBibliography.search("NISTIR 8011")
+        hits = RelatonNist::NistBibliography.search("NISTIR 8011 Vol. 3")
         file_path = "spec/examples/hit.xml"
         xml = hits.first.to_xml bibdata: true
         File.write file_path, xml unless File.exist? file_path
@@ -39,7 +39,7 @@ RSpec.describe RelatonNist do
 
     it "with bibitem root elemen" do
       VCR.use_cassette "8011" do
-        hits = RelatonNist::NistBibliography.search("NISTIR 8011")
+        hits = RelatonNist::NistBibliography.search("NISTIR 8011 Vol. 3")
         file_path = "spec/examples/hit_bibitem.xml"
         File.write file_path, hits.first.to_xml unless File.exist? file_path
         expect(hits.first.to_xml).to be_equivalent_to File
@@ -61,7 +61,7 @@ RSpec.describe RelatonNist do
   end
 
   it "return string of hit" do
-    VCR.use_cassette "8200" do
+    VCR.use_cassette "8200_2018" do
       hits = RelatonNist::NistBibliography.search("NISTIR 8200", "2018").fetch
       expect(hits.first.to_s).to eq "<RelatonNist::Hit:"\
         "#{format('%<id>#.14x', id: hits.first.object_id << 1)} "\
@@ -72,7 +72,7 @@ RSpec.describe RelatonNist do
   end
 
   it "return string of hit collection" do
-    VCR.use_cassette "8200" do
+    VCR.use_cassette "8200_2018" do
       hits = RelatonNist::NistBibliography.search("NISTIR 8200", "2018").fetch
       expect(hits.to_s).to eq "<RelatonNist::HitCollection:"\
         "#{format('%<id>#.14x', id: hits.object_id << 1)} "\
@@ -97,7 +97,7 @@ RSpec.describe RelatonNist do
     end
 
     it "a reference with an year in a code" do
-      VCR.use_cassette "8200_2017" do
+      VCR.use_cassette "8200_2018" do
         result = RelatonNist::NistBibliography.get("NISTIR 8200:2018")
           .to_xml bibdata: true
         expect(result).to include "<on>2018-11</on>"
@@ -208,7 +208,7 @@ RSpec.describe RelatonNist do
       VCR.use_cassette "nistir_8259_pd" do
         result = RelatonNist::NistBibliography.get "NISTIR 8259 (PD)"
         expect(result.status.stage.value).to eq "draft-public"
-        expect(result.status.substage.value).to eq "active"
+        expect(result.status.substage.value).to eq "withdrawn"
       end
     end
 

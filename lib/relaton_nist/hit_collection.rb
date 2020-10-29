@@ -45,7 +45,8 @@ module RelatonNist
         from = d.strftime "%m/%d/%Y"
         to   = d.next_year.prev_day.strftime "%m/%d/%Y"
       end
-      url = "#{DOMAIN}/publications/search?keywords-lg=#{text}"
+      url = "#{DOMAIN}/publications/search?keywords-lg=#{text}"\
+        "&sortBy-lg=relevence"
       url += "&dateFrom-lg=#{from}" if from
       url += "&dateTo-lg=#{to}" if to
       url += if /PD/.match? opts[:stage]

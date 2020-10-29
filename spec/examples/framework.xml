@@ -1,5 +1,5 @@
 <bibdata type="standard">
-  <fetched>2020-06-24</fetched>
+  <fetched>2020-10-29</fetched>
   <title format="text/plain" language="en" script="Latn">Framework for Improving Critical Infrastructure Cybersecurity, Version 1.1</title>
   <uri type="doi">https://doi.org/10.6028/NIST.CSWP.04162018</uri>
   <docidentifier type="NIST">FRAMEWORK FOR IMPROVING CRITICAL INFRASTRUCTURE CYBERSECURITY, VERSION 1.1</docidentifier>
@@ -40,6 +40,18 @@
       </organization>
     </owner>
   </copyright>
+  <relation type="updates">
+    <bibitem>
+      <formattedref format="text/plain" language="en" script="Latn">NISTIR 8170</formattedref>
+      <uri type="src">https://csrc.nist.gov/publications/detail/nistir/8170/final</uri>
+    </bibitem>
+  </relation>
+  <relation type="updates">
+    <bibitem>
+      <formattedref format="text/plain" language="en" script="Latn">NISTIR 8183 Rev. 1</formattedref>
+      <uri type="src">https://csrc.nist.gov/publications/detail/nistir/8183/rev-1/final</uri>
+    </bibitem>
+  </relation>
   <relation type="updates">
     <bibitem>
       <formattedref format="text/plain" language="en" script="Latn">NISTIR 8204</formattedref>
