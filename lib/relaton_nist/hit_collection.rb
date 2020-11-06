@@ -10,7 +10,7 @@ module RelatonNist
   # Page of hit collection.
   class HitCollection < RelatonBib::HitCollection
     DOMAIN = "https://csrc.nist.gov"
-    PUBS_EXPORT = URI::join(DOMAIN, "/CSRC/media/feeds/metanorma/pubs-export")
+    PUBS_EXPORT = URI.join(DOMAIN, "/CSRC/media/feeds/metanorma/pubs-export")
     DATAFILEDIR = File.expand_path ".relaton/nist", Dir.home
     DATAFILE = File.expand_path "pubs-export.zip", DATAFILEDIR
 
@@ -136,7 +136,7 @@ module RelatonNist
       if !ctime || ctime < resp.last_modified
         @data = nil
         FileUtils.mkdir_p DATAFILEDIR unless Dir.exist? DATAFILEDIR
-        IO.copy_stream(open("#{PUBS_EXPORT}.zip"), DATAFILE)
+        IO.copy_stream(URI.open("#{PUBS_EXPORT}.zip"), DATAFILE)
       end
     end
 
