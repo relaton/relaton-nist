@@ -135,8 +135,9 @@ module RelatonNist
       resp = OpenURI.open_uri("#{PUBS_EXPORT}.meta")
       if !ctime || ctime < resp.last_modified
         @data = nil
+        uri_open = URI.method(:open) || Kernel.method(:open)
         FileUtils.mkdir_p DATAFILEDIR unless Dir.exist? DATAFILEDIR
-        IO.copy_stream(URI.open("#{PUBS_EXPORT}.zip"), DATAFILE)
+        IO.copy_stream(uri_open.call("#{PUBS_EXPORT}.zip"), DATAFILE)
       end
     end
 
