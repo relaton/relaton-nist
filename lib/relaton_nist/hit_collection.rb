@@ -83,7 +83,7 @@ module RelatonNist
       select_data(docid, **opts).map do |h|
         /(?<serie>(?<=-)\w+$)/ =~ h["series"]
         title = [h["title-main"], h["title-sub"]].compact.join " - "
-        release_date = RelatonBib.parse_date h["published-date"]
+        release_date = RelatonBib.parse_date h["published-date"], false
         Hit.new({ code: h["docidentifier"], serie: serie.upcase, title: title,
                   url: h["uri"], status: h["status"],
                   release_date: release_date, json: h }, self)
@@ -114,7 +114,7 @@ module RelatonNist
     def match_year?(doc, date)
       return true unless year
 
-      idate = RelatonBib.parse_date doc["issued-date"]
+      idate = RelatonBib.parse_date doc["issued-date"], false
       idate.between? date, date.next_year.prev_day
     end
 

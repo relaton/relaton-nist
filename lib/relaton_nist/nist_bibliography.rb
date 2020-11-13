@@ -93,19 +93,23 @@ module RelatonNist
         result.each_slice(3) do |s| # ISO website only allows 3 connections
           fetch_pages(s, 3).each_with_index do |r, _i|
             if opts[:issued_date]
-              ids = r.date.select { |d| d.type == "issued" && d.on == opts[:issued_date] }
+              ids = r.date.select do |d|
+                d.type == "issued" && d.on(:date) == opts[:issued_date]
+              end
               next if ids.empty?
             elsif opts[:updated_date]
-              pds = r.date.select { |d| d.type == "published" && d.on == opts[:updated_date] }
+              pds = r.date.select do |d|
+                d.type == "published" && d.on(:date) == opts[:updated_date]
+              end
               next if pds.empty?
             end
             next if iter && r.status.iteration != iteration
             return { ret: r } if !year
 
             r.date.select { |d| d.type == "published" }.each do |d|
-              return { ret: r } if year.to_i == d.on.year
+              return { ret: r } if year.to_i == d.on(:year)
 
-              missed_years << d.on.year
+              missed_years << d.on(:year)
             end
           end
         end
