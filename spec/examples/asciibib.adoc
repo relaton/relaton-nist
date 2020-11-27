@@ -1,7 +1,7 @@
 [%bibitem]
 == {blank}
 id:: NISTIR 8011 Vol. 3
-fetched:: 2020-08-28
+fetched:: 2020-11-17
 title.content:: Automation Support for Security Control Assessments: Software Asset Management
 title.language:: en
 title.script:: Latn
@@ -24,8 +24,8 @@ abstract.content:: The NISTIR 8011 volumes each focus on an individual informati
 abstract.language:: en
 abstract.script:: Latn
 abstract.format:: text/plain
-copyright.owner.name.content:: National Institute of Standards and Technology
-copyright.owner.abbreviation.content:: NIST
+copyright.owner.name:: National Institute of Standards and Technology
+copyright.owner.abbreviation:: NIST
 copyright.owner.url:: www.nist.gov
 copyright.role.type:: publisher
 copyright.from:: 2018
@@ -35,8 +35,8 @@ link.content:: http://nvlpubs.nist.gov/nistpubs/ir/2018/NIST.IR.8011-3.pdf
 link::
 link.type:: obp
 link.content:: https://doi.org/10.6028/NIST.IR.8011-3
-contributor.organization.name.content:: National Institute of Standards and Technology
-contributor.organization.abbreviation.content:: NIST
+contributor.organization.name:: National Institute of Standards and Technology
+contributor.organization.abbreviation:: NIST
 contributor.organization.url:: www.nist.gov
 contributor.role.type:: publisher
 relation::
@@ -56,14 +56,10 @@ series.formattedref.language:: en
 series.formattedref.script:: Latn
 series.formattedref.format:: text/plain
 doctype:: standard
-keyword::
-keyword.content:: actual state
-keyword::
-keyword.content:: assessment
-keyword::
-keyword.content:: authorization boundary
-keyword::
-keyword.content:: automation
+keyword:: actual state
+keyword:: assessment
+keyword:: authorization boundary
+keyword:: automation
 commentperiod.from:: 2018-12-17
 commentperiod.to:: 2019-03-15
 commentperiod.extended:: 2019-05-15
