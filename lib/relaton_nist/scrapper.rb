@@ -110,9 +110,10 @@ module RelatonNist
                        "//div[contains(@class, 'publications-detail')]/h3"
                      )&.text&.strip&.sub(/(?<=\w)\([^\)]+\)$/) do |m|
                        " " + m.upcase
-                     end&.squeeze(" ")&.gsub /&#13;|\n|\r/, ""
+                     end&.squeeze(" ")&.gsub(/&#13;|\n|\r/, "")
                    end
         item_ref ||= "?"
+        item_ref.sub! /\sAddendum$/, "-Add"
         [RelatonBib::DocumentIdentifier.new(id: item_ref, type: "NIST")]
       end
 

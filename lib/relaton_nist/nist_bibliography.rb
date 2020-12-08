@@ -29,15 +29,15 @@ module RelatonNist
       #
       # @return [String] Relaton XML serialisation of reference
       def get(code, year = nil, opts = {})
-        return fetch_ref_err(code, year, []) if code =~ /\sEP$/
+        return fetch_ref_err(code, year, []) if code.match? /\sEP$/
 
         /^(?<code2>[^\(]+)(\((?<date2>\w+\s(\d{2},\s)?\d{4})\))?\s?\(?((?<=\()(?<stage>[^\)]+))?/ =~ code
         if code2
           code = code2.strip
           if date2
-            if /\w+\s\d{4}/ =~ date2
+            if /\w+\s\d{4}/.match? date2
               opts[:issued_date] = Date.strptime date2, "%B %Y"
-            elsif /\w+\s\d{2},\s\d{4}/ =~ date2
+            elsif /\w+\s\d{2},\s\d{4}/.match? date2
               opts[:updated_date] = Date.strptime date2, "%B %d, %Y"
             end
           end
@@ -125,13 +125,22 @@ module RelatonNist
       end
 
       def nistbib_search_filter(code, year, opts)
-        idregex = %r{[0-9-]{3,}\w?}
-        docid = code.match(idregex).to_s
-        serie = code.match(%r{(FISP|SP|NISTIR)(?=\s)})
+        %r{
+          ^((?:NIST)\s)?
+          (?<serie1>(SP|FIPS|NISTIR|ITL\sBulletin|White\sPaper))\s
+          (?<code1>[0-9-]{3,}\w?)
+          (\/(?<upd1>Add))?
+        }x =~ code
         warn "[relaton-nist] (\"#{code}\") fetching..."
         result = search(code, year, opts)
         result.select do |i|
-          i.hit[:code]&.match(idregex).to_s == docid && (!serie || i.hit[:serie] == serie.to_s)
+          %r{
+            ^((?:NIST)\s)?
+            ((?<serie2>(SP|FIPS|NISTIR|ITL\sBulletin|White\sPaper))\s)?
+            (?<code2>[0-9-]{3,}\w?)
+            (\s(?<upd2>Add)endum)?
+          }x =~ i.hit[:code]
+          [serie2, i.hit[:serie]].include?(serie1) && code1 == code2 && upd1 == upd2
         end
       end
 

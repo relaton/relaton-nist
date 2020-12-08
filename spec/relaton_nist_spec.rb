@@ -249,6 +249,20 @@ RSpec.describe RelatonNist do
         expect(result).to be_nil
       end
     end
+
+    it "Addendum" do
+      VCR.use_cassette "sp_800_38a_addendum" do
+        bib = RelatonNist::NistBibliography.get "SP 800-38A/Add"
+        expect(bib.docidentifier[0].id).to eq "SP 800-38A-Add"
+      end
+    end
+
+    it "not Addendum" do
+      VCR.use_cassette "sp_800_38a" do
+        bib = RelatonNist::NistBibliography.get "SP 800-38A"
+        expect(bib.docidentifier[0].id).to eq "SP 800-38A"
+      end
+    end
   end
 
   context "warns when" do
