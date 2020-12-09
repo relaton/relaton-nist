@@ -91,11 +91,11 @@ RelatonNist::NistBibliography.get("8200", "2018", {})
 === Get short citation
 Short citation is a convetion about a citation's format. The format for NIST publications is:
 ----
-NIST {abbrev(series)} {docnumber} {(edition), optional} {(stage), optioal}
+NIST {abbrev(series)} {docnumber} {(edition), optional} {(stage), optional}
 # or
-{abbrev(series)} {docnumber} {(edition), optional} {(stage), optioal}
+{abbrev(series)} {docnumber} {(edition), optional} {(stage), optional}
 ----
-- `(stage)` is empty if the state is "final" (published)
+- `(stage)` is empty if the state is "final" (published) or "PD" in case state is "draft"
 - `(edition)` is the date of publication or update
 - `docnumber` is the full NIST number, including revision, e.g., 800-52
 
