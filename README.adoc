@@ -95,7 +95,10 @@ NIST {abbrev(series)} {docnumber} {(edition), optional} {(stage), optional}
 # or
 {abbrev(series)} {docnumber} {(edition), optional} {(stage), optional}
 ----
-- `(stage)` is empty if the state is "final" (published) or "PD" in case state is "draft"
+- `(stage)` is empty if the state is "final" (published). In case state is "draft" it shoud be:
+  * PD for public draft
+  * IPD for initial iteration public draft or 2PD, 3PD and so one for following iterations
+  * FPD for final public draft
 - `(edition)` is the date of publication or update
 - `docnumber` is the full NIST number, including revision, e.g., 800-52
 
