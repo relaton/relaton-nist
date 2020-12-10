@@ -21,7 +21,7 @@ module RelatonNist
     def initialize(ref_nbr, year = nil, opts = {}) # rubocop:disable Metrics/AbcSize
       super ref_nbr, year
 
-      /(?<docid>(SP|FIPS)\s[0-9-]+\w?)/ =~ text
+      /(?<docid>(SP|FIPS)\s[0-9-]+)/ =~ text
       @array = docid ? from_json(docid, **opts) : from_csrc(**opts)
 
       @array.sort! do |a, b|
@@ -94,8 +94,9 @@ module RelatonNist
     # @param stage [String]
     # @return [Array<Hach>]
     def select_data(docid, **opts) # rubocop:disable Metrics/AbcSize, Metrics/CyclomaticComplexity, Metrics/MethodLength,Metrics/PerceivedComplexity
+      # ref = docid.sub(/(?<=\d{3}-\d{2})r(\d+)/, ' Rev. \1')
       d = Date.strptime year, "%Y" if year
-      didrx = Regexp.new(docid)
+      # didrx = Regexp.new(docid)
       data.select do |doc|
         next unless match_year?(doc, d)
 
@@ -104,7 +105,7 @@ module RelatonNist
         else
           next unless doc["status"] == "final"
         end
-        doc["docidentifier"] =~ didrx
+        doc["docidentifier"].include? docid
       end
     end
 

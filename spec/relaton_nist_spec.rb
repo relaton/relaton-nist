@@ -195,6 +195,36 @@ RSpec.describe RelatonNist do
       end
     end
 
+    context "doc with specific revision" do
+      it "1 short notation" do
+        VCR.use_cassette "json_data" do
+          bib = RelatonNist::NistBibliography.get "SP 800-67r1"
+          expect(bib.docidentifier[0].id).to eq "SP 800-67 Rev. 1"
+        end
+      end
+
+      it "2 short notation" do
+        VCR.use_cassette "json_data" do
+          bib = RelatonNist::NistBibliography.get "SP 800-67r2"
+          expect(bib.docidentifier[0].id).to eq "SP 800-67 Rev. 2"
+        end
+      end
+
+      it "1 long notation" do
+        VCR.use_cassette "json_data" do
+          bib = RelatonNist::NistBibliography.get "NIST SP 800-67 Rev. 1"
+          expect(bib.docidentifier[0].id).to eq "SP 800-67 Rev. 1"
+        end
+      end
+
+      it "2 long notation" do
+        VCR.use_cassette "json_data" do
+          bib = RelatonNist::NistBibliography.get "NIST SP 800-67 Rev. 2"
+          expect(bib.docidentifier[0].id).to eq "SP 800-67 Rev. 2"
+        end
+      end
+    end
+
     it "doc with supersedes" do
       VCR.use_cassette "nistir_8204" do
         result = RelatonNist::NistBibliography.get "NISTIR 8204"
@@ -215,7 +245,7 @@ RSpec.describe RelatonNist do
     it "doc with White Paper as id" do
       VCR.use_cassette "framework" do
         result = RelatonNist::NistBibliography.get("NIST Framework for "\
-          "Improving Critical Infrastructure Cybersecurity Version 1.1")
+          "Improving Critical Infrastructure Cybersecurity, Version 1.1")
           .to_xml bibdata: true
         file_path = "spec/examples/framework.xml"
         File.write file_path, result unless File.exist? file_path
@@ -331,7 +361,7 @@ RSpec.describe RelatonNist do
 
       it "draft with initial iteration" do
         VCR.use_cassette "json_data" do
-          result = RelatonNist::NistBibliography.get("SP 800-37 (IPD)").to_xml
+          result = RelatonNist::NistBibliography.get("SP 800-37r2 (IPD)").to_xml
           file_path = "spec/examples/sp_800_57.xml"
           File.write file_path, result unless File.exist? file_path
           expect(result).to be_equivalent_to(
@@ -354,7 +384,7 @@ RSpec.describe RelatonNist do
 
       it "final draft" do
         VCR.use_cassette "json_data" do
-          result = RelatonNist::NistBibliography.get "SP 800-37 (FPD)"
+          result = RelatonNist::NistBibliography.get "SP 800-37r2 (FPD)"
           expect(result.title.first.title.content).to eq("Risk Management "\
             "Framework for Information Systems and Organizations - A System "\
             "Life Cycle Approach for Security and Privacy")

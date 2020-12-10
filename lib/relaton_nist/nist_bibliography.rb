@@ -125,23 +125,35 @@ module RelatonNist
       end
 
       def nistbib_search_filter(code, year, opts)
+        warn "[relaton-nist] (\"#{code}\") fetching..."
+        match = %r{
+          ^((?:NIST)\s)?
+          (?<serie>(SP|FIPS|NISTIR|ITL\sBulletin|White\sPaper))\s
+          (?<code>[0-9-]{3,}\w?)(?!\d)(?<ed1>(e|r|ver)\S+)?
+          (\s(?<ed2>(Rev\.|Ver\.|Version)\s\d+))?
+          (\/(?<upd>Add))?
+        }x.match code
+        result = search(code.sub(/([0-9-]{3,}\w?)(e|r|ver)\S+/, '\1'), year, opts)
+        result.select { |i| search_filter i, match, code }
+      end
+
+      def search_filter(item, match, text)
         %r{
           ^((?:NIST)\s)?
-          (?<serie1>(SP|FIPS|NISTIR|ITL\sBulletin|White\sPaper))\s
-          (?<code1>[0-9-]{3,}\w?)
-          (\/(?<upd1>Add))?
-        }x =~ code
-        warn "[relaton-nist] (\"#{code}\") fetching..."
-        result = search(code, year, opts)
-        result.select do |i|
-          %r{
-            ^((?:NIST)\s)?
-            ((?<serie2>(SP|FIPS|NISTIR|ITL\sBulletin|White\sPaper))\s)?
-            (?<code2>[0-9-]{3,}\w?)
-            (\s(?<upd2>Add)endum)?
-          }x =~ i.hit[:code]
-          [serie2, i.hit[:serie]].include?(serie1) && code1 == code2 && upd1 == upd2
-        end
+          ((?<serie>(SP|FIPS|NISTIR|ITL\sBulletin|White\sPaper))\s)?
+          (?<code>[0-9-]{3,}\w?)(?!\d)(?<ed1>(e|r|ver)\d+)?
+          (\s(?<ed2>(Rev\.|Ver\.|Version)\s\S+))?
+          (\s(?<upd>Add)endum)?
+        }x =~ item.hit[:code]
+        match && [serie, item.hit[:serie]].include?(match[:serie]) && match[:code] == code &&
+          edition(match[:ed1], match[:ed2]) == edition(ed1, ed2) && match[:upd] == upd ||
+          item.hit[:title].include?(text.sub(/^NIST\s/, ""))
+      end
+
+      def edition(short, long)
+        return short if short
+
+        long&.sub(/Rev\.\s/, "r")&.sub(/(Ver\.|Version)\s/, "ver")
       end
 
       def fetch_ref_err(code, year, missed_years)

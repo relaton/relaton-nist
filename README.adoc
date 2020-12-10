@@ -120,14 +120,14 @@ RelatonNist::NistBibliography.get("SP 800-205 (February 2019) (PD)")
 === Get specific revision and addendum
 [source,ruby]
 ----
-item = RelatonNist::NistBibliography.get 'SP 800-67 r2'
-[relaton-nist] ("SP 800-67 r2") fetching...
-[relaton-nist] ("SP 800-67 r2") found SP 800-67 Rev. 2
+item = RelatonNist::NistBibliography.get 'SP 800-67r3'
+[relaton-nist] ("SP 800-67r3") fetching...
+[relaton-nist] ("SP 800-67r3") found SP 800-67 Rev. 3
 => #<RelatonNist::NistBibliographicItem:0x007fd87bbe9460
 ...
 
 item.docidentifier.first.id
-=> "SP 800-67 Rev. 2"
+=> "SP 800-67 Rev. 3"
 
 RelatonNist::NistBibliography.get 'SP 800-38A/Add'
 [relaton-nist] ("SP 800-38A/Add") fetching...
