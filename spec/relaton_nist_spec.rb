@@ -225,6 +225,27 @@ RSpec.describe RelatonNist do
       end
     end
 
+    it "doc with specific version" do
+      VCR.use_cassette "json_data" do
+        bib = RelatonNist::NistBibliography.get "SP 800-45ver2"
+        expect(bib.docidentifier[0].id).to eq "SP 800-45 Version 2"
+      end
+    end
+
+    it "doc with specific part" do
+      VCR.use_cassette "json_data" do
+        bib = RelatonNist::NistBibliography.get "NIST SP 800-57pt1r4"
+        expect(bib.docidentifier[0].id).to eq "SP 800-57 Part 1 Rev. 4"
+      end
+    end
+
+    it "doc with specific volume" do
+      VCR.use_cassette "nistir_8011v3" do
+        bib = RelatonNist::NistBibliography.get "NISTIR 8011v3"
+        expect(bib.docidentifier[0].id).to eq "NISTIR 8011 Vol. 3"
+      end
+    end
+
     it "doc with supersedes" do
       VCR.use_cassette "nistir_8204" do
         result = RelatonNist::NistBibliography.get "NISTIR 8204"
@@ -373,7 +394,7 @@ RSpec.describe RelatonNist do
 
       it "draft with 2rd iteration" do
         VCR.use_cassette "json_data" do
-          result = RelatonNist::NistBibliography.get "SP 800-57 (2PD)"
+          result = RelatonNist::NistBibliography.get "SP 800-57pt2r1 (2PD)"
           expect(result.title.first.title.content).to eq(
             "Recommendation for Key Management - Part 2: Best Practices for "\
             "Key Management Organizations"
