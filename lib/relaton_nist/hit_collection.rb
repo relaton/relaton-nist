@@ -23,6 +23,7 @@ module RelatonNist
 
       /(?<docid>(SP|FIPS)\s[0-9-]+)/ =~ text
       @array = docid ? from_json(docid, **opts) : from_csrc(**opts)
+      @array = from_csrc(**opts) unless @array.any?
 
       @array.sort! do |a, b|
         if a.sort_value != b.sort_value

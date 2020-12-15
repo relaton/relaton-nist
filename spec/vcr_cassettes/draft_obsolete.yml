@@ -37,7 +37,7 @@ http_interactions:
       Content-Security-Policy:
       - frame-ancestors 'self'
       Date:
-      - Tue, 15 Dec 2020 17:21:21 GMT
+      - Tue, 15 Dec 2020 17:21:11 GMT
       Content-Length:
       - '152'
       Strict-Transport-Security:
@@ -49,5 +49,5 @@ http_interactions:
         size: 1361402
         zipSize: 86442
         sha256: 42CE106D6CEF87116E00A91B13042C28EEFD78BB2237248EDC6A80BB17F6A28A
-  recorded_at: Tue, 15 Dec 2020 17:21:22 GMT
+  recorded_at: Tue, 15 Dec 2020 17:21:12 GMT
 recorded_with: VCR 6.0.0

@@ -225,24 +225,83 @@ RSpec.describe RelatonNist do
       end
     end
 
-    it "doc with specific version" do
-      VCR.use_cassette "json_data" do
-        bib = RelatonNist::NistBibliography.get "SP 800-45ver2"
-        expect(bib.docidentifier[0].id).to eq "SP 800-45 Version 2"
+    context "doc with specific version" do
+      it "short notation" do
+        VCR.use_cassette "json_data" do
+          bib = RelatonNist::NistBibliography.get "SP 800-45ver2"
+          expect(bib.docidentifier[0].id).to eq "SP 800-45 Version 2"
+        end
+      end
+
+      it "long notation" do
+        VCR.use_cassette "json_data" do
+          bib = RelatonNist::NistBibliography.get "SP 800-45 Ver. 2"
+          expect(bib.docidentifier[0].id).to eq "SP 800-45 Version 2"
+        end
       end
     end
 
-    it "doc with specific part" do
-      VCR.use_cassette "json_data" do
-        bib = RelatonNist::NistBibliography.get "NIST SP 800-57pt1r4"
-        expect(bib.docidentifier[0].id).to eq "SP 800-57 Part 1 Rev. 4"
+    context "doc with specific part & revision" do
+      it "short notation" do
+        VCR.use_cassette "json_data" do
+          bib = RelatonNist::NistBibliography.get "NIST SP 800-57pt1r4"
+          expect(bib.docidentifier[0].id).to eq "SP 800-57 Part 1 Rev. 4"
+        end
+      end
+
+      it "long notation" do
+        VCR.use_cassette "json_data" do
+          bib = RelatonNist::NistBibliography.get "NIST SP 800-57 Part 1 Rev. 4"
+          expect(bib.docidentifier[0].id).to eq "SP 800-57 Part 1 Rev. 4"
+        end
       end
     end
 
-    it "doc with specific volume" do
-      VCR.use_cassette "nistir_8011v3" do
-        bib = RelatonNist::NistBibliography.get "NISTIR 8011v3"
-        expect(bib.docidentifier[0].id).to eq "NISTIR 8011 Vol. 3"
+    context "doc with specific volume" do
+      it "short notation" do
+        VCR.use_cassette "nistir_8011v3" do
+          bib = RelatonNist::NistBibliography.get "NISTIR 8011v3"
+          expect(bib.docidentifier[0].id).to eq "NISTIR 8011 Vol. 3"
+        end
+      end
+
+      it "long notation" do
+        VCR.use_cassette "nistir_8011v3" do
+          bib = RelatonNist::NistBibliography.get "NISTIR 8011 Vol. 3"
+          expect(bib.docidentifier[0].id).to eq "NISTIR 8011 Vol. 3"
+        end
+      end
+    end
+
+    context "doc using MR identifiers" do
+      it "with volume and revision" do
+        VCR.use_cassette "json_data" do
+          bib = RelatonNist::NistBibliography.get "NIST.SP.800-60.v-1.r-1.eng"
+          expect(bib.docidentifier[0].id).to eq "SP 800-60 Vol. 1 Rev. 1"
+        end
+      end
+
+      it "with version" do
+        VCR.use_cassette "json_data" do
+          bib = RelatonNist::NistBibliography.get "NIST.SP.800-63.ver1-0-2.eng"
+          expect(bib.docidentifier[0].id).to eq "SP 800-63 Ver. 1.0.2"
+        end
+      end
+
+      it "with part and revision" do
+        VCR.use_cassette "json_data" do
+          bib = RelatonNist::NistBibliography.get "NIST.SP.800-57.pt-1.r-4.eng"
+          expect(bib.docidentifier[0].id).to eq "SP 800-57 Part 1 Rev. 4"
+        end
+      end
+
+      it "public draft" do
+        VCR.use_cassette "json_data" do
+          VCR.use_cassette "sp_pd_1_800_55_r_2" do
+            bib = RelatonNist::NistBibliography.get "NIST.SP.PD-1.800-55.r-2"
+            expect(bib.docidentifier[0].id).to eq "SP 800-55 Rev. 2 (Draft)"
+          end
+        end
       end
     end
 
@@ -329,11 +388,13 @@ RSpec.describe RelatonNist do
 
     it "search failed" do
       VCR.use_cassette "json_data" do
-        expect do
-          RelatonNist::NistBibliography.get("SP 2222", nil, {})
-        end.to output(
-          /\[relaton-nist\] WARNING: no match found online for SP 2222/
-        ).to_stderr
+        VCR.use_cassette "sp_2222" do
+          expect do
+            RelatonNist::NistBibliography.get("SP 2222", nil, {})
+          end.to output(
+            /\[relaton-nist\] WARNING: no match found online for SP 2222/
+          ).to_stderr
+        end
       end
     end
 

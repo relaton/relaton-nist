@@ -32,6 +32,7 @@ module RelatonNist
         return fetch_ref_err(code, year, []) if code.match? /\sEP$/
 
         /^(?<code2>[^\(]+)(\((?<date2>\w+\s(\d{2},\s)?\d{4})\))?\s?\(?((?<=\()(?<stage>[^\)]+))?/ =~ code
+        stage ||= /(?<=\.)PD-\w+(?=\.)/.match(code)&.to_s
         if code2
           code = code2.strip
           if date2
@@ -84,7 +85,7 @@ module RelatonNist
       # @return [Hash]
       def nistbib_results_filter(result, year, opts)
         missed_years = []
-        iter = opts[:stage]&.slice(-3, 1)
+        iter = /\w+(?=PD)|(?<=PD-)\w+/.match(opts[:stage])&.to_s
         iteration = case iter
                     when "I" then "1"
                     when "F" then "final"
@@ -133,30 +134,58 @@ module RelatonNist
       # @return [RelatonNist::HitCollection]
       def nistbib_search_filter(code, year, opts) # rubocop:disable Metrics/MethodLength
         warn "[relaton-nist] (\"#{code}\") fetching..."
-        match = %r{
-          ^((?:NIST)\s)?
-          (?<serie>(SP|FIPS|NISTIR|ITL\sBulletin|White\sPaper))\s
-          (?<code>[0-9-]{3,}[A-Z]?)
-          (?<prt1>pt\d+)?
-          (?<vol1>v\d+)?
-          (?<ver1>ver[\d\.]+)?
-          (?<rev1>r\d+)?
-          (\s(?<prt2>Part\s\d+))?
-          (\s(?<vol2>Vol\.\s\d+))?
-          (\s(?<ver2>(Ver\.|Version)\s[\d\.]+))?
-          (\s(?<rev2>Rev\.\s\d+))?
-          (\/(?<upd>Add))?
-        }x.match code
-        ref = match ? "#{match[:serie]} #{match[:code]}" : code
+        # match = %r{
+        #   ^((?:NIST)\s)?
+        #   (?<serie>(SP|FIPS|NISTIR|ITL\sBulletin|White\sPaper))\s
+        #   (?<code>[0-9-]{3,}[A-Z]?)
+        #   (?<prt1>pt\d+)?
+        #   (?<vol1>v\d+)?
+        #   (?<ver1>ver[\d\.]+)?
+        #   (?<rev1>r\d+)?
+        #   (\s(?<prt2>Part\s\d+))?
+        #   (\s(?<vol2>Vol\.\s\d+))?
+        #   (\s(?<ver2>(Ver\.|Version)\s[\d\.]+))?
+        #   (\s(?<rev2>Rev\.\s\d+))?
+        #   (\/(?<upd>Add))?
+        # }x.match(code)
+        # match ||= %r{
+        #   ^NIST\.
+        #   (?<serie>(SP|FIPS|IR|ITL\sBulletin|White\sPaper))\.
+        #   ((PD-\d+|PUB)\.)?
+        #   (?<code>[0-9-]{3,}[A-Z]?)
+        #   (\.(?<prt1>pt-\d+))?
+        #   (\.(?<vol1>v-\d+))?
+        #   (\.(?<ver1>ver-[\d\.]+))?
+        #   (\.(?<rev1>r-\d+))?
+        # }x.match(code)
+        matches = {
+          serie: match(/(SP|FIPS|(NIST)?IR|ITL\sBulletin|White\sPaper)(?=\.|\s)/, code),
+          code: match(/(?<=\.|\s)[0-9-]{3,}[A-Z]?/, code),
+          prt1: match(/(?<=(\.))?pt(?(1)-)[A-Z\d]+/, code),
+          vol1: match(/(?<=(\.))?v(?(1)-)\d+/, code),
+          ver1: match(/(?<=(\.))?ver(?(1)[-\d]|[\.\d])+/, code)&.gsub(/-/, "."),
+          rev1: match(/(?<=[^a-z])(?<=(\.))?r(?(1)-)\d+/, code),
+          add1: match(/(?<=(\.))?add(?(1)-)\d+/, code),
+          prt2: match(/(?<=\s)Part\s[A-Z\d]+/, code),
+          vol2: match(/(?<=\s)Vol\.\s\d+/, code),
+          ver2: match(/(?<=\s)Ver\.\s\d+/, code),
+          rev2: match(/(?<=\s)Rev\.\s\d+/, code),
+          add2: match(/(?<=\/)Add/, code),
+        }
+        ref = matches[:code] ? "#{matches[:serie]} #{matches[:code]}" : code
         result = search(ref, year, opts)
-        result.select { |i| search_filter i, match, code }
+        result.select { |i| search_filter i, matches, code }
+      end
+
+      def match(regex, code)
+        regex.match(code)&.to_s
       end
 
       # @param item [RelatonNist::Hit]
-      # @param match [MatchData]
+      # @param matches [Hash]
       # @param text [String]
       # @return [Boolean]
-      def search_filter(item, match, text) # rubocop:disable Metrics/AbcSize,Metrics/CyclomaticComplexity,Metrics/MethodLength,Metrics/PerceivedComplexity
+      def search_filter(item, matches, text) # rubocop:disable Metrics/AbcSize,Metrics/CyclomaticComplexity,Metrics/MethodLength,Metrics/PerceivedComplexity
         %r{
           ^((?:NIST)\s)?
           ((?<serie>(SP|FIPS|NISTIR|ITL\sBulletin|White\sPaper))\s)?
@@ -169,21 +198,21 @@ module RelatonNist
           (\s(?<vol2>Vol\.\s\d+))?
           (\s(?<ver2>(Ver\.|Version)\s[\d\.]+))?
           (\s(?<rev2>Rev\.\s\d+))?
-          (\s(?<upd>Add)endum)?
+          (\s(?<add>Add)endum)?
         }x =~ item.hit[:code]
-        match && [serie, item.hit[:serie]].include?(match[:serie]) && match[:code] == code &&
-          long_to_short(match[:prt1], match[:prt2]) == long_to_short(prt1, prt2) &&
-          long_to_short(match[:vol1], match[:vol2]) == long_to_short(vol1, vol2) &&
-          long_to_short(match[:ver1], match[:ver2]) == long_to_short(ver1, ver2) &&
-          long_to_short(match[:rev1], match[:rev2]) == long_to_short(rev1, rev2) &&
-          match[:upd] == upd || item.hit[:title].include?(text.sub(/^NIST\s/, ""))
+        matches[:code] && [serie, item.hit[:serie]].include?(matches[:serie]) && matches[:code] == code &&
+          long_to_short(matches[:prt1], matches[:prt2]) == long_to_short(prt1, prt2) &&
+          long_to_short(matches[:vol1], matches[:vol2]) == long_to_short(vol1, vol2) &&
+          long_to_short(matches[:ver1], matches[:ver2]) == long_to_short(ver1, ver2) &&
+          long_to_short(matches[:rev1], matches[:rev2]) == long_to_short(rev1, rev2) &&
+          long_to_short(matches[:add1], matches[:add2]) == add || item.hit[:title].include?(text.sub(/^NIST\s/, ""))
       end
 
       # @param short [String]
       # @param long [String]
       # @return [String, nil]
       def long_to_short(short, long)
-        return short if short
+        return short.sub(/-/, "") if short
         return unless long
 
         long.sub(/Part\s/, "pt").sub(/Vol\.\s/, "v").sub(/Rev\.\s/, "r").sub(/(Ver\.|Version)\s/, "ver")
