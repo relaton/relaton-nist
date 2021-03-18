@@ -52,7 +52,7 @@ RSpec.describe RelatonNist do
   it "return AsciiBib" do
     hash = YAML.load_file "spec/examples/nist_bib_item.yml"
     item_hash = RelatonNist::HashConverter.hash_to_bib hash
-    item = RelatonNist::NistBibliographicItem.new item_hash
+    item = RelatonNist::NistBibliographicItem.new **item_hash
     bib = item.to_asciibib
     file = "spec/examples/asciibib.adoc"
     File.write file, bib, encoding: "UTF-8" unless File.exist? file

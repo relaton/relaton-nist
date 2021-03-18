@@ -18,13 +18,13 @@ module RelatonNist
       # @param item_hash [Hash]
       # @return [RelatonNist::NistBibliographicItem]
       def bib_item(item_hash)
-        NistBibliographicItem.new item_hash
+        NistBibliographicItem.new **item_hash
       end
 
       def commentperiod_hash_to_bib(ret)
         return unless ret[:commentperiod]
 
-        ret[:commentperiod] = CommentPeriod.new ret[:commentperiod]
+        ret[:commentperiod] = CommentPeriod.new **ret[:commentperiod]
       end
 
       # @param ret [Hash]
@@ -32,7 +32,7 @@ module RelatonNist
         super
         return unless ret[:relation]
 
-        ret[:relation] = ret[:relation].map { |r| DocumentRelation.new r }
+        ret[:relation] = ret[:relation].map { |r| DocumentRelation.new **r }
 
         # ret[:relation] = array(ret[:relation])
         # ret[:relation]&.each do |r|
