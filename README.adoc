@@ -154,11 +154,7 @@ hash = YAML.load_file 'spec/examples/nist_bib_item.yml'
 => {"id"=>"NISTIR 8011 Vol. 3",
 ...
 
-bib_hash = RelatonNist::HashConverter.hash_to_bib hash
-=> {:id=>"NISTIR 8011 Vol. 3",
-...
-
-RelatonNist::NistBibliographicItem.new bib_hash
+RelatonNist::NistBibliographicItem.from_hash hash
 => #<RelatonNist::NistBibliographicItem:0x007f8b708505b8
 ...
 ----

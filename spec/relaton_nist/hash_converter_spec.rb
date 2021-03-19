@@ -4,8 +4,7 @@ require "jing"
 RSpec.describe RelatonNist::HashConverter do
   it "creates IetfBibliographicItem form hash" do
     hash = YAML.load_file "spec/examples/nist_bib_item.yml"
-    item_hash = RelatonNist::HashConverter.hash_to_bib hash
-    item = RelatonNist::NistBibliographicItem.new **item_hash
+    item = RelatonNist::NistBibliographicItem.from_hash hash
     xml = item.to_xml bibdata: true
     file = "spec/examples/from_yaml.xml"
     File.write file, xml, encoding: "UTF-8" unless File.exist? file

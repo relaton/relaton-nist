@@ -26,8 +26,7 @@ module RelatonNist
     # @param hash [Hash]
     # @return [RelatonNist::GbBibliographicItem]
     def hash_to_bib(hash)
-      item_hash = ::RelatonNist::HashConverter.hash_to_bib(hash)
-      ::RelatonNist::NistBibliographicItem.new item_hash
+      ::RelatonNist::NistBibliographicItem.from_hash hash
     end
 
     # Returns hash of XML grammar

@@ -63,6 +63,13 @@ module RelatonNist
       super
     end
 
+    # @param hash [Hash]
+    # @return [RelatonNist::GbBibliographicItem]
+    def self.from_hash(hash)
+      item_hash = RelatonNist::HashConverter.hash_to_bib(hash)
+      new **item_hash
+    end
+
     # @param opts [Hash]
     # @option opts [Nokogiri::XML::Builder] :builder XML builder
     # @option opts [Boolean] :bibdata
