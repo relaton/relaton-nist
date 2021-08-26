@@ -18,18 +18,18 @@ module RelatonNist
     # @param year [String]
     # @param opts [Hash]
     # @option opts [String] :stage
-    def initialize(ref_nbr, year = nil, opts = {}) # rubocop:disable Metrics/AbcSize
+    def initialize(ref_nbr, year = nil, opts = {}) # rubocop:disable Metrics/AbcSize,Metrics/MethodLength
       super ref_nbr, year
 
-      /(?<docid>(SP|FIPS)\s[0-9-]+)/ =~ text
+      /(?<docid>(?:SP|FIPS)\s[0-9-]+)/ =~ text
       @array = docid ? from_json(docid, **opts) : from_csrc(**opts)
       @array = from_csrc(**opts) unless @array.any?
 
       @array.sort! do |a, b|
-        if a.sort_value != b.sort_value
-          b.sort_value - a.sort_value
-        else
+        if a.sort_value == b.sort_value
           (b.hit[:release_date] - a.hit[:release_date]).to_i
+        else
+          b.sort_value - a.sort_value
         end
       end
     end
@@ -95,14 +95,13 @@ module RelatonNist
     # @param stage [String]
     # @return [Array<Hach>]
     def select_data(docid, **opts) # rubocop:disable Metrics/AbcSize, Metrics/CyclomaticComplexity, Metrics/MethodLength,Metrics/PerceivedComplexity
-      # ref = docid.sub(/(?<=\d{3}-\d{2})r(\d+)/, ' Rev. \1')
       d = Date.strptime year, "%Y" if year
-      # didrx = Regexp.new(docid)
+      statuses = %w[draft-public draft-prelim]
       data.select do |doc|
         next unless match_year?(doc, d)
 
         if /PD/.match? opts[:stage]
-          next unless %w[draft-public draft-prelim].include? doc["status"]
+          next unless statuses.include? doc["status"]
         else
           next unless doc["status"] == "final"
         end
@@ -134,8 +133,8 @@ module RelatonNist
     #
     # @prarm ctime [Time, NilClass]
     def fetch_data(ctime)
-      resp = OpenURI.open_uri("#{PUBS_EXPORT}.meta")
-      if !ctime || ctime < resp.last_modified
+      # resp = OpenURI.open_uri("#{PUBS_EXPORT}.meta")
+      if !ctime || ctime < OpenURI.open_uri("#{PUBS_EXPORT}.meta").last_modified
         @data = nil
         uri_open = URI.method(:open) || Kernel.method(:open)
         FileUtils.mkdir_p DATAFILEDIR unless Dir.exist? DATAFILEDIR

@@ -17,7 +17,7 @@ module RelatonNist
       # @param item_hash [Hash]
       # @return [RelatonNist::NistBibliographicItem]
       def bib_item(item_hash)
-        NistBibliographicItem.new **item_hash
+        NistBibliographicItem.new(**item_hash)
       end
 
       def fetch_status(item)

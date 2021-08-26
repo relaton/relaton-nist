@@ -52,7 +52,7 @@ RSpec.describe RelatonNist do
   it "return AsciiBib" do
     hash = YAML.load_file "spec/examples/nist_bib_item.yml"
     item_hash = RelatonNist::HashConverter.hash_to_bib hash
-    item = RelatonNist::NistBibliographicItem.new **item_hash
+    item = RelatonNist::NistBibliographicItem.new(**item_hash)
     bib = item.to_asciibib
     file = "spec/examples/asciibib.adoc"
     File.write file, bib, encoding: "UTF-8" unless File.exist? file
@@ -164,7 +164,7 @@ RSpec.describe RelatonNist do
         File.write file_path, result unless File.exist? file_path
         expect(result).to be_equivalent_to(
           File.open(file_path, "r:UTF-8", &:read)
-            .gsub(/(?<=<fetched>)\d{4}-\d{2}-\d{2}/, Date.today.to_s)
+            .gsub(/(?<=<fetched>)\d{4}-\d{2}-\d{2}/, Date.today.to_s),
         )
         schema = Jing.new "spec/examples/isobib.rng"
         errors = schema.validate file_path
@@ -180,7 +180,7 @@ RSpec.describe RelatonNist do
         File.write file_path, result unless File.exist? file_path
         expect(result).to be_equivalent_to(
           File.open(file_path, "r:UTF-8", &:read)
-            .gsub(/(?<=<fetched>)\d{4}-\d{2}-\d{2}/, Date.today.to_s)
+            .gsub(/(?<=<fetched>)\d{4}-\d{2}-\d{2}/, Date.today.to_s),
         )
         schema = Jing.new "spec/examples/isobib.rng"
         errors = schema.validate file_path
@@ -309,7 +309,7 @@ RSpec.describe RelatonNist do
       VCR.use_cassette "nistir_8204" do
         result = RelatonNist::NistBibliography.get "NISTIR 8204"
         expect(result.relation.first).to be_instance_of(
-          RelatonNist::DocumentRelation
+          RelatonNist::DocumentRelation,
         )
       end
     end
@@ -331,7 +331,7 @@ RSpec.describe RelatonNist do
         File.write file_path, result unless File.exist? file_path
         expect(result).to be_equivalent_to(
           File.open(file_path, "r:UTF-8", &:read)
-            .gsub(/(?<=<fetched>)\d{4}-\d{2}-\d{2}/, Date.today.to_s)
+            .gsub(/(?<=<fetched>)\d{4}-\d{2}-\d{2}/, Date.today.to_s),
         )
         schema = Jing.new "spec/examples/isobib.rng"
         errors = schema.validate file_path
@@ -381,7 +381,7 @@ RSpec.describe RelatonNist do
         expect do
           RelatonNist::NistBibliography.get("NISTIR 8200", "2017", {})
         end.to output(
-          /\[relaton-nist\] WARNING: no match found online for NISTIR 8200:2017/
+          /\[relaton-nist\] WARNING: no match found online for NISTIR 8200:2017/,
         ).to_stderr
       end
     end
@@ -392,7 +392,7 @@ RSpec.describe RelatonNist do
           expect do
             RelatonNist::NistBibliography.get("SP 2222", nil, {})
           end.to output(
-            /\[relaton-nist\] WARNING: no match found online for SP 2222/
+            /\[relaton-nist\] WARNING: no match found online for SP 2222/,
           ).to_stderr
         end
       end
@@ -400,7 +400,7 @@ RSpec.describe RelatonNist do
 
     it "contains EP at the end" do
       expect { RelatonNist::NistBibliography.get "FIPS 201 EP" }.to output(
-        /WARNING: no match found online for FIPS 201 EP/
+        /WARNING: no match found online for FIPS 201 EP/,
       ).to_stderr
     end
   end
@@ -424,7 +424,7 @@ RSpec.describe RelatonNist do
       it "final where updated-date > original-release-date" do
         VCR.use_cassette "json_data" do
           result = RelatonNist::NistBibliography.get(
-            "SP 800-162 (February 25, 2019)"
+            "SP 800-162 (February 25, 2019)",
           )
           expect(result.id).to eq "SP800-162"
         end
@@ -435,7 +435,7 @@ RSpec.describe RelatonNist do
       it "draft without updated-date" do
         VCR.use_cassette "json_data" do
           result = RelatonNist::NistBibliography.get(
-            "SP 800-205 (February 2019) (PD)"
+            "SP 800-205 (February 2019) (PD)",
           )
           expect(result.id).to eq "SP800-205(Draft)"
         end
@@ -448,7 +448,7 @@ RSpec.describe RelatonNist do
           File.write file_path, result unless File.exist? file_path
           expect(result).to be_equivalent_to(
             File.open(file_path, "r:UTF-8", &:read)
-              .gsub(/(?<=<fetched>)\d{4}-\d{2}-\d{2}/, Date.today.to_s)
+              .gsub(/(?<=<fetched>)\d{4}-\d{2}-\d{2}/, Date.today.to_s),
           )
         end
       end
@@ -458,7 +458,7 @@ RSpec.describe RelatonNist do
           result = RelatonNist::NistBibliography.get "SP 800-57pt2r1 (2PD)"
           expect(result.title.first.title.content).to eq(
             "Recommendation for Key Management - Part 2: Best Practices for "\
-            "Key Management Organizations"
+            "Key Management Organizations",
           )
           expect(result.status.iteration).to eq "2"
         end
