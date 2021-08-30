@@ -3,6 +3,8 @@
 module RelatonNist
   # Hit.
   class Hit < RelatonBib::Hit
+    attr_writer :fetch
+
     # Parse page.
     # @return [RelatonNist::NistBliographicItem]
     def fetch
@@ -10,7 +12,7 @@ module RelatonNist
     end
 
     # @return [Iteger]
-    def sort_value
+    def sort_value # rubocop:disable Metrics/AbcSize,Metrics/CyclomaticComplexity,Metrics/MethodLength,Metrics/PerceivedComplexity
       @sort_value ||= begin
         sort_phrase = [hit[:serie], hit[:code], hit[:title]].join " "
         corr = hit_collection&.text&.split&.map do |w|

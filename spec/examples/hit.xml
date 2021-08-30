@@ -1,158 +1,49 @@
 <bibdata type="standard">
-  <fetched>2020-10-28</fetched>
-  <title format="text/plain" language="en" script="Latn">Automation Support for Security Control Assessments: Software Asset Management</title>
-  <uri type="pdf">https://nvlpubs.nist.gov/nistpubs/ir/2018/NIST.IR.8011-3.pdf</uri>
-  <uri type="doi">https://doi.org/10.6028/NIST.IR.8011-3</uri>
-  <docidentifier type="NIST">NISTIR 8011 Vol. 3</docidentifier>
+  <fetched>2021-08-30</fetched>
+  <title type="title-main" format="text/plain" language="en" script="Latn">Automation support for security control assessments. volume 1: overview</title>
+  <title type="main" format="text/plain" language="en" script="Latn">Automation support for security control assessments. volume 1: overview</title>
+  <uri type="doi">https://nvlpubs.nist.gov/nistpubs/ir/2017/NIST.IR.8011-1.pdf</uri>
+  <docidentifier type="NIST">NIST IR 8011-1</docidentifier>
+  <docidentifier type="DOI">10.6028/NIST.IR.8011-1</docidentifier>
   <date type="published">
-    <on>2018-12</on>
+    <on>2017-06</on>
   </date>
-  <date type="issued">
-    <on>2018-12</on>
-  </date>
+  <contributor>
+    <role type="author"/>
+    <person>
+      <name>
+        <forename script="Latn">Kelley</forename>
+        <surname script="Latn">Dempsey</surname>
+      </name>
+    </person>
+  </contributor>
+  <contributor>
+    <role type="author"/>
+    <person>
+      <name>
+        <forename script="Latn">Paul</forename>
+        <surname script="Latn">Eavy</surname>
+      </name>
+    </person>
+  </contributor>
+  <contributor>
+    <role type="author"/>
+    <person>
+      <name>
+        <forename script="Latn">George</forename>
+        <surname script="Latn">Moore</surname>
+      </name>
+    </person>
+  </contributor>
   <contributor>
     <role type="publisher"/>
     <organization>
       <name>National Institute of Standards and Technology</name>
       <abbreviation>NIST</abbreviation>
-      <uri>www.nist.gov</uri>
     </organization>
   </contributor>
-  <contributor>
-    <role type="author"/>
-    <person>
-      <name>
-        <completename language="en" script="Latn">Kelley Dempsey</completename>
-      </name>
-      <affiliation>
-        <organization>
-          <name>National Institute of Standards and Technology</name>
-          <abbreviation>NIST</abbreviation>
-          <uri>www.nist.gov</uri>
-        </organization>
-      </affiliation>
-    </person>
-  </contributor>
-  <contributor>
-    <role type="author"/>
-    <person>
-      <name>
-        <completename language="en" script="Latn">Nedim Goren</completename>
-      </name>
-      <affiliation>
-        <organization>
-          <name>National Institute of Standards and Technology</name>
-          <abbreviation>NIST</abbreviation>
-          <uri>www.nist.gov</uri>
-        </organization>
-      </affiliation>
-    </person>
-  </contributor>
-  <contributor>
-    <role type="author"/>
-    <person>
-      <name>
-        <completename language="en" script="Latn">Paul Eavy</completename>
-      </name>
-      <affiliation>
-        <organization>
-          <name>DHS</name>
-          <abbreviation>DHS</abbreviation>
-        </organization>
-      </affiliation>
-    </person>
-  </contributor>
-  <contributor>
-    <role type="author"/>
-    <person>
-      <name>
-        <completename language="en" script="Latn">George Moore</completename>
-      </name>
-      <affiliation>
-        <organization>
-          <name>APL</name>
-          <abbreviation>APL</abbreviation>
-        </organization>
-      </affiliation>
-    </person>
-  </contributor>
-  <language>en</language>
   <script>Latn</script>
-  <abstract format="text/plain" language="en" script="Latn">The NISTIR 8011 volumes each focus on an individual information security capability, adding tangible detail to the more general overview given in NISTIR 8011 Volume 1, and providing a template for transition to a detailed, NIST guidance-based automated assessment. This document, Volume 3 of NISTIR 8011, addresses the Software Asset Management (SWAM) information security capability. The focus of the SWAM capability is to manage risk created by unmanaged or unauthorized software on a network. Unmanaged or unauthorized software is a target that attackers can use as a platform from which to attack components on the network.</abstract>
-  <status>
-    <stage>final</stage>
-    <substage>active</substage>
-  </status>
-  <copyright>
-    <from>2018</from>
-    <owner>
-      <organization>
-        <name>National Institute of Standards and Technology</name>
-        <abbreviation>NIST</abbreviation>
-        <uri>www.nist.gov</uri>
-      </organization>
-    </owner>
-  </copyright>
-  <relation type="partOf">
-    <bibitem>
-      <formattedref format="text/plain" language="en" script="Latn">NISTIR 8011 Vol. 1</formattedref>
-      <uri type="src">https://csrc.nist.gov/publications/detail/nistir/8011/vol-1/final</uri>
-    </bibitem>
-  </relation>
-  <relation type="partOf">
-    <bibitem>
-      <formattedref format="text/plain" language="en" script="Latn">NISTIR 8011 Vol. 2</formattedref>
-      <uri type="src">https://csrc.nist.gov/publications/detail/nistir/8011/vol-2/final</uri>
-    </bibitem>
-  </relation>
-  <relation type="partOf">
-    <bibitem>
-      <formattedref format="text/plain" language="en" script="Latn">NISTIR 8011 Vol. 4</formattedref>
-      <uri type="src">https://csrc.nist.gov/publications/detail/nistir/8011/vol-4/final</uri>
-    </bibitem>
-  </relation>
-  <relation type="updates">
-    <bibitem>
-      <formattedref format="text/plain" language="en" script="Latn">SP 800-53A Rev. 4</formattedref>
-      <uri type="src">https://csrc.nist.gov/publications/detail/sp/800-53a/rev-4/final</uri>
-    </bibitem>
-  </relation>
-  <relation type="updates">
-    <bibitem>
-      <formattedref format="text/plain" language="en" script="Latn">SP 800-53 Rev. 4</formattedref>
-      <uri type="src">https://csrc.nist.gov/publications/detail/sp/800-53/rev-4/final</uri>
-    </bibitem>
-  </relation>
-  <series>
-    <formattedref format="text/plain" language="en" script="Latn">NISTIR 8011 Vol. 3 (IPD)</formattedref>
-  </series>
-  <keyword>actual state</keyword>
-  <keyword>assessment</keyword>
-  <keyword>authorization boundary</keyword>
-  <keyword>automation</keyword>
-  <keyword>capability</keyword>
-  <keyword>continuous diagnostics and mitigation</keyword>
-  <keyword>dashboard</keyword>
-  <keyword>defect</keyword>
-  <keyword>desired state specification</keyword>
-  <keyword>firmware</keyword>
-  <keyword>information security continuous monitoring</keyword>
-  <keyword>ISCM</keyword>
-  <keyword>inventory management</keyword>
-  <keyword>malicious code</keyword>
-  <keyword>malware</keyword>
-  <keyword>mitigation</keyword>
-  <keyword>mobile code</keyword>
-  <keyword>ongoing assessment</keyword>
-  <keyword>root cause analysis</keyword>
-  <keyword>security capability</keyword>
-  <keyword>security control</keyword>
-  <keyword>security control item</keyword>
-  <keyword>software</keyword>
-  <keyword>software asset management</keyword>
-  <keyword>software file</keyword>
-  <keyword>SWID tag</keyword>
-  <keyword>whitelisting</keyword>
+  <place>Gaithersburg, MD</place>
   <ext>
     <doctype>standard</doctype>
   </ext>

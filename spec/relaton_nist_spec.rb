@@ -24,8 +24,8 @@ RSpec.describe RelatonNist do
 
   context "return xml of hit" do
     it "with bibdata root elemen" do
-      VCR.use_cassette "8011" do
-        hits = RelatonNist::NistBibliography.search("NISTIR 8011 Vol. 3")
+      VCR.use_cassette "8011_1" do
+        hits = RelatonNist::NistBibliography.search("NISTIR 8011-1")
         file_path = "spec/examples/hit.xml"
         xml = hits.first.to_xml bibdata: true
         File.write file_path, xml unless File.exist? file_path
@@ -38,8 +38,8 @@ RSpec.describe RelatonNist do
     end
 
     it "with bibitem root elemen" do
-      VCR.use_cassette "8011" do
-        hits = RelatonNist::NistBibliography.search("NISTIR 8011 Vol. 3")
+      VCR.use_cassette "8011_1" do
+        hits = RelatonNist::NistBibliography.search("NISTIR 8011-1")
         file_path = "spec/examples/hit_bibitem.xml"
         File.write file_path, hits.first.to_xml unless File.exist? file_path
         expect(hits.first.to_xml).to be_equivalent_to File
@@ -63,26 +63,29 @@ RSpec.describe RelatonNist do
   it "return string of hit" do
     VCR.use_cassette "8200_2018" do
       hits = RelatonNist::NistBibliography.search("NISTIR 8200", "2018").fetch
-      expect(hits.first.to_s).to eq "<RelatonNist::Hit:"\
+      expect(hits.first.to_s).to eq(
+        "<RelatonNist::Hit:"\
         "#{format('%<id>#.14x', id: hits.first.object_id << 1)} "\
         '@text="NISTIR 8200" @fetched="true" '\
-        '@fullIdentifier="NISTIR8200:2018" '\
-        '@title="8200">'
+        '@fullIdentifier="NISTIR8200:2018" @title="NISTIR 8200">',
+      )
     end
   end
 
   it "return string of hit collection" do
     VCR.use_cassette "8200_2018" do
       hits = RelatonNist::NistBibliography.search("NISTIR 8200", "2018").fetch
-      expect(hits.to_s).to eq "<RelatonNist::HitCollection:"\
+      expect(hits.to_s).to eq(
+        "<RelatonNist::HitCollection:"\
         "#{format('%<id>#.14x', id: hits.object_id << 1)} "\
-        "@ref=NISTIR 8200 @fetched=true>"
+        "@ref=NISTIR 8200 @fetched=true>",
+      )
     end
   end
 
   context "get" do
     it "a code" do
-      VCR.use_cassette "8200" do
+      VCR.use_cassette "8200_2018" do
         result = RelatonNist::NistBibliography.get("NISTIR 8200", "2018", {})
           .to_xml bibdata: true
         file_path = "spec/examples/get.xml"
@@ -127,8 +130,8 @@ RSpec.describe RelatonNist do
     end
 
     it "RETIRED DRAFT" do
-      VCR.use_cassette "retired_draft" do
-        result = RelatonNist::NistBibliography.get("NISTIR 7831(PD)", nil, {})
+      VCR.use_cassette "json_data" do
+        result = RelatonNist::NistBibliography.get("SP 800-80(PD)", nil, {})
           .to_xml bibdata: true
         file_path = "spec/examples/retired_draft.xml"
         File.write file_path, result unless File.exist? file_path
@@ -259,16 +262,16 @@ RSpec.describe RelatonNist do
 
     context "doc with specific volume" do
       it "short notation" do
-        VCR.use_cassette "nistir_8011v3" do
-          bib = RelatonNist::NistBibliography.get "NISTIR 8011v3"
-          expect(bib.docidentifier[0].id).to eq "NISTIR 8011 Vol. 3"
+        VCR.use_cassette "nistir_8011v4" do
+          bib = RelatonNist::NistBibliography.get "NISTIR 8011v4"
+          expect(bib.docidentifier[0].id).to eq "NIST IR 8011v4"
         end
       end
 
       it "long notation" do
-        VCR.use_cassette "nistir_8011v3" do
-          bib = RelatonNist::NistBibliography.get "NISTIR 8011 Vol. 3"
-          expect(bib.docidentifier[0].id).to eq "NISTIR 8011 Vol. 3"
+        VCR.use_cassette "nistir_8011v4" do
+          bib = RelatonNist::NistBibliography.get "NISTIR 8011 Vol. 4"
+          expect(bib.docidentifier[0].id).to eq "NIST IR 8011v4"
         end
       end
     end
@@ -297,47 +300,49 @@ RSpec.describe RelatonNist do
 
       it "public draft" do
         VCR.use_cassette "json_data" do
-          VCR.use_cassette "sp_pd_1_800_55_r_2" do
-            bib = RelatonNist::NistBibliography.get "NIST.SP.PD-1.800-55.r-2"
-            expect(bib.docidentifier[0].id).to eq "SP 800-55 Rev. 2 (Draft)"
+          VCR.use_cassette "sp_800_55_r_1" do
+            bib = RelatonNist::NistBibliography.get "NIST.SP.800-55.r-1"
+            expect(bib.docidentifier[0].id).to eq "SP 800-55 Rev. 1"
           end
         end
       end
     end
 
     it "doc with supersedes" do
-      VCR.use_cassette "nistir_8204" do
-        result = RelatonNist::NistBibliography.get "NISTIR 8204"
+      VCR.use_cassette "json_data" do
+        result = RelatonNist::NistBibliography.get "SP 800-16"
         expect(result.relation.first).to be_instance_of(
           RelatonNist::DocumentRelation,
         )
+        expect(result.relation.first.type).to eq "supersedes"
       end
     end
 
     it "draft active" do
-      VCR.use_cassette "nistir_8259_pd" do
-        result = RelatonNist::NistBibliography.get "NISTIR 8259 (PD)"
+      VCR.use_cassette "nist_sp_800_140_pd" do
+        result = RelatonNist::NistBibliography.get "NIST SP 800-140 (PD)"
         expect(result.status.stage.value).to eq "draft-public"
         expect(result.status.substage.value).to eq "withdrawn"
       end
     end
 
-    it "doc with White Paper as id" do
-      VCR.use_cassette "framework" do
-        result = RelatonNist::NistBibliography.get("NIST Framework for "\
-          "Improving Critical Infrastructure Cybersecurity, Version 1.1")
-          .to_xml bibdata: true
-        file_path = "spec/examples/framework.xml"
-        File.write file_path, result unless File.exist? file_path
-        expect(result).to be_equivalent_to(
-          File.open(file_path, "r:UTF-8", &:read)
-            .gsub(/(?<=<fetched>)\d{4}-\d{2}-\d{2}/, Date.today.to_s),
-        )
-        schema = Jing.new "spec/examples/isobib.rng"
-        errors = schema.validate file_path
-        expect(errors).to eq []
-      end
-    end
+    # it "doc with White Paper as id" do
+    #   VCR.use_cassette "framework" do
+    #     result = RelatonNist::NistBibliography.get(
+    #       "NIST Framework for "\
+    #       "Improving Critical Infrastructure Cybersecurity, Version 1.1",
+    #     ).to_xml bibdata: true
+    #     file_path = "spec/examples/framework.xml"
+    #     File.write file_path, result unless File.exist? file_path
+    #     expect(result).to be_equivalent_to(
+    #       File.open(file_path, "r:UTF-8", &:read)
+    #         .gsub(/(?<=<fetched>)\d{4}-\d{2}-\d{2}/, Date.today.to_s),
+    #     )
+    #     schema = Jing.new "spec/examples/isobib.rng"
+    #     errors = schema.validate file_path
+    #     expect(errors).to eq []
+    #   end
+    # end
 
     it "get NIST SP 800-12" do
       VCR.use_cassette "nist_sp_800_12" do

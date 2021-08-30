@@ -13,6 +13,7 @@ module RelatonNist
     PUBS_EXPORT = URI.join(DOMAIN, "/CSRC/media/feeds/metanorma/pubs-export")
     DATAFILEDIR = File.expand_path ".relaton/nist", Dir.home
     DATAFILE = File.expand_path "pubs-export.zip", DATAFILEDIR
+    GHNISTDATA = "https://raw.githubusercontent.com/relaton/relaton-data-nist/main/data/"
 
     # @param ref_nbr [String]
     # @param year [String]
@@ -21,9 +22,9 @@ module RelatonNist
     def initialize(ref_nbr, year = nil, opts = {}) # rubocop:disable Metrics/AbcSize,Metrics/MethodLength
       super ref_nbr, year
 
-      /(?<docid>(?:SP|FIPS)\s[0-9-]+)/ =~ text
-      @array = docid ? from_json(docid, **opts) : from_csrc(**opts)
-      @array = from_csrc(**opts) unless @array.any?
+      # /(?<docid>(?:SP|FIPS)\s[0-9-]+)/ =~ text
+      @array = from_json(**opts)
+      @array = from_ga unless @array.any?
 
       @array.sort! do |a, b|
         if a.sort_value == b.sort_value
@@ -36,52 +37,65 @@ module RelatonNist
 
     private
 
+    def from_ga # rubocop:disable Metrics/AbcSize
+      fn = text.gsub(%r{[/\s:.]}, "_").upcase
+      yaml = OpenURI.open_uri "#{GHNISTDATA}#{fn}.yaml"
+      hash = YAML.safe_load yaml
+      bib = RelatonNist::NistBibliographicItem.from_hash hash
+      hit = Hit.new({ code: text }, self)
+      hit.fetch = bib
+      [hit]
+    rescue OpenURI::HTTPError => e
+      return [] if e.io.status[0] == "404"
+
+      raise e
+    end
+
     # rubocop:disable Metrics/AbcSize, Metrics/MethodLength
 
     # @param stage [String]
     # @return [Array<RelatonNist::Hit>]
-    def from_csrc(**opts)
-      from, to = nil
-      if year
-        d    = Date.strptime year, "%Y"
-        from = d.strftime "%m/%d/%Y"
-        to   = d.next_year.prev_day.strftime "%m/%d/%Y"
-      end
-      url = "#{DOMAIN}/publications/search?keywords-lg=#{text}"\
-        "&sortBy-lg=relevence"
-      url += "&dateFrom-lg=#{from}" if from
-      url += "&dateTo-lg=#{to}" if to
-      url += if /PD/.match? opts[:stage]
-               "&status-lg=Draft,Retired Draft,Withdrawn"
-             else
-               "&status-lg=Final,Withdrawn"
-             end
+    # def from_csrc(**opts)
+    #   from, to = nil
+    #   if year
+    #     d    = Date.strptime year, "%Y"
+    #     from = d.strftime "%m/%d/%Y"
+    #     to   = d.next_year.prev_day.strftime "%m/%d/%Y"
+    #   end
+    #   url = "#{DOMAIN}/publications/search?keywords-lg=#{text}"\
+    #         "&sortBy-lg=relevence"
+    #   url += "&dateFrom-lg=#{from}" if from
+    #   url += "&dateTo-lg=#{to}" if to
+    #   url += if /PD/.match? opts[:stage]
+    #            "&status-lg=Draft,Retired Draft,Withdrawn"
+    #          else
+    #            "&status-lg=Final,Withdrawn"
+    #          end
 
-      doc = Nokogiri::HTML OpenURI.open_uri(::Addressable::URI.parse(url).normalize)
-      doc.css("table.publications-table > tbody > tr").map do |h|
-        link  = h.at("td/div/strong/a")
-        serie = h.at("td[1]").text.strip
-        code  = h.at("td[2]").text.strip
-        title = link.text
-        doc_url = DOMAIN + link[:href]
-        status = h.at("td[4]").text.strip.downcase
-        release_date = Date.strptime h.at("td[5]").text.strip, "%m/%d/%Y"
-        Hit.new(
-          {
-            code: code, serie: serie, title: title, url: doc_url,
-            status: status, release_date: release_date
-          }, self
-        )
-      end
-    end
+    #   doc = Nokogiri::HTML OpenURI.open_uri(::Addressable::URI.parse(url).normalize)
+    #   doc.css("table.publications-table > tbody > tr").map do |h|
+    #     link  = h.at("td/div/strong/a")
+    #     serie = h.at("td[1]").text.strip
+    #     code  = h.at("td[2]").text.strip
+    #     title = link.text
+    #     doc_url = DOMAIN + link[:href]
+    #     status = h.at("td[4]").text.strip.downcase
+    #     release_date = Date.strptime h.at("td[5]").text.strip, "%m/%d/%Y"
+    #     Hit.new(
+    #       {
+    #         code: code, serie: serie, title: title, url: doc_url,
+    #         status: status, release_date: release_date
+    #       }, self
+    #     )
+    #   end
+    # end
     # rubocop:enable Metrics/AbcSize, Metrics/MethodLength
 
     # Fetches data form json
-    # @param docid [String]
     # @param stage [String]
     # @return [Array<RelatonNist::Hit>]
-    def from_json(docid, **opts)
-      select_data(docid, **opts).map do |h|
+    def from_json(**opts)
+      select_data(**opts).map do |h|
         /(?<serie>(?<=-)\w+$)/ =~ h["series"]
         title = [h["title-main"], h["title-sub"]].compact.join " - "
         release_date = RelatonBib.parse_date h["published-date"], false
@@ -91,10 +105,9 @@ module RelatonNist
       end
     end
 
-    # @param docid [String]
     # @param stage [String]
     # @return [Array<Hach>]
-    def select_data(docid, **opts) # rubocop:disable Metrics/AbcSize, Metrics/CyclomaticComplexity, Metrics/MethodLength,Metrics/PerceivedComplexity
+    def select_data(**opts) # rubocop:disable Metrics/AbcSize, Metrics/CyclomaticComplexity, Metrics/MethodLength,Metrics/PerceivedComplexity
       d = Date.strptime year, "%Y" if year
       statuses = %w[draft-public draft-prelim]
       data.select do |doc|
@@ -105,7 +118,7 @@ module RelatonNist
         else
           next unless doc["status"] == "final"
         end
-        doc["docidentifier"].include? docid
+        doc["docidentifier"].include? text
       end
     end
 

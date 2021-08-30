@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://raw.githubusercontent.com/relaton/relaton-data-nist/main/data/NISTIR_8200.yaml
+    uri: https://raw.githubusercontent.com/relaton/relaton-data-nist/main/data/NISTIR_8011-1.yaml
     body:
       encoding: US-ASCII
       string: ''
@@ -21,7 +21,7 @@ http_interactions:
       Connection:
       - keep-alive
       Content-Length:
-      - '458'
+      - '456'
       Cache-Control:
       - max-age=300
       Content-Security-Policy:
@@ -29,7 +29,7 @@ http_interactions:
       Content-Type:
       - text/plain; charset=utf-8
       Etag:
-      - W/"7191a0c965944bb8a56a37ae78ae763c5131e9d83570a60a8151803f6198f626"
+      - W/"30c6a6e137b2548c95b4ed5c7cd41053aa02da6f67bd69be86cc9318ba19cb07"
       Strict-Transport-Security:
       - max-age=31536000
       X-Content-Type-Options:
@@ -39,87 +39,94 @@ http_interactions:
       X-Xss-Protection:
       - 1; mode=block
       X-Github-Request-Id:
-      - 26AE:0F6B:D35E:101C2:612D0F48
+      - 9040:37A4:10E7886:11E51F9:612D0F77
       Accept-Ranges:
       - bytes
       Date:
-      - Mon, 30 Aug 2021 17:03:55 GMT
+      - Mon, 30 Aug 2021 17:03:51 GMT
       Via:
       - 1.1 varnish
       X-Served-By:
-      - cache-muc13940-MUC
+      - cache-muc13938-MUC
       X-Cache:
-      - HIT
+      - MISS
       X-Cache-Hits:
-      - '1'
+      - '0'
       X-Timer:
-      - S1630343036.569148,VS0,VE0
+      - S1630343031.339132,VS0,VE258
       Vary:
       - Authorization,Accept-Encoding
       Access-Control-Allow-Origin:
       - "*"
       X-Fastly-Request-Id:
-      - c414be58320f99eb3357c9a4df1f2eb693b94a01
+      - b0245b5fa28b6e59527c792afb79667fa6dfbe61
       Expires:
-      - Mon, 30 Aug 2021 17:08:55 GMT
+      - Mon, 30 Aug 2021 17:08:51 GMT
       Source-Age:
-      - '51'
+      - '0'
     body:
       encoding: ASCII-8BIT
       string: |
         ---
-        id: NISTIR8200
+        id: NISTIR8011-1
         title:
         - type: title-main
-          content: Interagency report on the status of international cybersecurity standardization
-            for the internet of things (IoT)
+          content: 'Automation support for security control assessments. volume 1: overview'
           language: en
           script: Latn
           format: text/plain
         - type: main
-          content: Interagency report on the status of international cybersecurity standardization
-            for the internet of things (IoT)
+          content: 'Automation support for security control assessments. volume 1: overview'
           language: en
           script: Latn
           format: text/plain
         link:
-          content: https://nvlpubs.nist.gov/nistpubs/ir/2018/NIST.IR.8200.pdf
+          content: https://nvlpubs.nist.gov/nistpubs/ir/2017/NIST.IR.8011-1.pdf
           type: doi
         type: standard
         docid:
-        - id: NIST IR 8200
+        - id: NIST IR 8011-1
           type: NIST
-        - id: 10.6028/NIST.IR.8200
+        - id: 10.6028/NIST.IR.8011-1
           type: DOI
         date:
           type: published
-          value: 2018-11
+          value: 2017-06
         contributor:
         - person:
             name:
               forename:
-                content: Mike
+                content: Kelley
                 script: Latn
               surname:
-                content: Hogan
+                content: Dempsey
                 script: Latn
           role: author
         - person:
             name:
               forename:
-                content: Ben
+                content: Paul
                 script: Latn
               surname:
-                content: Piccarreta
+                content: Eavy
+                script: Latn
+          role: author
+        - person:
+            name:
+              forename:
+                content: George
+                script: Latn
+              surname:
+                content: Moore
                 script: Latn
           role: author
         - organization:
             name: National Institute of Standards and Technology
             abbreviation: NIST
           role: publisher
-        revdate: 2018-11
+        revdate: 2017-06
         script: Latn
         place: Gaithersburg, MD
         doctype: standard
-  recorded_at: Mon, 30 Aug 2021 17:03:55 GMT
+  recorded_at: Mon, 30 Aug 2021 17:03:51 GMT
 recorded_with: VCR 6.0.0

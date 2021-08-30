@@ -15,8 +15,8 @@ module RelatonNist
       # @return [RelatonNist::HitCollection]
       def search(text, year = nil, opts = {})
         HitCollection.new text, year, opts
-      rescue OpenURI::HTTPError, SocketError, OpenSSL::SSL::SSLError
-        raise RelatonBib::RequestError, "Could not access https://www.nist.gov"
+      rescue OpenURI::HTTPError, SocketError, OpenSSL::SSL::SSLError => e
+        raise RelatonBib::RequestError, e.message
       end
 
       # @param code [String] the NIST standard Code to look up (e..g "8200")
@@ -174,7 +174,17 @@ module RelatonNist
         }
         ref = matches[:code] ? "#{matches[:serie]} #{matches[:code]}" : code
         result = search(ref, year, opts)
-        result.select { |i| search_filter i, matches, code }
+        selected_result = result.select { |i| search_filter i, matches, code }
+        return selected_result if selected_result.any? || !matches[:code]
+
+        search full_ref(matches)
+      end
+
+      def full_ref(matches)
+        ref = "#{matches[:serie]} #{matches[:code]}"
+        ref += long_to_short(matches[:prt1], matches[:prt2]).to_s
+        ref += long_to_short(matches[:vol1], matches[:vol2]).to_s
+        ref
       end
 
       def match(regex, code)
@@ -192,11 +202,11 @@ module RelatonNist
           (?<code>[0-9-]{3,}[A-Z]?)
           (?<prt1>pt\d+)?
           (?<vol1>v\d+)?
-          (?<ver1>ver[\d\.]+)?
+          (?<ver1>ver[\d.]+)?
           (?<rev1>r\d+)?
           (\s(?<prt2>Part\s\d+))?
           (\s(?<vol2>Vol\.\s\d+))?
-          (\s(?<ver2>(Ver\.|Version)\s[\d\.]+))?
+          (\s(?<ver2>(Ver\.|Version)\s[\d.]+))?
           (\s(?<rev2>Rev\.\s\d+))?
           (\s(?<add>Add)endum)?
         }x =~ item.hit[:code]

@@ -1,5 +1,5 @@
 module Relaton
-  class Processor end
+  # class Processor end
 end
 
 RSpec.describe RelatonNist::XMLParser do
@@ -18,7 +18,7 @@ RSpec.describe RelatonNist::XMLParser do
   it "get document" do
     VCR.use_cassette "8200" do
       item = RelatonNist::NistBibliography.get "NISTIR 8200", "2018"
-      expect(item.docidentifier.first.id).to eq "NISTIR 8200"
+      expect(item.docidentifier.first.id).to eq "NIST IR 8200"
     end
   end
 

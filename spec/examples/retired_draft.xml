@@ -1,47 +1,27 @@
 <bibdata type="standard">
-  <fetched>2020-10-29</fetched>
-  <title format="text/plain" language="en" script="Latn">Common Remediation Enumeration (CRE) Version 1.0</title>
-  <docidentifier type="NIST">NISTIR 7831 (Retired Draft)</docidentifier>
+  <fetched>2021-08-30</fetched>
+  <title format="text/plain" language="en" script="Latn">Guide for Developing Performance Metrics for Information Security</title>
+  <uri type="uri">https://csrc.nist.gov/publications/detail/sp/800-80/archive/2006-05-04</uri>
+  <docidentifier type="NIST">SP 800-80 (Retired Draft)</docidentifier>
   <date type="published">
-    <on>2011-12</on>
+    <on>2006-05</on>
+  </date>
+  <date type="obsoleted">
+    <on>2008-11</on>
   </date>
   <date type="issued">
-    <on>2011-12</on>
+    <on>2006-05</on>
   </date>
   <contributor>
-    <role type="publisher"/>
-    <organization>
-      <name>National Institute of Standards and Technology</name>
-      <abbreviation>NIST</abbreviation>
-      <uri>www.nist.gov</uri>
-    </organization>
-  </contributor>
-  <contributor>
     <role type="author"/>
     <person>
       <name>
-        <completename language="en" script="Latn">Gerard McGuire</completename>
-      </name>
-      <affiliation>
-        <organization>
-          <name>MITRE</name>
-          <abbreviation>MITRE</abbreviation>
-          <uri>www.mitre.org</uri>
-        </organization>
-      </affiliation>
-    </person>
-  </contributor>
-  <contributor>
-    <role type="author"/>
-    <person>
-      <name>
-        <completename language="en" script="Latn">David Waltermire</completename>
+        <completename language="en" script="Latn">Elizabeth Chew</completename>
       </name>
       <affiliation>
         <organization>
           <name>National Institute of Standards and Technology</name>
           <abbreviation>NIST</abbreviation>
-          <uri>www.nist.gov</uri>
         </organization>
       </affiliation>
     </person>
@@ -50,27 +30,66 @@
     <role type="author"/>
     <person>
       <name>
-        <completename language="en" script="Latn">Jonathan Baker</completename>
+        <completename language="en" script="Latn">Alicia Clay</completename>
       </name>
       <affiliation>
         <organization>
-          <name>MITRE</name>
-          <abbreviation>MITRE</abbreviation>
-          <uri>www.mitre.org</uri>
+          <name>National Institute of Standards and Technology</name>
+          <abbreviation>NIST</abbreviation>
+        </organization>
+      </affiliation>
+    </person>
+  </contributor>
+  <contributor>
+    <role type="author"/>
+    <person>
+      <name>
+        <completename language="en" script="Latn">Joan Hash</completename>
+      </name>
+      <affiliation>
+        <organization>
+          <name>National Institute of Standards and Technology</name>
+          <abbreviation>NIST</abbreviation>
+        </organization>
+      </affiliation>
+    </person>
+  </contributor>
+  <contributor>
+    <role type="author"/>
+    <person>
+      <name>
+        <completename language="en" script="Latn">Nadya Bartol</completename>
+      </name>
+      <affiliation>
+        <organization>
+          <name>Booz Allen Hamilton</name>
+          <abbreviation>BAH</abbreviation>
+        </organization>
+      </affiliation>
+    </person>
+  </contributor>
+  <contributor>
+    <role type="author"/>
+    <person>
+      <name>
+        <completename language="en" script="Latn">Anthony Brown</completename>
+      </name>
+      <affiliation>
+        <organization>
+          <name>Booz Allen Hamilton</name>
+          <abbreviation>BAH</abbreviation>
         </organization>
       </affiliation>
     </person>
   </contributor>
   <language>en</language>
   <script>Latn</script>
-  <abstract format="text/plain" language="en" script="Latn">NISTIR 7831 defines the Common Remediation Enumeration (CRE) specification. CRE is part of an emerging suite of enterprise remediation specifications that enable automation and enhanced correlation of enterprise remediation activities. Each CRE entry represents a unique remediation activity and is assigned a globally unique CRE identifier (CRE-ID). This specification describes the core concepts of CRE and the technical components of a CRE entry, outlines how CRE entries are created, and defines the technical requirements for constructing CRE entries.</abstract>
   <status>
     <stage>draft-public</stage>
     <substage>retired</substage>
-    <iteration>1</iteration>
   </status>
   <copyright>
-    <from>2011</from>
+    <from>2006</from>
     <owner>
       <organization>
         <name>National Institute of Standards and Technology</name>
@@ -79,14 +98,21 @@
       </organization>
     </owner>
   </copyright>
-  <keyword>Common Remediation Enumeration (CRE)</keyword>
-  <keyword>enterprise security</keyword>
-  <keyword>security automation</keyword>
+  <relation type="updates">
+    <bibitem>
+      <formattedref format="text/plain" language="en" script="Latn">SP 800-55 Rev. 1</formattedref>
+      <uri type="src">https://csrc.nist.gov/publications/detail/sp/800-55/rev-1/final</uri>
+    </bibitem>
+  </relation>
+  <place>Gaithersburg, MD</place>
+  <keyword>information security program</keyword>
+  <keyword>performance metrics</keyword>
+  <keyword>security metrics</keyword>
   <ext>
     <doctype>standard</doctype>
     <commentperiod>
-      <from>2011-12-01</from>
-      <to>2012-01-20</to>
+      <from>2006-05-04</from>
+      <to>2006-06-19</to>
     </commentperiod>
   </ext>
 </bibdata>

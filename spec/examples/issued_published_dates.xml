@@ -1,5 +1,5 @@
 <bibdata type="standard">
-  <fetched>2020-02-13</fetched>
+  <fetched>2021-08-30</fetched>
   <title format="text/plain" language="en" script="Latn">Guide to Attribute Based Access Control (ABAC) Definition and Considerations</title>
   <uri type="uri">https://csrc.nist.gov/publications/detail/sp/800-162/final</uri>
   <uri type="doi">https://doi.org/10.6028/NIST.SP.800-162</uri>
@@ -73,7 +73,7 @@
     <role type="author"/>
     <person>
       <name>
-        <completename language="en" script="Latn">Kenneth Sandlin</completename>
+        <completename language="en" script="Latn">Kenneth F. Sandlin</completename>
       </name>
       <affiliation>
         <organization>

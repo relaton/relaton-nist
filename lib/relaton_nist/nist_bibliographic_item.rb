@@ -67,7 +67,7 @@ module RelatonNist
     # @return [RelatonNist::GbBibliographicItem]
     def self.from_hash(hash)
       item_hash = RelatonNist::HashConverter.hash_to_bib(hash)
-      new **item_hash
+      new(**item_hash)
     end
 
     # @param opts [Hash]
