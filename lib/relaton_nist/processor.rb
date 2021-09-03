@@ -7,6 +7,7 @@ module RelatonNist
       @prefix = "NIST"
       @defaultprefix = %r{^(NIST|NISTGCR|ITL Bulletin|JPCRD|NISTIR|CSRC|FIPS)(/[^\s])?\s}
       @idtype = "NIST"
+      @datasets = %w[nist-tech-pubs]
     end
 
     # @param code [String]
@@ -15,6 +16,10 @@ module RelatonNist
     # @return [RelatonNist::GbBibliographicItem]
     def get(code, date = nil, opts = {})
       ::RelatonNist::NistBibliography.get(code, date, opts)
+    end
+
+    def fetch_data(_source, opts)
+      DataFetcher.fetch(**opts)
     end
 
     # @param xml [String]

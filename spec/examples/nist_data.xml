@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<body>
+   <date type="MMDDYYYY">07272021</date>
+   <query key="SP800">
+      <doi type="report-paper_title">10.6028/NIST.SP.800-133r1</doi>
+      <crm-item name="publisher-name" type="string">National Institute of Standards and Technology (NIST)</crm-item>
+      <crm-item name="prefix-name" type="string">National Institute of Standards and Technology</crm-item>
+      <crm-item name="member-id" type="number">4068</crm-item>
+      <crm-item name="citation-id" type="number">108567357</crm-item>
+      <crm-item name="book-id" type="number">1189736</crm-item>
+      <crm-item name="deposit-timestamp" type="number">202101271355</crm-item>
+      <crm-item name="owner-prefix" type="string">10.6028</crm-item>
+      <crm-item name="last-update" type="date">2021-01-27T18:56:38Z</crm-item>
+      <crm-item name="created" type="date">2019-07-23T19:40:12Z</crm-item>
+      <crm-item name="citedby-count" type="number">0</crm-item>
+      <doi_record>
+         <report-paper>
+            <report-paper_metadata>
+               <contributors>
+                  <person_name sequence="first" contributor_role="author">
+                     <given_name>Elaine</given_name>
+                     <surname>Barker</surname>
+                  </person_name>
+                  <person_name sequence="additional" contributor_role="author">
+                     <given_name>Allen</given_name>
+                     <surname>Roginsky</surname>
+                  </person_name>
+               </contributors>
+               <titles>
+                  <title>Recommendation for cryptographic key generation</title>
+               </titles>
+               <edition_number>r1</edition_number>
+               <!--<publication_date media_type="online">
+                  <month>07</month>
+                  <day>19</day>
+                  <year>2019</year>
+               </publication_date>-->
+               <publication_date media_type="print">
+                  <month>07</month>
+                  <day>19</day>
+                  <year>2019</year>
+               </publication_date>
+               <approval_date>
+                  <month>07</month>
+                  <day>18</day>
+                  <year>2019</year>
+               </approval_date>
+               <publisher>
+                  <publisher_name>National Institute of Standards and Technology</publisher_name>
+                  <publisher_place>Gaithersburg, MD</publisher_place>
+               </publisher>
+               <institution>
+                  <institution_name>National Institute of Standards and Technology</institution_name>
+                  <institution_acronym>NIST</institution_acronym>
+                  <institution_place>Gaithersburg, MD</institution_place>
+                  <institution_department>Information Technology Laboratory</institution_department>
+               </institution>
+               <publisher_item>
+                  <item_number item_number_type="report-number">NIST SP 800-133r1</item_number>
+               </publisher_item>
+               <crossmark>
+                  <crossmark_policy>10.6028/NIST-TechPubs.crossmark-policy</crossmark_policy>
+                  <crossmark_domains>
+                     <crossmark_domain>
+                        <domain>nvlpubs.nist.gov</domain>
+                     </crossmark_domain>
+                  </crossmark_domains>
+                  <updates>
+                     <update type="new_version" date="2019-07-19">10.6028/NIST.SP.800-133</update>
+                  </updates>
+                  <custom_metadata>
+                     <assertion group_label="Copyright, Fair Use, and Licensing"
+                                group_name="copyright_licensing"
+                                label="Licensing Information"
+                                name="licensing"
+                                order="0"
+                                href="https://www.nist.gov/open/copyright-fair-use-and-licensing-statements-srd-data-software-and-technical-series-publications">https://www.nist.gov/open/copyright-fair-use-and-licensing-statements-srd-data-software-and-technical-series-publications</assertion>
+                     <assertion group_label="Publication History"
+                                group_name="publication_history"
+                                label="Draft"
+                                name="publication_history"
+                                order="0"
+                                href="https://doi.org/10.6028/NIST.SP.800-133r1-draft">Draft NIST SP 800-133 Rev. 1 (03/06/2019)</assertion>
+                     <assertion group_label="Publication History"
+                                group_name="publication_history"
+                                label="Supersedes"
+                                name="publication_history"
+                                order="1"
+                                href="https://doi.org/10.6028/NIST.SP.800-133">NIST SP 800-133 (12/21/2012)</assertion>
+                     <fr:program xmlns:fr="http://www.crossref.org/fundref.xsd" name="fundref">
+                        <fr:assertion name="fundgroup">
+                           <fr:assertion name="funder_name">National Institute of Standards and Technology<fr:assertion name="funder_identifier">https://doi.org/10.13039/100000161</fr:assertion>
+                           </fr:assertion>
+                        </fr:assertion>
+                        <fr:assertion name="fundgroup">
+                           <fr:assertion name="funder_name">Information Technology Laboratory<fr:assertion name="funder_identifier">https://doi.org/10.13039/100007764</fr:assertion>
+                           </fr:assertion>
+                        </fr:assertion>
+                     </fr:program>
+                  </custom_metadata>
+               </crossmark>
+               <program xmlns="http://www.crossref.org/relations.xsd">
+                  <related_item>
+                     <intra_work_relation relationship-type="replaces" identifier-type="doi">10.6028/NIST.SP.800-133</intra_work_relation>
+                  </related_item>
+                  <related_item>
+                     <intra_work_relation relationship-type="isVersionOf" identifier-type="doi">10.6028/NIST.SP.800-133</intra_work_relation>
+                  </related_item>
+               </program>
+               <doi_data>
+                  <doi>10.6028/NIST.SP.800-133r1</doi>
+                  <resource>https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-133r1.pdf</resource>
+               </doi_data>
+            </report-paper_metadata>
+         </report-paper>
+      </doi_record>
+   </query>
+   <query key="SP">
+      <doi type="report-paper_title">10.6028/NIST.SP.1190GB-16</doi>
+      <crm-item name="publisher-name" type="string">National Institute of Standards and Technology (NIST)</crm-item>
+      <crm-item name="prefix-name" type="string">National Institute of Standards and Technology</crm-item>
+      <crm-item name="member-id" type="number">4068</crm-item>
+      <crm-item name="citation-id" type="number">120539711</crm-item>
+      <crm-item name="book-id" type="number">3646245</crm-item>
+      <crm-item name="deposit-timestamp" type="number">20201020142803689</crm-item>
+      <crm-item name="owner-prefix" type="string">10.6028</crm-item>
+      <crm-item name="last-update" type="date">2020-10-20T18:28:07Z</crm-item>
+      <crm-item name="created" type="date">2020-10-20T18:28:06Z</crm-item>
+      <crm-item name="citedby-count" type="number">0</crm-item>
+      <doi_record>
+         <report-paper>
+            <report-paper_metadata>
+               <contributors>
+                  <organization sequence="first" contributor_role="author">NIST Community Resilience Program</organization>
+                  <person_name sequence="first" contributor_role="author">
+                     <given_name>M E</given_name>
+                     <surname>Johnson</surname>
+                     <ORCID authenticated="false">https://orcid.org/0000-0001-5096-2003</ORCID>
+                  </person_name>
+               </contributors>
+               <titles>
+                  <title>COMMUNITY RESILIENCE PLANNING GUIDE FOR BUILDINGS AND INFRASTRUCTURE SYSTEMS: A Playbook</title>
+               </titles>
+               <jats:abstract xmlns:jats="http://www.ncbi.nlm.nih.gov/JATS1" xml:lang="en">
+                  <jats:p>This handbook is intended to provide a practical, action-oriented aid to help communities follow the Guide's six-step process. It can assist communities seeking insights into resilience planning issues and help identify the most effective resilience-improvement projects.</jats:p>
+               </jats:abstract>
+               <publication_date media_type="online">
+                  <month>10</month>
+                  <day>20</day>
+                  <year>2020</year>
+               </publication_date>
+               <publisher>
+                  <publisher_name>National Institute of Standards and Technology</publisher_name>
+               </publisher>
+               <institution>
+                  <institution_name>National Institute of Standards and Technology</institution_name>
+                  <institution_acronym>NIST</institution_acronym>
+                  <institution_place>Gaithersburg, MD</institution_place>
+                  <institution_department>Engineering Laboratory</institution_department>
+               </institution>
+               <publisher_item>
+                  <identifier id_type="report-number">NIST SP 1190GB-16</identifier>
+               </publisher_item>
+               <doi_data>
+                  <doi>10.6028/NIST.SP.1190GB-16</doi>
+                  <resource>https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.1190GB-16.pdf</resource>
+               </doi_data>
+            </report-paper_metadata>
+         </report-paper>
+      </doi_record>
+   </query>
+</body>

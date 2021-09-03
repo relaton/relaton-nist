@@ -159,6 +159,25 @@ RelatonNist::NistBibliographicItem.from_hash hash
 ...
 ----
 
+=== Fetch data
+
+This gem uses the https://raw.githubusercontent.com/usnistgov/NIST-Tech-Pubs/nist-pages/xml/allrecords.xml dataset as one of data sources.
+
+The method `RelatonNist::DataFetcher.fetch(output: "data", format: "yaml")` fetches all the documents from the datast and save them to the `./data` folder in YAML format.
+Arguments:
+
+- `output` - folder to save documents (default './data').
+- `format` - format in which the documents are saved. Possimle formats are: `yaml`, `xml` (default `yaml`).
+
+[source,ruby]
+----
+RelatonNist::DataFetcher.fetch
+Started at: 2021-09-01 18:01:01 +0200
+Stopped at: 2021-09-01 18:01:43 +0200
+Done in: 42 sec.
+=> nil
+----
+
 == Development
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.

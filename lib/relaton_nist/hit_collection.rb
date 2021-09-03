@@ -15,17 +15,19 @@ module RelatonNist
     DATAFILE = File.expand_path "pubs-export.zip", DATAFILEDIR
     GHNISTDATA = "https://raw.githubusercontent.com/relaton/relaton-data-nist/main/data/"
 
-    # @param ref_nbr [String]
-    # @param year [String]
-    # @param opts [Hash]
-    # @option opts [String] :stage
-    def initialize(ref_nbr, year = nil, opts = {}) # rubocop:disable Metrics/AbcSize,Metrics/MethodLength
-      super ref_nbr, year
+    def self.search(text, year = nil, opts = {})
+      new(text, year).search(opts)
+    end
 
-      # /(?<docid>(?:SP|FIPS)\s[0-9-]+)/ =~ text
+    def search(opts)
       @array = from_json(**opts)
       @array = from_ga unless @array.any?
+      sort_hits!
+    end
 
+    private
+
+    def sort_hits!
       @array.sort! do |a, b|
         if a.sort_value == b.sort_value
           (b.hit[:release_date] - a.hit[:release_date]).to_i
@@ -33,9 +35,8 @@ module RelatonNist
           b.sort_value - a.sort_value
         end
       end
+      self
     end
-
-    private
 
     def from_ga # rubocop:disable Metrics/AbcSize
       fn = text.gsub(%r{[/\s:.]}, "_").upcase

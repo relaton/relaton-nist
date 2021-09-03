@@ -14,7 +14,7 @@ module RelatonNist
       # @param text [String]
       # @return [RelatonNist::HitCollection]
       def search(text, year = nil, opts = {})
-        HitCollection.new text, year, opts
+        HitCollection.search text, year, opts
       rescue OpenURI::HTTPError, SocketError, OpenSSL::SSL::SSLError => e
         raise RelatonBib::RequestError, e.message
       end
