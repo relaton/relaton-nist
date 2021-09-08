@@ -2,7 +2,7 @@ require "relaton/processor"
 
 module RelatonNist
   class Processor < Relaton::Processor
-    def initialize
+    def initialize # rubocop:disable Lint/MissingSuper
       @short = :relaton_nist
       @prefix = "NIST"
       @defaultprefix = %r{^(NIST|NISTGCR|ITL Bulletin|JPCRD|NISTIR|CSRC|FIPS)(/[^\s])?\s}
@@ -18,6 +18,14 @@ module RelatonNist
       ::RelatonNist::NistBibliography.get(code, date, opts)
     end
 
+    #
+    # Fetch all the docukents from a source
+    #
+    # @param [String] _source source name
+    # @param [Hash] opts
+    # @option opts [String] :output directory to output documents
+    # @option opts [String] :format
+    #
     def fetch_data(_source, opts)
       DataFetcher.fetch(**opts)
     end
