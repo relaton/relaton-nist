@@ -35,35 +35,35 @@ http_interactions:
       Content-Type:
       - text/plain; charset=utf-8
       X-Github-Request-Id:
-      - 82DC:10F71:15E30A2:1727A8E:612D0F7A
+      - C236:99E5:3AC609:3D0717:615DD735
       Accept-Ranges:
       - bytes
       Date:
-      - Mon, 30 Aug 2021 17:03:54 GMT
+      - Wed, 06 Oct 2021 17:04:53 GMT
       Via:
       - 1.1 varnish
       X-Served-By:
-      - cache-muc13979-MUC
+      - cache-muc13970-MUC
       X-Cache:
       - MISS
       X-Cache-Hits:
       - '0'
       X-Timer:
-      - S1630343035.581820,VS0,VE165
+      - S1633539894.600811,VS0,VE157
       Vary:
-      - Authorization,Accept-Encoding
+      - Authorization,Accept-Encoding,Origin
       Access-Control-Allow-Origin:
       - "*"
       X-Fastly-Request-Id:
-      - 6a81fac537744140799d4660f82c32e615a273fe
+      - 9fdd1b02d25379ace197de0bc901cd0d5ce3b5ee
       Expires:
-      - Mon, 30 Aug 2021 17:08:54 GMT
+      - Wed, 06 Oct 2021 17:09:53 GMT
       Source-Age:
       - '0'
     body:
       encoding: UTF-8
       string: '404: Not Found'
-  recorded_at: Mon, 30 Aug 2021 17:03:54 GMT
+  recorded_at: Wed, 06 Oct 2021 17:04:53 GMT
 - request:
     method: get
     uri: https://raw.githubusercontent.com/relaton/relaton-data-nist/main/data/NISTIR_8011V4.yaml
@@ -103,29 +103,29 @@ http_interactions:
       X-Xss-Protection:
       - 1; mode=block
       X-Github-Request-Id:
-      - B40E:EA59:30ADBE:356883:612D0F7A
+      - 598C:647A:CBC731:D52DDC:615DD736
       Accept-Ranges:
       - bytes
       Date:
-      - Mon, 30 Aug 2021 17:03:55 GMT
+      - Wed, 06 Oct 2021 17:04:54 GMT
       Via:
       - 1.1 varnish
       X-Served-By:
-      - cache-muc13967-MUC
+      - cache-muc13966-MUC
       X-Cache:
       - MISS
       X-Cache-Hits:
       - '0'
       X-Timer:
-      - S1630343035.972939,VS0,VE173
+      - S1633539894.000631,VS0,VE201
       Vary:
-      - Authorization,Accept-Encoding
+      - Authorization,Accept-Encoding,Origin
       Access-Control-Allow-Origin:
       - "*"
       X-Fastly-Request-Id:
-      - b12e2ba780c0a8e0e4ca9f54d11043d4f6203c24
+      - fffa0f26cfa8a8e4a48c910bf1b2175ed78d32bb
       Expires:
-      - Mon, 30 Aug 2021 17:08:55 GMT
+      - Wed, 06 Oct 2021 17:09:54 GMT
       Source-Age:
       - '0'
     body:
@@ -203,5 +203,5 @@ http_interactions:
         script: Latn
         place: Gaithersburg, MD
         doctype: standard
-  recorded_at: Mon, 30 Aug 2021 17:03:55 GMT
+  recorded_at: Wed, 06 Oct 2021 17:04:54 GMT
 recorded_with: VCR 6.0.0

@@ -1,7 +1,7 @@
 <bibdata type="standard">
   <fetched>2021-08-30</fetched>
   <title format="text/plain" language="en" script="Latn">Guide for Developing Performance Metrics for Information Security</title>
-  <uri type="uri">https://csrc.nist.gov/publications/detail/sp/800-80/archive/2006-05-04</uri>
+  <uri type="src">https://csrc.nist.gov/publications/detail/sp/800-80/archive/2006-05-04</uri>
   <docidentifier type="NIST">SP 800-80 (Retired Draft)</docidentifier>
   <date type="published">
     <on>2006-05</on>

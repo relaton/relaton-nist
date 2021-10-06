@@ -19,7 +19,7 @@ module RelatonNist
     end
 
     #
-    # Fetch all the docukents from a source
+    # Fetch all the documents from a source
     #
     # @param [String] _source source name
     # @param [Hash] opts

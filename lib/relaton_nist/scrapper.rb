@@ -62,44 +62,10 @@ module RelatonNist
       # Fetch status.
       # @param doc [Hash]
       # @return [RelatonNist::DocumentStatus]
-      def fetch_status(doc) # , status)
-        # if doc.is_a? Hash
+      def fetch_status(doc)
         stage = doc["status"]
         subst = doc["substage"]
         iter = doc["iteration"] == "initial" ? 1 : doc["iteration"]
-        # else
-        #   case status
-        #   when "draft (obsolete)"
-        #     stage = "draft-public"
-        #     subst = "withdrawn"
-        #   when "retired draft"
-        #     stage = "draft-public"
-        #     subst = "retired"
-        #   when "withdrawn"
-        #     stage = "final"
-        #     subst = "withdrawn"
-        #   when /^draft/
-        #     stage = "draft-public"
-        #     subst = "active"
-        #   else
-        #     stage = status
-        #     subst = "active"
-        #   end
-
-        #   iter = nil
-        #   if stage.include? "draft"
-        #     iter = 1
-        #     history = doc.xpath("//span[@id='pub-history-container']/a"\
-        #                         "|//span[@id='pub-history-container']/span")
-        #     history.each_with_index do |h, idx|
-        #       next if h.name == "a"
-
-        #       iter = idx + 1 if idx.positive?
-        #       break
-        #     end
-        #   end
-        # end
-
         RelatonNist::DocumentStatus.new stage: stage, substage: subst, iteration: iter.to_s
       end
 
@@ -132,7 +98,6 @@ module RelatonNist
         dates
       end
 
-      # rubocop:disable Metrics/AbcSize, Metrics/MethodLength
       # @param doc [Hash]
       # @return [Array<RelatonBib::ContributionInfo>]
       def fetch_contributors(doc)
@@ -144,23 +109,12 @@ module RelatonNist
         contribs + contributors_json(
           doc["editors"], "editor", doc["language"], doc["script"]
         )
-        # else
-        #   name = "National Institute of Standards and Technology"
-        #   org = RelatonBib::Organization.new(
-        #     name: name, url: "www.nist.gov", abbreviation: "NIST",
-        #   )
-        #   contribs << RelatonBib::ContributionInfo.new(entity: org, role: [type: "publisher"])
-        #   authors = doc.at('//h4[.="Author(s)"]/following-sibling::p')
-        #   contribs += contributors(authors, "author")
-        #   editors = doc.at('//h4[.="Editor(s)"]/following-sibling::p')
-        #   contribs + contributors(editors, "editor")
-        # end
       end
 
       # @param doc [Array<Hash>]
       # @param role [String]
       # @return [Array<RelatonBib::ContributionInfo>]
-      def contributors_json(doc, role, lang = "en", script = "Latn")
+      def contributors_json(doc, role, lang = "en", script = "Latn") # rubocop:disable Metrics/AbcSize,Metrics/CyclomaticComplexity,Metrics/MethodLength,Metrics/PerceivedComplexity
         doc.map do |contr|
           if contr["affiliation"]
             if contr["affiliation"]["acronym"]
@@ -184,43 +138,6 @@ module RelatonNist
           end
         end.compact
       end
-
-      # rubocop:disable Metrics/CyclomaticComplexity
-      # @param doc [Nokogiri::HTML::Element, Array<Hash>]
-      # @param role [String]
-      # @return [Array<RelatonBib::ContributionInfo>]
-      # def contributors(doc, role, lang = "en", script = "Latn")
-      #   return [] if doc.nil?
-
-      #   doc.text.split(", ").map do |contr|
-      #     /(?<an>.+?)(\s+\((?<abbrev>.+?)\))?$/ =~ contr.strip
-      #     if abbrev && an.downcase !~ /(task|force|group)/ && an.split.size.between?(2, 3)
-      #       fullname = RelatonBib::FullName.new(
-      #         completename: RelatonBib::LocalizedString.new(an, lang, script)
-      #       )
-      #       case abbrev
-      #       when "NIST"
-      #         org_name = "National Institute of Standards and Technology"
-      #         url = "www.nist.gov"
-      #       when "MITRE"
-      #         org_name = abbrev
-      #         url = "www.mitre.org"
-      #       else
-      #         org_name = abbrev
-      #         url = nil
-      #       end
-      #       org = RelatonBib::Organization.new name: org_name, url: url, abbreviation: abbrev
-      #       affiliation = RelatonBib::Affiliation.new organization: org
-      #       entity = RelatonBib::Person.new(
-      #         name: fullname, affiliation: [affiliation],
-      #       )
-      #     else
-      #       entity = RelatonBib::Organization.new name: an, abbreviation: abbrev
-      #     end
-      #     RelatonBib::ContributionInfo.new entity: entity, role: [type: role]
-      #   end
-      # end
-      # rubocop:enable Metrics/CyclomaticComplexity, Metrics/AbcSize, Metrics/MethodLength
 
       # @param name [Hash]
       # @param lang [Strong]
@@ -253,27 +170,8 @@ module RelatonNist
         return unless doc["edition"]
 
         rev = doc["edition"]
-        # else
-        #   return unless /(?<=Rev\.\s)(?<rev>\d+)/ =~ doc
-        # end
-
         "Revision #{rev}"
       end
-
-      # Fetch abstracts.
-      # @param doc [Nokigiri::HTML::Document]
-      # @return [Array<Hash>]
-      # def fetch_abstract(doc)
-      #   abstract_content = doc.xpath(
-      #     '//div[contains(@class, "pub-abstract-callout")]/div[1]/p',
-      #   ).text
-      #   [{
-      #     content: abstract_content,
-      #     language: "en",
-      #     script: "Latn",
-      #     format: "text/plain",
-      #   }]
-      # end
 
       # Fetch copyright.
       # @param doc [Nokogiri::HTL::Document, String]
@@ -281,52 +179,21 @@ module RelatonNist
       def fetch_copyright(doc)
         name = "National Institute of Standards and Technology"
         url = "www.nist.gov"
-        # d = if doc.is_a? String then doc
-        #     else
-        #       doc.at("//span[@id='pub-release-date']")&.text&.strip
-        #     end
         from = doc&.match(/\d{4}/)&.to_s
         [{ owner: [{ name: name, abbreviation: "NIST", url: url }], from: from }]
       end
-
-      # rubocop:disable Metrics/MethodLength, Metrics/AbcSize
 
       # Fetch links.
       # @param doc [Hash]
       # @return [Array<Hash>]
       def fetch_link(doc)
         links = []
-        # if doc.is_a? Hash
-        links << { type: "uri", content: doc["uri"] } if doc["uri"]
-        doi = "https://doi.org/" + doc["doi"] if doc["doi"]
-        # else
-        #   pub = doc.at "//p/strong[contains(., 'Publication:')]"
-        #   pdf = pub&.at "./following-sibling::a[.=' Local Download']"
-        #   doi = pub&.at("./following-sibling::a[contains(.,'(DOI)')]")&.attr :href
-        #   links << { type: "pdf", content: pdf[:href] } if pdf
-        # end
-        links << { type: "doi", content: doi } if doi
+        links << { type: "src", content: doc["uri"] } if doc["uri"]
+        if doc["doi"]
+          links << { type: "doi", content: "https://doi.org/#{doc['doi']}" }
+        end
         links
       end
-      # rubocop:enable Metrics/MethodLength
-
-      # Fetch relations.
-      # @param doc [Nokogiri::HTML::Document]
-      # @return [Array<RelatonNist::DocumentRelation>]
-      # def fetch_relations(doc)
-      #   relations = doc.xpath('//span[@id="pub-supersedes-container"]/a').map do |r|
-      #     doc_relation "supersedes", r.text, DOMAIN + r[:href]
-      #   end
-
-      #   relations += doc.xpath('//span[@id="pub-part-container"]/a').map do |r|
-      #     doc_relation "partOf", r.text, DOMAIN + r[:href]
-      #   end
-
-      #   relations + doc.xpath('//span[@id="pub-related-container"]/a').map do |r|
-      #     doc_relation "updates", r.text, DOMAIN + r[:href]
-      #   end
-      # end
-      # rubocop:enable Metrics/AbcSize
 
       def fetch_relations_json(doc)
         relations = doc["supersedes"].map do |r|
@@ -354,67 +221,11 @@ module RelatonNist
         )
       end
 
-      # rubocop:disable Metrics/MethodLength, Metrics/AbcSize
-
-      # @param doc [Nokogiri::HTML::Document]
-      # @return [Array<RelatonBib::Series>]
-      # def fetch_series(doc)
-      #   series = doc.xpath "//span[@id='pub-history-container']/a"\
-      #     "|//span[@id='pub-history-container']/span"
-      #   series.map.with_index do |s, idx|
-      #     next if s.name == "span"
-
-      #     iter = if idx.zero? then "I"
-      #            else idx + 1
-      #            end
-
-      #     content = s.text.match(/^[^\(]+/).to_s.strip.squeeze " "
-
-      #     ref = case s.text
-      #           when /^Draft/
-      #             content.match(/(?<=Draft\s).+/).to_s + " (#{iter}PD)"
-      #           when /\(Draft\)/ then content + " (#{iter}PD)"
-      #           else content
-      #           end
-
-      #     fref = RelatonBib::FormattedRef.new(
-      #       content: ref, language: "en", script: "Latn", format: "text/plain",
-      #     )
-      #     RelatonBib::Series.new(formattedref: fref)
-      #   end.select { |s| s }
-      # end
-      # rubocop:enable Metrics/MethodLength, Metrics/AbcSize
-
       # @param doc [Hash]
       # @return [Array<RelatonNist::Keyword>]
       def fetch_keywords(doc)
-        # kws = if doc.is_a? Hash
-        #         doc["keywords"]
-        #       else
-        #         doc.xpath "//span[@id='pub-keywords-container']/span"
-        #       end
         doc["keywords"].map { |kw| kw.is_a?(String) ? kw : kw.text }
       end
-
-      # rubocop:disable Metrics/AbcSize
-      # @param doc [Nokogiri::HTML::Document]
-      # @return [RelatonNist::CommentPeriod, NilClass]
-      # def fetch_commentperiod(doc)
-      #   cp = doc.at "//span[@id='pub-comments-due']"
-      #   return unless cp
-
-      #   to = Date.strptime cp.text.strip, "%B %d, %Y"
-
-      #   d = doc.at("//span[@id='pub-release-date']").text.strip
-      #   from = Date.strptime(d, "%B %Y").to_s
-
-      #   ex = doc.at "//strong[contains(.,'The comment closing date has been "\
-      #   "extended to')]"
-      #   ext = ex&.text&.match(/\w+\s\d{2},\s\d{4}/).to_s
-      #   extended = ext.empty? ? nil : Date.strptime(ext, "%B %d, %Y")
-      #   CommentPeriod.new from: from, to: to, extended: extended
-      # end
-      # rubocop:enable Metrics/AbcSize
 
       # @param json [Hash]
       # @return [RelatonNist::CommentPeriod, NilClass]

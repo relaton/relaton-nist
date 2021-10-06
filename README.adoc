@@ -147,6 +147,17 @@ item.docidentifier.first.id
 => "SP 800-38A-Add"
 ----
 
+=== Typed links
+
+NIST documents may have `src` and `doi` link types.
+
+[source,ruby]
+----
+item.link
+=> [#<RelatonBib::TypedUri:0x00007f901971dc10 @content=#<Addressable::URI:0x62c URI:https://csrc.nist.gov/publications/detail/sp/800-67/rev-2/final>, @type="src">,
+ #<RelatonBib::TypedUri:0x00007f901971d6e8 @content=#<Addressable::URI:0x640 URI:https://doi.org/10.6028/NIST.SP.800-67r2>, @type="doi">]
+----
+
 === Create bibliographic item from YAML
 [source,ruby]
 ----

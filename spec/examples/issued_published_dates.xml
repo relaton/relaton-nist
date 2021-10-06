@@ -1,7 +1,7 @@
 <bibdata type="standard">
   <fetched>2021-08-30</fetched>
   <title format="text/plain" language="en" script="Latn">Guide to Attribute Based Access Control (ABAC) Definition and Considerations</title>
-  <uri type="uri">https://csrc.nist.gov/publications/detail/sp/800-162/final</uri>
+  <uri type="src">https://csrc.nist.gov/publications/detail/sp/800-162/final</uri>
   <uri type="doi">https://doi.org/10.6028/NIST.SP.800-162</uri>
   <docidentifier type="NIST">SP 800-162</docidentifier>
   <date type="published">
