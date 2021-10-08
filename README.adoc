@@ -178,7 +178,7 @@ The method `RelatonNist::DataFetcher.fetch(output: "data", format: "yaml")` fetc
 Arguments:
 
 - `output` - folder to save documents (default './data').
-- `format` - format in which the documents are saved. Possimle formats are: `yaml`, `xml` (default `yaml`).
+- `format` - format in which the documents are saved. Possimle formats are: `yaml`, `xml`, `bibxxml` (default `yaml`).
 
 [source,ruby]
 ----

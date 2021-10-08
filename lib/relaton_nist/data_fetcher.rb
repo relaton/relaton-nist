@@ -1,12 +1,6 @@
 # frozen_string_literal: true
 
-# require 'English'
-# require 'mechanize'
-# require "fileutils"
 require "yaml"
-# require "open-uri"
-# require "nokogiri"
-# require "relaton_nist"
 
 module RelatonNist
   class DataFetcher
@@ -23,6 +17,7 @@ module RelatonNist
     def initialize(output, format)
       @output = output
       @format = format
+      @ext = format.sub(/^bib/, "")
     end
 
     def parse_docid(doc)
@@ -151,7 +146,7 @@ module RelatonNist
     #
     def write_file(bib) # rubocop:disable Metrics/AbcSize,Metrics/MethodLength
       id = bib.docidentifier[0].id.gsub(%r{[/\s:.]}, "_").upcase.sub(/^NIST_IR/, "NISTIR")
-      file = File.join(@output, "#{id}.#{@format}")
+      file = File.join(@output, "#{id}.#{@ext}")
       if File.exist? file
         warn "File #{file} exists. Docid: #{bib.docidentifier[0].id}"
         # warn "Link: #{bib.link.detect { |l| l.type == 'src' }.content}"
@@ -159,6 +154,7 @@ module RelatonNist
         output = case @format
                  when "yaml" then bib.to_hash.to_yaml
                  when "xml" then bib.to_xml bibdata: true
+                 else bib.send "to_#{@format}"
                  end
         File.write file, output, encoding: "UTF-8"
       end
@@ -197,7 +193,7 @@ module RelatonNist
 
       docs = Nokogiri::XML OpenURI.open_uri URL
       FileUtils.mkdir @output unless Dir.exist? @output
-      FileUtils.rm Dir[File.join(@output, "*.#{@format}")]
+      FileUtils.rm Dir[File.join(@output, "*.#{@ext}")]
       docs.xpath("/body/query/doi_record/report-paper/report-paper_metadata")
         .each { |doc| parse_doc doc }
 
@@ -212,7 +208,7 @@ module RelatonNist
     # Fetch all the documnts from dataset
     #
     # @param [String] output foldet name to save the documents
-    # @param [String] format format to save the documents
+    # @param [String] format format to save the documents (yaml, xml, bibxml)
     #
     def self.fetch(output: "data", format: "yaml")
       new(output, format).fetch

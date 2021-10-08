@@ -25,12 +25,18 @@ RSpec.describe "NIST documents fetcher" do
       ).to_stderr
     end
 
-    context "custom dir & type" do
+    context "custom dir & type XML" do
       let(:out) { "dir" }
       let(:format) { "xml" }
 
       it "fetch" do
         expect { RelatonNist::DataFetcher.fetch(output: "dir", format: "xml") }.to output(
+          /File dir\/NIST_SP_1190GB-16\.xml exists\. Docid: NIST SP 1190GB-16/,
+        ).to_stderr
+      end
+
+      it "fetch" do
+        expect { RelatonNist::DataFetcher.fetch(output: out, format: "bibxml") }.to output(
           /File dir\/NIST_SP_1190GB-16\.xml exists\. Docid: NIST SP 1190GB-16/,
         ).to_stderr
       end
