@@ -35,35 +35,35 @@ http_interactions:
       Content-Type:
       - text/plain; charset=utf-8
       X-Github-Request-Id:
-      - C018:5BB4:60CBA6:68DC66:615DD734
+      - EA4A:3925:651E13:6C7CB0:61DEC1D2
       Accept-Ranges:
       - bytes
       Date:
-      - Wed, 06 Oct 2021 17:04:52 GMT
+      - Wed, 12 Jan 2022 11:56:02 GMT
       Via:
       - 1.1 varnish
       X-Served-By:
-      - cache-muc13955-MUC
+      - cache-sof1510029-SOF
       X-Cache:
       - MISS
       X-Cache-Hits:
       - '0'
       X-Timer:
-      - S1633539893.702845,VS0,VE179
+      - S1641988562.135107,VS0,VE211
       Vary:
       - Authorization,Accept-Encoding,Origin
       Access-Control-Allow-Origin:
       - "*"
       X-Fastly-Request-Id:
-      - bbba679e58f5539efb4622fa2fcd0e8c21205518
+      - 903afa8348d2c5eef4dffe7a2954706ecf4be5ba
       Expires:
-      - Wed, 06 Oct 2021 17:09:52 GMT
+      - Wed, 12 Jan 2022 12:01:02 GMT
       Source-Age:
       - '0'
     body:
       encoding: UTF-8
       string: '404: Not Found'
-  recorded_at: Wed, 06 Oct 2021 17:04:52 GMT
+  recorded_at: Wed, 12 Jan 2022 11:56:02 GMT
 - request:
     method: get
     uri: https://raw.githubusercontent.com/relaton/relaton-data-nist/main/data/SP_800-90C.yaml
@@ -99,33 +99,33 @@ http_interactions:
       Content-Type:
       - text/plain; charset=utf-8
       X-Github-Request-Id:
-      - C018:5BB4:60CBA6:68DC66:615DD734
+      - EA4A:3925:651E13:6C7CB0:61DEC1D2
       Accept-Ranges:
       - bytes
       Date:
-      - Wed, 06 Oct 2021 17:04:53 GMT
+      - Wed, 12 Jan 2022 11:56:02 GMT
       Via:
       - 1.1 varnish
       X-Served-By:
-      - cache-muc13958-MUC
+      - cache-sof1510069-SOF
       X-Cache:
       - HIT
       X-Cache-Hits:
       - '1'
       X-Timer:
-      - S1633539893.102656,VS0,VE0
+      - S1641988563.820296,VS0,VE0
       Vary:
       - Authorization,Accept-Encoding,Origin
       Access-Control-Allow-Origin:
       - "*"
       X-Fastly-Request-Id:
-      - d87e28e171da418381aa735ace50baec8c9c88aa
+      - 77419f878cb6d5929b5df3ed1b68eccbed48cf70
       Expires:
-      - Wed, 06 Oct 2021 17:09:53 GMT
+      - Wed, 12 Jan 2022 12:01:02 GMT
       Source-Age:
       - '0'
     body:
       encoding: UTF-8
       string: '404: Not Found'
-  recorded_at: Wed, 06 Oct 2021 17:04:52 GMT
+  recorded_at: Wed, 12 Jan 2022 11:56:02 GMT
 recorded_with: VCR 6.0.0

@@ -21,7 +21,7 @@ http_interactions:
       Connection:
       - keep-alive
       Content-Length:
-      - '458'
+      - '471'
       Cache-Control:
       - max-age=300
       Content-Security-Policy:
@@ -29,7 +29,7 @@ http_interactions:
       Content-Type:
       - text/plain; charset=utf-8
       Etag:
-      - W/"7191a0c965944bb8a56a37ae78ae763c5131e9d83570a60a8151803f6198f626"
+      - W/"1616c7d6292d87271397190acdc80220b371c15d3c21e1d550e027a6f29e01c2"
       Strict-Transport-Security:
       - max-age=31536000
       X-Content-Type-Options:
@@ -39,29 +39,29 @@ http_interactions:
       X-Xss-Protection:
       - 1; mode=block
       X-Github-Request-Id:
-      - C2B6:5BB5:C31124:CC5DF5:615DD730
+      - 9ED6:B0FE:D38CBE:DC0B65:61DEC1CE
       Accept-Ranges:
       - bytes
       Date:
-      - Wed, 06 Oct 2021 17:04:48 GMT
+      - Wed, 12 Jan 2022 11:55:58 GMT
       Via:
       - 1.1 varnish
       X-Served-By:
-      - cache-muc13926-MUC
+      - cache-sof1510024-SOF
       X-Cache:
       - MISS
       X-Cache-Hits:
       - '0'
       X-Timer:
-      - S1633539889.630670,VS0,VE215
+      - S1641988558.075468,VS0,VE238
       Vary:
       - Authorization,Accept-Encoding,Origin
       Access-Control-Allow-Origin:
       - "*"
       X-Fastly-Request-Id:
-      - fc6592668ba22d746c6f0c641a15df762e86f031
+      - 906bbe8fb25f3e24f955abb6cbf7026be61eb668
       Expires:
-      - Wed, 06 Oct 2021 17:09:48 GMT
+      - Wed, 12 Jan 2022 12:00:58 GMT
       Source-Age:
       - '0'
     body:
@@ -73,17 +73,21 @@ http_interactions:
         - type: title-main
           content: Interagency report on the status of international cybersecurity standardization
             for the internet of things (IoT)
-          language: en
-          script: Latn
+          language:
+          - en
+          script:
+          - Latn
           format: text/plain
         - type: main
           content: Interagency report on the status of international cybersecurity standardization
             for the internet of things (IoT)
-          language: en
-          script: Latn
+          language:
+          - en
+          script:
+          - Latn
           format: text/plain
         link:
-          content: https://nvlpubs.nist.gov/nistpubs/ir/2018/NIST.IR.8200.pdf
+        - content: https://nvlpubs.nist.gov/nistpubs/ir/2018/NIST.IR.8200.pdf
           type: doi
         type: standard
         docid:
@@ -92,34 +96,44 @@ http_interactions:
         - id: 10.6028/NIST.IR.8200
           type: DOI
         date:
-          type: published
+        - type: published
           value: 2018-11
         contributor:
         - person:
             name:
               forename:
-                content: Mike
-                script: Latn
+              - content: Mike
+                script:
+                - Latn
               surname:
                 content: Hogan
-                script: Latn
-          role: author
+                script:
+                - Latn
+          role:
+          - author
         - person:
             name:
               forename:
-                content: Ben
-                script: Latn
+              - content: Ben
+                script:
+                - Latn
               surname:
                 content: Piccarreta
-                script: Latn
-          role: author
+                script:
+                - Latn
+          role:
+          - author
         - organization:
-            name: National Institute of Standards and Technology
+            name:
+            - National Institute of Standards and Technology
             abbreviation: NIST
-          role: publisher
+          role:
+          - publisher
         revdate: 2018-11
-        script: Latn
-        place: Gaithersburg, MD
+        script:
+        - Latn
+        place:
+        - Gaithersburg, MD
         doctype: standard
-  recorded_at: Wed, 06 Oct 2021 17:04:48 GMT
+  recorded_at: Wed, 12 Jan 2022 11:55:58 GMT
 recorded_with: VCR 6.0.0

@@ -55,4 +55,18 @@ RSpec.describe "NIST documents fetcher" do
     expect { RelatonNist::DataFetcher.fetch }
       .to output(/Document: 10.6028\/NIST.SP\.800-133r1/).to_stderr
   end
+
+  context "parse document" do
+    subject { RelatonNist::DataFetcher.new "dir", "xml" }
+
+    it "fetch contributors" do
+      doc = Nokogiri::XML File.read("spec/examples/report-paper.xml", encoding: "UTF-8")
+      rep = doc.at "/report-paper_metadata"
+      contribs = subject.fetch_contributor rep
+      expect(contribs.size).to eq 3
+      expect(contribs[0][:entity]).to be_instance_of(RelatonBib::Person)
+      expect(contribs[0][:entity].name.forename[0].content).to eq "David"
+      expect(contribs[0][:entity].name.surname.content).to eq "Waltermire"
+    end
+  end
 end

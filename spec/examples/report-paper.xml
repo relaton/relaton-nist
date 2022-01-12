@@ -1,0 +1,40 @@
+<report-paper_metadata>
+  <contributors>
+     <person_name sequence="first" contributor_role="author">
+        <given_name>David</given_name>
+        <surname>Waltermire</surname>
+     </person_name>
+     <person_name sequence="additional" contributor_role="author">
+        <given_name>Jessica</given_name>
+        <surname>Fitzgerald-McKay</surname>
+     </person_name>
+  </contributors>
+  <titles>
+     <title>Transitioning to the Security Content Automation Protocol (SCAP) Version 2</title>
+  </titles>
+  <publication_date media_type="online">
+     <month>09</month>
+     <year>2018</year>
+  </publication_date>
+  <publisher>
+     <publisher_name>National Institute of Standards and Technology</publisher_name>
+     <publisher_place>Gaithersburg, MD</publisher_place>
+  </publisher>
+  <institution>
+     <institution_name>National Institute of Standards and Technology</institution_name>
+     <institution_acronym>NIST</institution_acronym>
+     <institution_place>Gaithersburg, MD</institution_place>
+     <institution_department>Information Technology Laboratory</institution_department>
+  </institution>
+  <publisher_item>
+     <item_number item_number_type="report-number">NIST CSWP 09102018</item_number>
+  </publisher_item>
+  <fr:program xmlns:fr="http://www.crossref.org/fundref.xsd" name="fundref">
+     <fr:assertion name="funder_name">Information Technology Laboratory<fr:assertion name="funder_identifier">https://doi.org/10.13039/100007764R</fr:assertion>
+     </fr:assertion>
+  </fr:program>
+  <doi_data>
+     <doi>10.6028/NIST.CSWP.09102018</doi>
+     <resource>https://nvlpubs.nist.gov/nistpubs/CSWP/NIST.CSWP.09102018.pdf</resource>
+  </doi_data>
+</report-paper_metadata>

@@ -21,7 +21,7 @@ http_interactions:
       Connection:
       - keep-alive
       Content-Length:
-      - '456'
+      - '467'
       Cache-Control:
       - max-age=300
       Content-Security-Policy:
@@ -29,7 +29,7 @@ http_interactions:
       Content-Type:
       - text/plain; charset=utf-8
       Etag:
-      - W/"30c6a6e137b2548c95b4ed5c7cd41053aa02da6f67bd69be86cc9318ba19cb07"
+      - W/"aa9434453012a00656572f61008c8667bc716b77348ba7f1e7cc21ec2263d534"
       Strict-Transport-Security:
       - max-age=31536000
       X-Content-Type-Options:
@@ -39,29 +39,29 @@ http_interactions:
       X-Xss-Protection:
       - 1; mode=block
       X-Github-Request-Id:
-      - A64E:8F8A:217C45:28CABA:615DD731
+      - E178:0405:676CF5:6EDCFE:61DEC1CF
       Accept-Ranges:
       - bytes
       Date:
-      - Wed, 06 Oct 2021 17:04:49 GMT
+      - Wed, 12 Jan 2022 11:55:59 GMT
       Via:
       - 1.1 varnish
       X-Served-By:
-      - cache-muc13953-MUC
+      - cache-sof1510057-SOF
       X-Cache:
       - MISS
       X-Cache-Hits:
       - '0'
       X-Timer:
-      - S1633539889.457645,VS0,VE400
+      - S1641988559.290307,VS0,VE247
       Vary:
       - Authorization,Accept-Encoding,Origin
       Access-Control-Allow-Origin:
       - "*"
       X-Fastly-Request-Id:
-      - bc7b68a7ac1be499ee65fb6abef6f73fccc7fd5c
+      - 6169d363d52e588527525486485a7a9e57b43897
       Expires:
-      - Wed, 06 Oct 2021 17:09:49 GMT
+      - Wed, 12 Jan 2022 12:00:59 GMT
       Source-Age:
       - '0'
     body:
@@ -72,16 +72,20 @@ http_interactions:
         title:
         - type: title-main
           content: 'Automation support for security control assessments. volume 1: overview'
-          language: en
-          script: Latn
+          language:
+          - en
+          script:
+          - Latn
           format: text/plain
         - type: main
           content: 'Automation support for security control assessments. volume 1: overview'
-          language: en
-          script: Latn
+          language:
+          - en
+          script:
+          - Latn
           format: text/plain
         link:
-          content: https://nvlpubs.nist.gov/nistpubs/ir/2017/NIST.IR.8011-1.pdf
+        - content: https://nvlpubs.nist.gov/nistpubs/ir/2017/NIST.IR.8011-1.pdf
           type: doi
         type: standard
         docid:
@@ -90,43 +94,56 @@ http_interactions:
         - id: 10.6028/NIST.IR.8011-1
           type: DOI
         date:
-          type: published
+        - type: published
           value: 2017-06
         contributor:
         - person:
             name:
               forename:
-                content: Kelley
-                script: Latn
+              - content: Kelley
+                script:
+                - Latn
               surname:
                 content: Dempsey
-                script: Latn
-          role: author
+                script:
+                - Latn
+          role:
+          - author
         - person:
             name:
               forename:
-                content: Paul
-                script: Latn
+              - content: Paul
+                script:
+                - Latn
               surname:
                 content: Eavy
-                script: Latn
-          role: author
+                script:
+                - Latn
+          role:
+          - author
         - person:
             name:
               forename:
-                content: George
-                script: Latn
+              - content: George
+                script:
+                - Latn
               surname:
                 content: Moore
-                script: Latn
-          role: author
+                script:
+                - Latn
+          role:
+          - author
         - organization:
-            name: National Institute of Standards and Technology
+            name:
+            - National Institute of Standards and Technology
             abbreviation: NIST
-          role: publisher
+          role:
+          - publisher
         revdate: 2017-06
-        script: Latn
-        place: Gaithersburg, MD
+        script:
+        - Latn
+        place:
+        - Gaithersburg, MD
         doctype: standard
-  recorded_at: Wed, 06 Oct 2021 17:04:49 GMT
+  recorded_at: Wed, 12 Jan 2022 11:55:59 GMT
 recorded_with: VCR 6.0.0

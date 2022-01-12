@@ -35,35 +35,35 @@ http_interactions:
       Content-Type:
       - text/plain; charset=utf-8
       X-Github-Request-Id:
-      - C236:99E5:3AC609:3D0717:615DD735
+      - '0990:D0BD:6A9708:7208C8:61DEC1D3'
       Accept-Ranges:
       - bytes
       Date:
-      - Wed, 06 Oct 2021 17:04:53 GMT
+      - Wed, 12 Jan 2022 11:56:03 GMT
       Via:
       - 1.1 varnish
       X-Served-By:
-      - cache-muc13970-MUC
+      - cache-sof1510048-SOF
       X-Cache:
       - MISS
       X-Cache-Hits:
       - '0'
       X-Timer:
-      - S1633539894.600811,VS0,VE157
+      - S1641988563.465092,VS0,VE203
       Vary:
       - Authorization,Accept-Encoding,Origin
       Access-Control-Allow-Origin:
       - "*"
       X-Fastly-Request-Id:
-      - 9fdd1b02d25379ace197de0bc901cd0d5ce3b5ee
+      - ffbfc4f57303753aaf359e6117669428099bcf63
       Expires:
-      - Wed, 06 Oct 2021 17:09:53 GMT
+      - Wed, 12 Jan 2022 12:01:03 GMT
       Source-Age:
       - '0'
     body:
       encoding: UTF-8
       string: '404: Not Found'
-  recorded_at: Wed, 06 Oct 2021 17:04:53 GMT
+  recorded_at: Wed, 12 Jan 2022 11:56:03 GMT
 - request:
     method: get
     uri: https://raw.githubusercontent.com/relaton/relaton-data-nist/main/data/NISTIR_8011V4.yaml
@@ -85,7 +85,7 @@ http_interactions:
       Connection:
       - keep-alive
       Content-Length:
-      - '494'
+      - '506'
       Cache-Control:
       - max-age=300
       Content-Security-Policy:
@@ -93,7 +93,7 @@ http_interactions:
       Content-Type:
       - text/plain; charset=utf-8
       Etag:
-      - W/"cd6c2d01a4084f8443fcd949f91f1eb522aeee8df84b223602031bffcc362464"
+      - W/"63baac9b60e0ade6e6bf2255968c7a3f8b2912b01bd64613f9d2cba2bbbb7d63"
       Strict-Transport-Security:
       - max-age=31536000
       X-Content-Type-Options:
@@ -103,29 +103,29 @@ http_interactions:
       X-Xss-Protection:
       - 1; mode=block
       X-Github-Request-Id:
-      - 598C:647A:CBC731:D52DDC:615DD736
+      - CCCC:E597:63FDB3:6B62B2:61DEC1D3
       Accept-Ranges:
       - bytes
       Date:
-      - Wed, 06 Oct 2021 17:04:54 GMT
+      - Wed, 12 Jan 2022 11:56:04 GMT
       Via:
       - 1.1 varnish
       X-Served-By:
-      - cache-muc13966-MUC
+      - cache-sof1510024-SOF
       X-Cache:
       - MISS
       X-Cache-Hits:
       - '0'
       X-Timer:
-      - S1633539894.000631,VS0,VE201
+      - S1641988564.855050,VS0,VE219
       Vary:
       - Authorization,Accept-Encoding,Origin
       Access-Control-Allow-Origin:
       - "*"
       X-Fastly-Request-Id:
-      - fffa0f26cfa8a8e4a48c910bf1b2175ed78d32bb
+      - 2245d6dfbf7edb37760f5000fcd05c23f7a58d49
       Expires:
-      - Wed, 06 Oct 2021 17:09:54 GMT
+      - Wed, 12 Jan 2022 12:01:04 GMT
       Source-Age:
       - '0'
     body:
@@ -137,17 +137,21 @@ http_interactions:
         - type: title-main
           content: 'Automation support for security control assessments: software vulnerability
             management, volume 4'
-          language: en
-          script: Latn
+          language:
+          - en
+          script:
+          - Latn
           format: text/plain
         - type: main
           content: 'Automation support for security control assessments: software vulnerability
             management, volume 4'
-          language: en
-          script: Latn
+          language:
+          - en
+          script:
+          - Latn
           format: text/plain
         link:
-          content: https://nvlpubs.nist.gov/nistpubs/ir/2020/NIST.IR.8011-4.pdf
+        - content: https://nvlpubs.nist.gov/nistpubs/ir/2020/NIST.IR.8011-4.pdf
           type: doi
         type: standard
         docid:
@@ -156,52 +160,68 @@ http_interactions:
         - id: 10.6028/nist.ir.8011-4
           type: DOI
         date:
-          type: published
+        - type: published
           value: 2020-04
         contributor:
         - person:
             name:
               forename:
-                content: Kelley
-                script: Latn
+              - content: Kelley
+                script:
+                - Latn
               surname:
                 content: Dempsey
-                script: Latn
-          role: author
+                script:
+                - Latn
+          role:
+          - author
         - person:
             name:
               forename:
-                content: Eduardo
-                script: Latn
+              - content: Eduardo
+                script:
+                - Latn
               surname:
                 content: Takamura
-                script: Latn
-          role: author
+                script:
+                - Latn
+          role:
+          - author
         - person:
             name:
               forename:
-                content: Paul
-                script: Latn
+              - content: Paul
+                script:
+                - Latn
               surname:
                 content: Eavy
-                script: Latn
-          role: author
+                script:
+                - Latn
+          role:
+          - author
         - person:
             name:
               forename:
-                content: George
-                script: Latn
+              - content: George
+                script:
+                - Latn
               surname:
                 content: Moore
-                script: Latn
-          role: author
+                script:
+                - Latn
+          role:
+          - author
         - organization:
-            name: National Institute of Standards and Technology
+            name:
+            - National Institute of Standards and Technology
             abbreviation: NIST
-          role: publisher
+          role:
+          - publisher
         revdate: 2020-04
-        script: Latn
-        place: Gaithersburg, MD
+        script:
+        - Latn
+        place:
+        - Gaithersburg, MD
         doctype: standard
-  recorded_at: Wed, 06 Oct 2021 17:04:54 GMT
+  recorded_at: Wed, 12 Jan 2022 11:56:03 GMT
 recorded_with: VCR 6.0.0
