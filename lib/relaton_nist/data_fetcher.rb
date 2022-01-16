@@ -20,9 +20,8 @@ module RelatonNist
       @ext = format.sub(/^bib/, "")
     end
 
-    def parse_docid(doc)
+    def parse_docid(doc) # rubocop:disable Metrics/AbcSize, Metrics/MethodLength
       doi = doc.at("doi_data/doi").text
-      id = doc.at("publisher_item/item_number", "publisher_item/identifier").text.sub(%r{^/}, "")
       case doi
       when "10.6028/NBS.CIRC.12e2revjune" then id.sub!("13e", "12e")
       when "10.6028/NBS.CIRC.36e2" then id.sub!("46e", "36e")
@@ -30,7 +29,17 @@ module RelatonNist
       when "10.6028/NBS.HB.105-1r1990" then id.sub!("105-1-1990", "105-1r1990")
       when "10.6028/NIST.HB.150-10-1995" then id.sub!(/150-10$/, "150-10-1995")
       end
-      [{ type: "NIST", id: id }, { type: "DOI", id: doi }]
+      anchor = doi.split("/").last
+      [
+        { type: "NIST", id: pub_id(doc) },
+        { type: "DOI", id: doi },
+        { type: "NIST", id: anchor, scope: "anchor" },
+      ]
+    end
+
+    def pub_id(doc)
+      doc.at("publisher_item/item_number", "publisher_item/identifier")
+        .text.sub(%r{^/}, "")
     end
 
     # @param doc [Nokogiri::XML::Element]
@@ -47,7 +56,7 @@ module RelatonNist
       t = doc.xpath("titles/title|titles/subtitle")
       return [] unless t.any?
 
-      RelatonBib::TypedTitleString.from_string t.map(&:text).join(" "), "en", "Latn"
+      RelatonBib::TypedTitleString.from_string t.map(&:text).join, "en", "Latn"
     end
 
     # @param doc [Nokogiri::XML::Element]
@@ -123,13 +132,28 @@ module RelatonNist
         fullname = RelatonBib::FullName.new(
           surname: surname, forename: forename, initial: initial, identifier: ident,
         )
-        person = RelatonBib::Person.new name: fullname
+        person = RelatonBib::Person.new name: fullname, affiliation: affiliation(doc)
         { entity: person, role: [{ type: p["contributor_role"] }] }
       end
       contribs + doc.xpath("publisher").map do |p|
         abbr = p.at("../institution/institution_acronym")&.text
-        org = RelatonBib::Organization.new(name: p.at("publisher_name").text, abbreviation: abbr)
+        place = p.at("./publisher_place")
+        cont = []
+        if place
+          city, state = place.text.split(", ")
+          cont << RelatonBib::Address.new(street: [], city: city, state: state, country: "US")
+        end
+        org = RelatonBib::Organization.new(
+          name: p.at("publisher_name").text, abbreviation: abbr, contact: cont,
+        )
         { entity: org, role: [{ type: "publisher" }] }
+      end
+    end
+
+    def affiliation(doc)
+      doc.xpath("./institution/institution_department").map do |id|
+        org = RelatonBib::Organization.new name: id.text
+        RelatonBib::Affiliation.new organization: org
       end
     end
 
@@ -137,6 +161,11 @@ module RelatonNist
     # @return [Array<String>]
     def fetch_place(doc)
       doc.xpath("institution/institution_place").map(&:text)
+    end
+
+    def fetch_series(doc)
+      title = RelatonBib::TypedTitleString.new(content: "NIST")
+      [RelatonBib::Series.new(title: title, number: pub_id(doc))]
     end
 
     #
@@ -174,7 +203,7 @@ module RelatonNist
         link: fetch_link(doc), abstract: fetch_abstract(doc),
         date: fetch_date(doc), edition: fetch_edition(doc),
         contributor: fetch_contributor(doc), relation: fetch_relation(doc),
-        place: fetch_place(doc),
+        place: fetch_place(doc), series: fetch_series(doc),
         language: [doc["language"]], script: ["Latn"], doctype: "standard"
       )
       write_file item

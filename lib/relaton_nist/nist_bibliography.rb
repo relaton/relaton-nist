@@ -28,17 +28,18 @@ module RelatonNist
       # @option opts [TrueClass, FalseClass] :bibdata
       #
       # @return [String] Relaton XML serialisation of reference
-      def get(code, year = nil, opts = {})
-        return fetch_ref_err(code, year, []) if code.match? /\sEP$/
+      def get(code, year = nil, opts = {}) # rubocop:disable Metrics/AbcSize, Metrics/MethodLength, Metrics/CyclomaticComplexity, Metrics/PerceivedComplexity
+        return fetch_ref_err(code, year, []) if code.match?(/\sEP$/)
 
-        /^(?<code2>[^\(]+)(\((?<date2>\w+\s(\d{2},\s)?\d{4})\))?\s?\(?((?<=\()(?<stage>[^\)]+))?/ =~ code
+        /^(?<code2>[^(]+)(?:\((?<date2>\w+\s(?:\d{2},\s)?\d{4})\))?\s?\(?(?:(?<=\()(?<stage>[^\)]+))?/ =~ code
         stage ||= /(?<=\.)PD-\w+(?=\.)/.match(code)&.to_s
         if code2
           code = code2.strip
           if date2
-            if /\w+\s\d{4}/.match? date2
+            case date2
+            when /\w+\s\d{4}/
               opts[:issued_date] = Date.strptime date2, "%B %Y"
-            elsif /\w+\s\d{2},\s\d{4}/.match? date2
+            when /\w+\s\d{2},\s\d{4}/
               opts[:updated_date] = Date.strptime date2, "%B %d, %Y"
             end
           end
