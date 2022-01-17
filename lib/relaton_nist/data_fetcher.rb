@@ -11,6 +11,8 @@ module RelatonNist
       "isTranslationOf" => "translatedFrom",
       "hasPreprint" => "hasReprint",
       "isSupplementTo" => "complements",
+      "isPartOf" => "partOf",
+      "hasPart" => "hasPart",
     }.freeze
     URL = "https://raw.githubusercontent.com/usnistgov/NIST-Tech-Pubs/nist-pages/xml/allrecords.xml"
 
@@ -21,25 +23,31 @@ module RelatonNist
     end
 
     def parse_docid(doc) # rubocop:disable Metrics/AbcSize, Metrics/MethodLength
-      doi = doc.at("doi_data/doi").text
-      case doi
-      when "10.6028/NBS.CIRC.12e2revjune" then id.sub!("13e", "12e")
-      when "10.6028/NBS.CIRC.36e2" then id.sub!("46e", "36e")
-      when "10.6028/NBS.HB.67suppJune1967" then id.sub!("1965", "1967")
-      when "10.6028/NBS.HB.105-1r1990" then id.sub!("105-1-1990", "105-1r1990")
-      when "10.6028/NIST.HB.150-10-1995" then id.sub!(/150-10$/, "150-10-1995")
-      end
-      anchor = doi.split("/").last
+      # case doi
+      # when "10.6028/NBS.CIRC.12e2revjune" then doi.sub!("13e", "12e")
+      # when "10.6028/NBS.CIRC.36e2" then doi.sub!("46e", "36e")
+      # when "10.6028/NBS.HB.67suppJune1967" then doi.sub!("1965", "1967")
+      # when "10.6028/NBS.HB.105-1r1990" then doi.sub!("105-1-1990", "105-1r1990")
+      # when "10.6028/NIST.HB.150-10-1995" then doi.sub!(/150-10$/, "150-10-1995")
+      # end
+      # anchor = doi.split("/")[1..-1].join "/"
       [
         { type: "NIST", id: pub_id(doc) },
-        { type: "DOI", id: doi },
-        { type: "NIST", id: anchor, scope: "anchor" },
+        { type: "DOI", id: doi(doc) },
+        { type: "NIST", id: anchor(doc), scope: "anchor" },
       ]
     end
 
     def pub_id(doc)
-      doc.at("publisher_item/item_number", "publisher_item/identifier")
-        .text.sub(%r{^/}, "")
+      anchor(doc).gsub(".", " ")
+    end
+
+    def doi(doc)
+      doc.at("doi_data/doi").text
+    end
+
+    def anchor(doc)
+      doi(doc).split("/")[1..-1].join "/"
     end
 
     # @param doc [Nokogiri::XML::Element]
@@ -85,12 +93,11 @@ module RelatonNist
     def fetch_relation(doc)
       ns = "http://www.crossref.org/relations.xsd"
       doc.xpath("./ns:program/ns:related_item", ns: ns).map do |rel|
-        doi = rel.at_xpath("ns:intra_work_relation|ns:inter_work_relation", ns: ns)
-        # ref = doi_to_id doi.text
-        # ref, = parse_docid doc
-        fref = RelatonBib::FormattedRef.new content: doi.text
+        rdoi = rel.at_xpath("ns:intra_work_relation|ns:inter_work_relation", ns: ns)
+        fref = RelatonBib::FormattedRef.new content: rdoi.text
         bibitem = RelatonBib::BibliographicItem.new formattedref: fref
-        type = RELATION_TYPES[doi["relationship-type"]]
+        type = RELATION_TYPES[rdoi["relationship-type"]]
+        warn "Relation type #{rdoi['relationship-type']} not found" unless type
         { type: type, bibitem: bibitem }
       end
     end
@@ -210,7 +217,8 @@ module RelatonNist
     rescue StandardError => e
       warn "Document: #{doc.at('doi').text}"
       warn e.message
-      raise e
+      warn e.backtrace[0..5].join("\n")
+      # raise e
     end
 
     #
@@ -231,6 +239,7 @@ module RelatonNist
       puts "Done in: #{(t2 - t1).round} sec."
     rescue StandardError => e
       warn e.message
+      warn e.backtrace[0..5].join("\n")
     end
 
     #

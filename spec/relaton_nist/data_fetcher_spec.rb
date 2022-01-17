@@ -51,7 +51,7 @@ RSpec.describe "NIST documents fetcher" do
 
   it "riase parsing error" do
     expect(OpenURI).to receive(:open_uri).with(RelatonNist::DataFetcher::URL).and_return nist_data
-    expect(RelatonNist::NistBibliographicItem).to receive(:new).and_raise StandardError
+    expect(RelatonNist::NistBibliographicItem).to receive(:new).and_raise(StandardError).twice
     expect { RelatonNist::DataFetcher.fetch }
       .to output(/Document: 10.6028\/NIST.SP\.800-133r1/).to_stderr
   end
