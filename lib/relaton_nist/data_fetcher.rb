@@ -54,7 +54,7 @@ module RelatonNist
     # @return [Array<RelatonBib::DocumentIdentifier>]
     def fetch_docid(doc)
       parse_docid(doc).map do |id|
-        RelatonBib::DocumentIdentifier.new(type: id[:type], id: id[:id])
+        RelatonBib::DocumentIdentifier.new(**id)
       end
     end
 
