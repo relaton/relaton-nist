@@ -35,35 +35,35 @@ http_interactions:
       Content-Type:
       - text/plain; charset=utf-8
       X-Github-Request-Id:
-      - AD1C:D0BE:C85B91:D0BF2C:61DEC1D4
+      - E6AA:BC93:143BCE2:15AB7DF:61E858F5
       Accept-Ranges:
       - bytes
       Date:
-      - Wed, 12 Jan 2022 11:56:04 GMT
+      - Wed, 19 Jan 2022 18:31:17 GMT
       Via:
       - 1.1 varnish
       X-Served-By:
-      - cache-sof1510025-SOF
+      - cache-sof1510029-SOF
       X-Cache:
       - MISS
       X-Cache-Hits:
       - '0'
       X-Timer:
-      - S1641988565.665032,VS0,VE209
+      - S1642617077.423905,VS0,VE186
       Vary:
       - Authorization,Accept-Encoding,Origin
       Access-Control-Allow-Origin:
       - "*"
       X-Fastly-Request-Id:
-      - 0bcc0901b976b9dbd5ee562b74a629529eeab3f9
+      - 63b5c6b3ffb130bf9f3b6ad698735325d007e3b0
       Expires:
-      - Wed, 12 Jan 2022 12:01:04 GMT
+      - Wed, 19 Jan 2022 18:36:17 GMT
       Source-Age:
       - '0'
     body:
       encoding: UTF-8
       string: '404: Not Found'
-  recorded_at: Wed, 12 Jan 2022 11:56:04 GMT
+  recorded_at: Wed, 19 Jan 2022 18:31:17 GMT
 - request:
     method: get
     uri: https://raw.githubusercontent.com/relaton/relaton-data-nist/main/data/SP_2222.yaml
@@ -99,33 +99,33 @@ http_interactions:
       Content-Type:
       - text/plain; charset=utf-8
       X-Github-Request-Id:
-      - AD1C:D0BE:C85B91:D0BF2C:61DEC1D4
+      - E6AA:BC93:143BCE2:15AB7DF:61E858F5
       Accept-Ranges:
       - bytes
       Date:
-      - Wed, 12 Jan 2022 11:56:05 GMT
+      - Wed, 19 Jan 2022 18:31:18 GMT
       Via:
       - 1.1 varnish
       X-Served-By:
-      - cache-sof1510045-SOF
+      - cache-sof1510067-SOF
       X-Cache:
       - HIT
       X-Cache-Hits:
       - '1'
       X-Timer:
-      - S1641988565.260026,VS0,VE0
+      - S1642617078.070519,VS0,VE0
       Vary:
       - Authorization,Accept-Encoding,Origin
       Access-Control-Allow-Origin:
       - "*"
       X-Fastly-Request-Id:
-      - c9e8c3062570b06eca5d3046712432201e2e5f40
+      - 4145862f33ae17cf08daf26075b817a5e514ba21
       Expires:
-      - Wed, 12 Jan 2022 12:01:05 GMT
+      - Wed, 19 Jan 2022 18:36:18 GMT
       Source-Age:
       - '0'
     body:
       encoding: UTF-8
       string: '404: Not Found'
-  recorded_at: Wed, 12 Jan 2022 11:56:05 GMT
+  recorded_at: Wed, 19 Jan 2022 18:31:17 GMT
 recorded_with: VCR 6.0.0

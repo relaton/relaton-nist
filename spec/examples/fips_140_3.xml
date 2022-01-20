@@ -1,5 +1,5 @@
 <bibdata type="standard">
-  <fetched>2020-02-13</fetched>
+  <fetched>2022-01-20</fetched>
   <title format="text/plain" language="en" script="Latn">Security Requirements for Cryptographic Modules</title>
   <uri type="src">https://csrc.nist.gov/publications/detail/fips/140/3/final</uri>
   <uri type="doi">https://doi.org/10.6028/NIST.FIPS.140-3</uri>
@@ -32,7 +32,8 @@
       </organization>
     </owner>
   </copyright>
-  <relation type="supersedes">
+  <relation type="obsoletes">
+    <description format="text/plain" language="en" script="Latn">supersedes</description>
     <bibitem>
       <formattedref format="text/plain" language="en" script="Latn">FIPS 140-2</formattedref>
       <uri type="src">https://csrc.nist.gov/publications/detail/fips/140/2/final</uri>

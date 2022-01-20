@@ -42,8 +42,17 @@ module RelatonNist
       anchor(doc).gsub(".", " ")
     end
 
-    def doi(doc)
-      doc.at("doi_data/doi").text
+    def doi(doc) # rubocop:disable Metrics/CyclomaticComplexity
+      id = doc.at("doi_data/doi").text
+      case id
+      when "10.6028/NBS.CIRC.e2e" then "10.6028/NBS.CIRC.2e2"
+      when "10.6028/NBS.CIRC.sup" then "10.6028/NBS.CIRC.24e7sup"
+      when "10.6028/NBS.CIRC.supJun1925-Jun1926" then "10.6028/NBS.CIRC.24e7sup2"
+      when "10.6028/NBS.CIRC.supJun1925-Jun1927" then "10.6028/NBS.CIRC.24e7sup3"
+      when "10.6028/NBS.CIRC.24supJuly1922" then "10.6028/NBS.CIRC.24e6sup"
+      when "10.6028/NBS.CIRC.24supJan1924" then "10.6028/NBS.CIRC.24e6sup2"
+      else id
+      end
     end
 
     def anchor(doc)

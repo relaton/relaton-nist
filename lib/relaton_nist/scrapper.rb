@@ -209,9 +209,15 @@ module RelatonNist
       # @param ref [String]
       # @param uri [String]
       # @return [RelatonNist::DocumentRelation]
-      def doc_relation(type, ref, uri, lang = "en", script = "Latn")
+      def doc_relation(type, ref, uri, lang = "en", script = "Latn") # rubocop:disable Metrics/MethodLength
+        if type == "supersedes"
+          descr = RelatonBib::FormattedString.new(content: "supersedes", language: lang, script: script)
+          t = "obsoletes"
+        else t = type
+        end
         DocumentRelation.new(
-          type: type,
+          type: t,
+          description: descr,
           bibitem: RelatonBib::BibliographicItem.new(
             formattedref: RelatonBib::FormattedRef.new(
               content: ref, language: lang, script: script, format: "text/plain",

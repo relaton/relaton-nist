@@ -28,7 +28,7 @@ RSpec.describe RelatonNist do
         hits = RelatonNist::NistBibliography.search("NISTIR 8011-1")
         file_path = "spec/examples/hit.xml"
         xml = hits.first.to_xml bibdata: true
-        File.write file_path, xml unless File.exist? file_path
+        File.write file_path, xml, encoding: "UTF-8" unless File.exist? file_path
         expect(xml).to be_equivalent_to File.open(file_path, "r:UTF-8", &:read)
           .gsub(/(?<=<fetched>)\d{4}-\d{2}-\d{2}/, Date.today.to_s)
         schema = Jing.new "spec/examples/isobib.rng"
@@ -41,7 +41,7 @@ RSpec.describe RelatonNist do
       VCR.use_cassette "8011_1" do
         hits = RelatonNist::NistBibliography.search("NISTIR 8011-1")
         file_path = "spec/examples/hit_bibitem.xml"
-        File.write file_path, hits.first.to_xml unless File.exist? file_path
+        File.write file_path, hits.first.to_xml, encoding: "UTF-8" unless File.exist? file_path
         expect(hits.first.to_xml).to be_equivalent_to File
           .open(file_path, "r:UTF-8", &:read)
           .gsub(/(?<=<fetched>)\d{4}-\d{2}-\d{2}/, Date.today.to_s)
@@ -89,7 +89,7 @@ RSpec.describe RelatonNist do
         result = RelatonNist::NistBibliography.get("NISTIR 8200", "2018", {})
           .to_xml bibdata: true
         file_path = "spec/examples/get.xml"
-        File.write file_path, result unless File.exist? file_path
+        File.write file_path, result, encoding: "UTF-8" unless File.exist? file_path
         expect(result).to be_equivalent_to File.open(
           file_path, "r:UTF-8", &:read
         ).gsub(/(?<=<fetched>)\d{4}-\d{2}-\d{2}/, Date.today.to_s)
@@ -119,7 +119,7 @@ RSpec.describe RelatonNist do
         result = RelatonNist::NistBibliography.get("SP 800-189(PD)", nil, {})
           .to_xml bibdata: true
         file_path = "spec/examples/draft.xml"
-        File.write file_path, result unless File.exist? file_path
+        File.write file_path, result, encoding: "UTF-8" unless File.exist? file_path
         expect(result).to be_equivalent_to File.open(
           file_path, "r:UTF-8", &:read
         ).gsub(/(?<=<fetched>)\d{4}-\d{2}-\d{2}/, Date.today.to_s)
@@ -134,7 +134,7 @@ RSpec.describe RelatonNist do
         result = RelatonNist::NistBibliography.get("SP 800-80(PD)", nil, {})
           .to_xml bibdata: true
         file_path = "spec/examples/retired_draft.xml"
-        File.write file_path, result unless File.exist? file_path
+        File.write file_path, result, encoding: "UTF-8" unless File.exist? file_path
         expect(result).to be_equivalent_to File.open(
           file_path, "r:UTF-8", &:read
         ).gsub(/(?<=<fetched>)\d{4}-\d{2}-\d{2}/, Date.today.to_s)
@@ -149,7 +149,7 @@ RSpec.describe RelatonNist do
         result = RelatonNist::NistBibliography.get("SP 800-189(PD)", nil, {})
           .to_xml bibdata: true
         file_path = "spec/examples/draft_obsolete.xml"
-        File.write file_path, result unless File.exist? file_path
+        File.write file_path, result, encoding: "UTF-8" unless File.exist? file_path
         expect(result).to be_equivalent_to File.open(
           file_path, "r:UTF-8", &:read
         ).gsub(/(?<=<fetched>)\d{4}-\d{2}-\d{2}/, Date.today.to_s)
@@ -164,7 +164,7 @@ RSpec.describe RelatonNist do
         result = RelatonNist::NistBibliography.get("SP 800-162", nil, {})
           .to_xml bibdata: true
         file_path = "spec/examples/issued_published_dates.xml"
-        File.write file_path, result unless File.exist? file_path
+        File.write file_path, result, encoding: "UTF-8" unless File.exist? file_path
         expect(result).to be_equivalent_to(
           File.open(file_path, "r:UTF-8", &:read)
             .gsub(/(?<=<fetched>)\d{4}-\d{2}-\d{2}/, Date.today.to_s),
@@ -180,7 +180,7 @@ RSpec.describe RelatonNist do
         result = RelatonNist::NistBibliography.get("FIPS 140-3", nil, {})
           .to_xml bibdata: true
         file_path = "spec/examples/fips_140_3.xml"
-        File.write file_path, result unless File.exist? file_path
+        File.write file_path, result, encoding: "UTF-8" unless File.exist? file_path
         expect(result).to be_equivalent_to(
           File.open(file_path, "r:UTF-8", &:read)
             .gsub(/(?<=<fetched>)\d{4}-\d{2}-\d{2}/, Date.today.to_s),
@@ -262,16 +262,16 @@ RSpec.describe RelatonNist do
 
     context "doc with specific volume" do
       it "short notation" do
-        VCR.use_cassette "nistir_8011v4" do
-          bib = RelatonNist::NistBibliography.get "NISTIR 8011v4"
-          expect(bib.docidentifier[0].id).to eq "NIST IR 8011v4"
+        VCR.use_cassette "nistir_5667v4" do
+          bib = RelatonNist::NistBibliography.get "NISTIR 5667v4"
+          expect(bib.docidentifier[0].id).to eq "NIST IR 5667v4"
         end
       end
 
       it "long notation" do
-        VCR.use_cassette "nistir_8011v4" do
-          bib = RelatonNist::NistBibliography.get "NISTIR 8011 Vol. 4"
-          expect(bib.docidentifier[0].id).to eq "NIST IR 8011v4"
+        VCR.use_cassette "nistir_5667v4" do
+          bib = RelatonNist::NistBibliography.get "NISTIR 5667 Vol. 4"
+          expect(bib.docidentifier[0].id).to eq "NIST IR 5667v4"
         end
       end
     end
@@ -314,7 +314,8 @@ RSpec.describe RelatonNist do
         expect(result.relation.first).to be_instance_of(
           RelatonNist::DocumentRelation,
         )
-        expect(result.relation.first.type).to eq "supersedes"
+        expect(result.relation.first.type).to eq "obsoletes"
+        expect(result.relation.first.description.content).to eq "supersedes"
       end
     end
 
@@ -450,7 +451,7 @@ RSpec.describe RelatonNist do
         VCR.use_cassette "json_data" do
           result = RelatonNist::NistBibliography.get("SP 800-37r2 (IPD)").to_xml
           file_path = "spec/examples/sp_800_57.xml"
-          File.write file_path, result unless File.exist? file_path
+          File.write file_path, result, encoding: "UTF-8" unless File.exist? file_path
           expect(result).to be_equivalent_to(
             File.open(file_path, "r:UTF-8", &:read)
               .gsub(/(?<=<fetched>)\d{4}-\d{2}-\d{2}/, Date.today.to_s),

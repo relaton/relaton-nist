@@ -1,10 +1,11 @@
 <bibitem id="NISTIR8011-1" type="standard">
-  <fetched>2021-08-30</fetched>
+  <fetched>2022-01-20</fetched>
   <title type="title-main" format="text/plain" language="en" script="Latn">Automation support for security control assessments. volume 1: overview</title>
   <title type="main" format="text/plain" language="en" script="Latn">Automation support for security control assessments. volume 1: overview</title>
   <uri type="doi">https://nvlpubs.nist.gov/nistpubs/ir/2017/NIST.IR.8011-1.pdf</uri>
   <docidentifier type="NIST">NIST IR 8011-1</docidentifier>
   <docidentifier type="DOI">10.6028/NIST.IR.8011-1</docidentifier>
+  <docidentifier type="NIST" scope="anchor">NIST.IR.8011-1</docidentifier>
   <date type="published">
     <on>2017-06</on>
   </date>
@@ -15,6 +16,11 @@
         <forename script="Latn">Kelley</forename>
         <surname script="Latn">Dempsey</surname>
       </name>
+      <affiliation>
+        <organization>
+          <name>Information Technology Laboratory</name>
+        </organization>
+      </affiliation>
     </person>
   </contributor>
   <contributor>
@@ -24,6 +30,11 @@
         <forename script="Latn">Paul</forename>
         <surname script="Latn">Eavy</surname>
       </name>
+      <affiliation>
+        <organization>
+          <name>Information Technology Laboratory</name>
+        </organization>
+      </affiliation>
     </person>
   </contributor>
   <contributor>
@@ -33,6 +44,11 @@
         <forename script="Latn">George</forename>
         <surname script="Latn">Moore</surname>
       </name>
+      <affiliation>
+        <organization>
+          <name>Information Technology Laboratory</name>
+        </organization>
+      </affiliation>
     </person>
   </contributor>
   <contributor>
@@ -40,8 +56,17 @@
     <organization>
       <name>National Institute of Standards and Technology</name>
       <abbreviation>NIST</abbreviation>
+      <address>
+        <city>Gaithersburg</city>
+        <state>MD</state>
+        <country>US</country>
+      </address>
     </organization>
   </contributor>
   <script>Latn</script>
+  <series>
+    <title format="text/plain">NIST</title>
+    <number>NIST IR 8011-1</number>
+  </series>
   <place>Gaithersburg, MD</place>
 </bibitem>

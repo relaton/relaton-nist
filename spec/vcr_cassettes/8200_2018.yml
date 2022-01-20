@@ -21,7 +21,7 @@ http_interactions:
       Connection:
       - keep-alive
       Content-Length:
-      - '471'
+      - '572'
       Cache-Control:
       - max-age=300
       Content-Security-Policy:
@@ -29,7 +29,7 @@ http_interactions:
       Content-Type:
       - text/plain; charset=utf-8
       Etag:
-      - W/"1616c7d6292d87271397190acdc80220b371c15d3c21e1d550e027a6f29e01c2"
+      - W/"bf6fc31c53d5fbbe8f6838b4ced244c4bd4754e1a4291be04b609c4b6ed52a88"
       Strict-Transport-Security:
       - max-age=31536000
       X-Content-Type-Options:
@@ -39,11 +39,11 @@ http_interactions:
       X-Xss-Protection:
       - 1; mode=block
       X-Github-Request-Id:
-      - 9ED6:B0FE:D38CBE:DC0B65:61DEC1CE
+      - 3154:37C0:81C3B8:89152A:61E858EC
       Accept-Ranges:
       - bytes
       Date:
-      - Wed, 12 Jan 2022 11:55:58 GMT
+      - Wed, 19 Jan 2022 18:31:10 GMT
       Via:
       - 1.1 varnish
       X-Served-By:
@@ -53,17 +53,17 @@ http_interactions:
       X-Cache-Hits:
       - '1'
       X-Timer:
-      - S1641988559.534935,VS0,VE0
+      - S1642617070.426077,VS0,VE0
       Vary:
       - Authorization,Accept-Encoding,Origin
       Access-Control-Allow-Origin:
       - "*"
       X-Fastly-Request-Id:
-      - ec12b3a9ca04e592998637456b5ee7808341026b
+      - a6c6a89c0093e9f0ca812462571a83a46b068a15
       Expires:
-      - Wed, 12 Jan 2022 12:00:58 GMT
+      - Wed, 19 Jan 2022 18:36:10 GMT
       Source-Age:
-      - '0'
+      - '1'
     body:
       encoding: ASCII-8BIT
       string: |
@@ -95,6 +95,9 @@ http_interactions:
           type: NIST
         - id: 10.6028/NIST.IR.8200
           type: DOI
+        - id: NIST.IR.8200
+          type: NIST
+          scope: anchor
         date:
         - type: published
           value: 2018-11
@@ -109,6 +112,10 @@ http_interactions:
                 content: Hogan
                 script:
                 - Latn
+            affiliation:
+            - organization:
+                name:
+                - Information Technology Laboratory
           role:
           - author
         - person:
@@ -121,19 +128,32 @@ http_interactions:
                 content: Piccarreta
                 script:
                 - Latn
+            affiliation:
+            - organization:
+                name:
+                - Information Technology Laboratory
           role:
           - author
         - organization:
             name:
             - National Institute of Standards and Technology
             abbreviation: NIST
+            contact:
+            - city: Gaithersburg
+              state: MD
+              country: US
           role:
           - publisher
         revdate: 2018-11
         script:
         - Latn
+        series:
+        - title:
+            content: NIST
+            format: text/plain
+          number: NIST IR 8200
         place:
         - Gaithersburg, MD
         doctype: standard
-  recorded_at: Wed, 12 Jan 2022 11:55:58 GMT
+  recorded_at: Wed, 19 Jan 2022 18:31:10 GMT
 recorded_with: VCR 6.0.0

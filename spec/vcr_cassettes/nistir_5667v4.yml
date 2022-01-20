@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://raw.githubusercontent.com/relaton/relaton-data-nist/main/data/NISTIR_8011.yaml
+    uri: https://raw.githubusercontent.com/relaton/relaton-data-nist/main/data/NISTIR_5667.yaml
     body:
       encoding: US-ASCII
       string: ''
@@ -35,38 +35,38 @@ http_interactions:
       Content-Type:
       - text/plain; charset=utf-8
       X-Github-Request-Id:
-      - '0990:D0BD:6A9708:7208C8:61DEC1D3'
+      - 62C2:BC93:16B1E24:18526A5:61E94A16
       Accept-Ranges:
       - bytes
       Date:
-      - Wed, 12 Jan 2022 11:56:03 GMT
+      - Thu, 20 Jan 2022 11:40:07 GMT
       Via:
       - 1.1 varnish
       X-Served-By:
-      - cache-sof1510048-SOF
+      - cache-sof1510057-SOF
       X-Cache:
       - MISS
       X-Cache-Hits:
       - '0'
       X-Timer:
-      - S1641988563.465092,VS0,VE203
+      - S1642678807.908232,VS0,VE183
       Vary:
       - Authorization,Accept-Encoding,Origin
       Access-Control-Allow-Origin:
       - "*"
       X-Fastly-Request-Id:
-      - ffbfc4f57303753aaf359e6117669428099bcf63
+      - f92a717ad54d27ac902b8eb6c7fea12af586ce0c
       Expires:
-      - Wed, 12 Jan 2022 12:01:03 GMT
+      - Thu, 20 Jan 2022 11:45:07 GMT
       Source-Age:
       - '0'
     body:
       encoding: UTF-8
       string: '404: Not Found'
-  recorded_at: Wed, 12 Jan 2022 11:56:03 GMT
+  recorded_at: Thu, 20 Jan 2022 11:40:06 GMT
 - request:
     method: get
-    uri: https://raw.githubusercontent.com/relaton/relaton-data-nist/main/data/NISTIR_8011V4.yaml
+    uri: https://raw.githubusercontent.com/relaton/relaton-data-nist/main/data/NISTIR_5667V4.yaml
     body:
       encoding: US-ASCII
       string: ''
@@ -85,7 +85,7 @@ http_interactions:
       Connection:
       - keep-alive
       Content-Length:
-      - '506'
+      - '544'
       Cache-Control:
       - max-age=300
       Content-Security-Policy:
@@ -93,7 +93,7 @@ http_interactions:
       Content-Type:
       - text/plain; charset=utf-8
       Etag:
-      - W/"63baac9b60e0ade6e6bf2255968c7a3f8b2912b01bd64613f9d2cba2bbbb7d63"
+      - W/"2330307e0289932291b0f09562bfc02ddce84be072e8153cfb81e844b112daeb"
       Strict-Transport-Security:
       - max-age=31536000
       X-Content-Type-Options:
@@ -103,110 +103,77 @@ http_interactions:
       X-Xss-Protection:
       - 1; mode=block
       X-Github-Request-Id:
-      - CCCC:E597:63FDB3:6B62B2:61DEC1D3
+      - 6B08:11644:15C0DF1:174D90A:61E94A17
       Accept-Ranges:
       - bytes
       Date:
-      - Wed, 12 Jan 2022 11:56:04 GMT
+      - Thu, 20 Jan 2022 11:40:07 GMT
       Via:
       - 1.1 varnish
       X-Served-By:
-      - cache-sof1510024-SOF
+      - cache-sof1510050-SOF
       X-Cache:
       - MISS
       X-Cache-Hits:
       - '0'
       X-Timer:
-      - S1641988564.855050,VS0,VE219
+      - S1642678807.298129,VS0,VE309
       Vary:
       - Authorization,Accept-Encoding,Origin
       Access-Control-Allow-Origin:
       - "*"
       X-Fastly-Request-Id:
-      - 2245d6dfbf7edb37760f5000fcd05c23f7a58d49
+      - 613420492b6f09a936302161eee0482576adc306
       Expires:
-      - Wed, 12 Jan 2022 12:01:04 GMT
+      - Thu, 20 Jan 2022 11:45:07 GMT
       Source-Age:
       - '0'
     body:
       encoding: ASCII-8BIT
       string: |
         ---
-        id: NISTIR8011v4
+        id: NISTIR5667v4
         title:
         - type: title-main
-          content: 'Automation support for security control assessments: software vulnerability
-            management, volume 4'
+          content: A study of potential applications of automation and robotics technology
+            in construction, maintenance and operation of highway systems:a final report
           language:
           - en
           script:
           - Latn
           format: text/plain
         - type: main
-          content: 'Automation support for security control assessments: software vulnerability
-            management, volume 4'
+          content: A study of potential applications of automation and robotics technology
+            in construction, maintenance and operation of highway systems:a final report
           language:
           - en
           script:
           - Latn
           format: text/plain
         link:
-        - content: https://nvlpubs.nist.gov/nistpubs/ir/2020/NIST.IR.8011-4.pdf
+        - content: https://nvlpubs.nist.gov/nistpubs/Legacy/IR/nistir5667v4.pdf
           type: doi
         type: standard
         docid:
-        - id: NIST IR 8011v4
+        - id: NIST IR 5667v4
           type: NIST
-        - id: 10.6028/nist.ir.8011-4
+        - id: 10.6028/NIST.IR.5667v4
           type: DOI
+        - id: NIST.IR.5667v4
+          type: NIST
+          scope: anchor
         date:
         - type: published
-          value: 2020-04
+          value: '1995'
         contributor:
         - person:
             name:
               forename:
-              - content: Kelley
+              - content: Ernest
                 script:
                 - Latn
               surname:
-                content: Dempsey
-                script:
-                - Latn
-          role:
-          - author
-        - person:
-            name:
-              forename:
-              - content: Eduardo
-                script:
-                - Latn
-              surname:
-                content: Takamura
-                script:
-                - Latn
-          role:
-          - author
-        - person:
-            name:
-              forename:
-              - content: Paul
-                script:
-                - Latn
-              surname:
-                content: Eavy
-                script:
-                - Latn
-          role:
-          - author
-        - person:
-            name:
-              forename:
-              - content: George
-                script:
-                - Latn
-              surname:
-                content: Moore
+                content: Kent
                 script:
                 - Latn
           role:
@@ -215,13 +182,22 @@ http_interactions:
             name:
             - National Institute of Standards and Technology
             abbreviation: NIST
+            contact:
+            - city: Gaithersburg
+              state: MD
+              country: US
           role:
           - publisher
-        revdate: 2020-04
+        revdate: '1995'
         script:
         - Latn
+        series:
+        - title:
+            content: NIST
+            format: text/plain
+          number: NIST IR 5667v4
         place:
         - Gaithersburg, MD
         doctype: standard
-  recorded_at: Wed, 12 Jan 2022 11:56:03 GMT
+  recorded_at: Thu, 20 Jan 2022 11:40:07 GMT
 recorded_with: VCR 6.0.0

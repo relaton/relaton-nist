@@ -1,10 +1,11 @@
 <bibdata type="standard">
-  <fetched>2021-08-30</fetched>
+  <fetched>2022-01-20</fetched>
   <title type="title-main" format="text/plain" language="en" script="Latn">Interagency report on the status of international cybersecurity standardization for the internet of things (IoT)</title>
   <title type="main" format="text/plain" language="en" script="Latn">Interagency report on the status of international cybersecurity standardization for the internet of things (IoT)</title>
   <uri type="doi">https://nvlpubs.nist.gov/nistpubs/ir/2018/NIST.IR.8200.pdf</uri>
   <docidentifier type="NIST">NIST IR 8200</docidentifier>
   <docidentifier type="DOI">10.6028/NIST.IR.8200</docidentifier>
+  <docidentifier type="NIST" scope="anchor">NIST.IR.8200</docidentifier>
   <date type="published">
     <on>2018-11</on>
   </date>
@@ -15,6 +16,11 @@
         <forename script="Latn">Mike</forename>
         <surname script="Latn">Hogan</surname>
       </name>
+      <affiliation>
+        <organization>
+          <name>Information Technology Laboratory</name>
+        </organization>
+      </affiliation>
     </person>
   </contributor>
   <contributor>
@@ -24,6 +30,11 @@
         <forename script="Latn">Ben</forename>
         <surname script="Latn">Piccarreta</surname>
       </name>
+      <affiliation>
+        <organization>
+          <name>Information Technology Laboratory</name>
+        </organization>
+      </affiliation>
     </person>
   </contributor>
   <contributor>
@@ -31,9 +42,18 @@
     <organization>
       <name>National Institute of Standards and Technology</name>
       <abbreviation>NIST</abbreviation>
+      <address>
+        <city>Gaithersburg</city>
+        <state>MD</state>
+        <country>US</country>
+      </address>
     </organization>
   </contributor>
   <script>Latn</script>
+  <series>
+    <title format="text/plain">NIST</title>
+    <number>NIST IR 8200</number>
+  </series>
   <place>Gaithersburg, MD</place>
   <ext>
     <doctype>standard</doctype>
