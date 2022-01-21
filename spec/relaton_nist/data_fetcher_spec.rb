@@ -65,8 +65,10 @@ RSpec.describe "NIST documents fetcher" do
       contribs = subject.fetch_contributor rep
       expect(contribs.size).to eq 3
       expect(contribs[0][:entity]).to be_instance_of(RelatonBib::Person)
-      expect(contribs[0][:entity].name.forename[0].content).to eq "David"
+      expect(contribs[0][:entity].name.initial[0].content).to eq "D"
       expect(contribs[0][:entity].name.surname.content).to eq "Waltermire"
+      expect(contribs[1][:entity].name.forename[0].content).to eq "Jessica"
+      expect(contribs[1][:entity].name.surname.content).to eq "Fitzgerald-McKay"
     end
   end
 end

@@ -141,7 +141,6 @@ module RelatonNist
         end
         sname = p.at("surname").text
         surname = RelatonBib::LocalizedString.new sname, doc["language"], "Latn"
-        initial = []
         ident = p.xpath("ORCID").map do |id|
           RelatonBib::PersonIdentifier.new "orcid", id.text
         end
