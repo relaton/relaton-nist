@@ -35,35 +35,35 @@ http_interactions:
       Content-Type:
       - text/plain; charset=utf-8
       X-Github-Request-Id:
-      - 62C2:BC93:16B1E24:18526A5:61E94A16
+      - 7730:BC6B:2041477:217B462:61F41CFD
       Accept-Ranges:
       - bytes
       Date:
-      - Thu, 20 Jan 2022 11:40:07 GMT
+      - Fri, 28 Jan 2022 16:42:37 GMT
       Via:
       - 1.1 varnish
       X-Served-By:
-      - cache-sof1510057-SOF
+      - cache-sof1510075-SOF
       X-Cache:
       - MISS
       X-Cache-Hits:
       - '0'
       X-Timer:
-      - S1642678807.908232,VS0,VE183
+      - S1643388157.210245,VS0,VE183
       Vary:
       - Authorization,Accept-Encoding,Origin
       Access-Control-Allow-Origin:
       - "*"
       X-Fastly-Request-Id:
-      - f92a717ad54d27ac902b8eb6c7fea12af586ce0c
+      - 64fa5ad323f7ef3b90e6ffc61929fa4cdd8199eb
       Expires:
-      - Thu, 20 Jan 2022 11:45:07 GMT
+      - Fri, 28 Jan 2022 16:47:37 GMT
       Source-Age:
       - '0'
     body:
       encoding: UTF-8
       string: '404: Not Found'
-  recorded_at: Thu, 20 Jan 2022 11:40:06 GMT
+  recorded_at: Fri, 28 Jan 2022 16:42:37 GMT
 - request:
     method: get
     uri: https://raw.githubusercontent.com/relaton/relaton-data-nist/main/data/NISTIR_5667V4.yaml
@@ -103,29 +103,29 @@ http_interactions:
       X-Xss-Protection:
       - 1; mode=block
       X-Github-Request-Id:
-      - 6B08:11644:15C0DF1:174D90A:61E94A17
+      - B0D2:A95C:1F69C82:20A2D70:61F41CFD
       Accept-Ranges:
       - bytes
       Date:
-      - Thu, 20 Jan 2022 11:40:07 GMT
+      - Fri, 28 Jan 2022 16:42:37 GMT
       Via:
       - 1.1 varnish
       X-Served-By:
-      - cache-sof1510050-SOF
+      - cache-sof1510075-SOF
       X-Cache:
       - MISS
       X-Cache-Hits:
       - '0'
       X-Timer:
-      - S1642678807.298129,VS0,VE309
+      - S1643388158.664954,VS0,VE209
       Vary:
       - Authorization,Accept-Encoding,Origin
       Access-Control-Allow-Origin:
       - "*"
       X-Fastly-Request-Id:
-      - 613420492b6f09a936302161eee0482576adc306
+      - 4bb55e49e671c0c7849f357ff4e5bc7a863b140e
       Expires:
-      - Thu, 20 Jan 2022 11:45:07 GMT
+      - Fri, 28 Jan 2022 16:47:37 GMT
       Source-Age:
       - '0'
     body:
@@ -199,5 +199,5 @@ http_interactions:
         place:
         - Gaithersburg, MD
         doctype: standard
-  recorded_at: Thu, 20 Jan 2022 11:40:07 GMT
+  recorded_at: Fri, 28 Jan 2022 16:42:37 GMT
 recorded_with: VCR 6.0.0
