@@ -473,9 +473,11 @@ RSpec.describe RelatonNist do
       it "final draft" do
         VCR.use_cassette "json_data" do
           result = RelatonNist::NistBibliography.get "SP 800-37r2 (FPD)"
-          expect(result.title.first.title.content).to eq("Risk Management "\
-            "Framework for Information Systems and Organizations - A System "\
-            "Life Cycle Approach for Security and Privacy")
+          expect(result.title.first.title.content).to eq(
+            "Risk Management Framework for Information Systems and "\
+            "Organizations - A System Life Cycle Approach for Security and "\
+            "Privacy",
+          )
           expect(result.status.iteration).to eq "final"
         end
       end

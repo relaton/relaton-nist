@@ -15,7 +15,7 @@ module RelatonNist
         titles = fetch_titles(hit_data)
         unless /^(SP|NISTIR|FIPS) /.match? item_data[:docid][0].id
           item_data[:docid][0] = RelatonBib::DocumentIdentifier.new(
-            id: titles[0][:content].upcase, type: "NIST",
+            id: titles[0][:content].upcase, type: "NIST", primary: true,
           )
         end
         item_data[:fetched] = Date.today.to_s
@@ -56,7 +56,7 @@ module RelatonNist
         item_ref = docid
         # item_ref ||= "?"
         item_ref.sub!(/\sAddendum$/, "-Add")
-        [RelatonBib::DocumentIdentifier.new(id: item_ref, type: "NIST")]
+        [RelatonBib::DocumentIdentifier.new(id: item_ref, type: "NIST", primary: true)]
       end
 
       # Fetch status.

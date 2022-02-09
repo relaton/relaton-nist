@@ -20,6 +20,7 @@ module RelatonNist
       @output = output
       @format = format
       @ext = format.sub(/^bib/, "")
+      @files = []
     end
 
     def parse_docid(doc) # rubocop:disable Metrics/AbcSize, Metrics/MethodLength
@@ -32,7 +33,7 @@ module RelatonNist
       # end
       # anchor = doi.split("/")[1..-1].join "/"
       [
-        { type: "NIST", id: pub_id(doc) },
+        { type: "NIST", id: pub_id(doc), primary: true },
         { type: "DOI", id: doi(doc) },
         { type: "NIST", id: anchor(doc), scope: "anchor" },
       ]
@@ -191,17 +192,17 @@ module RelatonNist
     def write_file(bib) # rubocop:disable Metrics/AbcSize,Metrics/MethodLength
       id = bib.docidentifier[0].id.gsub(%r{[/\s:.]}, "_").upcase.sub(/^NIST_IR/, "NISTIR")
       file = File.join(@output, "#{id}.#{@ext}")
-      if File.exist? file
+      if @files.include? file
         warn "File #{file} exists. Docid: #{bib.docidentifier[0].id}"
         # warn "Link: #{bib.link.detect { |l| l.type == 'src' }.content}"
-      else
-        output = case @format
-                 when "yaml" then bib.to_hash.to_yaml
-                 when "xml" then bib.to_xml bibdata: true
-                 else bib.send "to_#{@format}"
-                 end
-        File.write file, output, encoding: "UTF-8"
+      else @files << file
       end
+      output = case @format
+               when "yaml" then bib.to_hash.to_yaml
+               when "xml" then bib.to_xml bibdata: true
+               else bib.send "to_#{@format}"
+               end
+      File.write file, output, encoding: "UTF-8"
     end
 
     #

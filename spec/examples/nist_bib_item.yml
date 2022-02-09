@@ -13,6 +13,7 @@ type: standard
 docid:
 - id: 8011 Vol. 3
   type: NISTIR
+  primary: true
 
 docnumber: "8011"
 

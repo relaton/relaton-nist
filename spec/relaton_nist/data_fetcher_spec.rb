@@ -14,13 +14,20 @@ RSpec.describe "NIST documents fetcher" do
       files = ["#{out}/NIST_SP_800-133R1.#{format}", "#{out}/NIST_SP_1190GB-16.#{format}"]
       expect(Dir).to receive(:[]).with("#{out}/*.#{format}").and_return files
       expect(FileUtils).to receive(:rm).with(files)
-      expect(File).to receive(:exist?).with(files[0]).and_return false
-      expect(File).to receive(:exist?).with(files[1]).and_return true
+      # expect(File).to receive(:exist?).with(files[0]).and_return false
+      # expect(File).to receive(:exist?).with(files[1]).and_return true
       expect(File).to receive(:write).with(files[0], kind_of(String), encoding: "UTF-8")
+      expect(File).to receive(:write).with(files[1], kind_of(String), encoding: "UTF-8")
+    end
+
+    subject do
+      fetcher = RelatonNist::DataFetcher.new out, format
+      fetcher.instance_variable_get(:@files) << "#{out}/NIST_SP_1190GB-16.#{format}"
+      fetcher
     end
 
     it "fetch" do
-      expect { RelatonNist::DataFetcher.fetch }.to output(
+      expect { subject.fetch }.to output(
         /File data\/NIST_SP_1190GB-16\.yaml exists\. Docid: NIST SP 1190GB-16/,
       ).to_stderr
     end
@@ -30,13 +37,14 @@ RSpec.describe "NIST documents fetcher" do
       let(:format) { "xml" }
 
       it "fetch" do
-        expect { RelatonNist::DataFetcher.fetch(output: "dir", format: "xml") }.to output(
+        expect { subject.fetch }.to output(
           /File dir\/NIST_SP_1190GB-16\.xml exists\. Docid: NIST SP 1190GB-16/,
         ).to_stderr
       end
 
       it "fetch" do
-        expect { RelatonNist::DataFetcher.fetch(output: out, format: "bibxml") }.to output(
+        subject.instance_variable_set :@format, "bibxml"
+        expect { subject.fetch }.to output(
           /File dir\/NIST_SP_1190GB-16\.xml exists\. Docid: NIST SP 1190GB-16/,
         ).to_stderr
       end

@@ -1,13 +1,14 @@
 [%bibitem]
 == {blank}
 id:: NISTIR 8011 Vol. 3
-fetched:: 2020-11-17
+fetched:: 2022-02-07
 title.content:: Automation Support for Security Control Assessments: Software Asset Management
 title.language:: en
 title.script:: Latn
 title.format:: text/plain
 type:: standard
 docid.type:: NISTIR
+docid.primary:: true
 docid.id:: 8011 Vol. 3
 docnumber:: 8011
 language:: en
