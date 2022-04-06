@@ -66,10 +66,12 @@ RSpec.describe "NIST documents fetcher" do
 
   context "parse document" do
     subject { RelatonNist::DataFetcher.new "dir", "xml" }
+    let(:rep) do
+      doc = Nokogiri::XML File.read("spec/examples/report-paper.xml", encoding: "UTF-8")
+      doc.at "/report-paper_metadata"
+    end
 
     it "fetch contributors" do
-      doc = Nokogiri::XML File.read("spec/examples/report-paper.xml", encoding: "UTF-8")
-      rep = doc.at "/report-paper_metadata"
       contribs = subject.fetch_contributor rep
       expect(contribs.size).to eq 3
       expect(contribs[0][:entity]).to be_instance_of(RelatonBib::Person)
@@ -77,6 +79,16 @@ RSpec.describe "NIST documents fetcher" do
       expect(contribs[0][:entity].name.surname.content).to eq "Waltermire"
       expect(contribs[1][:entity].name.forename[0].content).to eq "Jessica"
       expect(contribs[1][:entity].name.surname.content).to eq "Fitzgerald-McKay"
+    end
+
+    it "fetch link" do
+      link = subject.fetch_link rep
+      expect(link).to be_a Array
+      expect(link.size).to eq 2
+      expect(link[0].type).to eq "doi"
+      expect(link[0].content.to_s).to eq "https://doi.org/10.6028/NIST.CSWP.09102018"
+      expect(link[1].type).to eq "pdf"
+      expect(link[1].content.to_s).to eq "https://nvlpubs.nist.gov/nistpubs/CSWP/NIST.CSWP.09102018.pdf"
     end
   end
 end

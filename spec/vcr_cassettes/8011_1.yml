@@ -21,7 +21,7 @@ http_interactions:
       Connection:
       - keep-alive
       Content-Length:
-      - '569'
+      - '578'
       Cache-Control:
       - max-age=300
       Content-Security-Policy:
@@ -29,7 +29,7 @@ http_interactions:
       Content-Type:
       - text/plain; charset=utf-8
       Etag:
-      - W/"f0af03e9d75e3bbcd6291b0561b106a6c57ee523a4300231e324bcb505b80da9"
+      - W/"5a42a46d50471fe414964cc3b3f54b97769f55f77c7e5b77ddb7f17912e3b1e5"
       Strict-Transport-Security:
       - max-age=31536000
       X-Content-Type-Options:
@@ -39,29 +39,31 @@ http_interactions:
       X-Xss-Protection:
       - 1; mode=block
       X-Github-Request-Id:
-      - 479C:54D6:B575:FA94:62013E2B
+      - 1EA0:2B08:4F91EF:52FEA9:624DB2B7
+      Fastly-Original-Body-Size:
+      - '1831'
       Accept-Ranges:
       - bytes
       Date:
-      - Mon, 07 Feb 2022 15:43:39 GMT
+      - Wed, 06 Apr 2022 15:33:11 GMT
       Via:
       - 1.1 varnish
       X-Served-By:
-      - cache-sof1510056-SOF
+      - cache-vie6377-VIE
       X-Cache:
       - MISS
       X-Cache-Hits:
       - '0'
       X-Timer:
-      - S1644248620.718874,VS0,VE219
+      - S1649259191.249362,VS0,VE203
       Vary:
       - Authorization,Accept-Encoding,Origin
       Access-Control-Allow-Origin:
       - "*"
       X-Fastly-Request-Id:
-      - 65163e76f60710326d9ec2fbe01cdaf2636c34ad
+      - 577c0eeb35fbd6492e2f5616a323f0d3b3c6b362
       Expires:
-      - Mon, 07 Feb 2022 15:48:39 GMT
+      - Wed, 06 Apr 2022 15:38:11 GMT
       Source-Age:
       - '0'
     body:
@@ -91,6 +93,7 @@ http_interactions:
         docid:
         - id: NIST IR 8011-1
           type: NIST
+          primary: true
         - id: 10.6028/NIST.IR.8011-1
           type: DOI
         - id: NIST.IR.8011-1
@@ -169,5 +172,5 @@ http_interactions:
         place:
         - Gaithersburg, MD
         doctype: standard
-  recorded_at: Mon, 07 Feb 2022 15:43:39 GMT
-recorded_with: VCR 6.0.0
+  recorded_at: Wed, 06 Apr 2022 15:33:11 GMT
+recorded_with: VCR 6.1.0

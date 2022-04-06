@@ -34,7 +34,7 @@ module RelatonNist
       # anchor = doi.split("/")[1..-1].join "/"
       [
         { type: "NIST", id: pub_id(doc), primary: true },
-        { type: "DOI", id: doi(doc) },
+        { type: "DOI", id: fetch_doi(doc) },
         { type: "NIST", id: anchor(doc), scope: "anchor" },
       ]
     end
@@ -43,7 +43,7 @@ module RelatonNist
       anchor(doc).gsub(".", " ")
     end
 
-    def doi(doc) # rubocop:disable Metrics/CyclomaticComplexity
+    def fetch_doi(doc) # rubocop:disable Metrics/CyclomaticComplexity
       id = doc.at("doi_data/doi").text
       case id
       when "10.6028/NBS.CIRC.e2e" then "10.6028/NBS.CIRC.2e2"
@@ -57,7 +57,7 @@ module RelatonNist
     end
 
     def anchor(doc)
-      doi(doc).split("/")[1..-1].join "/"
+      fetch_doi(doc).split("/")[1..-1].join "/"
     end
 
     # @param doc [Nokogiri::XML::Element]
@@ -115,8 +115,11 @@ module RelatonNist
     # @param doc [Nokogiri::XML::Element]
     # @return [Array<RelatonBib::TypedUri>]
     def fetch_link(doc)
-      url = doc.at("doi_data/resource").text
-      [RelatonBib::TypedUri.new(type: "doi", content: url)]
+      pdf = doc.at("doi_data/resource").text
+      doi = "https://doi.org/#{fetch_doi(doc)}"
+      [{ type: "doi", content: doi }, { type: "pdf", content: pdf }].map do |l|
+        RelatonBib::TypedUri.new(**l)
+      end
     end
 
     # @param doc [Nokogiri::XML::Element]

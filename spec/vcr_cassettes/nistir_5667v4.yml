@@ -35,35 +35,35 @@ http_interactions:
       Content-Type:
       - text/plain; charset=utf-8
       X-Github-Request-Id:
-      - 68DC:17D9:65952:6A4AA:62013E2E
+      - 6372:2DD5:1014A1B:10B9DC0:624DB2BB
       Accept-Ranges:
       - bytes
       Date:
-      - Mon, 07 Feb 2022 15:43:42 GMT
+      - Wed, 06 Apr 2022 15:33:15 GMT
       Via:
       - 1.1 varnish
       X-Served-By:
-      - cache-sof1510055-SOF
+      - cache-vie6375-VIE
       X-Cache:
       - MISS
       X-Cache-Hits:
       - '0'
       X-Timer:
-      - S1644248622.102481,VS0,VE188
+      - S1649259195.491280,VS0,VE193
       Vary:
       - Authorization,Accept-Encoding,Origin
       Access-Control-Allow-Origin:
       - "*"
       X-Fastly-Request-Id:
-      - 6e711a7c7459df3c14e6f9ed70fcc4628f92181d
+      - 9054e186fac0c8c1aa3bfcc20fd44f1b1f54a970
       Expires:
-      - Mon, 07 Feb 2022 15:48:42 GMT
+      - Wed, 06 Apr 2022 15:38:15 GMT
       Source-Age:
       - '0'
     body:
       encoding: UTF-8
       string: '404: Not Found'
-  recorded_at: Mon, 07 Feb 2022 15:43:42 GMT
+  recorded_at: Wed, 06 Apr 2022 15:33:15 GMT
 - request:
     method: get
     uri: https://raw.githubusercontent.com/relaton/relaton-data-nist/main/data/NISTIR_5667V4.yaml
@@ -85,7 +85,7 @@ http_interactions:
       Connection:
       - keep-alive
       Content-Length:
-      - '544'
+      - '554'
       Cache-Control:
       - max-age=300
       Content-Security-Policy:
@@ -93,7 +93,7 @@ http_interactions:
       Content-Type:
       - text/plain; charset=utf-8
       Etag:
-      - W/"2330307e0289932291b0f09562bfc02ddce84be072e8153cfb81e844b112daeb"
+      - W/"42c0d4a4552058a35b02bc37ae15bb90fa4b2d89190587c2ff9f1993af35a7eb"
       Strict-Transport-Security:
       - max-age=31536000
       X-Content-Type-Options:
@@ -103,29 +103,29 @@ http_interactions:
       X-Xss-Protection:
       - 1; mode=block
       X-Github-Request-Id:
-      - FBF0:54D7:28E68:2D5E5:62013E2E
+      - B1FC:6FBF:2B125B:333D14:624DB2BC
       Accept-Ranges:
       - bytes
       Date:
-      - Mon, 07 Feb 2022 15:43:42 GMT
+      - Wed, 06 Apr 2022 15:33:16 GMT
       Via:
       - 1.1 varnish
       X-Served-By:
-      - cache-sof1510036-SOF
+      - cache-vie6326-VIE
       X-Cache:
       - MISS
       X-Cache-Hits:
       - '0'
       X-Timer:
-      - S1644248623.502314,VS0,VE207
+      - S1649259196.093853,VS0,VE207
       Vary:
       - Authorization,Accept-Encoding,Origin
       Access-Control-Allow-Origin:
       - "*"
       X-Fastly-Request-Id:
-      - 5a9596f51423e160ee5e92f4e9a8ad8ec901e8fb
+      - 2ffac1234db3a662919bbe0ab0e40984696c4314
       Expires:
-      - Mon, 07 Feb 2022 15:48:42 GMT
+      - Wed, 06 Apr 2022 15:38:16 GMT
       Source-Age:
       - '0'
     body:
@@ -157,6 +157,7 @@ http_interactions:
         docid:
         - id: NIST IR 5667v4
           type: NIST
+          primary: true
         - id: 10.6028/NIST.IR.5667v4
           type: DOI
         - id: NIST.IR.5667v4
@@ -199,5 +200,5 @@ http_interactions:
         place:
         - Gaithersburg, MD
         doctype: standard
-  recorded_at: Mon, 07 Feb 2022 15:43:42 GMT
-recorded_with: VCR 6.0.0
+  recorded_at: Wed, 06 Apr 2022 15:33:16 GMT
+recorded_with: VCR 6.1.0
