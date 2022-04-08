@@ -101,5 +101,16 @@ module RelatonNist
       out += commentperiod.to_asciibib prefix if commentperiod
       out
     end
+
+    #
+    # Create BibXML reference attributes
+    #
+    # @return [Hash<Symbol=>String>] attributes
+    #
+    def ref_attrs
+      docidentifier.detect(&:primary)&.tap do |di|
+        return { anchor: di.id.gsub(" ", ".") }
+      end
+    end
   end
 end

@@ -35,12 +35,13 @@ module RelatonNist
       [
         { type: "NIST", id: pub_id(doc), primary: true },
         { type: "DOI", id: fetch_doi(doc) },
-        { type: "NIST", id: anchor(doc), scope: "anchor" },
+        # { type: "NIST", id: anchor(doc), scope: "anchor" },
       ]
     end
 
     def pub_id(doc)
-      anchor(doc).gsub(".", " ")
+      # anchor(doc).gsub(".", " ")
+      fetch_doi(doc).split("/")[1..-1].join("/").gsub(".", " ")
     end
 
     def fetch_doi(doc) # rubocop:disable Metrics/CyclomaticComplexity
@@ -56,9 +57,9 @@ module RelatonNist
       end
     end
 
-    def anchor(doc)
-      fetch_doi(doc).split("/")[1..-1].join "/"
-    end
+    # def anchor(doc)
+    #   fetch_doi(doc).split("/")[1..-1].join "/"
+    # end
 
     # @param doc [Nokogiri::XML::Element]
     # @return [Array<RelatonBib::DocumentIdentifier>]

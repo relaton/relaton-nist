@@ -1,11 +1,22 @@
 require "yaml"
 
 RSpec.describe RelatonNist::NistBibliographicItem do
-  it "returns hash" do
-    hash = YAML.load_file "spec/examples/nist_bib_item.yml"
+  let(:hash) { YAML.load_file "spec/examples/nist_bib_item.yml" }
+
+  subject do
     item_hash = RelatonNist::HashConverter.hash_to_bib hash
-    item = RelatonNist::NistBibliographicItem.new(**item_hash)
+    RelatonNist::NistBibliographicItem.new(**item_hash)
+  end
+
+  it "returns hash" do
     hash["fetched"] = Date.today.to_s
-    expect(item.to_hash).to eq hash
+    expect(subject.to_hash).to eq hash
+  end
+
+  it "render BibXML" do
+    file = "spec/examples/nist_bibxml.xml"
+    xml = subject.to_bibxml
+    File.write file, xml, encoding: "UTF-8" unless File.exist? file
+    expect(xml).to be_equivalent_to File.read(file, encoding: "UTF-8")
   end
 end
