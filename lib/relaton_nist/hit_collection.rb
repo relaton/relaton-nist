@@ -137,7 +137,7 @@ module RelatonNist
     # @return [Hash]
     def data
       ctime = File.ctime DATAFILE if File.exist? DATAFILE
-      if !ctime || ctime.to_date < Date.today
+      if !ctime || ctime.to_date < Date.today || File.size(DATAFILE).zero?
         fetch_data(ctime)
       end
       unzip
@@ -163,10 +163,7 @@ module RelatonNist
       return @data if @data
 
       Zip::File.open(DATAFILE) do |zf|
-        zf.each do |f|
-          @data = JSON.parse f.get_input_stream.read
-          break
-        end
+        @data = JSON.parse zf.first.get_input_stream.read
       end
       @data
     end

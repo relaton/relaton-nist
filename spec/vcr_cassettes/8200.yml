@@ -21,7 +21,7 @@ http_interactions:
       Connection:
       - keep-alive
       Content-Length:
-      - '582'
+      - '576'
       Cache-Control:
       - max-age=300
       Content-Security-Policy:
@@ -29,7 +29,7 @@ http_interactions:
       Content-Type:
       - text/plain; charset=utf-8
       Etag:
-      - W/"52a01aa52aeed056e93a91bf052350bf08a58cc00eb500cc7112bd1e71723b27"
+      - W/"50894f193e0950b67519df40a36f9748fddc0ee48ee7b789329c3a67b38ddb07"
       Strict-Transport-Security:
       - max-age=31536000
       X-Content-Type-Options:
@@ -39,29 +39,29 @@ http_interactions:
       X-Xss-Protection:
       - 1; mode=block
       X-Github-Request-Id:
-      - A0B8:13D0A:1F4571:203070:624DB2B6
+      - E96A:39A2:EC41FC:F6E558:626E6E64
       Accept-Ranges:
       - bytes
       Date:
-      - Wed, 06 Apr 2022 15:33:10 GMT
+      - Sun, 01 May 2022 11:26:28 GMT
       Via:
       - 1.1 varnish
       X-Served-By:
-      - cache-vie6368-VIE
+      - cache-sof1510067-SOF
       X-Cache:
       - MISS
       X-Cache-Hits:
       - '0'
       X-Timer:
-      - S1649259190.312571,VS0,VE215
+      - S1651404388.168558,VS0,VE209
       Vary:
       - Authorization,Accept-Encoding,Origin
       Access-Control-Allow-Origin:
       - "*"
       X-Fastly-Request-Id:
-      - a650bcc14cebbc209b35d8ab1144a953465aaf8f
+      - 1135042c75ede09d7fc58f399809c713302a096b
       Expires:
-      - Wed, 06 Apr 2022 15:38:10 GMT
+      - Sun, 01 May 2022 11:31:28 GMT
       Source-Age:
       - '0'
     body:
@@ -87,8 +87,10 @@ http_interactions:
           - Latn
           format: text/plain
         link:
-        - content: https://nvlpubs.nist.gov/nistpubs/ir/2018/NIST.IR.8200.pdf
+        - content: https://doi.org/10.6028/NIST.IR.8200
           type: doi
+        - content: https://nvlpubs.nist.gov/nistpubs/ir/2018/NIST.IR.8200.pdf
+          type: pdf
         type: standard
         docid:
         - id: NIST IR 8200
@@ -96,9 +98,6 @@ http_interactions:
           primary: true
         - id: 10.6028/NIST.IR.8200
           type: DOI
-        - id: NIST.IR.8200
-          type: NIST
-          scope: anchor
         date:
         - type: published
           value: 2018-11
@@ -156,5 +155,5 @@ http_interactions:
         place:
         - Gaithersburg, MD
         doctype: standard
-  recorded_at: Wed, 06 Apr 2022 15:33:10 GMT
+  recorded_at: Sun, 01 May 2022 11:26:28 GMT
 recorded_with: VCR 6.1.0

@@ -1,11 +1,11 @@
 <bibitem id="NISTIR8011-1" type="standard">
-  <fetched>2022-02-09</fetched>
+  <fetched>2022-04-21</fetched>
   <title type="title-main" format="text/plain" language="en" script="Latn">Automation support for security control assessments. volume 1: overview</title>
   <title type="main" format="text/plain" language="en" script="Latn">Automation support for security control assessments. volume 1: overview</title>
-  <uri type="doi">https://nvlpubs.nist.gov/nistpubs/ir/2017/NIST.IR.8011-1.pdf</uri>
+  <uri type="doi">https://doi.org/10.6028/NIST.IR.8011-1</uri>
+  <uri type="pdf">https://nvlpubs.nist.gov/nistpubs/ir/2017/NIST.IR.8011-1.pdf</uri>
   <docidentifier type="NIST" primary="true">NIST IR 8011-1</docidentifier>
   <docidentifier type="DOI">10.6028/NIST.IR.8011-1</docidentifier>
-  <docidentifier type="NIST" scope="anchor">NIST.IR.8011-1</docidentifier>
   <date type="published">
     <on>2017-06</on>
   </date>

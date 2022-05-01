@@ -1,13 +1,25 @@
 RSpec.describe RelatonNist::HitCollection do
   subject { RelatonNist::HitCollection.new "REF"}
 
-  it "update json file" do
-    VCR.use_cassette "json_data" do
-      expect(File).to receive(:exist?).with("/Users/andrej/.relaton/nist/pubs-export.zip").at_most(:once).and_return true
-      expect(File).to receive(:exist?).and_call_original.at_most(3).times
-      expect(File).to receive(:ctime).and_return(nil).at_most(1).time
-      result = RelatonNist::NistBibliography.get "SP 800-205 (February 2019) (PD)"
-      expect(result.id).to eq "SP800-205(Draft)"
+  context "update json file" do
+    it "when ctime is nil" do
+      VCR.use_cassette "json_data" do
+        expect(File).to receive(:exist?).with("/Users/andrej/.relaton/nist/pubs-export.zip").at_most(:once).and_return true
+        expect(File).to receive(:exist?).and_call_original.at_most(3).times
+        expect(File).to receive(:ctime).and_return(nil).at_most(1).time
+        result = RelatonNist::NistBibliography.get "SP 800-205 (February 2019) (PD)"
+        expect(result.id).to eq "SP800-205(Draft)"
+      end
+    end
+
+    it "when size of file is zero" do
+      hc = RelatonNist::HitCollection.new "REF"
+      expect(File).to receive(:exist?).with(RelatonNist::HitCollection::DATAFILE).and_return true
+      ctime = Time.now
+      expect(File).to receive(:ctime).with(RelatonNist::HitCollection::DATAFILE).and_return ctime
+      expect(File).to receive(:size).with(RelatonNist::HitCollection::DATAFILE).and_return 0
+      expect(hc).to receive(:fetch_data).with(ctime)
+      hc.send :data
     end
   end
 

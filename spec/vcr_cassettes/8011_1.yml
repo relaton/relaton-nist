@@ -21,7 +21,7 @@ http_interactions:
       Connection:
       - keep-alive
       Content-Length:
-      - '578'
+      - '573'
       Cache-Control:
       - max-age=300
       Content-Security-Policy:
@@ -29,7 +29,7 @@ http_interactions:
       Content-Type:
       - text/plain; charset=utf-8
       Etag:
-      - W/"5a42a46d50471fe414964cc3b3f54b97769f55f77c7e5b77ddb7f17912e3b1e5"
+      - W/"4aad6d0d7d03330fe24f51f6ee6edc2c11442b00bbc704f840489a57e8abc269"
       Strict-Transport-Security:
       - max-age=31536000
       X-Content-Type-Options:
@@ -39,31 +39,29 @@ http_interactions:
       X-Xss-Protection:
       - 1; mode=block
       X-Github-Request-Id:
-      - 1EA0:2B08:4F91EF:52FEA9:624DB2B7
-      Fastly-Original-Body-Size:
-      - '1831'
+      - CF48:2453:1221514:12F9ECE:626E6E65
       Accept-Ranges:
       - bytes
       Date:
-      - Wed, 06 Apr 2022 15:33:11 GMT
+      - Sun, 01 May 2022 11:26:29 GMT
       Via:
       - 1.1 varnish
       X-Served-By:
-      - cache-vie6377-VIE
+      - cache-sof1510065-SOF
       X-Cache:
       - MISS
       X-Cache-Hits:
       - '0'
       X-Timer:
-      - S1649259191.249362,VS0,VE203
+      - S1651404389.091229,VS0,VE209
       Vary:
       - Authorization,Accept-Encoding,Origin
       Access-Control-Allow-Origin:
       - "*"
       X-Fastly-Request-Id:
-      - 577c0eeb35fbd6492e2f5616a323f0d3b3c6b362
+      - 53fec997fe61476f9d08625f4ef919a3d44a85b8
       Expires:
-      - Wed, 06 Apr 2022 15:38:11 GMT
+      - Sun, 01 May 2022 11:31:29 GMT
       Source-Age:
       - '0'
     body:
@@ -87,8 +85,10 @@ http_interactions:
           - Latn
           format: text/plain
         link:
-        - content: https://nvlpubs.nist.gov/nistpubs/ir/2017/NIST.IR.8011-1.pdf
+        - content: https://doi.org/10.6028/NIST.IR.8011-1
           type: doi
+        - content: https://nvlpubs.nist.gov/nistpubs/ir/2017/NIST.IR.8011-1.pdf
+          type: pdf
         type: standard
         docid:
         - id: NIST IR 8011-1
@@ -96,9 +96,6 @@ http_interactions:
           primary: true
         - id: 10.6028/NIST.IR.8011-1
           type: DOI
-        - id: NIST.IR.8011-1
-          type: NIST
-          scope: anchor
         date:
         - type: published
           value: 2017-06
@@ -172,5 +169,5 @@ http_interactions:
         place:
         - Gaithersburg, MD
         doctype: standard
-  recorded_at: Wed, 06 Apr 2022 15:33:11 GMT
+  recorded_at: Sun, 01 May 2022 11:26:29 GMT
 recorded_with: VCR 6.1.0
