@@ -57,7 +57,7 @@ RSpec.describe "NIST documents fetcher" do
       .to output(/Test error/).to_stderr
   end
 
-  it "riase parsing error" do
+  it "raise parsing error" do
     expect(OpenURI).to receive(:open_uri).with(RelatonNist::DataFetcher::URL).and_return nist_data
     expect(RelatonNist::NistBibliographicItem).to receive(:new).and_raise(StandardError).twice
     expect { RelatonNist::DataFetcher.fetch }
@@ -120,6 +120,14 @@ RSpec.describe "NIST documents fetcher" do
       expect(link[0].content.to_s).to eq "https://doi.org/10.6028/NIST.CSWP.09102018"
       expect(link[1].type).to eq "pdf"
       expect(link[1].content.to_s).to eq "https://nvlpubs.nist.gov/nistpubs/CSWP/NIST.CSWP.09102018.pdf"
+    end
+
+    it "fetch series" do
+      series = subject.fetch_series rep
+      expect(series).to be_a Array
+      expect(series.size).to eq 1
+      expect(series[0].title.title.content).to eq "NIST Cybersecurity White Papers"
+      expect(series[0].number).to eq "NIST CSWP"
     end
   end
 end

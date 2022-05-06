@@ -202,9 +202,20 @@ module RelatonNist
       doc.xpath("institution/institution_place").map(&:text)
     end
 
+    #
+    # Fetches series
+    #
+    # @param [Nokogiri::XML::Element] doc document element
+    #
+    # @return [Array<RelatonBib::Series>] series
+    #
     def fetch_series(doc)
-      title = RelatonBib::TypedTitleString.new(content: "NIST")
-      [RelatonBib::Series.new(title: title, number: pub_id(doc))]
+      series_path = File.expand_path("series.yaml", __dir__)
+      series = YAML.load_file series_path
+      prf, srs, = pub_id(doc).split
+      sname = series[srs] || srs
+      title = RelatonBib::TypedTitleString.new(content: "#{prf} #{sname}")
+      [RelatonBib::Series.new(title: title, number: "#{prf} #{srs}")]
     end
 
     #
