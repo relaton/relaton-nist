@@ -75,7 +75,9 @@ module RelatonNist
       t = doc.xpath("titles/title|titles/subtitle")
       return [] unless t.any?
 
-      RelatonBib::TypedTitleString.from_string t.map(&:text).join, "en", "Latn"
+      # RelatonBib::TypedTitleString.from_string t.map(&:text).join, "en", "Latn"
+      [{ content: t.map(&:text).join, language: "en", script: "Latn",
+         format: "text/plain" }]
     end
 
     # @param doc [Nokogiri::XML::Element]

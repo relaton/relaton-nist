@@ -71,6 +71,16 @@ RSpec.describe "NIST documents fetcher" do
       doc.at "/report-paper_metadata"
     end
 
+    it "fetch title" do
+      title = subject.fetch_title rep
+      expect(title).to eq [{
+        content: "Transitioning to the Security Content Automation Protocol (SCAP) Version 2",
+        format: "text/plain",
+        language: "en",
+        script: "Latn",
+      }]
+    end
+
     it "fetch contributors" do
       contribs = subject.fetch_contributor rep
       expect(contribs.size).to eq 3
