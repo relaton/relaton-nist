@@ -158,20 +158,37 @@ module RelatonNist
         { entity: person, role: [{ type: p["contributor_role"] }] }
       end
       contribs + doc.xpath("publisher").map do |p|
-        abbr = p.at("../institution/institution_acronym")&.text
-        place = p.at("./publisher_place")
-        cont = []
-        if place
-          city, state = place.text.split(", ")
-          cont << RelatonBib::Address.new(street: [], city: city, state: state, country: "US")
-        end
-        org = RelatonBib::Organization.new(
-          name: p.at("publisher_name").text, abbreviation: abbr, contact: cont,
-        )
-        { entity: org, role: [{ type: "publisher" }] }
+        { entity: create_org(p), role: [{ type: "publisher" }] }
       end
     end
 
+    #
+    # Create publisher organization
+    #
+    # @param [Nokogiri::XML::Element] pub publisher element
+    #
+    # @return [RelatonBib::Organization] publisher organization
+    #
+    def create_org(pub)
+      name = pub.at("publisher_name").text
+      abbr = pub.at("../institution[institution_name[.='#{name}']]/institution_acronym")&.text
+      place = pub.at("./publisher_place") ||
+        pub.at("../institution[institution_name[.='#{name}']]/institution_place")
+      cont = []
+      if place
+        city, state = place.text.split(", ")
+        cont << RelatonBib::Address.new(street: [], city: city, state: state, country: "US")
+      end
+      RelatonBib::Organization.new name: name, abbreviation: abbr, contact: cont
+    end
+
+    #
+    # Create affiliation organization
+    #
+    # @param [Nokogiri::XML::Element] doc affiliation element
+    #
+    # @return [Array<RelatonBib::Affiliation>] affiliation
+    #
     def affiliation(doc)
       doc.xpath("./institution/institution_department").map do |id|
         org = RelatonBib::Organization.new name: id.text

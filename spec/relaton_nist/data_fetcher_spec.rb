@@ -91,6 +91,27 @@ RSpec.describe "NIST documents fetcher" do
       expect(contribs[1][:entity].name.surname.content).to eq "Fitzgerald-McKay"
     end
 
+    it "create publisher organization" do
+      doc = Nokogiri::XML <<~XML
+        <report-paper_metadata>
+          <publisher>
+            <publisher_name>Publisher</publisher_name>
+          </publisher>
+          <institution>
+            <institution_name>Publisher</institution_name>
+            <institution_place>City, ST</institution_place>
+          </institution>
+        </report-paper_metadata>
+      XML
+      pub = doc.at "/report-paper_metadata/publisher"
+      publisher = subject.create_org pub
+      expect(publisher).to be_instance_of(RelatonBib::Organization)
+      expect(publisher.name[0].content).to eq "Publisher"
+      expect(publisher.contact[0].city).to eq "City"
+      expect(publisher.contact[0].state).to eq "ST"
+      expect(publisher.contact[0].country).to eq "US"
+    end
+
     it "fetch link" do
       link = subject.fetch_link rep
       expect(link).to be_a Array
