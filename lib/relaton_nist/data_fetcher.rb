@@ -103,12 +103,14 @@ module RelatonNist
 
     # @param doc [Nokogiri::XML::Element]
     # @return [Array<Hash>]
-    def fetch_relation(doc)
+    def fetch_relation(doc) # rubocop:disable Metrics/AbcSize, Metrics/MethodLength
       ns = "http://www.crossref.org/relations.xsd"
       doc.xpath("./ns:program/ns:related_item", ns: ns).map do |rel|
         rdoi = rel.at_xpath("ns:intra_work_relation|ns:inter_work_relation", ns: ns)
-        fref = RelatonBib::FormattedRef.new content: rdoi.text
-        bibitem = RelatonBib::BibliographicItem.new formattedref: fref
+        id = rdoi.text.split("/")[1..].join("/").gsub(".", " ")
+        fref = RelatonBib::FormattedRef.new content: id
+        docid = RelatonBib::DocumentIdentifier.new(type: "NIST", id: id, primary: true)
+        bibitem = RelatonBib::BibliographicItem.new formattedref: fref, docid: [docid]
         type = RELATION_TYPES[rdoi["relationship-type"]]
         warn "Relation type #{rdoi['relationship-type']} not found" unless type
         { type: type, bibitem: bibitem }

@@ -35,35 +35,35 @@ http_interactions:
       Content-Type:
       - text/plain; charset=utf-8
       X-Github-Request-Id:
-      - 8CEE:CA0D:122F2AA:1307F53:626E6E69
+      - 4700:AFB1:25ED6E:272328:627A9C54
       Accept-Ranges:
       - bytes
       Date:
-      - Sun, 01 May 2022 11:26:33 GMT
+      - Tue, 10 May 2022 17:09:40 GMT
       Via:
       - 1.1 varnish
       X-Served-By:
-      - cache-sof1510066-SOF
+      - cache-vie6365-VIE
       X-Cache:
       - MISS
       X-Cache-Hits:
       - '0'
       X-Timer:
-      - S1651404393.441382,VS0,VE183
+      - S1652202580.258325,VS0,VE174
       Vary:
       - Authorization,Accept-Encoding,Origin
       Access-Control-Allow-Origin:
       - "*"
       X-Fastly-Request-Id:
-      - a17cc478eff2a85be6197109ba3b334f321c4f2d
+      - dafd3e2a5a08b5a9cde2563257e95556c7467f63
       Expires:
-      - Sun, 01 May 2022 11:31:33 GMT
+      - Tue, 10 May 2022 17:14:40 GMT
       Source-Age:
       - '0'
     body:
       encoding: UTF-8
       string: '404: Not Found'
-  recorded_at: Sun, 01 May 2022 11:26:33 GMT
+  recorded_at: Tue, 10 May 2022 17:09:40 GMT
 - request:
     method: get
     uri: https://raw.githubusercontent.com/relaton/relaton-data-nist/main/data/NISTIR_5667V4.yaml
@@ -85,7 +85,7 @@ http_interactions:
       Connection:
       - keep-alive
       Content-Length:
-      - '551'
+      - '561'
       Cache-Control:
       - max-age=300
       Content-Security-Policy:
@@ -93,7 +93,7 @@ http_interactions:
       Content-Type:
       - text/plain; charset=utf-8
       Etag:
-      - W/"bd3d7e3812c32a776e771ff9247c9f659d476c14f48bd16c954931363e019c80"
+      - W/"f5e9c0c05f0cd18db4704ec5f5a52961211e7393b77cec273656e2ffef853120"
       Strict-Transport-Security:
       - max-age=31536000
       X-Content-Type-Options:
@@ -103,29 +103,29 @@ http_interactions:
       X-Xss-Protection:
       - 1; mode=block
       X-Github-Request-Id:
-      - 183C:1183F:12E8718:13C2CA3:626E6E69
+      - 5288:F713:235608:2487DA:627A9C54
       Accept-Ranges:
       - bytes
       Date:
-      - Sun, 01 May 2022 11:26:34 GMT
+      - Tue, 10 May 2022 17:09:40 GMT
       Via:
       - 1.1 varnish
       X-Served-By:
-      - cache-sof1510064-SOF
+      - cache-vie6333-VIE
       X-Cache:
       - MISS
       X-Cache-Hits:
       - '0'
       X-Timer:
-      - S1651404394.828195,VS0,VE194
+      - S1652202581.619218,VS0,VE184
       Vary:
       - Authorization,Accept-Encoding,Origin
       Access-Control-Allow-Origin:
       - "*"
       X-Fastly-Request-Id:
-      - fe64aef11a80ef32c102ba3c1639f4ce9c65bd6d
+      - 6f27cdc0dc7135601f2d4669bba2d96fd5b914f3
       Expires:
-      - Sun, 01 May 2022 11:31:34 GMT
+      - Tue, 10 May 2022 17:14:40 GMT
       Source-Age:
       - '0'
     body:
@@ -134,16 +134,7 @@ http_interactions:
         ---
         id: NISTIR5667v4
         title:
-        - type: title-main
-          content: A study of potential applications of automation and robotics technology
-            in construction, maintenance and operation of highway systems:a final report
-          language:
-          - en
-          script:
-          - Latn
-          format: text/plain
-        - type: main
-          content: A study of potential applications of automation and robotics technology
+        - content: A study of potential applications of automation and robotics technology
             in construction, maintenance and operation of highway systems:a final report
           language:
           - en
@@ -193,11 +184,11 @@ http_interactions:
         - Latn
         series:
         - title:
-            content: NIST
+            content: NIST NISTIRs (Interagency/Internal Reports)
             format: text/plain
-          number: NIST IR 5667v4
+          number: NIST IR
         place:
         - Gaithersburg, MD
         doctype: standard
-  recorded_at: Sun, 01 May 2022 11:26:33 GMT
+  recorded_at: Tue, 10 May 2022 17:09:40 GMT
 recorded_with: VCR 6.1.0

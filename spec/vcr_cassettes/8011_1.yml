@@ -21,7 +21,7 @@ http_interactions:
       Connection:
       - keep-alive
       Content-Length:
-      - '573'
+      - '585'
       Cache-Control:
       - max-age=300
       Content-Security-Policy:
@@ -29,7 +29,7 @@ http_interactions:
       Content-Type:
       - text/plain; charset=utf-8
       Etag:
-      - W/"4aad6d0d7d03330fe24f51f6ee6edc2c11442b00bbc704f840489a57e8abc269"
+      - W/"84c4233d9729aa1ed49c5f5e3e2b21037ef56fae8d0ec80aae96d7711724054c"
       Strict-Transport-Security:
       - max-age=31536000
       X-Content-Type-Options:
@@ -39,29 +39,29 @@ http_interactions:
       X-Xss-Protection:
       - 1; mode=block
       X-Github-Request-Id:
-      - CF48:2453:1221514:12F9ECE:626E6E65
+      - ABF2:51B6:23BCCC:24EEDD:627A9C51
       Accept-Ranges:
       - bytes
       Date:
-      - Sun, 01 May 2022 11:26:29 GMT
+      - Tue, 10 May 2022 17:09:37 GMT
       Via:
       - 1.1 varnish
       X-Served-By:
-      - cache-sof1510065-SOF
+      - cache-vie6331-VIE
       X-Cache:
       - MISS
       X-Cache-Hits:
       - '0'
       X-Timer:
-      - S1651404389.091229,VS0,VE209
+      - S1652202577.078213,VS0,VE183
       Vary:
       - Authorization,Accept-Encoding,Origin
       Access-Control-Allow-Origin:
       - "*"
       X-Fastly-Request-Id:
-      - 53fec997fe61476f9d08625f4ef919a3d44a85b8
+      - 76b9e71be0a6db88ca076fd9907ae20f0017fd9a
       Expires:
-      - Sun, 01 May 2022 11:31:29 GMT
+      - Tue, 10 May 2022 17:14:37 GMT
       Source-Age:
       - '0'
     body:
@@ -70,15 +70,7 @@ http_interactions:
         ---
         id: NISTIR8011-1
         title:
-        - type: title-main
-          content: 'Automation support for security control assessments. volume 1: overview'
-          language:
-          - en
-          script:
-          - Latn
-          format: text/plain
-        - type: main
-          content: 'Automation support for security control assessments. volume 1: overview'
+        - content: 'Automation support for security control assessments. volume 1: overview'
           language:
           - en
           script:
@@ -163,11 +155,11 @@ http_interactions:
         - Latn
         series:
         - title:
-            content: NIST
+            content: NIST NISTIRs (Interagency/Internal Reports)
             format: text/plain
-          number: NIST IR 8011-1
+          number: NIST IR
         place:
         - Gaithersburg, MD
         doctype: standard
-  recorded_at: Sun, 01 May 2022 11:26:29 GMT
+  recorded_at: Tue, 10 May 2022 17:09:37 GMT
 recorded_with: VCR 6.1.0

@@ -129,5 +129,18 @@ RSpec.describe "NIST documents fetcher" do
       expect(series[0].title.title.content).to eq "NIST Cybersecurity White Papers"
       expect(series[0].number).to eq "NIST CSWP"
     end
+
+    it "fetch relation" do
+      rel = subject.fetch_relation rep
+      expect(rel).to be_a Array
+      expect(rel.size).to eq 2
+      expect(rel[0]).to be_instance_of Hash
+      expect(rel[0][:type]).to eq "obsoletes"
+      expect(rel[0][:bibitem]).to be_instance_of RelatonBib::BibliographicItem
+      expect(rel[0][:bibitem].docidentifier[0].id).to eq "NIST SP 800-133"
+      expect(rel[0][:bibitem].docidentifier[0].type).to eq "NIST"
+      expect(rel[0][:bibitem].docidentifier[0].primary).to eq true
+      expect(rel[0][:bibitem].formattedref.content).to eq "NIST SP 800-133"
+    end
   end
 end

@@ -1,7 +1,6 @@
 <bibdata type="standard">
-  <fetched>2022-04-21</fetched>
-  <title type="title-main" format="text/plain" language="en" script="Latn">Interagency report on the status of international cybersecurity standardization for the internet of things (IoT)</title>
-  <title type="main" format="text/plain" language="en" script="Latn">Interagency report on the status of international cybersecurity standardization for the internet of things (IoT)</title>
+  <fetched>2022-05-10</fetched>
+  <title format="text/plain" language="en" script="Latn">Interagency report on the status of international cybersecurity standardization for the internet of things (IoT)</title>
   <uri type="doi">https://doi.org/10.6028/NIST.IR.8200</uri>
   <uri type="pdf">https://nvlpubs.nist.gov/nistpubs/ir/2018/NIST.IR.8200.pdf</uri>
   <docidentifier type="NIST" primary="true">NIST IR 8200</docidentifier>
@@ -51,8 +50,8 @@
   </contributor>
   <script>Latn</script>
   <series>
-    <title format="text/plain">NIST</title>
-    <number>NIST IR 8200</number>
+    <title format="text/plain">NIST NISTIRs (Interagency/Internal Reports)</title>
+    <number>NIST IR</number>
   </series>
   <place>Gaithersburg, MD</place>
   <ext>

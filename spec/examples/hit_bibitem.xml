@@ -1,7 +1,6 @@
 <bibitem id="NISTIR8011-1" type="standard">
-  <fetched>2022-04-21</fetched>
-  <title type="title-main" format="text/plain" language="en" script="Latn">Automation support for security control assessments. volume 1: overview</title>
-  <title type="main" format="text/plain" language="en" script="Latn">Automation support for security control assessments. volume 1: overview</title>
+  <fetched>2022-05-10</fetched>
+  <title format="text/plain" language="en" script="Latn">Automation support for security control assessments. volume 1: overview</title>
   <uri type="doi">https://doi.org/10.6028/NIST.IR.8011-1</uri>
   <uri type="pdf">https://nvlpubs.nist.gov/nistpubs/ir/2017/NIST.IR.8011-1.pdf</uri>
   <docidentifier type="NIST" primary="true">NIST IR 8011-1</docidentifier>
@@ -65,8 +64,8 @@
   </contributor>
   <script>Latn</script>
   <series>
-    <title format="text/plain">NIST</title>
-    <number>NIST IR 8011-1</number>
+    <title format="text/plain">NIST NISTIRs (Interagency/Internal Reports)</title>
+    <number>NIST IR</number>
   </series>
   <place>Gaithersburg, MD</place>
 </bibitem>

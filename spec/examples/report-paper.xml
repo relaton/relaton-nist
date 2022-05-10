@@ -33,6 +33,14 @@
      <fr:assertion name="funder_name">Information Technology Laboratory<fr:assertion name="funder_identifier">https://doi.org/10.13039/100007764R</fr:assertion>
      </fr:assertion>
   </fr:program>
+  <program xmlns="http://www.crossref.org/relations.xsd">
+   <related_item>
+      <intra_work_relation relationship-type="replaces" identifier-type="doi">10.6028/NIST.SP.800-133</intra_work_relation>
+   </related_item>
+   <related_item>
+      <intra_work_relation relationship-type="isVersionOf" identifier-type="doi">10.6028/NIST.SP.800-133</intra_work_relation>
+   </related_item>
+</program>
   <doi_data>
      <doi>10.6028/NIST.CSWP.09102018</doi>
      <resource>https://nvlpubs.nist.gov/nistpubs/CSWP/NIST.CSWP.09102018.pdf</resource>
