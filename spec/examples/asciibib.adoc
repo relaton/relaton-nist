@@ -1,7 +1,7 @@
 [%bibitem]
 == {blank}
 id:: NISTIR 8011 Vol. 3
-fetched:: 2022-02-07
+fetched:: 2022-06-24
 title.content:: Automation Support for Security Control Assessments: Software Asset Management
 title.language:: en
 title.script:: Latn
@@ -9,7 +9,7 @@ title.format:: text/plain
 type:: standard
 docid.type:: NISTIR
 docid.primary:: true
-docid.id:: 8011 Vol. 3
+docid.id:: NIST IR 8011 Vol. 3
 docnumber:: 8011
 language:: en
 script:: Latn
@@ -56,6 +56,9 @@ series.formattedref.content:: NISTIR 8011 Vol. 3 (IPD)
 series.formattedref.language:: en
 series.formattedref.script:: Latn
 series.formattedref.format:: text/plain
+series.title.content:: NISTIR
+series.title.format:: text/plain
+series.number:: 8011 Vol. 3
 doctype:: standard
 keyword:: actual state
 keyword:: assessment

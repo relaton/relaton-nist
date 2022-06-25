@@ -54,6 +54,7 @@ RSpec.describe RelatonNist do
     item_hash = RelatonNist::HashConverter.hash_to_bib hash
     item = RelatonNist::NistBibliographicItem.new(**item_hash)
     bib = item.to_asciibib
+      .gsub(/(?<=fetched::\s)\d{4}-\d{2}-\d{2}/, Date.today.to_s)
     file = "spec/examples/asciibib.adoc"
     File.write file, bib, encoding: "UTF-8" unless File.exist? file
     expect(bib).to eq File.read(file, encoding: "UTF-8")
@@ -194,7 +195,7 @@ RSpec.describe RelatonNist do
     it "doc with edition" do
       VCR.use_cassette "json_data" do
         result = RelatonNist::NistBibliography.get "FIPS 140-2"
-        expect(result.edition).to eq "Revision 2"
+        expect(result.edition.content).to eq "Revision 2"
       end
     end
 

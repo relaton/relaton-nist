@@ -41,7 +41,7 @@ module RelatonNist
 
     def pub_id(doc)
       # anchor(doc).gsub(".", " ")
-      fetch_doi(doc).split("/")[1..-1].join("/").gsub(".", " ")
+      fetch_doi(doc).split("/")[1..].join("/").gsub(".", " ")
     end
 
     def fetch_doi(doc) # rubocop:disable Metrics/CyclomaticComplexity
@@ -251,8 +251,8 @@ module RelatonNist
     def parse_doc(doc) # rubocop:disable Metrics/MethodLength,Metrics/AbcSize
       # mtd = doc.at('doi_record/report-paper/report-paper_metadata')
       item = RelatonNist::NistBibliographicItem.new(
-        type: "standard", docid: fetch_docid(doc), title: fetch_title(doc),
-        link: fetch_link(doc), abstract: fetch_abstract(doc),
+        fetched: Date.today.to_s, type: "standard", docid: fetch_docid(doc),
+        title: fetch_title(doc), link: fetch_link(doc), abstract: fetch_abstract(doc),
         date: fetch_date(doc), edition: fetch_edition(doc),
         contributor: fetch_contributor(doc), relation: fetch_relation(doc),
         place: fetch_place(doc), series: fetch_series(doc),

@@ -1,5 +1,7 @@
 id: NISTIR 8011 Vol. 3
 
+fetched: '2022-06-22'
+
 title:
 - content: "Automation Support for Security Control Assessments: Software Asset Management"
   language:
@@ -11,7 +13,7 @@ title:
 type: standard
 
 docid:
-- id: 8011 Vol. 3
+- id: NIST IR 8011 Vol. 3
   type: NISTIR
   primary: true
 
@@ -98,6 +100,10 @@ series:
     script:
     - Latn
     format: text/plain
+  title:
+    content: NISTIR
+    format: text/plain
+  number: 8011 Vol. 3
 
 keyword:
   - actual state
