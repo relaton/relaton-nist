@@ -27,7 +27,8 @@ RSpec.describe RelatonNist do
       VCR.use_cassette "8011_1" do
         hits = RelatonNist::NistBibliography.search("NISTIR 8011-1")
         file_path = "spec/examples/hit.xml"
-        xml = hits.first.to_xml bibdata: true
+        xml = hits.first.to_xml(bibdata: true)
+          .gsub(/(?<=<fetched>)\d{4}-\d{2}-\d{2}/, Date.today.to_s)
         File.write file_path, xml, encoding: "UTF-8" unless File.exist? file_path
         expect(xml).to be_equivalent_to File.open(file_path, "r:UTF-8", &:read)
           .gsub(/(?<=<fetched>)\d{4}-\d{2}-\d{2}/, Date.today.to_s)
@@ -41,9 +42,10 @@ RSpec.describe RelatonNist do
       VCR.use_cassette "8011_1" do
         hits = RelatonNist::NistBibliography.search("NISTIR 8011-1")
         file_path = "spec/examples/hit_bibitem.xml"
-        File.write file_path, hits.first.to_xml, encoding: "UTF-8" unless File.exist? file_path
-        expect(hits.first.to_xml).to be_equivalent_to File
-          .open(file_path, "r:UTF-8", &:read)
+        xml = hits.first.to_xml
+          .gsub(/(?<=<fetched>)\d{4}-\d{2}-\d{2}/, Date.today.to_s)
+        File.write file_path, xml, encoding: "UTF-8" unless File.exist? file_path
+        expect(xml).to be_equivalent_to File.open(file_path, "r:UTF-8", &:read)
           .gsub(/(?<=<fetched>)\d{4}-\d{2}-\d{2}/, Date.today.to_s)
       end
     end
@@ -88,12 +90,12 @@ RSpec.describe RelatonNist do
     it "a code" do
       VCR.use_cassette "8200_2018" do
         result = RelatonNist::NistBibliography.get("NISTIR 8200", "2018", {})
-          .to_xml bibdata: true
+        xml = result.to_xml(bibdata: true)
+          .gsub(/(?<=<fetched>)\d{4}-\d{2}-\d{2}/, Date.today.to_s)
         file_path = "spec/examples/get.xml"
-        File.write file_path, result, encoding: "UTF-8" unless File.exist? file_path
-        expect(result).to be_equivalent_to File.open(
-          file_path, "r:UTF-8", &:read
-        ).gsub(/(?<=<fetched>)\d{4}-\d{2}-\d{2}/, Date.today.to_s)
+        File.write file_path, xml, encoding: "UTF-8" unless File.exist? file_path
+        expect(xml).to be_equivalent_to File.open(file_path, "r:UTF-8", &:read)
+          .gsub(/(?<=<fetched>)\d{4}-\d{2}-\d{2}/, Date.today.to_s)
         schema = Jing.new "spec/examples/isobib.rng"
         errors = schema.validate file_path
         expect(errors).to eq []

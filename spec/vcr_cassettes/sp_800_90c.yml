@@ -35,35 +35,35 @@ http_interactions:
       Content-Type:
       - text/plain; charset=utf-8
       X-Github-Request-Id:
-      - C09E:1098B:3FD2F8:446D4B:62B5C72C
+      - DB92:01E9:25B4:284B:62BF063B
       Accept-Ranges:
       - bytes
       Date:
-      - Fri, 24 Jun 2022 14:16:12 GMT
+      - Fri, 01 Jul 2022 14:35:39 GMT
       Via:
       - 1.1 varnish
       X-Served-By:
-      - cache-vie6373-VIE
+      - cache-vie6325-VIE
       X-Cache:
       - MISS
       X-Cache-Hits:
       - '0'
       X-Timer:
-      - S1656080172.268331,VS0,VE180
+      - S1656686140.789085,VS0,VE188
       Vary:
       - Authorization,Accept-Encoding,Origin
       Access-Control-Allow-Origin:
       - "*"
       X-Fastly-Request-Id:
-      - 6ab1364a7045bca734ff2ff86c06295c5a86e302
+      - 61cc038a9295cf0071fa74bd6175a77a1f96b2bb
       Expires:
-      - Fri, 24 Jun 2022 14:21:12 GMT
+      - Fri, 01 Jul 2022 14:40:39 GMT
       Source-Age:
       - '0'
     body:
       encoding: UTF-8
       string: '404: Not Found'
-  recorded_at: Fri, 24 Jun 2022 14:16:12 GMT
+  recorded_at: Fri, 01 Jul 2022 14:35:39 GMT
 - request:
     method: get
     uri: https://raw.githubusercontent.com/relaton/relaton-data-nist/main/data/SP_800-90C.yaml
@@ -99,33 +99,33 @@ http_interactions:
       Content-Type:
       - text/plain; charset=utf-8
       X-Github-Request-Id:
-      - C09E:1098B:3FD2F8:446D4B:62B5C72C
+      - DB92:01E9:25B4:284B:62BF063B
       Accept-Ranges:
       - bytes
       Date:
-      - Fri, 24 Jun 2022 14:16:12 GMT
+      - Fri, 01 Jul 2022 14:35:40 GMT
       Via:
       - 1.1 varnish
       X-Served-By:
-      - cache-vie6355-VIE
+      - cache-vie6323-VIE
       X-Cache:
       - HIT
       X-Cache-Hits:
       - '1'
       X-Timer:
-      - S1656080173.688023,VS0,VE0
+      - S1656686140.218335,VS0,VE1
       Vary:
       - Authorization,Accept-Encoding,Origin
       Access-Control-Allow-Origin:
       - "*"
       X-Fastly-Request-Id:
-      - c9f033a489b83dceab33e4d3234733cd5b494d20
+      - 446e643f6fd493ecd5673fe4755561a4cbc67fe7
       Expires:
-      - Fri, 24 Jun 2022 14:21:12 GMT
+      - Fri, 01 Jul 2022 14:40:40 GMT
       Source-Age:
       - '0'
     body:
       encoding: UTF-8
       string: '404: Not Found'
-  recorded_at: Fri, 24 Jun 2022 14:16:12 GMT
+  recorded_at: Fri, 01 Jul 2022 14:35:40 GMT
 recorded_with: VCR 6.1.0

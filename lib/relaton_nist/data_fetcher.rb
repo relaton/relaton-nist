@@ -214,10 +214,11 @@ module RelatonNist
     def fetch_series(doc)
       series_path = File.expand_path("series.yaml", __dir__)
       series = YAML.load_file series_path
-      prf, srs, = pub_id(doc).split
+      prf, srs, num = pub_id(doc).split
       sname = series[srs] || srs
       title = RelatonBib::TypedTitleString.new(content: "#{prf} #{sname}")
-      [RelatonBib::Series.new(title: title, number: "#{prf} #{srs}")]
+      abbr = RelatonBib::LocalizedString.new("#{prf} #{srs}")
+      [RelatonBib::Series.new(title: title, abbreviation: abbr, number: num)]
     end
 
     #
@@ -274,7 +275,7 @@ module RelatonNist
       puts "Started at: #{t1}"
 
       docs = Nokogiri::XML OpenURI.open_uri URL
-      FileUtils.mkdir @output unless Dir.exist? @output
+      FileUtils.mkdir_p @output
       FileUtils.rm Dir[File.join(@output, "*.#{@ext}")]
       docs.xpath("/body/query/doi_record/report-paper/report-paper_metadata")
         .each { |doc| parse_doc doc }

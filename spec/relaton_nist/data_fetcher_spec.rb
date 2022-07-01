@@ -9,8 +9,8 @@ RSpec.describe "NIST documents fetcher" do
 
     before(:each) do
       expect(OpenURI).to receive(:open_uri).with(RelatonNist::DataFetcher::URL).and_return nist_data
-      expect(Dir).to receive(:exist?).with(out).and_return false
-      expect(FileUtils).to receive(:mkdir).with(out)
+      # expect(Dir).to receive(:exist?).with(out).and_return false
+      expect(FileUtils).to receive(:mkdir_p).with(out)
       files = ["#{out}/NIST_SP_800-133R1.#{format}", "#{out}/NIST_SP_1190GB-16.#{format}"]
       expect(Dir).to receive(:[]).with("#{out}/*.#{format}").and_return files
       expect(FileUtils).to receive(:rm).with(files)
@@ -51,13 +51,14 @@ RSpec.describe "NIST documents fetcher" do
     end
   end
 
-  it "raise an HTTP error" do
+  it "raise HTTP error" do
     expect(OpenURI).to receive(:open_uri).and_raise StandardError.new("Test error")
     expect { RelatonNist::DataFetcher.fetch }
       .to output(/Test error/).to_stderr
   end
 
   it "raise parsing error" do
+    expect(FileUtils).to receive(:mkdir_p).with("data")
     expect(OpenURI).to receive(:open_uri).with(RelatonNist::DataFetcher::URL).and_return nist_data
     expect(RelatonNist::NistBibliographicItem).to receive(:new).and_raise(StandardError).twice
     expect { RelatonNist::DataFetcher.fetch }
@@ -126,8 +127,11 @@ RSpec.describe "NIST documents fetcher" do
       series = subject.fetch_series rep
       expect(series).to be_a Array
       expect(series.size).to eq 1
+      expect(series[0].title).to be_instance_of RelatonBib::TypedTitleString
       expect(series[0].title.title.content).to eq "NIST Cybersecurity White Papers"
-      expect(series[0].number).to eq "NIST CSWP"
+      expect(series[0].abbreviation).to be_instance_of RelatonBib::LocalizedString
+      expect(series[0].abbreviation.content).to eq "NIST CSWP"
+      expect(series[0].number).to eq "09102018"
     end
 
     it "fetch relation" do
