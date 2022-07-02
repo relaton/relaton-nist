@@ -130,7 +130,7 @@ RSpec.describe "NIST documents fetcher" do
       expect(series[0].title).to be_instance_of RelatonBib::TypedTitleString
       expect(series[0].title.title.content).to eq "NIST Cybersecurity White Papers"
       expect(series[0].abbreviation).to be_instance_of RelatonBib::LocalizedString
-      expect(series[0].abbreviation.content).to eq "NIST CSWP"
+      expect(series[0].abbreviation.content).to eq "CSWP"
       expect(series[0].number).to eq "09102018"
     end
 

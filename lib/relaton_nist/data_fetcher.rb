@@ -217,7 +217,7 @@ module RelatonNist
       prf, srs, num = pub_id(doc).split
       sname = series[srs] || srs
       title = RelatonBib::TypedTitleString.new(content: "#{prf} #{sname}")
-      abbr = RelatonBib::LocalizedString.new("#{prf} #{srs}")
+      abbr = RelatonBib::LocalizedString.new srs
       [RelatonBib::Series.new(title: title, abbreviation: abbr, number: num)]
     end
 
