@@ -1,4 +1,4 @@
-= RelatonNist: retrieve NIST Standards for bibliographic use using the BibliographicItem model
+= Relaton for NIST: bibliographic retrieval of NIST publications
 
 image:https://img.shields.io/gem/v/relaton-nist.svg["Gem Version", link="https://rubygems.org/gems/relaton-nist"]
 image:https://github.com/relaton/relaton-nist/workflows/macos/badge.svg["Build Status (macOS)", link="https://github.com/relaton/relaton-nist/actions?workflow=macos"]
@@ -8,10 +8,41 @@ image:https://codeclimate.com/github/relaton/relaton-nist/badges/gpa.svg["Code C
 image:https://img.shields.io/github/issues-pr-raw/relaton/relaton-nist.svg["Pull Requests", link="https://github.com/relaton/relaton-nist/pulls"]
 image:https://img.shields.io/github/commits-since/relaton/relaton-nist/latest.svg["Commits since latest",link="https://github.com/relaton/relaton-nist/releases"]
 
+== Purpose
 
-RelatonNist is a Ruby gem that implements the https://github.com/metanorma/metanorma-model-iso#iso-bibliographic-item[IsoBibliographicItem model].
+`relaton-nist` provides bibliographic information of NIST publications using the
+https://github.com/metanorma/metanorma-model-nist#nist-bibliographic-item-model[NistBibliographicItem model].
 
-You can use it to retrieve metadata of NIST Standards from https://csrc.nist.gov, and access such metadata through the `IsoBibliographicItem` object.
+Relaton for NIST has been developed in cooperation with the NIST Cybersecurity
+Resource Center (CSRC) and the Computer Security Division (ITL/CSD).
+
+== Data sources
+
+Relaton for NIST retrieves bibliographic information from two sources:
+
+* bibliographic feed from the NIST Cybersecurity Resource Center (CSRC) of
+all CSRC publications (in Relaton JSON)
+* bibliographic dataset from the NIST Library through the Information Services
+Office (ISO) that contains information about all NIST Technical Publications
+(https://github.com/usnistgov/NIST-Tech-Pubs[GitHub])
+
+Bibliographic information offered through CSRC are provided with enhanced
+metadata that is not available at the NIST Library dataset, including:
+
+* public drafts (the NIST Library dataset only contains final publications)
+* revision information: revision number, iteration
+* document stage information: retired, withdrawn, etc.
+* bibliographic dates, including issued date, updated date, published date,
+  obsolete date, commenting period
+* document relationships: supersession and replacements
+* contacts: enhanced name parts and affiliation information
+
+Relaton for NIST therefore uses the following order of priority for the data
+sources:
+
+. bibliographic feed from NIST CSRC
+. NIST Library dataset
+
 
 == Installation
 
