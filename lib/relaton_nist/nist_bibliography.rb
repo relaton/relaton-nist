@@ -14,7 +14,8 @@ module RelatonNist
       # @param text [String]
       # @return [RelatonNist::HitCollection]
       def search(text, year = nil, opts = {})
-        HitCollection.search text, year, opts
+        ref = text.sub(/^NIST\sIR/, "NISTIR")
+        HitCollection.search ref, year, opts
       rescue OpenURI::HTTPError, SocketError, OpenSSL::SSL::SSLError => e
         raise RelatonBib::RequestError, e.message
       end
@@ -160,7 +161,7 @@ module RelatonNist
         #   (\.(?<rev1>r-\d+))?
         # }x.match(code)
         matches = {
-          serie: match(/(SP|FIPS|(NIST)?IR|ITL\sBulletin|White\sPaper)(?=\.|\s)/, code),
+          serie: match(/(SP|FIPS|(NIST)?\s?IR|ITL\sBulletin|White\sPaper)(?=\.|\s)/, code),
           code: match(/(?<=\.|\s)[0-9-]{3,}[A-Z]?/, code),
           prt1: match(/(?<=(\.))?pt(?(1)-)[A-Z\d]+/, code),
           vol1: match(/(?<=(\.))?v(?(1)-)\d+/, code),
@@ -198,25 +199,25 @@ module RelatonNist
       # @return [Boolean]
       def search_filter(item, matches, text) # rubocop:disable Metrics/AbcSize,Metrics/CyclomaticComplexity,Metrics/MethodLength,Metrics/PerceivedComplexity
         %r{
-          ^((?:NIST)\s)?
-          ((?<serie>(SP|FIPS|NISTIR|ITL\sBulletin|White\sPaper))\s)?
+          ^(?:(?:NIST)\s)?
+          (?:(?<serie>(?:SP|FIPS|NISTIR|ITL\sBulletin|White\sPaper))\s)?
           (?<code>[0-9-]{3,}[A-Z]?)
           (?<prt1>pt\d+)?
           (?<vol1>v\d+)?
           (?<ver1>ver[\d.]+)?
           (?<rev1>r\d+)?
-          (\s(?<prt2>Part\s\d+))?
-          (\s(?<vol2>Vol\.\s\d+))?
-          (\s(?<ver2>(Ver\.|Version)\s[\d.]+))?
-          (\s(?<rev2>Rev\.\s\d+))?
-          (\s(?<add>Add)endum)?
+          (?:\s(?<prt2>Part\s\d+))?
+          (?:\s(?<vol2>Vol\.\s\d+))?
+          (?:\s(?<ver2>(?:Ver\.|Version)\s[\d.]+))?
+          (?:\s(?<rev2>Rev\.\s\d+))?
+          (?:\s(?<add>Add)endum)?
         }x =~ item.hit[:code]
-        matches[:code] && [serie, item.hit[:serie]].include?(matches[:serie]) && matches[:code] == code &&
+        (matches[:code] && [serie, item.hit[:serie]].include?(matches[:serie]) && matches[:code] == code &&
           long_to_short(matches[:prt1], matches[:prt2]) == long_to_short(prt1, prt2) &&
           long_to_short(matches[:vol1], matches[:vol2]) == long_to_short(vol1, vol2) &&
           long_to_short(matches[:ver1], matches[:ver2]) == long_to_short(ver1, ver2) &&
           long_to_short(matches[:rev1], matches[:rev2]) == long_to_short(rev1, rev2) &&
-          long_to_short(matches[:add1], matches[:add2]) == add || item.hit[:title].include?(text.sub(/^NIST\s/, ""))
+          long_to_short(matches[:add1], matches[:add2]) == add) || item.hit[:title]&.include?(text.sub(/^NIST\s/, ""))
       end
 
       # @param short [String]

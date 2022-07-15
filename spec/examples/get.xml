@@ -1,5 +1,5 @@
 <bibdata type="standard">
-  <fetched>2022-06-30</fetched>
+  <fetched>2022-07-15</fetched>
   <title format="text/plain" language="en" script="Latn">Interagency report on the status of international cybersecurity standardization for the internet of things (IoT)</title>
   <uri type="doi">https://doi.org/10.6028/NIST.IR.8200</uri>
   <uri type="pdf">https://nvlpubs.nist.gov/nistpubs/ir/2018/NIST.IR.8200.pdf</uri>
@@ -51,7 +51,8 @@
   <script>Latn</script>
   <series>
     <title format="text/plain">NIST NISTIRs (Interagency/Internal Reports)</title>
-    <number>NIST IR</number>
+    <abbreviation>IR</abbreviation>
+    <number>8200</number>
   </series>
   <place>Gaithersburg, MD</place>
   <ext>

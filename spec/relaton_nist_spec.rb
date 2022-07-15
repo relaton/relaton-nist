@@ -362,6 +362,13 @@ RSpec.describe RelatonNist do
       end
     end
 
+    it "get NIST IR 7916" do
+      VCR.use_cassette "nist_ir_7916" do
+        result = RelatonNist::NistBibliography.get "NIST IR 7916"
+        expect(result.docidentifier.first.id).to eq "NIST IR 7916"
+      end
+    end
+
     it "draft without (PD) in reference return nil" do
       VCR.use_cassette "sp_800_90c" do
         result = RelatonNist::NistBibliography.get "SP 800-90C"
