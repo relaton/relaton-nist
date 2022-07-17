@@ -369,6 +369,13 @@ RSpec.describe RelatonNist do
       end
     end
 
+    it "get NIST SP 500-183" do
+      VCR.use_cassette "nist_sp_500_183" do
+        result = RelatonNist::NistBibliography.get "NIST SP 500-183"
+        expect(result.docidentifier.first.id).to eq "NIST SP 500-183"
+      end
+    end
+
     it "draft without (PD) in reference return nil" do
       VCR.use_cassette "sp_800_90c" do
         result = RelatonNist::NistBibliography.get "SP 800-90C"

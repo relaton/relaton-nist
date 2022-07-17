@@ -56,12 +56,12 @@ module RelatonNist
         end
 
         code += "-1" if opts[:all_parts]
-        nistbib_get1(code, year, opts)
+        nistbib_get(code, year, opts)
       end
 
       private
 
-      def nistbib_get1(code, year, opts)
+      def nistbib_get(code, year, opts)
         result = nistbib_search_filter(code, year, opts) || (return nil)
         ret = nistbib_results_filter(result, year, opts)
         if ret[:ret]
@@ -85,7 +85,7 @@ module RelatonNist
       # @option opts [String] :stage
       #
       # @return [Hash]
-      def nistbib_results_filter(result, year, opts)
+      def nistbib_results_filter(result, year, opts) # rubocop:disable Metrics/AbcSize, Metrics/MethodLength, Metrics/CyclomaticComplexity, Metrics/PerceivedComplexity
         missed_years = []
         iter = /\w+(?=PD)|(?<=PD-)\w+/.match(opts[:stage])&.to_s
         iteration = case iter
@@ -134,111 +134,23 @@ module RelatonNist
       # @param year [String, nil]
       # @param opts [Hash]
       # @return [RelatonNist::HitCollection]
-      def nistbib_search_filter(code, year, opts) # rubocop:disable Metrics/MethodLength
+      def nistbib_search_filter(code, year, opts)
         warn "[relaton-nist] (\"#{code}\") fetching..."
-        # match = %r{
-        #   ^((?:NIST)\s)?
-        #   (?<serie>(SP|FIPS|NISTIR|ITL\sBulletin|White\sPaper))\s
-        #   (?<code>[0-9-]{3,}[A-Z]?)
-        #   (?<prt1>pt\d+)?
-        #   (?<vol1>v\d+)?
-        #   (?<ver1>ver[\d\.]+)?
-        #   (?<rev1>r\d+)?
-        #   (\s(?<prt2>Part\s\d+))?
-        #   (\s(?<vol2>Vol\.\s\d+))?
-        #   (\s(?<ver2>(Ver\.|Version)\s[\d\.]+))?
-        #   (\s(?<rev2>Rev\.\s\d+))?
-        #   (\/(?<upd>Add))?
-        # }x.match(code)
-        # match ||= %r{
-        #   ^NIST\.
-        #   (?<serie>(SP|FIPS|IR|ITL\sBulletin|White\sPaper))\.
-        #   ((PD-\d+|PUB)\.)?
-        #   (?<code>[0-9-]{3,}[A-Z]?)
-        #   (\.(?<prt1>pt-\d+))?
-        #   (\.(?<vol1>v-\d+))?
-        #   (\.(?<ver1>ver-[\d\.]+))?
-        #   (\.(?<rev1>r-\d+))?
-        # }x.match(code)
-        matches = {
-          serie: match(/(SP|FIPS|(NIST)?\s?IR|ITL\sBulletin|White\sPaper)(?=\.|\s)/, code),
-          code: match(/(?<=\.|\s)[0-9-]{3,}[A-Z]?/, code),
-          prt1: match(/(?<=(\.))?pt(?(1)-)[A-Z\d]+/, code),
-          vol1: match(/(?<=(\.))?v(?(1)-)\d+/, code),
-          ver1: match(/(?<=(\.))?ver(?(1)[-\d]|[\.\d])+/, code)&.gsub(/-/, "."),
-          rev1: match(/(?<=[^a-z])(?<=(\.))?r(?(1)-)\d+/, code),
-          add1: match(/(?<=(\.))?add(?(1)-)\d+/, code),
-          prt2: match(/(?<=\s)Part\s[A-Z\d]+/, code),
-          vol2: match(/(?<=\s)Vol\.\s\d+/, code),
-          ver2: match(/(?<=\s)Ver\.\s\d+/, code),
-          rev2: match(/(?<=\s)Rev\.\s\d+/, code),
-          add2: match(/(?<=\/)Add/, code),
-        }
-        ref = matches[:code] ? "#{matches[:serie]} #{matches[:code]}" : code
-        result = search(ref, year, opts)
-        selected_result = result.select { |i| search_filter i, matches, code }
-        return selected_result if selected_result.any? || !matches[:code]
-
-        search full_ref(matches)
+        result = search(code, year, opts)
+        result.search_filter
       end
 
-      def full_ref(matches)
-        ref = "#{matches[:serie]} #{matches[:code]}"
-        ref += long_to_short(matches[:prt1], matches[:prt2]).to_s
-        ref += long_to_short(matches[:vol1], matches[:vol2]).to_s
-        ref
-      end
-
-      def match(regex, code)
-        regex.match(code)&.to_s
-      end
-
-      # @param item [RelatonNist::Hit]
-      # @param matches [Hash]
-      # @param text [String]
-      # @return [Boolean]
-      def search_filter(item, matches, text) # rubocop:disable Metrics/AbcSize,Metrics/CyclomaticComplexity,Metrics/MethodLength,Metrics/PerceivedComplexity
-        %r{
-          ^(?:(?:NIST)\s)?
-          (?:(?<serie>(?:SP|FIPS|NISTIR|ITL\sBulletin|White\sPaper))\s)?
-          (?<code>[0-9-]{3,}[A-Z]?)
-          (?<prt1>pt\d+)?
-          (?<vol1>v\d+)?
-          (?<ver1>ver[\d.]+)?
-          (?<rev1>r\d+)?
-          (?:\s(?<prt2>Part\s\d+))?
-          (?:\s(?<vol2>Vol\.\s\d+))?
-          (?:\s(?<ver2>(?:Ver\.|Version)\s[\d.]+))?
-          (?:\s(?<rev2>Rev\.\s\d+))?
-          (?:\s(?<add>Add)endum)?
-        }x =~ item.hit[:code]
-        (matches[:code] && [serie, item.hit[:serie]].include?(matches[:serie]) && matches[:code] == code &&
-          long_to_short(matches[:prt1], matches[:prt2]) == long_to_short(prt1, prt2) &&
-          long_to_short(matches[:vol1], matches[:vol2]) == long_to_short(vol1, vol2) &&
-          long_to_short(matches[:ver1], matches[:ver2]) == long_to_short(ver1, ver2) &&
-          long_to_short(matches[:rev1], matches[:rev2]) == long_to_short(rev1, rev2) &&
-          long_to_short(matches[:add1], matches[:add2]) == add) || item.hit[:title]&.include?(text.sub(/^NIST\s/, ""))
-      end
-
-      # @param short [String]
-      # @param long [String]
-      # @return [String, nil]
-      def long_to_short(short, long)
-        return short.sub(/-/, "") if short
-        return unless long
-
-        long.sub(/Part\s/, "pt").sub(/Vol\.\s/, "v").sub(/Rev\.\s/, "r").sub(/(Ver\.|Version)\s/, "ver")
-      end
-
-      def fetch_ref_err(code, year, missed_years)
+      def fetch_ref_err(code, year, missed_years) # rubocop:disable Metrics/MethodLength
         id = year ? "#{code}:#{year}" : code
-        warn "[relaton-nist] WARNING: no match found online for #{id}. "\
-          "The code must be exactly like it is on the standards website."
-        warn "[relaton-nist] (There was no match for #{year}, though there were matches "\
-          "found for #{missed_years.join(', ')}.)" unless missed_years.empty?
-        if /\d-\d/ =~ code
-          warn "[relaton-nist] The provided document part may not exist, "\
-            "or the document may no longer be published in parts."
+        warn "[relaton-nist] WARNING: no match found online for #{id}. " \
+             "The code must be exactly like it is on the standards website."
+        unless missed_years.empty?
+          warn "[relaton-nist] (There was no match for #{year}, though there " \
+               "were matches found for #{missed_years.join(', ')}.)"
+        end
+        if /\d-\d/.match? code
+          warn "[relaton-nist] The provided document part may not exist, " \
+               "or the document may no longer be published in parts."
         end
         nil
       end

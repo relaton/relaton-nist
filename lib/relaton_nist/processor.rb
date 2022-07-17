@@ -5,7 +5,7 @@ module RelatonNist
     def initialize # rubocop:disable Lint/MissingSuper
       @short = :relaton_nist
       @prefix = "NIST"
-      @defaultprefix = %r{^(NIST|NISTGCR|ITL Bulletin|JPCRD|NISTIR|CSRC|FIPS)(/[^\s])?\s}
+      @defaultprefix = %r{^(NIST|NBS|NISTGCR|ITL Bulletin|JPCRD|NISTIR|CSRC|FIPS)(/[^\s])?\s}
       @idtype = "NIST"
       @datasets = %w[nist-tech-pubs]
     end

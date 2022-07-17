@@ -25,7 +25,74 @@ module RelatonNist
       sort_hits!
     end
 
+    # @return [Array<RelatonNist::Hit>]
+    def search_filter # rubocop:disable Metrics/AbcSize,Metrics/CyclomaticComplexity,Metrics/MethodLength,Metrics/PerceivedComplexity
+      @array.select do |item|
+        %r{
+          ^(?:(?:NIST|NBS)\s?)?
+          (?:(?<series>(?:SP|FIPS|IR|ITL\sBulletin|White\sPaper))\s)?
+          (?<code>[0-9-]{3,}[A-Z]?)
+          (?<prt1>pt\d+)?
+          (?<vol1>v\d+)?
+          (?<ver1>ver[\d.]+)?
+          (?<rev1>r\d+)?
+          (?:\s(?<prt2>Part\s\d+))?
+          (?:\s(?<vol2>Vol\.\s\d+))?
+          (?:\s(?<ver2>(?:Ver\.|Version)\s[\d.]+))?
+          (?:\s(?<rev2>Rev\.\s\d+))?
+          (?:\s(?<add>Add)endum)?
+        }x =~ item.hit[:code]
+        (refparts[:code] && [series, item.hit[:series]].include?(refparts[:series]) && refparts[:code] == code &&
+          long_to_short(refparts[:prt1], refparts[:prt2]) == long_to_short(prt1, prt2) &&
+          long_to_short(refparts[:vol1], refparts[:vol2]) == long_to_short(vol1, vol2) &&
+          long_to_short(refparts[:ver1], refparts[:ver2]) == long_to_short(ver1, ver2) &&
+          long_to_short(refparts[:rev1], refparts[:rev2]) == long_to_short(rev1, rev2) &&
+          long_to_short(refparts[:add1], refparts[:add2]) == add) || item.hit[:title]&.include?(text.sub(/^NIST\s/, ""))
+      end
+    end
+
     private
+
+    def refparts # rubocop:disable Metrics/AbcSize, Metrics/MethodLength
+      @refparts ||= {
+        perfix: match(/^(NIST|NBS)\s?/, text),
+        series: match(/(SP|FIPS|IR|ITL\sBulletin|White\sPaper)(?=\.|\s)/, text),
+        code: match(/(?<=\.|\s)[0-9-]{3,}[A-Z]?/, text),
+        prt1: match(/(?<=(\.))?pt(?(1)-)[A-Z\d]+/, text),
+        vol1: match(/(?<=(\.))?v(?(1)-)\d+/, text),
+        ver1: match(/(?<=(\.))?ver(?(1)[-\d]|[.\d])+/, text)&.gsub(/-/, "."),
+        rev1: match(/(?<=[^a-z])(?<=(\.))?r(?(1)-)\d+/, text),
+        add1: match(/(?<=(\.))?add(?(1)-)\d+/, text),
+        prt2: match(/(?<=\s)Part\s[A-Z\d]+/, text),
+        vol2: match(/(?<=\s)Vol\.\s\d+/, text),
+        ver2: match(/(?<=\s)Ver\.\s\d+/, text),
+        rev2: match(/(?<=\s)Rev\.\s\d+/, text),
+        add2: match(/(?<=\/)Add/, text),
+      }
+    end
+
+    def match(regex, code)
+      regex.match(code)&.to_s
+    end
+
+    def full_ref # rubocop:disable Metrics/AbcSize
+      @full_ref ||= begin
+        ref = "#{refparts[:perfix]}#{refparts[:series]} #{refparts[:code]}"
+        ref += long_to_short(refparts[:prt1], refparts[:prt2]).to_s
+        ref += long_to_short(refparts[:vol1], refparts[:vol2]).to_s
+        ref
+      end
+    end
+
+    # @param short [String]
+    # @param long [String]
+    # @return [String, nil]
+    def long_to_short(short, long)
+      return short.sub(/-/, "") if short
+      return unless long
+
+      long.sub(/Part\s/, "pt").sub(/Vol\.\s/, "v").sub(/Rev\.\s/, "r").sub(/(Ver\.|Version)\s/, "ver")
+    end
 
     def sort_hits!
       @array.sort! do |a, b|
@@ -39,7 +106,8 @@ module RelatonNist
     end
 
     def from_ga # rubocop:disable Metrics/AbcSize
-      fn = text.gsub(%r{[/\s:.]}, "_").upcase
+      ref = full_ref
+      fn = ref.gsub(%r{[/\s:.]}, "_").upcase
       yaml = OpenURI.open_uri "#{GHNISTDATA}#{fn}.yaml"
       hash = YAML.safe_load yaml
       bib = RelatonNist::NistBibliographicItem.from_hash hash
@@ -52,55 +120,15 @@ module RelatonNist
       raise e
     end
 
-    # rubocop:disable Metrics/AbcSize, Metrics/MethodLength
-
-    # @param stage [String]
-    # @return [Array<RelatonNist::Hit>]
-    # def from_csrc(**opts)
-    #   from, to = nil
-    #   if year
-    #     d    = Date.strptime year, "%Y"
-    #     from = d.strftime "%m/%d/%Y"
-    #     to   = d.next_year.prev_day.strftime "%m/%d/%Y"
-    #   end
-    #   url = "#{DOMAIN}/publications/search?keywords-lg=#{text}"\
-    #         "&sortBy-lg=relevence"
-    #   url += "&dateFrom-lg=#{from}" if from
-    #   url += "&dateTo-lg=#{to}" if to
-    #   url += if /PD/.match? opts[:stage]
-    #            "&status-lg=Draft,Retired Draft,Withdrawn"
-    #          else
-    #            "&status-lg=Final,Withdrawn"
-    #          end
-
-    #   doc = Nokogiri::HTML OpenURI.open_uri(::Addressable::URI.parse(url).normalize)
-    #   doc.css("table.publications-table > tbody > tr").map do |h|
-    #     link  = h.at("td/div/strong/a")
-    #     serie = h.at("td[1]").text.strip
-    #     code  = h.at("td[2]").text.strip
-    #     title = link.text
-    #     doc_url = DOMAIN + link[:href]
-    #     status = h.at("td[4]").text.strip.downcase
-    #     release_date = Date.strptime h.at("td[5]").text.strip, "%m/%d/%Y"
-    #     Hit.new(
-    #       {
-    #         code: code, serie: serie, title: title, url: doc_url,
-    #         status: status, release_date: release_date
-    #       }, self
-    #     )
-    #   end
-    # end
-    # rubocop:enable Metrics/AbcSize, Metrics/MethodLength
-
     # Fetches data form json
     # @param stage [String]
     # @return [Array<RelatonNist::Hit>]
     def from_json(**opts)
       select_data(**opts).map do |h|
-        /(?<serie>(?<=-)\w+$)/ =~ h["series"]
+        /(?<series>(?<=-)\w+$)/ =~ h["series"]
         title = [h["title-main"], h["title-sub"]].compact.join " - "
         release_date = RelatonBib.parse_date h["published-date"], false
-        Hit.new({ code: h["docidentifier"], serie: serie.upcase, title: title,
+        Hit.new({ code: h["docidentifier"], series: series.upcase, title: title,
                   url: h["uri"], status: h["status"],
                   release_date: release_date, json: h }, self)
       end
@@ -109,6 +137,7 @@ module RelatonNist
     # @param stage [String]
     # @return [Array<Hach>]
     def select_data(**opts) # rubocop:disable Metrics/AbcSize, Metrics/CyclomaticComplexity, Metrics/MethodLength,Metrics/PerceivedComplexity
+      ref = "#{refparts[:series]} #{refparts[:code]}"
       d = Date.strptime year, "%Y" if year
       statuses = %w[draft-public draft-prelim]
       data.select do |doc|
@@ -119,7 +148,7 @@ module RelatonNist
         else
           next unless doc["status"] == "final"
         end
-        doc["docidentifier"].include? text
+        doc["docidentifier"].include?(ref) || doc["docidentifier"].include?(full_ref)
       end
     end
 
@@ -147,7 +176,6 @@ module RelatonNist
     #
     # @prarm ctime [Time, NilClass]
     def fetch_data(ctime)
-      # resp = OpenURI.open_uri("#{PUBS_EXPORT}.meta")
       if !ctime || ctime < OpenURI.open_uri("#{PUBS_EXPORT}.meta").last_modified
         @data = nil
         uri_open = URI.method(:open) || Kernel.method(:open)

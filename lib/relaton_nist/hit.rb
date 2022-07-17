@@ -14,7 +14,7 @@ module RelatonNist
     # @return [Iteger]
     def sort_value # rubocop:disable Metrics/AbcSize,Metrics/CyclomaticComplexity,Metrics/MethodLength,Metrics/PerceivedComplexity
       @sort_value ||= begin
-        sort_phrase = [hit[:serie], hit[:code], hit[:title]].join " "
+        sort_phrase = [hit[:series], hit[:code], hit[:title]].join " "
         corr = hit_collection&.text&.split&.map do |w|
           if w =~ /\w+/ &&
               sort_phrase =~ Regexp.new(Regexp.escape(w), Regexp::IGNORECASE)
