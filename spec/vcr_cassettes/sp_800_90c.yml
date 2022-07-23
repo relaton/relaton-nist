@@ -35,97 +35,33 @@ http_interactions:
       Content-Type:
       - text/plain; charset=utf-8
       X-Github-Request-Id:
-      - F034:DDDC:6D3ED2:756C45:62D10D71
+      - '08E6:7354:4E21DE:53E894:62DBEC0D'
       Accept-Ranges:
       - bytes
       Date:
-      - Fri, 15 Jul 2022 06:47:13 GMT
+      - Sat, 23 Jul 2022 12:39:42 GMT
       Via:
       - 1.1 varnish
       X-Served-By:
-      - cache-vie6350-VIE
+      - cache-sof1510056-SOF
       X-Cache:
       - MISS
       X-Cache-Hits:
       - '0'
       X-Timer:
-      - S1657867633.476974,VS0,VE178
+      - S1658579982.971918,VS0,VE182
       Vary:
       - Authorization,Accept-Encoding,Origin
       Access-Control-Allow-Origin:
       - "*"
       X-Fastly-Request-Id:
-      - c82e9103c9b91808629a9535275a6b92424d796b
+      - '09b738cb330b3f096fcbaced88b83d042069aa7b'
       Expires:
-      - Fri, 15 Jul 2022 06:52:13 GMT
+      - Sat, 23 Jul 2022 12:44:42 GMT
       Source-Age:
       - '0'
     body:
       encoding: UTF-8
       string: '404: Not Found'
-  recorded_at: Fri, 15 Jul 2022 06:47:13 GMT
-- request:
-    method: get
-    uri: https://raw.githubusercontent.com/relaton/relaton-data-nist/main/data/SP_800-90C.yaml
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-      User-Agent:
-      - Ruby
-  response:
-    status:
-      code: 404
-      message: Not Found
-    headers:
-      Connection:
-      - keep-alive
-      Content-Length:
-      - '14'
-      Content-Security-Policy:
-      - default-src 'none'; style-src 'unsafe-inline'; sandbox
-      Strict-Transport-Security:
-      - max-age=31536000
-      X-Content-Type-Options:
-      - nosniff
-      X-Frame-Options:
-      - deny
-      X-Xss-Protection:
-      - 1; mode=block
-      Content-Type:
-      - text/plain; charset=utf-8
-      X-Github-Request-Id:
-      - F034:DDDC:6D3ED2:756C45:62D10D71
-      Accept-Ranges:
-      - bytes
-      Date:
-      - Fri, 15 Jul 2022 06:47:13 GMT
-      Via:
-      - 1.1 varnish
-      X-Served-By:
-      - cache-vie6362-VIE
-      X-Cache:
-      - HIT
-      X-Cache-Hits:
-      - '1'
-      X-Timer:
-      - S1657867634.810028,VS0,VE0
-      Vary:
-      - Authorization,Accept-Encoding,Origin
-      Access-Control-Allow-Origin:
-      - "*"
-      X-Fastly-Request-Id:
-      - 951d728c7d66efac8954d5a14f6d6578c085e3f7
-      Expires:
-      - Fri, 15 Jul 2022 06:52:13 GMT
-      Source-Age:
-      - '0'
-    body:
-      encoding: UTF-8
-      string: '404: Not Found'
-  recorded_at: Fri, 15 Jul 2022 06:47:13 GMT
+  recorded_at: Sat, 23 Jul 2022 12:39:42 GMT
 recorded_with: VCR 6.1.0

@@ -137,31 +137,66 @@ module RelatonNist
 
     # @param doc [Nokogiri::XML::Element]
     # @return [Array<Hash>]
-    def fetch_contributor(doc) # rubocop:disable Metrics/AbcSize,Metrics/MethodLength,Metrics/CyclomaticComplexity,Metrics/PerceivedComplexity
+    def fetch_contributor(doc)
       contribs = doc.xpath("contributors/person_name").map do |p|
-        forename = []
-        initial = []
-        p.at("given_name")&.text&.split&.each do |fn|
-          if /^(?<init>\w)\.?$/ =~ fn
-            initial << RelatonBib::LocalizedString.new(init, doc["language"], "Latn")
-          else
-            forename << RelatonBib::LocalizedString.new(fn, doc["language"], "Latn")
-          end
-        end
-        sname = p.at("surname").text
-        surname = RelatonBib::LocalizedString.new sname, doc["language"], "Latn"
-        ident = p.xpath("ORCID").map do |id|
-          RelatonBib::PersonIdentifier.new "orcid", id.text
-        end
-        fullname = RelatonBib::FullName.new(
-          surname: surname, forename: forename, initial: initial, identifier: ident,
-        )
-        person = RelatonBib::Person.new name: fullname, affiliation: affiliation(doc)
+        person = RelatonBib::Person.new(name: fullname(p, doc),
+                                        affiliation: affiliation(doc))
         { entity: person, role: [{ type: p["contributor_role"] }] }
       end
       contribs + doc.xpath("publisher").map do |p|
         { entity: create_org(p), role: [{ type: "publisher" }] }
       end
+    end
+
+    #
+    # Create full name object from person name element.
+    #
+    # @param [Nokogiri::XML::Element] person name element
+    # @param [Nokogiri::XML::Element] doc document element
+    #
+    # @return [RelatonBib::FullName] full name object
+    #
+    def fullname(person, doc)
+      forename, initial = forename_initial(person, doc)
+      surname = localized_string person.at("surname").text, doc
+      ident = person.xpath("ORCID").map do |id|
+        RelatonBib::PersonIdentifier.new "orcid", id.text
+      end
+      RelatonBib::FullName.new(surname: surname, forename: forename,
+                               initial: initial, identifier: ident)
+    end
+
+    #
+    # Create forename and initials objects from person name element.
+    #
+    # @param [Nokogiri::XML::Element] person person name element
+    # @param [Nokogiri::XML::Element] doc document element
+    #
+    # @return [Array<Array<RelatonBib::LocalizedString>>] forename and initials
+    #
+    def forename_initial(person, doc)
+      forename = []
+      initial = []
+      fname = person.at("given_name")&.text
+      if fname
+        if /^(?<inits>(?:\w[.\s]+|[A-Z]{1,2}$)+)$/ =~ fname
+          inits.split(/[.\s]*/).each { |i| initial << localized_string(i, doc) }
+        else forename << localized_string(fname, doc)
+        end
+      end
+      [forename, initial]
+    end
+
+    #
+    # Create localized string
+    #
+    # @param [String] content content of string
+    # @param [Nokogiri::XML::Elemrnt] doc XML element
+    #
+    # @return [RelatonBib::LocalizedString] localized string
+    #
+    def localized_string(content, doc)
+      RelatonBib::LocalizedString.new content, doc["language"], "Latn"
     end
 
     #
