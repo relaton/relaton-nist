@@ -7,7 +7,7 @@ require "addressable/uri"
 require "open-uri"
 
 module RelatonNist
-  # Page of hit collection.
+  # Hit collection.
   class HitCollection < RelatonBib::HitCollection
     DOMAIN = "https://csrc.nist.gov"
     PUBS_EXPORT = URI.join(DOMAIN, "/CSRC/media/feeds/metanorma/pubs-export")
@@ -15,17 +15,37 @@ module RelatonNist
     DATAFILE = File.expand_path "pubs-export.zip", DATAFILEDIR
     GHNISTDATA = "https://raw.githubusercontent.com/relaton/relaton-data-nist/main/data/"
 
+    #
+    # Create hits collection instance and search hits
+    #
+    # @param [Hash] opts options
+    # @option opts [String] :stage stage of document
+    #
+    # @return [RelatonNist::HitCollection] hits collection
+    #
     def self.search(text, year = nil, opts = {})
       new(text, year).search(opts)
     end
 
+    #
+    # Search nits in JSON file or GitHub repo
+    #
+    # @param [Hash] opts options
+    # @option opts [String] :stage stage of document
+    #
+    # @return [RelatonNist::HitCollection] hits collection
+    #
     def search(opts)
       @array = from_json(**opts)
       @array = from_ga unless @array.any?
       sort_hits!
     end
 
-    # @return [Array<RelatonNist::Hit>]
+    #
+    # Filter hits by reference's parts
+    #
+    # @return [Array<RelatonNist::Hit>] hits
+    #
     def search_filter # rubocop:disable Metrics/AbcSize,Metrics/CyclomaticComplexity,Metrics/MethodLength,Metrics/PerceivedComplexity
       @array.select do |item|
         %r{
@@ -53,6 +73,11 @@ module RelatonNist
 
     private
 
+    #
+    # Parse reference parts
+    #
+    # @return [Hash] reference parts
+    #
     def refparts # rubocop:disable Metrics/AbcSize, Metrics/MethodLength
       @refparts ||= {
         perfix: match(/^(NIST|NBS)\s?/, text),
@@ -71,10 +96,23 @@ module RelatonNist
       }
     end
 
+    #
+    # Match regex to reference
+    #
+    # @param [Regexp] regex regex
+    # @param [String] code reference
+    #
+    # @return [String, nil] matched string
+    #
     def match(regex, code)
       regex.match(code)&.to_s
     end
 
+    #
+    # Generate reference from parts
+    #
+    # @return [String] reference
+    #
     def full_ref # rubocop:disable Metrics/AbcSize
       @full_ref ||= begin
         ref = "#{refparts[:perfix]}#{refparts[:series]} #{refparts[:code]}"
@@ -84,9 +122,16 @@ module RelatonNist
       end
     end
 
+    #
+    # Return short version of ID part with removed "-" or convert long version to short.
+    # Converts "pt-1" to "pt1" and "Part 1" to "pt1", "v-1" to "v1" and "Vol. 1" to "v1",
+    #   "ver-1" to "ver1" and "Ver. 1" to "ver1", "r-1" to "r1" and "Rev. 1" to "r1".
+    #
     # @param short [String]
     # @param long [String]
+    #
     # @return [String, nil]
+    #
     def long_to_short(short, long)
       return short.sub(/-/, "") if short
       return unless long
@@ -94,6 +139,11 @@ module RelatonNist
       long.sub(/Part\s/, "pt").sub(/Vol\.\s/, "v").sub(/Rev\.\s/, "r").sub(/(Ver\.|Version)\s/, "ver")
     end
 
+    #
+    # Sort hits by sort_value and release date
+    #
+    # @return [self] sorted hits collection
+    #
     def sort_hits!
       @array.sort! do |a, b|
         if a.sort_value == b.sort_value
@@ -105,7 +155,14 @@ module RelatonNist
       self
     end
 
-    def from_ga # rubocop:disable Metrics/AbcSize
+    #
+    # Get hit from GitHub repo
+    #
+    # @return [Array<RelatonNist::Hit>] hits
+    #
+    # @raise [OpenURI::HTTPError] if GitHub repo is not available
+    #
+    def from_ga # rubocop:disable Metrics/AbcSize, Metrics/MethodLength
       ref = full_ref
       fn = ref.gsub(%r{[/\s:.]}, "_").upcase
       yaml = OpenURI.open_uri "#{GHNISTDATA}#{fn}.yaml"
@@ -120,9 +177,14 @@ module RelatonNist
       raise e
     end
 
+    #
     # Fetches data form json
-    # @param stage [String]
-    # @return [Array<RelatonNist::Hit>]
+    #
+    # @param opts [Hash] options
+    # @option opts [String] :stage stage of document
+    #
+    # @return [Array<RelatonNist::Hit>] hits
+    #
     def from_json(**opts)
       select_data(**opts).map do |h|
         /(?<series>(?<=-)\w+$)/ =~ h["series"]
@@ -134,8 +196,14 @@ module RelatonNist
       end
     end
 
-    # @param stage [String]
-    # @return [Array<Hach>]
+    #
+    # Select data from json
+    #
+    # @param opts [Hash] options
+    # @option opts [String] :stage stage of document
+    #
+    # @return [Array<Hash>] selected data
+    #
     def select_data(**opts) # rubocop:disable Metrics/AbcSize, Metrics/CyclomaticComplexity, Metrics/MethodLength,Metrics/PerceivedComplexity
       ref = "#{refparts[:series]} #{refparts[:code]}"
       d = Date.strptime year, "%Y" if year
@@ -152,9 +220,14 @@ module RelatonNist
       end
     end
 
-    # @param doc [Hash]
+    #
+    # Check if issued date is match to year
+    #
+    # @param doc [Hash] document's metadata
     # @param date [Date] first day of year
-    # @return [TrueClass, FalseClass]
+    #
+    # @return [Boolean]
+    #
     def match_year?(doc, date)
       return true unless year
 
@@ -162,8 +235,11 @@ module RelatonNist
       idate.between? date, date.next_year.prev_day
     end
 
+    #
     # Fetches json data form server
-    # @return [Hash]
+    #
+    # @return [Array<Hash>] json data
+    #
     def data
       ctime = File.ctime DATAFILE if File.exist? DATAFILE
       if !ctime || ctime.to_date < Date.today || File.size(DATAFILE).zero?
@@ -172,9 +248,11 @@ module RelatonNist
       unzip
     end
 
+    #
     # Fetch data form server and save it to file
     #
-    # @prarm ctime [Time, NilClass]
+    # @prarm ctime [Time, nil] file creation time
+    #
     def fetch_data(ctime)
       if !ctime || ctime < OpenURI.open_uri("#{PUBS_EXPORT}.meta").last_modified
         @data = nil
@@ -184,9 +262,11 @@ module RelatonNist
       end
     end
 
+    #
     # upack zip file
     #
-    # @return [Hash]
+    # @return [Array<Hash>] json data
+    #
     def unzip
       return @data if @data
 

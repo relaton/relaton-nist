@@ -5,13 +5,20 @@ module RelatonNist
   class Hit < RelatonBib::Hit
     attr_writer :fetch
 
+    #
     # Parse page.
-    # @return [RelatonNist::NistBliographicItem]
+    #
+    # @return [RelatonNist::NistBliographicItem] bibliographic item
+    #
     def fetch
       @fetch ||= Scrapper.parse_page @hit
     end
 
-    # @return [Iteger]
+    #
+    # Calculate sorting weigth of hit by series, code, title, addendum, and status
+    #
+    # @return [Iteger] sorting weigth
+    #
     def sort_value # rubocop:disable Metrics/AbcSize,Metrics/CyclomaticComplexity,Metrics/MethodLength,Metrics/PerceivedComplexity
       @sort_value ||= begin
         sort_phrase = [hit[:series], hit[:code], hit[:title]].join " "

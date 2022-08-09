@@ -11,8 +11,13 @@ require "relaton_nist/hash_converter"
 module RelatonNist
   class NistBibliography
     class << self
-      # @param text [String]
-      # @return [RelatonNist::HitCollection]
+      #
+      # Search NIST docuemnts by reference
+      #
+      # @param text [String] reference
+      #
+      # @return [RelatonNist::HitCollection] search result
+      #
       def search(text, year = nil, opts = {})
         ref = text.sub(/^NIST\sIR/, "NISTIR")
         HitCollection.search ref, year, opts
@@ -20,15 +25,18 @@ module RelatonNist
         raise RelatonBib::RequestError, e.message
       end
 
+      #
+      # Get NIST document by reference
+      #
       # @param code [String] the NIST standard Code to look up (e..g "8200")
       # @param year [String] the year the standard was published (optional)
       #
       # @param opts [Hash] options
-      # @option opts [TrueClass, FalseClass] :all_parts restricted to all parts
+      # @option opts [Boolean] :all_parts restricted to all parts
       #   if all-parts reference is required
-      # @option opts [TrueClass, FalseClass] :bibdata
       #
-      # @return [String] Relaton XML serialisation of reference
+      # @return [RelatonNist::NistBibliographicItem, nil] bibliographic item
+      #
       def get(code, year = nil, opts = {}) # rubocop:disable Metrics/AbcSize, Metrics/MethodLength, Metrics/CyclomaticComplexity, Metrics/PerceivedComplexity
         return fetch_ref_err(code, year, []) if code.match?(/\sEP$/)
 
@@ -61,6 +69,18 @@ module RelatonNist
 
       private
 
+      #
+      # Get NIST document by reference
+      #
+      # @param [String] code reference
+      # @param [String] year year
+      # @param [Hash] opts options
+      # @option opts [Date] :issued_date issued date
+      # @option opts [Date] :updated_date updated date
+      # @option opts [String] :stage stage
+      #
+      # @return [RelatonNist::NistBibliographicItem, nil] bibliographic item
+      #
       def nistbib_get(code, year, opts)
         result = nistbib_search_filter(code, year, opts) || (return nil)
         ret = nistbib_results_filter(result, year, opts)
@@ -72,6 +92,7 @@ module RelatonNist
         end
       end
 
+      #
       # Sort through the results from RelatonNist, fetching them three at a time,
       # and return the first result that matches the code,
       # matches the year (if provided), and which # has a title (amendments do not).
@@ -80,11 +101,12 @@ module RelatonNist
       # If no match, returns any years which caused mismatch, for error reporting
       #
       # @param opts [Hash] options
-      # @option opts [Time] :issued_date
-      # @option opts [Time] :issued_date
-      # @option opts [String] :stage
+      # @option opts [Date] :issued_date issued date
+      # @option opts [Date] :issued_date issued date
+      # @option opts [String] :stage stage
       #
-      # @return [Hash]
+      # @return [Hash] result
+      #
       def nistbib_results_filter(result, year, opts) # rubocop:disable Metrics/AbcSize, Metrics/MethodLength, Metrics/CyclomaticComplexity, Metrics/PerceivedComplexity
         missed_years = []
         iter = /\w+(?=PD)|(?<=PD-)\w+/.match(opts[:stage])&.to_s
@@ -119,9 +141,14 @@ module RelatonNist
         { years: missed_years }
       end
 
-      # @param hits [RelatonNist::HitCollection]
-      # @param threads [Integer]
-      # @return [Array<RelatonNist::NistBibliographicItem>]
+      #
+      # Fetch pages for all the hits in parallel
+      #
+      # @param hits [RelatonNist::HitCollection] hits
+      # @param threads [Integer] number of threads
+      #
+      # @return [Array<RelatonNist::NistBibliographicItem>] bibliographic items
+      #
       def fetch_pages(hits, threads)
         workers = RelatonBib::WorkersPool.new threads
         workers.worker { |w| { i: w[:i], hit: w[:hit].fetch } }
@@ -130,16 +157,31 @@ module RelatonNist
         workers.result.sort_by { |a| a[:i] }.map { |x| x[:hit] }
       end
 
-      # @param code [String]
-      # @param year [String, nil]
-      # @param opts [Hash]
-      # @return [RelatonNist::HitCollection]
+      #
+      # Get search results and filter them by code and year
+      #
+      # @param code [String] reference
+      # @param year [String, nil] year
+      # @param opts [Hash] options
+      # @option opts [String] :stage stage
+      #
+      # @return [RelatonNist::HitCollection] hits collection
+      #
       def nistbib_search_filter(code, year, opts)
         warn "[relaton-nist] (\"#{code}\") fetching..."
         result = search(code, year, opts)
         result.search_filter
       end
 
+      #
+      # Outputs warning message if no match found
+      #
+      # @param [String] code reference
+      # @param [String, nil] year year
+      # @param [Array<String>] missed_years missed years
+      #
+      # @return [nil] nil
+      #
       def fetch_ref_err(code, year, missed_years) # rubocop:disable Metrics/MethodLength
         id = year ? "#{code}:#{year}" : code
         warn "[relaton-nist] WARNING: no match found online for #{id}. " \
