@@ -29,7 +29,7 @@ http_interactions:
       Content-Type:
       - text/plain; charset=utf-8
       Etag:
-      - W/"7927479880eecf2f09256e488039c1029b99c502deb9bf1f8211586751b95db2"
+      - W/"1d99d37525f857a3b1fbb91523769d93380607d94d0f97d9de5e284abbdfd0ba"
       Strict-Transport-Security:
       - max-age=31536000
       X-Content-Type-Options:
@@ -39,29 +39,29 @@ http_interactions:
       X-Xss-Protection:
       - 1; mode=block
       X-Github-Request-Id:
-      - 99C6:D2E2:1DC3AC:25C430:62DBEC0E
+      - C762:0817:226D05:268CAC:6300BA2E
       Accept-Ranges:
       - bytes
       Date:
-      - Sat, 23 Jul 2022 12:39:42 GMT
+      - Sat, 20 Aug 2022 10:40:46 GMT
       Via:
       - 1.1 varnish
       X-Served-By:
-      - cache-sof1510077-SOF
+      - cache-vie6373-VIE
       X-Cache:
       - MISS
       X-Cache-Hits:
       - '0'
       X-Timer:
-      - S1658579983.685491,VS0,VE194
+      - S1660992046.006375,VS0,VE172
       Vary:
       - Authorization,Accept-Encoding,Origin
       Access-Control-Allow-Origin:
       - "*"
       X-Fastly-Request-Id:
-      - a61d4393d38b7860b3550c2e6f07199e6fd5a4d7
+      - 0c928ae65d2cfd8323e5624afaf40f42a8c5f338
       Expires:
-      - Sat, 23 Jul 2022 12:44:42 GMT
+      - Sat, 20 Aug 2022 10:45:46 GMT
       Source-Age:
       - '0'
     body:
@@ -127,7 +127,7 @@ http_interactions:
           number: 5667v4
         place:
         - Gaithersburg, MD
-        fetched: '2022-07-22'
+        fetched: '2022-08-19'
         doctype: standard
-  recorded_at: Sat, 23 Jul 2022 12:39:42 GMT
+  recorded_at: Sat, 20 Aug 2022 10:40:46 GMT
 recorded_with: VCR 6.1.0

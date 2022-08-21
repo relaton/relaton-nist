@@ -157,13 +157,13 @@ module RelatonNist
     # @return [RelatonBib::FullName] full name object
     #
     def fullname(person, doc)
-      forename, initial = forename_initial(person, doc)
+      forename, initials = forename_initial(person, doc)
       surname = localized_string person.at("surname").text, doc
       ident = person.xpath("ORCID").map do |id|
         RelatonBib::PersonIdentifier.new "orcid", id.text
       end
       RelatonBib::FullName.new(surname: surname, forename: forename,
-                               initial: initial, identifier: ident)
+                               initials: initials, identifier: ident)
     end
 
     #
@@ -174,17 +174,33 @@ module RelatonNist
     #
     # @return [Array<Array<RelatonBib::LocalizedString>>] forename and initials
     #
-    def forename_initial(person, doc)
-      forename = []
-      initial = []
+    def forename_initial(person, doc) # rubocop:disable Metrics/MethodLength
+      fnames = []
       fname = person.at("given_name")&.text
       if fname
         if /^(?<inits>(?:\w[.\s]+|[A-Z]{1,2}$)+)$/ =~ fname
-          inits.split(/[.\s]*/).each { |i| initial << localized_string(i, doc) }
-        else forename << localized_string(fname, doc)
+          ints = inits.split(/[.\s]*/)
+          fnames << forename(doc, fname, ints.shift)
+          ints.each { |i| fnames << forename(doc, nil, i) }
+        else fnames << forename(doc, fname)
         end
       end
-      [forename, initial]
+      [fnames, localized_string(inits, doc)]
+    end
+
+    #
+    # Create forename object
+    #
+    # @param [Nokogiri::XML::Element] doc document element
+    # @param [String, nil] cnt forename content
+    # @param [String, nil] init initial content
+    #
+    # @return [RelatonBib::Forename] forename object
+    #
+    def forename(doc, cnt, init = nil)
+      RelatonBib::Forename.new(
+        content: cnt, language: doc["language"], script: "Latn", initial: init,
+      )
     end
 
     #

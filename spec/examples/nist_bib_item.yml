@@ -52,17 +52,19 @@ abstract:
 contributor:
 - organization:
     name:
-    - National Institute of Standards and Technology
+    - content: National Institute of Standards and Technology
     url: www.nist.gov
-    abbreviation: NIST
+    abbreviation:
+      content: NIST
   role:
   - publisher
 
 copyright:
 - owner:
   - name:
-    - National Institute of Standards and Technology
-    abbreviation: NIST
+    - content: National Institute of Standards and Technology
+    abbreviation:
+      content: NIST
     url: www.nist.gov
   from: "2018"
 
@@ -106,10 +108,10 @@ series:
   number: 8011 Vol. 3
 
 keyword:
-  - actual state
-  - assessment
-  - authorization boundary
-  - automation
+  - content: actual state
+  - content: assessment
+  - content: authorization boundary
+  - content: automation
 
 commentperiod:
   from: "2018-12-17"
