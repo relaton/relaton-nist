@@ -93,6 +93,25 @@ RSpec.describe "NIST documents fetcher" do
       expect(contribs[1][:entity].name.surname.content).to eq "Fitzgerald-McKay"
     end
 
+    it "don't create initials with empty content" do
+      person = double "person"
+      node = double "node", text: ""
+      expect(person).to receive(:at).with("given_name").and_return node
+      doc = { language: "en" }
+      fns, inits = subject.forename_initial person, doc
+      expect(fns).to be_empty
+      expect(inits).to be_nil
+    end
+
+    it "don't create initials with nil content" do
+      person = double "person"
+      expect(person).to receive(:at).with("given_name").and_return nil
+      doc = { language: "en" }
+      fns, inits = subject.forename_initial person, doc
+      expect(fns).to be_empty
+      expect(inits).to be_nil
+    end
+
     it "create publisher organization" do
       doc = Nokogiri::XML <<~XML
         <report-paper_metadata>

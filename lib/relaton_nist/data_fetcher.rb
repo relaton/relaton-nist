@@ -174,7 +174,7 @@ module RelatonNist
     #
     # @return [Array<Array<RelatonBib::LocalizedString>>] forename and initials
     #
-    def forename_initial(person, doc) # rubocop:disable Metrics/MethodLength
+    def forename_initial(person, doc) # rubocop:disable Metrics/MethodLength, Metrics/AbcSize, Metrics/CyclomaticComplexity, Metrics/PerceivedComplexity
       fnames = []
       fname = person.at("given_name")&.text
       if fname
@@ -182,10 +182,13 @@ module RelatonNist
           ints = inits.split(/[.\s]*/)
           fnames << forename(doc, fname, ints.shift)
           ints.each { |i| fnames << forename(doc, nil, i) }
-        else fnames << forename(doc, fname)
+        else
+          fn = forename(doc, fname)
+          fnames << fn if fn
         end
       end
-      [fnames, localized_string(inits, doc)]
+      initials = localized_string inits, doc if not(inits.nil? || inits.empty?)
+      [fnames, initials]
     end
 
     #
@@ -198,6 +201,8 @@ module RelatonNist
     # @return [RelatonBib::Forename] forename object
     #
     def forename(doc, cnt, init = nil)
+      return if (cnt.nil? || cnt.empty?) && (init.nil? || init.empty?)
+
       RelatonBib::Forename.new(
         content: cnt, language: doc["language"], script: "Latn", initial: init,
       )
