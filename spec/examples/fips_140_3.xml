@@ -1,9 +1,10 @@
-<bibdata type="standard">
-  <fetched>2022-02-07</fetched>
+<bibdata type="standard" schema-version="v1.2.1">
+  <fetched>2022-11-29</fetched>
   <title format="text/plain" language="en" script="Latn">Security Requirements for Cryptographic Modules</title>
   <uri type="src">https://csrc.nist.gov/publications/detail/fips/140/3/final</uri>
   <uri type="doi">https://doi.org/10.6028/NIST.FIPS.140-3</uri>
   <docidentifier type="NIST" primary="true">FIPS 140-3</docidentifier>
+  <docidentifier type="DOI">NIST.FIPS.140-3</docidentifier>
   <date type="published">
     <on>2019-03</on>
   </date>
@@ -49,7 +50,7 @@
   <keyword>Federal Information Processing Standard (FIPS)</keyword>
   <keyword>ISO/IEC 19790:2012</keyword>
   <keyword>ISO/IEC 24759:2014</keyword>
-  <ext>
+  <ext schema-version="v1.0.0">
     <doctype>standard</doctype>
   </ext>
 </bibdata>

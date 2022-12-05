@@ -1,9 +1,10 @@
-<bibdata type="standard">
-  <fetched>2022-02-07</fetched>
+<bibdata type="standard" schema-version="v1.2.1">
+  <fetched>2022-11-29</fetched>
   <title format="text/plain" language="en" script="Latn">Guide to Attribute Based Access Control (ABAC) Definition and Considerations</title>
   <uri type="src">https://csrc.nist.gov/publications/detail/sp/800-162/final</uri>
   <uri type="doi">https://doi.org/10.6028/NIST.SP.800-162</uri>
   <docidentifier type="NIST" primary="true">SP 800-162</docidentifier>
+  <docidentifier type="DOI">NIST.SP.800-162</docidentifier>
   <date type="published">
     <on>2019-08</on>
   </date>
@@ -141,7 +142,7 @@
   <keyword>attribute based access control (ABAC)</keyword>
   <keyword>authorization</keyword>
   <keyword>privilege</keyword>
-  <ext>
+  <ext schema-version="v1.0.0">
     <doctype>standard</doctype>
   </ext>
 </bibdata>

@@ -63,6 +63,15 @@ module RelatonNist
       super
     end
 
+    #
+    # Fetch flavor schema version
+    #
+    # @return [String] schema version
+    #
+    def ext_schema
+      @ext_schema ||= schema_versions["relaton-model-nist"]
+    end
+
     # @param hash [Hash]
     # @return [RelatonNist::GbBibliographicItem]
     def self.from_hash(hash)
@@ -78,16 +87,18 @@ module RelatonNist
     def to_xml(**opts)
       super date_format: :short, **opts do |b|
         if opts[:bibdata]
-          b.ext do
+          ext = b.ext do
             b.doctype doctype if doctype
             commentperiod&.to_xml b
           end
+          ext["schema-version"] = ext_schema unless opts[:embedded]
         end
       end
     end
 
+    # @param embedded [Boolean] embedded in another document
     # @return [Hash]
-    def to_hash
+    def to_hash(embedded: false)
       hash = super
       # hash["keyword"] = single_element_array(keyword) if keyword&.any?
       hash["commentperiod"] = commentperiod.to_hash if commentperiod

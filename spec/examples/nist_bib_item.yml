@@ -1,5 +1,7 @@
 id: NISTIR 8011 Vol. 3
 
+schema-version: v1.2.1
+
 fetched: '2022-06-22'
 
 title:
@@ -57,7 +59,7 @@ contributor:
     abbreviation:
       content: NIST
   role:
-  - publisher
+  - type: publisher
 
 copyright:
 - owner:
@@ -117,3 +119,6 @@ commentperiod:
   from: "2018-12-17"
   to: "2019-03-15"
   extended: "2019-05-15"
+
+ext:
+  schema-version: v1.0.0

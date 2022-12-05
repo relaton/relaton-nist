@@ -1,5 +1,5 @@
-<bibdata type="standard">
-  <fetched>2022-02-07</fetched>
+<bibdata type="standard" schema-version="v1.2.1">
+  <fetched>2022-11-27</fetched>
   <title format="text/plain" language="en" script="Latn">Guide for Developing Performance Metrics for Information Security</title>
   <uri type="src">https://csrc.nist.gov/publications/detail/sp/800-80/archive/2006-05-04</uri>
   <docidentifier type="NIST" primary="true">SP 800-80 (Retired Draft)</docidentifier>
@@ -108,7 +108,7 @@
   <keyword>information security program</keyword>
   <keyword>performance metrics</keyword>
   <keyword>security metrics</keyword>
-  <ext>
+  <ext schema-version="v1.0.0">
     <doctype>standard</doctype>
     <commentperiod>
       <from>2006-05-04</from>

@@ -1,5 +1,5 @@
 RSpec.describe RelatonNist::HitCollection do
-  subject { RelatonNist::HitCollection.new "REF"}
+  subject { RelatonNist::HitCollection.new "REF" }
 
   context "update json file" do
     it "when ctime is nil" do
@@ -28,15 +28,15 @@ RSpec.describe RelatonNist::HitCollection do
     io = double "OpenURI IO", status: ["500"]
     error = OpenURI::HTTPError.new("", io)
     expect(OpenURI).to receive(:open_uri).and_raise error
-    expect { subject.search({}) }.to raise_error error
+    expect { subject.search }.to raise_error error
   end
 
   it "sort hits" do
     expect(subject).to receive(:from_json).and_return [
-      RelatonNist::Hit.new({ status: "withdrawn"}, subject),
-      RelatonNist::Hit.new({ status: "draft"}, subject),
+      RelatonNist::Hit.new({ status: "withdrawn" }, subject),
+      RelatonNist::Hit.new({ status: "draft" }, subject),
     ]
-    subj = subject.search({})
+    subj = subject.search
     expect(subj).to be subject
   end
 end

@@ -1,5 +1,5 @@
-<bibdata type="standard">
-  <fetched>2022-07-15</fetched>
+<bibdata type="standard" schema-version="v1.2.1">
+  <fetched>2022-11-27</fetched>
   <title format="text/plain" language="en" script="Latn">Automation support for security control assessments. volume 1: overview</title>
   <uri type="doi">https://doi.org/10.6028/NIST.IR.8011-1</uri>
   <uri type="pdf">https://nvlpubs.nist.gov/nistpubs/ir/2017/NIST.IR.8011-1.pdf</uri>
@@ -69,7 +69,7 @@
     <number>8011-1</number>
   </series>
   <place>Gaithersburg, MD</place>
-  <ext>
+  <ext schema-version="v1.0.0">
     <doctype>standard</doctype>
   </ext>
 </bibdata>

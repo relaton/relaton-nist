@@ -32,7 +32,7 @@ module RelatonNist
         json = hit_data[:json]
         {
           link: fetch_link(json),
-          docid: fetch_docid(json["docidentifier"]),
+          docid: fetch_docid(hit_data),
           date: fetch_dates(json, hit_data[:release_date]),
           contributor: fetch_contributors(json),
           edition: fetch_edition(json),
@@ -50,13 +50,17 @@ module RelatonNist
       # rubocop:enable Metrics/AbcSize, Metrics/MethodLength
 
       # Fetch docid.
-      # @param docid [String]
+      # @param hit [RelatonHist::Hit]
       # @return [Array<RelatonBib::DocumentIdentifier>]
-      def fetch_docid(docid)
-        item_ref = docid
+      def fetch_docid(hit)
+        # item_ref = docid
+        # json["docidentifier"]
         # item_ref ||= "?"
-        item_ref.sub!(/\sAddendum$/, "-Add")
-        [RelatonBib::DocumentIdentifier.new(id: item_ref, type: "NIST", primary: true)]
+        # item_ref.sub!(/\sAddendum$/, "-Add")
+        ids = [RelatonBib::DocumentIdentifier.new(id: hit[:code], type: "NIST", primary: true)]
+        doi = hit[:json]["doi"]&.split("/")&.last
+        ids << RelatonBib::DocumentIdentifier.new(id: doi, type: "DOI") if doi
+        ids
       end
 
       # Fetch status.

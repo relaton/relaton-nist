@@ -16,27 +16,37 @@ module RelatonNist
     GHNISTDATA = "https://raw.githubusercontent.com/relaton/relaton-data-nist/main/data/"
 
     #
+    # @param [String] text reference
+    # @param [String, nil] year reference
+    # @param [Hash] opts options
+    # @option opts [String] :stage stage of document
+    #
+    def initialize(text, year = nil, opts = {})
+      super text, year
+      @opts = opts
+    end
+
+    #
     # Create hits collection instance and search hits
     #
+    # @param [String] text reference
+    # @param [String, nil] year reference
     # @param [Hash] opts options
     # @option opts [String] :stage stage of document
     #
     # @return [RelatonNist::HitCollection] hits collection
     #
     def self.search(text, year = nil, opts = {})
-      new(text, year).search(opts)
+      new(text, year, opts).search
     end
 
     #
     # Search nits in JSON file or GitHub repo
     #
-    # @param [Hash] opts options
-    # @option opts [String] :stage stage of document
-    #
     # @return [RelatonNist::HitCollection] hits collection
     #
-    def search(opts)
-      @array = from_json(**opts)
+    def search
+      @array = from_json
       @array = from_ga unless @array.any?
       sort_hits!
     end
@@ -46,32 +56,56 @@ module RelatonNist
     #
     # @return [Array<RelatonNist::Hit>] hits
     #
-    def search_filter # rubocop:disable Metrics/AbcSize,Metrics/CyclomaticComplexity,Metrics/MethodLength,Metrics/PerceivedComplexity
+    def search_filter # rubocop:disable Metrics/AbcSize,Metrics/CyclomaticComplexity,Metrics/PerceivedComplexity,Metrics/MethodLength
       @array.select do |item|
-        %r{
-          ^(?:(?:NIST|NBS)\s?)?
-          (?:(?<series>(?:SP|FIPS|IR|ITL\sBulletin|White\sPaper))\s)?
-          (?<code>[0-9-]{3,}[A-Z]?)
-          (?<prt1>pt\d+)?
-          (?<vol1>v\d+)?
-          (?<ver1>ver[\d.]+)?
-          (?<rev1>r\d+)?
-          (?:\s(?<prt2>Part\s\d+))?
-          (?:\s(?<vol2>Vol\.\s\d+))?
-          (?:\s(?<ver2>(?:Ver\.|Version)\s[\d.]+))?
-          (?:\s(?<rev2>Rev\.\s\d+))?
-          (?:\s(?<add>Add)endum)?
-        }x =~ item.hit[:code]
-        (refparts[:code] && [series, item.hit[:series]].include?(refparts[:series]) && refparts[:code] == code &&
-          long_to_short(refparts[:prt1], refparts[:prt2]) == long_to_short(prt1, prt2) &&
-          long_to_short(refparts[:vol1], refparts[:vol2]) == long_to_short(vol1, vol2) &&
-          long_to_short(refparts[:ver1], refparts[:ver2]) == long_to_short(ver1, ver2) &&
-          long_to_short(refparts[:rev1], refparts[:rev2]) == long_to_short(rev1, rev2) &&
-          long_to_short(refparts[:add1], refparts[:add2]) == add) || item.hit[:title]&.include?(text.sub(/^NIST\s/, ""))
+        parts = doi_parts(item.hit[:json]) || code_parts(item.hit[:code])
+        (refparts[:code] && [parts[:series], item.hit[:series]].include?(refparts[:series]) &&
+          refparts[:code].casecmp(parts[:code].upcase).zero? &&
+          (!refparts[:prt] || refparts[:prt] == parts[:prt]) &&
+          (!refparts[:vol] || refparts[:vol] == parts[:vol]) &&
+          (!refparts[:ver] || refparts[:ver] == parts[:ver]) &&
+          (!refparts[:rev] || refparts[:rev] == parts[:rev]) &&
+          refparts[:draft] == parts[:draft] && refparts[:add] == parts[:add]) ||
+          item.hit[:title]&.include?(text.sub(/^NIST\s/, ""))
       end
     end
 
     private
+
+    def code_parts(code) # rubocop:disable Metrics/MethodLength
+      {
+        prefix: match(/^(?:NIST|NBS)\s?/, code),
+        series: match(/(?<val>(?:SP|FIPS|IR|ITL\sBulletin|White\sPaper))\s/, code),
+        code: match(/(?<val>[0-9-]{3,}[A-Z]?)/, code),
+        prt: match(/(?:pt|\sPart\s)(?<val>\d+)/, code),
+        vol: match(/(?:v|\sVol\.\s)(?<val>\d+)/, code),
+        ver: match(/(?:ver|\sVer\.\s|Version\s)(?<val>[\d.]+)/, code),
+        rev: match(/(?:r|Rev\.\s)(?<val>\d+)/, code),
+        # (?:\s(?<prt2>Part\s\d+))?
+        # (?:\s(?<vol2>Vol\.\s\d+))?
+        # (?:\s(?<ver2>(?:Ver\.|Version)\s[\d.]+))?
+        # (?:\s(?<rev2>Rev\.\s\d+))?
+        add: match(/\sAdd(?:endum)?(?<val>\d*)/, code),
+        draft: !match(/\((?:Retired\s)?Draft\)/, code).nil?,
+      }
+    end
+
+    def doi_parts(json) # rubocop:disable Metrics/MethodLength,Metrics/AbcSize
+      return unless json && json["doi"]
+
+      id = json["doi"].split("/").last
+      {
+        prefix: match(/^(?:NIST|NBS)\./, id),
+        series: match(/(?:SP|FIPS|IR|ITL\sBulletin|White\sPaper)(?=\.)/, id),
+        code: match(/(?<=\.)\d{3,}(?:-\d+)*(?:[[:alpha:]](?!\d|raft|er|t?\d))?/, id),
+        prt: match(/pt?(?<val>\d+)/, id),
+        vol: match(/v(?<val>\d+)(?!\.\d)/, id),
+        ver: match(/v(?:er)?(?<val>[\d.]+)/, id),
+        rev: match(/r(?<val>\d+)/, id),
+        add: match(/-Add(?<val>\d*)/, id),
+        draft: !match(/-draft/, id).nil?,
+      }
+    end
 
     #
     # Parse reference parts
@@ -83,16 +117,17 @@ module RelatonNist
         perfix: match(/^(NIST|NBS)\s?/, text),
         series: match(/(SP|FIPS|IR|ITL\sBulletin|White\sPaper)(?=\.|\s)/, text),
         code: match(/(?<=\.|\s)[0-9-]{3,}[A-Z]?/, text),
-        prt1: match(/(?<=(\.))?pt(?(1)-)[A-Z\d]+/, text),
-        vol1: match(/(?<=(\.))?v(?(1)-)\d+/, text),
-        ver1: match(/(?<=(\.))?ver(?(1)[-\d]|[.\d])+/, text)&.gsub(/-/, "."),
-        rev1: match(/(?<=[^a-z])(?<=(\.))?r(?(1)-)\d+/, text),
-        add1: match(/(?<=(\.))?add(?(1)-)\d+/, text),
-        prt2: match(/(?<=\s)Part\s[A-Z\d]+/, text),
-        vol2: match(/(?<=\s)Vol\.\s\d+/, text),
-        ver2: match(/(?<=\s)Ver\.\s\d+/, text),
-        rev2: match(/(?<=\s)Rev\.\s\d+/, text),
-        add2: match(/(?<=\/)Add/, text),
+        prt: match(/(?:(?<dl>\.)?pt(?(<dl>)-)|\sPart\s)(?<val>[A-Z\d]+)/, text),
+        vol: match(/(?:(?<dl>\.)?v(?(<dl>)-)|\sVol\.\s)(?<val>\d+)/, text),
+        ver: match(/(?:(?<dl>\.)?\s?ver|\sVer\.\s)(?<val>\d(?(<dl>)[-\d]|[.\d])*)/, text)&.gsub(/-/, "."),
+        rev: match(/(?:(?:(?<dl>\.)|[^a-z])r|\sRev\.\s)(?(<dl>)-)(?<val>\d+)/, text),
+        add: match(/(?:(?<dl>\.)?add|\/Add)(?(<dl>)-)(?<val>\d*)/, text),
+        draft: !(match(/\((?:Draft|PD)\)/, text).nil? && @opts[:stage].nil?),
+        # prt2: match(/(?<=\s)Part\s[A-Z\d]+/, text),
+        # vol2: match(/(?<=\s)Vol\.\s\d+/, text),
+        # ver2: match(/(?<=\s)Ver\.\s\d+/, text),
+        # rev2: match(/(?<=\s)Rev\.\s\d+/, text),
+        # add2: match(/(?<=\/)Add/, text),
       }
     end
 
@@ -105,7 +140,10 @@ module RelatonNist
     # @return [String, nil] matched string
     #
     def match(regex, code)
-      regex.match(code)&.to_s
+      m = regex.match(code)
+      return unless m
+
+      m.named_captures["val"] || m.to_s
     end
 
     #
@@ -116,8 +154,9 @@ module RelatonNist
     def full_ref # rubocop:disable Metrics/AbcSize
       @full_ref ||= begin
         ref = "#{refparts[:perfix]}#{refparts[:series]} #{refparts[:code]}"
-        ref += long_to_short(refparts[:prt1], refparts[:prt2]).to_s
-        ref += long_to_short(refparts[:vol1], refparts[:vol2]).to_s
+        ref += "pt#{refparts[:prt]}" if refparts[:prt] # long_to_short(refparts, "prt").to_s
+        ref += "ver#{refparts[:ver]}" if refparts[:ver] # long_to_short(refparts, "vol").to_s
+        ref += "v#{refparts[:vol]}" if refparts[:vol]
         ref
       end
     end
@@ -127,17 +166,21 @@ module RelatonNist
     # Converts "pt-1" to "pt1" and "Part 1" to "pt1", "v-1" to "v1" and "Vol. 1" to "v1",
     #   "ver-1" to "ver1" and "Ver. 1" to "ver1", "r-1" to "r1" and "Rev. 1" to "r1".
     #
-    # @param short [String]
-    # @param long [String]
+    # @param parts [MatchData] parts of ID
+    # @param name [String] name of ID part
     #
     # @return [String, nil]
     #
-    def long_to_short(short, long)
-      return short.sub(/-/, "") if short
-      return unless long
+    # def long_to_short(parts, name)
+    #   short = parts["#{name}1".to_sym]
+    #   return short.sub(/-/, "") if short
 
-      long.sub(/Part\s/, "pt").sub(/Vol\.\s/, "v").sub(/Rev\.\s/, "r").sub(/(Ver\.|Version)\s/, "ver")
-    end
+    #   long_name = "#{name}2"
+    #   long = parts[long_name.to_sym]
+    #   return unless long
+
+    #   long.sub(/Part\s/, "pt").sub(/Vol\.\s/, "v").sub(/Rev\.\s/, "r").sub(/(Ver\.|Version)\s/, "ver")
+    # end
 
     #
     # Sort hits by sort_value and release date
@@ -167,6 +210,7 @@ module RelatonNist
       fn = ref.gsub(%r{[/\s:.]}, "_").upcase
       yaml = OpenURI.open_uri "#{GHNISTDATA}#{fn}.yaml"
       hash = YAML.safe_load yaml
+      hash["fetched"] = Date.today.to_s
       bib = RelatonNist::NistBibliographicItem.from_hash hash
       hit = Hit.new({ code: text }, self)
       hit.fetch = bib
@@ -180,38 +224,47 @@ module RelatonNist
     #
     # Fetches data form json
     #
-    # @param opts [Hash] options
-    # @option opts [String] :stage stage of document
-    #
     # @return [Array<RelatonNist::Hit>] hits
     #
-    def from_json(**opts)
-      select_data(**opts).map do |h|
+    def from_json
+      select_data.map do |h|
         /(?<series>(?<=-)\w+$)/ =~ h["series"]
         title = [h["title-main"], h["title-sub"]].compact.join " - "
         release_date = RelatonBib.parse_date h["published-date"], false
-        Hit.new({ code: h["docidentifier"], series: series.upcase, title: title,
+        Hit.new({ code: docidentifier(h), series: series.upcase, title: title,
                   url: h["uri"], status: h["status"],
                   release_date: release_date, json: h }, self)
       end
     end
 
+    def docidentifier(json) # rubocop:disable Metrics/AbcSize, Metrics/CyclomaticComplexity, Metrics/PerceivedComplexity, Metrics/MethodLength
+      parts = doi_parts json
+      return json["docidentifier"] unless parts
+
+      id = parts[:code]
+      id = "#{parts[:series]} #{id}" if parts[:series]
+      id += " Part #{parts[:prt]}" if parts[:prt]
+      id += " Vol. #{parts[:vol]}" if parts[:vol]
+      id += " Ver. #{parts[:ver]}" if parts[:ver]
+      id += " Rev. #{parts[:rev]}" if parts[:rev]
+      id += "-Add" if parts[:add]
+      id += " (Draft)" if parts[:draft] || @opts[:stage]
+      id
+    end
+
     #
     # Select data from json
     #
-    # @param opts [Hash] options
-    # @option opts [String] :stage stage of document
-    #
     # @return [Array<Hash>] selected data
     #
-    def select_data(**opts) # rubocop:disable Metrics/AbcSize, Metrics/CyclomaticComplexity, Metrics/MethodLength,Metrics/PerceivedComplexity
+    def select_data # rubocop:disable Metrics/AbcSize, Metrics/CyclomaticComplexity, Metrics/MethodLength,Metrics/PerceivedComplexity
       ref = "#{refparts[:series]} #{refparts[:code]}"
       d = Date.strptime year, "%Y" if year
       statuses = %w[draft-public draft-prelim]
       data.select do |doc|
         next unless match_year?(doc, d)
 
-        if /PD/.match? opts[:stage]
+        if /PD/.match? @opts[:stage]
           next unless statuses.include? doc["status"]
         else
           next unless doc["status"] == "final"

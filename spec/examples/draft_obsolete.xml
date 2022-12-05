@@ -1,9 +1,10 @@
-<bibdata type="standard">
-  <fetched>2022-02-07</fetched>
+<bibdata type="standard" schema-version="v1.2.1">
+  <fetched>2022-11-29</fetched>
   <title format="text/plain" language="en" script="Latn">Resilient Interdomain Traffic Exchange - BGP Security and DDoS Mitigation</title>
   <uri type="src">https://csrc.nist.gov/publications/detail/sp/800-189/archive/2019-10-17</uri>
   <uri type="doi">https://doi.org/10.6028/NIST.SP.800-189-draft2</uri>
   <docidentifier type="NIST" primary="true">SP 800-189 (Draft)</docidentifier>
+  <docidentifier type="DOI">NIST.SP.800-189-draft2</docidentifier>
   <date type="published">
     <on>2019-10</on>
   </date>
@@ -75,7 +76,7 @@
   <keyword>unicast Reverse Path Forwarding (uRPF)</keyword>
   <keyword>remotely triggered black hole (RTBH) filtering</keyword>
   <keyword>flow specification (Flowspec)</keyword>
-  <ext>
+  <ext schema-version="v1.0.0">
     <doctype>standard</doctype>
     <commentperiod>
       <from>2019-10-17</from>

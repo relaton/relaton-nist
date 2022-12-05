@@ -32,7 +32,7 @@ RSpec.describe RelatonNist do
         File.write file_path, xml, encoding: "UTF-8" unless File.exist? file_path
         expect(xml).to be_equivalent_to File.open(file_path, "r:UTF-8", &:read)
           .gsub(/(?<=<fetched>)\d{4}-\d{2}-\d{2}/, Date.today.to_s)
-        schema = Jing.new "spec/examples/isobib.rng"
+        schema = Jing.new "grammars/relaton-nist-compile.rng"
         errors = schema.validate file_path
         expect(errors).to eq []
       end
@@ -96,7 +96,7 @@ RSpec.describe RelatonNist do
         File.write file_path, xml, encoding: "UTF-8" unless File.exist? file_path
         expect(xml).to be_equivalent_to File.open(file_path, "r:UTF-8", &:read)
           .gsub(/(?<=<fetched>)\d{4}-\d{2}-\d{2}/, Date.today.to_s)
-        schema = Jing.new "spec/examples/isobib.rng"
+        schema = Jing.new "grammars/relaton-nist-compile.rng"
         errors = schema.validate file_path
         expect(errors).to eq []
       end
@@ -126,7 +126,7 @@ RSpec.describe RelatonNist do
         expect(result).to be_equivalent_to File.open(
           file_path, "r:UTF-8", &:read
         ).gsub(/(?<=<fetched>)\d{4}-\d{2}-\d{2}/, Date.today.to_s)
-        schema = Jing.new "spec/examples/isobib.rng"
+        schema = Jing.new "grammars/relaton-nist-compile.rng"
         errors = schema.validate file_path
         expect(errors).to eq []
       end
@@ -134,14 +134,13 @@ RSpec.describe RelatonNist do
 
     it "RETIRED DRAFT" do
       VCR.use_cassette "json_data" do
-        result = RelatonNist::NistBibliography.get("SP 800-80(PD)", nil, {})
-          .to_xml bibdata: true
+        result = RelatonNist::NistBibliography.get("SP 800-80(PD)", nil, {}).to_xml bibdata: true
         file_path = "spec/examples/retired_draft.xml"
         File.write file_path, result, encoding: "UTF-8" unless File.exist? file_path
         expect(result).to be_equivalent_to File.open(
           file_path, "r:UTF-8", &:read
         ).gsub(/(?<=<fetched>)\d{4}-\d{2}-\d{2}/, Date.today.to_s)
-        schema = Jing.new "spec/examples/isobib.rng"
+        schema = Jing.new "grammars/relaton-nist-compile.rng"
         errors = schema.validate file_path
         expect(errors).to eq []
       end
@@ -153,10 +152,9 @@ RSpec.describe RelatonNist do
           .to_xml bibdata: true
         file_path = "spec/examples/draft_obsolete.xml"
         File.write file_path, result, encoding: "UTF-8" unless File.exist? file_path
-        expect(result).to be_equivalent_to File.open(
-          file_path, "r:UTF-8", &:read
-        ).gsub(/(?<=<fetched>)\d{4}-\d{2}-\d{2}/, Date.today.to_s)
-        schema = Jing.new "spec/examples/isobib.rng"
+        expect(result).to be_equivalent_to File.open(file_path, "r:UTF-8", &:read)
+          .gsub(/(?<=<fetched>)\d{4}-\d{2}-\d{2}/, Date.today.to_s)
+        schema = Jing.new "grammars/relaton-nist-compile.rng"
         errors = schema.validate file_path
         expect(errors).to eq []
       end
@@ -172,7 +170,7 @@ RSpec.describe RelatonNist do
           File.open(file_path, "r:UTF-8", &:read)
             .gsub(/(?<=<fetched>)\d{4}-\d{2}-\d{2}/, Date.today.to_s),
         )
-        schema = Jing.new "spec/examples/isobib.rng"
+        schema = Jing.new "grammars/relaton-nist-compile.rng"
         errors = schema.validate file_path
         expect(errors).to eq []
       end
@@ -188,7 +186,7 @@ RSpec.describe RelatonNist do
           File.open(file_path, "r:UTF-8", &:read)
             .gsub(/(?<=<fetched>)\d{4}-\d{2}-\d{2}/, Date.today.to_s),
         )
-        schema = Jing.new "spec/examples/isobib.rng"
+        schema = Jing.new "grammars/relaton-nist-compile.rng"
         errors = schema.validate file_path
         expect(errors).to eq []
       end
@@ -235,14 +233,14 @@ RSpec.describe RelatonNist do
       it "short notation" do
         VCR.use_cassette "json_data" do
           bib = RelatonNist::NistBibliography.get "SP 800-45ver2"
-          expect(bib.docidentifier[0].id).to eq "SP 800-45 Version 2"
+          expect(bib.docidentifier[0].id).to eq "SP 800-45 Ver. 2 Rev. 2"
         end
       end
 
       it "long notation" do
         VCR.use_cassette "json_data" do
           bib = RelatonNist::NistBibliography.get "SP 800-45 Ver. 2"
-          expect(bib.docidentifier[0].id).to eq "SP 800-45 Version 2"
+          expect(bib.docidentifier[0].id).to eq "SP 800-45 Ver. 2 Rev. 2"
         end
       end
     end
@@ -283,7 +281,7 @@ RSpec.describe RelatonNist do
       it "with volume and revision" do
         VCR.use_cassette "json_data" do
           bib = RelatonNist::NistBibliography.get "NIST.SP.800-60.v-1.r-1.eng"
-          expect(bib.docidentifier[0].id).to eq "SP 800-60 Vol. 1 Rev. 1"
+          expect(bib.docidentifier[0].id).to eq "SP 800-60 Vol. 1 Ver. 1 Rev. 1"
         end
       end
 
@@ -342,7 +340,7 @@ RSpec.describe RelatonNist do
     #       File.open(file_path, "r:UTF-8", &:read)
     #         .gsub(/(?<=<fetched>)\d{4}-\d{2}-\d{2}/, Date.today.to_s),
     #     )
-    #     schema = Jing.new "spec/examples/isobib.rng"
+    #     schema = Jing.new "grammars/relaton-nist-compile.rng"
     #     errors = schema.validate file_path
     #     expect(errors).to eq []
     #   end

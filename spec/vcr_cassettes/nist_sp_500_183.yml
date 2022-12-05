@@ -21,7 +21,7 @@ http_interactions:
       Connection:
       - keep-alive
       Content-Length:
-      - '586'
+      - '609'
       Cache-Control:
       - max-age=300
       Content-Security-Policy:
@@ -29,7 +29,7 @@ http_interactions:
       Content-Type:
       - text/plain; charset=utf-8
       Etag:
-      - W/"129d14938834d487f5ba442ca9a3fdd52f0b3619921aa14f7f84adecdac40508"
+      - W/"7e3ed420992a9c901a71a934e49de10f269dac101b2ca951bc4f2bf757361b49"
       Strict-Transport-Security:
       - max-age=31536000
       X-Content-Type-Options:
@@ -39,29 +39,29 @@ http_interactions:
       X-Xss-Protection:
       - 1; mode=block
       X-Github-Request-Id:
-      - 664E:6623:A9DD13:BD0A37:6300BA2C
+      - 162C:4469:A739A2:E4F8CC:638DE34A
       Accept-Ranges:
       - bytes
       Date:
-      - Sat, 20 Aug 2022 10:40:45 GMT
+      - Mon, 05 Dec 2022 12:25:46 GMT
       Via:
       - 1.1 varnish
       X-Served-By:
-      - cache-vie6378-VIE
+      - cache-atl18446-ATL
       X-Cache:
       - MISS
       X-Cache-Hits:
       - '0'
       X-Timer:
-      - S1660992045.904320,VS0,VE183
+      - S1670243147.674389,VS0,VE112
       Vary:
       - Authorization,Accept-Encoding,Origin
       Access-Control-Allow-Origin:
       - "*"
       X-Fastly-Request-Id:
-      - 80c4d33237789373fc07dafb6f983c6df6e8bf44
+      - 6b51dab3145b7719af67a7ddea9a3e2daf02f572
       Expires:
-      - Sat, 20 Aug 2022 10:45:45 GMT
+      - Mon, 05 Dec 2022 12:30:46 GMT
       Source-Age:
       - '0'
     body:
@@ -95,12 +95,13 @@ http_interactions:
         contributor:
         - person:
             name:
-              forename:
-              - content: Tim
-                language:
-                - en
-                script:
-                - Latn
+              given:
+                forename:
+                - content: Tim
+                  language:
+                  - en
+                  script:
+                  - Latn
               surname:
                 content: Borland
                 language:
@@ -108,18 +109,19 @@ http_interactions:
                 script:
                 - Latn
           role:
-          - author
+          - type: author
         - organization:
             name:
-            - National Institute of Standards and Technology
-            abbreviation: NIST
+            - content: National Institute of Standards and Technology
+            abbreviation:
+              content: NIST
             contact:
             - address:
                 city: Gaithersburg
                 state: MD
                 country: US
           role:
-          - publisher
+          - type: publisher
         revdate: '1991'
         language:
         - en
@@ -129,11 +131,12 @@ http_interactions:
         - title:
             content: NIST Special Publications (General)
             format: text/plain
-          abbreviation: SP
+          abbreviation:
+            content: SP
           number: 500-183
         place:
         - Gaithersburg, MD
-        fetched: '2022-08-19'
+        fetched: '2022-12-04'
         doctype: standard
-  recorded_at: Sat, 20 Aug 2022 10:40:44 GMT
+  recorded_at: Mon, 05 Dec 2022 12:25:46 GMT
 recorded_with: VCR 6.1.0

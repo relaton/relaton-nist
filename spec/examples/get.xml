@@ -1,5 +1,5 @@
-<bibdata type="standard">
-  <fetched>2022-07-15</fetched>
+<bibdata type="standard" schema-version="v1.2.1">
+  <fetched>2022-11-27</fetched>
   <title format="text/plain" language="en" script="Latn">Interagency report on the status of international cybersecurity standardization for the internet of things (IoT)</title>
   <uri type="doi">https://doi.org/10.6028/NIST.IR.8200</uri>
   <uri type="pdf">https://nvlpubs.nist.gov/nistpubs/ir/2018/NIST.IR.8200.pdf</uri>
@@ -55,7 +55,7 @@
     <number>8200</number>
   </series>
   <place>Gaithersburg, MD</place>
-  <ext>
+  <ext schema-version="v1.0.0">
     <doctype>standard</doctype>
   </ext>
 </bibdata>
