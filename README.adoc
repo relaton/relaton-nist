@@ -26,8 +26,8 @@ all CSRC publications (in Relaton JSON)
 Office (ISO) that contains information about all NIST Technical Publications
 (https://github.com/usnistgov/NIST-Tech-Pubs[GitHub])
 
-Bibliographic information offered through CSRC are provided with enhanced
-metadata that is not available at the NIST Library dataset, including:
+Bibliographic information offered through CSRC is provided with enhanced
+metadata that is not available in the NIST Library dataset, including:
 
 * public drafts (the NIST Library dataset only contains final publications)
 * revision information: revision number, iteration
@@ -37,7 +37,7 @@ metadata that is not available at the NIST Library dataset, including:
 * document relationships: supersession and replacements
 * contacts: enhanced name parts and affiliation information
 
-Relaton for NIST therefore uses the following order of priority for the data
+Relaton for NIST, therefore, uses the following order of priority for the data
 sources:
 
 . bibliographic feed from NIST CSRC
@@ -50,7 +50,7 @@ Add this line to your application's Gemfile:
 
 [source,ruby]
 ----
-gem 'relaton_nist'
+gem 'relaton-nist'
 ----
 
 And then execute:
@@ -68,11 +68,12 @@ Or install it yourself as:
 [source,ruby]
 ----
 require 'relaton_nist'
+=> true
 
 hit_collection = RelatonNist::NistBibliography.search("8200")
 => <RelatonNist::HitCollection:0x007fc069d19da0 @ref=8200 @fetched=false>
 
- item = hit_collection[1].fetch
+item = hit_collection[1].fetch
 => #<RelatonNist::NistBibliographicItem:0x007fc049aa6778
  ...
 ----
@@ -81,52 +82,44 @@ hit_collection = RelatonNist::NistBibliography.search("8200")
 [source,ruby]
 ----
 item.to_xml
-=> "<bibitem id="NISTIR8200(DRAFT)" type="standard">
-      <fetched>2019-05-03</fetched>
-      <title format="text/plain" language="en" script="Latn">
-        Interagency Report on Status of International Cybersecurity Standardization for the Internet of Things (IoT)
-      </title>
+=> "<bibitem id="SP800-160Vol.1Ver.1Rev.1" type="standard" schema-version="v1.2.1">
+      <fetched>2022-12-05</fetched>
+      <title format="text/plain" language="en" script="Latn">Engineering Trustworthy Secure Systems</title>
       ...
     <bibitem>"
 ----
-With argument `bibdata: true` it ouputs XML wrapped by `bibdata` element and adds flavour `ext` element.
+With argument `bibdata: true` it outputs XML wrapped by `bibdata` element and adds flavor `ext` element.
 [source,ruby]
 ----
 item.to_xml bibdata: true
-=> "<bibdata type="standard">
-    <fetched>2019-05-17</fetched>
-    <title format="text/plain" language="en" script="Latn">
-      Interagency Report on Status of International Cybersecurity Standardization for the Internet of Things (IoT)
-    </title>
-    ...
-    <ext>
-      <doctype>stadard</doctype>
-      <commentperiod>
-        <from>2018-02-01</from>
-        <to>2018-04-18</to>
-      </commentperiod>
-    </ext>
+=> "<bibdata type="standard" schema-version="v1.2.1">
+      <fetched>2022-12-05</fetched>
+      <title format="text/plain" language="en" script="Latn">Engineering Trustworthy Secure Systems</title>
+      ...
+      <ext schema-version="v1.0.0">
+        <doctype>standard</doctype>
+      </ext>
   </bibdata>"
 ----
 
 === Get code, and year
 [source,ruby]
 ----
-RelatonNist::NistBibliography.get("8200", "2018", {})
-[relaton-nist] ("8200") fetching...
-[relaton-nist] ("8200") found NISTIR 8200
-=> #<RelatonNist::NistBibliographicItem:0x007fc06aa2b480
+RelatonNist::NistBibliography.get("NIST IR 8200", "2018", {})
+[relaton-nist] ("NIST IR 8200") fetching...
+[relaton-nist] ("NIST IR 8200") found NIST IR 8200
+=> #<RelatonNist::NistBibliographicItem:0x00007fab74a572c0
 ...
 ----
 
 === Get short citation
-Short citation is a convetion about a citation's format. The format for NIST publications is:
+A short citation is a convention about a citation's format. The format for NIST publications is:
 ----
 NIST {abbrev(series)} {docnumber} {(edition), optional} {(stage), optional}
 # or
 {abbrev(series)} {docnumber} {(edition), optional} {(stage), optional}
 ----
-- `(stage)` is empty if the state is "final" (published). In case state is "draft" it shoud be:
+- `(stage)` is empty if the state is "final" (published). In case the state is "draft" it should be:
   * PD for public draft
   * IPD for initial iteration public draft or 2PD, 3PD and so one for following iterations
   * FPD for final public draft
@@ -159,16 +152,16 @@ Referehces can contain optional parameters `{ptN}{vN}{verN}{rN}{/Add}`:
 
 [source,ruby]
 ----
-item = RelatonNist::NistBibliography.get 'SP 800-67r3'
-[relaton-nist] ("SP 800-67r3") fetching...
-[relaton-nist] ("SP 800-67r3") found SP 800-67 Rev. 3
-=> #<RelatonNist::NistBibliographicItem:0x007fd87bbe9460
+item = RelatonNist::NistBibliography.get 'NIST SP 800-67r1'
+[relaton-nist] ("NIST SP 800-67r1") fetching...
+[relaton-nist] ("NIST SP 800-67r1") found SP 800-67 Rev. 1
+=> #<RelatonNist::NistBibliographicItem:0x00007fab748ae978
 ...
 
 item.docidentifier.first.id
-=> "SP 800-67 Rev. 3"
+=> "SP 800-67 Rev. 1"
 
-RelatonNist::NistBibliography.get 'SP 800-38A/Add'
+item = RelatonNist::NistBibliography.get 'SP 800-38A/Add'
 [relaton-nist] ("SP 800-38A/Add") fetching...
 [relaton-nist] ("SP 800-38A/Add") found SP 800-38A-Add
 => #<RelatonNist::NistBibliographicItem:0x007fd88c21d880
@@ -209,7 +202,7 @@ The method `RelatonNist::DataFetcher.fetch(output: "data", format: "yaml")` fetc
 Arguments:
 
 - `output` - folder to save documents (default './data').
-- `format` - format in which the documents are saved. Possimle formats are: `yaml`, `xml`, `bibxxml` (default `yaml`).
+- `format` - the format in which the documents are saved. Possible formats are: `yaml`, `xml`, `bibxxml` (default `yaml`).
 
 [source,ruby]
 ----
