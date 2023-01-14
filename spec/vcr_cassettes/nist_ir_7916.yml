@@ -21,7 +21,7 @@ http_interactions:
       Connection:
       - keep-alive
       Content-Length:
-      - '613'
+      - '624'
       Cache-Control:
       - max-age=300
       Content-Security-Policy:
@@ -29,7 +29,7 @@ http_interactions:
       Content-Type:
       - text/plain; charset=utf-8
       Etag:
-      - W/"1a38843fae31ce12748bf765e5f5a2324536b5fa0d42f826de6df6f291aae992"
+      - W/"cd1e4f866f95ffffd3570b51690f5988d121f7dbbbdcb09c63a1fb9712c21430"
       Strict-Transport-Security:
       - max-age=31536000
       X-Content-Type-Options:
@@ -39,35 +39,36 @@ http_interactions:
       X-Xss-Protection:
       - 1; mode=block
       X-Github-Request-Id:
-      - 4B88:3BBF:A6AE3E:E49E76:638DE34A
+      - BFC8:1B70:9A4AF1:CC205B:63C2FBBD
       Accept-Ranges:
       - bytes
       Date:
-      - Mon, 05 Dec 2022 12:25:46 GMT
+      - Sat, 14 Jan 2023 19:00:13 GMT
       Via:
       - 1.1 varnish
       X-Served-By:
-      - cache-atl18427-ATL
+      - cache-iad-kjyo7100104-IAD
       X-Cache:
       - MISS
       X-Cache-Hits:
       - '0'
       X-Timer:
-      - S1670243146.444997,VS0,VE110
+      - S1673722814.858703,VS0,VE105
       Vary:
       - Authorization,Accept-Encoding,Origin
       Access-Control-Allow-Origin:
       - "*"
       X-Fastly-Request-Id:
-      - 1c69045357d09c750c7b58150513f9425fb4b57d
+      - 96b7d1e5ced0c681499f9672962c6c9a6db24323
       Expires:
-      - Mon, 05 Dec 2022 12:30:46 GMT
+      - Sat, 14 Jan 2023 19:05:13 GMT
       Source-Age:
       - '0'
     body:
       encoding: ASCII-8BIT
       string: |
         ---
+        schema-version: v1.2.1
         id: NISTIR7916
         title:
         - content: Proceedings of the Cybersecurity in Cyber-Physical Systems Workshop, April
@@ -134,7 +135,8 @@ http_interactions:
           number: '7916'
         place:
         - Gaithersburg, MD
-        fetched: '2022-12-04'
         doctype: standard
-  recorded_at: Mon, 05 Dec 2022 12:25:46 GMT
+        ext:
+          schema-version: v1.0.0
+  recorded_at: Sat, 14 Jan 2023 19:00:13 GMT
 recorded_with: VCR 6.1.0

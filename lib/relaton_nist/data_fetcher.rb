@@ -10,6 +10,7 @@ module RelatonNist
       "hasTranslation" => "hasTranslation",
       "isTranslationOf" => "translatedFrom",
       "hasPreprint" => "hasReprint",
+      "isPreprintOf" => "reprintOf",
       "isSupplementTo" => "complements",
       "isPartOf" => "partOf",
       "hasPart" => "hasPart",
