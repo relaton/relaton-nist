@@ -6,6 +6,7 @@ VCR.configure do |config|
     clean_outdated_http_interactions: true,
     re_record_interval: 7 * 24 * 3600,
     record: :once,
+    serialize_with: :json,
   }
   config.hook_into :webmock
 end

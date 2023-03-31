@@ -1,6 +1,8 @@
+require "singleton"
 require "relaton_nist/version"
 require "relaton_nist/nist_bibliography"
 require "relaton_nist/data_fetcher"
+require "relaton_nist/pubs_export"
 
 # if defined? Relaton
 #   require_relative "relaton/processor"

@@ -1,0 +1,108 @@
+{
+  "http_interactions": [
+    {
+      "request": {
+        "method": "get",
+        "uri": "https://raw.githubusercontent.com/relaton/relaton-data-nist/main/data/NISTIR_7916.yaml",
+        "body": {
+          "encoding": "US-ASCII",
+          "string": ""
+        },
+        "headers": {
+          "Accept-Encoding": [
+            "gzip;q=1.0,deflate;q=0.6,identity;q=0.3"
+          ],
+          "Accept": [
+            "*/*"
+          ],
+          "User-Agent": [
+            "Ruby"
+          ]
+        }
+      },
+      "response": {
+        "status": {
+          "code": 200,
+          "message": "OK"
+        },
+        "headers": {
+          "Connection": [
+            "keep-alive"
+          ],
+          "Content-Length": [
+            "1330"
+          ],
+          "Cache-Control": [
+            "max-age=300"
+          ],
+          "Content-Security-Policy": [
+            "default-src 'none'; style-src 'unsafe-inline'; sandbox"
+          ],
+          "Content-Type": [
+            "text/plain; charset=utf-8"
+          ],
+          "Etag": [
+            "W/\"cd1e4f866f95ffffd3570b51690f5988d121f7dbbbdcb09c63a1fb9712c21430\""
+          ],
+          "Strict-Transport-Security": [
+            "max-age=31536000"
+          ],
+          "X-Content-Type-Options": [
+            "nosniff"
+          ],
+          "X-Frame-Options": [
+            "deny"
+          ],
+          "X-Xss-Protection": [
+            "1; mode=block"
+          ],
+          "X-Github-Request-Id": [
+            "0B4A:0695:E9BE:459F1:6424EEBA"
+          ],
+          "Accept-Ranges": [
+            "bytes"
+          ],
+          "Date": [
+            "Thu, 30 Mar 2023 02:06:50 GMT"
+          ],
+          "Via": [
+            "1.1 varnish"
+          ],
+          "X-Served-By": [
+            "cache-iad-kjyo7100031-IAD"
+          ],
+          "X-Cache": [
+            "MISS"
+          ],
+          "X-Cache-Hits": [
+            "0"
+          ],
+          "X-Timer": [
+            "S1680142011.822548,VS0,VE96"
+          ],
+          "Vary": [
+            "Authorization,Accept-Encoding,Origin"
+          ],
+          "Access-Control-Allow-Origin": [
+            "*"
+          ],
+          "X-Fastly-Request-Id": [
+            "75c0ec879622290d0e47978d2189c96ff1bb544d"
+          ],
+          "Expires": [
+            "Thu, 30 Mar 2023 02:11:50 GMT"
+          ],
+          "Source-Age": [
+            "0"
+          ]
+        },
+        "body": {
+          "encoding": "ASCII-8BIT",
+          "string": "---\nschema-version: v1.2.1\nid: NISTIR7916\ntitle:\n- content: Proceedings of the Cybersecurity in Cyber-Physical Systems Workshop, April\n    23-24, 2012\n  language:\n  - en\n  script:\n  - Latn\n  format: text/plain\nlink:\n- content: https://doi.org/10.6028/NIST.IR.7916\n  type: doi\n- content: https://nvlpubs.nist.gov/nistpubs/ir/2013/NIST.IR.7916.pdf\n  type: pdf\ntype: standard\ndocid:\n- id: NIST IR 7916\n  type: NIST\n  primary: true\n- id: 10.6028/NIST.IR.7916\n  type: DOI\ndate:\n- type: published\n  value: 2013-02\ncontributor:\n- person:\n    name:\n      given:\n        forename:\n        - content: Tanya\n          script:\n          - Latn\n      surname:\n        content: Brewer\n        script:\n        - Latn\n    affiliation:\n    - organization:\n        name:\n        - content: Information Technology Laboratory\n  role:\n  - type: author\n- organization:\n    name:\n    - content: National Institute of Standards and Technology\n    abbreviation:\n      content: NIST\n    contact:\n    - address:\n        city: Gaithersburg\n        state: MD\n        country: US\n  role:\n  - type: publisher\nrevdate: 2013-02\nscript:\n- Latn\nseries:\n- title:\n    content: NIST NISTIRs (Interagency/Internal Reports)\n    format: text/plain\n  abbreviation:\n    content: IR\n  number: '7916'\nplace:\n- Gaithersburg, MD\ndoctype: standard\next:\n  schema-version: v1.0.0\n"
+        }
+      },
+      "recorded_at": "Thu, 30 Mar 2023 02:06:50 GMT"
+    }
+  ],
+  "recorded_with": "VCR 6.1.0"
+}

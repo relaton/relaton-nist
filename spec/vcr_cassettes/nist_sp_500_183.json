@@ -1,0 +1,108 @@
+{
+  "http_interactions": [
+    {
+      "request": {
+        "method": "get",
+        "uri": "https://raw.githubusercontent.com/relaton/relaton-data-nist/main/data/NIST_SP_500-183.yaml",
+        "body": {
+          "encoding": "US-ASCII",
+          "string": ""
+        },
+        "headers": {
+          "Accept-Encoding": [
+            "gzip;q=1.0,deflate;q=0.6,identity;q=0.3"
+          ],
+          "Accept": [
+            "*/*"
+          ],
+          "User-Agent": [
+            "Ruby"
+          ]
+        }
+      },
+      "response": {
+        "status": {
+          "code": 200,
+          "message": "OK"
+        },
+        "headers": {
+          "Connection": [
+            "keep-alive"
+          ],
+          "Content-Length": [
+            "1351"
+          ],
+          "Cache-Control": [
+            "max-age=300"
+          ],
+          "Content-Security-Policy": [
+            "default-src 'none'; style-src 'unsafe-inline'; sandbox"
+          ],
+          "Content-Type": [
+            "text/plain; charset=utf-8"
+          ],
+          "Etag": [
+            "W/\"e8e474cd616395cde14ea7d86bd7552762081c04aa9ac98f5a1535e411b9448f\""
+          ],
+          "Strict-Transport-Security": [
+            "max-age=31536000"
+          ],
+          "X-Content-Type-Options": [
+            "nosniff"
+          ],
+          "X-Frame-Options": [
+            "deny"
+          ],
+          "X-Xss-Protection": [
+            "1; mode=block"
+          ],
+          "X-Github-Request-Id": [
+            "E0FE:96C3:11968E:162CB9:6424EEBB"
+          ],
+          "Accept-Ranges": [
+            "bytes"
+          ],
+          "Date": [
+            "Thu, 30 Mar 2023 02:06:51 GMT"
+          ],
+          "Via": [
+            "1.1 varnish"
+          ],
+          "X-Served-By": [
+            "cache-iad-kcgs7200175-IAD"
+          ],
+          "X-Cache": [
+            "MISS"
+          ],
+          "X-Cache-Hits": [
+            "0"
+          ],
+          "X-Timer": [
+            "S1680142011.055510,VS0,VE92"
+          ],
+          "Vary": [
+            "Authorization,Accept-Encoding,Origin"
+          ],
+          "Access-Control-Allow-Origin": [
+            "*"
+          ],
+          "X-Fastly-Request-Id": [
+            "6cc93bb24a132e734984dbd81fff9c3198762c53"
+          ],
+          "Expires": [
+            "Thu, 30 Mar 2023 02:11:51 GMT"
+          ],
+          "Source-Age": [
+            "0"
+          ]
+        },
+        "body": {
+          "encoding": "ASCII-8BIT",
+          "string": "---\nschema-version: v1.2.1\nid: NISTSP500-183\ntitle:\n- content: Stable implementation agreements for open systems interconnection protocols\n    Version 4 Edition 1 December 1990\n  language:\n  - en\n  script:\n  - Latn\n  format: text/plain\nlink:\n- content: https://doi.org/10.6028/NIST.SP.500-183\n  type: doi\n- content: https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication500-183.pdf\n  type: pdf\ntype: standard\ndocid:\n- id: NIST SP 500-183\n  type: NIST\n  primary: true\n- id: 10.6028/NIST.SP.500-183\n  type: DOI\ndate:\n- type: published\n  value: '1991'\ncontributor:\n- person:\n    name:\n      given:\n        forename:\n        - content: Tim\n          language:\n          - en\n          script:\n          - Latn\n      surname:\n        content: Borland\n        language:\n        - en\n        script:\n        - Latn\n  role:\n  - type: author\n- organization:\n    name:\n    - content: National Institute of Standards and Technology\n    abbreviation:\n      content: NIST\n    contact:\n    - address:\n        city: Gaithersburg\n        state: MD\n        country: US\n  role:\n  - type: publisher\nrevdate: '1991'\nlanguage:\n- en\nscript:\n- Latn\nseries:\n- title:\n    content: NIST Special Publications (General)\n    format: text/plain\n  abbreviation:\n    content: SP\n  number: 500-183\nplace:\n- Gaithersburg, MD\ndoctype: standard\next:\n  schema-version: v1.0.0\n"
+        }
+      },
+      "recorded_at": "Thu, 30 Mar 2023 02:06:51 GMT"
+    }
+  ],
+  "recorded_with": "VCR 6.1.0"
+}

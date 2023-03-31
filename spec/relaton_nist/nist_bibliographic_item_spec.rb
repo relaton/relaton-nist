@@ -9,7 +9,6 @@ RSpec.describe RelatonNist::NistBibliographicItem do
   end
 
   it "returns hash" do
-    hash["fetched"] = Date.today.to_s
     expect(subject.to_hash).to eq hash
   end
 

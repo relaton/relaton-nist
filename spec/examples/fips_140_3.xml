@@ -1,5 +1,5 @@
-<bibdata type="standard" schema-version="v1.2.1">
-  <fetched>2022-11-29</fetched>
+<bibdata type="standard" schema-version="v1.2.3">
+  <fetched>2023-03-30</fetched>
   <title format="text/plain" language="en" script="Latn">Security Requirements for Cryptographic Modules</title>
   <uri type="src">https://csrc.nist.gov/publications/detail/fips/140/3/final</uri>
   <uri type="doi">https://doi.org/10.6028/NIST.FIPS.140-3</uri>

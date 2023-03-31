@@ -1,5 +1,5 @@
-<bibdata type="standard" schema-version="v1.2.1">
-  <fetched>2022-11-29</fetched>
+<bibdata type="standard" schema-version="v1.2.3">
+  <fetched>2023-03-30</fetched>
   <title format="text/plain" language="en" script="Latn">Resilient Interdomain Traffic Exchange - BGP Security and DDoS Mitigation</title>
   <uri type="src">https://csrc.nist.gov/publications/detail/sp/800-189/archive/2019-10-17</uri>
   <uri type="doi">https://doi.org/10.6028/NIST.SP.800-189-draft2</uri>

@@ -9,10 +9,6 @@ require "open-uri"
 module RelatonNist
   # Hit collection.
   class HitCollection < RelatonBib::HitCollection
-    DOMAIN = "https://csrc.nist.gov"
-    PUBS_EXPORT = URI.join(DOMAIN, "/CSRC/media/feeds/metanorma/pubs-export")
-    DATAFILEDIR = File.expand_path ".relaton/nist", Dir.home
-    DATAFILE = File.expand_path "pubs-export.zip", DATAFILEDIR
     GHNISTDATA = "https://raw.githubusercontent.com/relaton/relaton-data-nist/main/data/"
 
     #
@@ -65,7 +61,8 @@ module RelatonNist
           (!refparts[:vol] || refparts[:vol] == parts[:vol]) &&
           (!refparts[:ver] || refparts[:ver] == parts[:ver]) &&
           (!refparts[:rev] || refparts[:rev] == parts[:rev]) &&
-          refparts[:draft] == parts[:draft] && refparts[:add] == parts[:add]) ||
+          refparts[:draft] == parts[:draft] && refparts[:add] == parts[:add] &&
+          refparts[:res] == parts[:res]) ||
           item.hit[:title]&.include?(text.sub(/^NIST\s/, ""))
       end
     end
@@ -87,6 +84,7 @@ module RelatonNist
         # (?:\s(?<rev2>Rev\.\s\d+))?
         add: match(/\sAdd(?:endum)?(?<val>\d*)/, code),
         draft: !match(/\((?:Retired\s)?Draft\)/, code).nil?,
+        res: match(/(?<=\s)RES/, text),
       }
     end
 
@@ -123,6 +121,7 @@ module RelatonNist
         rev: match(/(?:(?:(?<dl>\.)|[^a-z])r|\sRev\.\s)(?(<dl>)-)(?<val>\d+)/, text),
         add: match(/(?:(?<dl>\.)?add|\/Add)(?(<dl>)-)(?<val>\d*)/, text),
         draft: !(match(/\((?:Draft|PD)\)/, text).nil? && @opts[:stage].nil?),
+        res: match(/(?<=\s)RES/, text),
         # prt2: match(/(?<=\s)Part\s[A-Z\d]+/, text),
         # vol2: match(/(?<=\s)Vol\.\s\d+/, text),
         # ver2: match(/(?<=\s)Ver\.\s\d+/, text),
@@ -160,27 +159,6 @@ module RelatonNist
         ref
       end
     end
-
-    #
-    # Return short version of ID part with removed "-" or convert long version to short.
-    # Converts "pt-1" to "pt1" and "Part 1" to "pt1", "v-1" to "v1" and "Vol. 1" to "v1",
-    #   "ver-1" to "ver1" and "Ver. 1" to "ver1", "r-1" to "r1" and "Rev. 1" to "r1".
-    #
-    # @param parts [MatchData] parts of ID
-    # @param name [String] name of ID part
-    #
-    # @return [String, nil]
-    #
-    # def long_to_short(parts, name)
-    #   short = parts["#{name}1".to_sym]
-    #   return short.sub(/-/, "") if short
-
-    #   long_name = "#{name}2"
-    #   long = parts[long_name.to_sym]
-    #   return unless long
-
-    #   long.sub(/Part\s/, "pt").sub(/Vol\.\s/, "v").sub(/Rev\.\s/, "r").sub(/(Ver\.|Version)\s/, "ver")
-    # end
 
     #
     # Sort hits by sort_value and release date
@@ -261,10 +239,10 @@ module RelatonNist
       ref = "#{refparts[:series]} #{refparts[:code]}"
       d = Date.strptime year, "%Y" if year
       statuses = %w[draft-public draft-prelim]
-      data.select do |doc|
+      PubsExport.instance.data.select do |doc|
         next unless match_year?(doc, d)
 
-        if /PD/.match? @opts[:stage]
+        if @opts[:stage]&.include?("PD")
           next unless statuses.include? doc["status"]
         else
           next unless doc["status"] == "final"
@@ -286,47 +264,6 @@ module RelatonNist
 
       idate = RelatonBib.parse_date doc["issued-date"], false
       idate.between? date, date.next_year.prev_day
-    end
-
-    #
-    # Fetches json data form server
-    #
-    # @return [Array<Hash>] json data
-    #
-    def data
-      ctime = File.ctime DATAFILE if File.exist? DATAFILE
-      if !ctime || ctime.to_date < Date.today || File.size(DATAFILE).zero?
-        fetch_data(ctime)
-      end
-      unzip
-    end
-
-    #
-    # Fetch data form server and save it to file
-    #
-    # @prarm ctime [Time, nil] file creation time
-    #
-    def fetch_data(ctime)
-      if !ctime || ctime < OpenURI.open_uri("#{PUBS_EXPORT}.meta").last_modified
-        @data = nil
-        uri_open = URI.method(:open) || Kernel.method(:open)
-        FileUtils.mkdir_p DATAFILEDIR
-        IO.copy_stream(uri_open.call("#{PUBS_EXPORT}.zip"), DATAFILE)
-      end
-    end
-
-    #
-    # upack zip file
-    #
-    # @return [Array<Hash>] json data
-    #
-    def unzip
-      return @data if @data
-
-      Zip::File.open(DATAFILE) do |zf|
-        @data = JSON.parse zf.first.get_input_stream.read
-      end
-      @data
     end
   end
 end
