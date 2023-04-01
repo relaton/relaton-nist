@@ -18,4 +18,9 @@ RSpec.describe RelatonNist::NistBibliographicItem do
     File.write file, xml, encoding: "UTF-8" unless File.exist? file
     expect(xml).to be_equivalent_to File.read(file, encoding: "UTF-8")
   end
+
+  it "ref_attrs" do
+    attrs = subject.ref_attrs
+    expect(attrs[:anchor]).to eq "NIST.IR.8011.Vol.3"
+  end
 end
