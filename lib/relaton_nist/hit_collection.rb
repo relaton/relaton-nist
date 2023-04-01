@@ -70,7 +70,7 @@ module RelatonNist
 
     def code_parts(code) # rubocop:disable Metrics/MethodLength
       {
-        prefix: match(/^(?:NIST|NBS)\s?/, code),
+        # prefix: match(/^(?:NIST|NBS)\s?/, code),
         series: match(/(?<val>(?:SP|FIPS|IR|ITL\sBulletin|White\sPaper))\s/, code),
         code: match(/(?<val>[0-9-]{3,}[A-Z]?)/, code),
         prt: match(/(?:pt|\sPart\s)(?<val>\d+)/, code),
@@ -91,7 +91,7 @@ module RelatonNist
 
       id = json["doi"].split("/").last
       {
-        prefix: match(/^(?:NIST|NBS)\./, id),
+        # prefix: match(/^(?:NIST|NBS)\./, id),
         series: match(/(?:SP|FIPS|IR|ITL\sBulletin|White\sPaper)(?=\.)/, id),
         code: match(/(?<=\.)\d{3,}(?:-\d+)*(?:[[:alpha:]](?!\d|raft|er|t?\d))?/, id),
         prt: match(/pt?(?<val>\d+)/, id),
