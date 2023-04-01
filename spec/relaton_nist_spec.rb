@@ -192,6 +192,11 @@ RSpec.describe RelatonNist do
       end
     end
 
+    it "NIST CMVP", vcr: { cassette_name: "nist_cmvp" } do
+      item = RelatonNist::NistBibliography.get("NIST CMVP", nil, {})
+      expect(item).to be_nil
+    end
+
     it "doc with edition" do
       VCR.use_cassette "json_data" do
         result = RelatonNist::NistBibliography.get "FIPS 140-2"

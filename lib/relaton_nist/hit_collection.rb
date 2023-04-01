@@ -62,8 +62,9 @@ module RelatonNist
           (!refparts[:ver] || refparts[:ver] == parts[:ver]) &&
           (!refparts[:rev] || refparts[:rev] == parts[:rev]) &&
           refparts[:draft] == parts[:draft] && refparts[:add] == parts[:add] &&
-          refparts[:res] == parts[:res]) ||
-          item.hit[:title]&.include?(text.sub(/^NIST\s/, ""))
+          refparts[:res] == parts[:res]) # ||
+          # (refparts[:code] && !refparts[:code].empty? &&
+          #   item.hit[:title]&.include?("#{refparts[:series]} #{refparts[:code]}"))
       end
     end
 
