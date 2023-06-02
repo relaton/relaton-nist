@@ -42,7 +42,7 @@
             "text/plain; charset=utf-8"
           ],
           "Etag": [
-            "W/\"048c3fffdadb7600b8ab317e9a9dd22c428b252832ac6f874817d33de45c712a\""
+            "W/\"0cf48f78ccb2db3b1946451a5df30112623d030137c388b68fcae5c63e4edbb4\""
           ],
           "Strict-Transport-Security": [
             "max-age=31536000"
@@ -57,19 +57,19 @@
             "1; mode=block"
           ],
           "X-Github-Request-Id": [
-            "5260:7106:F2FEF:13B72A:6424EEBB"
+            "92FE:80D2:19E4A6:1E2283:647A1141"
           ],
           "Accept-Ranges": [
             "bytes"
           ],
           "Date": [
-            "Thu, 30 Mar 2023 02:06:51 GMT"
+            "Fri, 02 Jun 2023 15:56:49 GMT"
           ],
           "Via": [
             "1.1 varnish"
           ],
           "X-Served-By": [
-            "cache-iad-kcgs7200074-IAD"
+            "cache-atl18443-ATL"
           ],
           "X-Cache": [
             "MISS"
@@ -78,7 +78,7 @@
             "0"
           ],
           "X-Timer": [
-            "S1680142012.767109,VS0,VE126"
+            "S1685721409.006213,VS0,VE106"
           ],
           "Vary": [
             "Authorization,Accept-Encoding,Origin"
@@ -87,10 +87,10 @@
             "*"
           ],
           "X-Fastly-Request-Id": [
-            "997a55e2fa3ae6903704aab72fa9f8e6978e760e"
+            "040a0cf379a7c3e70a489cb2a78a14e155af2b11"
           ],
           "Expires": [
-            "Thu, 30 Mar 2023 02:11:51 GMT"
+            "Fri, 02 Jun 2023 16:01:49 GMT"
           ],
           "Source-Age": [
             "0"
@@ -98,10 +98,10 @@
         },
         "body": {
           "encoding": "ASCII-8BIT",
-          "string": "---\nschema-version: v1.2.1\nid: NISTIR5667v4\ntitle:\n- content: A study of potential applications of automation and robotics technology\n    in construction, maintenance and operation of highway systems:a final report\n  language:\n  - en\n  script:\n  - Latn\n  format: text/plain\nlink:\n- content: https://doi.org/10.6028/NIST.IR.5667v4\n  type: doi\n- content: https://nvlpubs.nist.gov/nistpubs/Legacy/IR/nistir5667v4.pdf\n  type: pdf\ntype: standard\ndocid:\n- id: NIST IR 5667v4\n  type: NIST\n  primary: true\n- id: 10.6028/NIST.IR.5667v4\n  type: DOI\ndate:\n- type: published\n  value: '1995'\ncontributor:\n- person:\n    name:\n      given:\n        forename:\n        - content: Ernest\n          script:\n          - Latn\n      surname:\n        content: Kent\n        script:\n        - Latn\n  role:\n  - type: author\n- organization:\n    name:\n    - content: National Institute of Standards and Technology\n    abbreviation:\n      content: NIST\n    contact:\n    - address:\n        city: Gaithersburg\n        state: MD\n        country: US\n  role:\n  - type: publisher\nrevdate: '1995'\nscript:\n- Latn\nseries:\n- title:\n    content: NIST NISTIRs (Interagency/Internal Reports)\n    format: text/plain\n  abbreviation:\n    content: IR\n  number: 5667v4\nplace:\n- Gaithersburg, MD\ndoctype: standard\next:\n  schema-version: v1.0.0\n"
+          "string": "---\nschema-version: v1.2.3\nid: NISTIR5667v4\ntitle:\n- content: A study of potential applications of automation and robotics technology\n    in construction, maintenance and operation of highway systems:a final report\n  language:\n  - en\n  script:\n  - Latn\n  format: text/plain\nlink:\n- content: https://doi.org/10.6028/NIST.IR.5667v4\n  type: doi\n- content: https://nvlpubs.nist.gov/nistpubs/Legacy/IR/nistir5667v4.pdf\n  type: pdf\ntype: standard\ndocid:\n- id: NIST IR 5667v4\n  type: NIST\n  primary: true\n- id: 10.6028/NIST.IR.5667v4\n  type: DOI\ndate:\n- type: published\n  value: '1995'\ncontributor:\n- person:\n    name:\n      given:\n        forename:\n        - content: Ernest\n          script:\n          - Latn\n      surname:\n        content: Kent\n        script:\n        - Latn\n  role:\n  - type: author\n- organization:\n    name:\n    - content: National Institute of Standards and Technology\n    abbreviation:\n      content: NIST\n    contact:\n    - address:\n        city: Gaithersburg\n        state: MD\n        country: US\n  role:\n  - type: publisher\nrevdate: '1995'\nscript:\n- Latn\nseries:\n- title:\n    content: NIST NISTIRs (Interagency/Internal Reports)\n    format: text/plain\n  abbreviation:\n    content: IR\n  number: 5667v4\nplace:\n- Gaithersburg, MD\ndoctype: standard\next:\n  schema-version: v1.0.0\n"
         }
       },
-      "recorded_at": "Thu, 30 Mar 2023 02:06:51 GMT"
+      "recorded_at": "Fri, 02 Jun 2023 15:56:49 GMT"
     }
   ],
   "recorded_with": "VCR 6.1.0"

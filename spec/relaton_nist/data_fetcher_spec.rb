@@ -1,6 +1,14 @@
 RSpec.describe "NIST documents fetcher" do
+  subject { RelatonNist::DataFetcher.new "data", "yaml" }
+
   let(:nist_data) do
     File.read "spec/examples/nist_data.xml", encoding: "UTF-8"
+  end
+
+  context "instance methods" do
+    it "#index" do
+      expect(subject.index).to be_instance_of RelatonNist::Index::Type
+    end
   end
 
   context "fetch data" do
@@ -27,6 +35,7 @@ RSpec.describe "NIST documents fetcher" do
     end
 
     it "fetch" do
+      expect(subject.index).to receive(:save)
       expect { subject.fetch }.to output(
         /File data\/NIST_SP_1190GB-16\.yaml exists\. Docid: NIST SP 1190GB-16/,
       ).to_stderr
@@ -37,6 +46,7 @@ RSpec.describe "NIST documents fetcher" do
       let(:format) { "xml" }
 
       it "fetch" do
+        expect(subject.index).to receive(:save)
         expect { subject.fetch }.to output(
           /File dir\/NIST_SP_1190GB-16\.xml exists\. Docid: NIST SP 1190GB-16/,
         ).to_stderr
@@ -44,6 +54,7 @@ RSpec.describe "NIST documents fetcher" do
 
       it "fetch" do
         subject.instance_variable_set :@format, "bibxml"
+        expect(subject.index).to receive(:save)
         expect { subject.fetch }.to output(
           /File dir\/NIST_SP_1190GB-16\.xml exists\. Docid: NIST SP 1190GB-16/,
         ).to_stderr
@@ -61,7 +72,8 @@ RSpec.describe "NIST documents fetcher" do
     expect(FileUtils).to receive(:mkdir_p).with("data")
     expect(OpenURI).to receive(:open_uri).with(RelatonNist::DataFetcher::URL).and_return nist_data
     expect(RelatonNist::NistBibliographicItem).to receive(:new).and_raise(StandardError).twice
-    expect { RelatonNist::DataFetcher.fetch }
+    expect(subject.index).to receive(:save)
+    expect { subject.fetch }
       .to output(/Document: 10.6028\/NIST.SP\.800-133r1/).to_stderr
   end
 

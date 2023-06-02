@@ -24,6 +24,10 @@ module RelatonNist
       @files = []
     end
 
+    def index
+      @index ||= Relaton::Index.find_or_create :nist, file: "index-v1.yaml"
+    end
+
     def parse_docid(doc) # rubocop:disable Metrics/AbcSize, Metrics/MethodLength
       # case doi
       # when "10.6028/NBS.CIRC.12e2revjune" then doi.sub!("13e", "12e")
@@ -296,6 +300,7 @@ module RelatonNist
                when "xml" then bib.to_xml bibdata: true
                else bib.send "to_#{@format}"
                end
+      index.add_or_update bib.docidentifier[0].id, file
       File.write file, output, encoding: "UTF-8"
     end
 
@@ -337,6 +342,7 @@ module RelatonNist
       docs.xpath("/body/query/doi_record/report-paper/report-paper_metadata")
         .each { |doc| parse_doc doc }
 
+      index.save
       t2 = Time.now
       puts "Stopped at: #{t2}"
       puts "Done in: #{(t2 - t1).round} sec."

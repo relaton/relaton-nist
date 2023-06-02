@@ -42,7 +42,7 @@
             "text/plain; charset=utf-8"
           ],
           "Etag": [
-            "W/\"a439e09424b4bcf3afd65aa793a295bf91b3edcdbe981174af186ff36f8a9ac8\""
+            "W/\"5f045fcb260c632b052dd82baab3178cfeaa2a88a5099a46eff69c4061528651\""
           ],
           "Strict-Transport-Security": [
             "max-age=31536000"
@@ -57,19 +57,19 @@
             "1; mode=block"
           ],
           "X-Github-Request-Id": [
-            "9B06:07A4:6AD96:A8DBE:6424EEBA"
+            "1BA6:191A:1AFAA6:1F385B:647A113D"
           ],
           "Accept-Ranges": [
             "bytes"
           ],
           "Date": [
-            "Thu, 30 Mar 2023 02:06:50 GMT"
+            "Fri, 02 Jun 2023 15:56:45 GMT"
           ],
           "Via": [
             "1.1 varnish"
           ],
           "X-Served-By": [
-            "cache-iad-kcgs7200135-IAD"
+            "cache-atl18454-ATL"
           ],
           "X-Cache": [
             "MISS"
@@ -78,7 +78,7 @@
             "0"
           ],
           "X-Timer": [
-            "S1680142010.097642,VS0,VE95"
+            "S1685721406.760594,VS0,VE109"
           ],
           "Vary": [
             "Authorization,Accept-Encoding,Origin"
@@ -87,10 +87,10 @@
             "*"
           ],
           "X-Fastly-Request-Id": [
-            "b7adb763ed40a5f49a3ce3c6c944337fe93cb035"
+            "49084bd83965c0388f5d5b0b880e54b9a1e50a2f"
           ],
           "Expires": [
-            "Thu, 30 Mar 2023 02:11:50 GMT"
+            "Fri, 02 Jun 2023 16:01:45 GMT"
           ],
           "Source-Age": [
             "0"
@@ -98,10 +98,10 @@
         },
         "body": {
           "encoding": "ASCII-8BIT",
-          "string": "---\nschema-version: v1.2.1\nid: NISTIR8011-1\ntitle:\n- content: 'Automation support for security control assessments. volume 1: overview'\n  language:\n  - en\n  script:\n  - Latn\n  format: text/plain\nlink:\n- content: https://doi.org/10.6028/NIST.IR.8011-1\n  type: doi\n- content: https://nvlpubs.nist.gov/nistpubs/ir/2017/NIST.IR.8011-1.pdf\n  type: pdf\ntype: standard\ndocid:\n- id: NIST IR 8011-1\n  type: NIST\n  primary: true\n- id: 10.6028/NIST.IR.8011-1\n  type: DOI\ndate:\n- type: published\n  value: 2017-06\ncontributor:\n- person:\n    name:\n      given:\n        forename:\n        - content: Kelley\n          script:\n          - Latn\n      surname:\n        content: Dempsey\n        script:\n        - Latn\n    affiliation:\n    - organization:\n        name:\n        - content: Information Technology Laboratory\n  role:\n  - type: author\n- person:\n    name:\n      given:\n        forename:\n        - content: Paul\n          script:\n          - Latn\n      surname:\n        content: Eavy\n        script:\n        - Latn\n    affiliation:\n    - organization:\n        name:\n        - content: Information Technology Laboratory\n  role:\n  - type: author\n- person:\n    name:\n      given:\n        forename:\n        - content: George\n          script:\n          - Latn\n      surname:\n        content: Moore\n        script:\n        - Latn\n    affiliation:\n    - organization:\n        name:\n        - content: Information Technology Laboratory\n  role:\n  - type: author\n- organization:\n    name:\n    - content: National Institute of Standards and Technology\n    abbreviation:\n      content: NIST\n    contact:\n    - address:\n        city: Gaithersburg\n        state: MD\n        country: US\n  role:\n  - type: publisher\nrevdate: 2017-06\nscript:\n- Latn\nseries:\n- title:\n    content: NIST NISTIRs (Interagency/Internal Reports)\n    format: text/plain\n  abbreviation:\n    content: IR\n  number: 8011-1\nplace:\n- Gaithersburg, MD\ndoctype: standard\next:\n  schema-version: v1.0.0\n"
+          "string": "---\nschema-version: v1.2.3\nid: NISTIR8011-1\ntitle:\n- content: 'Automation support for security control assessments. volume 1: overview'\n  language:\n  - en\n  script:\n  - Latn\n  format: text/plain\nlink:\n- content: https://doi.org/10.6028/NIST.IR.8011-1\n  type: doi\n- content: https://nvlpubs.nist.gov/nistpubs/ir/2017/NIST.IR.8011-1.pdf\n  type: pdf\ntype: standard\ndocid:\n- id: NIST IR 8011-1\n  type: NIST\n  primary: true\n- id: 10.6028/NIST.IR.8011-1\n  type: DOI\ndate:\n- type: published\n  value: 2017-06\ncontributor:\n- person:\n    name:\n      given:\n        forename:\n        - content: Kelley\n          script:\n          - Latn\n      surname:\n        content: Dempsey\n        script:\n        - Latn\n    affiliation:\n    - organization:\n        name:\n        - content: Information Technology Laboratory\n  role:\n  - type: author\n- person:\n    name:\n      given:\n        forename:\n        - content: Paul\n          script:\n          - Latn\n      surname:\n        content: Eavy\n        script:\n        - Latn\n    affiliation:\n    - organization:\n        name:\n        - content: Information Technology Laboratory\n  role:\n  - type: author\n- person:\n    name:\n      given:\n        forename:\n        - content: George\n          script:\n          - Latn\n      surname:\n        content: Moore\n        script:\n        - Latn\n    affiliation:\n    - organization:\n        name:\n        - content: Information Technology Laboratory\n  role:\n  - type: author\n- organization:\n    name:\n    - content: National Institute of Standards and Technology\n    abbreviation:\n      content: NIST\n    contact:\n    - address:\n        city: Gaithersburg\n        state: MD\n        country: US\n  role:\n  - type: publisher\nrevdate: 2017-06\nscript:\n- Latn\nseries:\n- title:\n    content: NIST NISTIRs (Interagency/Internal Reports)\n    format: text/plain\n  abbreviation:\n    content: IR\n  number: 8011-1\nplace:\n- Gaithersburg, MD\ndoctype: standard\next:\n  schema-version: v1.0.0\n"
         }
       },
-      "recorded_at": "Thu, 30 Mar 2023 02:06:50 GMT"
+      "recorded_at": "Fri, 02 Jun 2023 15:56:45 GMT"
     }
   ],
   "recorded_with": "VCR 6.1.0"

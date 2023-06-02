@@ -1,4 +1,5 @@
 require "singleton"
+require "relaton/index"
 require "relaton_nist/version"
 require "relaton_nist/nist_bibliography"
 require "relaton_nist/data_fetcher"
