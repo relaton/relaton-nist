@@ -7,7 +7,7 @@ RSpec.describe "NIST documents fetcher" do
 
   context "instance methods" do
     it "#index" do
-      expect(subject.index).to be_instance_of RelatonNist::Index::Type
+      expect(subject.index).to be_instance_of Relaton::Index::Type
     end
   end
 
