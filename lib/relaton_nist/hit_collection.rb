@@ -9,7 +9,8 @@ require "open-uri"
 module RelatonNist
   # Hit collection.
   class HitCollection < RelatonBib::HitCollection
-    GHNISTDATA = "https://raw.githubusercontent.com/relaton/relaton-data-nist/main/data/"
+    GHNISTDATA = "https://raw.githubusercontent.com/relaton/relaton-data-nist/main/"
+    INDEX_FILE = "index-v1.yaml"
 
     #
     # @param [String] text reference
@@ -186,8 +187,12 @@ module RelatonNist
     #
     def from_ga # rubocop:disable Metrics/AbcSize, Metrics/MethodLength
       ref = full_ref
-      fn = ref.gsub(%r{[/\s:.]}, "_").upcase
-      yaml = OpenURI.open_uri "#{GHNISTDATA}#{fn}.yaml"
+      # fn = ref.gsub(%r{[/\s:.]}, "_").upcase
+      index = Relaton::Index.find_or_create :nist, url: "#{GHNISTDATA}index-v1.zip", file: INDEX_FILE
+      row = index.search { |r| r[:id] == ref }.min_by { |r| r[:id] }
+      return [] unless row
+
+      yaml = OpenURI.open_uri "#{GHNISTDATA}#{row[:file]}"
       hash = YAML.safe_load yaml
       hash["fetched"] = Date.today.to_s
       bib = RelatonNist::NistBibliographicItem.from_hash hash

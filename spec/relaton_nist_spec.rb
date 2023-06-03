@@ -67,10 +67,10 @@ RSpec.describe RelatonNist do
     VCR.use_cassette "8200_2018" do
       hits = RelatonNist::NistBibliography.search("NISTIR 8200", "2018").fetch
       expect(hits.first.to_s).to eq(
-        "<RelatonNist::Hit:"\
-        "#{format('%<id>#.14x', id: hits.first.object_id << 1)} "\
-        '@text="NISTIR 8200" @fetched="true" '\
-        '@fullIdentifier="NISTIR8200:2018" @title="NISTIR 8200">',
+        "<RelatonNist::Hit:" \
+        "#{format('%<id>#.14x', id: hits.first.object_id << 1)} " \
+        '@text="NIST IR 8200" @fetched="true" ' \
+        '@fullIdentifier="NISTIR8200:2018" @title="NIST IR 8200">',
       )
     end
   end
@@ -79,9 +79,9 @@ RSpec.describe RelatonNist do
     VCR.use_cassette "8200_2018" do
       hits = RelatonNist::NistBibliography.search("NISTIR 8200", "2018").fetch
       expect(hits.to_s).to eq(
-        "<RelatonNist::HitCollection:"\
-        "#{format('%<id>#.14x', id: hits.object_id << 1)} "\
-        "@ref=NISTIR 8200 @fetched=true>",
+        "<RelatonNist::HitCollection:" \
+        "#{format('%<id>#.14x', id: hits.object_id << 1)} " \
+        "@ref=NIST IR 8200 @fetched=true>",
       )
     end
   end
@@ -99,6 +99,13 @@ RSpec.describe RelatonNist do
         schema = Jing.new "grammars/relaton-nist-compile.rng"
         errors = schema.validate file_path
         expect(errors).to eq []
+      end
+    end
+
+    it "document" do
+      VCR.use_cassette "8200" do
+        item = RelatonNist::NistBibliography.get "NISTIR 8200", "2018"
+        expect(item.docidentifier.first.id).to eq "NIST IR 8200"
       end
     end
 

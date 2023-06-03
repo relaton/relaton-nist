@@ -57,28 +57,28 @@
             "1; mode=block"
           ],
           "X-Github-Request-Id": [
-            "C4DE:98DB:19B196:1DF219:647A113D"
+            "1E9A:4AE2:31090B:395080:647A7F5C"
           ],
           "Accept-Ranges": [
             "bytes"
           ],
           "Date": [
-            "Fri, 02 Jun 2023 15:56:45 GMT"
+            "Fri, 02 Jun 2023 23:57:12 GMT"
           ],
           "Via": [
             "1.1 varnish"
           ],
           "X-Served-By": [
-            "cache-atl18495-ATL"
+            "cache-atl18492-ATL"
           ],
           "X-Cache": [
-            "MISS"
+            "HIT"
           ],
           "X-Cache-Hits": [
-            "0"
+            "1"
           ],
           "X-Timer": [
-            "S1685721405.110031,VS0,VE146"
+            "S1685750233.566923,VS0,VE1"
           ],
           "Vary": [
             "Authorization,Accept-Encoding,Origin"
@@ -87,13 +87,13 @@
             "*"
           ],
           "X-Fastly-Request-Id": [
-            "c4721a7d4f93ddbd7f3783f5a5a699ff634cbf41"
+            "92f56fcb001f86fb2e8bc3e38232acd0424beb3a"
           ],
           "Expires": [
-            "Fri, 02 Jun 2023 16:01:45 GMT"
+            "Sat, 03 Jun 2023 00:02:12 GMT"
           ],
           "Source-Age": [
-            "0"
+            "205"
           ]
         },
         "body": {
@@ -101,7 +101,7 @@
           "string": "---\nschema-version: v1.2.3\nid: NISTIR8200\ntitle:\n- content: Interagency report on the status of international cybersecurity standardization\n    for the internet of things (IoT)\n  language:\n  - en\n  script:\n  - Latn\n  format: text/plain\nlink:\n- content: https://doi.org/10.6028/NIST.IR.8200\n  type: doi\n- content: https://nvlpubs.nist.gov/nistpubs/ir/2018/NIST.IR.8200.pdf\n  type: pdf\ntype: standard\ndocid:\n- id: NIST IR 8200\n  type: NIST\n  primary: true\n- id: 10.6028/NIST.IR.8200\n  type: DOI\ndate:\n- type: published\n  value: 2018-11\ncontributor:\n- person:\n    name:\n      given:\n        forename:\n        - content: Mike\n          script:\n          - Latn\n      surname:\n        content: Hogan\n        script:\n        - Latn\n    affiliation:\n    - organization:\n        name:\n        - content: Information Technology Laboratory\n  role:\n  - type: author\n- person:\n    name:\n      given:\n        forename:\n        - content: Ben\n          script:\n          - Latn\n      surname:\n        content: Piccarreta\n        script:\n        - Latn\n    affiliation:\n    - organization:\n        name:\n        - content: Information Technology Laboratory\n  role:\n  - type: author\n- organization:\n    name:\n    - content: National Institute of Standards and Technology\n    abbreviation:\n      content: NIST\n    contact:\n    - address:\n        city: Gaithersburg\n        state: MD\n        country: US\n  role:\n  - type: publisher\nrevdate: 2018-11\nscript:\n- Latn\nseries:\n- title:\n    content: NIST NISTIRs (Interagency/Internal Reports)\n    format: text/plain\n  abbreviation:\n    content: IR\n  number: '8200'\nplace:\n- Gaithersburg, MD\ndoctype: standard\next:\n  schema-version: v1.0.0\n"
         }
       },
-      "recorded_at": "Fri, 02 Jun 2023 15:56:45 GMT"
+      "recorded_at": "Fri, 02 Jun 2023 23:57:12 GMT"
     }
   ],
   "recorded_with": "VCR 6.1.0"

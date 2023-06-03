@@ -15,13 +15,6 @@ RSpec.describe RelatonNist::XMLParser do
     expect(item.to_xml(bibdata: true)).to be_equivalent_to xml
   end
 
-  it "get document" do
-    VCR.use_cassette "8200" do
-      item = RelatonNist::NistBibliography.get "NISTIR 8200", "2018"
-      expect(item.docidentifier.first.id).to eq "NIST IR 8200"
-    end
-  end
-
   it "warn if XML doesn't have bibitem or bibdata element" do
     item = ""
     expect { item = RelatonNist::XMLParser.from_xml "" }.to output(/can't find bibitem/)
