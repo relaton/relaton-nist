@@ -58,14 +58,11 @@ module RelatonNist
         parts = doi_parts(item.hit[:json]) || code_parts(item.hit[:code])
         (refparts[:code] && [parts[:series], item.hit[:series]].include?(refparts[:series]) &&
           refparts[:code].casecmp(parts[:code].upcase).zero? &&
-          (!refparts[:prt] || refparts[:prt] == parts[:prt]) &&
-          (!refparts[:vol] || refparts[:vol] == parts[:vol]) &&
-          (!refparts[:ver] || refparts[:ver] == parts[:ver]) &&
-          (!refparts[:rev] || refparts[:rev] == parts[:rev]) &&
-          refparts[:draft] == parts[:draft] && refparts[:add] == parts[:add] &&
-          refparts[:res] == parts[:res]) # ||
-          # (refparts[:code] && !refparts[:code].empty? &&
-          #   item.hit[:title]&.include?("#{refparts[:series]} #{refparts[:code]}"))
+          (refparts[:prt] == parts[:prt]) &&
+          (refparts[:vol] == parts[:vol]) &&
+          (refparts[:ver] == parts[:ver]) &&
+          (refparts[:rev] == parts[:rev]) &&
+          refparts[:draft] == parts[:draft] && refparts[:add] == parts[:add])
       end
     end
 
@@ -73,7 +70,7 @@ module RelatonNist
 
     def code_parts(code) # rubocop:disable Metrics/MethodLength
       {
-        prefix: match(/^(?:NIST|NBS)\s?/, code),
+        # prefix: match(/^(?:NIST|NBS)\s?/, code),
         series: match(/(?<val>(?:SP|FIPS|IR|ITL\sBulletin|White\sPaper))\s/, code),
         code: match(/(?<val>[0-9-]{3,}[A-Z]?)/, code),
         prt: match(/(?:pt|\sPart\s)(?<val>\d+)/, code),
@@ -86,7 +83,6 @@ module RelatonNist
         # (?:\s(?<rev2>Rev\.\s\d+))?
         add: match(/\sAdd(?:endum)?(?<val>\d*)/, code),
         draft: !match(/\((?:Retired\s)?Draft\)/, code).nil?,
-        res: match(/(?<=\s)RES/, text),
       }
     end
 
@@ -95,7 +91,7 @@ module RelatonNist
 
       id = json["doi"].split("/").last
       {
-        prefix: match(/^(?:NIST|NBS)\./, id),
+        # prefix: match(/^(?:NIST|NBS)\./, id),
         series: match(/(?:SP|FIPS|IR|ITL\sBulletin|White\sPaper)(?=\.)/, id),
         code: match(/(?<=\.)\d{3,}(?:-\d+)*(?:[[:alpha:]](?!\d|raft|er|t?\d))?/, id),
         prt: match(/pt?(?<val>\d+)/, id),
@@ -123,7 +119,6 @@ module RelatonNist
         rev: match(/(?:(?:(?<dl>\.)|[^a-z])r|\sRev\.\s)(?(<dl>)-)(?<val>\d+)/, text),
         add: match(/(?:(?<dl>\.)?add|\/Add)(?(<dl>)-)(?<val>\d*)/, text),
         draft: !(match(/\((?:Draft|PD)\)/, text).nil? && @opts[:stage].nil?),
-        res: match(/(?<=\s)RES/, text),
         # prt2: match(/(?<=\s)Part\s[A-Z\d]+/, text),
         # vol2: match(/(?<=\s)Vol\.\s\d+/, text),
         # ver2: match(/(?<=\s)Ver\.\s\d+/, text),

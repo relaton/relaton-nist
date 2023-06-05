@@ -178,5 +178,28 @@ RSpec.describe "NIST documents fetcher" do
       expect(rel[0][:bibitem].docidentifier[0].primary).to eq true
       expect(rel[0][:bibitem].formattedref.content).to eq "NIST SP 800-133"
     end
+
+    context "fetch DOI" do
+      shared_examples "fetch DOI" do |doi, result|
+        it do
+          report = Nokogiri::XML <<~XML
+            <report-paper_metadata>
+              <doi_data>
+                <doi>#{doi}</doi>
+              </doi_data>
+            </report-paper_metadata>
+          XML
+          doc = report.at("/report-paper_metadata")
+          expect(subject.fetch_doi(doc)).to eq result
+        end
+      end
+
+      it_behaves_like "fetch DOI", "10.6028/NBS.CIRC.e2e", "10.6028/NBS.CIRC.2e2"
+      it_behaves_like "fetch DOI", "10.6028/NBS.CIRC.sup", "10.6028/NBS.CIRC.24e7sup"
+      it_behaves_like "fetch DOI", "10.6028/NBS.CIRC.supJun1925-Jun1926", "10.6028/NBS.CIRC.24e7sup2"
+      it_behaves_like "fetch DOI", "10.6028/NBS.CIRC.supJun1925-Jun1927", "10.6028/NBS.CIRC.24e7sup3"
+      it_behaves_like "fetch DOI", "10.6028/NBS.CIRC.24supJuly1922", "10.6028/NBS.CIRC.24e6sup"
+      it_behaves_like "fetch DOI", "10.6028/NBS.CIRC.24supJan1924", "10.6028/NBS.CIRC.24e6sup2"
+    end
   end
 end

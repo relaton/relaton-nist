@@ -120,7 +120,7 @@ module RelatonNist
     #
     def ref_attrs
       docidentifier.detect(&:primary)&.tap do |di|
-        return { anchor: di.id.gsub(" ", ".") }
+        return { anchor: di.id.gsub(" ", ".").squeeze(".") }
       end
     end
   end

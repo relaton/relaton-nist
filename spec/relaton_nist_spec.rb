@@ -204,6 +204,11 @@ RSpec.describe RelatonNist do
       expect(item).to be_nil
     end
 
+    it "NIST SP 800-53 RES", vcr: { cassette_name: "nist_sp_800_53_res" } do
+      item = RelatonNist::NistBibliography.get("NIST SP 800-53 RES", nil, {})
+      expect(item.docidentifier[0].id).to eq "SP 800-53"
+    end
+
     it "doc with edition" do
       VCR.use_cassette "json_data" do
         result = RelatonNist::NistBibliography.get "FIPS 140-2"
@@ -244,14 +249,14 @@ RSpec.describe RelatonNist do
     context "doc with specific version" do
       it "short notation" do
         VCR.use_cassette "json_data" do
-          bib = RelatonNist::NistBibliography.get "SP 800-45ver2"
+          bib = RelatonNist::NistBibliography.get "SP 800-45ver2r2"
           expect(bib.docidentifier[0].id).to eq "SP 800-45 Ver. 2 Rev. 2"
         end
       end
 
       it "long notation" do
         VCR.use_cassette "json_data" do
-          bib = RelatonNist::NistBibliography.get "SP 800-45 Ver. 2"
+          bib = RelatonNist::NistBibliography.get "SP 800-45 Ver. 2 Rev. 2"
           expect(bib.docidentifier[0].id).to eq "SP 800-45 Ver. 2 Rev. 2"
         end
       end
@@ -292,7 +297,7 @@ RSpec.describe RelatonNist do
     context "doc using MR identifiers" do
       it "with volume and revision" do
         VCR.use_cassette "json_data" do
-          bib = RelatonNist::NistBibliography.get "NIST.SP.800-60.v-1.r-1.eng"
+          bib = RelatonNist::NistBibliography.get "NIST.SP.800-60.v-1.ver1.r-1.eng"
           expect(bib.docidentifier[0].id).to eq "SP 800-60 Vol. 1 Ver. 1 Rev. 1"
         end
       end
