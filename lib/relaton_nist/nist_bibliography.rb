@@ -18,9 +18,10 @@ module RelatonNist
       #
       # @return [RelatonNist::HitCollection] search result
       #
-      def search(text, year = nil, opts = {})
-        ref = text.sub(/^NISTIR/, "NIST IR")
-        HitCollection.search ref, year, opts
+      def search(pubid, opts = {})
+        pubid_ref = pubid.is_a?(String) ? Pubid::Nist::Identifier.parse(pubid) : pubid
+        # ref = text.sub(/^NISTIR/, "NIST IR")
+        HitCollection.search pubid_ref, opts
       rescue OpenURI::HTTPError, SocketError, OpenSSL::SSL::SSLError => e
         raise RelatonBib::RequestError, e.message
       end
@@ -38,52 +39,38 @@ module RelatonNist
       # @return [RelatonNist::NistBibliographicItem, nil] bibliographic item
       #
       def get(code, year = nil, opts = {}) # rubocop:disable Metrics/AbcSize, Metrics/MethodLength, Metrics/CyclomaticComplexity, Metrics/PerceivedComplexity
-        return fetch_ref_err(code, year, []) if code.match?(/\sEP$/)
+        pubid = Pubid::Nist::Identifier.parse code
+        pubid.edition ||= Pubid::Nist::Edition.new if year
+        pubid.edition.year ||= year.to_i
+        # return fetch_ref_err(code, year, []) if code.match?(/\sEP$/)
 
-        /^(?<code2>[^(]+)(?:\((?<date2>\w+\s(?:\d{2},\s)?\d{4})\))?\s?\(?(?:(?<=\()(?<stage>[^\)]+))?/ =~ code
-        stage ||= /(?<=\.)PD-\w+(?=\.)/.match(code)&.to_s
-        if code2
-          code = code2.strip
-          if date2
-            case date2
-            when /\w+\s\d{4}/
-              opts[:date] = Date.strptime date2, "%B %Y"
-            when /\w+\s\d{2},\s\d{4}/
-              opts[:date] = Date.strptime date2, "%B %d, %Y"
-            end
-          end
-          opts[:stage] = stage if stage
-        end
+        # /^(?<code2>[^(]+)(?:\((?<date2>\w+\s(?:\d{2},\s)?\d{4})\))?\s?\(?(?:(?<=\()(?<stage>[^\)]+))?/ =~ code
+        # stage ||= /(?<=\.)PD-\w+(?=\.)/.match(code)&.to_s
+        # if code2
+        #   code = code2.strip
+        #   if date2
+        #     case date2
+        #     when /\w+\s\d{4}/
+        #       opts[:issued_date] = Date.strptime date2, "%B %Y"
+        #     when /\w+\s\d{2},\s\d{4}/
+        #       opts[:updated_date] = Date.strptime date2, "%B %d, %Y"
+        #     end
+        #   end
+        #   opts[:stage] = stage if stage
+        # end
 
-        if year.nil?
-          /^(?<code1>[^:]+):(?<year1>[^:]+)$/ =~ code
-          unless code1.nil?
-            code = code1
-            year = year1
-          end
-        end
+        # if year.nil?
+        #   /^(?<code1>[^:]+):(?<year1>[^:]+)$/ =~ code
+        #   unless code1.nil?
+        #     code = code1
+        #     year = year1
+        #   end
+        # end
 
-        code += "-1" if opts[:all_parts]
-        nistbib_get(code, year, opts)
-      end
-
-      private
-
-      #
-      # Get NIST document by reference
-      #
-      # @param [String] code reference
-      # @param [String] year year
-      # @param [Hash] opts options
-      # @option opts [Date] :issued_date issued date
-      # @option opts [Date] :updated_date updated date
-      # @option opts [String] :stage stage
-      #
-      # @return [RelatonNist::NistBibliographicItem, nil] bibliographic item
-      #
-      def nistbib_get(code, year, opts)
-        result = nistbib_search_filter(code, year, opts) || (return nil)
-        ret = nistbib_results_filter(result, year, opts)
+        # code += "-1" if opts[:all_parts]
+        warn "[relaton-nist] (\"#{code}\") fetching..."
+        result = nistbib_search_filter(pubid, opts) || (return nil)
+        ret = nistbib_results_filter(result, pubid.edition.year, opts)
         if ret[:ret]
           warn "[relaton-nist] (\"#{code}\") found #{ret[:ret].docidentifier.first.id}"
           ret[:ret]
@@ -91,6 +78,8 @@ module RelatonNist
           fetch_ref_err(code, year, ret[:years])
         end
       end
+
+      private
 
       #
       # Sort through the results from RelatonNist, fetching them three at a time,
@@ -160,9 +149,8 @@ module RelatonNist
       #
       # @return [RelatonNist::HitCollection] hits collection
       #
-      def nistbib_search_filter(code, year, opts)
-        warn "[relaton-nist] (\"#{code}\") fetching..."
-        result = search(code, year, opts)
+      def nistbib_search_filter(pubid, opts)
+        result = search(pubid, opts)
         result.search_filter
       end
 
