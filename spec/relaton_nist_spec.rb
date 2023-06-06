@@ -112,7 +112,7 @@ RSpec.describe RelatonNist do
 
     it "a reference with an year in a code" do
       VCR.use_cassette "8200_2018" do
-        result = RelatonNist::NistBibliography.get("NISTIR 8200:2018")
+        result = RelatonNist::NistBibliography.get("NISTIR 8200-2018")
           .to_xml bibdata: true
         expect(result).to include "<on>2018-11</on>"
       end

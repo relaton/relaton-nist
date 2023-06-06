@@ -1,4 +1,5 @@
 require "singleton"
+require "pubid-nist"
 require "relaton/index"
 require "relaton_bib"
 require "relaton_nist/version"

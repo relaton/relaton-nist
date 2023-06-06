@@ -18,8 +18,9 @@ module RelatonNist
     # @param [Hash] opts options
     # @option opts [String] :stage stage of document
     #
-    def initialize(text, year = nil, opts = {})
-      super text, year
+    def initialize(pubid_ref, opts = {})
+      super pubid_ref.to_s, year
+      @pubid_ref = pubid_ref
       @opts = opts
     end
 
@@ -33,8 +34,8 @@ module RelatonNist
     #
     # @return [RelatonNist::HitCollection] hits collection
     #
-    def self.search(text, year = nil, opts = {})
-      new(text, year, opts).search
+    def self.search(pubid_ref, opts = {})
+      new(pubid_ref, opts).search
     end
 
     #
