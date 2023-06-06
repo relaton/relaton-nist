@@ -29,14 +29,6 @@ module RelatonNist
     end
 
     def parse_docid(doc) # rubocop:disable Metrics/AbcSize, Metrics/MethodLength
-      # case doi
-      # when "10.6028/NBS.CIRC.12e2revjune" then doi.sub!("13e", "12e")
-      # when "10.6028/NBS.CIRC.36e2" then doi.sub!("46e", "36e")
-      # when "10.6028/NBS.HB.67suppJune1967" then doi.sub!("1965", "1967")
-      # when "10.6028/NBS.HB.105-1r1990" then doi.sub!("105-1-1990", "105-1r1990")
-      # when "10.6028/NIST.HB.150-10-1995" then doi.sub!(/150-10$/, "150-10-1995")
-      # end
-      # anchor = doi.split("/")[1..-1].join "/"
       [
         { type: "NIST", id: pub_id(doc), primary: true },
         { type: "DOI", id: fetch_doi(doc) },
@@ -135,8 +127,12 @@ module RelatonNist
     # @param doc [Nokogiri::XML::Element]
     # @return [Array<RelatonBib::FormattedString>]
     def fetch_abstract(doc)
-      doc.xpath("jats:abstract/jats:p", "jats" => "http://www.ncbi.nlm.nih.gov/JATS1").map do |a|
-        RelatonBib::FormattedString.new(content: a.text, language: doc["language"], script: "Latn")
+      doc.xpath(
+        "jats:abstract/jats:p", "jats" => "http://www.ncbi.nlm.nih.gov/JATS1"
+      ).each_with_object([]) do |a, m|
+        next if a.text.empty?
+
+        m << RelatonBib::FormattedString.new(content: a.text, language: doc["language"], script: "Latn")
       end
     end
 

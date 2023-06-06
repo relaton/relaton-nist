@@ -201,5 +201,37 @@ RSpec.describe "NIST documents fetcher" do
       it_behaves_like "fetch DOI", "10.6028/NBS.CIRC.24supJuly1922", "10.6028/NBS.CIRC.24e6sup"
       it_behaves_like "fetch DOI", "10.6028/NBS.CIRC.24supJan1924", "10.6028/NBS.CIRC.24e6sup2"
     end
+
+    context "fetch abstract" do
+      it do
+        report = Nokogiri::XML <<~XML
+          <report-paper_metadata language="en">
+            <jats:abstract xmlns:jats="http://www.ncbi.nlm.nih.gov/JATS1">
+              <jats:p>Abstract</jats:p>
+            </jats:abstract>
+          </report-paper_metadata>
+        XML
+        doc = report.at("/report-paper_metadata")
+        abstract = subject.fetch_abstract doc
+        expect(abstract).to be_instance_of Array
+        expect(abstract.size).to eq 1
+        expect(abstract[0]).to be_instance_of RelatonBib::FormattedString
+        expect(abstract[0].content).to eq "Abstract"
+        expect(abstract[0].language).to eq ["en"]
+        expect(abstract[0].script).to eq ["Latn"]
+      end
+
+      it "ignore abstract with no content" do
+        report = Nokogiri::XML <<~XML
+          <report-paper_metadata>
+            <jats:abstract xmlns:jats="http://www.ncbi.nlm.nih.gov/JATS1">
+              <jats:p/>
+            </jats:abstract>
+          </report-paper_metadata>
+        XML
+        doc = report.at("/report-paper_metadata")
+        expect(subject.fetch_abstract(doc).size).to eq 0
+      end
+    end
   end
 end
