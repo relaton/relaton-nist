@@ -12,7 +12,7 @@ module RelatonNist
   class NistBibliography
     class << self
       #
-      # Search NIST docuemnts by reference
+      # Search NIST documents by reference
       #
       # @param text [String] reference
       #
