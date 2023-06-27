@@ -43,6 +43,14 @@ sources:
 . bibliographic feed from NIST CSRC
 . NIST Library dataset
 
+The NIST CSRC provides:
+
+* NIST SP 800-*
+* NIST SP 500-*
+* NIST SP 1800-*
+* NIST FIPS {31, 39, 41, 46, 46-$$*$$, 48, 65, 73, 74, 81, 83, 87, 102, 112, 113, 139, 140-$$*$$, 141, 171, 180, 180-$$*$$, 181, 186, 186-$$*$$, 188, 190, 191, 196, 197, 198, 198-1, 199, 200, 201, 201-*, 202}
+
+The NIST Library dataset provides documents listed in the https://github.com/relaton/relaton-data-nist/blob/main/index-v1.yaml[index].
 
 == Installation
 
