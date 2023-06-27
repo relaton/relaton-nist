@@ -232,6 +232,17 @@ RSpec.describe "NIST documents fetcher" do
         doc = report.at("/report-paper_metadata")
         expect(subject.fetch_abstract(doc).size).to eq 0
       end
+
+      it "#pub_id" do
+        doc = Nokogiri::XML(<<~XML).at("/report-paper_metadata")
+          <report-paper_metadata>
+            <doi_data>
+              <doi>10.6028/nist.ir.8011-4</doi>
+            </doi_data>
+          </report-paper_metadata>
+        XML
+        expect(subject.pub_id(doc)).to eq "NIST IR 8011-4"
+      end
     end
   end
 end

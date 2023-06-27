@@ -57,28 +57,28 @@
             "1; mode=block"
           ],
           "X-Github-Request-Id": [
-            "C326:648F:2EE50D:372C93:647A7F5F"
+            "D3EC:1FA4:345F7:3D77E:649AF1E0"
           ],
           "Accept-Ranges": [
             "bytes"
           ],
           "Date": [
-            "Fri, 02 Jun 2023 23:57:14 GMT"
+            "Tue, 27 Jun 2023 14:27:44 GMT"
           ],
           "Via": [
             "1.1 varnish"
           ],
           "X-Served-By": [
-            "cache-atl18457-ATL"
+            "cache-atl18424-ATL"
           ],
           "X-Cache": [
-            "HIT"
+            "MISS"
           ],
           "X-Cache-Hits": [
-            "1"
+            "0"
           ],
           "X-Timer": [
-            "S1685750234.432258,VS0,VE1"
+            "S1687876065.765722,VS0,VE115"
           ],
           "Vary": [
             "Authorization,Accept-Encoding,Origin"
@@ -86,14 +86,17 @@
           "Access-Control-Allow-Origin": [
             "*"
           ],
+          "Cross-Origin-Resource-Policy": [
+            "cross-origin"
+          ],
           "X-Fastly-Request-Id": [
-            "fc23d9d84b25e28bd92a1c6894b4604d7271aebf"
+            "88ec3dd5037356612a578b4e5add22b7b221d9e2"
           ],
           "Expires": [
-            "Sat, 03 Jun 2023 00:02:14 GMT"
+            "Tue, 27 Jun 2023 14:32:44 GMT"
           ],
           "Source-Age": [
-            "204"
+            "0"
           ]
         },
         "body": {
@@ -101,7 +104,7 @@
           "string": "---\nschema-version: v1.2.3\nid: NISTSP500-183\ntitle:\n- content: Stable implementation agreements for open systems interconnection protocols\n    Version 4 Edition 1 December 1990\n  language:\n  - en\n  script:\n  - Latn\n  format: text/plain\nlink:\n- content: https://doi.org/10.6028/NIST.SP.500-183\n  type: doi\n- content: https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication500-183.pdf\n  type: pdf\ntype: standard\ndocid:\n- id: NIST SP 500-183\n  type: NIST\n  primary: true\n- id: 10.6028/NIST.SP.500-183\n  type: DOI\ndate:\n- type: published\n  value: '1991'\ncontributor:\n- person:\n    name:\n      given:\n        forename:\n        - content: Tim\n          language:\n          - en\n          script:\n          - Latn\n      surname:\n        content: Borland\n        language:\n        - en\n        script:\n        - Latn\n  role:\n  - type: author\n- organization:\n    name:\n    - content: National Institute of Standards and Technology\n    abbreviation:\n      content: NIST\n    contact:\n    - address:\n        city: Gaithersburg\n        state: MD\n        country: US\n  role:\n  - type: publisher\nrevdate: '1991'\nlanguage:\n- en\nscript:\n- Latn\nseries:\n- title:\n    content: NIST Special Publications (General)\n    format: text/plain\n  abbreviation:\n    content: SP\n  number: 500-183\nplace:\n- Gaithersburg, MD\ndoctype: standard\next:\n  schema-version: v1.0.0\n"
         }
       },
-      "recorded_at": "Fri, 02 Jun 2023 23:57:14 GMT"
+      "recorded_at": "Tue, 27 Jun 2023 14:27:44 GMT"
     }
   ],
   "recorded_with": "VCR 6.1.0"

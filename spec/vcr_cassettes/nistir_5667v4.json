@@ -30,7 +30,7 @@
             "keep-alive"
           ],
           "Content-Length": [
-            "1295"
+            "1290"
           ],
           "Cache-Control": [
             "max-age=300"
@@ -42,7 +42,7 @@
             "text/plain; charset=utf-8"
           ],
           "Etag": [
-            "W/\"0cf48f78ccb2db3b1946451a5df30112623d030137c388b68fcae5c63e4edbb4\""
+            "W/\"4f6c4b6a26bb12e830c937815fb268ccb45e4dae1e0865cd714db3c0d7eda0f4\""
           ],
           "Strict-Transport-Security": [
             "max-age=31536000"
@@ -57,28 +57,28 @@
             "1; mode=block"
           ],
           "X-Github-Request-Id": [
-            "E9E8:1C61:333E9C:3B8947:647A7F5F"
+            "1BE6:646C:2ADFB:33EEC:649AF1E1"
           ],
           "Accept-Ranges": [
             "bytes"
           ],
           "Date": [
-            "Fri, 02 Jun 2023 23:57:15 GMT"
+            "Tue, 27 Jun 2023 14:27:45 GMT"
           ],
           "Via": [
             "1.1 varnish"
           ],
           "X-Served-By": [
-            "cache-atl18430-ATL"
+            "cache-atl18460-ATL"
           ],
           "X-Cache": [
-            "HIT"
+            "MISS"
           ],
           "X-Cache-Hits": [
-            "1"
+            "0"
           ],
           "X-Timer": [
-            "S1685750236.584190,VS0,VE1"
+            "S1687876065.032157,VS0,VE112"
           ],
           "Vary": [
             "Authorization,Accept-Encoding,Origin"
@@ -86,22 +86,25 @@
           "Access-Control-Allow-Origin": [
             "*"
           ],
+          "Cross-Origin-Resource-Policy": [
+            "cross-origin"
+          ],
           "X-Fastly-Request-Id": [
-            "f72fb6aeae0b719db6db8ea03a708fd283a3106d"
+            "42621b11a824254eee9bc4f6ad8cd94a60901d2e"
           ],
           "Expires": [
-            "Sat, 03 Jun 2023 00:02:15 GMT"
+            "Tue, 27 Jun 2023 14:32:45 GMT"
           ],
           "Source-Age": [
-            "205"
+            "0"
           ]
         },
         "body": {
           "encoding": "ASCII-8BIT",
-          "string": "---\nschema-version: v1.2.3\nid: NISTIR5667v4\ntitle:\n- content: A study of potential applications of automation and robotics technology\n    in construction, maintenance and operation of highway systems:a final report\n  language:\n  - en\n  script:\n  - Latn\n  format: text/plain\nlink:\n- content: https://doi.org/10.6028/NIST.IR.5667v4\n  type: doi\n- content: https://nvlpubs.nist.gov/nistpubs/Legacy/IR/nistir5667v4.pdf\n  type: pdf\ntype: standard\ndocid:\n- id: NIST IR 5667v4\n  type: NIST\n  primary: true\n- id: 10.6028/NIST.IR.5667v4\n  type: DOI\ndate:\n- type: published\n  value: '1995'\ncontributor:\n- person:\n    name:\n      given:\n        forename:\n        - content: Ernest\n          script:\n          - Latn\n      surname:\n        content: Kent\n        script:\n        - Latn\n  role:\n  - type: author\n- organization:\n    name:\n    - content: National Institute of Standards and Technology\n    abbreviation:\n      content: NIST\n    contact:\n    - address:\n        city: Gaithersburg\n        state: MD\n        country: US\n  role:\n  - type: publisher\nrevdate: '1995'\nscript:\n- Latn\nseries:\n- title:\n    content: NIST NISTIRs (Interagency/Internal Reports)\n    format: text/plain\n  abbreviation:\n    content: IR\n  number: 5667v4\nplace:\n- Gaithersburg, MD\ndoctype: standard\next:\n  schema-version: v1.0.0\n"
+          "string": "---\nschema-version: v1.2.3\nid: NISTIR5667v4\ntitle:\n- content: A study of potential applications of automation and robotics technology\n    in construction, maintenance and operation of highway systems:a final report\n  language:\n  - en\n  script:\n  - Latn\n  format: text/plain\nlink:\n- content: https://doi.org/10.6028/NIST.IR.5667v4\n  type: doi\n- content: https://nvlpubs.nist.gov/nistpubs/Legacy/IR/nistir5667v4.pdf\n  type: pdf\ntype: standard\ndocid:\n- id: NIST IR 5667v4\n  type: NIST\n  primary: true\n- id: 10.6028/NIST.IR.5667v4\n  type: DOI\ndate:\n- type: published\n  value: '1995'\ncontributor:\n- person:\n    name:\n      given:\n        forename:\n        - content: Ernest\n          script:\n          - Latn\n      surname:\n        content: Kent\n        script:\n        - Latn\n  role:\n  - type: author\n- organization:\n    name:\n    - content: National Institute of Standards and Technology\n    abbreviation:\n      content: NIST\n    contact:\n    - address:\n        city: Gaithersburg\n        state: MD\n        country: US\n  role:\n  - type: publisher\nrevdate: '1995'\nscript:\n- Latn\nseries:\n- title:\n    content: NIST IR (Interagency/Internal Reports)\n    format: text/plain\n  abbreviation:\n    content: IR\n  number: 5667v4\nplace:\n- Gaithersburg, MD\ndoctype: standard\next:\n  schema-version: v1.0.0\n"
         }
       },
-      "recorded_at": "Fri, 02 Jun 2023 23:57:15 GMT"
+      "recorded_at": "Tue, 27 Jun 2023 14:27:45 GMT"
     }
   ],
   "recorded_with": "VCR 6.1.0"

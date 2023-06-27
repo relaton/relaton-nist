@@ -30,7 +30,7 @@
             "keep-alive"
           ],
           "Content-Length": [
-            "1330"
+            "1325"
           ],
           "Cache-Control": [
             "max-age=300"
@@ -42,7 +42,7 @@
             "text/plain; charset=utf-8"
           ],
           "Etag": [
-            "W/\"ea3b3af168af5524cedfeb7a42cddf7012766aa8e49597b5601f0246405db651\""
+            "W/\"1bdd1c99abc3f7c7fadbbcf104eb04bf88fea1ece1cfaf4359a020d8563b6cb5\""
           ],
           "Strict-Transport-Security": [
             "max-age=31536000"
@@ -57,28 +57,28 @@
             "1; mode=block"
           ],
           "X-Github-Request-Id": [
-            "9760:18EC:2CFA75:3542BE:647A7F5F"
+            "FAB8:6335:31288:3A42A:649AF1E0"
           ],
           "Accept-Ranges": [
             "bytes"
           ],
           "Date": [
-            "Fri, 02 Jun 2023 23:57:14 GMT"
+            "Tue, 27 Jun 2023 14:27:44 GMT"
           ],
           "Via": [
             "1.1 varnish"
           ],
           "X-Served-By": [
-            "cache-atl18475-ATL"
+            "cache-atl18495-ATL"
           ],
           "X-Cache": [
-            "HIT"
+            "MISS"
           ],
           "X-Cache-Hits": [
-            "1"
+            "0"
           ],
           "X-Timer": [
-            "S1685750234.331827,VS0,VE1"
+            "S1687876064.490617,VS0,VE159"
           ],
           "Vary": [
             "Authorization,Accept-Encoding,Origin"
@@ -86,22 +86,25 @@
           "Access-Control-Allow-Origin": [
             "*"
           ],
+          "Cross-Origin-Resource-Policy": [
+            "cross-origin"
+          ],
           "X-Fastly-Request-Id": [
-            "a918df3f2817c4f674e5eaec6b14c645afb69ab2"
+            "69e1292d1ce3019766b06c130cc8ebdf1e21ab79"
           ],
           "Expires": [
-            "Sat, 03 Jun 2023 00:02:14 GMT"
+            "Tue, 27 Jun 2023 14:32:44 GMT"
           ],
           "Source-Age": [
-            "204"
+            "0"
           ]
         },
         "body": {
           "encoding": "ASCII-8BIT",
-          "string": "---\nschema-version: v1.2.3\nid: NISTIR7916\ntitle:\n- content: Proceedings of the Cybersecurity in Cyber-Physical Systems Workshop, April\n    23-24, 2012\n  language:\n  - en\n  script:\n  - Latn\n  format: text/plain\nlink:\n- content: https://doi.org/10.6028/NIST.IR.7916\n  type: doi\n- content: https://nvlpubs.nist.gov/nistpubs/ir/2013/NIST.IR.7916.pdf\n  type: pdf\ntype: standard\ndocid:\n- id: NIST IR 7916\n  type: NIST\n  primary: true\n- id: 10.6028/NIST.IR.7916\n  type: DOI\ndate:\n- type: published\n  value: 2013-02\ncontributor:\n- person:\n    name:\n      given:\n        forename:\n        - content: Tanya\n          script:\n          - Latn\n      surname:\n        content: Brewer\n        script:\n        - Latn\n    affiliation:\n    - organization:\n        name:\n        - content: Information Technology Laboratory\n  role:\n  - type: author\n- organization:\n    name:\n    - content: National Institute of Standards and Technology\n    abbreviation:\n      content: NIST\n    contact:\n    - address:\n        city: Gaithersburg\n        state: MD\n        country: US\n  role:\n  - type: publisher\nrevdate: 2013-02\nscript:\n- Latn\nseries:\n- title:\n    content: NIST NISTIRs (Interagency/Internal Reports)\n    format: text/plain\n  abbreviation:\n    content: IR\n  number: '7916'\nplace:\n- Gaithersburg, MD\ndoctype: standard\next:\n  schema-version: v1.0.0\n"
+          "string": "---\nschema-version: v1.2.3\nid: NISTIR7916\ntitle:\n- content: Proceedings of the Cybersecurity in Cyber-Physical Systems Workshop, April\n    23-24, 2012\n  language:\n  - en\n  script:\n  - Latn\n  format: text/plain\nlink:\n- content: https://doi.org/10.6028/NIST.IR.7916\n  type: doi\n- content: https://nvlpubs.nist.gov/nistpubs/ir/2013/NIST.IR.7916.pdf\n  type: pdf\ntype: standard\ndocid:\n- id: NIST IR 7916\n  type: NIST\n  primary: true\n- id: 10.6028/NIST.IR.7916\n  type: DOI\ndate:\n- type: published\n  value: 2013-02\ncontributor:\n- person:\n    name:\n      given:\n        forename:\n        - content: Tanya\n          script:\n          - Latn\n      surname:\n        content: Brewer\n        script:\n        - Latn\n    affiliation:\n    - organization:\n        name:\n        - content: Information Technology Laboratory\n  role:\n  - type: author\n- organization:\n    name:\n    - content: National Institute of Standards and Technology\n    abbreviation:\n      content: NIST\n    contact:\n    - address:\n        city: Gaithersburg\n        state: MD\n        country: US\n  role:\n  - type: publisher\nrevdate: 2013-02\nscript:\n- Latn\nseries:\n- title:\n    content: NIST IR (Interagency/Internal Reports)\n    format: text/plain\n  abbreviation:\n    content: IR\n  number: '7916'\nplace:\n- Gaithersburg, MD\ndoctype: standard\next:\n  schema-version: v1.0.0\n"
         }
       },
-      "recorded_at": "Fri, 02 Jun 2023 23:57:14 GMT"
+      "recorded_at": "Tue, 27 Jun 2023 14:27:44 GMT"
     }
   ],
   "recorded_with": "VCR 6.1.0"

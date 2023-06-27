@@ -36,9 +36,16 @@ module RelatonNist
       ]
     end
 
+    #
+    # Parse document's ID from XML
+    #
+    # @param [Nokogiri::XML::Element] doc XML element
+    #
+    # @return [String] document's ID
+    #
     def pub_id(doc)
       # anchor(doc).gsub(".", " ")
-      fetch_doi(doc).split("/")[1..].join("/").gsub(".", " ")
+      fetch_doi(doc).split("/")[1..].join("/").gsub(".", " ").sub(/^nist\sir/, "NIST IR")
     end
 
     def fetch_doi(doc) # rubocop:disable Metrics/CyclomaticComplexity

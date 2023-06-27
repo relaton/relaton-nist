@@ -30,7 +30,7 @@
             "keep-alive"
           ],
           "Content-Length": [
-            "1666"
+            "1661"
           ],
           "Cache-Control": [
             "max-age=300"
@@ -42,7 +42,7 @@
             "text/plain; charset=utf-8"
           ],
           "Etag": [
-            "W/\"8d347b8a9a91d9c0c6a1b60701c4355080ed159f7ba6502e64d7c31781e5728c\""
+            "W/\"1a6d7f3b5ef47e8b6614d4fc516bd0c86a4ef145eb946f6c5eb580ea727f3ebb\""
           ],
           "Strict-Transport-Security": [
             "max-age=31536000"
@@ -57,19 +57,19 @@
             "1; mode=block"
           ],
           "X-Github-Request-Id": [
-            "1E9A:4AE2:31090B:395080:647A7F5C"
+            "6CCA:91D0:36C0E:3FED2:649AF1DE"
           ],
           "Accept-Ranges": [
             "bytes"
           ],
           "Date": [
-            "Fri, 02 Jun 2023 23:57:15 GMT"
+            "Tue, 27 Jun 2023 14:27:45 GMT"
           ],
           "Via": [
             "1.1 varnish"
           ],
           "X-Served-By": [
-            "cache-atl18446-ATL"
+            "cache-atl18468-ATL"
           ],
           "X-Cache": [
             "HIT"
@@ -78,7 +78,7 @@
             "1"
           ],
           "X-Timer": [
-            "S1685750236.758163,VS0,VE1"
+            "S1687876065.310336,VS0,VE1"
           ],
           "Vary": [
             "Authorization,Accept-Encoding,Origin"
@@ -86,22 +86,25 @@
           "Access-Control-Allow-Origin": [
             "*"
           ],
+          "Cross-Origin-Resource-Policy": [
+            "cross-origin"
+          ],
           "X-Fastly-Request-Id": [
-            "f0fc4dd17504c38eba82557528714d6774abb531"
+            "f6e4a9c17e74c62a93a8bf2b5a023f59f8fd6d6a"
           ],
           "Expires": [
-            "Sat, 03 Jun 2023 00:02:15 GMT"
+            "Tue, 27 Jun 2023 14:32:45 GMT"
           ],
           "Source-Age": [
-            "208"
+            "3"
           ]
         },
         "body": {
           "encoding": "ASCII-8BIT",
-          "string": "---\nschema-version: v1.2.3\nid: NISTIR8200\ntitle:\n- content: Interagency report on the status of international cybersecurity standardization\n    for the internet of things (IoT)\n  language:\n  - en\n  script:\n  - Latn\n  format: text/plain\nlink:\n- content: https://doi.org/10.6028/NIST.IR.8200\n  type: doi\n- content: https://nvlpubs.nist.gov/nistpubs/ir/2018/NIST.IR.8200.pdf\n  type: pdf\ntype: standard\ndocid:\n- id: NIST IR 8200\n  type: NIST\n  primary: true\n- id: 10.6028/NIST.IR.8200\n  type: DOI\ndate:\n- type: published\n  value: 2018-11\ncontributor:\n- person:\n    name:\n      given:\n        forename:\n        - content: Mike\n          script:\n          - Latn\n      surname:\n        content: Hogan\n        script:\n        - Latn\n    affiliation:\n    - organization:\n        name:\n        - content: Information Technology Laboratory\n  role:\n  - type: author\n- person:\n    name:\n      given:\n        forename:\n        - content: Ben\n          script:\n          - Latn\n      surname:\n        content: Piccarreta\n        script:\n        - Latn\n    affiliation:\n    - organization:\n        name:\n        - content: Information Technology Laboratory\n  role:\n  - type: author\n- organization:\n    name:\n    - content: National Institute of Standards and Technology\n    abbreviation:\n      content: NIST\n    contact:\n    - address:\n        city: Gaithersburg\n        state: MD\n        country: US\n  role:\n  - type: publisher\nrevdate: 2018-11\nscript:\n- Latn\nseries:\n- title:\n    content: NIST NISTIRs (Interagency/Internal Reports)\n    format: text/plain\n  abbreviation:\n    content: IR\n  number: '8200'\nplace:\n- Gaithersburg, MD\ndoctype: standard\next:\n  schema-version: v1.0.0\n"
+          "string": "---\nschema-version: v1.2.3\nid: NISTIR8200\ntitle:\n- content: Interagency report on the status of international cybersecurity standardization\n    for the internet of things (IoT)\n  language:\n  - en\n  script:\n  - Latn\n  format: text/plain\nlink:\n- content: https://doi.org/10.6028/NIST.IR.8200\n  type: doi\n- content: https://nvlpubs.nist.gov/nistpubs/ir/2018/NIST.IR.8200.pdf\n  type: pdf\ntype: standard\ndocid:\n- id: NIST IR 8200\n  type: NIST\n  primary: true\n- id: 10.6028/NIST.IR.8200\n  type: DOI\ndate:\n- type: published\n  value: 2018-11\ncontributor:\n- person:\n    name:\n      given:\n        forename:\n        - content: Mike\n          script:\n          - Latn\n      surname:\n        content: Hogan\n        script:\n        - Latn\n    affiliation:\n    - organization:\n        name:\n        - content: Information Technology Laboratory\n  role:\n  - type: author\n- person:\n    name:\n      given:\n        forename:\n        - content: Ben\n          script:\n          - Latn\n      surname:\n        content: Piccarreta\n        script:\n        - Latn\n    affiliation:\n    - organization:\n        name:\n        - content: Information Technology Laboratory\n  role:\n  - type: author\n- organization:\n    name:\n    - content: National Institute of Standards and Technology\n    abbreviation:\n      content: NIST\n    contact:\n    - address:\n        city: Gaithersburg\n        state: MD\n        country: US\n  role:\n  - type: publisher\nrevdate: 2018-11\nscript:\n- Latn\nseries:\n- title:\n    content: NIST IR (Interagency/Internal Reports)\n    format: text/plain\n  abbreviation:\n    content: IR\n  number: '8200'\nplace:\n- Gaithersburg, MD\ndoctype: standard\next:\n  schema-version: v1.0.0\n"
         }
       },
-      "recorded_at": "Fri, 02 Jun 2023 23:57:15 GMT"
+      "recorded_at": "Tue, 27 Jun 2023 14:27:45 GMT"
     }
   ],
   "recorded_with": "VCR 6.1.0"
