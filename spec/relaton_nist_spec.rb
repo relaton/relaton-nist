@@ -411,6 +411,11 @@ RSpec.describe RelatonNist do
         expect(bib.docidentifier[0].id).to eq "SP 800-38A"
       end
     end
+
+    it "get incomplete reference", vcr: { cassette_name: "nist_sp_800_60v1" } do
+      bib = RelatonNist::NistBibliography.get "NIST SP 800-60v1"
+      expect(bib.docidentifier[0].id).to eq "SP 800-60 Vol. 1 Ver. 1 Rev. 1"
+    end
   end
 
   context "warns when" do

@@ -59,9 +59,9 @@ module RelatonNist
         (refparts[:code] && [parts[:series], item.hit[:series]].include?(refparts[:series]) &&
           refparts[:code].casecmp(parts[:code].upcase).zero? &&
           (refparts[:prt] == parts[:prt]) &&
-          (refparts[:vol] == parts[:vol]) &&
-          (refparts[:ver] == parts[:ver]) &&
-          (refparts[:rev] == parts[:rev]) &&
+          (refparts[:vol].nil? || refparts[:vol] == parts[:vol]) &&
+          (refparts[:ver].nil? || refparts[:ver] == parts[:ver]) &&
+          (refparts[:rev].nil? || refparts[:rev] == parts[:rev]) &&
           refparts[:draft] == parts[:draft] && refparts[:add] == parts[:add])
       end
     end
@@ -164,11 +164,10 @@ module RelatonNist
     #
     def sort_hits!
       @array.sort! do |a, b|
-        if a.sort_value == b.sort_value
-          (b.hit[:release_date] - a.hit[:release_date]).to_i
-        else
-          b.sort_value - a.sort_value
-        end
+        code = a.hit[:code] <=> b.hit[:code]
+        next code unless code.zero?
+
+        b.hit[:release_date] <=> a.hit[:release_date]
       end
       self
     end
@@ -191,7 +190,8 @@ module RelatonNist
       hash = YAML.safe_load yaml
       hash["fetched"] = Date.today.to_s
       bib = RelatonNist::NistBibliographicItem.from_hash hash
-      hit = Hit.new({ code: text }, self)
+      id = bib.docidentifier.find(&:primary).id
+      hit = Hit.new({ code: id }, self)
       hit.fetch = bib
       [hit]
     rescue OpenURI::HTTPError => e
