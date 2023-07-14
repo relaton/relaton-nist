@@ -6,7 +6,7 @@
         "uri": "https://raw.githubusercontent.com/relaton/relaton-data-nist/main/data/NIST_SP_500-183.yaml",
         "body": {
           "encoding": "US-ASCII",
-          "string": ""
+          "base64_string": ""
         },
         "headers": {
           "Accept-Encoding": [
@@ -57,19 +57,19 @@
             "1; mode=block"
           ],
           "X-Github-Request-Id": [
-            "A69A:3292:29C2BA:318DAD:64B1657A"
+            "67DA:0A34:5F5EE3:7245BA:64B18E1A"
           ],
           "Accept-Ranges": [
             "bytes"
           ],
           "Date": [
-            "Fri, 14 Jul 2023 15:10:50 GMT"
+            "Fri, 14 Jul 2023 18:04:10 GMT"
           ],
           "Via": [
             "1.1 varnish"
           ],
           "X-Served-By": [
-            "cache-atl18466-ATL"
+            "cache-atl18465-ATL"
           ],
           "X-Cache": [
             "MISS"
@@ -78,7 +78,7 @@
             "0"
           ],
           "X-Timer": [
-            "S1689347450.031363,VS0,VE123"
+            "S1689357850.416604,VS0,VE132"
           ],
           "Vary": [
             "Authorization,Accept-Encoding,Origin"
@@ -90,10 +90,10 @@
             "cross-origin"
           ],
           "X-Fastly-Request-Id": [
-            "2956b662bafc79866ab1e655dd78e356b6901f58"
+            "db105b730202f3d9b332c75e6c2e164b4634ffc5"
           ],
           "Expires": [
-            "Fri, 14 Jul 2023 15:15:50 GMT"
+            "Fri, 14 Jul 2023 18:09:10 GMT"
           ],
           "Source-Age": [
             "0"
@@ -101,10 +101,10 @@
         },
         "body": {
           "encoding": "ASCII-8BIT",
-          "string": "---\nschema-version: v1.2.3\nid: NISTSP500-183\ntitle:\n- content: Stable implementation agreements for open systems interconnection protocols\n    Version 4 Edition 1 December 1990\n  language:\n  - en\n  script:\n  - Latn\n  format: text/plain\nlink:\n- content: https://doi.org/10.6028/NIST.SP.500-183\n  type: doi\n- content: https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication500-183.pdf\n  type: pdf\ntype: standard\ndocid:\n- id: NIST SP 500-183\n  type: NIST\n  primary: true\n- id: 10.6028/NIST.SP.500-183\n  type: DOI\ndate:\n- type: published\n  value: '1991'\ncontributor:\n- person:\n    name:\n      given:\n        forename:\n        - content: Tim\n          language:\n          - en\n          script:\n          - Latn\n      surname:\n        content: Borland\n        language:\n        - en\n        script:\n        - Latn\n  role:\n  - type: author\n- organization:\n    name:\n    - content: National Institute of Standards and Technology\n    abbreviation:\n      content: NIST\n    contact:\n    - address:\n        city: Gaithersburg\n        state: MD\n        country: US\n  role:\n  - type: publisher\nrevdate: '1991'\nlanguage:\n- en\nscript:\n- Latn\nseries:\n- title:\n    content: NIST Special Publications (General)\n    format: text/plain\n  abbreviation:\n    content: SP\n  number: 500-183\nplace:\n- Gaithersburg, MD\ndoctype: standard\next:\n  schema-version: v1.0.0\n"
+          "base64_string": "LS0tCnNjaGVtYS12ZXJzaW9uOiB2MS4yLjMKaWQ6IE5JU1RTUDUwMC0xODMK\ndGl0bGU6Ci0gY29udGVudDogU3RhYmxlIGltcGxlbWVudGF0aW9uIGFncmVl\nbWVudHMgZm9yIG9wZW4gc3lzdGVtcyBpbnRlcmNvbm5lY3Rpb24gcHJvdG9j\nb2xzCiAgICBWZXJzaW9uIDQgRWRpdGlvbiAxIERlY2VtYmVyIDE5OTAKICBs\nYW5ndWFnZToKICAtIGVuCiAgc2NyaXB0OgogIC0gTGF0bgogIGZvcm1hdDog\ndGV4dC9wbGFpbgpsaW5rOgotIGNvbnRlbnQ6IGh0dHBzOi8vZG9pLm9yZy8x\nMC42MDI4L05JU1QuU1AuNTAwLTE4MwogIHR5cGU6IGRvaQotIGNvbnRlbnQ6\nIGh0dHBzOi8vbnZscHVicy5uaXN0Lmdvdi9uaXN0cHVicy9MZWdhY3kvU1Av\nbmlzdHNwZWNpYWxwdWJsaWNhdGlvbjUwMC0xODMucGRmCiAgdHlwZTogcGRm\nCnR5cGU6IHN0YW5kYXJkCmRvY2lkOgotIGlkOiBOSVNUIFNQIDUwMC0xODMK\nICB0eXBlOiBOSVNUCiAgcHJpbWFyeTogdHJ1ZQotIGlkOiAxMC42MDI4L05J\nU1QuU1AuNTAwLTE4MwogIHR5cGU6IERPSQpkYXRlOgotIHR5cGU6IHB1Ymxp\nc2hlZAogIHZhbHVlOiAnMTk5MScKY29udHJpYnV0b3I6Ci0gcGVyc29uOgog\nICAgbmFtZToKICAgICAgZ2l2ZW46CiAgICAgICAgZm9yZW5hbWU6CiAgICAg\nICAgLSBjb250ZW50OiBUaW0KICAgICAgICAgIGxhbmd1YWdlOgogICAgICAg\nICAgLSBlbgogICAgICAgICAgc2NyaXB0OgogICAgICAgICAgLSBMYXRuCiAg\nICAgIHN1cm5hbWU6CiAgICAgICAgY29udGVudDogQm9ybGFuZAogICAgICAg\nIGxhbmd1YWdlOgogICAgICAgIC0gZW4KICAgICAgICBzY3JpcHQ6CiAgICAg\nICAgLSBMYXRuCiAgcm9sZToKICAtIHR5cGU6IGF1dGhvcgotIG9yZ2FuaXph\ndGlvbjoKICAgIG5hbWU6CiAgICAtIGNvbnRlbnQ6IE5hdGlvbmFsIEluc3Rp\ndHV0ZSBvZiBTdGFuZGFyZHMgYW5kIFRlY2hub2xvZ3kKICAgIGFiYnJldmlh\ndGlvbjoKICAgICAgY29udGVudDogTklTVAogICAgY29udGFjdDoKICAgIC0g\nYWRkcmVzczoKICAgICAgICBjaXR5OiBHYWl0aGVyc2J1cmcKICAgICAgICBz\ndGF0ZTogTUQKICAgICAgICBjb3VudHJ5OiBVUwogIHJvbGU6CiAgLSB0eXBl\nOiBwdWJsaXNoZXIKcmV2ZGF0ZTogJzE5OTEnCmxhbmd1YWdlOgotIGVuCnNj\ncmlwdDoKLSBMYXRuCnNlcmllczoKLSB0aXRsZToKICAgIGNvbnRlbnQ6IE5J\nU1QgU3BlY2lhbCBQdWJsaWNhdGlvbnMgKEdlbmVyYWwpCiAgICBmb3JtYXQ6\nIHRleHQvcGxhaW4KICBhYmJyZXZpYXRpb246CiAgICBjb250ZW50OiBTUAog\nIG51bWJlcjogNTAwLTE4MwpwbGFjZToKLSBHYWl0aGVyc2J1cmcsIE1ECmRv\nY3R5cGU6IHN0YW5kYXJkCmV4dDoKICBzY2hlbWEtdmVyc2lvbjogdjEuMC4w\nCg==\n"
         }
       },
-      "recorded_at": "Fri, 14 Jul 2023 15:10:50 GMT"
+      "recorded_at": "Fri, 14 Jul 2023 18:04:10 GMT"
     }
   ],
   "recorded_with": "VCR 6.2.0"

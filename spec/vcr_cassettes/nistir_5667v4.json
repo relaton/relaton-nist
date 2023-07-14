@@ -6,7 +6,7 @@
         "uri": "https://raw.githubusercontent.com/relaton/relaton-data-nist/main/data/NISTIR_5667V4.yaml",
         "body": {
           "encoding": "US-ASCII",
-          "string": ""
+          "base64_string": ""
         },
         "headers": {
           "Accept-Encoding": [
@@ -57,19 +57,19 @@
             "1; mode=block"
           ],
           "X-Github-Request-Id": [
-            "B4CE:5711:2CF22D:34BAC0:64B1657A"
+            "B2D2:02BA:D799C8:FFB438:64B18E1A"
           ],
           "Accept-Ranges": [
             "bytes"
           ],
           "Date": [
-            "Fri, 14 Jul 2023 15:10:50 GMT"
+            "Fri, 14 Jul 2023 18:04:10 GMT"
           ],
           "Via": [
             "1.1 varnish"
           ],
           "X-Served-By": [
-            "cache-atl18465-ATL"
+            "cache-atl18464-ATL"
           ],
           "X-Cache": [
             "MISS"
@@ -78,7 +78,7 @@
             "0"
           ],
           "X-Timer": [
-            "S1689347450.298484,VS0,VE116"
+            "S1689357851.698099,VS0,VE119"
           ],
           "Vary": [
             "Authorization,Accept-Encoding,Origin"
@@ -90,10 +90,10 @@
             "cross-origin"
           ],
           "X-Fastly-Request-Id": [
-            "305c473a13a1273132fb8d8d717bf21cbcc7cd1a"
+            "a79d5418b3ba53d681942f50a0b2f66ec03eab7c"
           ],
           "Expires": [
-            "Fri, 14 Jul 2023 15:15:50 GMT"
+            "Fri, 14 Jul 2023 18:09:10 GMT"
           ],
           "Source-Age": [
             "0"
@@ -101,10 +101,10 @@
         },
         "body": {
           "encoding": "ASCII-8BIT",
-          "string": "---\nschema-version: v1.2.3\nid: NISTIR5667v4\ntitle:\n- content: A study of potential applications of automation and robotics technology\n    in construction, maintenance and operation of highway systems:a final report\n  language:\n  - en\n  script:\n  - Latn\n  format: text/plain\nlink:\n- content: https://doi.org/10.6028/NIST.IR.5667v4\n  type: doi\n- content: https://nvlpubs.nist.gov/nistpubs/Legacy/IR/nistir5667v4.pdf\n  type: pdf\ntype: standard\ndocid:\n- id: NIST IR 5667v4\n  type: NIST\n  primary: true\n- id: 10.6028/NIST.IR.5667v4\n  type: DOI\ndate:\n- type: published\n  value: '1995'\ncontributor:\n- person:\n    name:\n      given:\n        forename:\n        - content: Ernest\n          script:\n          - Latn\n      surname:\n        content: Kent\n        script:\n        - Latn\n  role:\n  - type: author\n- organization:\n    name:\n    - content: National Institute of Standards and Technology\n    abbreviation:\n      content: NIST\n    contact:\n    - address:\n        city: Gaithersburg\n        state: MD\n        country: US\n  role:\n  - type: publisher\nrevdate: '1995'\nscript:\n- Latn\nseries:\n- title:\n    content: NIST IR (Interagency/Internal Reports)\n    format: text/plain\n  abbreviation:\n    content: IR\n  number: 5667v4\nplace:\n- Gaithersburg, MD\ndoctype: standard\next:\n  schema-version: v1.0.0\n"
+          "base64_string": "LS0tCnNjaGVtYS12ZXJzaW9uOiB2MS4yLjMKaWQ6IE5JU1RJUjU2Njd2NAp0\naXRsZToKLSBjb250ZW50OiBBIHN0dWR5IG9mIHBvdGVudGlhbCBhcHBsaWNh\ndGlvbnMgb2YgYXV0b21hdGlvbiBhbmQgcm9ib3RpY3MgdGVjaG5vbG9neQog\nICAgaW4gY29uc3RydWN0aW9uLCBtYWludGVuYW5jZSBhbmQgb3BlcmF0aW9u\nIG9mIGhpZ2h3YXkgc3lzdGVtczphIGZpbmFsIHJlcG9ydAogIGxhbmd1YWdl\nOgogIC0gZW4KICBzY3JpcHQ6CiAgLSBMYXRuCiAgZm9ybWF0OiB0ZXh0L3Bs\nYWluCmxpbms6Ci0gY29udGVudDogaHR0cHM6Ly9kb2kub3JnLzEwLjYwMjgv\nTklTVC5JUi41NjY3djQKICB0eXBlOiBkb2kKLSBjb250ZW50OiBodHRwczov\nL252bHB1YnMubmlzdC5nb3YvbmlzdHB1YnMvTGVnYWN5L0lSL25pc3RpcjU2\nNjd2NC5wZGYKICB0eXBlOiBwZGYKdHlwZTogc3RhbmRhcmQKZG9jaWQ6Ci0g\naWQ6IE5JU1QgSVIgNTY2N3Y0CiAgdHlwZTogTklTVAogIHByaW1hcnk6IHRy\ndWUKLSBpZDogMTAuNjAyOC9OSVNULklSLjU2Njd2NAogIHR5cGU6IERPSQpk\nYXRlOgotIHR5cGU6IHB1Ymxpc2hlZAogIHZhbHVlOiAnMTk5NScKY29udHJp\nYnV0b3I6Ci0gcGVyc29uOgogICAgbmFtZToKICAgICAgZ2l2ZW46CiAgICAg\nICAgZm9yZW5hbWU6CiAgICAgICAgLSBjb250ZW50OiBFcm5lc3QKICAgICAg\nICAgIHNjcmlwdDoKICAgICAgICAgIC0gTGF0bgogICAgICBzdXJuYW1lOgog\nICAgICAgIGNvbnRlbnQ6IEtlbnQKICAgICAgICBzY3JpcHQ6CiAgICAgICAg\nLSBMYXRuCiAgcm9sZToKICAtIHR5cGU6IGF1dGhvcgotIG9yZ2FuaXphdGlv\nbjoKICAgIG5hbWU6CiAgICAtIGNvbnRlbnQ6IE5hdGlvbmFsIEluc3RpdHV0\nZSBvZiBTdGFuZGFyZHMgYW5kIFRlY2hub2xvZ3kKICAgIGFiYnJldmlhdGlv\nbjoKICAgICAgY29udGVudDogTklTVAogICAgY29udGFjdDoKICAgIC0gYWRk\ncmVzczoKICAgICAgICBjaXR5OiBHYWl0aGVyc2J1cmcKICAgICAgICBzdGF0\nZTogTUQKICAgICAgICBjb3VudHJ5OiBVUwogIHJvbGU6CiAgLSB0eXBlOiBw\ndWJsaXNoZXIKcmV2ZGF0ZTogJzE5OTUnCnNjcmlwdDoKLSBMYXRuCnNlcmll\nczoKLSB0aXRsZToKICAgIGNvbnRlbnQ6IE5JU1QgSVIgKEludGVyYWdlbmN5\nL0ludGVybmFsIFJlcG9ydHMpCiAgICBmb3JtYXQ6IHRleHQvcGxhaW4KICBh\nYmJyZXZpYXRpb246CiAgICBjb250ZW50OiBJUgogIG51bWJlcjogNTY2N3Y0\nCnBsYWNlOgotIEdhaXRoZXJzYnVyZywgTUQKZG9jdHlwZTogc3RhbmRhcmQK\nZXh0OgogIHNjaGVtYS12ZXJzaW9uOiB2MS4wLjAK\n"
         }
       },
-      "recorded_at": "Fri, 14 Jul 2023 15:10:50 GMT"
+      "recorded_at": "Fri, 14 Jul 2023 18:04:10 GMT"
     }
   ],
   "recorded_with": "VCR 6.2.0"

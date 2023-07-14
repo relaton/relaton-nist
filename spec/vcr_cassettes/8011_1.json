@@ -6,7 +6,7 @@
         "uri": "https://raw.githubusercontent.com/relaton/relaton-data-nist/main/data/NISTIR_8011-1.yaml",
         "body": {
           "encoding": "US-ASCII",
-          "string": ""
+          "base64_string": ""
         },
         "headers": {
           "Accept-Encoding": [
@@ -57,19 +57,19 @@
             "1; mode=block"
           ],
           "X-Github-Request-Id": [
-            "FACE:940B:2EDBE7:36A429:64B16576"
+            "0B06:92AC:CD0FA8:F52801:64B18E17"
           ],
           "Accept-Ranges": [
             "bytes"
           ],
           "Date": [
-            "Fri, 14 Jul 2023 15:10:46 GMT"
+            "Fri, 14 Jul 2023 18:04:07 GMT"
           ],
           "Via": [
             "1.1 varnish"
           ],
           "X-Served-By": [
-            "cache-atl18427-ATL"
+            "cache-atl18461-ATL"
           ],
           "X-Cache": [
             "MISS"
@@ -78,7 +78,7 @@
             "0"
           ],
           "X-Timer": [
-            "S1689347447.753527,VS0,VE131"
+            "S1689357848.548884,VS0,VE113"
           ],
           "Vary": [
             "Authorization,Accept-Encoding,Origin"
@@ -90,10 +90,10 @@
             "cross-origin"
           ],
           "X-Fastly-Request-Id": [
-            "7feb49158b2658a7c8aec710b6446576c6e1d009"
+            "93b8812190c2cb1f151395f098cf65020e244cf0"
           ],
           "Expires": [
-            "Fri, 14 Jul 2023 15:15:46 GMT"
+            "Fri, 14 Jul 2023 18:09:07 GMT"
           ],
           "Source-Age": [
             "0"
@@ -101,10 +101,10 @@
         },
         "body": {
           "encoding": "ASCII-8BIT",
-          "string": "---\nschema-version: v1.2.3\nid: NISTIR8011-1\ntitle:\n- content: 'Automation support for security control assessments. volume 1: overview'\n  language:\n  - en\n  script:\n  - Latn\n  format: text/plain\nlink:\n- content: https://doi.org/10.6028/NIST.IR.8011-1\n  type: doi\n- content: https://nvlpubs.nist.gov/nistpubs/ir/2017/NIST.IR.8011-1.pdf\n  type: pdf\ntype: standard\ndocid:\n- id: NIST IR 8011-1\n  type: NIST\n  primary: true\n- id: 10.6028/NIST.IR.8011-1\n  type: DOI\ndate:\n- type: published\n  value: 2017-06\ncontributor:\n- person:\n    name:\n      given:\n        forename:\n        - content: Kelley\n          script:\n          - Latn\n      surname:\n        content: Dempsey\n        script:\n        - Latn\n    affiliation:\n    - organization:\n        name:\n        - content: Information Technology Laboratory\n  role:\n  - type: author\n- person:\n    name:\n      given:\n        forename:\n        - content: Paul\n          script:\n          - Latn\n      surname:\n        content: Eavy\n        script:\n        - Latn\n    affiliation:\n    - organization:\n        name:\n        - content: Information Technology Laboratory\n  role:\n  - type: author\n- person:\n    name:\n      given:\n        forename:\n        - content: George\n          script:\n          - Latn\n      surname:\n        content: Moore\n        script:\n        - Latn\n    affiliation:\n    - organization:\n        name:\n        - content: Information Technology Laboratory\n  role:\n  - type: author\n- organization:\n    name:\n    - content: National Institute of Standards and Technology\n    abbreviation:\n      content: NIST\n    contact:\n    - address:\n        city: Gaithersburg\n        state: MD\n        country: US\n  role:\n  - type: publisher\nrevdate: 2017-06\nscript:\n- Latn\nseries:\n- title:\n    content: NIST IR (Interagency/Internal Reports)\n    format: text/plain\n  abbreviation:\n    content: IR\n  number: 8011-1\nplace:\n- Gaithersburg, MD\ndoctype: standard\next:\n  schema-version: v1.0.0\n"
+          "base64_string": "LS0tCnNjaGVtYS12ZXJzaW9uOiB2MS4yLjMKaWQ6IE5JU1RJUjgwMTEtMQp0\naXRsZToKLSBjb250ZW50OiAnQXV0b21hdGlvbiBzdXBwb3J0IGZvciBzZWN1\ncml0eSBjb250cm9sIGFzc2Vzc21lbnRzLiB2b2x1bWUgMTogb3ZlcnZpZXcn\nCiAgbGFuZ3VhZ2U6CiAgLSBlbgogIHNjcmlwdDoKICAtIExhdG4KICBmb3Jt\nYXQ6IHRleHQvcGxhaW4KbGluazoKLSBjb250ZW50OiBodHRwczovL2RvaS5v\ncmcvMTAuNjAyOC9OSVNULklSLjgwMTEtMQogIHR5cGU6IGRvaQotIGNvbnRl\nbnQ6IGh0dHBzOi8vbnZscHVicy5uaXN0Lmdvdi9uaXN0cHVicy9pci8yMDE3\nL05JU1QuSVIuODAxMS0xLnBkZgogIHR5cGU6IHBkZgp0eXBlOiBzdGFuZGFy\nZApkb2NpZDoKLSBpZDogTklTVCBJUiA4MDExLTEKICB0eXBlOiBOSVNUCiAg\ncHJpbWFyeTogdHJ1ZQotIGlkOiAxMC42MDI4L05JU1QuSVIuODAxMS0xCiAg\ndHlwZTogRE9JCmRhdGU6Ci0gdHlwZTogcHVibGlzaGVkCiAgdmFsdWU6IDIw\nMTctMDYKY29udHJpYnV0b3I6Ci0gcGVyc29uOgogICAgbmFtZToKICAgICAg\nZ2l2ZW46CiAgICAgICAgZm9yZW5hbWU6CiAgICAgICAgLSBjb250ZW50OiBL\nZWxsZXkKICAgICAgICAgIHNjcmlwdDoKICAgICAgICAgIC0gTGF0bgogICAg\nICBzdXJuYW1lOgogICAgICAgIGNvbnRlbnQ6IERlbXBzZXkKICAgICAgICBz\nY3JpcHQ6CiAgICAgICAgLSBMYXRuCiAgICBhZmZpbGlhdGlvbjoKICAgIC0g\nb3JnYW5pemF0aW9uOgogICAgICAgIG5hbWU6CiAgICAgICAgLSBjb250ZW50\nOiBJbmZvcm1hdGlvbiBUZWNobm9sb2d5IExhYm9yYXRvcnkKICByb2xlOgog\nIC0gdHlwZTogYXV0aG9yCi0gcGVyc29uOgogICAgbmFtZToKICAgICAgZ2l2\nZW46CiAgICAgICAgZm9yZW5hbWU6CiAgICAgICAgLSBjb250ZW50OiBQYXVs\nCiAgICAgICAgICBzY3JpcHQ6CiAgICAgICAgICAtIExhdG4KICAgICAgc3Vy\nbmFtZToKICAgICAgICBjb250ZW50OiBFYXZ5CiAgICAgICAgc2NyaXB0Ogog\nICAgICAgIC0gTGF0bgogICAgYWZmaWxpYXRpb246CiAgICAtIG9yZ2FuaXph\ndGlvbjoKICAgICAgICBuYW1lOgogICAgICAgIC0gY29udGVudDogSW5mb3Jt\nYXRpb24gVGVjaG5vbG9neSBMYWJvcmF0b3J5CiAgcm9sZToKICAtIHR5cGU6\nIGF1dGhvcgotIHBlcnNvbjoKICAgIG5hbWU6CiAgICAgIGdpdmVuOgogICAg\nICAgIGZvcmVuYW1lOgogICAgICAgIC0gY29udGVudDogR2VvcmdlCiAgICAg\nICAgICBzY3JpcHQ6CiAgICAgICAgICAtIExhdG4KICAgICAgc3VybmFtZToK\nICAgICAgICBjb250ZW50OiBNb29yZQogICAgICAgIHNjcmlwdDoKICAgICAg\nICAtIExhdG4KICAgIGFmZmlsaWF0aW9uOgogICAgLSBvcmdhbml6YXRpb246\nCiAgICAgICAgbmFtZToKICAgICAgICAtIGNvbnRlbnQ6IEluZm9ybWF0aW9u\nIFRlY2hub2xvZ3kgTGFib3JhdG9yeQogIHJvbGU6CiAgLSB0eXBlOiBhdXRo\nb3IKLSBvcmdhbml6YXRpb246CiAgICBuYW1lOgogICAgLSBjb250ZW50OiBO\nYXRpb25hbCBJbnN0aXR1dGUgb2YgU3RhbmRhcmRzIGFuZCBUZWNobm9sb2d5\nCiAgICBhYmJyZXZpYXRpb246CiAgICAgIGNvbnRlbnQ6IE5JU1QKICAgIGNv\nbnRhY3Q6CiAgICAtIGFkZHJlc3M6CiAgICAgICAgY2l0eTogR2FpdGhlcnNi\ndXJnCiAgICAgICAgc3RhdGU6IE1ECiAgICAgICAgY291bnRyeTogVVMKICBy\nb2xlOgogIC0gdHlwZTogcHVibGlzaGVyCnJldmRhdGU6IDIwMTctMDYKc2Ny\naXB0OgotIExhdG4Kc2VyaWVzOgotIHRpdGxlOgogICAgY29udGVudDogTklT\nVCBJUiAoSW50ZXJhZ2VuY3kvSW50ZXJuYWwgUmVwb3J0cykKICAgIGZvcm1h\ndDogdGV4dC9wbGFpbgogIGFiYnJldmlhdGlvbjoKICAgIGNvbnRlbnQ6IElS\nCiAgbnVtYmVyOiA4MDExLTEKcGxhY2U6Ci0gR2FpdGhlcnNidXJnLCBNRApk\nb2N0eXBlOiBzdGFuZGFyZApleHQ6CiAgc2NoZW1hLXZlcnNpb246IHYxLjAu\nMAo=\n"
         }
       },
-      "recorded_at": "Fri, 14 Jul 2023 15:10:46 GMT"
+      "recorded_at": "Fri, 14 Jul 2023 18:04:07 GMT"
     }
   ],
   "recorded_with": "VCR 6.2.0"
