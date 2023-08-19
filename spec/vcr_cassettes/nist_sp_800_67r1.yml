@@ -43,17 +43,17 @@ http_interactions:
       Accept-Ranges:
       - bytes
       Date:
-      - Sat, 19 Aug 2023 15:03:19 GMT
+      - Sat, 19 Aug 2023 15:14:13 GMT
       Via:
       - 1.1 varnish
       X-Served-By:
-      - cache-iad-kjyo7100172-IAD
+      - cache-iad-kjyo7100104-IAD
       X-Cache:
-      - MISS
+      - HIT
       X-Cache-Hits:
-      - '0'
+      - '1'
       X-Timer:
-      - S1692457400.595731,VS0,VE86
+      - S1692458053.345261,VS0,VE68
       Vary:
       - Authorization,Accept-Encoding,Origin
       Access-Control-Allow-Origin:
@@ -61,9 +61,9 @@ http_interactions:
       Cross-Origin-Resource-Policy:
       - cross-origin
       X-Fastly-Request-Id:
-      - d6ef089639aa6ae0758fdcc353545301d642352f
+      - 9526cd4a5ae97e56fd46f949d282200eb3d6f204
       Expires:
-      - Sat, 19 Aug 2023 15:08:19 GMT
+      - Sat, 19 Aug 2023 15:19:13 GMT
       Source-Age:
       - '0'
     body:
@@ -119,5 +119,5 @@ http_interactions:
         ZXh0L3BsYWluCiAgYWJicmV2aWF0aW9uOgogICAgY29udGVudDogU1AKICBu
         dW1iZXI6IDgwMC02N3IxCnBsYWNlOgotIEdhaXRoZXJzYnVyZywgTUQKZG9j
         dHlwZTogc3RhbmRhcmQKZXh0OgogIHNjaGVtYS12ZXJzaW9uOiB2MS4wLjAK
-  recorded_at: Sat, 19 Aug 2023 15:03:19 GMT
+  recorded_at: Sat, 19 Aug 2023 15:14:13 GMT
 recorded_with: VCR 6.2.0
