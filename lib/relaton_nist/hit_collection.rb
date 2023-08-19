@@ -56,13 +56,13 @@ module RelatonNist
     def search_filter # rubocop:disable Metrics/AbcSize,Metrics/CyclomaticComplexity,Metrics/PerceivedComplexity,Metrics/MethodLength
       @array.select do |item|
         parts = doi_parts(item.hit[:json]) || code_parts(item.hit[:code])
-        (refparts[:code] && [parts[:series], item.hit[:series]].include?(refparts[:series]) &&
+        refparts[:code] && [parts[:series], item.hit[:series]].include?(refparts[:series]) &&
           refparts[:code].casecmp(parts[:code].upcase).zero? &&
-          (refparts[:prt] == parts[:prt]) &&
+          refparts[:prt] == parts[:prt] &&
           (refparts[:vol].nil? || refparts[:vol] == parts[:vol]) &&
           (refparts[:ver].nil? || refparts[:ver] == parts[:ver]) &&
           (refparts[:rev].nil? || refparts[:rev] == parts[:rev]) &&
-          refparts[:draft] == parts[:draft] && refparts[:add] == parts[:add])
+          refparts[:draft] == parts[:draft] && refparts[:add] == parts[:add]
       end
     end
 
@@ -71,8 +71,8 @@ module RelatonNist
     def code_parts(code) # rubocop:disable Metrics/MethodLength
       {
         # prefix: match(/^(?:NIST|NBS)\s?/, code),
-        series: match(/(?<val>(?:SP|FIPS|IR|ITL\sBulletin|White\sPaper))\s/, code),
-        code: match(/(?<val>[0-9-]{3,}[A-Z]?)/, code),
+        series: match(/(?<val>(?:SP|FIPS|CSWP|IR|ITL\sBulletin|White\sPaper))\s/, code),
+        code: match(/(?<val>[0-9-]+(?:(?!(?:ver|r|v|pt)\d|-add\d?)[A-Za-z-])*)/, code),
         prt: match(/(?:pt|\sPart\s)(?<val>\d+)/, code),
         vol: match(/(?:v|\sVol\.\s)(?<val>\d+)/, code),
         ver: match(/(?:ver|\sVer\.\s|Version\s)(?<val>[\d.]+)/, code),
@@ -81,7 +81,7 @@ module RelatonNist
         # (?:\s(?<vol2>Vol\.\s\d+))?
         # (?:\s(?<ver2>(?:Ver\.|Version)\s[\d.]+))?
         # (?:\s(?<rev2>Rev\.\s\d+))?
-        add: match(/\sAdd(?:endum)?(?<val>\d*)/, code),
+        add: match(/(?:-add|\sAdd)(?:endum)?(?<val>\d*)/, code),
         draft: !match(/\((?:Retired\s)?Draft\)/, code).nil?,
       }
     end
@@ -92,8 +92,8 @@ module RelatonNist
       id = json["doi"].split("/").last
       {
         # prefix: match(/^(?:NIST|NBS)\./, id),
-        series: match(/(?:SP|FIPS|IR|ITL\sBulletin|White\sPaper)(?=\.)/, id),
-        code: match(/(?<=\.)\d{3,}(?:-\d+)*(?:[[:alpha:]](?!\d|raft|er|t?\d))?/, id),
+        series: match(/(?:SP|FIPS|CSWP|IR|ITL\sBulletin|White\sPaper)(?=\.)/, id),
+        code: match(/(?<=\.)\d+(?:-\d+)*(?:[[:alpha:]](?!\d|raft|er|t?\d))?/, id),
         prt: match(/pt?(?<val>\d+)/, id),
         vol: match(/v(?<val>\d+)(?!\.\d)/, id),
         ver: match(/v(?:er)?(?<val>[\d.]+)/, id),
@@ -110,9 +110,9 @@ module RelatonNist
     #
     def refparts # rubocop:disable Metrics/AbcSize, Metrics/MethodLength
       @refparts ||= {
-        perfix: match(/^(NIST|NBS)\s?/, text),
-        series: match(/(SP|FIPS|IR|ITL\sBulletin|White\sPaper)(?=\.|\s)/, text),
-        code: match(/(?<=\.|\s)[0-9-]{3,}[A-Z]?/, text),
+        perfix: match(/^(NIST|NBS)/, text),
+        series: match(/(SP|FIPS|CSWP|IR|ITL\sBulletin|White\sPaper)(?=\.|\s)/, text),
+        code: match(/(?<=\.|\s)[0-9-]+(?:(?!(ver|r|v|pt)\d|-add\d?)[A-Za-z-])*/, text),
         prt: match(/(?:(?<dl>\.)?pt(?(<dl>)-)|\sPart\s)(?<val>[A-Z\d]+)/, text),
         vol: match(/(?:(?<dl>\.)?v(?(<dl>)-)|\sVol\.\s)(?<val>\d+)/, text),
         ver: match(/(?:(?<dl>\.)?\s?ver|\sVer\.\s)(?<val>\d(?(<dl>)[-\d]|[.\d])*)/, text)&.gsub(/-/, "."),
@@ -149,10 +149,11 @@ module RelatonNist
     #
     def full_ref # rubocop:disable Metrics/AbcSize
       @full_ref ||= begin
-        ref = "#{refparts[:perfix]}#{refparts[:series]} #{refparts[:code]}"
+        ref = [refparts[:perfix], refparts[:series], refparts[:code]].compact.join " "
         ref += "pt#{refparts[:prt]}" if refparts[:prt] # long_to_short(refparts, "prt").to_s
         ref += "ver#{refparts[:ver]}" if refparts[:ver] # long_to_short(refparts, "vol").to_s
         ref += "v#{refparts[:vol]}" if refparts[:vol]
+        ref += "r#{refparts[:rev]}" if refparts[:rev]
         ref
       end
     end
@@ -183,17 +184,20 @@ module RelatonNist
       ref = full_ref
       # fn = ref.gsub(%r{[/\s:.]}, "_").upcase
       index = Relaton::Index.find_or_create :nist, url: "#{GHNISTDATA}index-v1.zip", file: INDEX_FILE
-      row = index.search { |r| r[:id] == ref }.min_by { |r| r[:id] }
-      return [] unless row
+      rows = index.search(ref).sort_by { |r| r[:id] }
+      # return [] unless row
 
-      yaml = OpenURI.open_uri "#{GHNISTDATA}#{row[:file]}"
-      hash = YAML.safe_load yaml
-      hash["fetched"] = Date.today.to_s
-      bib = RelatonNist::NistBibliographicItem.from_hash hash
-      id = bib.docidentifier.find(&:primary).id
-      hit = Hit.new({ code: id }, self)
-      hit.fetch = bib
-      [hit]
+      # yaml = OpenURI.open_uri "#{GHNISTDATA}#{row[:file]}"
+      # hash = YAML.safe_load yaml
+      # hash["fetched"] = Date.today.to_s
+      # bib = RelatonNist::NistBibliographicItem.from_hash hash
+      # id = bib.docidentifier.find(&:primary).id
+
+      rows.map do |row|
+        Hit.new({ code: row[:id], path: row[:file] }, self)
+      end
+      # hit.fetch = bib
+      # [hit]
     rescue OpenURI::HTTPError => e
       return [] if e.io.status[0] == "404"
 
@@ -263,8 +267,9 @@ module RelatonNist
     def match_year?(doc, date)
       return true unless year
 
-      idate = RelatonBib.parse_date doc["issued-date"], false
-      idate.between? date, date.next_year.prev_day
+      d = doc["issued-date"] || doc["published-date"]
+      pidate = RelatonBib.parse_date d, false
+      pidate.between? date, date.next_year.prev_day
     end
   end
 end

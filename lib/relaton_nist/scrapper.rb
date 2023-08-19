@@ -11,6 +11,17 @@ module RelatonNist
       # @param hit_data [Hash]
       # @return [Hash]
       def parse_page(hit_data)
+        hit_data[:url] ? parse_json(hit_data) : fetch_gh(hit_data)
+      end
+
+      def fetch_gh(hit_data)
+        yaml = OpenURI.open_uri "#{HitCollection::GHNISTDATA}#{hit_data[:path]}"
+        hash = YAML.safe_load yaml
+        hash["fetched"] = Date.today.to_s
+        NistBibliographicItem.from_hash hash
+      end
+
+      def parse_json(hit_data)
         item_data = from_json hit_data
         titles = fetch_titles(hit_data)
         unless /^(SP|NISTIR|FIPS) /.match? item_data[:docid][0].id

@@ -10,7 +10,7 @@ describe RelatonNist::PubsExport do
         expect(File).to receive(:exist?).with(RelatonNist::PubsExport::DATAFILE).at_most(:once).and_return true
         allow(File).to receive(:exist?).and_call_original
         expect(File).to receive(:ctime).and_return(nil).at_most(1).time
-        item = subject.data.find { |i| i["docidentifier"] == "SP 800-205 (Draft)" }
+        item = subject.data.find { |i| i["docidentifier"] == "FIPS 140-2" }
         expect(item).to be_instance_of Hash
       end
     end

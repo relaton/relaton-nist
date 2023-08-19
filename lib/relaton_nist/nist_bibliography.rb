@@ -47,9 +47,9 @@ module RelatonNist
           if date2
             case date2
             when /\w+\s\d{4}/
-              opts[:issued_date] = Date.strptime date2, "%B %Y"
+              opts[:date] = Date.strptime date2, "%B %Y"
             when /\w+\s\d{2},\s\d{4}/
-              opts[:updated_date] = Date.strptime date2, "%B %d, %Y"
+              opts[:date] = Date.strptime date2, "%B %d, %Y"
             end
           end
           opts[:stage] = stage if stage
@@ -117,16 +117,9 @@ module RelatonNist
                     end
         result.each_slice(3) do |s| # ISO website only allows 3 connections
           fetch_pages(s, 3).each_with_index do |r, _i|
-            if opts[:issued_date]
-              ids = r.date.select do |d|
-                d.type == "issued" && d.on(:date) == opts[:issued_date]
-              end
-              next if ids.empty?
-            elsif opts[:updated_date]
-              pds = r.date.select do |d|
-                d.type == "published" && d.on(:date) == opts[:updated_date]
-              end
-              next if pds.empty?
+            if opts[:date]
+              dates = r.date.select { |d| d.on(:date) == opts[:date] }
+              next if dates.empty?
             end
             next if iter && r.status.iteration != iteration
             return { ret: r } if !year

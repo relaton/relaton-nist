@@ -18,7 +18,7 @@ RSpec.describe RelatonNist::Scrapper do
       },
       title: "Test title",
     }
-    bib = RelatonNist::Scrapper.parse_page hit_data
+    bib = RelatonNist::Scrapper.parse_json hit_data
     expect(bib.docidentifier[0].id)
   end
 end
