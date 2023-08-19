@@ -6,19 +6,19 @@ RSpec.describe RelatonNist::Scrapper do
   #   end.to raise_error RelatonBib::RequestError
   # end
 
-  it "make docid from a title" do
-    hit_data = {
-      json: {
-        "docidentifier" => "DOC 1",
-        "authors" => [],
-        "editors" => [],
-        "supersedes" => [],
-        "superseded-by" => [],
-        "keywords" => [],
-      },
-      title: "Test title",
-    }
-    bib = RelatonNist::Scrapper.parse_json hit_data
-    expect(bib.docidentifier[0].id)
-  end
+  # it "make docid from a title" do
+  #   hit_data = {
+  #     json: {
+  #       "docidentifier" => "DOC 1",
+  #       "authors" => [],
+  #       "editors" => [],
+  #       "supersedes" => [],
+  #       "superseded-by" => [],
+  #       "keywords" => [],
+  #     },
+  #     title: "Test title",
+  #   }
+  #   bib = RelatonNist::Scrapper.parse_json hit_data
+  #   expect(bib.docidentifier[0].id)
+  # end
 end

@@ -13,8 +13,7 @@ RSpec.describe RelatonNist do
 
   it "fetch hit" do
     VCR.use_cassette "8200_2018" do
-      hit_collection = RelatonNist::NistBibliography
-        .search("NISTIR 8200", "2018")
+      hit_collection = RelatonNist::NistBibliography.search("NISTIR 8200", "2018")
       expect(hit_collection.fetched).to be false
       expect(hit_collection.fetch).to be_instance_of RelatonNist::HitCollection
       expect(hit_collection.fetched).to be true
@@ -119,8 +118,8 @@ RSpec.describe RelatonNist do
 
     it "a code with an year form json" do
       VCR.use_cassette "json_data" do
-        result = RelatonNist::NistBibliography.get "FIPS 140-2", "2002"
-        expect(result.id).to eq "FIPS140-2"
+        result = RelatonNist::NistBibliography.get "NIST FIPS 140-2", "2002"
+        expect(result.id).to eq "NISTFIPS140-2"
       end
     end
 
@@ -393,6 +392,15 @@ RSpec.describe RelatonNist do
     it "get incomplete reference", vcr: { cassette_name: "nist_sp_800_60v1" } do
       bib = RelatonNist::NistBibliography.get "NIST SP 800-60v1"
       expect(bib.docidentifier[0].id).to eq "NIST SP 800-60v1r1"
+    end
+
+    it "get CSWP", vcr: { cassette_name: "nist_cswp" } do
+      bib = RelatonNist::NistBibliography.get "NIST CSWP 16 (IPD)"
+      xml = bib.to_xml bibdata: true
+      file = "spec/examples/cswp.xml"
+      File.write file, xml, encoding: "UTF-8" unless File.exist? file
+      expect(xml).to be_equivalent_to File.read(file, encoding: "UTF-8")
+        .gsub(/(?<=<fetched>)\d{4}-\d{2}-\d{2}/, Date.today.to_s)
     end
   end
 

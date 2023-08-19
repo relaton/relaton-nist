@@ -11,7 +11,7 @@ module RelatonNist
       # @param hit_data [Hash]
       # @return [Hash]
       def parse_page(hit_data)
-        hit_data[:url] ? parse_json(hit_data) : fetch_gh(hit_data)
+        hit_data[:path] ? fetch_gh(hit_data) : parse_json(hit_data)
       end
 
       def fetch_gh(hit_data)
@@ -24,11 +24,11 @@ module RelatonNist
       def parse_json(hit_data)
         item_data = from_json hit_data
         titles = fetch_titles(hit_data)
-        unless /^(SP|NISTIR|FIPS) /.match? item_data[:docid][0].id
-          item_data[:docid][0] = RelatonBib::DocumentIdentifier.new(
-            id: titles[0][:content].upcase, type: "NIST", primary: true,
-          )
-        end
+        # unless /^(SP|NISTIR|FIPS) /.match? item_data[:docid][0].id
+        #   item_data[:docid][0] = RelatonBib::DocumentIdentifier.new(
+        #     id: titles[0][:content].upcase, type: "NIST", primary: true,
+        #   )
+        # end
         item_data[:fetched] = Date.today.to_s
         item_data[:type] = "standard"
         item_data[:title] = titles

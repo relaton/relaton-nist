@@ -1,0 +1,88 @@
+<bibdata type="standard" schema-version="v1.2.3">
+  <fetched>2023-08-19</fetched>
+  <title format="text/plain" language="en" script="Latn">Trusted Internet of Things (IoT) Device Network-Layer Onboarding and Lifecycle Management</title>
+  <uri type="src">https://csrc.nist.gov/pubs/cswp/16/trusted-iot-device-networklayer-onboarding-and-lcm/ipd</uri>
+  <uri type="doi">https://doi.org/10.6028/NIST.CSWP.16.ipd</uri>
+  <docidentifier type="NIST" primary="true">NIST CSWP 16 (Draft)</docidentifier>
+  <docidentifier type="DOI">NIST.CSWP.16.ipd</docidentifier>
+  <date type="published">
+    <on>2020-09</on>
+  </date>
+  <date type="issued"/>
+  <contributor>
+    <role type="author"/>
+    <person>
+      <name>
+        <completename language="en" script="Latn">Susan Symington</completename>
+      </name>
+      <affiliation>
+        <organization>
+          <name>The MITRE Corporation</name>
+          <abbreviation>MITRE</abbreviation>
+        </organization>
+      </affiliation>
+    </person>
+  </contributor>
+  <contributor>
+    <role type="author"/>
+    <person>
+      <name>
+        <completename language="en" script="Latn">W. Timothy Polk</completename>
+      </name>
+      <affiliation>
+        <organization>
+          <name>National Institute of Standards and Technology</name>
+          <abbreviation>NIST</abbreviation>
+        </organization>
+      </affiliation>
+    </person>
+  </contributor>
+  <contributor>
+    <role type="author"/>
+    <person>
+      <name>
+        <completename language="en" script="Latn">Murugiah P. Souppaya</completename>
+      </name>
+      <affiliation>
+        <organization>
+          <name>National Institute of Standards and Technology</name>
+          <abbreviation>NIST</abbreviation>
+        </organization>
+      </affiliation>
+    </person>
+  </contributor>
+  <language>en</language>
+  <script>Latn</script>
+  <status>
+    <stage>draft-public</stage>
+    <substage>active</substage>
+    <iteration>1</iteration>
+  </status>
+  <copyright>
+    <from>2020</from>
+    <owner>
+      <organization>
+        <name>National Institute of Standards and Technology</name>
+        <abbreviation>NIST</abbreviation>
+        <uri>www.nist.gov</uri>
+      </organization>
+    </owner>
+  </copyright>
+  <place>Gaithersburg, MD</place>
+  <keyword>application-layer onboarding</keyword>
+  <keyword>authentication</keyword>
+  <keyword>bootstrapping</keyword>
+  <keyword>credentials</keyword>
+  <keyword>device lifecycle management</keyword>
+  <keyword>identity</keyword>
+  <keyword>internet of things (IoT)</keyword>
+  <keyword>network-layer onboarding</keyword>
+  <keyword>onboarding</keyword>
+  <ext schema-version="v1.0.0">
+    <doctype>standard</doctype>
+    <commentperiod>
+      <from>2020-09-08</from>
+      <to>2020-10-08</to>
+    </commentperiod>
+  </ext>
+</bibdata>

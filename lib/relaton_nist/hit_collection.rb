@@ -99,7 +99,7 @@ module RelatonNist
         ver: match(/v(?:er)?(?<val>[\d.]+)/, id),
         rev: match(/r(?<val>\d+)/, id),
         add: match(/-Add(?<val>\d*)/, id),
-        draft: !match(/-draft/, id).nil?,
+        draft: !match(/\.ipd/, id).nil?,
       }
     end
 
@@ -150,8 +150,8 @@ module RelatonNist
     def full_ref # rubocop:disable Metrics/AbcSize
       @full_ref ||= begin
         ref = [refparts[:perfix], refparts[:series], refparts[:code]].compact.join " "
-        ref += "pt#{refparts[:prt]}" if refparts[:prt] # long_to_short(refparts, "prt").to_s
-        ref += "ver#{refparts[:ver]}" if refparts[:ver] # long_to_short(refparts, "vol").to_s
+        ref += "pt#{refparts[:prt]}" if refparts[:prt]
+        ref += "ver#{refparts[:ver]}" if refparts[:ver]
         ref += "v#{refparts[:vol]}" if refparts[:vol]
         ref += "r#{refparts[:rev]}" if refparts[:rev]
         ref
@@ -225,7 +225,7 @@ module RelatonNist
       return json["docidentifier"] unless parts
 
       id = parts[:code]
-      id = "#{parts[:series]} #{id}" if parts[:series]
+      id = "NIST #{parts[:series]} #{id}" if parts[:series]
       id += " Part #{parts[:prt]}" if parts[:prt]
       id += " Vol. #{parts[:vol]}" if parts[:vol]
       id += " Ver. #{parts[:ver]}" if parts[:ver]
