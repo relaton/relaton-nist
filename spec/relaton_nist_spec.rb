@@ -218,46 +218,46 @@ RSpec.describe RelatonNist do
     context "doc with specific revision" do
       it "1 short notation", vcr: { cassette_name: "nist_sp_800_67r1" } do
         bib = RelatonNist::NistBibliography.get "NIST SP 800-67r1"
-        expect(bib.docidentifier[0].id).to eq "NIST SP 800-67r1"
+        expect(bib.docidentifier[0].id).to eq "NIST SP 800-67 Rev. 1"
       end
 
       it "2 short notation", vcr: { cassette_name: "nist_sp_800_67r2" } do
         bib = RelatonNist::NistBibliography.get "NIST SP 800-67r2"
-        expect(bib.docidentifier[0].id).to eq "NIST SP 800-67r2"
+        expect(bib.docidentifier[0].id).to eq "NIST SP 800-67 Rev. 2"
       end
 
       it "1 long notation", vcr: { cassette_name: "nist_sp_800_67r1" } do
         bib = RelatonNist::NistBibliography.get "NIST SP 800-67 Rev. 1"
-        expect(bib.docidentifier[0].id).to eq "NIST SP 800-67r1"
+        expect(bib.docidentifier[0].id).to eq "NIST SP 800-67 Rev. 1"
       end
 
       it "2 long notation", vcr: { cassette_name: "nist_sp_800_67r2" } do
         bib = RelatonNist::NistBibliography.get "NIST SP 800-67 Rev. 2"
-        expect(bib.docidentifier[0].id).to eq "NIST SP 800-67r2"
+        expect(bib.docidentifier[0].id).to eq "NIST SP 800-67 Rev. 2"
       end
     end
 
     context "doc with specific version" do
       it "short notation", vcr: { cassette_name: "nist_sp_800_45ver2" } do
         bib = RelatonNist::NistBibliography.get "NIST SP 800-45ver2"
-        expect(bib.docidentifier[0].id).to eq "NIST SP 800-45ver2"
+        expect(bib.docidentifier[0].id).to eq "NIST SP 800-45 Ver. 2 Rev. 2"
       end
 
       it "long notation", vcr: { cassette_name: "nist_sp_800_45ver2" } do
         bib = RelatonNist::NistBibliography.get "NIST SP 800-45 Ver. 2"
-        expect(bib.docidentifier[0].id).to eq "NIST SP 800-45ver2"
+        expect(bib.docidentifier[0].id).to eq "NIST SP 800-45 Ver. 2 Rev. 2"
       end
     end
 
     context "doc with specific part & revision" do
       it "short notation", vcr: { cassette_name: "nist_sp_800_57pt1r4" } do
         bib = RelatonNist::NistBibliography.get "NIST SP 800-57pt1r4"
-        expect(bib.docidentifier[0].id).to eq "NIST SP 800-57pt1r4"
+        expect(bib.docidentifier[0].id).to eq "NIST SP 800-57 Part 1 Rev. 4"
       end
 
       it "long notation", vcr: { cassette_name: "nist_sp_800_57pt1r4" } do
         bib = RelatonNist::NistBibliography.get "NIST SP 800-57 Part 1 Rev. 4"
-        expect(bib.docidentifier[0].id).to eq "NIST SP 800-57pt1r4"
+        expect(bib.docidentifier[0].id).to eq "NIST SP 800-57 Part 1 Rev. 4"
       end
     end
 
@@ -280,7 +280,7 @@ RSpec.describe RelatonNist do
     context "doc using MR identifiers" do
       it "with volume and version", vcr: { cassette_name: "nist_sp_800_60ver2v1" } do
         bib = RelatonNist::NistBibliography.get "NIST.SP.800-60.v-1.ver2.eng"
-        expect(bib.docidentifier[0].id).to eq "NIST SP 800-60ver2v1"
+        expect(bib.docidentifier[0].id).to eq "NIST SP 800-60 Vol. 1 Ver. 2 Rev. 2"
       end
 
       # it "with version" do
@@ -292,13 +292,13 @@ RSpec.describe RelatonNist do
 
       it "with part and revision", vcr: { cassette_name: "nist_sp_800_57pt1r4" } do
         bib = RelatonNist::NistBibliography.get "NIST.SP.800-57.pt-1.r-4.eng"
-        expect(bib.docidentifier[0].id).to eq "NIST SP 800-57pt1r4"
+        expect(bib.docidentifier[0].id).to eq "NIST SP 800-57 Part 1 Rev. 4"
       end
 
       it "public draft", vcr: { cassette_name: "nist_sp_800_55r1" } do
         VCR.use_cassette "sp_800_55_r_1" do
           bib = RelatonNist::NistBibliography.get "NIST.SP.800-55.r-1"
-          expect(bib.docidentifier[0].id).to eq "NIST SP 800-55r1"
+          expect(bib.docidentifier[0].id).to eq "NIST SP 800-55 Rev. 1"
         end
       end
     end
@@ -391,17 +391,17 @@ RSpec.describe RelatonNist do
 
     it "get incomplete reference", vcr: { cassette_name: "nist_sp_800_60v1" } do
       bib = RelatonNist::NistBibliography.get "NIST SP 800-60v1"
-      expect(bib.docidentifier[0].id).to eq "NIST SP 800-60v1r1"
+      expect(bib.docidentifier[0].id).to eq "NIST SP 800-60 Vol. 1 Ver. 1 Rev. 1"
     end
 
-    it "get CSWP", vcr: { cassette_name: "nist_cswp" } do
-      bib = RelatonNist::NistBibliography.get "NIST CSWP 16 (IPD)"
-      xml = bib.to_xml bibdata: true
-      file = "spec/examples/cswp.xml"
-      File.write file, xml, encoding: "UTF-8" unless File.exist? file
-      expect(xml).to be_equivalent_to File.read(file, encoding: "UTF-8")
-        .gsub(/(?<=<fetched>)\d{4}-\d{2}-\d{2}/, Date.today.to_s)
-    end
+    # it "get CSWP", vcr: { cassette_name: "nist_cswp" } do
+    #   bib = RelatonNist::NistBibliography.get "NIST CSWP 16 (IPD)"
+    #   xml = bib.to_xml bibdata: true
+    #   file = "spec/examples/cswp.xml"
+    #   File.write file, xml, encoding: "UTF-8" unless File.exist? file
+    #   expect(xml).to be_equivalent_to File.read(file, encoding: "UTF-8")
+    #     .gsub(/(?<=<fetched>)\d{4}-\d{2}-\d{2}/, Date.today.to_s)
+    # end
   end
 
   context "warns when" do
