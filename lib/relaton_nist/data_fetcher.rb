@@ -10,12 +10,14 @@ module RelatonNist
       "hasTranslation" => "hasTranslation",
       "isTranslationOf" => "translatedFrom",
       "hasPreprint" => "hasReprint",
-      "isPreprintOf" => "reprintOf",
+      "isPreprintOf" => "hasDraft",
       "isSupplementTo" => "complements",
       "isPartOf" => "partOf",
       "hasPart" => "hasPart",
     }.freeze
+
     URL = "https://raw.githubusercontent.com/usnistgov/NIST-Tech-Pubs/nist-pages/xml/allrecords.xml"
+    NS = "http://www.crossref.org/relations.xsd"
 
     def initialize(output, format)
       @output = output
@@ -107,10 +109,9 @@ module RelatonNist
 
     # @param doc [Nokogiri::XML::Element]
     # @return [Array<Hash>]
-    def fetch_relation(doc) # rubocop:disable Metrics/AbcSize, Metrics/MethodLength
-      ns = "http://www.crossref.org/relations.xsd"
-      doc.xpath("./ns:program/ns:related_item", ns: ns).map do |rel|
-        rdoi = rel.at_xpath("ns:intra_work_relation|ns:inter_work_relation", ns: ns)
+    def fetch_relation(doc) # rubocop:disable Metrics/AbcSize
+      doc.xpath("./ns:program/ns:related_item", ns: NS).map do |rel|
+        rdoi = rel.at_xpath("ns:intra_work_relation|ns:inter_work_relation", ns: NS)
         id = rdoi.text.split("/")[1..].join("/").gsub(".", " ")
         fref = RelatonBib::FormattedRef.new content: id
         docid = RelatonBib::DocumentIdentifier.new(type: "NIST", id: id, primary: true)
@@ -119,6 +120,10 @@ module RelatonNist
         warn "Relation type #{rdoi['relationship-type']} not found" unless type
         { type: type, bibitem: bibitem }
       end
+    end
+
+    def fetch_status(doc)
+      doc.at("./ns:program/ns:related_item/ns:*[@relationship-type='isPreprintOf']", ns: NS) && "preprint"
     end
 
     # @param doc [Nokogiri::XML::Element]
@@ -323,7 +328,7 @@ module RelatonNist
         title: fetch_title(doc), link: fetch_link(doc), abstract: fetch_abstract(doc),
         date: fetch_date(doc), edition: fetch_edition(doc),
         contributor: fetch_contributor(doc), relation: fetch_relation(doc),
-        place: fetch_place(doc), series: fetch_series(doc),
+        docstatus: fetch_status(doc), place: fetch_place(doc), series: fetch_series(doc),
         language: [doc["language"]], script: ["Latn"], doctype: "standard"
       )
       write_file item

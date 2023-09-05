@@ -179,6 +179,24 @@ RSpec.describe "NIST documents fetcher" do
       expect(rel[0][:bibitem].formattedref.content).to eq "NIST SP 800-133"
     end
 
+    context "#fetch_satatus" do
+      it "preprint" do
+        doc = Nokogiri::XML <<~XML
+          <report-paper_metadata>
+            <program xmlns="http://www.crossref.org/relations.xsd">
+              <related_item>
+                <intra_work_relation relationship-type="isPreprintOf" identifier-type="doi">10.6028/NIST.IR.8323</intra_work_relation>
+              </related_item>
+            </program>
+          </report-paper_metadata>
+        XML
+        pub = doc.at "/report-paper_metadata"
+        expect(subject.fetch_status(pub)).to eq "preprint"
+      end
+
+      it { expect(subject.fetch_status(rep)).to be_nil }
+    end
+
     context "fetch DOI" do
       shared_examples "fetch DOI" do |doi, result|
         it do
