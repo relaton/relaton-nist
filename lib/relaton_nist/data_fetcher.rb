@@ -123,7 +123,10 @@ module RelatonNist
     end
 
     def fetch_status(doc)
-      doc.at("./ns:program/ns:related_item/ns:*[@relationship-type='isPreprintOf']", ns: NS) && "preprint"
+      s = doc.at("./ns:program/ns:related_item/ns:*[@relationship-type='isPreprintOf']", ns: NS)
+      return unless s
+
+      RelatonBib::DocumentStatus.new stage: "preprint"
     end
 
     # @param doc [Nokogiri::XML::Element]

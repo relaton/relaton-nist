@@ -191,7 +191,10 @@ RSpec.describe "NIST documents fetcher" do
           </report-paper_metadata>
         XML
         pub = doc.at "/report-paper_metadata"
-        expect(subject.fetch_status(pub)).to eq "preprint"
+        status = subject.fetch_status(pub)
+        expect(status).to be_instance_of RelatonBib::DocumentStatus
+        expect(status.stage).to be_instance_of RelatonBib::DocumentStatus::Stage
+        expect(status.stage.value).to eq "preprint"
       end
 
       it { expect(subject.fetch_status(rep)).to be_nil }
