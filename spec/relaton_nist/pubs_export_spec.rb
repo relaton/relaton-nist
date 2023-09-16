@@ -19,7 +19,7 @@ describe RelatonNist::PubsExport do
       expect(File).to receive(:exist?).with(RelatonNist::PubsExport::DATAFILE).and_return true
       ctime = Time.now
       expect(File).to receive(:ctime).with(RelatonNist::PubsExport::DATAFILE).and_return ctime
-      expect(File).to receive(:size).with(RelatonNist::PubsExport::DATAFILE).and_return 0
+      expect(File).to receive(:empty?).with(RelatonNist::PubsExport::DATAFILE).and_return true
       expect(subject).to receive(:fetch_data).with(ctime)
       subject.data
     end

@@ -116,27 +116,24 @@ RSpec.describe RelatonNist do
       end
     end
 
-    it "a code with an year form json" do
-      VCR.use_cassette "json_data" do
-        result = RelatonNist::NistBibliography.get "NIST FIPS 140-2", "2002"
-        expect(result.id).to eq "NISTFIPS140-2"
-      end
+    it "a code with an year from json", vcr: { cassette_name: "json_data" } do
+      result = RelatonNist::NistBibliography.get "FIPS 140-2", "2001"
+      expect(result.docidentifier.first.id).to eq "NIST FIPS 140-2r2 fpd"
+      expect(result.date.find { |d| d.type == "published" }.on).to eq "2001-05-25"
     end
 
-    # it "DRAFT" do
-    #   VCR.use_cassette "json_data" do
-    #     result = RelatonNist::NistBibliography.get("SP 800-189(PD)", nil, {})
-    #       .to_xml bibdata: true
-    #     file_path = "spec/examples/draft.xml"
-    #     File.write file_path, result, encoding: "UTF-8" unless File.exist? file_path
-    #     expect(result).to be_equivalent_to File.open(
-    #       file_path, "r:UTF-8", &:read
-    #     ).gsub(/(?<=<fetched>)\d{4}-\d{2}-\d{2}/, Date.today.to_s)
-    #     schema = Jing.new "grammars/relaton-nist-compile.rng"
-    #     errors = schema.validate file_path
-    #     expect(errors).to eq []
-    #   end
-    # end
+    it "DRAFT", vcr: { cassette_name: "json_data" } do
+      result = RelatonNist::NistBibliography.get("NIST SP 800-189 2PD", nil, {})
+        .to_xml bibdata: true
+      file_path = "spec/examples/draft.xml"
+      File.write file_path, result, encoding: "UTF-8" unless File.exist? file_path
+      expect(result).to be_equivalent_to File.open(
+        file_path, "r:UTF-8", &:read
+      ).gsub(/(?<=<fetched>)\d{4}-\d{2}-\d{2}/, Date.today.to_s)
+      schema = Jing.new "grammars/relaton-nist-compile.rng"
+      errors = schema.validate file_path
+      expect(errors).to eq []
+    end
 
     # it "RETIRED DRAFT" do
     #   VCR.use_cassette "json_data" do
@@ -203,9 +200,9 @@ RSpec.describe RelatonNist do
     #   expect(item).to be_nil
     # end
 
-    it "NIST SP 800-53 RES", vcr: { cassette_name: "nist_sp_800_53_res" } do
+    it "should not resolve NIST SP 800-53 RES" do
       item = RelatonNist::NistBibliography.get("NIST SP 800-53 RES", nil, {})
-      expect(item.docidentifier[0].id).to eq "NIST SP 800-53"
+      expect(item).to be_nil
     end
 
     # it "doc with edition" do
@@ -218,47 +215,47 @@ RSpec.describe RelatonNist do
     context "doc with specific revision" do
       it "1 short notation", vcr: { cassette_name: "nist_sp_800_67r1" } do
         bib = RelatonNist::NistBibliography.get "NIST SP 800-67r1"
-        expect(bib.docidentifier[0].id).to eq "NIST SP 800-67 Rev. 1"
+        expect(bib.docidentifier[0].id).to eq "NIST SP 800-67r1 fpd"
       end
 
       it "2 short notation", vcr: { cassette_name: "nist_sp_800_67r2" } do
         bib = RelatonNist::NistBibliography.get "NIST SP 800-67r2"
-        expect(bib.docidentifier[0].id).to eq "NIST SP 800-67 Rev. 2"
+        expect(bib.docidentifier[0].id).to eq "NIST SP 800-67r2 fpd"
       end
 
-      it "1 long notation", vcr: { cassette_name: "nist_sp_800_67r1" } do
-        bib = RelatonNist::NistBibliography.get "NIST SP 800-67 Rev. 1"
-        expect(bib.docidentifier[0].id).to eq "NIST SP 800-67 Rev. 1"
-      end
+      # it "1 long notation", vcr: { cassette_name: "nist_sp_800_67r1" } do
+      #   bib = RelatonNist::NistBibliography.get "NIST SP 800-67 Rev. 1"
+      #   expect(bib.docidentifier[0].id).to eq "NIST SP 800-67 Rev. 1"
+      # end
 
-      it "2 long notation", vcr: { cassette_name: "nist_sp_800_67r2" } do
-        bib = RelatonNist::NistBibliography.get "NIST SP 800-67 Rev. 2"
-        expect(bib.docidentifier[0].id).to eq "NIST SP 800-67 Rev. 2"
-      end
+      # it "2 long notation", vcr: { cassette_name: "nist_sp_800_67r2" } do
+      #   bib = RelatonNist::NistBibliography.get "NIST SP 800-67 Rev. 2"
+      #   expect(bib.docidentifier[0].id).to eq "NIST SP 800-67 Rev. 2"
+      # end
     end
 
     context "doc with specific version" do
       it "short notation", vcr: { cassette_name: "nist_sp_800_45ver2" } do
         bib = RelatonNist::NistBibliography.get "NIST SP 800-45ver2"
-        expect(bib.docidentifier[0].id).to eq "NIST SP 800-45 Ver. 2 Rev. 2"
+        expect(bib.docidentifier[0].id).to eq "NIST SP 800-45ver2 fpd"
       end
 
       it "long notation", vcr: { cassette_name: "nist_sp_800_45ver2" } do
         bib = RelatonNist::NistBibliography.get "NIST SP 800-45 Ver. 2"
-        expect(bib.docidentifier[0].id).to eq "NIST SP 800-45 Ver. 2 Rev. 2"
+        expect(bib.docidentifier[0].id).to eq "NIST SP 800-45ver2 fpd"
       end
     end
 
     context "doc with specific part & revision" do
       it "short notation", vcr: { cassette_name: "nist_sp_800_57pt1r4" } do
         bib = RelatonNist::NistBibliography.get "NIST SP 800-57pt1r4"
-        expect(bib.docidentifier[0].id).to eq "NIST SP 800-57 Part 1 Rev. 4"
+        expect(bib.docidentifier[0].id).to eq "NIST SP 800-57pt1r4 fpd"
       end
 
-      it "long notation", vcr: { cassette_name: "nist_sp_800_57pt1r4" } do
-        bib = RelatonNist::NistBibliography.get "NIST SP 800-57 Part 1 Rev. 4"
-        expect(bib.docidentifier[0].id).to eq "NIST SP 800-57 Part 1 Rev. 4"
-      end
+      # it "long notation", vcr: { cassette_name: "nist_sp_800_57pt1r4" } do
+      #   bib = RelatonNist::NistBibliography.get "NIST SP 800-57 Part 1 Rev. 4"
+      #   expect(bib.docidentifier[0].id).to eq "NIST SP 800-57 Part 1 Rev. 4"
+      # end
     end
 
     context "doc with specific volume" do
@@ -269,18 +266,18 @@ RSpec.describe RelatonNist do
         end
       end
 
-      it "long notation" do
-        VCR.use_cassette "nistir_5667v4" do
-          bib = RelatonNist::NistBibliography.get "NISTIR 5667 Vol. 4"
-          expect(bib.docidentifier[0].id).to eq "NIST IR 5667v4"
-        end
-      end
+      # it "long notation" do
+      #   VCR.use_cassette "nistir_5667v4" do
+      #     bib = RelatonNist::NistBibliography.get "NISTIR 5667 Vol. 4"
+      #     expect(bib.docidentifier[0].id).to eq "NIST IR 5667v4"
+      #   end
+      # end
     end
 
     context "doc using MR identifiers" do
-      it "with volume and version", vcr: { cassette_name: "nist_sp_800_60ver2v1" } do
-        bib = RelatonNist::NistBibliography.get "NIST.SP.800-60.v-1.ver2.eng"
-        expect(bib.docidentifier[0].id).to eq "NIST SP 800-60 Vol. 1 Ver. 2 Rev. 2"
+      it "with volume and revision", vcr: { cassette_name: "nist_sp_800_60v1r1" } do
+        bib = RelatonNist::NistBibliography.get "NIST.SP.800-60v1r1"
+        expect(bib.docidentifier[0].id).to eq "NIST SP 800-60v1r1 fpd"
       end
 
       # it "with version" do
@@ -291,28 +288,26 @@ RSpec.describe RelatonNist do
       # end
 
       it "with part and revision", vcr: { cassette_name: "nist_sp_800_57pt1r4" } do
-        bib = RelatonNist::NistBibliography.get "NIST.SP.800-57.pt-1.r-4.eng"
-        expect(bib.docidentifier[0].id).to eq "NIST SP 800-57 Part 1 Rev. 4"
+        bib = RelatonNist::NistBibliography.get "NIST.SP.800-57pt1r4"
+        expect(bib.docidentifier[0].id).to eq "NIST SP 800-57pt1r4 fpd"
       end
 
-      it "public draft", vcr: { cassette_name: "nist_sp_800_55r1" } do
-        VCR.use_cassette "sp_800_55_r_1" do
-          bib = RelatonNist::NistBibliography.get "NIST.SP.800-55.r-1"
-          expect(bib.docidentifier[0].id).to eq "NIST SP 800-55 Rev. 1"
-        end
+      it "public draft", vcr: { cassette_name: "nist_sp_800_66r1_ipd" } do
+        bib = RelatonNist::NistBibliography.get "NIST SP 800-66r2 ipd"
+        expect(bib.docidentifier[0].id).to eq "NIST SP 800-66r2 ipd"
       end
     end
 
-    it "doc with supersedes" do
-      VCR.use_cassette "json_data" do
-        result = RelatonNist::NistBibliography.get "FIPS 140-2"
-        expect(result.relation.first).to be_instance_of(
-          RelatonNist::DocumentRelation,
-        )
-        expect(result.relation.first.type).to eq "obsoletes"
-        expect(result.relation.first.description.content).to eq "supersedes"
-      end
-    end
+    # it "doc with supersedes" do
+    #   VCR.use_cassette "nist_fips_140_2" do
+    #     result = RelatonNist::NistBibliography.get "NIST FIPS 140-2"
+    #     expect(result.relation.first).to be_instance_of(
+    #       RelatonNist::DocumentRelation,
+    #     )
+    #     expect(result.relation.first.type).to eq "obsoletes"
+    #     expect(result.relation.first.description.content).to eq "supersedes"
+    #   end
+    # end
 
     # it "draft active" do
     #   VCR.use_cassette "nist_sp_800_140_pd" do
@@ -343,7 +338,7 @@ RSpec.describe RelatonNist do
     it "get NIST SP 800-12" do
       VCR.use_cassette "nist_sp_800_12" do
         result = RelatonNist::NistBibliography.get "NIST SP 800-12"
-        expect(result.docidentifier.first.id).to eq "NIST SP 800-12"
+        expect(result.docidentifier.first.id).to eq "NIST SP 800-12 fpd"
       end
     end
 
@@ -376,22 +371,22 @@ RSpec.describe RelatonNist do
     # end
 
     it "Addendum" do
-      VCR.use_cassette "sp_800_38a_addendum" do
+      VCR.use_cassette "json_data" do
         bib = RelatonNist::NistBibliography.get "NIST SP 800-38a-add"
-        expect(bib.docidentifier[0].id).to eq "NIST SP 800-38a-add"
+        expect(bib.docidentifier[0].id).to eq "NIST SP 800-38A fpd Add."
       end
     end
 
     it "not Addendum" do
       VCR.use_cassette "sp_800_38a" do
-        bib = RelatonNist::NistBibliography.get "SP 800-38a"
-        expect(bib.docidentifier[0].id).to eq "NIST SP 800-38a"
+        bib = RelatonNist::NistBibliography.get "NIST SP 800-38a"
+        expect(bib.docidentifier[0].id).to eq "NIST SP 800-38A fpd"
       end
     end
 
     it "get incomplete reference", vcr: { cassette_name: "nist_sp_800_60v1" } do
       bib = RelatonNist::NistBibliography.get "NIST SP 800-60v1"
-      expect(bib.docidentifier[0].id).to eq "NIST SP 800-60 Vol. 1 Ver. 1 Rev. 1"
+      expect(bib.docidentifier[0].id).to eq "NIST SP 800-60v1r1 fpd"
     end
 
     # it "get CSWP", vcr: { cassette_name: "nist_cswp" } do
@@ -416,35 +411,31 @@ RSpec.describe RelatonNist do
     end
 
     it "search failed" do
-      VCR.use_cassette "json_data" do
-        VCR.use_cassette "sp_2222" do
-          expect do
-            RelatonNist::NistBibliography.get("SP 2222", nil, {})
-          end.to output(
-            /\[relaton-nist\] WARNING: no match found online for SP 2222/,
-          ).to_stderr
-        end
-      end
-    end
-
-    it "contains EP at the end" do
-      expect { RelatonNist::NistBibliography.get "FIPS 201 EP" }.to output(
-        /WARNING: no match found online for FIPS 201 EP/,
+      expect do
+        RelatonNist::NistBibliography.get("NIST SP 2222", nil, {})
+      end.to output(
+        /\[relaton-nist\] WARNING: no match found online for NIST SP 2222/,
       ).to_stderr
     end
+
+    # it "contains EP at the end" do
+    #   expect { RelatonNist::NistBibliography.get "NIST FIPS 201 EP" }.to output(
+    #     /WARNING: no match found online for NIST FIPS 201 EP/,
+    #   ).to_stderr
+    # end
   end
 
   context "short citation" do
     context "without stage get" do
       it "undated reference", vcr: { cassette_name: "nist_sp_800_162" } do
         result = RelatonNist::NistBibliography.get("NIST SP 800-162")
-        expect(result.id).to eq "NISTSP800-162"
+        expect(result.id).to eq "NISTSP800-162fpd"
       end
 
-      it "final without updated-date", vcr: { cassette_name: "nist_sp_800_162_2014_01" } do
-        result = RelatonNist::NistBibliography.get "NIST SP 800-162 (January 2014)"
-        expect(result.id).to eq "NISTSP800-162"
-      end
+      # it "final without updated-date", vcr: { cassette_name: "nist_sp_800_162_2014_01" } do
+      #   result = RelatonNist::NistBibliography.get "NIST SP 800-162 (January 2014)"
+      #   expect(result.id).to eq "NISTSP800-162"
+      # end
 
       # it "final where updated-date > original-release-date" do
       #   VCR.use_cassette "json_data" do

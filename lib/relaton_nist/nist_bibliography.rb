@@ -15,13 +15,14 @@ module RelatonNist
       # Search NIST documents by reference
       #
       # @param text [String] reference
+      # @param year [String, nil] year
       #
       # @return [RelatonNist::HitCollection] search result
       #
-      def search(pubid, opts = {})
+      def search(pubid, year = nil, opts = {})
         pubid_ref = pubid.is_a?(String) ? Pubid::Nist::Identifier.parse(pubid) : pubid
         # ref = text.sub(/^NISTIR/, "NIST IR")
-        HitCollection.search pubid_ref, opts
+        HitCollection.search pubid_ref, year, opts
       rescue OpenURI::HTTPError, SocketError, OpenSSL::SSL::SSLError => e
         raise RelatonBib::RequestError, e.message
       end
@@ -39,9 +40,12 @@ module RelatonNist
       # @return [RelatonNist::NistBibliographicItem, nil] bibliographic item
       #
       def get(code, year = nil, opts = {}) # rubocop:disable Metrics/AbcSize, Metrics/MethodLength, Metrics/CyclomaticComplexity, Metrics/PerceivedComplexity
-        pubid = Pubid::Nist::Identifier.parse code
-        pubid.edition ||= Pubid::Nist::Edition.new if year
-        pubid.edition.year ||= year.to_i
+        /^\D+\d+-(?<code_year>\d{4})/ =~ code
+        year ||= code_year
+        ref = code_year ? code.sub("-#{code_year}", "") : code
+        pubid = Pubid::Nist::Identifier.parse ref
+        # pubid.edition ||= Pubid::Nist::Edition.new if year
+        # pubid.edition.year ||= year.to_i
         # return fetch_ref_err(code, year, []) if code.match?(/\sEP$/)
 
         # /^(?<code2>[^(]+)(?:\((?<date2>\w+\s(?:\d{2},\s)?\d{4})\))?\s?\(?(?:(?<=\()(?<stage>[^\)]+))?/ =~ code
@@ -68,11 +72,11 @@ module RelatonNist
         # end
 
         # code += "-1" if opts[:all_parts]
-        warn "[relaton-nist] (\"#{code}\") fetching..."
-        result = nistbib_search_filter(pubid, opts) || (return nil)
-        ret = nistbib_results_filter(result, pubid.edition.year, opts)
+        warn "[relaton-nist] (#{code}) fetching..."
+        result = nistbib_search_filter(pubid, year, opts) || (return nil)
+        ret = nistbib_results_filter(result, year, opts)
         if ret[:ret]
-          warn "[relaton-nist] (\"#{code}\") found #{ret[:ret].docidentifier.first.id}"
+          warn "[relaton-nist] (#{code}) found `#{ret[:ret].docidentifier.first.id}`"
           ret[:ret]
         else
           fetch_ref_err(code, year, ret[:years])
@@ -98,19 +102,12 @@ module RelatonNist
       #
       def nistbib_results_filter(result, year, opts) # rubocop:disable Metrics/AbcSize, Metrics/MethodLength, Metrics/CyclomaticComplexity, Metrics/PerceivedComplexity
         missed_years = []
-        iter = /\w+(?=PD)|(?<=PD-)\w+/.match(opts[:stage])&.to_s
-        iteration = case iter
-                    when "I" then "1"
-                    when "F" then "final"
-                    else iter
-                    end
-        result.each_slice(3) do |s| # ISO website only allows 3 connections
+        result.each_slice(3) do |s|
           fetch_pages(s, 3).each_with_index do |r, _i|
             if opts[:date]
               dates = r.date.select { |d| d.on(:date) == opts[:date] }
               next if dates.empty?
             end
-            next if iter && r.status.iteration != iteration
             return { ret: r } if !year
 
             r.date.select { |d| d.type == "published" }.each do |d|
@@ -149,8 +146,8 @@ module RelatonNist
       #
       # @return [RelatonNist::HitCollection] hits collection
       #
-      def nistbib_search_filter(pubid, opts)
-        result = search(pubid, opts)
+      def nistbib_search_filter(pubid, year, opts)
+        result = search(pubid, year, opts)
         result.search_filter
       end
 

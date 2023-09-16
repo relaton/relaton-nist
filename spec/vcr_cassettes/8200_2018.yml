@@ -29,7 +29,7 @@ http_interactions:
       Content-Type:
       - application/zip
       Etag:
-      - W/"afe7e446cfc28bd3c9ae8dc3037aee21b93fcad3f07295578c49b46b964bdec8"
+      - W/"75afaf6e0dc91bf193158046ed08304a57ef5b7c525b5b36036bd24f4998dc64"
       Strict-Transport-Security:
       - max-age=31536000
       X-Content-Type-Options:
@@ -39,21 +39,21 @@ http_interactions:
       X-Xss-Protection:
       - 1; mode=block
       X-Github-Request-Id:
-      - 95CC:37E9:29199C:311FE3:64F7EF9A
+      - 1CCA:596A:393811:481393:65060B68
       Accept-Ranges:
       - bytes
       Date:
-      - Wed, 06 Sep 2023 03:18:50 GMT
+      - Sat, 16 Sep 2023 20:09:14 GMT
       Via:
       - 1.1 varnish
       X-Served-By:
-      - cache-iad-kcgs7200150-IAD
+      - cache-pdk-kpdk1780074-PDK
       X-Cache:
       - MISS
       X-Cache-Hits:
       - '0'
       X-Timer:
-      - S1693970330.454518,VS0,VE69
+      - S1694894955.543813,VS0,VE150
       Vary:
       - Authorization,Accept-Encoding,Origin
       Access-Control-Allow-Origin:
@@ -61,16 +61,16 @@ http_interactions:
       Cross-Origin-Resource-Policy:
       - cross-origin
       X-Fastly-Request-Id:
-      - 5ec2c8df00aea8c2d01089de947b19491cfa8e8e
+      - ba54dbb99b8b74ca3a944b478a83d2681fdf0ac9
       Expires:
-      - Wed, 06 Sep 2023 03:23:50 GMT
+      - Sat, 16 Sep 2023 20:14:14 GMT
       Source-Age:
       - '0'
     body:
       encoding: UTF-8
       base64_string: |
-        UEsDBBQAAAAIAFUZJlfZIjoKT8cBAH8FEAANABwAaW5kZXgtdjEueWFtbFVU
-        CQADsu33ZLLt92R1eAsAAQTpAwAABOcDAACM/d2y5bqVpQne11PoBbzTiV8i
+        UEsDBBQAAAAIABhyMFfZIjoKT8cBAH8FEAANABwAaW5kZXgtdjEueWFtbFVU
+        CQADz7gFZc+4BWV1eAsAAQTpAwAABH8AAACM/d2y5bqVpQne11PoBbzTiV8i
         77QUnhmKiqNcdlZKVn0li4o8VR1mWdEyKSWrevsmQC7f2u3z+5g3fuGDYy8S
         cwIExpgAv3z58r98+dV//Lf/9h9/9bvH61ePf/zV9r/86lf/8f/4t//+y3/8
         1X/7l//xL//h+O8/Pv7xj9v/6//5l//rv///X/sVLv4aXk1/Ov7bCa5O4dUZ
@@ -2661,10 +2661,10 @@ http_interactions:
         2nnVs/kThmci5bMKDNuC8jkFhm0B839qV1NgyBa0kykwZAs6sVtgyBYGTqDd
         gdmMoh1aASRL0oEmPREqYZLkqZgPPkkGj5ngkzTwmAM+SQCPWe7ZilT4dGDY
         ipQ/LDBsRSpQOjBsRSofRxTuYP1IrundzZXWzrubc9fN/wNQSwECHgMUAAAA
-        CABVGSZX2SI6Ck/HAQB/BRAADQAYAAAAAAABAAAApIEAAAAAaW5kZXgtdjEu
-        eWFtbFVUBQADsu33ZHV4CwABBOkDAAAE5wMAAFBLBQYAAAAAAQABAFMAAACW
+        CAAYcjBX2SI6Ck/HAQB/BRAADQAYAAAAAAABAAAApIEAAAAAaW5kZXgtdjEu
+        eWFtbFVUBQADz7gFZXV4CwABBOkDAAAEfwAAAFBLBQYAAAAAAQABAFMAAACW
         xwEAAAA=
-  recorded_at: Wed, 06 Sep 2023 03:18:50 GMT
+  recorded_at: Sat, 16 Sep 2023 20:09:14 GMT
 - request:
     method: get
     uri: https://raw.githubusercontent.com/relaton/relaton-data-nist/main/data/NISTIR_8200.yaml
@@ -2704,21 +2704,21 @@ http_interactions:
       X-Xss-Protection:
       - 1; mode=block
       X-Github-Request-Id:
-      - F926:643C:293237:3126A5:64F7EF99
+      - 3AAA:0A95:36A627:457FFD:65060AE8
       Accept-Ranges:
       - bytes
       Date:
-      - Wed, 06 Sep 2023 03:18:51 GMT
+      - Sat, 16 Sep 2023 20:09:15 GMT
       Via:
       - 1.1 varnish
       X-Served-By:
-      - cache-iad-kcgs7200171-IAD
+      - cache-pdk-kpdk1780029-PDK
       X-Cache:
-      - MISS
+      - HIT
       X-Cache-Hits:
-      - '0'
+      - '1'
       X-Timer:
-      - S1693970331.368471,VS0,VE82
+      - S1694894956.535950,VS0,VE1
       Vary:
       - Authorization,Accept-Encoding,Origin
       Access-Control-Allow-Origin:
@@ -2726,11 +2726,11 @@ http_interactions:
       Cross-Origin-Resource-Policy:
       - cross-origin
       X-Fastly-Request-Id:
-      - 53ea71091deb02ad338ecfbf610a24e6fcf59adc
+      - c060fcf3bda5d8906ee876c26d25b619ec3b544c
       Expires:
-      - Wed, 06 Sep 2023 03:23:51 GMT
+      - Sat, 16 Sep 2023 20:14:15 GMT
       Source-Age:
-      - '0'
+      - '127'
     body:
       encoding: ASCII-8BIT
       base64_string: |
@@ -2771,5 +2771,5 @@ http_interactions:
         dC9wbGFpbgogIGFiYnJldmlhdGlvbjoKICAgIGNvbnRlbnQ6IElSCiAgbnVt
         YmVyOiAnODIwMCcKcGxhY2U6Ci0gR2FpdGhlcnNidXJnLCBNRApkb2N0eXBl
         OiBzdGFuZGFyZApleHQ6CiAgc2NoZW1hLXZlcnNpb246IHYxLjAuMAo=
-  recorded_at: Wed, 06 Sep 2023 03:18:51 GMT
+  recorded_at: Sat, 16 Sep 2023 20:09:15 GMT
 recorded_with: VCR 6.2.0
