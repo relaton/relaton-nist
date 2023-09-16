@@ -68,7 +68,7 @@ module RelatonNist
         # json["docidentifier"]
         # item_ref ||= "?"
         # item_ref.sub!(/\sAddendum$/, "-Add")
-        ids = [RelatonBib::DocumentIdentifier.new(id: hit[:code], type: "NIST", primary: true)]
+        ids = [RelatonBib::DocumentIdentifier.new(id: hit[:code].to_s, type: "NIST", primary: true)]
         doi = hit[:json]["doi"]&.split("/")&.last
         ids << RelatonBib::DocumentIdentifier.new(id: doi, type: "DOI") if doi
         ids
@@ -80,8 +80,8 @@ module RelatonNist
       def fetch_status(doc)
         stage = doc["status"]
         subst = doc["substage"]
-        iter = doc["iteration"] == "initial" ? 1 : doc["iteration"]
-        RelatonNist::DocumentStatus.new stage: stage, substage: subst, iteration: iter.to_s
+        iter = doc["iteration"] == "ipd" ? "1" : doc["iteration"].match(/\d+/)&.to_s
+        RelatonNist::DocumentStatus.new stage: stage, substage: subst, iteration: iter
       end
 
       # Fetch titles.
@@ -109,7 +109,7 @@ module RelatonNist
         #   d = doc.at("//span[@id='pub-release-date']")&.text&.strip
         #   issued = RelatonBib.parse_date d
         # end
-        dates << { type: "issued", on: issued.to_s }
+        dates << { type: "issued", on: issued.to_s } if issued
         dates
       end
 
