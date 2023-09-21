@@ -1,6 +1,8 @@
 require "jing"
 
 RSpec.describe RelatonNist do
+  before { RelatonNist.instance_variable_set :@configuration, nil }
+
   it "has a version number" do
     expect(RelatonNist::VERSION).not_to be nil
   end
@@ -410,7 +412,7 @@ RSpec.describe RelatonNist do
         expect do
           RelatonNist::NistBibliography.get("NISTIR 8200", "2017", {})
         end.to output(
-          /\[relaton-nist\] WARNING: no match found online for NISTIR 8200:2017/,
+          /\[relaton-nist\] WARNING: no match found online for `NISTIR 8200:2017`/,
         ).to_stderr
       end
     end
@@ -421,7 +423,7 @@ RSpec.describe RelatonNist do
           expect do
             RelatonNist::NistBibliography.get("SP 2222", nil, {})
           end.to output(
-            /\[relaton-nist\] WARNING: no match found online for SP 2222/,
+            /\[relaton-nist\] WARNING: no match found online for `SP 2222`/,
           ).to_stderr
         end
       end
@@ -429,7 +431,7 @@ RSpec.describe RelatonNist do
 
     it "contains EP at the end" do
       expect { RelatonNist::NistBibliography.get "FIPS 201 EP" }.to output(
-        /WARNING: no match found online for FIPS 201 EP/,
+        /WARNING: no match found online for `FIPS 201 EP`/,
       ).to_stderr
     end
   end

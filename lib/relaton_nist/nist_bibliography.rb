@@ -1,4 +1,3 @@
-require "relaton_bib"
 require "relaton_nist/nist_bibliographic_item"
 require "relaton_nist/document_relation"
 require "relaton_nist/scrapper"
@@ -85,7 +84,7 @@ module RelatonNist
         result = nistbib_search_filter(code, year, opts) || (return nil)
         ret = nistbib_results_filter(result, year, opts)
         if ret[:ret]
-          warn "[relaton-nist] (\"#{code}\") found #{ret[:ret].docidentifier.first.id}"
+          Util.warn "(#{code}) found `#{ret[:ret].docidentifier.first.id}`"
           ret[:ret]
         else
           fetch_ref_err(code, year, ret[:years])
@@ -161,7 +160,7 @@ module RelatonNist
       # @return [RelatonNist::HitCollection] hits collection
       #
       def nistbib_search_filter(code, year, opts)
-        warn "[relaton-nist] (\"#{code}\") fetching..."
+        Util.warn "(#{code}) fetching..."
         result = search(code, year, opts)
         result.search_filter
       end
@@ -177,15 +176,15 @@ module RelatonNist
       #
       def fetch_ref_err(code, year, missed_years) # rubocop:disable Metrics/MethodLength
         id = year ? "#{code}:#{year}" : code
-        warn "[relaton-nist] WARNING: no match found online for #{id}. " \
-             "The code must be exactly like it is on the standards website."
+        Util.warn "WARNING: no match found online for `#{id}`. " \
+                  "The code must be exactly like it is on the standards website."
         unless missed_years.empty?
-          warn "[relaton-nist] (There was no match for #{year}, though there " \
-               "were matches found for #{missed_years.join(', ')}.)"
+          Util.warn "(There was no match for #{year}, though there " \
+                    "were matches found for `#{missed_years.join('`, `')}`.)"
         end
         if /\d-\d/.match? code
-          warn "[relaton-nist] The provided document part may not exist, " \
-               "or the document may no longer be published in parts."
+          Util.warn "The provided document part may not exist, " \
+                    "or the document may no longer be published in parts."
         end
         nil
       end
