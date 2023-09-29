@@ -145,9 +145,9 @@ module RelatonNist
       #
       # @return [RelatonNist::HitCollection] hits collection
       #
-      def nistbib_search_filter(pubid, opts)
+      def nistbib_search_filter(pubid, year, opts)
         Util.warn "(#{pubid}) fetching..."
-        result = search(pubid, opts)
+        result = search(pubid, year, opts)
         result.search_filter
       end
 
