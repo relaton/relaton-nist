@@ -71,13 +71,24 @@ Or install it yourself as:
 
 == Usage
 
-=== Search for a standard using keywords
+=== Configuration
+
+Configuration is optional. The available option is `logger` which is a `Logger` instance. By default, the logger is `Logger.new($stderr)` with `Logger::WARN` level. To change the logger level, use `RelatonNist.configure` block.
 
 [source,ruby]
 ----
 require 'relaton_nist'
 => true
 
+RelatonNist.configure do |config|
+  config.logger.level = Logger::DEBUG
+end
+----
+
+=== Search for a standard using keywords
+
+[source,ruby]
+----
 hit_collection = RelatonNist::NistBibliography.search("8200")
 => <RelatonNist::HitCollection:0x007fc069d19da0 @ref=8200 @fetched=false>
 
@@ -114,8 +125,8 @@ item.to_xml bibdata: true
 [source,ruby]
 ----
 RelatonNist::NistBibliography.get("NIST IR 8200", "2018", {})
-[relaton-nist] ("NIST IR 8200") fetching...
-[relaton-nist] ("NIST IR 8200") found NIST IR 8200
+[relaton-nist] (NIST IR 8200) fetching...
+[relaton-nist] (NIST IR 8200) found `NIST IR 8200`
 => #<RelatonNist::NistBibliographicItem:0x00007fab74a572c0
 ...
 ----
@@ -143,8 +154,8 @@ NIST FIPS {docnumber}
 [source,ruby]
 ----
 RelatonNist::NistBibliography.get("SP 800-205 (February 2019) (PD)")
-[relaton-nist] ("SP 800-205") fetching...
-[relaton-nist] ("SP 800-205") found SP 800-205 (Draft)
+[relaton-nist] (SP 800-205) fetching...
+[relaton-nist] (SP 800-205) found `SP 800-205 (Draft)`
 => #<RelatonNist::NistBibliographicItem:0x007fc059934768
 ...
 ----
@@ -161,8 +172,8 @@ Referehces can contain optional parameters `{ptN}{vN}{verN}{rN}{/Add}`:
 [source,ruby]
 ----
 item = RelatonNist::NistBibliography.get 'NIST SP 800-67r1'
-[relaton-nist] ("NIST SP 800-67r1") fetching...
-[relaton-nist] ("NIST SP 800-67r1") found SP 800-67 Rev. 1
+[relaton-nist] (NIST SP 800-67r1) fetching...
+[relaton-nist] (NIST SP 800-67r1) found `SP 800-67 Rev. 1`
 => #<RelatonNist::NistBibliographicItem:0x00007fab748ae978
 ...
 
@@ -170,8 +181,8 @@ item.docidentifier.first.id
 => "SP 800-67 Rev. 1"
 
 item = RelatonNist::NistBibliography.get 'SP 800-38A/Add'
-[relaton-nist] ("SP 800-38A/Add") fetching...
-[relaton-nist] ("SP 800-38A/Add") found SP 800-38A-Add
+[relaton-nist] (SP 800-38A/Add) fetching...
+[relaton-nist] (SP 800-38A/Add) found `SP 800-38A-Add`
 => #<RelatonNist::NistBibliographicItem:0x007fd88c21d880
 ...
 

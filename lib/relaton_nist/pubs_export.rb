@@ -20,7 +20,7 @@ module RelatonNist
       @mutex.synchronize do
         @data ||= begin
           ctime = File.ctime DATAFILE if File.exist? DATAFILE
-          if !ctime || ctime.to_date < Date.today || File.size(DATAFILE).zero?
+          if !ctime || ctime.to_date < Date.today || File.empty?(DATAFILE)
             fetch_data(ctime)
           end
           unzip

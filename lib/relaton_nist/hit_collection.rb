@@ -18,8 +18,9 @@ module RelatonNist
     # @param [Hash] opts options
     # @option opts [String] :stage stage of document
     #
-    def initialize(text, year = nil, opts = {})
-      super text, year
+    def initialize(pubid_ref, year = nil, opts = {})
+      super pubid_ref.to_s, year
+      @pubid_ref = pubid_ref
       @opts = opts
     end
 
@@ -33,8 +34,8 @@ module RelatonNist
     #
     # @return [RelatonNist::HitCollection] hits collection
     #
-    def self.search(text, year = nil, opts = {})
-      new(text, year, opts).search
+    def self.search(pubid_ref, year, opts = {})
+      new(pubid_ref, year, opts).search
     end
 
     #
@@ -55,107 +56,38 @@ module RelatonNist
     #
     def search_filter # rubocop:disable Metrics/AbcSize,Metrics/CyclomaticComplexity,Metrics/PerceivedComplexity,Metrics/MethodLength
       @array.select do |item|
-        parts = doi_parts(item.hit[:json]) || code_parts(item.hit[:code])
-        refparts[:code] && [parts[:series], item.hit[:series]].include?(refparts[:series]) &&
-          refparts[:code].casecmp(parts[:code].upcase).zero? &&
-          refparts[:prt] == parts[:prt] &&
-          (refparts[:vol].nil? || refparts[:vol] == parts[:vol]) &&
-          (refparts[:ver].nil? || refparts[:ver] == parts[:ver]) &&
-          (refparts[:rev].nil? || refparts[:rev] == parts[:rev]) &&
-          refparts[:draft] == parts[:draft] && refparts[:add] == parts[:add]
+        pubid = item.hit[:code]
+        @pubid_ref.serie.serie == pubid.serie.serie &&
+          @pubid_ref.code == pubid.code &&
+          @pubid_ref.part == pubid.part &&
+          @pubid_ref.volume == pubid.volume &&
+          (@pubid_ref.revision.nil? || @pubid_ref.revision == pubid.revision) &&
+          @pubid_ref.edition == pubid.edition &&
+          @pubid_ref.version == pubid.version &&
+          @pubid_ref.supplement == pubid.supplement &&
+          @pubid_ref.index == pubid.index &&
+          @pubid_ref.insert == pubid.insert &&
+          @pubid_ref.errata == pubid.errata &&
+          @pubid_ref.appendix == pubid.appendix &&
+          addendum_match?(pubid.addendum) &&
+          (@pubid_ref.stage.nil? || @pubid_ref.stage.id == pubid.stage&.id) &&
+          @pubid_ref.translation == pubid.translation &&
+          update_match?(pubid.update)
       end
     end
 
     private
 
-    def code_parts(code) # rubocop:disable Metrics/MethodLength
-      {
-        # prefix: match(/^(?:NIST|NBS)\s?/, code),
-        series: match(/(?<val>(?:SP|FIPS|CSWP|IR|ITL\sBulletin|White\sPaper))\s/, code),
-        code: match(/(?<val>[0-9-]+(?:(?!(?:ver|r|v|pt)\d|-add\d?)[A-Za-z-])*)/, code),
-        prt: match(/(?:pt|\sPart\s)(?<val>\d+)/, code),
-        vol: match(/(?:v|\sVol\.\s)(?<val>\d+)/, code),
-        ver: match(/(?:ver|\sVer\.\s|Version\s)(?<val>[\d.]+)/, code),
-        rev: match(/(?:r|Rev\.\s)(?<val>\d+)/, code),
-        # (?:\s(?<prt2>Part\s\d+))?
-        # (?:\s(?<vol2>Vol\.\s\d+))?
-        # (?:\s(?<ver2>(?:Ver\.|Version)\s[\d.]+))?
-        # (?:\s(?<rev2>Rev\.\s\d+))?
-        add: match(/(?:-add|\sAdd)(?:endum)?(?<val>\d*)/, code),
-        draft: !match(/\((?:Retired\s)?Draft\)/, code).nil?,
-      }
+    def addendum_match?(addendum)
+      return @pubid_ref.addendum == addendum if @pubid_ref.addendum.nil?
+
+      @pubid_ref.addendum.upcase.sub(/\.\s?$/, "").sub(/^-/, "") == addendum&.upcase
     end
 
-    def doi_parts(json) # rubocop:disable Metrics/MethodLength,Metrics/AbcSize
-      return unless json && json["doi"]
+    def update_match?(update)
+      return @pubid_ref.update == update if @pubid_ref.update.nil?
 
-      id = json["doi"].split("/").last
-      {
-        # prefix: match(/^(?:NIST|NBS)\./, id),
-        series: match(/(?:SP|FIPS|CSWP|IR|ITL\sBulletin|White\sPaper)(?=\.)/, id),
-        code: match(/(?<=\.)\d+(?:-\d+)*(?:[[:alpha:]](?!\d|raft|er|t?\d))?/, id),
-        prt: match(/pt?(?<val>\d+)/, id),
-        vol: match(/v(?<val>\d+)(?!\.\d)/, id),
-        ver: match(/v(?:er)?(?<val>[\d.]+)/, id),
-        rev: match(/r(?<val>\d+)/, id),
-        add: match(/-Add(?<val>\d*)/, id),
-        draft: !match(/\.ipd/, id).nil?,
-      }
-    end
-
-    #
-    # Parse reference parts
-    #
-    # @return [Hash] reference parts
-    #
-    def refparts # rubocop:disable Metrics/AbcSize, Metrics/MethodLength
-      @refparts ||= {
-        perfix: match(/^(NIST|NBS)/, text),
-        series: match(/(SP|FIPS|CSWP|IR|ITL\sBulletin|White\sPaper)(?=\.|\s)/, text),
-        code: match(/(?<=\.|\s)[0-9-]+(?:(?!(ver|r|v|pt)\d|-add\d?)[A-Za-z-])*/, text),
-        prt: match(/(?:(?<dl>\.)?pt(?(<dl>)-)|\sPart\s)(?<val>[A-Z\d]+)/, text),
-        vol: match(/(?:(?<dl>\.)?v(?(<dl>)-)|\sVol\.\s)(?<val>\d+)/, text),
-        ver: match(/(?:(?<dl>\.)?\s?ver|\sVer\.\s)(?<val>\d(?(<dl>)[-\d]|[.\d])*)/, text)&.gsub(/-/, "."),
-        rev: match(/(?:(?:(?<dl>\.)|[^a-z])r|\sRev\.\s)(?(<dl>)-)(?<val>\d+)/, text),
-        add: match(/(?:(?<dl>\.)?add|\/Add)(?(<dl>)-)(?<val>\d*)/, text),
-        draft: !(match(/\((?:Draft|PD)\)/, text).nil? && @opts[:stage].nil?),
-        # prt2: match(/(?<=\s)Part\s[A-Z\d]+/, text),
-        # vol2: match(/(?<=\s)Vol\.\s\d+/, text),
-        # ver2: match(/(?<=\s)Ver\.\s\d+/, text),
-        # rev2: match(/(?<=\s)Rev\.\s\d+/, text),
-        # add2: match(/(?<=\/)Add/, text),
-      }
-    end
-
-    #
-    # Match regex to reference
-    #
-    # @param [Regexp] regex regex
-    # @param [String] code reference
-    #
-    # @return [String, nil] matched string
-    #
-    def match(regex, code)
-      m = regex.match(code)
-      return unless m
-
-      m.named_captures["val"] || m.to_s
-    end
-
-    #
-    # Generate reference from parts
-    #
-    # @return [String] reference
-    #
-    def full_ref # rubocop:disable Metrics/AbcSize
-      @full_ref ||= begin
-        ref = [refparts[:perfix], refparts[:series], refparts[:code]].compact.join " "
-        ref += "pt#{refparts[:prt]}" if refparts[:prt]
-        ref += "ver#{refparts[:ver]}" if refparts[:ver]
-        ref += "v#{refparts[:vol]}" if refparts[:vol]
-        ref += "r#{refparts[:rev]}" if refparts[:rev]
-        ref
-      end
+      @pubid_ref.update.number == update&.number && @pubid_ref.update.year == update&.year
     end
 
     #
@@ -165,7 +97,7 @@ module RelatonNist
     #
     def sort_hits!
       @array.sort! do |a, b|
-        code = a.hit[:code] <=> b.hit[:code]
+        code = a.hit[:code].to_s <=> b.hit[:code].to_s
         next code unless code.zero?
 
         b.hit[:release_date] <=> a.hit[:release_date]
@@ -181,10 +113,10 @@ module RelatonNist
     # @raise [OpenURI::HTTPError] if GitHub repo is not available
     #
     def from_ga # rubocop:disable Metrics/AbcSize, Metrics/MethodLength
-      ref = full_ref
+      ref = @pubid_ref.to_s.sub(" Add.", "-add")
       # fn = ref.gsub(%r{[/\s:.]}, "_").upcase
       index = Relaton::Index.find_or_create :nist, url: "#{GHNISTDATA}index-v1.zip", file: INDEX_FILE
-      rows = index.search(ref).sort_by { |r| r[:id] }
+      rows = index.search { |r| r[:id].upcase.include?(ref.upcase) }.sort_by { |r| r[:id] }
       # return [] unless row
 
       # yaml = OpenURI.open_uri "#{GHNISTDATA}#{row[:file]}"
@@ -194,7 +126,8 @@ module RelatonNist
       # id = bib.docidentifier.find(&:primary).id
 
       rows.map do |row|
-        Hit.new({ code: row[:id], path: row[:file] }, self)
+        pubid = Pubid::Nist::Identifier.parse row[:id]
+        Hit.new({ code: pubid, path: row[:file] }, self)
       end
       # hit.fetch = bib
       # [hit]
@@ -209,30 +142,49 @@ module RelatonNist
     #
     # @return [Array<RelatonNist::Hit>] hits
     #
-    def from_json
+    def from_json # rubocop:disable Metrics/AbcSize
+      return [] unless @pubid_ref.serie.serie.match?(/^(NIST\s(SP|CSWP)|FIPS)/)
+
       select_data.map do |h|
         /(?<series>(?<=-)\w+$)/ =~ h["series"]
         title = [h["title-main"], h["title-sub"]].compact.join " - "
         release_date = RelatonBib.parse_date h["published-date"], false
-        Hit.new({ code: docidentifier(h), series: series.upcase, title: title,
-                  url: h["uri"], status: h["status"],
-                  release_date: release_date, json: h }, self)
+        Hit.new({ code: json_pubid(h), series: series.upcase, title: title, url: h["uri"],
+                  status: h["status"], release_date: release_date, json: h }, self)
       end
     end
 
-    def docidentifier(json) # rubocop:disable Metrics/AbcSize, Metrics/CyclomaticComplexity, Metrics/PerceivedComplexity, Metrics/MethodLength
-      parts = doi_parts json
-      return json["docidentifier"] unless parts
+    def json_pubid(json)
+      if json["doi"]
+        id = json["doi"].split("/").last.sub(/-draft\d*/, "").sub(/\.\wpd/, "").sub(/-(Add\d*)/, "")
+        add = Regexp.last_match(1)
+        id.sub!(/-upd(\d)/, "")
+        upd = Regexp.last_match(1)
+        pubid = Pubid::Nist::Identifier.parse id
+        pubid.addendum = add if add
+      else
+        id = json["docidentifier"]
+        id = "NIST #{id}" unless id.start_with? "FIPS"
+        upd = json["uri"]&.match(/\/upd(\d)\//)&.captures&.first
+        pubid = Pubid::Nist::Identifier.parse id
+        pubid.revision ||= json["revision"] if json["revision"]
+        pubid.edition ||= json["edition"] if json["edition"]
+        pubid.volume ||= json["volume"] if json["volume"]
+      end
+      pubid.stage = create_stage json["iteration"]
+      pubid.update = Pubid::Nist::Update.new number: upd if defined?(upd) && upd
+      pubid
+    end
 
-      id = parts[:code]
-      id = "NIST #{parts[:series]} #{id}" if parts[:series]
-      id += " Part #{parts[:prt]}" if parts[:prt]
-      id += " Vol. #{parts[:vol]}" if parts[:vol]
-      id += " Ver. #{parts[:ver]}" if parts[:ver]
-      id += " Rev. #{parts[:rev]}" if parts[:rev]
-      id += "-Add" if parts[:add]
-      id += " (Draft)" if parts[:draft] || @opts[:stage]
-      id
+    def create_stage(iteration)
+      return unless iteration
+
+      id =  case iteration
+            when "ipd" then "i"
+            when "final" then "f"
+            else iteration.match(/^\d+/)&.to_s
+            end
+      Pubid::Nist::Stage.new id: id, type: "pd"
     end
 
     #
@@ -241,18 +193,17 @@ module RelatonNist
     # @return [Array<Hash>] selected data
     #
     def select_data # rubocop:disable Metrics/AbcSize, Metrics/CyclomaticComplexity, Metrics/MethodLength,Metrics/PerceivedComplexity
-      ref = "#{refparts[:series]} #{refparts[:code]}"
       d = Date.strptime year, "%Y" if year
-      statuses = %w[draft-public draft-prelim]
+      ref = "#{@pubid_ref.serie.serie.sub(/^NIST\s|\sPUB$/, '')} #{@pubid_ref.code}" # TODO: Pubid shouldn't have PUB
       PubsExport.instance.data.select do |doc|
         next unless match_year?(doc, d)
 
-        if @opts[:stage]&.include?("PD")
-          next unless statuses.include? doc["status"]
+        if @pubid_ref.stage&.type == "pd"
+          next unless doc["status"] == "draft-public"
         else
           next unless doc["status"] == "final"
         end
-        doc["docidentifier"].include?(ref) || doc["docidentifier"].include?(full_ref)
+        doc["docidentifier"].include?(ref)
       end
     end
 
