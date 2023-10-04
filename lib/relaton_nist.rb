@@ -7,6 +7,7 @@ require "relaton_nist/util"
 require "relaton_nist/nist_bibliography"
 require "relaton_nist/data_fetcher"
 require "relaton_nist/pubs_export"
+require "relaton_nist/tech_pubs_parser"
 
 # if defined? Relaton
 #   require_relative "relaton/processor"
