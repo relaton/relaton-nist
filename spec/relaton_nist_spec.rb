@@ -404,6 +404,11 @@ RSpec.describe RelatonNist do
     #   expect(xml).to be_equivalent_to File.read(file, encoding: "UTF-8")
     #     .gsub(/(?<=<fetched>)\d{4}-\d{2}-\d{2}/, Date.today.to_s)
     # end
+
+    it "NIST Research Library (2022)", vcr: { cassette_name: "nist_research_library" } do
+      bib = RelatonNist::NistBibliography.get "NIST Research Library (2022)"
+      expect(bib.docidentifier[0].id).to eq "NIST Research Library (2022)"
+    end
   end
 
   context "warns when" do

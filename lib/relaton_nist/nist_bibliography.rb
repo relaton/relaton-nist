@@ -39,7 +39,7 @@ module RelatonNist
       def get(code, year = nil, opts = {}) # rubocop:disable Metrics/AbcSize, Metrics/MethodLength, Metrics/CyclomaticComplexity, Metrics/PerceivedComplexity
         return fetch_ref_err(code, year, []) if code.match?(/\sEP$/)
 
-        /^(?<code2>[^(]+)(?:\((?<date2>\w+\s(?:\d{2},\s)?\d{4})\))?\s?\(?(?:(?<=\()(?<stage>[^\)]+))?/ =~ code
+        /^(?<code2>[^(]+)(?:\((?<date2>\w+\s(?:\d{2},\s)?\d{4})\))?\s?\(?(?:(?<=\()(?<stage>(?:I|F|\d)PD))?/ =~ code
         stage ||= /(?<=\.)PD-\w+(?=\.)/.match(code)&.to_s
         if code2
           code = code2.strip

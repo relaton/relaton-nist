@@ -1,0 +1,106 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://raw.githubusercontent.com/relaton/relaton-data-nist/main/data/NIST_RESEARCH_LIBRARY_(2022).yaml
+    body:
+      encoding: US-ASCII
+      base64_string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '1474'
+      Cache-Control:
+      - max-age=300
+      Content-Security-Policy:
+      - default-src 'none'; style-src 'unsafe-inline'; sandbox
+      Content-Type:
+      - text/plain; charset=utf-8
+      Etag:
+      - W/"33ce0643f6a88cf7e09416afcd349a9521aeab7ad5f225cd58f8a76df01f96e6"
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - deny
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Github-Request-Id:
+      - 1E4E:7665:27ED1F:306E1D:651DF212
+      Accept-Ranges:
+      - bytes
+      Date:
+      - Wed, 04 Oct 2023 23:15:30 GMT
+      Via:
+      - 1.1 varnish
+      X-Served-By:
+      - cache-pdk-kpdk1780097-PDK
+      X-Cache:
+      - MISS
+      X-Cache-Hits:
+      - '0'
+      X-Timer:
+      - S1696461330.389078,VS0,VE89
+      Vary:
+      - Authorization,Accept-Encoding,Origin
+      Access-Control-Allow-Origin:
+      - "*"
+      Cross-Origin-Resource-Policy:
+      - cross-origin
+      X-Fastly-Request-Id:
+      - 84719c81dd31a44036dfa68d9be9724dfeb1f541
+      Expires:
+      - Wed, 04 Oct 2023 23:20:30 GMT
+      Source-Age:
+      - '0'
+    body:
+      encoding: ASCII-8BIT
+      base64_string: |
+        LS0tCnNjaGVtYS12ZXJzaW9uOiB2MS4yLjQKaWQ6IE5JU1RSZXNlYXJjaExp
+        YnJhcnkyMDIyCnRpdGxlOgotIGNvbnRlbnQ6IE5JU1QgVGVjaG5pY2FsIFNl
+        cmllcyBQdWJsaWNhdGlvbiBNZXRhZGF0YS4KICBsYW5ndWFnZToKICAtIGVu
+        CiAgc2NyaXB0OgogIC0gTGF0bgogIGZvcm1hdDogdGV4dC9wbGFpbgpsaW5r
+        OgotIGNvbnRlbnQ6IGh0dHBzOi8vZGF0YS5uaXN0Lmdvdi9vZC9pZC9tZHMy
+        LTIxOTIKICB0eXBlOiBzcmMKLSBjb250ZW50OiBodHRwczovL2RvaS5vcmcv
+        MTAuMTg0MzQvTTMyMTkyCiAgdHlwZTogZG9pCnR5cGU6IHN0YW5kYXJkCmRv
+        Y2lkOgotIGlkOiBOSVNUIFJlc2VhcmNoIExpYnJhcnkgKDIwMjIpCiAgdHlw
+        ZTogTklTVAogIHByaW1hcnk6IHRydWUKLSBpZDogMTAuMTg0MzQvTTMyMTky
+        CiAgdHlwZTogRE9JCmRhdGU6Ci0gdHlwZTogcHVibGlzaGVkCiAgdmFsdWU6
+        ICcyMDIwLTAzLTA2Jwpjb250cmlidXRvcjoKLSBwZXJzb246CiAgICBuYW1l
+        OgogICAgICBnaXZlbjoKICAgICAgICBmb3JlbmFtZToKICAgICAgICAtIGNv
+        bnRlbnQ6IEthdGhyeW4KICAgICAgICAgIHNjcmlwdDoKICAgICAgICAgIC0g
+        TGF0bgogICAgICBzdXJuYW1lOgogICAgICAgIGNvbnRlbnQ6IE1pbGxlcgog
+        ICAgICAgIHNjcmlwdDoKICAgICAgICAtIExhdG4KICAgIGNvbnRhY3Q6CiAg
+        ICAtIGVtYWlsOiBrYXRocnluLm1pbGxlckBuaXN0LmdvdgogIHJvbGU6CiAg
+        LSB0eXBlOiBhdXRob3IKLSBvcmdhbml6YXRpb246CiAgICBuYW1lOgogICAg
+        LSBjb250ZW50OiBOYXRpb25hbCBJbnN0aXR1dGUgb2YgU3RhbmRhcmRzIGFu
+        ZCBUZWNobm9sb2d5CiAgICBhYmJyZXZpYXRpb246CiAgICAgIGNvbnRlbnQ6
+        IE5JU1QKICAgIGNvbnRhY3Q6CiAgICAtIGFkZHJlc3M6CiAgICAgICAgY2l0
+        eTogR2FpdGhlcnNidXJnCiAgICAgICAgc3RhdGU6IE1ECiAgICAgICAgY291
+        bnRyeTogVVMKICByb2xlOgogIC0gdHlwZTogcHVibGlzaGVyCnJldmRhdGU6
+        ICcyMDIwLTAzLTA2JwpzY3JpcHQ6Ci0gTGF0bgphYnN0cmFjdDoKLSBjb250
+        ZW50OiBNZXRhZGF0YSBmb3IgYWxsIGZpbmFsIE5JU1QgVGVjaG5pY2FsIFNl
+        cmllcyBwdWJsaWNhdGlvbnMgYXZhaWxhYmxlIG9ubGluZSwKICAgIGNyZWF0
+        ZWQgYW5kIG1haW50YWluZWQgYnkgdGhlIE5JU1QgUmVzZWFyY2ggTGlicmFy
+        eS4KICBsYW5ndWFnZToKICAtIGVuCiAgc2NyaXB0OgogIC0gTGF0bgogIGZv
+        cm1hdDogdGV4dC9wbGFpbgpzZXJpZXM6Ci0gdGl0bGU6CiAgICBjb250ZW50
+        OiBJbmZvcm1hdGlvbiBUZWNobm9sb2d5OkRhdGEgYW5kIGluZm9ybWF0aWNz
+        CiAgICBmb3JtYXQ6IHRleHQvcGxhaW4Ka2V5d29yZDoKLSBjb250ZW50OiBv
+        cGVuIGFjY2VzcwotIGNvbnRlbnQ6IE5JU1QgdGVjaG5pY2FsIHJlcG9ydHMK
+        LSBjb250ZW50OiBOSVNUIHB1YmxpY2F0aW9ucwpkb2N0eXBlOiB0ZWNocmVw
+        b3J0CmV4dDoKICBzY2hlbWEtdmVyc2lvbjogdjEuMC4wCg==
+  recorded_at: Wed, 04 Oct 2023 23:15:30 GMT
+recorded_with: VCR 6.2.0

@@ -72,7 +72,7 @@ module RelatonNist
       {
         # prefix: match(/^(?:NIST|NBS)\s?/, code),
         series: match(/(?<val>(?:SP|FIPS|CSWP|IR|ITL\sBulletin|White\sPaper))\s/, code),
-        code: match(/(?<val>[0-9-]+(?:(?!(?:ver|r|v|pt)\d|-add\d?)[A-Za-z-])*)/, code),
+        code: match(/(?<val>[0-9-]+(?:(?!(?:ver|r|v|pt)\d|-add\d?)[A-Za-z-])*|Research\sLibrary)/, code),
         prt: match(/(?:pt|\sPart\s)(?<val>\d+)/, code),
         vol: match(/(?:v|\sVol\.\s)(?<val>\d+)/, code),
         ver: match(/(?:ver|\sVer\.\s|Version\s)(?<val>[\d.]+)/, code),
@@ -112,7 +112,7 @@ module RelatonNist
       @refparts ||= {
         perfix: match(/^(NIST|NBS)/, text),
         series: match(/(SP|FIPS|CSWP|IR|ITL\sBulletin|White\sPaper)(?=\.|\s)/, text),
-        code: match(/(?<=\.|\s)[0-9-]+(?:(?!(ver|r|v|pt)\d|-add\d?)[A-Za-z-])*/, text),
+        code: match(/(?<=\.|\s)[0-9-]+(?:(?!(ver|r|v|pt)\d|-add\d?)[A-Za-z-])*|Research\sLibrary/, text),
         prt: match(/(?:(?<dl>\.)?pt(?(<dl>)-)|\sPart\s)(?<val>[A-Z\d]+)/, text),
         vol: match(/(?:(?<dl>\.)?v(?(<dl>)-)|\sVol\.\s)(?<val>\d+)/, text),
         ver: match(/(?:(?<dl>\.)?\s?ver|\sVer\.\s)(?<val>\d(?(<dl>)[-\d]|[.\d])*)/, text)&.gsub(/-/, "."),
@@ -241,6 +241,8 @@ module RelatonNist
     # @return [Array<Hash>] selected data
     #
     def select_data # rubocop:disable Metrics/AbcSize, Metrics/CyclomaticComplexity, Metrics/MethodLength,Metrics/PerceivedComplexity
+      return [] unless refparts[:code]
+
       ref = "#{refparts[:series]} #{refparts[:code]}"
       d = Date.strptime year, "%Y" if year
       statuses = %w[draft-public draft-prelim]
