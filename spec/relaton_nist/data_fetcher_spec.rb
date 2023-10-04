@@ -22,10 +22,6 @@ RSpec.describe RelatonNist::DataFetcher do
     end
   end
 
-  # let(:nist_data) do
-  #   File.read "spec/examples/nist_data.xml", encoding: "UTF-8"
-  # end
-
   context "instance methods" do
     subject { RelatonNist::DataFetcher.new "data", "yaml" }
 
@@ -33,34 +29,13 @@ RSpec.describe RelatonNist::DataFetcher do
       expect(subject.index).to be_instance_of Relaton::Index::Type
     end
 
-    # let(:out) { "data" }
-    # let(:format) { "yaml" }
-
-    before(:each) do
-      # expect(OpenURI).to receive(:open_uri).with(RelatonNist::DataFetcher::URL).and_return nist_data
-      # expect(Dir).to receive(:exist?).with(out).and_return false
-      # expect(FileUtils).to receive(:mkdir_p).with(out)
-      # files = ["#{out}/NIST_SP_800-133R1.#{format}", "#{out}/NIST_SP_1190GB-16.#{format}"]
-      # expect(Dir).to receive(:[]).with("#{out}/*.#{format}").and_return files
-      # expect(FileUtils).to receive(:rm).with(files)
-      # expect(File).to receive(:exist?).with(files[0]).and_return false
-      # expect(File).to receive(:exist?).with(files[1]).and_return true
-      # expect(File).to receive(:write).with(files[0], kind_of(String), encoding: "UTF-8")
-      # expect(File).to receive(:write).with(files[1], kind_of(String), encoding: "UTF-8")
-    end
-
-    # subject do
-    #   fetcher = RelatonNist::DataFetcher.new out, format
-    #   fetcher.instance_variable_get(:@files) << "#{out}/NIST_SP_1190GB-16.#{format}"
-    #   fetcher
-    # end
-
     context "#fetch" do
       before { expect(FileUtils).to receive(:mkdir_p).with("data") }
 
       it "success" do
         expect(subject.index).to receive(:save)
         expect(subject).to receive(:fetch_tech_pubs)
+        expect(subject).to receive(:add_static_files)
         subject.fetch
       end
 
@@ -89,6 +64,14 @@ RSpec.describe RelatonNist::DataFetcher do
         .with(kind_of(Nokogiri::XML::Element), kind_of(Hash)).and_return :bib
       expect(subject).to receive(:write_file).with(:bib)
       subject.fetch_tech_pubs
+    end
+
+    it "#add_static_files" do
+      expect(Dir).to receive(:[]).with("./static/*.yaml").and_return ["./static/NISTIR_8296-12.yaml"]
+      expect(YAML).to receive(:load_file).with("./static/NISTIR_8296-12.yaml").and_return :hash
+      expect(RelatonNist::NistBibliographicItem).to receive(:from_hash).with(:hash).and_return :bib
+      expect(subject).to receive(:write_file).with(:bib)
+      subject.add_static_files
     end
 
     context "#write_file" do
@@ -132,39 +115,5 @@ RSpec.describe RelatonNist::DataFetcher do
         expect(subject.output(bib)).to eq :bibxml
       end
     end
-
-    # context "custom dir & type XML" do
-    #   let(:out) { "dir" }
-    #   let(:format) { "xml" }
-
-    #   it "fetch" do
-    #     expect(subject.index).to receive(:save)
-    #     expect { subject.fetch }.to output(
-    #       /File dir\/NIST_SP_1190GB-16\.xml exists\. Docid: NIST SP 1190GB-16/,
-    #     ).to_stderr
-    #   end
-
-    #   it "fetch" do
-    #     subject.instance_variable_set :@format, "bibxml"
-    #     expect(subject.index).to receive(:save)
-    #     expect { subject.fetch }.to output(
-    #       /File dir\/NIST_SP_1190GB-16\.xml exists\. Docid: NIST SP 1190GB-16/,
-    #     ).to_stderr
-    #   end
-    # end
   end
-
-  # it "raise parsing error" do
-  #   expect(FileUtils).to receive(:mkdir_p).with("data")
-  #   expect(subject).to receive(:fetch_tech_pubs).and_raise StandardError.new("Test error")
-  #   expect { subject.fetch }.to output(/Test error/).to_stderr
-  # end
-
-  # context "parse document" do
-  #   subject { RelatonNist::DataFetcher.new "dir", "xml" }
-  #   let(:rep) do
-  #     doc = Nokogiri::XML File.read("spec/examples/report-paper.xml", encoding: "UTF-8")
-  #     doc.at "/report-paper_metadata"
-  #   end
-  # end
 end

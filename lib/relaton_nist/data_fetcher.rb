@@ -57,6 +57,7 @@ module RelatonNist
       FileUtils.rm Dir[File.join(@output, "*.#{@ext}")]
 
       fetch_tech_pubs
+      add_static_files
       index.save
 
       t2 = Time.now
@@ -72,6 +73,13 @@ module RelatonNist
       docs.xpath(
         "/body/query/doi_record/report-paper/report-paper_metadata",
       ).each { |doc| write_file TechPubsParser.parse(doc, series) }
+    end
+
+    def add_static_files
+      Dir["./static/*.yaml"].each do |file|
+        hash = YAML.load_file file
+        write_file RelatonNist::NistBibliographicItem.from_hash(hash)
+      end
     end
 
     #
