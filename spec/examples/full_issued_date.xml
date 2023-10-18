@@ -1,0 +1,217 @@
+<bibdata type="standard" schema-version="v1.2.4">
+  <fetched>2023-10-17</fetched>
+  <title format="text/plain" language="en" script="Latn">Protecting Information and System Integrity in Industrial Control System Environments - Cybersecurity for the Manufacturing Sector</title>
+  <uri type="src">https://csrc.nist.gov/pubs/sp/1800/10/ipd</uri>
+  <docidentifier type="NIST" primary="true">NIST SP 1800-10 (Draft)</docidentifier>
+  <date type="published">
+    <on>2021-09</on>
+  </date>
+  <date type="obsoleted">
+    <on>2022-03</on>
+  </date>
+  <date type="issued">
+    <on>2021-09</on>
+  </date>
+  <contributor>
+    <role type="author"/>
+    <person>
+      <name>
+        <completename language="en" script="Latn">Michael Powell</completename>
+      </name>
+      <affiliation>
+        <organization>
+          <name>National Institute of Standards and Technology</name>
+          <abbreviation>NIST</abbreviation>
+        </organization>
+      </affiliation>
+    </person>
+  </contributor>
+  <contributor>
+    <role type="author"/>
+    <person>
+      <name>
+        <completename language="en" script="Latn">Joseph M. Brule</completename>
+      </name>
+      <affiliation>
+        <organization>
+          <name>National Security Agency</name>
+          <abbreviation>NSA</abbreviation>
+        </organization>
+      </affiliation>
+    </person>
+  </contributor>
+  <contributor>
+    <role type="author"/>
+    <person>
+      <name>
+        <completename language="en" script="Latn">Michael Pease</completename>
+      </name>
+      <affiliation>
+        <organization>
+          <name>National Institute of Standards and Technology</name>
+          <abbreviation>NIST</abbreviation>
+        </organization>
+      </affiliation>
+    </person>
+  </contributor>
+  <contributor>
+    <role type="author"/>
+    <person>
+      <name>
+        <completename language="en" script="Latn">Keith A. Stouffer</completename>
+      </name>
+      <affiliation>
+        <organization>
+          <name>National Institute of Standards and Technology</name>
+          <abbreviation>NIST</abbreviation>
+        </organization>
+      </affiliation>
+    </person>
+  </contributor>
+  <contributor>
+    <role type="author"/>
+    <person>
+      <name>
+        <completename language="en" script="Latn">CheeYee Tang</completename>
+      </name>
+      <affiliation>
+        <organization>
+          <name>National Institute of Standards and Technology</name>
+          <abbreviation>NIST</abbreviation>
+        </organization>
+      </affiliation>
+    </person>
+  </contributor>
+  <contributor>
+    <role type="author"/>
+    <person>
+      <name>
+        <completename language="en" script="Latn">Timothy Zimmerman</completename>
+      </name>
+      <affiliation>
+        <organization>
+          <name>National Institute of Standards and Technology</name>
+          <abbreviation>NIST</abbreviation>
+        </organization>
+      </affiliation>
+    </person>
+  </contributor>
+  <contributor>
+    <role type="author"/>
+    <person>
+      <name>
+        <completename language="en" script="Latn">Chelsea Deane</completename>
+      </name>
+      <affiliation>
+        <organization>
+          <name>The MITRE Corporation</name>
+          <abbreviation>MITRE</abbreviation>
+        </organization>
+      </affiliation>
+    </person>
+  </contributor>
+  <contributor>
+    <role type="author"/>
+    <person>
+      <name>
+        <completename language="en" script="Latn">John Hoyt</completename>
+      </name>
+      <affiliation>
+        <organization>
+          <name>The MITRE Corporation</name>
+          <abbreviation>MITRE</abbreviation>
+        </organization>
+      </affiliation>
+    </person>
+  </contributor>
+  <contributor>
+    <role type="author"/>
+    <person>
+      <name>
+        <completename language="en" script="Latn">Mary Raguso</completename>
+      </name>
+      <affiliation>
+        <organization>
+          <name>The MITRE Corporation</name>
+          <abbreviation>MITRE</abbreviation>
+        </organization>
+      </affiliation>
+    </person>
+  </contributor>
+  <contributor>
+    <role type="author"/>
+    <person>
+      <name>
+        <completename language="en" script="Latn">Aslam Sherule</completename>
+      </name>
+      <affiliation>
+        <organization>
+          <name>The MITRE Corporation</name>
+          <abbreviation>MITRE</abbreviation>
+        </organization>
+      </affiliation>
+    </person>
+  </contributor>
+  <contributor>
+    <role type="author"/>
+    <person>
+      <name>
+        <completename language="en" script="Latn">Kangmin Zheng</completename>
+      </name>
+      <affiliation>
+        <organization>
+          <name>The MITRE Corporation</name>
+          <abbreviation>MITRE</abbreviation>
+        </organization>
+      </affiliation>
+    </person>
+  </contributor>
+  <contributor>
+    <role type="author"/>
+    <person>
+      <name>
+        <completename language="en" script="Latn">Matthew Zopf</completename>
+      </name>
+      <affiliation>
+        <organization>
+          <name>Strativia</name>
+        </organization>
+      </affiliation>
+    </person>
+  </contributor>
+  <language>en</language>
+  <script>Latn</script>
+  <status>
+    <stage>draft-public</stage>
+    <substage>withdrawn</substage>
+    <iteration>1</iteration>
+  </status>
+  <copyright>
+    <from>2021</from>
+    <owner>
+      <organization>
+        <name>National Institute of Standards and Technology</name>
+        <abbreviation>NIST</abbreviation>
+        <uri>www.nist.gov</uri>
+      </organization>
+    </owner>
+  </copyright>
+  <place>Gaithersburg, MD</place>
+  <keyword>manufacturing</keyword>
+  <keyword>industrial control systems</keyword>
+  <keyword>application allowlisting</keyword>
+  <keyword>file integrity checking</keyword>
+  <keyword>user authentication</keyword>
+  <keyword>user authorization</keyword>
+  <keyword>behavioral anomaly detection</keyword>
+  <keyword>remote access</keyword>
+  <keyword>software modification</keyword>
+  <keyword>firmware modification</keyword>
+  <ext schema-version="v1.0.0">
+    <doctype>standard</doctype>
+    <commentperiod>
+      <from>2021-09-23</from>
+      <to>2021-11-07</to>
+    </commentperiod>
+  </ext>
+</bibdata>

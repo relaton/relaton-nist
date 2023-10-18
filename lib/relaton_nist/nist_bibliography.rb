@@ -84,10 +84,10 @@ module RelatonNist
         result = nistbib_search_filter(code, year, opts) || (return nil)
         ret = nistbib_results_filter(result, year, opts)
         if ret[:ret]
-          Util.warn "(#{code}) found `#{ret[:ret].docidentifier.first.id}`"
+          Util.warn "(#{result.reference}) Found: `#{ret[:ret].docidentifier.first.id}`"
           ret[:ret]
         else
-          fetch_ref_err(code, year, ret[:years])
+          fetch_ref_err(result.reference, year, ret[:years])
         end
       end
 
@@ -114,20 +114,19 @@ module RelatonNist
                     when "F" then "final"
                     else iter
                     end
-        result.each_slice(3) do |s| # ISO website only allows 3 connections
-          fetch_pages(s, 3).each_with_index do |r, _i|
-            if opts[:date]
-              dates = r.date.select { |d| d.on(:date) == opts[:date] }
-              next if dates.empty?
-            end
-            next if iter && r.status.iteration != iteration
-            return { ret: r } if !year
+        result.each do |h|
+          r = h.fetch
+          if opts[:date]
+            dates = r.date.select { |d| d.on(:date) == opts[:date] }
+            next if dates.empty?
+          end
+          next if iter && r.status.iteration != iteration
+          return { ret: r } if !year
 
-            r.date.select { |d| d.type == "published" }.each do |d|
-              return { ret: r } if year.to_i == d.on(:year)
+          r.date.select { |d| d.type == "published" }.each do |d|
+            return { ret: r } if year.to_i == d.on(:year)
 
-              missed_years << d.on(:year)
-            end
+            missed_years << d.on(:year)
           end
         end
         { years: missed_years }
@@ -141,13 +140,13 @@ module RelatonNist
       #
       # @return [Array<RelatonNist::NistBibliographicItem>] bibliographic items
       #
-      def fetch_pages(hits, threads)
-        workers = RelatonBib::WorkersPool.new threads
-        workers.worker { |w| { i: w[:i], hit: w[:hit].fetch } }
-        hits.each_with_index { |hit, i| workers << { i: i, hit: hit } }
-        workers.end
-        workers.result.sort_by { |a| a[:i] }.map { |x| x[:hit] }
-      end
+      # def fetch_pages(hits, threads)
+      #   workers = RelatonBib::WorkersPool.new threads
+      #   workers.worker { |w| { i: w[:i], hit: w[:hit].fetch } }
+      #   hits.each_with_index { |hit, i| workers << { i: i, hit: hit } }
+      #   workers.end
+      #   workers.result.sort_by { |a| a[:i] }.map { |x| x[:hit] }
+      # end
 
       #
       # Get search results and filter them by code and year
@@ -160,7 +159,6 @@ module RelatonNist
       # @return [RelatonNist::HitCollection] hits collection
       #
       def nistbib_search_filter(code, year, opts)
-        Util.warn "(#{code}) fetching..."
         result = search(code, year, opts)
         result.search_filter
       end
@@ -168,21 +166,19 @@ module RelatonNist
       #
       # Outputs warning message if no match found
       #
-      # @param [String] code reference
+      # @param [String] ref reference
       # @param [String, nil] year year
       # @param [Array<String>] missed_years missed years
       #
       # @return [nil] nil
       #
-      def fetch_ref_err(code, year, missed_years) # rubocop:disable Metrics/MethodLength
-        id = year ? "#{code}:#{year}" : code
-        Util.warn "WARNING: no match found online for `#{id}`. " \
-                  "The code must be exactly like it is on the standards website."
+      def fetch_ref_err(ref, year, missed_years)
+        Util.warn "(#{ref}) No found."
         unless missed_years.empty?
           Util.warn "(There was no match for #{year}, though there " \
                     "were matches found for `#{missed_years.join('`, `')}`.)"
         end
-        if /\d-\d/.match? code
+        if /\d-\d/.match? ref
           Util.warn "The provided document part may not exist, " \
                     "or the document may no longer be published in parts."
         end

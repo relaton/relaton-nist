@@ -1,8 +1,8 @@
-<bibitem id="SP800-37Rev.2(Draft)" type="standard" schema-version="v1.2.4">
-  <fetched>2023-03-30</fetched>
+<bibdata type="standard" schema-version="v1.2.4">
+  <fetched>2023-10-17</fetched>
   <title format="text/plain" language="en" script="Latn">Risk Management Framework for Information Systems and Organizations - A System Life Cycle Approach for Security and Privacy</title>
-  <uri type="src">https://csrc.nist.gov/publications/detail/sp/800-37/rev-2/archive/2018-05-09</uri>
-  <docidentifier type="NIST" primary="true">SP 800-37 Rev. 2 (Draft)</docidentifier>
+  <uri type="src">https://csrc.nist.gov/pubs/sp/800/37/r2/ipd</uri>
+  <docidentifier type="NIST" primary="true">NIST SP 800-37 Rev. 2 (Draft)</docidentifier>
   <date type="published">
     <on>2018-05</on>
   </date>
@@ -18,6 +18,7 @@
       <name>Joint Task Force</name>
     </organization>
   </contributor>
+  <edition>Revision 2</edition>
   <language>en</language>
   <script>Latn</script>
   <status>
@@ -72,4 +73,11 @@
   <keyword>system owner</keyword>
   <keyword>system privacy officer</keyword>
   <keyword>system security officer</keyword>
-</bibitem>
+  <ext schema-version="v1.0.0">
+    <doctype>standard</doctype>
+    <commentperiod>
+      <from>2018-05-09</from>
+      <to>2018-06-22</to>
+    </commentperiod>
+  </ext>
+</bibdata>

@@ -51,7 +51,7 @@ module RelatonNist
           script: [json["script"]],
           docstatus: fetch_status(json), # hit_data[:status]),
           copyright: fetch_copyright(json["published-date"]),
-          relation: fetch_relations_json(json),
+          relation: fetch_relations_json(hit_data),
           place: ["Gaithersburg, MD"],
           keyword: fetch_keywords(json),
           commentperiod: fetch_commentperiod_json(json),
@@ -80,8 +80,16 @@ module RelatonNist
       def fetch_status(doc)
         stage = doc["status"]
         subst = doc["substage"]
-        iter = doc["iteration"] == "initial" ? 1 : doc["iteration"]
+        iter = iteration(doc["iteration"])
         RelatonNist::DocumentStatus.new stage: stage, substage: subst, iteration: iter.to_s
+      end
+
+      def iteration(iter)
+        case iter
+        when "initial", "ipd" then 1
+        when /(\d)pd/i then $1
+        else iter
+        end
       end
 
       # Fetch titles.
@@ -109,7 +117,7 @@ module RelatonNist
         #   d = doc.at("//span[@id='pub-release-date']")&.text&.strip
         #   issued = RelatonBib.parse_date d
         # end
-        dates << { type: "issued", on: issued.to_s }
+        dates << { type: "issued", on: issued.to_s } if issued
         dates
       end
 
@@ -182,9 +190,9 @@ module RelatonNist
       # @return [String, NilClass]
       def fetch_edition(doc)
         # if doc.is_a? Hash
-        return unless doc["edition"]
+        return unless doc["edition"] || doc["revision"]
 
-        rev = doc["edition"]
+        rev = doc["edition"] || doc["revision"]
         "Revision #{rev}"
       end
 
@@ -210,13 +218,14 @@ module RelatonNist
         links
       end
 
-      def fetch_relations_json(doc)
+      def fetch_relations_json(hit)
+        doc = hit[:json]
         relations = doc["supersedes"].map do |r|
-          doc_relation "supersedes", r["docidentifier"], r["uri"]
+          doc_relation "supersedes", hit[:code], r["uri"]
         end
 
         relations + doc["superseded-by"].map do |r|
-          doc_relation "updates", r["docidentifier"], r["uri"]
+          doc_relation "updates", hit[:code], r["uri"]
         end
       end
 
@@ -230,16 +239,11 @@ module RelatonNist
           t = "obsoletes"
         else t = type
         end
-        DocumentRelation.new(
-          type: t,
-          description: descr,
-          bibitem: RelatonBib::BibliographicItem.new(
-            formattedref: RelatonBib::FormattedRef.new(
-              content: ref, language: lang, script: script, format: "text/plain",
-            ),
-            link: [RelatonBib::TypedUri.new(type: "src", content: uri)],
-          ),
-        )
+        ids = [RelatonBib::DocumentIdentifier.new(id: ref, type: "NIST", primary: true)]
+        fref = RelatonBib::FormattedRef.new(content: ref, language: lang, script: script, format: "text/plain")
+        link = [RelatonBib::TypedUri.new(type: "src", content: uri)]
+        bib = RelatonBib::BibliographicItem.new(formattedref: fref, link: link, docid: ids)
+        DocumentRelation.new(type: t, description: descr, bibitem: bib)
       end
 
       # @param doc [Hash]

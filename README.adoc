@@ -89,10 +89,12 @@ end
 
 [source,ruby]
 ----
-hit_collection = RelatonNist::NistBibliography.search("8200")
-=> <RelatonNist::HitCollection:0x007fc069d19da0 @ref=8200 @fetched=false>
+hit_collection = RelatonNist::NistBibliography.search("NISTIR 8200")
+[relaton-nist] (NIST IR 8200) Fetching from csrc.nist.gov ...
+[relaton-nist] (NIST IR 8200) Fetching from Relaton repository ...
+=> <RelatonNist::HitCollection:0x00000000004b28 @ref=NIST IR 8200 @fetched=false>
 
-item = hit_collection[1].fetch
+item = hit_collection[0].fetch
 => #<RelatonNist::NistBibliographicItem:0x007fc049aa6778
  ...
 ----
@@ -101,9 +103,9 @@ item = hit_collection[1].fetch
 [source,ruby]
 ----
 item.to_xml
-=> "<bibitem id="SP800-160Vol.1Ver.1Rev.1" type="standard" schema-version="v1.2.1">
-      <fetched>2022-12-05</fetched>
-      <title format="text/plain" language="en" script="Latn">Engineering Trustworthy Secure Systems</title>
+=> "<bibitem id="NISTIR8200" type="standard" schema-version="v1.2.4">
+      <fetched>2023-10-16</fetched>
+      <title format="text/plain" language="en" script="Latn">Interagency report on the status of international cybersecurity standardization for the internet of things (IoT)</title>
       ...
     <bibitem>"
 ----
@@ -111,9 +113,9 @@ With argument `bibdata: true` it outputs XML wrapped by `bibdata` element and ad
 [source,ruby]
 ----
 item.to_xml bibdata: true
-=> "<bibdata type="standard" schema-version="v1.2.1">
-      <fetched>2022-12-05</fetched>
-      <title format="text/plain" language="en" script="Latn">Engineering Trustworthy Secure Systems</title>
+=> "<bibdata type="standard" schema-version="v1.2.4">
+      <fetched>2023-10-16</fetched>
+      <title format="text/plain" language="en" script="Latn">Interagency report on the status of international cybersecurity standardization for the internet of things (IoT)</title>
       ...
       <ext schema-version="v1.0.0">
         <doctype>standard</doctype>
@@ -124,9 +126,10 @@ item.to_xml bibdata: true
 === Get code, and year
 [source,ruby]
 ----
-RelatonNist::NistBibliography.get("NIST IR 8200", "2018", {})
-[relaton-nist] (NIST IR 8200) fetching...
-[relaton-nist] (NIST IR 8200) found `NIST IR 8200`
+RelatonNist::NistBibliography.get("NIST IR 8200", "2018")
+[relaton-nist] (NIST SP 8200:2018) Fetching from csrc.nist.gov ...
+[relaton-nist] (NIST IR 8200:2018) Fetching from Relaton repository...
+[relaton-nist] (NIST IR 8200:2018) Found: `NIST IR 8200`
 => #<RelatonNist::NistBibliographicItem:0x00007fab74a572c0
 ...
 ----
@@ -153,10 +156,10 @@ NIST FIPS {docnumber}
 ----
 [source,ruby]
 ----
-RelatonNist::NistBibliography.get("SP 800-205 (February 2019) (PD)")
-[relaton-nist] (SP 800-205) fetching...
-[relaton-nist] (SP 800-205) found `SP 800-205 (Draft)`
-=> #<RelatonNist::NistBibliographicItem:0x007fc059934768
+RelatonNist::NistBibliography.get("NIST SP 800-205 (February 2019) (IPD)")
+[relaton-nist] (NIST SP 800-205) Fetching from csrc.nist.gov ...
+[relaton-nist] (NIST SP 800-205) Found: `NIST SP 800-205 (Draft)`
+=> #<RelatonNist::NistBibliographicItem:0x00000001105afdc8
 ...
 ----
 
@@ -172,22 +175,22 @@ Referehces can contain optional parameters `{ptN}{vN}{verN}{rN}{/Add}`:
 [source,ruby]
 ----
 item = RelatonNist::NistBibliography.get 'NIST SP 800-67r1'
-[relaton-nist] (NIST SP 800-67r1) fetching...
-[relaton-nist] (NIST SP 800-67r1) found `SP 800-67 Rev. 1`
-=> #<RelatonNist::NistBibliographicItem:0x00007fab748ae978
+[relaton-nist] (NIST SP 800-67r1) Fetching from csrc.nist.gov ...
+[relaton-nist] (NIST SP 800-67r1) Found: `NIST SP 800-67 Rev. 1`
+=> #<RelatonNist::NistBibliographicItem:0x00000001105acd08
 ...
 
 item.docidentifier.first.id
-=> "SP 800-67 Rev. 1"
+=> "NIST SP 800-67 Rev. 1"
 
-item = RelatonNist::NistBibliography.get 'SP 800-38A/Add'
-[relaton-nist] (SP 800-38A/Add) fetching...
-[relaton-nist] (SP 800-38A/Add) found `SP 800-38A-Add`
-=> #<RelatonNist::NistBibliographicItem:0x007fd88c21d880
+item = RelatonNist::NistBibliography.get 'NIST SP 800-38A/Add'
+[relaton-nist] (NIST SP 800-38A/Add) Fetching from csrc.nist.gov ...
+[relaton-nist] (NIST SP 800-38A/Add) Found: `NIST SP 800-38A-Add`
+=> #<RelatonNist::NistBibliographicItem:0x00000001105abf48
 ...
 
 item.docidentifier.first.id
-=> "SP 800-38A-Add"
+=> "NIST SP 800-38A-Add"
 ----
 
 === Typed links
@@ -197,8 +200,12 @@ NIST documents may have `src` and `doi` link types.
 [source,ruby]
 ----
 item.link
-=> [#<RelatonBib::TypedUri:0x00007f901971dc10 @content=#<Addressable::URI:0x62c URI:https://csrc.nist.gov/publications/detail/sp/800-67/rev-2/final>, @type="src">,
- #<RelatonBib::TypedUri:0x00007f901971d6e8 @content=#<Addressable::URI:0x640 URI:https://doi.org/10.6028/NIST.SP.800-67r2>, @type="doi">]
+=> [#<RelatonBib::TypedUri:0x0000000111087a98
+  @content=#<Addressable::URI:0x8c0 URI:https://csrc.nist.gov/pubs/sp/800/38/a/sup/final>,
+  @language=nil,
+  @script=nil,
+  @type="src">,
+ #<RelatonBib::TypedUri:0x00000001110879a8 @content=#<Addressable::URI:0x8d4 URI:https://doi.org/10.6028/NIST.SP.800-38A-Add>, @language=nil, @script=nil, @type="doi">]
 ----
 
 === Create bibliographic item from YAML

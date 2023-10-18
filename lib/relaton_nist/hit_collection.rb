@@ -12,6 +12,9 @@ module RelatonNist
     GHNISTDATA = "https://raw.githubusercontent.com/relaton/relaton-data-nist/main/"
     INDEX_FILE = "index-v1.yaml"
 
+    attr_reader :reference
+    attr_accessor :array
+
     #
     # @param [String] text reference
     # @param [String, nil] year reference
@@ -20,6 +23,7 @@ module RelatonNist
     #
     def initialize(text, year = nil, opts = {})
       super text, year
+      @reference = year && !text.match?(/:\d{4}$/) ? "#{text}:#{year}" : text
       @opts = opts
     end
 
@@ -54,16 +58,21 @@ module RelatonNist
     # @return [Array<RelatonNist::Hit>] hits
     #
     def search_filter # rubocop:disable Metrics/AbcSize,Metrics/CyclomaticComplexity,Metrics/PerceivedComplexity,Metrics/MethodLength
-      @array.select do |item|
+      arr = @array.select do |item|
         parts = doi_parts(item.hit[:json]) || code_parts(item.hit[:code])
+        iteration = item.hit.dig(:json, "iteration")
+        draft = parts[:draft] || (!iteration.nil? && iteration.match?(/\wpd/i))
         refparts[:code] && [parts[:series], item.hit[:series]].include?(refparts[:series]) &&
           refparts[:code].casecmp(parts[:code].upcase).zero? &&
           refparts[:prt] == parts[:prt] &&
           (refparts[:vol].nil? || refparts[:vol] == parts[:vol]) &&
           (refparts[:ver].nil? || refparts[:ver] == parts[:ver]) &&
           (refparts[:rev].nil? || refparts[:rev] == parts[:rev]) &&
-          refparts[:draft] == parts[:draft] && refparts[:add] == parts[:add]
+          refparts[:draft] == draft && refparts[:add] == parts[:add]
       end
+      dup = self.dup
+      dup.array = arr
+      dup
     end
 
     private
@@ -99,7 +108,7 @@ module RelatonNist
         ver: match(/v(?:er)?(?<val>[\d.]+)/, id),
         rev: match(/r(?<val>\d+)/, id),
         add: match(/-Add(?<val>\d*)/, id),
-        draft: !match(/\.ipd/, id).nil?,
+        draft: !match(/\.ipd|-draft/, id).nil?,
       }
     end
 
@@ -181,7 +190,10 @@ module RelatonNist
     # @raise [OpenURI::HTTPError] if GitHub repo is not available
     #
     def from_ga # rubocop:disable Metrics/AbcSize, Metrics/MethodLength
+      Util.warn "(#{@reference}) Fetching from Relaton repository ..."
       ref = full_ref
+      return [] if ref.empty?
+
       # fn = ref.gsub(%r{[/\s:.]}, "_").upcase
       index = Relaton::Index.find_or_create :nist, url: "#{GHNISTDATA}index-v1.zip", file: INDEX_FILE
       rows = index.search(ref).sort_by { |r| r[:id] }
@@ -209,20 +221,20 @@ module RelatonNist
     #
     # @return [Array<RelatonNist::Hit>] hits
     #
-    def from_json
+    def from_json # rubocop:disable Metrics/AbcSize
+      Util.warn "(#{@reference}) Fetching from csrc.nist.gov ..."
       select_data.map do |h|
         /(?<series>(?<=-)\w+$)/ =~ h["series"]
         title = [h["title-main"], h["title-sub"]].compact.join " - "
         release_date = RelatonBib.parse_date h["published-date"], false
-        Hit.new({ code: docidentifier(h), series: series.upcase, title: title,
-                  url: h["uri"], status: h["status"],
-                  release_date: release_date, json: h }, self)
+        Hit.new({ code: docidentifier(h), series: series.upcase, title: title, url: h["uri"],
+                  status: h["status"], release_date: release_date, json: h }, self)
       end
     end
 
     def docidentifier(json) # rubocop:disable Metrics/AbcSize, Metrics/CyclomaticComplexity, Metrics/PerceivedComplexity, Metrics/MethodLength
-      parts = doi_parts json
-      return json["docidentifier"] unless parts
+      parts = doi_parts(json) || code_parts(json["docidentifier"])
+      # return json["docidentifier"] unless parts
 
       id = parts[:code]
       id = "NIST #{parts[:series]} #{id}" if parts[:series]

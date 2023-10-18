@@ -1,5 +1,5 @@
 RSpec.describe RelatonNist::HitCollection do
-  subject { RelatonNist::HitCollection.new "REF" }
+  subject { RelatonNist::HitCollection.new "NIST IR 8200" }
 
   it "raise error when HTTP response isn't 200 or 404" do
     io = double "OpenURI IO", status: ["500"]
