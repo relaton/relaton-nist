@@ -1,8 +1,5 @@
 module RelatonNist
   class NistBibliographicItem < RelatonBib::BibliographicItem
-    # @return [String]
-    attr_reader :doctype
-
     # @return [Array<RelatonNist::Keyword>]
     # attr_reader :keyword
 
@@ -88,7 +85,7 @@ module RelatonNist
       super date_format: :short, **opts do |b|
         if opts[:bibdata]
           ext = b.ext do
-            b.doctype doctype if doctype
+            doctype&.to_xml b
             commentperiod&.to_xml b
           end
           ext["schema-version"] = ext_schema unless opts[:embedded]

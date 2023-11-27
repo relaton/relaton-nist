@@ -1,49 +1,50 @@
 module RelatonNist
-  class HashConverter < RelatonBib::HashConverter
-    class << self
-      # @override RelatonBib::HashConverter.hash_to_bib
-      # @param args [Hash]
-      # @param nested [TrueClass, FalseClass]
-      # @return [Hash]
-      def hash_to_bib(args)
-        ret = super
-        return if ret.nil?
+  module HashConverter
+    include RelatonBib::HashConverter
+    extend self
 
-        commentperiod_hash_to_bib(ret)
-        ret
-      end
+    # @override RelatonBib::HashConverter.hash_to_bib
+    # @param args [Hash]
+    # @param nested [TrueClass, FalseClass]
+    # @return [Hash]
+    def hash_to_bib(args)
+      ret = super
+      return if ret.nil?
 
-      private
+      commentperiod_hash_to_bib(ret)
+      ret
+    end
 
-      # @param item_hash [Hash]
-      # @return [RelatonNist::NistBibliographicItem]
-      def bib_item(item_hash)
-        NistBibliographicItem.new(**item_hash)
-      end
+    private
 
-      def commentperiod_hash_to_bib(ret)
-        return unless ret[:commentperiod]
+    # @param item_hash [Hash]
+    # @return [RelatonNist::NistBibliographicItem]
+    def bib_item(item_hash)
+      NistBibliographicItem.new(**item_hash)
+    end
 
-        ret[:commentperiod] = CommentPeriod.new(**ret[:commentperiod])
-      end
+    def commentperiod_hash_to_bib(ret)
+      return unless ret[:commentperiod]
 
-      # @param ret [Hash]
-      def relations_hash_to_bib(ret)
-        super
-        return unless ret[:relation]
+      ret[:commentperiod] = CommentPeriod.new(**ret[:commentperiod])
+    end
 
-        ret[:relation] = ret[:relation].map { |r| DocumentRelation.new(**r) }
+    # @param ret [Hash]
+    def relations_hash_to_bib(ret)
+      super
+      return unless ret[:relation]
 
-        # ret[:relation] = array(ret[:relation])
-        # ret[:relation]&.each do |r|
-        #   if r[:description]
-        #     r[:description] = FormattedString.new r[:description]
-        #   end
-        #   relation_bibitem_hash_to_bib(r)
-        #   relation_locality_hash_to_bib(r)
-        #   relation_source_locality_hash_to_bib(r)
-        # end
-      end
+      ret[:relation] = ret[:relation].map { |r| DocumentRelation.new(**r) }
+
+      # ret[:relation] = array(ret[:relation])
+      # ret[:relation]&.each do |r|
+      #   if r[:description]
+      #     r[:description] = FormattedString.new r[:description]
+      #   end
+      #   relation_bibitem_hash_to_bib(r)
+      #   relation_locality_hash_to_bib(r)
+      #   relation_source_locality_hash_to_bib(r)
+      # end
     end
   end
 end

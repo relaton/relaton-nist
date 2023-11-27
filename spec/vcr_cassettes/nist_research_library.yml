@@ -2,109 +2,6 @@
 http_interactions:
 - request:
     method: get
-    uri: https://raw.githubusercontent.com/relaton/relaton-data-nist/main/data/NIST_RESEARCH_LIBRARY_(2023).yaml
-    body:
-      encoding: US-ASCII
-      base64_string: ''
-    headers:
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-      User-Agent:
-      - Ruby
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Connection:
-      - keep-alive
-      Content-Length:
-      - '1474'
-      Cache-Control:
-      - max-age=300
-      Content-Security-Policy:
-      - default-src 'none'; style-src 'unsafe-inline'; sandbox
-      Content-Type:
-      - text/plain; charset=utf-8
-      Etag:
-      - W/"ec4f670c27ee66c7b571573a1ca3aab2c1f786200ec5d351de88a2ca1f114560"
-      Strict-Transport-Security:
-      - max-age=31536000
-      X-Content-Type-Options:
-      - nosniff
-      X-Frame-Options:
-      - deny
-      X-Xss-Protection:
-      - 1; mode=block
-      X-Github-Request-Id:
-      - D6C2:4013:C65310:F986F3:652C3F85
-      Accept-Ranges:
-      - bytes
-      Date:
-      - Sun, 15 Oct 2023 19:37:51 GMT
-      Via:
-      - 1.1 varnish
-      X-Served-By:
-      - cache-atl18425-ATL
-      X-Cache:
-      - MISS
-      X-Cache-Hits:
-      - '0'
-      X-Timer:
-      - S1697398671.989428,VS0,VE90
-      Vary:
-      - Authorization,Accept-Encoding,Origin
-      Access-Control-Allow-Origin:
-      - "*"
-      Cross-Origin-Resource-Policy:
-      - cross-origin
-      X-Fastly-Request-Id:
-      - 010e3a818c50b599d69ac75b8d1adb4f3cc21155
-      Expires:
-      - Sun, 15 Oct 2023 19:42:51 GMT
-      Source-Age:
-      - '0'
-    body:
-      encoding: ASCII-8BIT
-      base64_string: |
-        LS0tCnNjaGVtYS12ZXJzaW9uOiB2MS4yLjQKaWQ6IE5JU1RSZXNlYXJjaExp
-        YnJhcnkyMDIzCnRpdGxlOgotIGNvbnRlbnQ6IE5JU1QgVGVjaG5pY2FsIFNl
-        cmllcyBQdWJsaWNhdGlvbiBNZXRhZGF0YS4KICBsYW5ndWFnZToKICAtIGVu
-        CiAgc2NyaXB0OgogIC0gTGF0bgogIGZvcm1hdDogdGV4dC9wbGFpbgpsaW5r
-        OgotIGNvbnRlbnQ6IGh0dHBzOi8vZGF0YS5uaXN0Lmdvdi9vZC9pZC9tZHMy
-        LTIxOTIKICB0eXBlOiBzcmMKLSBjb250ZW50OiBodHRwczovL2RvaS5vcmcv
-        MTAuMTg0MzQvTTMyMTkyCiAgdHlwZTogZG9pCnR5cGU6IHN0YW5kYXJkCmRv
-        Y2lkOgotIGlkOiBOSVNUIFJlc2VhcmNoIExpYnJhcnkgKDIwMjMpCiAgdHlw
-        ZTogTklTVAogIHByaW1hcnk6IHRydWUKLSBpZDogMTAuMTg0MzQvTTMyMTky
-        CiAgdHlwZTogRE9JCmRhdGU6Ci0gdHlwZTogcHVibGlzaGVkCiAgdmFsdWU6
-        ICcyMDIzLTA2LTI2Jwpjb250cmlidXRvcjoKLSBwZXJzb246CiAgICBuYW1l
-        OgogICAgICBnaXZlbjoKICAgICAgICBmb3JlbmFtZToKICAgICAgICAtIGNv
-        bnRlbnQ6IEthdGhyeW4KICAgICAgICAgIHNjcmlwdDoKICAgICAgICAgIC0g
-        TGF0bgogICAgICBzdXJuYW1lOgogICAgICAgIGNvbnRlbnQ6IE1pbGxlcgog
-        ICAgICAgIHNjcmlwdDoKICAgICAgICAtIExhdG4KICAgIGNvbnRhY3Q6CiAg
-        ICAtIGVtYWlsOiBrYXRocnluLm1pbGxlckBuaXN0LmdvdgogIHJvbGU6CiAg
-        LSB0eXBlOiBhdXRob3IKLSBvcmdhbml6YXRpb246CiAgICBuYW1lOgogICAg
-        LSBjb250ZW50OiBOYXRpb25hbCBJbnN0aXR1dGUgb2YgU3RhbmRhcmRzIGFu
-        ZCBUZWNobm9sb2d5CiAgICBhYmJyZXZpYXRpb246CiAgICAgIGNvbnRlbnQ6
-        IE5JU1QKICAgIGNvbnRhY3Q6CiAgICAtIGFkZHJlc3M6CiAgICAgICAgY2l0
-        eTogR2FpdGhlcnNidXJnCiAgICAgICAgc3RhdGU6IE1ECiAgICAgICAgY291
-        bnRyeTogVVMKICByb2xlOgogIC0gdHlwZTogcHVibGlzaGVyCnJldmRhdGU6
-        ICcyMDIzLTA2LTI2JwpzY3JpcHQ6Ci0gTGF0bgphYnN0cmFjdDoKLSBjb250
-        ZW50OiBNZXRhZGF0YSBmb3IgYWxsIGZpbmFsIE5JU1QgVGVjaG5pY2FsIFNl
-        cmllcyBwdWJsaWNhdGlvbnMgYXZhaWxhYmxlIG9ubGluZSwKICAgIGNyZWF0
-        ZWQgYW5kIG1haW50YWluZWQgYnkgdGhlIE5JU1QgUmVzZWFyY2ggTGlicmFy
-        eS4KICBsYW5ndWFnZToKICAtIGVuCiAgc2NyaXB0OgogIC0gTGF0bgogIGZv
-        cm1hdDogdGV4dC9wbGFpbgpzZXJpZXM6Ci0gdGl0bGU6CiAgICBjb250ZW50
-        OiBJbmZvcm1hdGlvbiBUZWNobm9sb2d5OkRhdGEgYW5kIGluZm9ybWF0aWNz
-        CiAgICBmb3JtYXQ6IHRleHQvcGxhaW4Ka2V5d29yZDoKLSBjb250ZW50OiBv
-        cGVuIGFjY2VzcwotIGNvbnRlbnQ6IE5JU1QgdGVjaG5pY2FsIHJlcG9ydHMK
-        LSBjb250ZW50OiBOSVNUIHB1YmxpY2F0aW9ucwpkb2N0eXBlOiB0ZWNocmVw
-        b3J0CmV4dDoKICBzY2hlbWEtdmVyc2lvbjogdjEuMC4wCg==
-  recorded_at: Sun, 15 Oct 2023 19:37:51 GMT
-- request:
-    method: get
     uri: https://raw.githubusercontent.com/relaton/relaton-data-nist/main/data/NIST_RESEARCH_LIBRARY_(2022).yaml
     body:
       encoding: US-ASCII
@@ -132,7 +29,7 @@ http_interactions:
       Content-Type:
       - text/plain; charset=utf-8
       Etag:
-      - W/"c7e70db12b4a7cb3c0dd69d6cf835d0022771290f7ba478309f8563e57e17e2f"
+      - W/"44ebdf2ae502efe8bb72f052926909ad32625b97b9afcdc9c2bbc13801274708"
       Strict-Transport-Security:
       - max-age=31536000
       X-Content-Type-Options:
@@ -142,21 +39,21 @@ http_interactions:
       X-Xss-Protection:
       - 1; mode=block
       X-Github-Request-Id:
-      - B9AE:37F6:BC68A0:EF5089:652C3F8E
+      - D788:0E78:201B7A:269DA1:655F8F81
       Accept-Ranges:
       - bytes
       Date:
-      - Sun, 15 Oct 2023 19:37:51 GMT
+      - Thu, 23 Nov 2023 17:44:36 GMT
       Via:
       - 1.1 varnish
       X-Served-By:
-      - cache-atl18462-ATL
+      - cache-pdk-kpdk1780022-PDK
       X-Cache:
       - MISS
       X-Cache-Hits:
       - '0'
       X-Timer:
-      - S1697398671.987662,VS0,VE132
+      - S1700761476.178658,VS0,VE130
       Vary:
       - Authorization,Accept-Encoding,Origin
       Access-Control-Allow-Origin:
@@ -164,15 +61,15 @@ http_interactions:
       Cross-Origin-Resource-Policy:
       - cross-origin
       X-Fastly-Request-Id:
-      - 507568b06f7478a495cb376c2d41d93a4b093a06
+      - ed84dfa82cd4b9a72d1b17a1983f09ca14ca56d0
       Expires:
-      - Sun, 15 Oct 2023 19:42:51 GMT
+      - Thu, 23 Nov 2023 17:49:36 GMT
       Source-Age:
       - '0'
     body:
       encoding: ASCII-8BIT
       base64_string: |
-        LS0tCnNjaGVtYS12ZXJzaW9uOiB2MS4yLjQKaWQ6IE5JU1RSZXNlYXJjaExp
+        LS0tCnNjaGVtYS12ZXJzaW9uOiB2MS4yLjUKaWQ6IE5JU1RSZXNlYXJjaExp
         YnJhcnkyMDIyCnRpdGxlOgotIGNvbnRlbnQ6IE5JU1QgVGVjaG5pY2FsIFNl
         cmllcyBQdWJsaWNhdGlvbiBNZXRhZGF0YS4KICBsYW5ndWFnZToKICAtIGVu
         CiAgc2NyaXB0OgogIC0gTGF0bgogIGZvcm1hdDogdGV4dC9wbGFpbgpsaW5r
@@ -205,5 +102,5 @@ http_interactions:
         cGVuIGFjY2VzcwotIGNvbnRlbnQ6IE5JU1QgdGVjaG5pY2FsIHJlcG9ydHMK
         LSBjb250ZW50OiBOSVNUIHB1YmxpY2F0aW9ucwpkb2N0eXBlOiB0ZWNocmVw
         b3J0CmV4dDoKICBzY2hlbWEtdmVyc2lvbjogdjEuMC4wCg==
-  recorded_at: Sun, 15 Oct 2023 19:37:51 GMT
+  recorded_at: Thu, 23 Nov 2023 17:44:36 GMT
 recorded_with: VCR 6.2.0

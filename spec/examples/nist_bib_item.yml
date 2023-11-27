@@ -1,6 +1,6 @@
 id: NISTIR 8011 Vol. 3
 
-schema-version: v1.2.4
+schema-version: v1.2.5
 
 fetched: '2022-06-22'
 
@@ -33,7 +33,8 @@ docstatus:
   substage:
     value: active
 
-doctype: standard
+doctype:
+  type: standard
 
 date:
   - type: published
@@ -79,7 +80,8 @@ link:
 relation:
   - type: partOf
     bibitem:
-      doctype: standard
+      doctype:
+        type: standard
       formattedref:
         content: NISTIR 8011 Vol. 1
         format: text/plain
@@ -88,7 +90,8 @@ relation:
         content: https://csrc.nist.gov/publications/detail/nistir/8011/vol-1/final
   - type: updates
     bibitem:
-      doctype: standard
+      doctype:
+        type: standard
       formattedref:
         content: SP 800-53A Rev. 4
         format: text/plain

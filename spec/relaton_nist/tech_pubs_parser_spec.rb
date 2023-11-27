@@ -21,7 +21,7 @@ describe RelatonNist::TechPubsParser do
       it "success" do
         expect(subject).to receive(:args).and_return arg: "value"
         expect(RelatonNist::NistBibliographicItem).to receive(:new).with(
-          type: "standard", language: ["en"], script: ["Latn"], doctype: "standard", arg: "value",
+          type: "standard", language: ["en"], script: ["Latn"], arg: "value",
         ).and_return :bibitem
         expect(subject.parse).to eq :bibitem
       end
@@ -45,10 +45,11 @@ describe RelatonNist::TechPubsParser do
       expect(subject).to receive(:parse_place).and_return :place
       expect(subject).to receive(:parse_series).and_return :series
       expect(subject).to receive(:parse_relation).and_return :relation
+      expect(subject).to receive(:parse_doctype).and_return :doctype
       expect(subject.args).to eq(
         docid: :docid, date: :date, contributor: :contributor, edition: :edition,
         abstract: :abstract, docstatus: :docstatus, title: :title, link: :link,
-        place: :place, series: :series, relation: :relation
+        place: :place, series: :series, relation: :relation, doctype: :doctype,
       )
     end
 
@@ -173,6 +174,12 @@ describe RelatonNist::TechPubsParser do
       expect(date[0].on).to eq "2013-02"
       expect(date[1].type).to eq "confirmed"
       expect(date[1].on).to eq "2020-06-03"
+    end
+
+    it "#parse_doctype" do
+      doctype = subject.parse_doctype
+      expect(doctype).to be_instance_of RelatonBib::DocumentType
+      expect(doctype.type).to eq "standard"
     end
 
     context "#parse_edition" do

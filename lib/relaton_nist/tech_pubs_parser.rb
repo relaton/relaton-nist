@@ -12,7 +12,7 @@ module RelatonNist
       "hasPart" => "hasPart",
     }.freeze
 
-    ATTRS = %i[docid title link abstract date edition contributor relation docstatus place series].freeze
+    ATTRS = %i[docid title link abstract date doctype edition contributor relation docstatus place series].freeze
     NS = "http://www.crossref.org/relations.xsd".freeze
 
     def initialize(doc, series)
@@ -41,8 +41,7 @@ module RelatonNist
     #
     def parse
       RelatonNist::NistBibliographicItem.new(
-        type: "standard", language: [@doc["language"]], script: ["Latn"],
-        doctype: "standard", **args
+        type: "standard", language: [@doc["language"]], script: ["Latn"], **args
       )
     rescue StandardError => e
       warn "Document: `#{@doc.at('doi').text}`"
@@ -133,6 +132,10 @@ module RelatonNist
         type = dt.name == "publication_date" ? "published" : "confirmed"
         RelatonBib::BibliographicDate.new(type: type, on: on)
       end
+    end
+
+    def parse_doctype
+      RelatonBib::DocumentType.new(type: "standard")
     end
 
     # @return [String]

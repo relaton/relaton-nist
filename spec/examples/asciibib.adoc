@@ -44,13 +44,13 @@ relation::
 relation.type:: partOf
 relation.bibitem.link.type:: src
 relation.bibitem.link.content:: https://csrc.nist.gov/publications/detail/nistir/8011/vol-1/final
-relation.bibitem.doctype:: standard
+relation.bibitem.doctype.type:: standard
 relation.bibitem.formattedref:: NISTIR 8011 Vol. 1
 relation::
 relation.type:: updates
 relation.bibitem.link.type:: src
 relation.bibitem.link.content:: https://csrc.nist.gov/publications/detail/sp/800-53a/rev-4/final
-relation.bibitem.doctype:: standard
+relation.bibitem.doctype.type:: standard
 relation.bibitem.formattedref:: SP 800-53A Rev. 4
 series.formattedref.content:: NISTIR 8011 Vol. 3 (IPD)
 series.formattedref.language:: en
@@ -59,7 +59,7 @@ series.formattedref.format:: text/plain
 series.title.content:: NISTIR
 series.title.format:: text/plain
 series.number:: 8011 Vol. 3
-doctype:: standard
+doctype.type:: standard
 keyword:: actual state
 keyword:: assessment
 keyword:: authorization boundary
