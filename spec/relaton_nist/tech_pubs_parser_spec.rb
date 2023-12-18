@@ -26,11 +26,11 @@ describe RelatonNist::TechPubsParser do
         expect(subject.parse).to eq :bibitem
       end
 
-      it "error warn" do
-        expect(doc).to receive(:at).with("doi_data/doi").and_return double(text: "10.6028/NIST.IR.5394v1")
-        expect(subject).to receive(:args).and_raise StandardError
-        expect { subject.parse }.to output(/Document: `NIST IR 5394v1`/).to_stderr
-      end
+      # it "error warn" do
+      #   expect(doc).to receive(:at).with("doi_data/doi").and_return double(text: "10.6028/NIST.IR.5394v1")
+      #   expect(subject).to receive(:args).and_raise StandardError
+      #   expect { subject.parse }.to output(/Document: `NIST IR 5394v1`/).to_stderr
+      # end
     end
 
     it "#args" do

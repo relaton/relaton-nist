@@ -43,10 +43,10 @@ module RelatonNist
       RelatonNist::NistBibliographicItem.new(
         type: "standard", language: [@doc["language"]], script: ["Latn"], **args
       )
-    rescue StandardError => e
-      warn "Document: `#{pub_id}`"
-      warn e.message
-      warn e.backtrace[0..5].join("\n")
+    # rescue StandardError => e
+    #   warn "Document: `#{pub_id}`"
+    #   warn e.message
+    #   warn e.backtrace[0..5].join("\n")
     end
 
     def args
