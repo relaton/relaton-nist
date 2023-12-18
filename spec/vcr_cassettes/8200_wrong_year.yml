@@ -43,17 +43,17 @@ http_interactions:
       Accept-Ranges:
       - bytes
       Date:
-      - Mon, 18 Dec 2023 21:20:48 GMT
+      - Mon, 18 Dec 2023 21:30:19 GMT
       Via:
       - 1.1 varnish
       X-Served-By:
-      - cache-pdk-kpdk1780085-PDK
+      - cache-pdk-kpdk1780038-PDK
       X-Cache:
       - HIT
       X-Cache-Hits:
-      - '1'
+      - '2'
       X-Timer:
-      - S1702934448.156539,VS0,VE1
+      - S1702935020.929751,VS0,VE0
       Vary:
       - Authorization,Accept-Encoding,Origin
       Access-Control-Allow-Origin:
@@ -61,9 +61,9 @@ http_interactions:
       Cross-Origin-Resource-Policy:
       - cross-origin
       X-Fastly-Request-Id:
-      - 49a9fa3d0f61c8ce2f80684ec1cf790a9b951eb9
+      - 6bfdfb3e1431ef03c331e0a9fcebfaebb8b797b3
       Expires:
-      - Mon, 18 Dec 2023 21:25:48 GMT
+      - Mon, 18 Dec 2023 21:35:19 GMT
       Source-Age:
       - '5'
     body:
@@ -107,5 +107,5 @@ http_interactions:
         YmVyOiAnODIwMCcKcGxhY2U6Ci0gR2FpdGhlcnNidXJnLCBNRApkb2N0eXBl
         OgogIHR5cGU6IHN0YW5kYXJkCmV4dDoKICBzY2hlbWEtdmVyc2lvbjogdjEu
         MC4wCg==
-  recorded_at: Mon, 18 Dec 2023 21:20:48 GMT
+  recorded_at: Mon, 18 Dec 2023 21:30:19 GMT
 recorded_with: VCR 6.2.0

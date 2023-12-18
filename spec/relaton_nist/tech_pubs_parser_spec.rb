@@ -67,9 +67,17 @@ describe RelatonNist::TechPubsParser do
       expect(docid[1].type).to eq "DOI"
     end
 
-    it "#pub_id" do
-      expect(subject).to receive(:doi).and_return("10.6028/NIST.IR.5394v1").twice
-      expect(subject.pub_id).to eq "NIST IR 5394v1"
+    context "#pub_id" do
+      it "create from doi" do
+        expect(subject).to receive(:doi).and_return("10.6028/NIST.IR.5394v1").twice
+        expect(subject.pub_id).to eq "NIST IR 5394v1"
+      end
+
+      it "create from item_number" do
+        expect(subject).to receive(:doi).and_return nil
+        expect(doc).to receive(:at).with("publisher_item/item_number").and_return double(text: "NISTIR 5394")
+        expect(subject.pub_id).to eq "NISTIR 5394"
+      end
     end
 
     context "#doi" do
