@@ -440,7 +440,7 @@ RSpec.describe RelatonNist do
     context "with stage get" do
       it "draft without updated-date", vcr: "json_data" do
         result = RelatonNist::NistBibliography.get("NIST SP 800-205 (February 2019) (IPD)")
-        expect(result.id).to eq "NISTSP800-205(Draft)"
+        expect(result.id).to eq "NISTSP800-205Draft"
       end
 
       it "draft with initial iteration", vcr: "nist_sp_800_37r2" do

@@ -27,9 +27,9 @@ describe RelatonNist::TechPubsParser do
       end
 
       it "error warn" do
-        expect(doc).to receive(:at).with("doi").and_return double(text: "10.6028/NIST.IR.5394v1")
+        expect(doc).to receive(:at).with("doi_data/doi").and_return double(text: "10.6028/NIST.IR.5394v1")
         expect(subject).to receive(:args).and_raise StandardError
-        expect { subject.parse }.to output(/Document: `10.6028\/NIST\.IR.5394v1`/).to_stderr
+        expect { subject.parse }.to output(/Document: `NIST IR 5394v1`/).to_stderr
       end
     end
 
@@ -68,7 +68,7 @@ describe RelatonNist::TechPubsParser do
     end
 
     it "#pub_id" do
-      expect(subject).to receive(:doi).and_return "10.6028/NIST.IR.5394v1"
+      expect(subject).to receive(:doi).and_return("10.6028/NIST.IR.5394v1").twice
       expect(subject.pub_id).to eq "NIST IR 5394v1"
     end
 

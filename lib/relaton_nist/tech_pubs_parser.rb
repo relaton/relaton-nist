@@ -44,7 +44,7 @@ module RelatonNist
         type: "standard", language: [@doc["language"]], script: ["Latn"], **args
       )
     rescue StandardError => e
-      warn "Document: `#{@doc.at('doi').text}`"
+      warn "Document: `#{pub_id}`"
       warn e.message
       warn e.backtrace[0..5].join("\n")
     end
@@ -73,12 +73,18 @@ module RelatonNist
     #
     def pub_id
       # anchor(doc).gsub(".", " ")
-      doi.split("/")[1..].join("/").gsub(".", " ").sub(/^nist\sir/, "NIST IR")
+      if doi
+        doi.split("/")[1..].join("/").gsub(".", " ").sub(/^nist\sir/, "NIST IR")
+      else
+        @doc.at("publisher_item/item_number").text
+      end
     end
 
     def doi # rubocop:disable Metrics/CyclomaticComplexity,Metrics/MethodLength
-      @doi ||= begin
-        id = @doc.at("doi_data/doi").text
+      return @doi if defined? @doi
+
+      @doi = begin
+        id = @doc.at("doi_data/doi")&.text
         case id
         when "10.6028/NBS.CIRC.e2e" then "10.6028/NBS.CIRC.2e2"
         when "10.6028/NBS.CIRC.sup" then "10.6028/NBS.CIRC.24e7sup"
