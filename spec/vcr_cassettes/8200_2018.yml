@@ -29,7 +29,7 @@ http_interactions:
       Content-Type:
       - application/zip
       Etag:
-      - W/"3ad52f371809885a3f81e1fa3cf8b6c4153f1d66b54c002576f4d46e4563d655"
+      - W/"afe4d8e9825060824ae37f0f7b372ee6fde3448cc2ed2c357534fd1d69a3951a"
       Strict-Transport-Security:
       - max-age=31536000
       X-Content-Type-Options:
@@ -39,21 +39,21 @@ http_interactions:
       X-Xss-Protection:
       - 1; mode=block
       X-Github-Request-Id:
-      - 72AE:7492:21E12C:279954:6580B9E0
+      - CD78:5B9B:15AB4D4:1BA0AD3:6594EA5F
       Accept-Ranges:
       - bytes
       Date:
-      - Mon, 18 Dec 2023 21:30:13 GMT
+      - Wed, 03 Jan 2024 05:02:23 GMT
       Via:
       - 1.1 varnish
       X-Served-By:
-      - cache-pdk-kpdk1780083-PDK
+      - cache-pdk-kpdk1780107-PDK
       X-Cache:
       - MISS
       X-Cache-Hits:
       - '0'
       X-Timer:
-      - S1702935013.217797,VS0,VE120
+      - S1704258144.765242,VS0,VE175
       Vary:
       - Authorization,Accept-Encoding,Origin
       Access-Control-Allow-Origin:
@@ -61,16 +61,16 @@ http_interactions:
       Cross-Origin-Resource-Policy:
       - cross-origin
       X-Fastly-Request-Id:
-      - c6ce78f9909a7475851d8104bb0a1acd87895b09
+      - 2cf5967f2b1dde266065a42cbc890e6148cffbbb
       Expires:
-      - Mon, 18 Dec 2023 21:35:13 GMT
+      - Wed, 03 Jan 2024 05:07:23 GMT
       Source-Age:
       - '0'
     body:
       encoding: UTF-8
       base64_string: |
-        UEsDBBQAAAAIAE6qklf/oCNNpsoBAGcdEAANABwAaW5kZXgtdjEueWFtbFVU
-        CQADJLeAZSS3gGV1eAsAAQTpAwAABH8AAACM/d2y5bqVpQne11PoBbzTiV8i
+        UEsDBBQAAAAIAClyk1f/oCNNpsoBAGcdEAANABwAaW5kZXgtdjEueWFtbFVU
+        CQAD7qWBZe6lgWV1eAsAAQTpAwAABH8AAACM/d2y5bqVpQne11PoBbzTiV8i
         77QUnhmKiqNcdlZKVn0li4o8VR1mWdEyKSWrevsmQC7f2u3z+5g3fuGDYy8S
         cwIExpgAv3z58r98+dV//Lf/9h9/9bvH61ePf/zV9r/86lf/8f/4t//+y3/8
         1X/7l//xL//h+O8/Pv7xj9v/6//5l//rv///X/sVLv4aXk1/Ov7bCa5O4dUZ
@@ -2680,10 +2680,10 @@ http_interactions:
         z54SmQ7CyqDK+9g/DS/J6gbpE5VT3FDJk0GyHv4aca4tixZudWXR4r0uKytf
         itXJ0vucswMh+cO+8p3ylV+XjzDiWi3+p4cvD5+e/vaPi29/+uvTp6d/Xfxb
         Wer/XT3mdHN/czxdfXP+9vbydDz95ex/feMzu7c/s2vP/H9QSwECHgMUAAAA
-        CABOqpJX/6AjTabKAQBnHRAADQAYAAAAAAABAAAApIEAAAAAaW5kZXgtdjEu
-        eWFtbFVUBQADJLeAZXV4CwABBOkDAAAEfwAAAFBLBQYAAAAAAQABAFMAAADt
+        CAApcpNX/6AjTabKAQBnHRAADQAYAAAAAAABAAAApIEAAAAAaW5kZXgtdjEu
+        eWFtbFVUBQAD7qWBZXV4CwABBOkDAAAEfwAAAFBLBQYAAAAAAQABAFMAAADt
         ygEAAAA=
-  recorded_at: Mon, 18 Dec 2023 21:30:13 GMT
+  recorded_at: Wed, 03 Jan 2024 05:02:23 GMT
 - request:
     method: get
     uri: https://raw.githubusercontent.com/relaton/relaton-data-nist/main/data/NISTIR_8200.yaml
@@ -2723,21 +2723,21 @@ http_interactions:
       X-Xss-Protection:
       - 1; mode=block
       X-Github-Request-Id:
-      - CD66:6BAA:20AAC2:26057F:6580B7AA
+      - 310E:6A98:18F0E18:1E97FBC:6594EA60
       Accept-Ranges:
       - bytes
       Date:
-      - Mon, 18 Dec 2023 21:30:14 GMT
+      - Wed, 03 Jan 2024 05:02:24 GMT
       Via:
       - 1.1 varnish
       X-Served-By:
-      - cache-pdk-kpdk1780038-PDK
+      - cache-pdk-kpdk1780096-PDK
       X-Cache:
-      - HIT
+      - MISS
       X-Cache-Hits:
-      - '1'
+      - '0'
       X-Timer:
-      - S1702935014.410317,VS0,VE146
+      - S1704258145.631049,VS0,VE189
       Vary:
       - Authorization,Accept-Encoding,Origin
       Access-Control-Allow-Origin:
@@ -2745,9 +2745,9 @@ http_interactions:
       Cross-Origin-Resource-Policy:
       - cross-origin
       X-Fastly-Request-Id:
-      - 222827887bda375d5ce87fc2baa83e6dfb635d79
+      - 9e8e62c162e3884a42ea83a11598150be1942ec3
       Expires:
-      - Mon, 18 Dec 2023 21:35:14 GMT
+      - Wed, 03 Jan 2024 05:07:24 GMT
       Source-Age:
       - '0'
     body:
@@ -2791,5 +2791,5 @@ http_interactions:
         YmVyOiAnODIwMCcKcGxhY2U6Ci0gR2FpdGhlcnNidXJnLCBNRApkb2N0eXBl
         OgogIHR5cGU6IHN0YW5kYXJkCmV4dDoKICBzY2hlbWEtdmVyc2lvbjogdjEu
         MC4wCg==
-  recorded_at: Mon, 18 Dec 2023 21:30:14 GMT
+  recorded_at: Wed, 03 Jan 2024 05:02:24 GMT
 recorded_with: VCR 6.2.0
