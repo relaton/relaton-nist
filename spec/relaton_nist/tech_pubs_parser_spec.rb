@@ -202,39 +202,56 @@ describe RelatonNist::TechPubsParser do
       end
     end
 
-    it "#parse_contributor" do
-      person = { "contributor_role" => "author" }
-      expect(doc).to receive(:xpath).with("contributors/person_name").and_return [person]
-      expect(doc).to receive(:xpath).with("publisher").and_return [:org]
-      expect(subject).to receive(:fullname).with(person).and_return :fullname
-      expect(subject).to receive(:affiliation).and_return :affiliation
-      expect(subject).to receive(:create_org).with(:org).and_return :organization
-      contribs = subject.parse_contributor
-      expect(contribs.size).to eq 2
-      expect(contribs[0][:entity]).to be_instance_of RelatonBib::Person
-      expect(contribs[0][:entity].name).to eq :fullname
-      expect(contribs[0][:entity].affiliation).to eq :affiliation
-      expect(contribs[0][:role][0][:type]).to eq "author"
-      expect(contribs[1][:entity]).to be :organization
-      expect(contribs[1][:role][0][:type]).to eq "publisher"
-    end
+    context "#parse_contributor" do
+      let(:person) do
+        Nokogiri::XML(<<~XML).at("/person_name")
+          <person_name contributor_role="author">
+            <given_name>John</given_name>
+            <surname>Doe</surname>
+            <ORCID>https://orcid.org/0000-0002-1825-0097</ORCID>
+          </person_name>
+        XML
+      end
 
-    it "#fullname" do
-      person = Nokogiri::XML(<<~XML).at("/person_name")
-        <person_name>
-          <given_name>John</given_name>
-          <surname>Doe</surname>
-          <ORCID>https://orcid.org/0000-0002-1825-0097</ORCID>
-        </person_name>
-      XML
-      expect(subject).to receive(:forename_initial).with(person).and_return [:fname, :initials]
-      expect(subject).to receive(:localized_string).with("Doe").and_return :surname
-      expect(RelatonBib::PersonIdentifier).to receive(:new)
-        .with("orcid", "https://orcid.org/0000-0002-1825-0097").and_return(:ident)
-      expect(RelatonBib::FullName).to receive(:new).with(
-        surname: :surname, forename: :fname, initials: :initials, identifier: [:ident],
-      ).and_return :fullname
-      expect(subject.fullname(person)).to be :fullname
+      it do
+        expect(doc).to receive(:xpath).with("contributors/person_name").and_return [person]
+        expect(doc).to receive(:xpath).with("publisher").and_return [:org]
+        expect(subject).to receive(:affiliation).and_return :affiliation
+        expect(subject).to receive(:create_org).with(:org).and_return :organization
+        contribs = subject.parse_contributor
+        expect(contribs.size).to eq 2
+        expect(contribs[0][:entity]).to be_instance_of RelatonBib::Person
+        expect(contribs[0][:entity].name).to be_instance_of RelatonBib::FullName
+        expect(contribs[0][:entity].affiliation).to eq :affiliation
+        expect(contribs[0][:entity].identifier).to be_instance_of Array
+        expect(contribs[0][:entity].identifier.size).to eq 1
+        expect(contribs[0][:entity].identifier[0]).to be_instance_of RelatonBib::PersonIdentifier
+        expect(contribs[0][:entity].identifier[0].type).to eq "orcid"
+        expect(contribs[0][:entity].identifier[0].value).to eq "https://orcid.org/0000-0002-1825-0097"
+        expect(contribs[0][:role][0][:type]).to eq "author"
+        expect(contribs[1][:entity]).to be :organization
+        expect(contribs[1][:role][0][:type]).to eq "publisher"
+      end
+
+      context "#fullname" do
+        it "with surname" do
+          full_name = subject.fullname person
+          expect(full_name).to be_instance_of RelatonBib::FullName
+          expect(full_name.surname.content).to eq "Doe"
+          expect(full_name.forename[0].content).to eq "John"
+          expect(full_name.initials).to be_nil
+        end
+
+        it "without surname" do
+          person = Nokogiri::XML(<<~XML).at("/person_name")
+            <person_name>John Doe</person_name>
+          XML
+          full_name = subject.fullname person
+          expect(full_name).to be_instance_of RelatonBib::FullName
+          expect(full_name.surname).to be_nil
+          expect(full_name.completename.content).to eq "John Doe"
+        end
+      end
     end
 
     it "#affiliation" do

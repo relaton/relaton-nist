@@ -152,11 +152,17 @@ module RelatonNist
     # @return [Array<Hash>]
     def parse_contributor
       contribs = @doc.xpath("contributors/person_name").map do |p|
-        person = RelatonBib::Person.new(name: fullname(p), affiliation: affiliation)
+        person = RelatonBib::Person.new(name: fullname(p), affiliation: affiliation, identifier: identifier(p))
         { entity: person, role: [{ type: p["contributor_role"] }] }
       end
       contribs + @doc.xpath("publisher").map do |p|
         { entity: create_org(p), role: [{ type: "publisher" }] }
+      end
+    end
+
+    def identifier(person)
+      person.xpath("ORCID").map do |id|
+        RelatonBib::PersonIdentifier.new "orcid", id.text
       end
     end
 
@@ -169,12 +175,11 @@ module RelatonNist
     #
     def fullname(person)
       fname, initials = forename_initial person
-      surname = localized_string person.at("surname").text
-      ident = person.xpath("ORCID").map do |id|
-        RelatonBib::PersonIdentifier.new "orcid", id.text
-      end
-      RelatonBib::FullName.new(surname: surname, forename: fname,
-                               initials: initials, identifier: ident)
+      surname = localized_string person.at("surname")&.text
+      completename = localized_string person.text unless surname
+      RelatonBib::FullName.new(
+        surname: surname, forename: fname, initials: initials, completename: completename,
+      )
     end
 
     #
@@ -296,6 +301,7 @@ module RelatonNist
     # @return [RelatonBib::LocalizedString] localized string
     #
     def localized_string(content)
+      return unless content
       RelatonBib::LocalizedString.new content, @doc["language"], "Latn"
     end
   end
