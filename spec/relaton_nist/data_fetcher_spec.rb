@@ -41,7 +41,7 @@ RSpec.describe RelatonNist::DataFetcher do
 
       it "raise error" do
         expect(subject).to receive(:fetch_tech_pubs).and_raise StandardError.new("Test error")
-        expect { subject.fetch }.to output(/Test error/).to_stderr
+        expect { subject.fetch }.to output(/Test error/).to_stderr_from_any_process
       end
     end
 
@@ -84,14 +84,14 @@ RSpec.describe RelatonNist::DataFetcher do
       end
 
       it "success" do
-        expect { subject.write_file bib }.not_to output.to_stderr
+        expect { subject.write_file bib }.not_to output.to_stderr_from_any_process
       end
 
       it "file exists" do
         subject.instance_variable_set :@files, ["data/NISTIR_8296-12.yaml"]
         expect { subject.write_file bib }.to output(
           /File data\/NISTIR_8296-12\.yaml exists\. Docid: NIST IR 8296-12/,
-        ).to_stderr
+        ).to_stderr_from_any_process
       end
     end
 

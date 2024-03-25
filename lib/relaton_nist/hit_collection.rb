@@ -190,7 +190,7 @@ module RelatonNist
     # @raise [OpenURI::HTTPError] if GitHub repo is not available
     #
     def from_ga # rubocop:disable Metrics/AbcSize, Metrics/MethodLength
-      Util.warn "(#{@reference}) Fetching from Relaton repository ..."
+      Util.info "Fetching from Relaton repository ...", key: @reference
       ref = full_ref
       return [] if ref.empty?
 
@@ -222,7 +222,7 @@ module RelatonNist
     # @return [Array<RelatonNist::Hit>] hits
     #
     def from_json # rubocop:disable Metrics/AbcSize
-      Util.warn "(#{@reference}) Fetching from csrc.nist.gov ..."
+      Util.info "Fetching from csrc.nist.gov ...", key: @reference
       select_data.map do |h|
         /(?<series>(?<=-)\w+$)/ =~ h["series"]
         title = [h["title-main"], h["title-sub"]].compact.join " - "
