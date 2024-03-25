@@ -3,32 +3,32 @@ module RelatonNist
     # @return [Array<RelatonNist::Keyword>]
     # attr_reader :keyword
 
-    # @return [RelatonNist::CommentPeriod, NilClass]
+    # @return [RelatonNist::CommentPeriod, nil]
     attr_reader :commentperiod
 
-    # @param id [String, NilClass]
+    # @param id [String, nil]
     # @param title [Array<RelatonBib::TypedTitleString>]
-    # @param formattedref [RelatonBib::FormattedRef, NilClass]
-    # @param type [String, NilClass]
+    # @param formattedref [RelatonBib::FormattedRef, nil]
+    # @param type [String, nil]
     # @param docid [Array<RelatonBib::DocumentIdentifier>]
-    # @param docnumber [String, NilClass]
+    # @param docnumber [String, nil]
     # @param language [Arra<String>]
     # @param script [Array<String>]
-    # @param docstatus [RelatonNist::DocumentStatus, NilClass]
-    # @param edition [String, NilClass]
-    # @param version [RelatonBib::BibliographicItem::Version, NilClass]
+    # @param docstatus [RelatonNist::DocumentStatus, nil]
+    # @param edition [String, nil]
+    # @param version [RelatonBib::BibliographicItem::Version, nil]
     # @param biblionote [Array<RelatonBib::FormattedStrong>]
     # @param series [Array<RelatonBib::Series>]
     # @param medium [RelatonBib::Medium, NilClas]
     # @param place [Array<String>]
     # @param extent [Array<Relaton::BibItemLocality>]
     # @param accesslocation [Array<String>]
-    # @param classification [RelatonBib::Classification, NilClass]
-    # @param validity [RelatonBib:Validity, NilClass]
-    # @param fetched [Date, NilClass] default nil
-    # @param doctype [String]
+    # @param classification [RelatonBib::Classification, nil]
+    # @param validity [RelatonBib:Validity, nil]
+    # @param fetched [Date, nil] default nil
+    # @param doctype [RelatonBib::DocumentType, nil]
     # @param keyword [Array<RelatonBib::Keyword>]
-    # @param commentperiod [RelatonNist::CommentPeriod, NilClass]
+    # @param commentperiod [RelatonNist::CommentPeriod, nil]
     #
     # @param date [Array<Hash>]
     # @option date [String] :type

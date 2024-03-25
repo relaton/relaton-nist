@@ -30,7 +30,7 @@ module RelatonNist
       id = bib.docidentifier[0].id.gsub(%r{[/\s:.]}, "_").upcase.sub(/^NIST_IR/, "NISTIR")
       file = File.join(@output, "#{id}.#{@ext}")
       if @files.include? file
-        warn "File #{file} exists. Docid: #{bib.docidentifier[0].id}"
+        Util.warn "File #{file} exists. Docid: #{bib.docidentifier[0].id}"
         # warn "Link: #{bib.link.detect { |l| l.type == 'src' }.content}"
       else @files << file
       end
@@ -64,8 +64,7 @@ module RelatonNist
       puts "Stopped at: #{t2}"
       puts "Done in: #{(t2 - t1).round} sec."
     rescue StandardError => e
-      warn e.message
-      warn e.backtrace[0..5].join("\n")
+      Util.error "#{e.message}\n#{e.backtrace[0..5].join("\n")}"
     end
 
     def fetch_tech_pubs

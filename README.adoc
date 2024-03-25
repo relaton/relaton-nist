@@ -103,7 +103,7 @@ item = hit_collection[0].fetch
 [source,ruby]
 ----
 item.to_xml
-=> "<bibitem id="NISTIR8200" type="standard" schema-version="v1.2.8">
+=> "<bibitem id="NISTIR8200" type="standard" schema-version="v1.2.9">
       <fetched>2023-10-16</fetched>
       <title format="text/plain" language="en" script="Latn">Interagency report on the status of international cybersecurity standardization for the internet of things (IoT)</title>
       ...
@@ -113,7 +113,7 @@ With argument `bibdata: true` it outputs XML wrapped by `bibdata` element and ad
 [source,ruby]
 ----
 item.to_xml bibdata: true
-=> "<bibdata type="standard" schema-version="v1.2.8">
+=> "<bibdata type="standard" schema-version="v1.2.9">
       <fetched>2023-10-16</fetched>
       <title format="text/plain" language="en" script="Latn">Interagency report on the status of international cybersecurity standardization for the internet of things (IoT)</title>
       ...
