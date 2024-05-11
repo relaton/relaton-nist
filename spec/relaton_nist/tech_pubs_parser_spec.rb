@@ -386,7 +386,7 @@ describe RelatonNist::TechPubsParser do
       expect(rel[0][:bibitem].docidentifier[0].id).to eq "NIST IR 8323"
       expect(rel[0][:bibitem].docidentifier[0].type).to eq "NIST"
       expect(rel[0][:bibitem].docidentifier[0].primary).to eq true
-      expect(rel[0][:bibitem].formattedref.content).to eq "NIST IR 8323"
+      expect(rel[0][:bibitem].formattedref.to_s).to eq "NIST IR 8323"
       expect(rel[1][:type]).to eq "partOf"
       expect(rel[1][:bibitem].docidentifier[0].id).to eq "NIST SP 800-213"
     end
@@ -438,7 +438,7 @@ describe RelatonNist::TechPubsParser do
       expect(series).to be_a Array
       expect(series.size).to eq 1
       expect(series[0].title).to be_instance_of RelatonBib::TypedTitleString
-      expect(series[0].title.title.content).to eq "NIST Cybersecurity White Papers"
+      expect(series[0].title.to_s).to eq "NIST Cybersecurity White Papers"
       expect(series[0].abbreviation).to be_instance_of RelatonBib::LocalizedString
       expect(series[0].abbreviation.content).to eq "CSWP"
       expect(series[0].number).to eq "09102018"

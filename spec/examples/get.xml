@@ -1,6 +1,6 @@
-<bibdata type="standard" schema-version="v1.2.8">
+<bibdata type="standard" schema-version="v1.3.1">
   <fetched>2023-03-30</fetched>
-  <title format="text/plain" language="en" script="Latn">Interagency report on the status of international cybersecurity standardization for the internet of things (IoT)</title>
+  <title language="en" script="Latn">Interagency report on the status of international cybersecurity standardization for the internet of things (IoT)</title>
   <uri type="doi">https://doi.org/10.6028/NIST.IR.8200</uri>
   <uri type="pdf">https://nvlpubs.nist.gov/nistpubs/ir/2018/NIST.IR.8200.pdf</uri>
   <docidentifier type="NIST" primary="true">NIST IR 8200</docidentifier>
@@ -50,7 +50,7 @@
   </contributor>
   <script>Latn</script>
   <series>
-    <title format="text/plain">NIST IR (Interagency/Internal Reports)</title>
+    <title>NIST IR (Interagency/Internal Reports)</title>
     <abbreviation>IR</abbreviation>
     <number>8200</number>
   </series>

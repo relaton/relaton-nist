@@ -95,10 +95,10 @@ module RelatonNist
 
     # @param embedded [Boolean] embedded in another document
     # @return [Hash]
-    def to_hash(embedded: false)
+    def to_h(embedded: false)
       hash = super
       # hash["keyword"] = single_element_array(keyword) if keyword&.any?
-      hash["commentperiod"] = commentperiod.to_hash if commentperiod
+      hash["commentperiod"] = commentperiod.to_h if commentperiod
       hash
     end
 

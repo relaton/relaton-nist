@@ -99,7 +99,7 @@ RSpec.describe RelatonNist::DataFetcher do
       let(:bib) { double "BibItem" }
 
       it "yaml" do
-        expect(bib).to receive(:to_hash).and_return id: "NIST IR 8296-12"
+        expect(bib).to receive(:to_h).and_return id: "NIST IR 8296-12"
         expect(subject.output(bib)).to eq "---\n:id: NIST IR 8296-12\n"
       end
 

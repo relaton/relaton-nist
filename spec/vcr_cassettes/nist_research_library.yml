@@ -15,15 +15,21 @@ http_interactions:
       - Ruby
   response:
     status:
-      code: 404
-      message: Not Found
+      code: 200
+      message: OK
     headers:
       Connection:
       - keep-alive
       Content-Length:
-      - '14'
+      - '1482'
+      Cache-Control:
+      - max-age=300
       Content-Security-Policy:
       - default-src 'none'; style-src 'unsafe-inline'; sandbox
+      Content-Type:
+      - text/plain; charset=utf-8
+      Etag:
+      - W/"697625db56fc166f70ea8c81a66e9b2d3d9134e848a82622eebabe34d4a55a58"
       Strict-Transport-Security:
       - max-age=31536000
       X-Content-Type-Options:
@@ -32,24 +38,22 @@ http_interactions:
       - deny
       X-Xss-Protection:
       - 1; mode=block
-      Content-Type:
-      - text/plain; charset=utf-8
       X-Github-Request-Id:
-      - 3608:2FB9:267D12C:2ECF2C1:6598DD22
+      - B17E:1E4146:34F3DD5:3B3FD5A:663FC5CC
       Accept-Ranges:
       - bytes
       Date:
-      - Sat, 06 Jan 2024 04:54:58 GMT
+      - Sat, 11 May 2024 19:23:57 GMT
       Via:
       - 1.1 varnish
       X-Served-By:
-      - cache-pdk-kpdk1780056-PDK
+      - cache-pdk-katl1840099-PDK
       X-Cache:
       - MISS
       X-Cache-Hits:
       - '0'
       X-Timer:
-      - S1704516899.626577,VS0,VE135
+      - S1715455437.957138,VS0,VE95
       Vary:
       - Authorization,Accept-Encoding,Origin
       Access-Control-Allow-Origin:
@@ -57,15 +61,46 @@ http_interactions:
       Cross-Origin-Resource-Policy:
       - cross-origin
       X-Fastly-Request-Id:
-      - 76654192eeb4f33eaa210b73a36fe1ccab12b4e8
+      - 5610914974cc7881a589ba9ed42b737c11225cfe
       Expires:
-      - Sat, 06 Jan 2024 04:59:58 GMT
+      - Sat, 11 May 2024 19:28:57 GMT
       Source-Age:
       - '0'
     body:
-      encoding: UTF-8
-      base64_string: 'NDA0OiBOb3QgRm91bmQ=
-
-        '
-  recorded_at: Sat, 06 Jan 2024 04:54:58 GMT
+      encoding: ASCII-8BIT
+      base64_string: |
+        LS0tCnNjaGVtYS12ZXJzaW9uOiB2MS4yLjgKaWQ6IE5JU1RSZXNlYXJjaExp
+        YnJhcnkyMDIyCnRpdGxlOgotIGNvbnRlbnQ6IE5JU1QgVGVjaG5pY2FsIFNl
+        cmllcyBQdWJsaWNhdGlvbiBNZXRhZGF0YS4KICBsYW5ndWFnZToKICAtIGVu
+        CiAgc2NyaXB0OgogIC0gTGF0bgogIGZvcm1hdDogdGV4dC9wbGFpbgpsaW5r
+        OgotIGNvbnRlbnQ6IGh0dHBzOi8vZGF0YS5uaXN0Lmdvdi9vZC9pZC9tZHMy
+        LTIxOTIKICB0eXBlOiBzcmMKLSBjb250ZW50OiBodHRwczovL2RvaS5vcmcv
+        MTAuMTg0MzQvTTMyMTkyCiAgdHlwZTogZG9pCnR5cGU6IHN0YW5kYXJkCmRv
+        Y2lkOgotIGlkOiBOSVNUIFJlc2VhcmNoIExpYnJhcnkgKDIwMjIpCiAgdHlw
+        ZTogTklTVAogIHByaW1hcnk6IHRydWUKLSBpZDogMTAuMTg0MzQvTTMyMTky
+        CiAgdHlwZTogRE9JCmRhdGU6Ci0gdHlwZTogcHVibGlzaGVkCiAgdmFsdWU6
+        ICcyMDIyLTAxLTEyJwpjb250cmlidXRvcjoKLSBwZXJzb246CiAgICBuYW1l
+        OgogICAgICBnaXZlbjoKICAgICAgICBmb3JlbmFtZToKICAgICAgICAtIGNv
+        bnRlbnQ6IEthdGhyeW4KICAgICAgICAgIHNjcmlwdDoKICAgICAgICAgIC0g
+        TGF0bgogICAgICBzdXJuYW1lOgogICAgICAgIGNvbnRlbnQ6IE1pbGxlcgog
+        ICAgICAgIHNjcmlwdDoKICAgICAgICAtIExhdG4KICAgIGNvbnRhY3Q6CiAg
+        ICAtIGVtYWlsOiBrYXRocnluLm1pbGxlckBuaXN0LmdvdgogIHJvbGU6CiAg
+        LSB0eXBlOiBhdXRob3IKLSBvcmdhbml6YXRpb246CiAgICBuYW1lOgogICAg
+        LSBjb250ZW50OiBOYXRpb25hbCBJbnN0aXR1dGUgb2YgU3RhbmRhcmRzIGFu
+        ZCBUZWNobm9sb2d5CiAgICBhYmJyZXZpYXRpb246CiAgICAgIGNvbnRlbnQ6
+        IE5JU1QKICAgIGNvbnRhY3Q6CiAgICAtIGFkZHJlc3M6CiAgICAgICAgY2l0
+        eTogR2FpdGhlcnNidXJnCiAgICAgICAgc3RhdGU6IE1ECiAgICAgICAgY291
+        bnRyeTogVVMKICByb2xlOgogIC0gdHlwZTogcHVibGlzaGVyCnJldmRhdGU6
+        ICcyMDIyLTAxLTEyJwpzY3JpcHQ6Ci0gTGF0bgphYnN0cmFjdDoKLSBjb250
+        ZW50OiBNZXRhZGF0YSBmb3IgYWxsIGZpbmFsIE5JU1QgVGVjaG5pY2FsIFNl
+        cmllcyBwdWJsaWNhdGlvbnMgYXZhaWxhYmxlIG9ubGluZSwKICAgIGNyZWF0
+        ZWQgYW5kIG1haW50YWluZWQgYnkgdGhlIE5JU1QgUmVzZWFyY2ggTGlicmFy
+        eS4KICBsYW5ndWFnZToKICAtIGVuCiAgc2NyaXB0OgogIC0gTGF0bgogIGZv
+        cm1hdDogdGV4dC9wbGFpbgpzZXJpZXM6Ci0gdGl0bGU6CiAgICBjb250ZW50
+        OiBJbmZvcm1hdGlvbiBUZWNobm9sb2d5OkRhdGEgYW5kIGluZm9ybWF0aWNz
+        CiAgICBmb3JtYXQ6IHRleHQvcGxhaW4Ka2V5d29yZDoKLSBjb250ZW50OiBv
+        cGVuIGFjY2VzcwotIGNvbnRlbnQ6IE5JU1QgdGVjaG5pY2FsIHJlcG9ydHMK
+        LSBjb250ZW50OiBOSVNUIHB1YmxpY2F0aW9ucwpkb2N0eXBlOgogIHR5cGU6
+        IHRlY2hyZXBvcnQKZXh0OgogIHNjaGVtYS12ZXJzaW9uOiB2MS4wLjAK
+  recorded_at: Sat, 11 May 2024 19:23:56 GMT
 recorded_with: VCR 6.2.0

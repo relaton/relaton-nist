@@ -9,7 +9,7 @@ RSpec.describe RelatonNist::NistBibliographicItem do
   end
 
   it "returns hash" do
-    expect(subject.to_hash).to eq hash
+    expect(subject.to_h).to eq hash
   end
 
   it "render BibXML" do

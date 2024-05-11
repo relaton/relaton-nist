@@ -157,7 +157,7 @@ module RelatonNist
             entity = org
           end
           if entity
-            RelatonBib::ContributionInfo.new entity: entity, role: [type: role]
+            RelatonBib::Contributor.new entity: entity, role: [type: role]
           end
         end.compact
       end
@@ -203,7 +203,8 @@ module RelatonNist
         name = "National Institute of Standards and Technology"
         url = "www.nist.gov"
         from = doc&.match(/\d{4}/)&.to_s
-        [{ owner: [{ name: name, abbreviation: "NIST", url: url }], from: from }]
+        org = RelatonBib::Organization.new name: name, abbreviation: "NIST", url: url
+        [{ owner: [org], from: from }]
       end
 
       # Fetch links.
@@ -235,13 +236,13 @@ module RelatonNist
       # @return [RelatonNist::DocumentRelation]
       def doc_relation(type, ref, uri, lang = "en", script = "Latn") # rubocop:disable Metrics/MethodLength
         if type == "supersedes"
-          descr = RelatonBib::FormattedString.new(content: "supersedes", language: lang, script: script)
+          descr = RelatonBib::DocumentRelation::Description.new(content: "supersedes", language: lang, script: script)
           t = "obsoletes"
         else t = type
         end
         ids = [RelatonBib::DocumentIdentifier.new(id: ref, type: "NIST", primary: true)]
-        fref = RelatonBib::FormattedRef.new(content: ref, language: lang, script: script, format: "text/plain")
-        link = [RelatonBib::TypedUri.new(type: "src", content: uri)]
+        fref = RelatonBib::FormattedRef.new(ref)
+        link = [RelatonBib::Source.new(type: "src", content: uri)]
         bib = RelatonBib::BibliographicItem.new(formattedref: fref, link: link, docid: ids)
         DocumentRelation.new(type: t, description: descr, bibitem: bib)
       end

@@ -1,6 +1,6 @@
-<bibdata type="standard" schema-version="v1.2.8">
+<bibdata type="standard" schema-version="v1.3.1">
   <fetched>2023-10-17</fetched>
-  <title format="text/plain" language="en" script="Latn">Guide for Developing Performance Metrics for Information Security</title>
+  <title language="en" script="Latn">Guide for Developing Performance Metrics for Information Security</title>
   <uri type="src">https://csrc.nist.gov/pubs/sp/800/80/ipd</uri>
   <docidentifier type="NIST" primary="true">NIST SP 800-80 (Draft)</docidentifier>
   <date type="published">
@@ -101,7 +101,7 @@
   </copyright>
   <relation type="updates">
     <bibitem>
-      <formattedref format="text/plain" language="en" script="Latn">NIST SP 800-80 (Draft)</formattedref>
+      <formattedref>NIST SP 800-80 (Draft)</formattedref>
       <uri type="src">https://csrc.nist.gov/pubs/sp/800/55/r1/final</uri>
       <docidentifier type="NIST" primary="true">NIST SP 800-80 (Draft)</docidentifier>
     </bibitem>
