@@ -1,6 +1,6 @@
 id: NISTIR 8011 Vol. 3
 
-schema-version: v1.2.8
+schema-version: v1.3.1
 
 fetched: '2022-06-22'
 
@@ -10,7 +10,6 @@ title:
   - en
   script:
   - Latn
-  format: text/plain
 
 type: standard
 
@@ -50,7 +49,6 @@ abstract:
   - en
   script:
   - Latn
-  format: text/plain
 
 contributor:
 - organization:
@@ -64,11 +62,12 @@ contributor:
 
 copyright:
 - owner:
-  - name:
-    - content: National Institute of Standards and Technology
-    abbreviation:
-      content: NIST
-    url: www.nist.gov
+  - organization:
+      name:
+      - content: National Institute of Standards and Technology
+      abbreviation:
+        content: NIST
+      url: www.nist.gov
   from: "2018"
 
 link:
@@ -82,9 +81,7 @@ relation:
     bibitem:
       doctype:
         type: standard
-      formattedref:
-        content: NISTIR 8011 Vol. 1
-        format: text/plain
+      formattedref: NISTIR 8011 Vol. 1
       link:
       - type: src
         content: https://csrc.nist.gov/publications/detail/nistir/8011/vol-1/final
@@ -92,24 +89,15 @@ relation:
     bibitem:
       doctype:
         type: standard
-      formattedref:
-        content: SP 800-53A Rev. 4
-        format: text/plain
+      formattedref: SP 800-53A Rev. 4
       link:
       - type: src
         content: https://csrc.nist.gov/publications/detail/sp/800-53a/rev-4/final
 
 series:
-- formattedref:
-    content: NISTIR 8011 Vol. 3 (IPD)
-    language:
-    - en
-    script:
-    - Latn
-    format: text/plain
+- formattedref: NISTIR 8011 Vol. 3 (IPD)
   title:
     content: NISTIR
-    format: text/plain
   number: 8011 Vol. 3
 
 keyword:

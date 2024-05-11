@@ -40,7 +40,7 @@ module RelatonNist
 
     def output(bib)
       case @format
-      when "yaml" then bib.to_hash.to_yaml
+      when "yaml" then bib.to_h.to_yaml
       when "xml" then bib.to_xml bibdata: true
       else bib.send "to_#{@format}"
       end

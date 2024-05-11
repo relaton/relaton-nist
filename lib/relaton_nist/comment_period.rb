@@ -28,7 +28,7 @@ module RelatonNist
     end
 
     # @return [Hash]
-    def to_hash
+    def to_h
       hash = { "from" => from.to_s }
       hash["to"] = to.to_s if to
       hash["extended"] = extended.to_s if extended

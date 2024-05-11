@@ -259,7 +259,7 @@ module RelatonNist
       @doc.xpath("./ns:program/ns:related_item", ns: NS).map do |rel|
         rdoi = rel.at_xpath("ns:intra_work_relation|ns:inter_work_relation", ns: NS)
         id = rdoi.text.split("/")[1..].join("/").gsub(".", " ")
-        fref = RelatonBib::FormattedRef.new content: id
+        fref = RelatonBib::FormattedRef.new id
         docid = RelatonBib::DocumentIdentifier.new(type: "NIST", id: id, primary: true)
         bibitem = RelatonBib::BibliographicItem.new formattedref: fref, docid: [docid]
         type = RELATION_TYPES[rdoi["relationship-type"]]

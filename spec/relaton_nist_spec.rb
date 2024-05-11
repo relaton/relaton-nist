@@ -298,7 +298,7 @@ RSpec.describe RelatonNist do
           RelatonNist::DocumentRelation,
         )
         expect(result.relation.first.type).to eq "obsoletes"
-        expect(result.relation.first.description.content).to eq "supersedes"
+        expect(result.relation.first.description.to_s).to eq "supersedes"
       end
     end
 
@@ -387,10 +387,10 @@ RSpec.describe RelatonNist do
         .gsub(/(?<=<fetched>)\d{4}-\d{2}-\d{2}/, Date.today.to_s)
     end
 
-    # it "NIST Research Library (2022)", vcr: { cassette_name: "nist_research_library" } do
-    #   bib = RelatonNist::NistBibliography.get "NIST Research Library (2022)"
-    #   expect(bib.docidentifier[0].id).to eq "NIST Research Library (2022)"
-    # end
+    it "NIST Research Library (2022)", vcr: { cassette_name: "nist_research_library" } do
+      bib = RelatonNist::NistBibliography.get "NIST Research Library (2022)"
+      expect(bib.docidentifier[0].id).to eq "NIST Research Library (2022)"
+    end
   end
 
   context "warns when" do
@@ -456,7 +456,7 @@ RSpec.describe RelatonNist do
 
       it "draft with 2rd iteration", vcr: "json_data" do
         result = RelatonNist::NistBibliography.get "NIST SP 800-57pt2r1 (2PD)"
-        expect(result.title.first.title.content).to eq(
+        expect(result.title.first.to_s).to eq(
           "Recommendation for Key Management - Part 2: Best Practices for " \
           "Key Management Organizations",
         )
@@ -465,7 +465,7 @@ RSpec.describe RelatonNist do
 
       it "final draft", vcr: "json_data" do
         result = RelatonNist::NistBibliography.get "NIST SP 800-37r2 (FPD)"
-        expect(result.title.first.title.content).to eq(
+        expect(result.title.first.to_s).to eq(
           "Risk Management Framework for Information Systems and " \
           "Organizations - A System Life Cycle Approach for Security and " \
           "Privacy",
