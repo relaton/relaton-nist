@@ -84,7 +84,7 @@ module RelatonNist
         result = nistbib_search_filter(code, year, opts) || (return nil)
         ret = nistbib_results_filter(result, year, opts)
         if ret[:ret]
-          Util.warn "(#{result.reference}) Found: `#{ret[:ret].docidentifier.first.id}`"
+          Util.info "Found: `#{ret[:ret].docidentifier.first.id}`", key: result.reference
           ret[:ret]
         else
           fetch_ref_err(result.reference, year, ret[:years])
@@ -173,14 +173,14 @@ module RelatonNist
       # @return [nil] nil
       #
       def fetch_ref_err(ref, year, missed_years)
-        Util.warn "(#{ref}) No found."
+        Util.info "No found.", key: ref
         unless missed_years.empty?
-          Util.warn "(There was no match for #{year}, though there " \
-                    "were matches found for `#{missed_years.join('`, `')}`.)"
+          Util.info "(There was no match for #{year}, though there " \
+                    "were matches found for `#{missed_years.join('`, `')}`.)", key: ref
         end
         if /\d-\d/.match? ref
-          Util.warn "The provided document part may not exist, " \
-                    "or the document may no longer be published in parts."
+          Util.info "The provided document part may not exist, " \
+                    "or the document may no longer be published in parts.", key: ref
         end
         nil
       end
