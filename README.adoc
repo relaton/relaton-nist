@@ -71,24 +71,13 @@ Or install it yourself as:
 
 == Usage
 
-=== Configuration
-
-Configuration is optional. The available option is `logger` which is a `Logger` instance. By default, the logger is `Logger.new($stderr)` with `Logger::WARN` level. To change the logger level, use `RelatonNist.configure` block.
+=== Search for a standard using keywords
 
 [source,ruby]
 ----
 require 'relaton_nist'
 => true
 
-RelatonNist.configure do |config|
-  config.logger.level = Logger::DEBUG
-end
-----
-
-=== Search for a standard using keywords
-
-[source,ruby]
-----
 hit_collection = RelatonNist::NistBibliography.search("NISTIR 8200")
 [relaton-nist] (NIST IR 8200) Fetching from csrc.nist.gov ...
 [relaton-nist] (NIST IR 8200) Fetching from Relaton repository ...
@@ -238,6 +227,10 @@ Stopped at: 2021-09-01 18:01:43 +0200
 Done in: 42 sec.
 => nil
 ----
+
+=== Logging
+
+RelatonNist uses the relaton-logger gem for logging. By default, it logs to STDOUT. To change the log levels and add other loggers, read the https://github.com/relaton/relaton-logger#usage[relaton-logger] documentation.
 
 == Development
 
