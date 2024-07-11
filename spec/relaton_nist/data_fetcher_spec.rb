@@ -24,6 +24,7 @@ RSpec.describe RelatonNist::DataFetcher do
 
   context "instance methods" do
     subject { RelatonNist::DataFetcher.new "data", "yaml" }
+    let(:xml) { File.read "spec/examples/allrecords-MODS.xml", encoding: "UTF-8" }
 
     it "#index" do
       expect(subject.index).to be_instance_of Relaton::Index::Type
@@ -46,31 +47,22 @@ RSpec.describe RelatonNist::DataFetcher do
     end
 
     it "#fetch_tech_pubs" do
-      xml = <<~XML
-        <body>
-          <query>
-            <doi_record>
-              <report-paper>
-                <report-paper_metadata language="en">
-                  <titles></titles>
-                </report-paper_metadata>
-              </report-paper>
-            </doi_record>
-          </query>
-        </body>
-      XML
       expect(OpenURI).to receive(:open_uri).with(RelatonNist::DataFetcher::URL).and_return xml
-      expect(RelatonNist::TechPubsParser).to receive(:parse)
-        .with(kind_of(Nokogiri::XML::Element), kind_of(Hash)).and_return :bib
-      expect(subject).to receive(:write_file).with(:bib)
+      parser = double "parser"
+      expect(parser).to receive(:parse).and_return(:bib).twice
+      expect(RelatonNist::ModsParser).to receive(:new)
+        .with(kind_of(LocMods::Record), kind_of(Hash)).and_return(parser).twice
+      expect(subject).to receive(:write_file).with(:bib).twice
       subject.fetch_tech_pubs
     end
 
     it "#add_static_files" do
       expect(Dir).to receive(:[]).with("./static/*.yaml").and_return ["./static/NISTIR_8296-12.yaml"]
       expect(YAML).to receive(:load_file).with("./static/NISTIR_8296-12.yaml").and_return :hash
-      expect(RelatonNist::NistBibliographicItem).to receive(:from_hash).with(:hash).and_return :bib
-      expect(subject).to receive(:write_file).with(:bib)
+      docid = RelatonBib::DocumentIdentifier.new type: "NIST", id: "NIST IR 8296-12"
+      bib = RelatonNist::NistBibliographicItem.new docid: [docid]
+      expect(RelatonNist::NistBibliographicItem).to receive(:from_hash).with(:hash).and_return bib
+      expect(subject.index).to receive(:add_or_update).with("NIST IR 8296-12", "./static/NISTIR_8296-12.yaml")
       subject.add_static_files
     end
 

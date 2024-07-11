@@ -1,0 +1,196 @@
+module RelatonNist
+  class ModsParser
+    RELATION_TYPES = {
+      "otherVersion" => "editionOf",
+      "preceding" => "updates",
+      "succeeding" => "updatedBy",
+    }.freeze
+
+    ATTRS = %i[docid title link abstract date doctype contributor relation place series].freeze
+
+    def initialize(doc, series)
+      @doc = doc
+      @series = series
+    end
+
+    # @return [RelatonNist::NistBibliographicItem]
+    def parse
+      args = ATTRS.each_with_object({}) do |attr, hash|
+        hash[attr] = send("parse_#{attr}")
+      end
+      NistBibliographicItem.new(**args)
+    end
+
+    # @return [Array<RelatonBib::DocumentIdentifier>]
+    def parse_docid
+      [
+        { type: "NIST", id: pub_id, primary: true },
+        { type: "DOI", id: doi },
+      ].map { |id| RelatonBib::DocumentIdentifier.new(**id) }
+    end
+
+    # @return [String]
+    def pub_id
+      get_id_from_str doi
+    end
+
+    def get_id_from_str(str)
+      str.match(/\/((?:NBS|NIST).+)/)[1].gsub(".", " ")
+    end
+
+    # @return [String]
+    def doi
+      url = @doc.location.reduce(nil) { |m, l| m || l.url.detect { |u| u.usage == "primary display" } }
+      id = url.content.match(/10\.6028\/.+/)[0]
+      case id
+      when "10.6028/NBS.CIRC.sup" then "10.6028/NBS.CIRC.24e7sup"
+      when "10.6028/NBS.CIRC.supJun1925-Jun1926" then "10.6028/NBS.CIRC.24e7sup2"
+      when "10.6028/NBS.CIRC.supJun1925-Jun1927" then "10.6028/NBS.CIRC.24e7sup3"
+      when "10.6028/NBS.CIRC.24supJuly1922" then "10.6028/NBS.CIRC.24e6sup"
+      when "10.6028/NBS.CIRC.24supJan1924" then "10.6028/NBS.CIRC.24e6sup2"
+      else id
+      end
+    end
+
+    # @return [Array<RelatonBib::TypedTitleString>]
+    def parse_title
+      @doc.title_info.reduce([]) do |a, ti|
+        type = ti.type == "alternative" ? "title-intro" : "title-main"
+        a + ti.title.map do |t|
+          content = t.gsub("\n", " ").squeeze(" ").strip
+          RelatonBib::TypedTitleString.new content: content, type: type, language: "en", script: "Latn"
+        end + ti.sub_title.map do |t|
+          content = t.gsub("\n", " ").squeeze(" ").strip
+          RelatonBib::TypedTitleString.new content: content, type: "title-part", language: "en", script: "Latn"
+        end
+      end
+    end
+
+    def parse_link
+      @doc.location.map do |location|
+        url = location.url.first
+        type = url.usage == "primary display" ? "doi" : "src"
+        RelatonBib::TypedUri.new content: url.content, type: type
+      end
+    end
+
+    def parse_abstract
+      @doc.abstract.map do |a|
+        content = a.content.gsub("\n", " ").squeeze(" ").strip
+        RelatonBib::FormattedString.new content: content, language: "en", script: "Latn"
+      end
+    end
+
+    def parse_date
+      date = @doc.origin_info[0].date_issued.map do |di|
+        create_date(di, "issued")
+      # end + @doc.record_info[0].record_creation_date.map do |rcd|
+      #   create_date(rcd, "created")
+      # end + @doc.record_info[0].record_change_date.map do |rcd|
+      #   create_date(rcd, "updated")
+      end
+      date.compact
+    end
+
+    def create_date(date, type)
+      RelatonBib::BibliographicDate.new type: type, on: decode_date(date)
+    rescue Date::Error
+    end
+
+    def decode_date(date)
+      if date.encoding == "marc" && date.content.size == 6
+        Date.strptime(date.content, "%y%m%d").to_s
+      elsif date.encoding == "iso8601"
+        Date.strptime(date.content, "%Y%m%d").to_s
+      else date.content
+      end
+    end
+
+    def parse_doctype
+      RelatonBib::DocumentType.new(type: "standard")
+    end
+
+    def parse_contributor
+      # eaxclude primary contributors to avoid duplication
+      @doc.name.reject { |n| n.usage == "primary" }.map do |name|
+        entity, default_role = create_entity(name)
+        next unless entity
+
+        role = name.role.reduce([]) do |a, r|
+          a + r.role_term.map { |rt| { type: rt.content } }
+        end
+        role << { type: default_role } if role.empty?
+        RelatonBib::ContributionInfo.new entity: entity, role: role
+      end.compact
+    end
+
+    def create_entity(name)
+      case name.type
+      when "personal" then [create_person(name), "author"]
+      when "corporate" then [create_org(name), "publisher"]
+      end
+    end
+
+    def create_person(name)
+      # exclude typed name parts because they are not actual name parts
+      cname = name.name_part.reject(&:type).map(&:content).join(" ")
+      complatename = RelatonBib::LocalizedString.new cname, "en"
+      fname = RelatonBib::FullName.new completename: complatename
+      name_id = name.name_identifier[0]
+      identifier = RelatonBib::PersonIdentifier.new "uri", name_id.content if name_id
+      RelatonBib::Person.new name: fname, identifier: [identifier]
+    end
+
+    def create_org(name)
+      names = name.name_part.reject(&:type).map(&:content)
+      url = name.name_identifier[0]&.content
+      id = RelatonBib::OrgIdentifier.new "uri", url if url
+      RelatonBib::Organization.new name: names, identifier: [id]
+    end
+
+    def parse_relation
+      @doc.related_item.reject { |ri| ri.type == "series" }.map do |ri|
+        type = RELATION_TYPES[ri.type]
+        RelatonBib::DocumentRelation.new(type: type, bibitem: create_related_item(ri))
+      end
+    end
+
+    def create_related_item(item)
+      item_id = get_id_from_str related_item_id(item)
+      docid = RelatonBib::DocumentIdentifier.new type: "NIST", id: item_id
+      fref = RelatonBib::FormattedRef.new content: item_id
+      NistBibliographicItem.new(docid: [docid], formattedref: fref)
+    end
+
+    def related_item_id(item)
+      if item.other_type && item.other_type[0..6] == "10.6028"
+        item.other_type
+      else
+        item.name[0].name_part[0].content
+      end
+    end
+
+    def parse_place
+      @doc.origin_info.select { |p| p.event_type == "publisher"}.map do |p|
+        place = p.place[0].place_term[0].content
+        /(?<city>\w+), (?<state>\w+)/ =~ place
+        RelatonBib::Place.new city: city, region: create_region(state)
+      end
+    end
+
+    def create_region(state)
+      [RelatonBib::Place::RegionType.new(iso: state)]
+    rescue ArgumentError
+      []
+    end
+
+    def parse_series
+      @doc.related_item.select { |ri| ri.type == "series" }.map do |ri|
+        tinfo = ri.title_info[0]
+        tcontent = tinfo.title[0].strip
+        title = RelatonBib::TypedTitleString.new content: tcontent
+        RelatonBib::Series.new title: title, partnumber: tinfo.part_number[0]
+      end
+    end
+  end
+end

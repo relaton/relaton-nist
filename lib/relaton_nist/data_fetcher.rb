@@ -1,10 +1,12 @@
 # frozen_string_literal: true
 
 require "yaml"
+require "loc_mods"
+require_relative "mods_parser"
 
 module RelatonNist
   class DataFetcher
-    URL = "https://raw.githubusercontent.com/usnistgov/NIST-Tech-Pubs/nist-pages/xml/allrecords.xml"
+    URL = "https://github.com/usnistgov/NIST-Tech-Pubs/releases/download/May2024/allrecords-MODS.xml"
 
     def initialize(output, format)
       @output = output
@@ -68,16 +70,18 @@ module RelatonNist
     end
 
     def fetch_tech_pubs
-      docs = Nokogiri::XML OpenURI.open_uri URL
-      docs.xpath(
-        "/body/query/doi_record/report-paper/report-paper_metadata",
-      ).each { |doc| write_file TechPubsParser.parse(doc, series) }
+      docs = LocMods::Collection.from_xml OpenURI.open_uri(URL)
+      # docs.xpath(
+      #   "/body/query/doi_record/report-paper/report-paper_metadata",
+      # )
+      docs.mods.each { |doc| write_file ModsParser.new(doc, series).parse }
     end
 
     def add_static_files
       Dir["./static/*.yaml"].each do |file|
         hash = YAML.load_file file
-        write_file RelatonNist::NistBibliographicItem.from_hash(hash)
+        bib = RelatonNist::NistBibliographicItem.from_hash(hash)
+        index.add_or_update bib.docidentifier[0].id, file
       end
     end
 
