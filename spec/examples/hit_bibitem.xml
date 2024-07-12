@@ -1,7 +1,8 @@
-<bibitem id="NISTIR8011-1" schema-version="v1.2.9">
-  <fetched>2024-07-11</fetched>
+<bibitem id="NISTIR8011-1" type="standard" schema-version="v1.2.9">
+  <fetched>2024-07-12</fetched>
   <title type="title-main" format="text/plain" language="en" script="Latn">Automation support for security control assessments, volume 1</title>
   <title type="title-part" format="text/plain" language="en" script="Latn">overview</title>
+  <title type="main" format="text/plain" language="en" script="Latn">Automation support for security control assessments, volume 1 - overview</title>
   <uri type="doi">https://doi.org/10.6028/NIST.IR.8011-1</uri>
   <docidentifier type="NIST" primary="true">NIST IR 8011-1</docidentifier>
   <docidentifier type="DOI">10.6028/NIST.IR.8011-1</docidentifier>
@@ -37,15 +38,14 @@
   <contributor>
     <role type="publisher"/>
     <organization>
-      <name>Information Technology Laboratory (National Institute of Standards
-                and Technology)</name>
+      <name>Information Technology Laboratory (National Institute of Standards and Technology)</name>
       <identifier type="uri">https://id.loc.gov/authorities/names/no97056762</identifier>
     </organization>
   </contributor>
   <abstract format="text/plain" language="en" script="Latn">This volume introduces concepts to support automated assessment of most of the security controls in NIST Special Publication (SP) 800-53. Referencing SP 800-53A, the controls are divided into more granular parts (determination statements) to be assessed. The parts of the control assessed by each determination statement are called control items. The control items are then grouped into the appropriate security capabilities. As suggested by SP 800-53 Revision 4, security capabilities are groups of controls that support a common purpose. For effective automated assessment, testable defect checks are defined that bridge the determination statements to the broader security capabilities to be achieved and to the SP 800-53 security control items themselves. The defect checks correspond to security sub-capabilities -- called sub-capabilities because each is part of a larger capability. Capabilities and sub-capabilities are both designed with the purpose of addressing a series of attack steps. Automated assessments (in the form of defect checks) are performed using the test assessment method defined in SP 800-53A by comparing a desired and actual state (or behavior).</abstract>
   <series>
     <title format="text/plain">NISTIR; NIST IR; NIST interagency report; NIST internal report</title>
-    <partnumber>8011-1</partnumber>
+    <number>8011-1</number>
   </series>
   <place>
     <city>Gaithersburg</city>
