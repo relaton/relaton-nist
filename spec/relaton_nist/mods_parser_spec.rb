@@ -29,9 +29,10 @@ describe RelatonNist::ModsParser do
       expect(subject).to receive(:parse_place).and_return "place"
       expect(subject).to receive(:parse_series).and_return "series"
       expect(RelatonNist::NistBibliographicItem).to receive(:new).with(
-        docid: "docid", title: "title", link: "link", abstract: "abstract",
-        date: "date", doctype: "doctype", contributor: "contributor",
-        relation: "relation", place: "place", series: "series"
+        type: "standard", docid: "docid", title: "title", link: "link",
+        abstract: "abstract", date: "date", doctype: "doctype",
+        contributor: "contributor", relation: "relation", place: "place",
+        series: "series"
       )
       subject.parse
     end
@@ -66,26 +67,54 @@ describe RelatonNist::ModsParser do
       it_behaves_like "fix doi", "https://doi.org/10.6028/NBS.CIRC.24supJan1924", "10.6028/NBS.CIRC.24e6sup2"
     end
 
-    it "parse_title" do
-      doc = LocMods::Collection.from_xml <<~XML
-        <modsCollection xmlns="http://www.loc.gov/mods/v3">
-          <mods>
-            <titleInfo>
-              <title>Lean flammability limit as a fundamental refrigerant property</title>
-              <subTitle>Lean flammability limit as a fundamental refrigerant property</subTitle>
-            </titleInfo>
-          </mods>
-        </modsCollection>
-      XML
-      subject.instance_variable_set :@doc, doc.mods[0]
-      titles = subject.parse_title
-      expect(titles).to be_instance_of Array
-      expect(titles.size).to eq 2
-      expect(titles.first).to be_instance_of RelatonBib::TypedTitleString
-      expect(titles.first.title.content).to eq "Lean flammability limit as a fundamental refrigerant property"
-      expect(titles.first.type).to eq "title-main"
-      expect(titles.first.title.language).to eq ["en"]
-      expect(titles.first.title.script).to eq ["Latn"]
+    context "parse_title" do
+      it "with title and subtitle" do
+        doc = LocMods::Collection.from_xml <<~XML
+          <modsCollection xmlns="http://www.loc.gov/mods/v3">
+            <mods>
+              <titleInfo>
+                <nonSort xml:space="preserve">The  </nonSort>
+                <title>OOF Manual</title>
+                <subTitle>version 1.0</subTitle>
+              </titleInfo>
+            </mods>
+          </modsCollection>
+        XML
+        subject.instance_variable_set :@doc, doc.mods[0]
+        titles = subject.parse_title
+        expect(titles).to be_instance_of Array
+        expect(titles.size).to eq 3
+        expect(titles[0]).to be_instance_of RelatonBib::TypedTitleString
+        expect(titles[0].title.content).to eq "The OOF Manual"
+        expect(titles[0].type).to eq "title-main"
+        expect(titles[0].title.language).to eq ["en"]
+        expect(titles[0].title.script).to eq ["Latn"]
+        expect(titles[1].title.content).to eq "version 1.0"
+        expect(titles[1].type).to eq "title-part"
+        expect(titles[2].title.content).to eq "The OOF Manual - version 1.0"
+        expect(titles[2].type).to eq "main"
+      end
+
+      it "with title only" do
+        doc = LocMods::Collection.from_xml <<~XML
+          <modsCollection xmlns="http://www.loc.gov/mods/v3">
+            <mods>
+              <titleInfo>
+                <title>Fire Dynamics Simulator (Version 5) Technical Reference Guide</title>
+              </titleInfo>
+            </mods>
+          </modsCollection>
+        XML
+        subject.instance_variable_set :@doc, doc.mods[0]
+        titles = subject.parse_title
+        expect(titles).to be_instance_of Array
+        expect(titles.size).to eq 1
+        expect(titles[0]).to be_instance_of RelatonBib::TypedTitleString
+        expect(titles[0].title.content).to eq "Fire Dynamics Simulator (Version 5) Technical Reference Guide"
+        expect(titles[0].type).to eq "main"
+        expect(titles[0].title.language).to eq ["en"]
+        expect(titles[0].title.script).to eq ["Latn"]
+      end
     end
 
     it "parse_link" do
@@ -128,6 +157,18 @@ describe RelatonNist::ModsParser do
       # expect(dates[1].type).to eq "created"
       # expect(dates[2].on).to eq "2020-01-14"
       # expect(dates[2].type).to eq "updated"
+    end
+
+    context "decode_date" do
+      it "marc with 6 digits" do
+        date = double "date", encoding: "marc", content: "191121"
+        expect(subject.decode_date date).to eq "2019-11-21"
+      end
+
+      it "iso8601" do
+        date = double "date", encoding: "iso8601", content: "20200114084155."
+        expect(subject.decode_date date).to eq "2020-01-14"
+      end
     end
 
     it "parse_doctype" do
@@ -273,7 +314,7 @@ describe RelatonNist::ModsParser do
       expect(series.size).to eq 1
       expect(series[0]).to be_instance_of RelatonBib::Series
       expect(series[0].title.title.content).to eq "NISTIR; NIST IR; NIST interagency report; NIST internal report"
-      expect(series[0].partnumber).to eq "6229"
+      expect(series[0].number).to eq "6229"
     end
   end
 end

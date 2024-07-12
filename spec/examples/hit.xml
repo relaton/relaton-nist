@@ -1,74 +1,56 @@
-<bibdata type="standard" schema-version="v1.2.9">
-  <fetched>2023-03-30</fetched>
-  <title format="text/plain" language="en" script="Latn">Automation support for security control assessments. volume 1: overview</title>
+<bibdata schema-version="v1.2.9">
+  <fetched>2024-07-11</fetched>
+  <title type="title-main" format="text/plain" language="en" script="Latn">Automation support for security control assessments, volume 1</title>
+  <title type="title-part" format="text/plain" language="en" script="Latn">overview</title>
   <uri type="doi">https://doi.org/10.6028/NIST.IR.8011-1</uri>
-  <uri type="pdf">https://nvlpubs.nist.gov/nistpubs/ir/2017/NIST.IR.8011-1.pdf</uri>
   <docidentifier type="NIST" primary="true">NIST IR 8011-1</docidentifier>
   <docidentifier type="DOI">10.6028/NIST.IR.8011-1</docidentifier>
-  <date type="published">
-    <on>2017-06</on>
+  <date type="issued">
+    <on>2017-01</on>
   </date>
   <contributor>
     <role type="author"/>
     <person>
       <name>
-        <forename script="Latn">Kelley</forename>
-        <surname script="Latn">Dempsey</surname>
+        <completename language="en">Dempsey, Kelley.</completename>
       </name>
-      <affiliation>
-        <organization>
-          <name>Information Technology Laboratory</name>
-        </organization>
-      </affiliation>
+      <identifier type="uri">https://id.loc.gov/authorities/names/no2022000344</identifier>
     </person>
   </contributor>
   <contributor>
     <role type="author"/>
     <person>
       <name>
-        <forename script="Latn">Paul</forename>
-        <surname script="Latn">Eavy</surname>
+        <completename language="en">Eavy, Paul.</completename>
       </name>
-      <affiliation>
-        <organization>
-          <name>Information Technology Laboratory</name>
-        </organization>
-      </affiliation>
     </person>
   </contributor>
   <contributor>
     <role type="author"/>
     <person>
       <name>
-        <forename script="Latn">George</forename>
-        <surname script="Latn">Moore</surname>
+        <completename language="en">Moore, George.</completename>
       </name>
-      <affiliation>
-        <organization>
-          <name>Information Technology Laboratory</name>
-        </organization>
-      </affiliation>
+      <identifier type="uri">https://id.loc.gov/authorities/names/n98012695</identifier>
     </person>
   </contributor>
   <contributor>
     <role type="publisher"/>
     <organization>
-      <name>National Institute of Standards and Technology</name>
-      <abbreviation>NIST</abbreviation>
-      <address>
-        <city>Gaithersburg</city>
-        <state>MD</state>
-        <country>US</country>
-      </address>
+      <name>Information Technology Laboratory (National Institute of Standards
+                and Technology)</name>
+      <identifier type="uri">https://id.loc.gov/authorities/names/no97056762</identifier>
     </organization>
   </contributor>
-  <script>Latn</script>
+  <abstract format="text/plain" language="en" script="Latn">This volume introduces concepts to support automated assessment of most of the security controls in NIST Special Publication (SP) 800-53. Referencing SP 800-53A, the controls are divided into more granular parts (determination statements) to be assessed. The parts of the control assessed by each determination statement are called control items. The control items are then grouped into the appropriate security capabilities. As suggested by SP 800-53 Revision 4, security capabilities are groups of controls that support a common purpose. For effective automated assessment, testable defect checks are defined that bridge the determination statements to the broader security capabilities to be achieved and to the SP 800-53 security control items themselves. The defect checks correspond to security sub-capabilities -- called sub-capabilities because each is part of a larger capability. Capabilities and sub-capabilities are both designed with the purpose of addressing a series of attack steps. Automated assessments (in the form of defect checks) are performed using the test assessment method defined in SP 800-53A by comparing a desired and actual state (or behavior).</abstract>
   <series>
-    <title format="text/plain">NIST IR (Interagency/Internal Reports)</title>
-    <abbreviation>IR</abbreviation>
-    <number>8011-1</number>
+    <title format="text/plain">NISTIR; NIST IR; NIST interagency report; NIST internal report</title>
+    <partnumber>8011-1</partnumber>
   </series>
-  <place>Gaithersburg, MD</place>
+  <place>
+    <city>Gaithersburg</city>
+    <region iso="MD">Maryland</region>
+  </place>
   <ext schema-version="v1.0.0">
     <doctype>standard</doctype>
   </ext>

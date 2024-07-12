@@ -90,8 +90,7 @@ RSpec.describe RelatonNist do
       it "a code" do
         VCR.use_cassette "8200_2018" do
           result = RelatonNist::NistBibliography.get("NISTIR 8200", "2018", {})
-          xml = result.to_xml(bibdata: true)
-            .gsub(/(?<=<fetched>)\d{4}-\d{2}-\d{2}/, Date.today.to_s)
+          xml = result.to_xml(bibdata: true).gsub(/(?<=<fetched>)\d{4}-\d{2}-\d{2}/, Date.today.to_s)
           file_path = "spec/examples/get.xml"
           File.write file_path, xml, encoding: "UTF-8" unless File.exist? file_path
           expect(xml).to be_equivalent_to File.open(file_path, "r:UTF-8", &:read)
@@ -116,7 +115,7 @@ RSpec.describe RelatonNist do
         VCR.use_cassette "8200_2018" do
           result = RelatonNist::NistBibliography.get("NISTIR 8200:2018")
             .to_xml bibdata: true
-          expect(result).to include "<on>2018-11</on>"
+          expect(result).to include "<on>2018-01</on>"
         end
       end
 

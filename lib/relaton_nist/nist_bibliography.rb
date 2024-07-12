@@ -123,7 +123,7 @@ module RelatonNist
           next if iter && r.status.iteration != iteration
           return { ret: r } if !year
 
-          r.date.select { |d| d.type == "published" }.each do |d|
+          r.date.select { |d| d.type == "published" || d.type == "issued" }.each do |d|
             return { ret: r } if year.to_i == d.on(:year)
 
             missed_years << d.on(:year)

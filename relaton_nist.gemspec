@@ -25,7 +25,7 @@ Gem::Specification.new do |spec|
 
   spec.add_dependency "base64"
   spec.add_dependency "loc_mods", "~> 0.2.0"
-  spec.add_dependency "relaton-bib", "~> 1.19.0"
+  spec.add_dependency "relaton-bib", "~> 1.19.2"
   spec.add_dependency "relaton-index", "~> 0.2.0"
   spec.add_dependency "rubyzip"
 end

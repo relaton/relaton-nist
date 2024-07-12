@@ -6,7 +6,7 @@ module RelatonNist
       "succeeding" => "updatedBy",
     }.freeze
 
-    ATTRS = %i[docid title link abstract date doctype contributor relation place series].freeze
+    ATTRS = %i[type docid title link abstract date doctype contributor relation place series].freeze
 
     def initialize(doc, series)
       @doc = doc
@@ -19,6 +19,10 @@ module RelatonNist
         hash[attr] = send("parse_#{attr}")
       end
       NistBibliographicItem.new(**args)
+    end
+
+    def parse_type
+      "standard"
     end
 
     # @return [Array<RelatonBib::DocumentIdentifier>]
@@ -54,16 +58,25 @@ module RelatonNist
 
     # @return [Array<RelatonBib::TypedTitleString>]
     def parse_title
-      @doc.title_info.reduce([]) do |a, ti|
-        type = ti.type == "alternative" ? "title-intro" : "title-main"
-        a + ti.title.map do |t|
-          content = t.gsub("\n", " ").squeeze(" ").strip
-          RelatonBib::TypedTitleString.new content: content, type: type, language: "en", script: "Latn"
-        end + ti.sub_title.map do |t|
-          content = t.gsub("\n", " ").squeeze(" ").strip
-          RelatonBib::TypedTitleString.new content: content, type: "title-part", language: "en", script: "Latn"
-        end
+      title = @doc.title_info.reduce([]) do |a, ti|
+        next a if ti.type == "alternative"
+
+        a += ti.title.map { |t| create_title(t, "title-main", ti.non_sort[0]) }
+        a + ti.sub_title.map { |t| create_title(t, "title-part") }
       end
+      if title.size > 1
+        content = title.map { |t| t.title.content }.join(" - ")
+        title << create_title(content, "main")
+      elsif title.size == 1
+        title[0].instance_variable_set :@type, "main"
+      end
+      title
+    end
+
+    def create_title(title, type, non_sort = nil)
+      content = title.gsub("\n", " ").squeeze(" ").strip
+      content = "#{non_sort.content}#{content}".squeeze(" ") if non_sort
+      RelatonBib::TypedTitleString.new content: content, type: type, language: "en", script: "Latn"
     end
 
     def parse_link
@@ -142,7 +155,7 @@ module RelatonNist
     end
 
     def create_org(name)
-      names = name.name_part.reject(&:type).map(&:content)
+      names = name.name_part.reject(&:type).map { |n| n.content.gsub("\n", " ").squeeze(" ").strip }
       url = name.name_identifier[0]&.content
       id = RelatonBib::OrgIdentifier.new "uri", url if url
       RelatonBib::Organization.new name: names, identifier: [id]
@@ -189,7 +202,7 @@ module RelatonNist
         tinfo = ri.title_info[0]
         tcontent = tinfo.title[0].strip
         title = RelatonBib::TypedTitleString.new content: tcontent
-        RelatonBib::Series.new title: title, partnumber: tinfo.part_number[0]
+        RelatonBib::Series.new title: title, number: tinfo.part_number[0]
       end
     end
   end
