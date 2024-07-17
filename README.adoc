@@ -10,7 +10,8 @@ image:https://img.shields.io/github/commits-since/relaton/relaton-nist/latest.sv
 
 == Purpose
 
-`relaton-nist` provides bibliographic information of NIST publications using the
+Relaton for NIST provides bibliographic information of NIST publications using
+the
 https://github.com/metanorma/metanorma-model-nist#nist-bibliographic-item-model[NistBibliographicItem model].
 
 Relaton for NIST has been developed in cooperation with the NIST Cybersecurity
@@ -18,18 +19,25 @@ Resource Center (CSRC) and the Computer Security Division (ITL/CSD).
 
 == Data sources
 
-Relaton for NIST retrieves bibliographic information from two sources:
+=== General
 
-* bibliographic feed from the NIST Cybersecurity Resource Center (CSRC) of
-all CSRC publications (in Relaton JSON)
-* bibliographic dataset from the NIST Library through the Information Services
-Office (ISO) that contains information about all NIST Technical Publications
-(https://github.com/usnistgov/NIST-Tech-Pubs[GitHub])
+Relaton for NIST retrieves bibliographic information from two sources,
+in the following priority:
+
+. NIST Cybersecurity Resource Center (CSRC)
+
+. NIST Library of the NIST Information Services Office (ISO)
+
+
+=== NIST Cybersecurity Resource Center (CSRC)
+
+The NIST CSRC bibliographic feed is used as the primary source for all CSRC
+publications.
 
 Bibliographic information offered through CSRC is provided with enhanced
-metadata that is not available in the NIST Library dataset, including:
+metadata unavailable from the NIST Library dataset, including:
 
-* public drafts (the NIST Library dataset only contains final publications)
+* versioned drafts (the NIST Library dataset only contains the latest publication: latest draft or final publication)
 * revision information: revision number, iteration
 * document stage information: retired, withdrawn, etc.
 * bibliographic dates, including issued date, updated date, published date,
@@ -37,20 +45,38 @@ metadata that is not available in the NIST Library dataset, including:
 * document relationships: supersession and replacements
 * contacts: enhanced name parts and affiliation information
 
-Relaton for NIST, therefore, uses the following order of priority for the data
-sources:
-
-. bibliographic feed from NIST CSRC
-. NIST Library dataset
-
-The NIST CSRC provides:
+The NIST CSRC provides the following documents:
 
 * NIST SP 800-*
 * NIST SP 500-*
 * NIST SP 1800-*
 * NIST FIPS {31, 39, 41, 46, 46-$$*$$, 48, 65, 73, 74, 81, 83, 87, 102, 112, 113, 139, 140-$$*$$, 141, 171, 180, 180-$$*$$, 181, 186, 186-$$*$$, 188, 190, 191, 196, 197, 198, 198-1, 199, 200, 201, 201-*, 202}
 
-The NIST Library dataset provides documents listed in the https://github.com/relaton/relaton-data-nist/blob/main/index-v1.yaml[index].
+As this feed is provided by CSRC in the native Relaton JSON format, no data
+transform is necessary.
+
+
+=== NIST Library
+
+The NIST Library offers the full NIST Technical Publications dataset at
+https://github.com/usnistgov/NIST-Tech-Pubs[GitHub].
+
+The library data is managed internally using MARC21, and the GitHub repository
+offers this information via MARC21 XML and MODS (in XML).
+
+Relaton for NIST uses the MODS dataset obtained from the following location:
+
+* https://github.com/usnistgov/NIST-Tech-Pubs/releases[NIST-Tech-Pubs/releases],
+the `allrecords-MODS.xml` file
+
+The MODS XML file is parsed using the
+https://github.com/relaton/loc_mods[`loc_mods`] library and its data mapped to
+the Relaton model.
+
+The NIST Library dataset provides documents listed in the
+https://github.com/relaton/relaton-data-nist/blob/main/index-v1.yaml[index].
+
+
 
 == Installation
 
@@ -63,104 +89,85 @@ gem 'relaton-nist'
 
 And then execute:
 
-    $ bundle
+[source,sh]
+----
+$ bundle
+----
 
 Or install it yourself as:
 
-    $ gem install relaton_nist
+[source,sh]
+----
+$ gem install relaton_nist
+----
 
 == Usage
 
-=== Search for a standard using keywords
+=== Retrieving an entry
 
+==== By NIST PubID
+
+Relaton supports using the
+https://www.nist.gov/system/files/documents/2022/04/01/PubID_Syntax_NIST_TechPubs.pdf[NIST PubID]
+as the retrieval key for bibliographic entries.
+
+NOTE: Relaton for NIST is the first public implementation of the
+https://www.nist.gov/news-events/news/2021/08/nist-technical-series-publications-proposed-publication-identifier-syntax[NIST PubID].
+
+
+.Retrieving a bibliographic entry using NIST PubID
+[example]
+====
 [source,ruby]
 ----
-require 'relaton_nist'
-=> true
+> require 'relaton_nist'
+=>
+true
 
-hit_collection = RelatonNist::NistBibliography.search("NISTIR 8200")
+> hit_collection = RelatonNist::NistBibliography.search("NISTIR 8200")
 [relaton-nist] (NIST IR 8200) Fetching from csrc.nist.gov ...
 [relaton-nist] (NIST IR 8200) Fetching from Relaton repository ...
-=> <RelatonNist::HitCollection:0x00000000004b28 @ref=NIST IR 8200 @fetched=false>
+=>
+<RelatonNist::HitCollection:0x00000000004b28 @ref=NIST IR 8200 @fetched=false>
 
-item = hit_collection[0].fetch
-=> #<RelatonNist::NistBibliographicItem:0x007fc049aa6778
- ...
+> item = hit_collection[0].fetch
+=>
+#<RelatonNist::NistBibliographicItem:0x007fc049aa6778
+# ...
 ----
+====
 
-=== XML serialization
+
+The publication year can also be given if the publication has seen multiple
+revisions or editions.
+
+.Retrieving a bibliographic entry using NIST PubID with year
+[example]
+====
 [source,ruby]
 ----
-item.to_xml
-=> "<bibitem id="NISTIR8200" type="standard" schema-version="v1.2.9">
-      <fetched>2023-10-16</fetched>
-      <title format="text/plain" language="en" script="Latn">Interagency report on the status of international cybersecurity standardization for the internet of things (IoT)</title>
-      ...
-    <bibitem>"
-----
-With argument `bibdata: true` it outputs XML wrapped by `bibdata` element and adds flavor `ext` element.
-[source,ruby]
-----
-item.to_xml bibdata: true
-=> "<bibdata type="standard" schema-version="v1.2.9">
-      <fetched>2023-10-16</fetched>
-      <title format="text/plain" language="en" script="Latn">Interagency report on the status of international cybersecurity standardization for the internet of things (IoT)</title>
-      ...
-      <ext schema-version="v1.0.0">
-        <doctype>standard</doctype>
-      </ext>
-  </bibdata>"
-----
-
-=== Get code, and year
-[source,ruby]
-----
-RelatonNist::NistBibliography.get("NIST IR 8200", "2018")
+> RelatonNist::NistBibliography.get("NIST IR 8200", "2018")
 [relaton-nist] (NIST SP 8200:2018) Fetching from csrc.nist.gov ...
 [relaton-nist] (NIST IR 8200:2018) Fetching from Relaton repository...
 [relaton-nist] (NIST IR 8200:2018) Found: `NIST IR 8200`
-=> #<RelatonNist::NistBibliographicItem:0x00007fab74a572c0
-...
+=>
+#<RelatonNist::NistBibliographicItem:0x00007fab74a572c0
+# ...
 ----
+====
 
-=== Get short citation
-A short citation is a convention about a citation's format. The format for NIST publications is:
-----
-NIST {abbrev(series)} {docnumber} {(edition), optional} {(stage), optional}
-# or
-{abbrev(series)} {docnumber} {(edition), optional} {(stage), optional}
-----
-- `(stage)` is empty if the state is "final" (published). In case the state is "draft" it should be:
-  * PD for public draft
-  * IPD for initial iteration public draft or 2PD, 3PD and so one for following iterations
-  * FPD for final public draft
-- `(edition)` is the date of publication or update
-- `docnumber` is the full NIST number, including revision, e.g., 800-52
 
-The format for FIPS publications is:
-----
-FIPS {docnumber}
-# or
-NIST FIPS {docnumber}
-----
-[source,ruby]
-----
-RelatonNist::NistBibliography.get("NIST SP 800-205 (February 2019) (IPD)")
-[relaton-nist] (NIST SP 800-205) Fetching from csrc.nist.gov ...
-[relaton-nist] (NIST SP 800-205) Found: `NIST SP 800-205 (Draft)`
-=> #<RelatonNist::NistBibliographicItem:0x00000001105afdc8
-...
-----
+A NIST PubID can contain these optional parameters `{ptN}{vN}{verN}{rN}{/Add}`:
 
-=== Get specific part, volume, version, revision, and addendum
+* Part is specified as `ptN` (SP 800-57pt1)
+* Volume is specified as `vN` (SP 800-60v1)
+* Version is specified as `verN` (SP 800-45ver2)
+* Revision is specified as `rN` (SP 800-40r3) or `-N`
+* Addendum is specified as `/Add` (SP 800-38A/Add)
 
-Referehces can contain optional parameters `{ptN}{vN}{verN}{rN}{/Add}`:
-- Part is specified as `ptN` (SP 800-57pt1)
-- Volume is specified as `vN` (SP 800-60v1)
-- Version is specified as `verN` (SP 800-45ver2)
-- Revision is specified as `rN` (SP 800-40r3)
-- Addendum is specified as `/Add` (SP 800-38A/Add)
-
+.Retrieving a bibliographic entry with a PubID that contains revision
+[example]
+====
 [source,ruby]
 ----
 item = RelatonNist::NistBibliography.get 'NIST SP 800-67r1'
@@ -171,7 +178,14 @@ item = RelatonNist::NistBibliography.get 'NIST SP 800-67r1'
 
 item.docidentifier.first.id
 => "NIST SP 800-67 Rev. 1"
+----
+====
 
+.Retrieving a bibliographic entry with a PubID that specifies an addendum
+[example]
+====
+[source,ruby]
+----
 item = RelatonNist::NistBibliography.get 'NIST SP 800-38A/Add'
 [relaton-nist] (NIST SP 800-38A/Add) Fetching from csrc.nist.gov ...
 [relaton-nist] (NIST SP 800-38A/Add) Found: `NIST SP 800-38A-Add`
@@ -181,11 +195,132 @@ item = RelatonNist::NistBibliography.get 'NIST SP 800-38A/Add'
 item.docidentifier.first.id
 => "NIST SP 800-38A-Add"
 ----
+====
 
-=== Typed links
+==== By NIST PubID abbreviated form
 
-NIST documents may have `src` and `doi` link types.
+The NIST PubID "abbreviated form" is the form of PubID printed on the inner
+cover of a NIST publication.
 
+The NIST PubID abbreviated format has the following syntax:
+
+* `NIST {abbrev(series)} {docnumber} {(edition), optional} {(stage), optional}`, or
+* `{abbrev(series)} {docnumber} {(edition), optional} {(stage), optional}`
+
+Where,
+
+`(stage)`::
+empty if the state is "final" (published).
+In case the state is "draft" it should be:
+`PD`::: for the public draft
+`IPD`::: for the initial public draft
+`{n}PD`::: for subsequent public drafts, such as 2PD, 3PD and so on.
+`FPD`::: for the final public draft
+
+`(edition)`:: the date of publication or update
+`docnumber`:: the full NIST document number, e.g., 800-52.
+
+.Retrieving an entry using the NIST PubID abbreviated form
+[example]
+====
+[source,ruby]
+----
+> RelatonNist::NistBibliography.get("NIST SP 800-205 (February 2019) (IPD)")
+[relaton-nist] (NIST SP 800-205) Fetching from csrc.nist.gov ...
+[relaton-nist] (NIST SP 800-205) Found: `NIST SP 800-205 (Draft)`
+=>
+#<RelatonNist::NistBibliographicItem:0x00000001105afdc8
+# ...
+----
+====
+
+==== By FIPS PubID
+
+The format for FIPS publications is:
+
+* `FIPS {docnumber}`, or
+* `NIST FIPS {docnumber}`
+
+
+.Retrieving an entry using the FIPS PubID
+[example]
+====
+[source,ruby]
+----
+> RelatonNist::NistBibliography.get("NIST FIPS 140-3")
+[relaton-nist] INFO: (NIST FIPS 140-3) Fetching from csrc.nist.gov ...
+[relaton-nist] INFO: (NIST FIPS 140-3) Found: `NIST FIPS 140-3`
+=>
+# #<RelatonNist::NistBibliographicItem:0x000000013b68fb50
+# ...
+----
+====
+
+
+=== Serializing an entry
+
+==== To Relaton XML
+
+.Serializing an entry to Relaton XML
+[example]
+====
+[source,ruby]
+----
+> item.to_xml
+#=> "<bibitem id="NISTIR8200" type="standard" schema-version="v1.2.9">
+#      <fetched>2023-10-16</fetched>
+#      <title format="text/plain" language="en" script="Latn">Interagency report on the status of international cybersecurity standardization for the internet of things (IoT)</title>
+#      ...
+#    <bibitem>"
+----
+====
+
+When the option `bibdata: true` is given, the method outputs XML wrapped by
+the `bibdata` element and adds a flavor-specific `ext` element.
+
+.Serializing an entry to Relaton XML with `bibdata: true`
+[example]
+====
+[source,ruby]
+----
+> item.to_xml bibdata: true
+=>
+"<bibdata type="standard" schema-version="v1.2.9">
+#      <fetched>2023-10-16</fetched>
+#      <title format="text/plain" language="en" script="Latn">Interagency report on the status of international cybersecurity standardization for the internet of things (IoT)</title>
+#      ...
+#      <ext schema-version="v1.0.0">
+#        <doctype>standard</doctype>
+#      </ext>
+#  </bibdata>"
+----
+====
+
+
+
+=== Accessing attributes
+
+==== Identifier components
+
+A NIST PubID can contain these optional parameters `{ptN}{vN}{verN}{rN}{/Add}`.
+
+They can be accessed through the following methods:
+
+* `part`
+* `volume`
+* `version`
+* `revision`
+* `addendum`
+
+
+==== Typed links
+
+NIST publications may have `src` and `doi` links, obtained using the `#link`
+method.
+
+.Accessing links of a NIST bibliographic item
+[example]
+====
 [source,ruby]
 ----
 item.link
@@ -196,8 +331,20 @@ item.link
   @type="src">,
  #<RelatonBib::TypedUri:0x00000001110879a8 @content=#<Addressable::URI:0x8d4 URI:https://doi.org/10.6028/NIST.SP.800-38A-Add>, @language=nil, @script=nil, @type="doi">]
 ----
+====
 
-=== Create bibliographic item from YAML
+
+=== Loading entries
+
+// ==== From XML
+
+==== From YAML
+
+Offline Relaton YAML files can be loaded directly as bibliographic items.
+
+.Loading a Relaton YAML file
+[example]
+====
 [source,ruby]
 ----
 hash = YAML.load_file 'spec/examples/nist_bib_item.yml'
@@ -208,40 +355,65 @@ RelatonNist::NistBibliographicItem.from_hash hash
 => #<RelatonNist::NistBibliographicItem:0x007f8b708505b8
 ...
 ----
+====
 
-=== Fetch data
 
-This gem uses the https://raw.githubusercontent.com/usnistgov/NIST-Tech-Pubs/nist-pages/xml/allrecords.xml dataset as one of data sources.
 
-The method `RelatonNist::DataFetcher.fetch(output: "data", format: "yaml")` fetches all the documents from the datast and save them to the `./data` folder in YAML format.
-Arguments:
+=== Fetching data
 
-- `output` - folder to save documents (default './data').
-- `format` - the format in which the documents are saved. Possible formats are: `yaml`, `xml`, `bibxxml` (default `yaml`).
+On a search, the data sources are fetched and stored in the user's
+cache.
 
+The following method fetches all the documents from the dataset, then saves them to the `./data` folder in YAML format.
+
+.Fetching all data with default configuration
+[example]
+====
 [source,ruby]
 ----
-RelatonNist::DataFetcher.fetch
+> RelatonNist::DataFetcher.fetch
 Started at: 2021-09-01 18:01:01 +0200
 Stopped at: 2021-09-01 18:01:43 +0200
 Done in: 42 sec.
 => nil
 ----
+====
+
+.Fetching all data to the `data` folder
+[example]
+====
+[source,ruby]
+----
+> RelatonNist::DataFetcher.fetch(output: "data", format: "yaml")
+----
+====
+
+Options:
+
+`output`:: folder to save documents (default `./data`).
+`format`:: format in which the documents are saved. Possible formats are:
+`yaml`::: (default) save in Relaton YAML format
+`xml`::: save in Relaton XML format
+`bibxml`::: save in the IETF BibXML format
+
 
 === Logging
 
-RelatonNist uses the relaton-logger gem for logging. By default, it logs to STDOUT. To change the log levels and add other loggers, read the https://github.com/relaton/relaton-logger#usage[relaton-logger] documentation.
+Relaton for NIST uses https://github.com/relaton/relaton-logger[relaton-logger]
+for logging.
 
-== Development
+By default, it logs to `$STDOUT`. To change log levels and add other loggers,
+refer to the https://github.com/relaton/relaton-logger#usage[relaton-logger]
+documentation.
 
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
-
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
 
 == Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/metanorma/relaton-nist.
+Bug reports and pull requests are welcome.
 
 == License
 
-The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
+Copyright Ribose.
+
+The gem is available as open source under the terms of the
+https://opensource.org/licenses/MIT[MIT License].
