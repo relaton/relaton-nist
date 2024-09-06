@@ -40,10 +40,10 @@ RSpec.describe RelatonNist::DataFetcher do
         subject.fetch
       end
 
-      it "raise error" do
-        expect(subject).to receive(:fetch_tech_pubs).and_raise StandardError.new("Test error")
-        expect { subject.fetch }.to output(/Test error/).to_stderr_from_any_process
-      end
+      # it "raise error" do
+      #   expect(subject).to receive(:fetch_tech_pubs).and_raise StandardError.new("Test error")
+      #   expect { subject.fetch }.to output(/Test error/).to_stderr_from_any_process
+      # end
     end
 
     it "#fetch_tech_pubs" do

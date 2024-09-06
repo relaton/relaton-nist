@@ -358,13 +358,13 @@ RelatonNist::NistBibliographicItem.from_hash hash
 ====
 
 
-
 === Fetching data
 
-On a search, the data sources are fetched and stored in the user's
-cache.
+On a search, the CSRC data sources are fetched and stored in the user's cache.
 
-The following method fetches all the documents from the dataset, then saves them to the `./data` folder in YAML format.
+This gem uses the https://github.com/usnistgov/NIST-Tech-Pubs/releases/download/May2024/allrecords-MODS.xml dataset as NIST-Tech-Pubs data source.
+
+The following method fetches all the documents from the NIST-Tech-Pubs dataset, then saves them to the `./data` folder in YAML format.
 
 .Fetching all data with default configuration
 [example]
