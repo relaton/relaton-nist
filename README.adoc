@@ -211,7 +211,7 @@ RelatonNist::NistBibliographicItem.from_hash hash
 
 === Fetch data
 
-This gem uses the https://raw.githubusercontent.com/usnistgov/NIST-Tech-Pubs/nist-pages/xml/allrecords.xml dataset as one of data sources.
+This gem uses the https://github.com/usnistgov/NIST-Tech-Pubs/releases/download/May2024/allrecords-MODS.xml dataset as one of data sources.
 
 The method `RelatonNist::DataFetcher.fetch(output: "data", format: "yaml")` fetches all the documents from the datast and save them to the `./data` folder in YAML format.
 Arguments:

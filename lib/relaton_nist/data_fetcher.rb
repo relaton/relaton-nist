@@ -65,8 +65,8 @@ module RelatonNist
       t2 = Time.now
       puts "Stopped at: #{t2}"
       puts "Done in: #{(t2 - t1).round} sec."
-    rescue StandardError => e
-      Util.error "#{e.message}\n#{e.backtrace[0..5].join("\n")}"
+    # rescue StandardError => e
+    #   Util.error "#{e.message}\n#{e.backtrace[0..5].join("\n")}"
     end
 
     def fetch_tech_pubs
