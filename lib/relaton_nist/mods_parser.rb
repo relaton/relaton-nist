@@ -39,7 +39,7 @@ module RelatonNist
     end
 
     def get_id_from_str(str)
-      str.match(/\/((?:NBS|NIST).+)/)[1].gsub(".", " ")
+      str.match(/\/((?:NBS|NIST).+)/i)[1].gsub(".", " ").sub(/^([^\d]+)/, '\1'.upcase)
     end
 
     # @return [String]
