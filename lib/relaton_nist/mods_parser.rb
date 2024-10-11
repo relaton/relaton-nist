@@ -29,31 +29,41 @@ module RelatonNist
     def parse_docid
       [
         { type: "NIST", id: pub_id, primary: true },
-        { type: "DOI", id: doi },
+        { type: "DOI", id: parse_doi },
       ].map { |id| RelatonBib::DocumentIdentifier.new(**id) }
     end
 
     # @return [String]
     def pub_id
-      get_id_from_str doi
+      get_id_from_str parse_doi
     end
 
     def get_id_from_str(str)
-      str.match(/\/((?:NBS|NIST).+)/i)[1].gsub(".", " ").sub(/^([^\d]+)/, '\1'.upcase)
+      ::Pubid::Nist::Identifier.parse(str).to_s
+    rescue ::Pubid::Core::Errors::ParseError
+      str.gsub(".", " ").sub(/^[\D]+/, &:upcase)
     end
 
     # @return [String]
-    def doi
-      url = @doc.location.reduce(nil) { |m, l| m || l.url.detect { |u| u.usage == "primary display" } }
-      id = url.content.match(/10\.6028\/.+/)[0]
+    def replace_wrong_doi(id)
       case id
-      when "10.6028/NBS.CIRC.sup" then "10.6028/NBS.CIRC.24e7sup"
-      when "10.6028/NBS.CIRC.supJun1925-Jun1926" then "10.6028/NBS.CIRC.24e7sup2"
-      when "10.6028/NBS.CIRC.supJun1925-Jun1927" then "10.6028/NBS.CIRC.24e7sup3"
-      when "10.6028/NBS.CIRC.24supJuly1922" then "10.6028/NBS.CIRC.24e6sup"
-      when "10.6028/NBS.CIRC.24supJan1924" then "10.6028/NBS.CIRC.24e6sup2"
+      when "NBS.CIRC.sup" then "NBS.CIRC.24e7sup"
+      when "NBS.CIRC.supJun1925-Jun1926" then "NBS.CIRC.24e7sup2"
+      when "NBS.CIRC.supJun1925-Jun1927" then "NBS.CIRC.24e7sup3"
+      when "NBS.CIRC.24supJuly1922" then "NBS.CIRC.24e6sup"
+      when "NBS.CIRC.24supJan1924" then "NBS.CIRC.24e6sup2"
       else id
       end
+    end
+
+    def parse_doi
+      url = @doc.location.reduce(nil) { |m, l| m || l.url.detect { |u| u.usage == "primary display" } }
+      id = remove_doi_prefix(url.content)
+      replace_wrong_doi(id)
+    end
+
+    def remove_doi_prefix(id)
+      id.match(/10\.6028\/(.+)/)[1]
     end
 
     # @return [Array<RelatonBib::TypedTitleString>]
@@ -180,7 +190,8 @@ module RelatonNist
         item.other_type
       else
         item.name[0].name_part[0].content
-      end
+      end => id
+      replace_wrong_doi remove_doi_prefix(id)
     end
 
     def parse_place

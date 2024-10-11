@@ -8,13 +8,13 @@ describe RelatonNist::ModsParser do
   end
 
   context "instance methods" do
-    let(:collection) do
+    let(:doc) do
       xml = File.read "spec/examples/allrecords-MODS.xml", encoding: "UTF-8"
-      LocMods::Collection.from_xml xml
+      LocMods::Collection.from_xml(xml).mods[0]
     end
 
     subject do
-      described_class.new collection.mods[0], double(:series)
+      described_class.new doc, double(:series)
     end
 
     it "parse" do
@@ -38,33 +38,48 @@ describe RelatonNist::ModsParser do
     end
 
     it "parse_docid" do
-      expect(subject).to receive(:pub_id).and_return "pub_id"
-      expect(subject).to receive(:doi).and_return "doi"
-      expect(RelatonBib::DocumentIdentifier).to receive(:new).with(type: "NIST", id: "pub_id", primary: true)
-      expect(RelatonBib::DocumentIdentifier).to receive(:new).with(type: "DOI", id: "doi")
-      subject.parse_docid
+      docid = subject.parse_docid
+      expect(docid).to be_instance_of Array
+      expect(docid.size).to eq 2
+      expect(docid[0]).to be_instance_of RelatonBib::DocumentIdentifier
+      expect(docid[0].type).to eq "NIST"
+      expect(docid[0].id).to eq "NIST IR 6229"
+      expect(docid[0].primary).to be true
+      expect(docid[1].type).to eq "DOI"
+      expect(docid[1].id).to eq "NIST.IR.6229"
     end
 
-    it "pub_id" do
-      expect(subject.pub_id).to eq "NIST IR 6229"
-    end
+    context "pub_id" do
+      it { expect(subject.pub_id).to eq "NIST IR 6229" }
 
-    context "doi" do
-      it { expect(subject.doi).to eq "10.6028/NIST.IR.6229" }
-
-      shared_examples "fix doi" do |url, fixed_doi|
-        it "10.6028/NBS.CIRC.sup" do
-          doc = subject.instance_variable_get :@doc
-          expect(doc.location[0].url[0]).to receive(:content).and_return url
-          expect(subject.doi).to eq fixed_doi
+      shared_examples "parse IDs from MODS" do |doi, pub_id|
+        it doi do
+          doc.location[0].url[0].content = "https://doi.org/10.6028/#{doi}"
+          expect(subject.pub_id).to eq pub_id
         end
       end
 
-      it_behaves_like "fix doi", "https://doi.org/10.6028/NBS.CIRC.sup", "10.6028/NBS.CIRC.24e7sup"
-      it_behaves_like "fix doi", "https://doi.org/10.6028/NBS.CIRC.supJun1925-Jun1926", "10.6028/NBS.CIRC.24e7sup2"
-      it_behaves_like "fix doi", "https://doi.org/10.6028/NBS.CIRC.supJun1925-Jun1927", "10.6028/NBS.CIRC.24e7sup3"
-      it_behaves_like "fix doi", "https://doi.org/10.6028/NBS.CIRC.24supJuly1922", "10.6028/NBS.CIRC.24e6sup"
-      it_behaves_like "fix doi", "https://doi.org/10.6028/NBS.CIRC.24supJan1924", "10.6028/NBS.CIRC.24e6sup2"
+      it_behaves_like "parse IDs from MODS", "NIST.HB.135e2022-upd1", "NIST HB 135e2022-upd1"
+      it_behaves_like "parse IDs from MODS", "NIST.IR.8170-upd", "NIST IR 8170-upd"
+      it_behaves_like "parse IDs from MODS", "NIST.AMS.300-8r1/upd", "NIST AMS 300-8r1/upd"
+      it_behaves_like "parse IDs from MODS", "NIST.IR.8259Apt", "NIST IR 8259Apt"
+      it_behaves_like "parse IDs from MODS", "nbs.tn.671", "NBS TN 671"
+      it_behaves_like "parse IDs from MODS", "NBS.CIRC.supJun1925-Jun1926", "NBS CIRC 24e7sup2"
+      it_behaves_like "parse IDs from MODS", "NIST.MONO.1-1b", "NIST MONO 1-1b"
+    end
+
+    context "replace_wrong_doi" do
+      shared_examples "replace doi" do |orig_doi, fixed_doi|
+        it orig_doi do
+          expect(subject.replace_wrong_doi(orig_doi)).to eq fixed_doi
+        end
+      end
+
+      it_behaves_like "replace doi", "NBS.CIRC.sup", "NBS.CIRC.24e7sup"
+      it_behaves_like "replace doi", "NBS.CIRC.supJun1925-Jun1926", "NBS.CIRC.24e7sup2"
+      it_behaves_like "replace doi", "NBS.CIRC.supJun1925-Jun1927", "NBS.CIRC.24e7sup3"
+      it_behaves_like "replace doi", "NBS.CIRC.24supJuly1922", "NBS.CIRC.24e6sup"
+      it_behaves_like "replace doi", "NBS.CIRC.24supJan1924", "NBS.CIRC.24e6sup2"
     end
 
     context "parse_title" do
