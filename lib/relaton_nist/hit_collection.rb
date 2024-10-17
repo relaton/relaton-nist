@@ -23,7 +23,7 @@ module RelatonNist
     #
     def initialize(text, year = nil, opts = {})
       super text, year
-      @reference = year && !text.match?(/:\d{4}$/) ? "#{text}:#{year}" : text
+      @reference = text # year && !text.match?(/:\d{4}$/) ? "#{text}-#{year}" : text
       @opts = opts
     end
 
@@ -58,21 +58,29 @@ module RelatonNist
     # @return [Array<RelatonNist::Hit>] hits
     #
     def search_filter # rubocop:disable Metrics/AbcSize,Metrics/CyclomaticComplexity,Metrics/PerceivedComplexity,Metrics/MethodLength
+      refid = ::Pubid::Nist::Identifier.parse(@reference)
       arr = @array.select do |item|
-        parts = doi_parts(item.hit[:json]) || code_parts(item.hit[:code])
-        iteration = item.hit.dig(:json, "iteration")
-        draft = parts[:draft] || (!iteration.nil? && iteration.match?(/\wpd/i))
-        refparts[:code] && [parts[:series], item.hit[:series]].include?(refparts[:series]) &&
-          refparts[:code].casecmp(parts[:code].upcase).zero? &&
-          refparts[:prt] == parts[:prt] &&
-          (refparts[:vol].nil? || refparts[:vol] == parts[:vol]) &&
-          (refparts[:ver].nil? || refparts[:ver] == parts[:ver]) &&
-          (refparts[:rev].nil? || refparts[:rev] == parts[:rev]) &&
-          refparts[:draft] == draft && refparts[:add] == parts[:add]
+        pubid = ::Pubid::Nist::Identifier.parse(item.hit[:code].sub(/\.$/, ""))
+        pubid == refid
+        # parts = doi_parts(item.hit[:json]) || code_parts(item.hit[:code])
+        # iteration = item.hit.dig(:json, "iteration")
+        # draft = parts[:draft] || (!iteration.nil? && iteration.match?(/\wpd/i))
+        # refparts[:code] && [parts[:series], item.hit[:series]].include?(refparts[:series]) &&
+        #   refparts[:code].casecmp(parts[:code].upcase).zero? &&
+        #   refparts[:prt] == parts[:prt] &&
+        #   (refparts[:vol].nil? || refparts[:vol] == parts[:vol]) &&
+        #   (refparts[:ver].nil? || refparts[:ver] == parts[:ver]) &&
+        #   (refparts[:rev].nil? || refparts[:rev] == parts[:rev]) &&
+        #   refparts[:draft] == draft && refparts[:add] == parts[:add]
+      rescue StandardError
+        item.hit[:code] == text
       end
+    rescue StandardError
+      arr = @array.select { |item| item.hit[:code] == text }
+    ensure
       dup = self.dup
       dup.array = arr
-      dup
+      return dup
     end
 
     private
@@ -182,6 +190,12 @@ module RelatonNist
       self
     end
 
+    def pubid(id = text)
+      Pubid::Nist::Identifier.parse(id).to_s
+    rescue StandardError
+      id
+    end
+
     #
     # Get hit from GitHub repo
     #
@@ -191,8 +205,8 @@ module RelatonNist
     #
     def from_ga # rubocop:disable Metrics/AbcSize, Metrics/MethodLength
       Util.info "Fetching from Relaton repository ...", key: @reference
-      ref = full_ref
-      return [] if ref.empty?
+      ref = pubid
+      # return [] if ref.empty?
 
       # fn = ref.gsub(%r{[/\s:.]}, "_").upcase
       index = Relaton::Index.find_or_create :nist, url: "#{GHNISTDATA}index-v1.zip", file: INDEX_FILE
@@ -227,24 +241,44 @@ module RelatonNist
         /(?<series>(?<=-)\w+$)/ =~ h["series"]
         title = [h["title-main"], h["title-sub"]].compact.join " - "
         release_date = RelatonBib.parse_date h["published-date"], false
-        Hit.new({ code: docidentifier(h), series: series.upcase, title: title, url: h["uri"],
+        Hit.new({ code: pubs_export_id(h), series: series.upcase, title: title, url: h["uri"],
                   status: h["status"], release_date: release_date, json: h }, self)
       end
     end
 
-    def docidentifier(json) # rubocop:disable Metrics/AbcSize, Metrics/CyclomaticComplexity, Metrics/PerceivedComplexity, Metrics/MethodLength
-      parts = doi_parts(json) || code_parts(json["docidentifier"])
+    def pubs_export_id(json) # rubocop:disable Metrics/AbcSize, Metrics/CyclomaticComplexity, Metrics/PerceivedComplexity, Metrics/MethodLength
+      if json && json["doi"]
+        json["doi"].sub(/^10.6028\//, "")
+      else
+        json["docidentifier"]
+      end => id
+      # parts = doi_parts(json) || code_parts(json["docidentifier"])
       # return json["docidentifier"] unless parts
 
-      id = parts[:code]
-      id = "NIST #{parts[:series]} #{id}" if parts[:series]
-      id += " Part #{parts[:prt]}" if parts[:prt]
-      id += " Vol. #{parts[:vol]}" if parts[:vol]
-      id += " Ver. #{parts[:ver]}" if parts[:ver]
-      id += " Rev. #{parts[:rev]}" if parts[:rev]
-      id += "-Add" if parts[:add]
-      id += " (Draft)" if parts[:draft] || @opts[:stage]
+      id.sub!(/(?:-draft\d*|\.\wpd)$/, "")
+      pid = ::Pubid::Nist::Identifier.parse(id)
+      case json["iteration"]
+      when "final"
+        pid.stage = ::Pubid::Nist::Stage.new id: "f", type: "pd"
+      when "fpd"
+        pid.stage = ::Pubid::Nist::Stage.new id: "f", type: "pd"
+      when /(\w)pd/
+        pid.stage = ::Pubid::Nist::Stage.new id: Regexp.last_match(1), type: "pd"
+      end
+      pid.to_s
+    rescue StandardError
+      id += " #{json["iteration"].sub('final', 'fpd')}" if json["iteration"]
       id
+
+      # id = parts[:code]
+      # id = "NIST #{parts[:series]} #{id}" if parts[:series]
+      # id += " Part #{parts[:prt]}" if parts[:prt]
+      # id += " Vol. #{parts[:vol]}" if parts[:vol]
+      # id += " Ver. #{parts[:ver]}" if parts[:ver]
+      # id += " Rev. #{parts[:rev]}" if parts[:rev]
+      # id += "-Add" if parts[:add]
+      # id += " (Draft)" if parts[:draft] || @opts[:stage]
+      # id
     end
 
     #

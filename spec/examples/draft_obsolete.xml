@@ -3,7 +3,7 @@
   <title format="text/plain" language="en" script="Latn">Resilient Interdomain Traffic Exchange - BGP Security and DDoS Mitigation</title>
   <uri type="src">https://csrc.nist.gov/pubs/sp/800/189/2pd</uri>
   <uri type="doi">https://doi.org/10.6028/NIST.SP.800-189-draft2</uri>
-  <docidentifier type="NIST" primary="true">NIST SP 800-189 (Draft)</docidentifier>
+  <docidentifier type="NIST" primary="true">NIST SP 800-189 2pd</docidentifier>
   <docidentifier type="DOI">NIST.SP.800-189-draft2</docidentifier>
   <date type="published">
     <on>2019-10</on>

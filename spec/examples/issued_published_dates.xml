@@ -1,9 +1,9 @@
 <bibdata type="standard" schema-version="v1.2.9">
-  <fetched>2023-10-17</fetched>
+  <fetched>2024-10-17</fetched>
   <title format="text/plain" language="en" script="Latn">Guide to Attribute Based Access Control (ABAC) Definition and Considerations</title>
   <uri type="src">https://csrc.nist.gov/pubs/sp/800/162/upd2/final</uri>
   <uri type="doi">https://doi.org/10.6028/NIST.SP.800-162</uri>
-  <docidentifier type="NIST" primary="true">NIST SP 800-162</docidentifier>
+  <docidentifier type="NIST" primary="true">NIST SP 800-162 fpd</docidentifier>
   <docidentifier type="DOI">NIST.SP.800-162</docidentifier>
   <date type="published">
     <on>2019-08</on>
@@ -131,9 +131,9 @@
   <relation type="obsoletes">
     <description format="text/plain" language="en" script="Latn">supersedes</description>
     <bibitem>
-      <formattedref format="text/plain" language="en" script="Latn">NIST SP 800-162</formattedref>
+      <formattedref format="text/plain" language="en" script="Latn">NIST SP 800-162 fpd</formattedref>
       <uri type="src">https://csrc.nist.gov/pubs/sp/800/162/upd1/final</uri>
-      <docidentifier type="NIST" primary="true">NIST SP 800-162</docidentifier>
+      <docidentifier type="NIST" primary="true">NIST SP 800-162 fpd</docidentifier>
     </bibitem>
   </relation>
   <place>Gaithersburg, MD</place>

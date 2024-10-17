@@ -2,7 +2,7 @@
   <fetched>2023-10-17</fetched>
   <title format="text/plain" language="en" script="Latn">Guide for Developing Performance Metrics for Information Security</title>
   <uri type="src">https://csrc.nist.gov/pubs/sp/800/80/ipd</uri>
-  <docidentifier type="NIST" primary="true">NIST SP 800-80 (Draft)</docidentifier>
+  <docidentifier type="NIST" primary="true">NIST SP 800-80 ipd</docidentifier>
   <date type="published">
     <on>2006-05</on>
   </date>
@@ -101,9 +101,9 @@
   </copyright>
   <relation type="updates">
     <bibitem>
-      <formattedref format="text/plain" language="en" script="Latn">NIST SP 800-80 (Draft)</formattedref>
+      <formattedref format="text/plain" language="en" script="Latn">NIST SP 800-80 ipd</formattedref>
       <uri type="src">https://csrc.nist.gov/pubs/sp/800/55/r1/final</uri>
-      <docidentifier type="NIST" primary="true">NIST SP 800-80 (Draft)</docidentifier>
+      <docidentifier type="NIST" primary="true">NIST SP 800-80 ipd</docidentifier>
     </bibitem>
   </relation>
   <place>Gaithersburg, MD</place>

@@ -5,7 +5,7 @@
   <title type="main" format="text/plain" language="en" script="Latn">Automation support for security control assessments, volume 1 - overview</title>
   <uri type="doi">https://doi.org/10.6028/NIST.IR.8011-1</uri>
   <docidentifier type="NIST" primary="true">NIST IR 8011-1</docidentifier>
-  <docidentifier type="DOI">10.6028/NIST.IR.8011-1</docidentifier>
+  <docidentifier type="DOI">NIST.IR.8011-1</docidentifier>
   <date type="issued">
     <on>2017-01</on>
   </date>

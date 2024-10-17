@@ -59,13 +59,13 @@ describe RelatonNist::ModsParser do
         end
       end
 
-      it_behaves_like "parse IDs from MODS", "NIST.HB.135e2022-upd1", "NIST HB 135e2022-upd1"
-      it_behaves_like "parse IDs from MODS", "NIST.IR.8170-upd", "NIST IR 8170-upd"
-      it_behaves_like "parse IDs from MODS", "NIST.AMS.300-8r1/upd", "NIST AMS 300-8r1/upd"
-      it_behaves_like "parse IDs from MODS", "NIST.IR.8259Apt", "NIST IR 8259Apt"
+      it_behaves_like "parse IDs from MODS", "NIST.HB.135e2022-upd1", "NIST HB 135e2022/Upd1-202205"
+      it_behaves_like "parse IDs from MODS", "NIST.IR.8170-upd", "NIST IR 8170/Upd1-202003"
+      it_behaves_like "parse IDs from MODS", "NIST.AMS.300-8r1/upd", "NIST AMS 300-8r1/Upd1-202102"
+      it_behaves_like "parse IDs from MODS", "NIST.IR.8259Apt", "NIST IR 8259A por"
       it_behaves_like "parse IDs from MODS", "nbs.tn.671", "NBS TN 671"
       it_behaves_like "parse IDs from MODS", "NBS.CIRC.supJun1925-Jun1926", "NBS CIRC 24e7sup2"
-      it_behaves_like "parse IDs from MODS", "NIST.MONO.1-1b", "NIST MONO 1-1b"
+      it_behaves_like "parse IDs from MODS", "NIST.MONO.1-1b", "NIST MONO 1-1B"
     end
 
     context "replace_wrong_doi" do
