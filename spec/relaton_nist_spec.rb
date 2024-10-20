@@ -487,5 +487,10 @@ RSpec.describe RelatonNist do
       #   expect(bib.docidentifier[0].id).to eq "NIST SP 800-55 Rev. 1"
       # end
     end
+
+    it "NIST SP 800-154" do
+      result = RelatonNist::NistBibliography.get "NIST SP 800-154"
+      expect(result.docidentifier.first.id).to eq "NIST SP 800-154 ipd"
+    end
   end
 end

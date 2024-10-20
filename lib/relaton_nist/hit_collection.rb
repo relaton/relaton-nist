@@ -291,15 +291,15 @@ module RelatonNist
 
       ref = "#{refparts[:series]} #{refparts[:code]}"
       d = Date.strptime year, "%Y" if year
-      statuses = %w[draft-public draft-prelim]
+      # statuses = %w[draft-public draft-prelim]
       PubsExport.instance.data.select do |doc|
         next unless match_year?(doc, d)
 
-        if @opts[:stage]&.include?("PD")
-          next unless statuses.include? doc["status"]
-        else
-          next unless doc["status"] == "final"
-        end
+        # if @opts[:stage]&.include?("PD")
+        #   next unless statuses.include? doc["status"]
+        # else
+        #   next unless doc["iteration"] == "final"
+        # end
         doc["docidentifier"].include?(ref) || doc["docidentifier"].include?(full_ref)
       end
     end
