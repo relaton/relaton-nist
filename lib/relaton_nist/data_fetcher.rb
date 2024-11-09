@@ -6,7 +6,7 @@ require_relative "mods_parser"
 
 module RelatonNist
   class DataFetcher
-    URL = "https://github.com/usnistgov/NIST-Tech-Pubs/releases/download/Oct2024/allrecords-MODS.xml"
+    URL = "https://github.com/usnistgov/NIST-Tech-Pubs/releases/download/Nov2024/allrecords-MODS.xml"
 
     def initialize(output, format)
       @output = output

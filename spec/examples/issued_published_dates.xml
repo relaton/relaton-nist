@@ -1,15 +1,13 @@
 <bibdata type="standard" schema-version="v1.2.9">
-  <fetched>2024-10-17</fetched>
+  <fetched>2024-11-08</fetched>
   <title format="text/plain" language="en" script="Latn">Guide to Attribute Based Access Control (ABAC) Definition and Considerations</title>
-  <uri type="src">https://csrc.nist.gov/pubs/sp/800/162/upd2/final</uri>
-  <uri type="doi">https://doi.org/10.6028/NIST.SP.800-162</uri>
+  <uri type="src">https://csrc.nist.gov/pubs/sp/800/162/final</uri>
   <docidentifier type="NIST" primary="true">NIST SP 800-162 fpd</docidentifier>
-  <docidentifier type="DOI">NIST.SP.800-162</docidentifier>
   <date type="published">
-    <on>2019-08</on>
+    <on>2014-01</on>
   </date>
-  <date type="updated">
-    <on>2019-08</on>
+  <date type="obsoleted">
+    <on>2019-02</on>
   </date>
   <date type="issued">
     <on>2014-01</on>
@@ -115,11 +113,11 @@
   <script>Latn</script>
   <status>
     <stage>final</stage>
-    <substage>active</substage>
+    <substage>withdrawn</substage>
     <iteration>final</iteration>
   </status>
   <copyright>
-    <from>2019</from>
+    <from>2014</from>
     <owner>
       <organization>
         <name>National Institute of Standards and Technology</name>
@@ -128,8 +126,7 @@
       </organization>
     </owner>
   </copyright>
-  <relation type="obsoletes">
-    <description format="text/plain" language="en" script="Latn">supersedes</description>
+  <relation type="updates">
     <bibitem>
       <formattedref format="text/plain" language="en" script="Latn">NIST SP 800-162 fpd</formattedref>
       <uri type="src">https://csrc.nist.gov/pubs/sp/800/162/upd1/final</uri>
@@ -137,13 +134,13 @@
     </bibitem>
   </relation>
   <place>Gaithersburg, MD</place>
-  <keyword>access control</keyword>
-  <keyword>access control mechanism</keyword>
   <keyword>access control model</keyword>
   <keyword>access control policy</keyword>
   <keyword>attribute based access control (ABAC)</keyword>
   <keyword>authorization</keyword>
   <keyword>privilege</keyword>
+  <keyword>access control mechanism</keyword>
+  <keyword>access control</keyword>
   <ext schema-version="v1.0.0">
     <doctype>standard</doctype>
   </ext>

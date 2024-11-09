@@ -57,21 +57,12 @@ module RelatonNist
     #
     # @return [Array<RelatonNist::Hit>] hits
     #
-    def search_filter # rubocop:disable Metrics/AbcSize,Metrics/CyclomaticComplexity,Metrics/PerceivedComplexity,Metrics/MethodLength
+    def search_filter
       refid = ::Pubid::Nist::Identifier.parse(@reference)
+      parts = exclude_parts refid
       arr = @array.select do |item|
         pubid = ::Pubid::Nist::Identifier.parse(item.hit[:code].sub(/\.$/, ""))
-        pubid == refid
-        # parts = doi_parts(item.hit[:json]) || code_parts(item.hit[:code])
-        # iteration = item.hit.dig(:json, "iteration")
-        # draft = parts[:draft] || (!iteration.nil? && iteration.match?(/\wpd/i))
-        # refparts[:code] && [parts[:series], item.hit[:series]].include?(refparts[:series]) &&
-        #   refparts[:code].casecmp(parts[:code].upcase).zero? &&
-        #   refparts[:prt] == parts[:prt] &&
-        #   (refparts[:vol].nil? || refparts[:vol] == parts[:vol]) &&
-        #   (refparts[:ver].nil? || refparts[:ver] == parts[:ver]) &&
-        #   (refparts[:rev].nil? || refparts[:rev] == parts[:rev]) &&
-        #   refparts[:draft] == draft && refparts[:add] == parts[:add]
+        pubid.exclude(*parts) == refid
       rescue StandardError
         item.hit[:code] == text
       end
@@ -81,6 +72,12 @@ module RelatonNist
       dup = self.dup
       dup.array = arr
       return dup
+    end
+
+    def exclude_parts(pubid)
+      %i[stage update].each_with_object([]) do |part, parts|
+        parts << part if pubid.send(part).nil?
+      end
     end
 
     private
@@ -252,8 +249,6 @@ module RelatonNist
       else
         json["docidentifier"]
       end => id
-      # parts = doi_parts(json) || code_parts(json["docidentifier"])
-      # return json["docidentifier"] unless parts
 
       id.sub!(/(?:-draft\d*|\.\wpd)$/, "")
       pid = ::Pubid::Nist::Identifier.parse(id)
@@ -265,20 +260,13 @@ module RelatonNist
       when /(\w)pd/
         pid.stage = ::Pubid::Nist::Stage.new id: Regexp.last_match(1), type: "pd"
       end
+
+      /\/upd(?<upd>\d+)\// =~ json["uri"]
+      pid.update = Pubid::Nist::Update.new number: upd if upd
       pid.to_s
     rescue StandardError
       id += " #{json["iteration"].sub('final', 'fpd')}" if json["iteration"]
       id
-
-      # id = parts[:code]
-      # id = "NIST #{parts[:series]} #{id}" if parts[:series]
-      # id += " Part #{parts[:prt]}" if parts[:prt]
-      # id += " Vol. #{parts[:vol]}" if parts[:vol]
-      # id += " Ver. #{parts[:ver]}" if parts[:ver]
-      # id += " Rev. #{parts[:rev]}" if parts[:rev]
-      # id += "-Add" if parts[:add]
-      # id += " (Draft)" if parts[:draft] || @opts[:stage]
-      # id
     end
 
     #
