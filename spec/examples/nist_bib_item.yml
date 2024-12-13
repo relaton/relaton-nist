@@ -33,9 +33,6 @@ docstatus:
   substage:
     value: active
 
-doctype:
-  type: standard
-
 date:
   - type: published
     value: "2018-12-01"
@@ -80,24 +77,27 @@ link:
 relation:
   - type: partOf
     bibitem:
-      doctype:
-        type: standard
       formattedref:
         content: NISTIR 8011 Vol. 1
         format: text/plain
       link:
       - type: src
         content: https://csrc.nist.gov/publications/detail/nistir/8011/vol-1/final
+      ext:
+        doctype:
+          type: standard
+
   - type: updates
     bibitem:
-      doctype:
-        type: standard
       formattedref:
         content: SP 800-53A Rev. 4
         format: text/plain
       link:
       - type: src
         content: https://csrc.nist.gov/publications/detail/sp/800-53a/rev-4/final
+      ext:
+        doctype:
+          type: standard
 
 series:
 - formattedref:
@@ -118,10 +118,13 @@ keyword:
   - content: authorization boundary
   - content: automation
 
-commentperiod:
-  from: "2018-12-17"
-  to: "2019-03-15"
-  extended: "2019-05-15"
-
 ext:
   schema-version: v1.0.0
+
+  doctype:
+    type: standard
+
+  commentperiod:
+    from: "2018-12-17"
+    to: "2019-03-15"
+    extended: "2019-05-15"

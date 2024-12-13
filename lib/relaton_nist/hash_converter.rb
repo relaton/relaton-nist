@@ -24,9 +24,10 @@ module RelatonNist
     end
 
     def commentperiod_hash_to_bib(ret)
-      return unless ret[:commentperiod]
+      cp = ret.dig(:ext, :commentperiod) || ret[:commentperiod] # @TODO: remove ret[:commentperiod] after all gem versions are updated
+      return unless cp
 
-      ret[:commentperiod] = CommentPeriod.new(**ret[:commentperiod])
+      ret[:commentperiod] = CommentPeriod.new(**cp)
     end
 
     # @param ret [Hash]

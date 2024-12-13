@@ -98,8 +98,12 @@ module RelatonNist
     def to_hash(embedded: false)
       hash = super
       # hash["keyword"] = single_element_array(keyword) if keyword&.any?
-      hash["commentperiod"] = commentperiod.to_hash if commentperiod
+      hash["ext"]["commentperiod"] = commentperiod.to_hash if commentperiod
       hash
+    end
+
+    def has_ext?
+      super || commentperiod
     end
 
     # @param prefix [String]
