@@ -1,15 +1,15 @@
 lib = File.expand_path("lib", __dir__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require "relaton_nist/version"
+require "relaton/nist/version"
 
 Gem::Specification.new do |spec|
   spec.name          = "relaton-nist"
-  spec.version       = RelatonNist::VERSION
+  spec.version       = Relaton::Nist::VERSION
   spec.authors       = ["Ribose Inc."]
   spec.email         = ["open.source@ribose.com"]
 
-  spec.summary       = "RelatonNist: retrive NIST standards."
-  spec.description   = "RelatonNist: retrive NIST standards."
+  spec.summary       = "Relaton::Nist: retrive NIST standards."
+  spec.description   = "Relaton::Nist: retrive NIST standards."
   spec.homepage      = "https://github.com/metanorma/relaton-nist"
   spec.license       = "MIT"
 
@@ -26,7 +26,7 @@ Gem::Specification.new do |spec|
   spec.add_dependency "base64"
   spec.add_dependency "loc_mods", "~> 0.2.0"
   spec.add_dependency "pubid", "~> 0.1.0"
-  spec.add_dependency "relaton-bib", "~> 1.20.0"
+  spec.add_dependency "relaton-bib", "~> 2.0.0-alpha.1"
   spec.add_dependency "relaton-index", "~> 0.2.0"
   spec.add_dependency "rubyzip"
 end
