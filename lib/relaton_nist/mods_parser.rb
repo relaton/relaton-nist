@@ -71,7 +71,9 @@ module RelatonNist
       title = @doc.title_info.reduce([]) do |a, ti|
         next a if ti.type == "alternative"
 
-        a += ti.title.map { |t| create_title(t, "title-main", ti.non_sort[0]) }
+        a += ti.title.map { |t| create_title(t, "title-main", ti.non_sort&.first) }
+        next a unless ti.sub_title
+
         a + ti.sub_title.map { |t| create_title(t, "title-part") }
       end
       if title.size > 1
@@ -139,7 +141,7 @@ module RelatonNist
         entity, default_role = create_entity(name)
         next unless entity
 
-        role = name.role.reduce([]) do |a, r|
+        role = (name.role || []).reduce([]) do |a, r|
           a + r.role_term.map { |rt| { type: rt.content } }
         end
         role << { type: default_role } if role.empty?
@@ -159,9 +161,10 @@ module RelatonNist
       cname = name.name_part.reject(&:type).map(&:content).join(" ")
       complatename = RelatonBib::LocalizedString.new cname, "en"
       fname = RelatonBib::FullName.new completename: complatename
-      name_id = name.name_identifier[0]
-      identifier = RelatonBib::PersonIdentifier.new "uri", name_id.content if name_id
-      RelatonBib::Person.new name: fname, identifier: [identifier]
+      name_id = name.name_identifier&.first
+      identifier = []
+      identifier << RelatonBib::PersonIdentifier.new("uri", name_id.content) if name_id
+      RelatonBib::Person.new name: fname, identifier: identifier
     end
 
     def create_org(name)
