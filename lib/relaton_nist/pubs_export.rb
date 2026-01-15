@@ -36,11 +36,18 @@ module RelatonNist
     # @prarm ctime [Time, nil] file creation time
     #
     def fetch_data(ctime)
-      if !ctime || ctime < OpenURI.open_uri("#{PUBS_EXPORT}.meta").last_modified
+      if !ctime || ctime < last_modified
         @data = nil
         uri_open = URI.method(:open) || Kernel.method(:open)
         FileUtils.mkdir_p DATAFILEDIR
         IO.copy_stream(uri_open.call("#{PUBS_EXPORT}.zip"), DATAFILE)
+      end
+    end
+
+    def last_modified
+      uri = URI("#{PUBS_EXPORT}.meta")
+      Net::HTTP.start(uri.host, uri.port, use_ssl: uri.scheme == 'https') do |http|
+        Time.httpdate(http.head(uri.request_uri)['last-modified'])
       end
     end
 

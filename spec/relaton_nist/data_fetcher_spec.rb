@@ -47,8 +47,7 @@ RSpec.describe RelatonNist::DataFetcher do
     end
 
     it "#fetch_tech_pubs" do
-      io = double "io", read: xml
-      expect(OpenURI).to receive(:open_uri).with(RelatonNist::DataFetcher::URL).and_return io
+      expect(Net::HTTP).to receive(:get).with(kind_of(URI::HTTPS)).and_return xml
       parser = double "parser"
       expect(parser).to receive(:parse).and_return(:bib).twice
       expect(RelatonNist::ModsParser).to receive(:new)

@@ -15,7 +15,8 @@ module RelatonNist
       end
 
       def fetch_gh(hit_data)
-        yaml = OpenURI.open_uri "#{HitCollection::GHNISTDATA}#{hit_data[:path]}"
+        uri = URI.parse "#{HitCollection::GHNISTDATA}#{hit_data[:path]}"
+        yaml = Net::HTTP.get(uri)
         hash = YAML.safe_load yaml
         hash["fetched"] = Date.today.to_s
         NistBibliographicItem.from_hash hash

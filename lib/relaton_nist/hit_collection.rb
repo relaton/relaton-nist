@@ -4,7 +4,8 @@ require "zip"
 require "fileutils"
 require "relaton_nist/hit"
 require "addressable/uri"
-require "open-uri"
+# require "open-uri"
+require "net/http"
 
 module RelatonNist
   # Hit collection.
@@ -203,24 +204,13 @@ module RelatonNist
     def from_ga # rubocop:disable Metrics/AbcSize, Metrics/MethodLength
       Util.info "Fetching from Relaton repository ...", key: @reference
       ref = pubid
-      # return [] if ref.empty?
 
-      # fn = ref.gsub(%r{[/\s:.]}, "_").upcase
       index = Relaton::Index.find_or_create :nist, url: "#{GHNISTDATA}index-v1.zip", file: INDEX_FILE
       rows = index.search(ref).sort_by { |r| r[:id] }
-      # return [] unless row
-
-      # yaml = OpenURI.open_uri "#{GHNISTDATA}#{row[:file]}"
-      # hash = YAML.safe_load yaml
-      # hash["fetched"] = Date.today.to_s
-      # bib = RelatonNist::NistBibliographicItem.from_hash hash
-      # id = bib.docidentifier.find(&:primary).id
 
       rows.map do |row|
         Hit.new({ code: row[:id], path: row[:file] }, self)
       end
-      # hit.fetch = bib
-      # [hit]
     rescue OpenURI::HTTPError => e
       return [] if e.io.status[0] == "404"
 

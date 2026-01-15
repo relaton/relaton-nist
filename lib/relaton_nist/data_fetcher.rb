@@ -70,10 +70,9 @@ module RelatonNist
     end
 
     def fetch_tech_pubs
-      docs = LocMods::Collection.from_xml OpenURI.open_uri(URL).read
-      # docs.xpath(
-      #   "/body/query/doi_record/report-paper/report-paper_metadata",
-      # )
+      uri = URI(URL)
+      xml_data = Net::HTTP.get(uri)
+      docs = LocMods::Collection.from_xml xml_data
       docs.mods.each { |doc| write_file ModsParser.new(doc, series).parse }
     end
 
