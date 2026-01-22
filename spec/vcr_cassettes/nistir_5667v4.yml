@@ -13,6 +13,8 @@ http_interactions:
       - "*/*"
       User-Agent:
       - Ruby
+      Host:
+      - raw.githubusercontent.com
   response:
     status:
       code: 200
@@ -39,21 +41,21 @@ http_interactions:
       X-Xss-Protection:
       - 1; mode=block
       X-Github-Request-Id:
-      - 4226:AAB56:2845CF:32F9A3:696869CC
+      - 519C:348DC8:39CDE2:461D6F:69729D0A
       Accept-Ranges:
       - bytes
       Date:
-      - Thu, 15 Jan 2026 04:15:14 GMT
+      - Thu, 22 Jan 2026 21:56:31 GMT
       Via:
       - 1.1 varnish
       X-Served-By:
-      - cache-iad-kjyo7100046-IAD
+      - cache-pdk-kpdk2140056-PDK
       X-Cache:
       - HIT
       X-Cache-Hits:
       - '1'
       X-Timer:
-      - S1768450515.579326,VS0,VE4
+      - S1769118992.826249,VS0,VE2
       Vary:
       - Authorization,Accept-Encoding
       Access-Control-Allow-Origin:
@@ -61,9 +63,9 @@ http_interactions:
       Cross-Origin-Resource-Policy:
       - cross-origin
       X-Fastly-Request-Id:
-      - 151fcd7e8980fc15c04a4a035b69a7d21a15c8d9
+      - c3829cb216ac24d2cbc2fd843329ac6f6b46b51e
       Expires:
-      - Thu, 15 Jan 2026 04:20:14 GMT
+      - Thu, 22 Jan 2026 22:01:31 GMT
       Source-Age:
       - '6'
     body:
@@ -3082,7 +3084,7 @@ http_interactions:
         /077//3/UEsBAh4DFAAAAAgAJXSNWRySGjHZEAIAWdoPAA0AGAAAAAAAAQAA
         AKSBAAAAAGluZGV4LXYxLnlhbWxVVAUAA6VFXGd1eAsAAQTpAwAABHYAAABQ
         SwUGAAAAAAEAAQBTAAAAIBECAAAA
-  recorded_at: Thu, 15 Jan 2026 04:15:14 GMT
+  recorded_at: Thu, 22 Jan 2026 21:56:31 GMT
 - request:
     method: get
     uri: https://raw.githubusercontent.com/relaton/relaton-data-nist/main/data/NISTIR_5667V4.yaml
@@ -3096,6 +3098,8 @@ http_interactions:
       - "*/*"
       User-Agent:
       - Ruby
+      Host:
+      - raw.githubusercontent.com
   response:
     status:
       code: 200
@@ -3122,21 +3126,21 @@ http_interactions:
       X-Xss-Protection:
       - 1; mode=block
       X-Github-Request-Id:
-      - '08C4:1E420A:2931AD:33E903:696869D1'
+      - 34E4:1A5DC4:35059E:41557D:69729D0E
       Accept-Ranges:
       - bytes
       Date:
-      - Thu, 15 Jan 2026 04:15:15 GMT
+      - Thu, 22 Jan 2026 21:56:32 GMT
       Via:
       - 1.1 varnish
       X-Served-By:
-      - cache-iad-kjyo7100170-IAD
+      - cache-pdk-kpdk2140066-PDK
       X-Cache:
       - MISS
       X-Cache-Hits:
       - '0'
       X-Timer:
-      - S1768450515.943083,VS0,VE70
+      - S1769118992.173568,VS0,VE70
       Vary:
       - Authorization,Accept-Encoding
       Access-Control-Allow-Origin:
@@ -3144,9 +3148,9 @@ http_interactions:
       Cross-Origin-Resource-Policy:
       - cross-origin
       X-Fastly-Request-Id:
-      - e329a19101ae0abe557d03f58cb60acd35e33d54
+      - b7ad551bef221f495e15c1221b046f870604dca9
       Expires:
-      - Thu, 15 Jan 2026 04:20:15 GMT
+      - Thu, 22 Jan 2026 22:01:32 GMT
       Source-Age:
       - '0'
     body:
@@ -3187,5 +3191,5 @@ http_interactions:
         b246CiAgLSBuYW1lOiBNYXJ5bGFuZAogICAgaXNvOiBNRApleHQ6CiAgc2No
         ZW1hLXZlcnNpb246IHYxLjAuMAogIGRvY3R5cGU6CiAgICB0eXBlOiBzdGFu
         ZGFyZAo=
-  recorded_at: Thu, 15 Jan 2026 04:15:15 GMT
-recorded_with: VCR 6.3.1
+  recorded_at: Thu, 22 Jan 2026 21:56:32 GMT
+recorded_with: VCR 6.4.0

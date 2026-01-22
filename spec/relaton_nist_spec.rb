@@ -249,14 +249,14 @@ RSpec.describe RelatonNist do
             expect do
               RelatonNist::NistBibliography.get("NISTIR 8200", "2017", {})
             end.to output(
-              /\[relaton-nist\] INFO: \(NIST IR 8200\) No found\./,
+              /\[relaton-nist\] INFO: \(NIST IR 8200\) Not found\./,
             ).to_stderr_from_any_process
           end
         end
 
         it "contains EP at the end" do
           expect { RelatonNist::NistBibliography.get "NIST FIPS 201 EP" }.to output(
-            /\[relaton-nist\] INFO: \(NIST FIPS 201 EP\) No found\./,
+            /\[relaton-nist\] INFO: \(NIST FIPS 201 EP\) Not found\./,
           ).to_stderr_from_any_process
         end
       end
@@ -437,7 +437,7 @@ RSpec.describe RelatonNist do
         expect do
           RelatonNist::NistBibliography.get("NIST SP 2222", nil, {})
         end.to output(
-          /\[relaton-nist\] INFO: \(NIST SP 2222\) No found\./,
+          /\[relaton-nist\] INFO: \(NIST SP 2222\) Not found\./,
         ).to_stderr_from_any_process
       end
     end

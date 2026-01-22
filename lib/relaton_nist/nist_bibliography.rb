@@ -173,7 +173,7 @@ module RelatonNist
       # @return [nil] nil
       #
       def fetch_ref_err(ref, year, missed_years)
-        Util.info "No found.", key: ref
+        Util.info "Not found.", key: ref
         unless missed_years.empty?
           Util.info "(There was no match for #{year}, though there " \
                     "were matches found for `#{missed_years.join('`, `')}`.)", key: ref
