@@ -10,7 +10,6 @@ require_relative "nist/bibitem"
 require_relative "nist/bibdata"
 # require "relaton_nist/pubid"
 # require "relaton_nist/nist_bibliography"
-# require "relaton_nist/data_fetcher"
 # require "relaton_nist/pubs_export"
 # require "relaton_nist/tech_pubs_parser"
 
@@ -21,6 +20,8 @@ require_relative "nist/bibdata"
 
 module Relaton
   module Nist
+    INDEXFILE = "index-v1"
+
     class Error < StandardError; end
 
     # Returns hash of XML reammar

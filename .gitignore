@@ -15,3 +15,4 @@
 pubs-export.json
 Gemfile.lock
 .byebug_history
+.claude/
