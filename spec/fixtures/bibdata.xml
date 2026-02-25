@@ -1,4 +1,4 @@
-<bibdata type="standard" schema-version="v1.2.9">
+<bibdata type="standard" schema-version="v1.4.1">
   <fetched>2022-06-22</fetched>
   <title language="en" script="Latn">Automation Support for Security Control Assessments: Software Asset Management</title>
   <uri type="src">http://nvlpubs.nist.gov/nistpubs/ir/2018/NIST.IR.8011-3.pdf</uri>
@@ -69,9 +69,6 @@
     <doctype abbreviation="STD">standard</doctype>
     <subdoctype>technical report</subdoctype>
     <flavor>nist</flavor>
-    <editorialgroup>
-      <committee>Commtitee A</committee>
-    </editorialgroup>
     <commentperiod>
       <from>2018-12-17</from>
       <to>2019-03-15</to>

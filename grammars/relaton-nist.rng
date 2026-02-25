@@ -1,38 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<grammar xmlns="http://relaxng.org/ns/structure/1.0">
+<grammar xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0" xmlns="http://relaxng.org/ns/structure/1.0">
   <include href="biblio-standoc.rng">
     <define name="DocumentType">
       <value>standard</value>
     </define>
-    <define name="editorialgroup">
-      <element name="editorialgroup">
-        <oneOrMore>
-          <ref name="committee"/>
-        </oneOrMore>
-      </element>
-    </define>
-    <define name="BibDataExtensionType">
-      <optional>
-        <attribute name="schema-version"/>
-      </optional>
-      <optional>
-        <ref name="doctype"/>
-      </optional>
-      <optional>
-        <ref name="docsubtype"/>
-      </optional>
-      <ref name="flavor"/>
-      <optional>
-        <ref name="editorialgroup"/>
-      </optional>
-      <zeroOrMore>
-        <ref name="ics"/>
-      </zeroOrMore>
-      <optional>
-        <ref name="commentperiod"/>
-      </optional>
-    </define>
   </include>
+  <define name="BibDataExtensionType" combine="interleave">
+    <optional>
+      <ref name="commentperiod">
+        <a:documentation>The period during which comments may be submitted to the NIST document draft</a:documentation>
+      </ref>
+    </optional>
+  </define>
   <define name="DocRelationType" combine="choice">
     <choice>
       <value>obsoletedBy</value>
@@ -47,25 +26,25 @@
     </choice>
   </define>
   <define name="commentperiod">
+    <a:documentation>The period during which comments may be submitted to the NIST document draft</a:documentation>
     <element name="commentperiod">
       <element name="from">
+        <a:documentation>The beginning of the period during which comments may be submitted to the NIST document draft</a:documentation>
         <ref name="ISO8601Date"/>
       </element>
       <optional>
         <element name="to">
+          <a:documentation>The end of the period during which comments may be submitted to the NIST document draft. 
+The end of the period may change, and may be left open-ended (omitted)</a:documentation>
           <ref name="ISO8601Date"/>
         </element>
       </optional>
       <optional>
         <element name="extended">
+          <a:documentation> The date on which the during which comments may be submitted to the NIST document draft was extended</a:documentation>
           <ref name="ISO8601Date"/>
         </element>
       </optional>
-    </element>
-  </define>
-  <define name="committee">
-    <element name="committee">
-      <text/>
     </element>
   </define>
 </grammar>

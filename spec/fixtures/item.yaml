@@ -1,6 +1,6 @@
 id: NISTIR8011Vol3
 
-schema_version: v1.2.9
+schema_version: v1.4.1
 
 fetched: '2022-06-22'
 
@@ -109,10 +109,6 @@ ext:
 
   subdoctype: technical report
   flavor: nist
-
-  editorialgroup:
-    committee:
-    - Commtitee A
 
   commentperiod:
     from: "2018-12-17"
