@@ -7,7 +7,7 @@ module Relaton
     end
 
     class Item < Bib::Item
-      model Bib::ItemData
+      model ItemData
 
       attribute :date, Date, collection: true
       attribute :relation, Relation, collection: true

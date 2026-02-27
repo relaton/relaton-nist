@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require "pubid"
+require "loc_mods"
 
 module Relaton
   module Nist
@@ -24,8 +25,8 @@ module Relaton
         args = ATTRS.each_with_object({}) do |attr, hash|
           hash[attr] = send("parse_#{attr}")
         end
-        args[:ext] = Ext.new(doctype: parse_doctype)
-        Bib::ItemData.new(**args)
+        args[:ext] = Ext.new(doctype: parse_doctype, flavor: "nilst")
+        ItemData.new(**args)
       end
 
       def parse_type
@@ -209,7 +210,7 @@ module Relaton
         item_id = get_id_from_str related_item_id(item)
         docid = Bib::Docidentifier.new(type: "NIST", content: item_id)
         fref = Bib::LocalizedMarkedUpString.new(content: item_id)
-        Bib::ItemData.new(docidentifier: [docid], formattedref: fref)
+        ItemData.new(docidentifier: [docid], formattedref: fref)
       end
 
       def related_item_id(item)

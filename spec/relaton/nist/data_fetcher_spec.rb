@@ -48,17 +48,6 @@ RSpec.describe Relaton::Nist::DataFetcher do
       subject.fetch_tech_pubs
     end
 
-    xit "#add_static_files" do
-      expect(Dir).to receive(:[]).with("./static/*.yaml").and_return ["./static/NISTIR_8296-12.yaml"]
-      docid = Relaton::Bib::Docidentifier.new(type: "NIST", content: "NIST IR 8296-12", primary: true)
-      bib = Relaton::Bib::ItemData.new(docidentifier: [docid])
-      item_class = Relaton::Nist::Item
-      expect(File).to receive(:read).with("./static/NISTIR_8296-12.yaml", encoding: "UTF-8").and_return :yaml_content
-      expect(item_class).to receive(:from_yaml).with(:yaml_content).and_return bib
-      expect(subject.index).to receive(:add_or_update).with("NIST IR 8296-12", "./static/NISTIR_8296-12.yaml")
-      subject.add_static_files
-    end
-
     context "#write_file" do
       let(:docid) { Relaton::Bib::Docidentifier.new(type: "NIST", content: "NIST IR 8296-12") }
       let(:bib) { Relaton::Bib::ItemData.new(docidentifier: [docid]) }

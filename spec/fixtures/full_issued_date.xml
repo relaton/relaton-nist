@@ -1,21 +1,23 @@
-<bibdata type="standard" schema-version="v1.2.9">
-  <fetched>2023-10-17</fetched>
-  <title format="text/plain" language="en" script="Latn">Protecting Information and System Integrity in Industrial Control System Environments - Cybersecurity for the Manufacturing Sector</title>
+<bibdata type="standard" schema-version="v1.4.1">
+  <fetched>2026-02-26</fetched>
+  <title language="en" script="Latn">Protecting Information and System Integrity in Industrial Control System Environments - Cybersecurity for the Manufacturing Sector</title>
   <uri type="src">https://csrc.nist.gov/pubs/sp/1800/10/ipd</uri>
   <docidentifier type="NIST" primary="true">NIST SP 1800-10 ipd</docidentifier>
   <date type="published">
-    <on>2021-09</on>
+    <on>2021-09-23</on>
   </date>
   <date type="obsoleted">
-    <on>2022-03</on>
+    <on>2022-03-16</on>
   </date>
   <date type="issued">
-    <on>2021-09</on>
+    <on>2021-09-23</on>
   </date>
   <contributor>
     <role type="author"/>
     <person>
       <name>
+        <forename language="en" script="Latn">Michael</forename>
+        <surname language="en" script="Latn">Powell</surname>
         <completename language="en" script="Latn">Michael Powell</completename>
       </name>
       <affiliation>
@@ -30,6 +32,8 @@
     <role type="author"/>
     <person>
       <name>
+        <forename language="en" script="Latn">Joseph</forename>
+        <surname language="en" script="Latn">Brule</surname>
         <completename language="en" script="Latn">Joseph M. Brule</completename>
       </name>
       <affiliation>
@@ -44,6 +48,8 @@
     <role type="author"/>
     <person>
       <name>
+        <forename language="en" script="Latn">Michael</forename>
+        <surname language="en" script="Latn">Pease</surname>
         <completename language="en" script="Latn">Michael Pease</completename>
       </name>
       <affiliation>
@@ -58,6 +64,8 @@
     <role type="author"/>
     <person>
       <name>
+        <forename language="en" script="Latn">Keith</forename>
+        <surname language="en" script="Latn">Stouffer</surname>
         <completename language="en" script="Latn">Keith A. Stouffer</completename>
       </name>
       <affiliation>
@@ -72,6 +80,8 @@
     <role type="author"/>
     <person>
       <name>
+        <forename language="en" script="Latn">CheeYee</forename>
+        <surname language="en" script="Latn">Tang</surname>
         <completename language="en" script="Latn">CheeYee Tang</completename>
       </name>
       <affiliation>
@@ -86,6 +96,8 @@
     <role type="author"/>
     <person>
       <name>
+        <forename language="en" script="Latn">Timothy</forename>
+        <surname language="en" script="Latn">Zimmerman</surname>
         <completename language="en" script="Latn">Timothy Zimmerman</completename>
       </name>
       <affiliation>
@@ -100,6 +112,8 @@
     <role type="author"/>
     <person>
       <name>
+        <forename language="en" script="Latn">Chelsea</forename>
+        <surname language="en" script="Latn">Deane</surname>
         <completename language="en" script="Latn">Chelsea Deane</completename>
       </name>
       <affiliation>
@@ -114,6 +128,8 @@
     <role type="author"/>
     <person>
       <name>
+        <forename language="en" script="Latn">John</forename>
+        <surname language="en" script="Latn">Hoyt</surname>
         <completename language="en" script="Latn">John Hoyt</completename>
       </name>
       <affiliation>
@@ -128,6 +144,8 @@
     <role type="author"/>
     <person>
       <name>
+        <forename language="en" script="Latn">Mary</forename>
+        <surname language="en" script="Latn">Raguso</surname>
         <completename language="en" script="Latn">Mary Raguso</completename>
       </name>
       <affiliation>
@@ -142,6 +160,8 @@
     <role type="author"/>
     <person>
       <name>
+        <forename language="en" script="Latn">Aslam</forename>
+        <surname language="en" script="Latn">Sherule</surname>
         <completename language="en" script="Latn">Aslam Sherule</completename>
       </name>
       <affiliation>
@@ -156,6 +176,8 @@
     <role type="author"/>
     <person>
       <name>
+        <forename language="en" script="Latn">Kangmin</forename>
+        <surname language="en" script="Latn">Zheng</surname>
         <completename language="en" script="Latn">Kangmin Zheng</completename>
       </name>
       <affiliation>
@@ -170,6 +192,8 @@
     <role type="author"/>
     <person>
       <name>
+        <forename language="en" script="Latn">Matthew</forename>
+        <surname language="en" script="Latn">Zopf</surname>
         <completename language="en" script="Latn">Matthew Zopf</completename>
       </name>
       <affiliation>
@@ -196,19 +220,43 @@
       </organization>
     </owner>
   </copyright>
-  <place>Gaithersburg, MD</place>
-  <keyword>manufacturing</keyword>
-  <keyword>industrial control systems</keyword>
-  <keyword>application allowlisting</keyword>
-  <keyword>file integrity checking</keyword>
-  <keyword>user authentication</keyword>
-  <keyword>user authorization</keyword>
-  <keyword>behavioral anomaly detection</keyword>
-  <keyword>remote access</keyword>
-  <keyword>software modification</keyword>
-  <keyword>firmware modification</keyword>
+  <place>
+    <city>Gaithersburg</city>
+    <region iso="MD"></region>
+  </place>
+  <keyword>
+    <taxon>manufacturing</taxon>
+  </keyword>
+  <keyword>
+    <taxon>industrial control systems</taxon>
+  </keyword>
+  <keyword>
+    <taxon>application allowlisting</taxon>
+  </keyword>
+  <keyword>
+    <taxon>file integrity checking</taxon>
+  </keyword>
+  <keyword>
+    <taxon>user authentication</taxon>
+  </keyword>
+  <keyword>
+    <taxon>user authorization</taxon>
+  </keyword>
+  <keyword>
+    <taxon>behavioral anomaly detection</taxon>
+  </keyword>
+  <keyword>
+    <taxon>remote access</taxon>
+  </keyword>
+  <keyword>
+    <taxon>software modification</taxon>
+  </keyword>
+  <keyword>
+    <taxon>firmware modification</taxon>
+  </keyword>
   <ext schema-version="v1.0.0">
     <doctype>standard</doctype>
+    <flavor>nist</flavor>
     <commentperiod>
       <from>2021-09-23</from>
       <to>2021-11-07</to>

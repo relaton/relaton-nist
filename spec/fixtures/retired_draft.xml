@@ -1,21 +1,23 @@
-<bibdata type="standard" schema-version="v1.2.9">
-  <fetched>2023-10-17</fetched>
-  <title format="text/plain" language="en" script="Latn">Guide for Developing Performance Metrics for Information Security</title>
+<bibdata type="standard" schema-version="v1.4.1">
+  <fetched>2026-02-26</fetched>
+  <title language="en" script="Latn">Guide for Developing Performance Metrics for Information Security</title>
   <uri type="src">https://csrc.nist.gov/pubs/sp/800/80/ipd</uri>
   <docidentifier type="NIST" primary="true">NIST SP 800-80 ipd</docidentifier>
   <date type="published">
-    <on>2006-05</on>
+    <on>2006-05-04</on>
   </date>
   <date type="obsoleted">
-    <on>2008-11</on>
+    <on>2008-11-01</on>
   </date>
   <date type="issued">
-    <on>2006-05</on>
+    <on>2006-05-01</on>
   </date>
   <contributor>
     <role type="author"/>
     <person>
       <name>
+        <forename language="en" script="Latn">Elizabeth</forename>
+        <surname language="en" script="Latn">Chew</surname>
         <completename language="en" script="Latn">Elizabeth Chew</completename>
       </name>
       <affiliation>
@@ -30,6 +32,8 @@
     <role type="author"/>
     <person>
       <name>
+        <forename language="en" script="Latn">Alicia</forename>
+        <surname language="en" script="Latn">Clay</surname>
         <completename language="en" script="Latn">Alicia Clay</completename>
       </name>
       <affiliation>
@@ -44,6 +48,8 @@
     <role type="author"/>
     <person>
       <name>
+        <forename language="en" script="Latn">Joan</forename>
+        <surname language="en" script="Latn">Hash</surname>
         <completename language="en" script="Latn">Joan Hash</completename>
       </name>
       <affiliation>
@@ -58,6 +64,8 @@
     <role type="author"/>
     <person>
       <name>
+        <forename language="en" script="Latn">Nadya</forename>
+        <surname language="en" script="Latn">Bartol</surname>
         <completename language="en" script="Latn">Nadya Bartol</completename>
       </name>
       <affiliation>
@@ -72,6 +80,8 @@
     <role type="author"/>
     <person>
       <name>
+        <forename language="en" script="Latn">Anthony</forename>
+        <surname language="en" script="Latn">Brown</surname>
         <completename language="en" script="Latn">Anthony Brown</completename>
       </name>
       <affiliation>
@@ -101,17 +111,27 @@
   </copyright>
   <relation type="updates">
     <bibitem>
-      <formattedref format="text/plain" language="en" script="Latn">NIST SP 800-80 ipd</formattedref>
+      <formattedref>NIST SP 800-80 ipd</formattedref>
       <uri type="src">https://csrc.nist.gov/pubs/sp/800/55/r1/final</uri>
       <docidentifier type="NIST" primary="true">NIST SP 800-80 ipd</docidentifier>
     </bibitem>
   </relation>
-  <place>Gaithersburg, MD</place>
-  <keyword>information security program</keyword>
-  <keyword>performance metrics</keyword>
-  <keyword>security metrics</keyword>
+  <place>
+    <city>Gaithersburg</city>
+    <region iso="MD"></region>
+  </place>
+  <keyword>
+    <taxon>information security program</taxon>
+  </keyword>
+  <keyword>
+    <taxon>performance metrics</taxon>
+  </keyword>
+  <keyword>
+    <taxon>security metrics</taxon>
+  </keyword>
   <ext schema-version="v1.0.0">
     <doctype>standard</doctype>
+    <flavor>nist</flavor>
     <commentperiod>
       <from>2006-05-04</from>
       <to>2006-06-19</to>

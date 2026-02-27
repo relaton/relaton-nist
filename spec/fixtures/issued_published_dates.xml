@@ -1,21 +1,23 @@
-<bibdata type="standard" schema-version="v1.2.9">
-  <fetched>2024-11-08</fetched>
-  <title format="text/plain" language="en" script="Latn">Guide to Attribute Based Access Control (ABAC) Definition and Considerations</title>
+<bibdata type="standard" schema-version="v1.4.1">
+  <fetched>2026-02-26</fetched>
+  <title language="en" script="Latn">Guide to Attribute Based Access Control (ABAC) Definition and Considerations</title>
   <uri type="src">https://csrc.nist.gov/pubs/sp/800/162/final</uri>
   <docidentifier type="NIST" primary="true">NIST SP 800-162 fpd</docidentifier>
   <date type="published">
-    <on>2014-01</on>
+    <on>2014-01-16</on>
   </date>
   <date type="obsoleted">
-    <on>2019-02</on>
+    <on>2019-02-25</on>
   </date>
   <date type="issued">
-    <on>2014-01</on>
+    <on>2014-01-01</on>
   </date>
   <contributor>
     <role type="author"/>
     <person>
       <name>
+        <forename language="en" script="Latn">Vincent</forename>
+        <surname language="en" script="Latn">Hu</surname>
         <completename language="en" script="Latn">Vincent C. Hu</completename>
       </name>
       <affiliation>
@@ -30,6 +32,8 @@
     <role type="author"/>
     <person>
       <name>
+        <forename language="en" script="Latn">David</forename>
+        <surname language="en" script="Latn">Ferraiolo</surname>
         <completename language="en" script="Latn">David F. Ferraiolo</completename>
       </name>
       <affiliation>
@@ -44,6 +48,8 @@
     <role type="author"/>
     <person>
       <name>
+        <forename language="en" script="Latn">Richard</forename>
+        <surname language="en" script="Latn">Kuhn</surname>
         <completename language="en" script="Latn">Richard Kuhn</completename>
       </name>
       <affiliation>
@@ -58,6 +64,8 @@
     <role type="author"/>
     <person>
       <name>
+        <forename language="en" script="Latn">Adam</forename>
+        <surname language="en" script="Latn">Schnitzer</surname>
         <completename language="en" script="Latn">Adam Schnitzer</completename>
       </name>
       <affiliation>
@@ -72,6 +80,8 @@
     <role type="author"/>
     <person>
       <name>
+        <forename language="en" script="Latn">Kenneth</forename>
+        <surname language="en" script="Latn">Sandlin</surname>
         <completename language="en" script="Latn">Kenneth F. Sandlin</completename>
       </name>
       <affiliation>
@@ -86,6 +96,8 @@
     <role type="author"/>
     <person>
       <name>
+        <forename language="en" script="Latn">Robert</forename>
+        <surname language="en" script="Latn">Miller</surname>
         <completename language="en" script="Latn">Robert Miller</completename>
       </name>
       <affiliation>
@@ -100,6 +112,8 @@
     <role type="author"/>
     <person>
       <name>
+        <forename language="en" script="Latn">Karen</forename>
+        <surname language="en" script="Latn">Scarfone</surname>
         <completename language="en" script="Latn">Karen A. Scarfone</completename>
       </name>
       <affiliation>
@@ -128,20 +142,38 @@
   </copyright>
   <relation type="updates">
     <bibitem>
-      <formattedref format="text/plain" language="en" script="Latn">NIST SP 800-162 fpd</formattedref>
+      <formattedref>NIST SP 800-162 fpd</formattedref>
       <uri type="src">https://csrc.nist.gov/pubs/sp/800/162/upd1/final</uri>
       <docidentifier type="NIST" primary="true">NIST SP 800-162 fpd</docidentifier>
     </bibitem>
   </relation>
-  <place>Gaithersburg, MD</place>
-  <keyword>access control model</keyword>
-  <keyword>access control policy</keyword>
-  <keyword>attribute based access control (ABAC)</keyword>
-  <keyword>authorization</keyword>
-  <keyword>privilege</keyword>
-  <keyword>access control mechanism</keyword>
-  <keyword>access control</keyword>
+  <place>
+    <city>Gaithersburg</city>
+    <region iso="MD"></region>
+  </place>
+  <keyword>
+    <taxon>access control model</taxon>
+  </keyword>
+  <keyword>
+    <taxon>access control policy</taxon>
+  </keyword>
+  <keyword>
+    <taxon>attribute based access control (ABAC)</taxon>
+  </keyword>
+  <keyword>
+    <taxon>authorization</taxon>
+  </keyword>
+  <keyword>
+    <taxon>privilege</taxon>
+  </keyword>
+  <keyword>
+    <taxon>access control mechanism</taxon>
+  </keyword>
+  <keyword>
+    <taxon>access control</taxon>
+  </keyword>
   <ext schema-version="v1.0.0">
     <doctype>standard</doctype>
+    <flavor>nist</flavor>
   </ext>
 </bibdata>

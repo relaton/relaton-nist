@@ -1,23 +1,25 @@
-<bibdata type="standard" schema-version="v1.2.9">
-  <fetched>2023-10-17</fetched>
-  <title format="text/plain" language="en" script="Latn">Resilient Interdomain Traffic Exchange - BGP Security and DDoS Mitigation</title>
+<bibdata type="standard" schema-version="v1.4.1">
+  <fetched>2026-02-26</fetched>
+  <title language="en" script="Latn">Resilient Interdomain Traffic Exchange - BGP Security and DDoS Mitigation</title>
   <uri type="src">https://csrc.nist.gov/pubs/sp/800/189/2pd</uri>
   <uri type="doi">https://doi.org/10.6028/NIST.SP.800-189-draft2</uri>
   <docidentifier type="NIST" primary="true">NIST SP 800-189 2pd</docidentifier>
   <docidentifier type="DOI">NIST.SP.800-189-draft2</docidentifier>
   <date type="published">
-    <on>2019-10</on>
+    <on>2019-10-17</on>
   </date>
   <date type="obsoleted">
-    <on>2019-12</on>
+    <on>2019-12-17</on>
   </date>
   <date type="issued">
-    <on>2019-10</on>
+    <on>2019-10-01</on>
   </date>
   <contributor>
     <role type="author"/>
     <person>
       <name>
+        <forename language="en" script="Latn">Kotikalapudi</forename>
+        <surname language="en" script="Latn">Sriram</surname>
         <completename language="en" script="Latn">Kotikalapudi Sriram</completename>
       </name>
       <affiliation>
@@ -32,6 +34,8 @@
     <role type="author"/>
     <person>
       <name>
+        <forename language="en" script="Latn">Douglas</forename>
+        <surname language="en" script="Latn">Montgomery</surname>
         <completename language="en" script="Latn">Douglas C. Montgomery</completename>
       </name>
       <affiliation>
@@ -59,25 +63,61 @@
       </organization>
     </owner>
   </copyright>
-  <place>Gaithersburg, MD</place>
-  <keyword>routing security and robustness</keyword>
-  <keyword>Internet infrastructure security</keyword>
-  <keyword>Border Gateway Protocol (BGP) security</keyword>
-  <keyword>prefix hijacks</keyword>
-  <keyword>IP address spoofing</keyword>
-  <keyword>distributed denial-of-service (DDoS)</keyword>
-  <keyword>Resource Public Key Infrastructure (RPKI)</keyword>
-  <keyword>BGP origin validation (BGP-OV)</keyword>
-  <keyword>prefix filtering</keyword>
-  <keyword>BGP path validation (BGP-PV)</keyword>
-  <keyword>BGPsec</keyword>
-  <keyword>route leaks</keyword>
-  <keyword>source address validation (SAV)</keyword>
-  <keyword>unicast Reverse Path Forwarding (uRPF)</keyword>
-  <keyword>remotely triggered black hole (RTBH) filtering</keyword>
-  <keyword>flow specification (Flowspec)</keyword>
+  <place>
+    <city>Gaithersburg</city>
+    <region iso="MD"></region>
+  </place>
+  <keyword>
+    <taxon>routing security and robustness</taxon>
+  </keyword>
+  <keyword>
+    <taxon>Internet infrastructure security</taxon>
+  </keyword>
+  <keyword>
+    <taxon>Border Gateway Protocol (BGP) security</taxon>
+  </keyword>
+  <keyword>
+    <taxon>prefix hijacks</taxon>
+  </keyword>
+  <keyword>
+    <taxon>IP address spoofing</taxon>
+  </keyword>
+  <keyword>
+    <taxon>distributed denial-of-service (DDoS)</taxon>
+  </keyword>
+  <keyword>
+    <taxon>Resource Public Key Infrastructure (RPKI)</taxon>
+  </keyword>
+  <keyword>
+    <taxon>BGP origin validation (BGP-OV)</taxon>
+  </keyword>
+  <keyword>
+    <taxon>prefix filtering</taxon>
+  </keyword>
+  <keyword>
+    <taxon>BGP path validation (BGP-PV)</taxon>
+  </keyword>
+  <keyword>
+    <taxon>BGPsec</taxon>
+  </keyword>
+  <keyword>
+    <taxon>route leaks</taxon>
+  </keyword>
+  <keyword>
+    <taxon>source address validation (SAV)</taxon>
+  </keyword>
+  <keyword>
+    <taxon>unicast Reverse Path Forwarding (uRPF)</taxon>
+  </keyword>
+  <keyword>
+    <taxon>remotely triggered black hole (RTBH) filtering</taxon>
+  </keyword>
+  <keyword>
+    <taxon>flow specification (Flowspec)</taxon>
+  </keyword>
   <ext schema-version="v1.0.0">
     <doctype>standard</doctype>
+    <flavor>nist</flavor>
     <commentperiod>
       <from>2019-10-17</from>
       <to>2019-11-15</to>

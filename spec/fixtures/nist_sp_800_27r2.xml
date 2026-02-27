@@ -1,16 +1,16 @@
-<bibdata type="standard" schema-version="v1.2.9">
-  <fetched>2023-10-17</fetched>
-  <title format="text/plain" language="en" script="Latn">Risk Management Framework for Information Systems and Organizations - A System Life Cycle Approach for Security and Privacy</title>
+<bibdata type="standard" schema-version="v1.4.1">
+  <fetched>2026-02-26</fetched>
+  <title language="en" script="Latn">Risk Management Framework for Information Systems and Organizations - A System Life Cycle Approach for Security and Privacy</title>
   <uri type="src">https://csrc.nist.gov/pubs/sp/800/37/r2/ipd</uri>
   <docidentifier type="NIST" primary="true">NIST SP 800-37r2 ipd</docidentifier>
   <date type="published">
-    <on>2018-05</on>
+    <on>2018-05-09</on>
   </date>
   <date type="obsoleted">
-    <on>2018-10</on>
+    <on>2018-10-02</on>
   </date>
   <date type="issued">
-    <on>2018-05</on>
+    <on>2018-05-01</on>
   </date>
   <contributor>
     <role type="author"/>
@@ -36,45 +36,121 @@
       </organization>
     </owner>
   </copyright>
-  <place>Gaithersburg, MD</place>
-  <keyword>assess</keyword>
-  <keyword>authorization to operate</keyword>
-  <keyword>common control authorization</keyword>
-  <keyword>authorization to use</keyword>
-  <keyword>authorizing official</keyword>
-  <keyword>categorize</keyword>
-  <keyword>common control</keyword>
-  <keyword>common control provider</keyword>
-  <keyword>continuous monitoring</keyword>
-  <keyword>control baseline</keyword>
-  <keyword>hybrid control</keyword>
-  <keyword>information owner or steward</keyword>
-  <keyword>monitor</keyword>
-  <keyword>ongoing authorization</keyword>
-  <keyword>plan of action and milestones</keyword>
-  <keyword>privacy assessment report</keyword>
-  <keyword>privacy control</keyword>
-  <keyword>privacy plan</keyword>
-  <keyword>privacy risk</keyword>
-  <keyword>profile</keyword>
-  <keyword>risk assessment</keyword>
-  <keyword>risk executive function</keyword>
-  <keyword>risk management</keyword>
-  <keyword>risk management framework</keyword>
-  <keyword>security assessment report</keyword>
-  <keyword>security control</keyword>
-  <keyword>security plan</keyword>
-  <keyword>security risk</keyword>
-  <keyword>senior agency official for privacy</keyword>
-  <keyword>senior agency information security officer</keyword>
-  <keyword>senior agency official for privacy</keyword>
-  <keyword>supply chain risk management</keyword>
-  <keyword>system development life cycle</keyword>
-  <keyword>system owner</keyword>
-  <keyword>system privacy officer</keyword>
-  <keyword>system security officer</keyword>
+  <place>
+    <city>Gaithersburg</city>
+    <region iso="MD"></region>
+  </place>
+  <keyword>
+    <taxon>assess</taxon>
+  </keyword>
+  <keyword>
+    <taxon>authorization to operate</taxon>
+  </keyword>
+  <keyword>
+    <taxon>common control authorization</taxon>
+  </keyword>
+  <keyword>
+    <taxon>authorization to use</taxon>
+  </keyword>
+  <keyword>
+    <taxon>authorizing official</taxon>
+  </keyword>
+  <keyword>
+    <taxon>categorize</taxon>
+  </keyword>
+  <keyword>
+    <taxon>common control</taxon>
+  </keyword>
+  <keyword>
+    <taxon>common control provider</taxon>
+  </keyword>
+  <keyword>
+    <taxon>continuous monitoring</taxon>
+  </keyword>
+  <keyword>
+    <taxon>control baseline</taxon>
+  </keyword>
+  <keyword>
+    <taxon>hybrid control</taxon>
+  </keyword>
+  <keyword>
+    <taxon>information owner or steward</taxon>
+  </keyword>
+  <keyword>
+    <taxon>monitor</taxon>
+  </keyword>
+  <keyword>
+    <taxon>ongoing authorization</taxon>
+  </keyword>
+  <keyword>
+    <taxon>plan of action and milestones</taxon>
+  </keyword>
+  <keyword>
+    <taxon>privacy assessment report</taxon>
+  </keyword>
+  <keyword>
+    <taxon>privacy control</taxon>
+  </keyword>
+  <keyword>
+    <taxon>privacy plan</taxon>
+  </keyword>
+  <keyword>
+    <taxon>privacy risk</taxon>
+  </keyword>
+  <keyword>
+    <taxon>profile</taxon>
+  </keyword>
+  <keyword>
+    <taxon>risk assessment</taxon>
+  </keyword>
+  <keyword>
+    <taxon>risk executive function</taxon>
+  </keyword>
+  <keyword>
+    <taxon>risk management</taxon>
+  </keyword>
+  <keyword>
+    <taxon>risk management framework</taxon>
+  </keyword>
+  <keyword>
+    <taxon>security assessment report</taxon>
+  </keyword>
+  <keyword>
+    <taxon>security control</taxon>
+  </keyword>
+  <keyword>
+    <taxon>security plan</taxon>
+  </keyword>
+  <keyword>
+    <taxon>security risk</taxon>
+  </keyword>
+  <keyword>
+    <taxon>senior agency official for privacy</taxon>
+  </keyword>
+  <keyword>
+    <taxon>senior agency information security officer</taxon>
+  </keyword>
+  <keyword>
+    <taxon>senior agency official for privacy</taxon>
+  </keyword>
+  <keyword>
+    <taxon>supply chain risk management</taxon>
+  </keyword>
+  <keyword>
+    <taxon>system development life cycle</taxon>
+  </keyword>
+  <keyword>
+    <taxon>system owner</taxon>
+  </keyword>
+  <keyword>
+    <taxon>system privacy officer</taxon>
+  </keyword>
+  <keyword>
+    <taxon>system security officer</taxon>
+  </keyword>
   <ext schema-version="v1.0.0">
     <doctype>standard</doctype>
+    <flavor>nist</flavor>
     <commentperiod>
       <from>2018-05-09</from>
       <to>2018-06-22</to>
