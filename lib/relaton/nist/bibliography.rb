@@ -12,7 +12,7 @@ module Relaton
         # @return [Relaton::Nist::HitCollection] search result
         #
         def search(text, year = nil, opts = {})
-          ref = text.sub(/^NISTIR/, "NIST IR")
+          ref = text.sub(/^NISTIR/, "NIST IR").sub(/\/Add/, " Add")
           HitCollection.search ref, year, opts
         rescue OpenURI::HTTPError, SocketError, OpenSSL::SSL::SSLError => e
           raise Relaton::RequestError, e.message

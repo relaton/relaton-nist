@@ -98,7 +98,7 @@ Or install it yourself as:
 
 [source,sh]
 ----
-$ gem install relaton_nist
+$ gem install relaton-nist
 ----
 
 == Usage
@@ -120,19 +120,16 @@ https://www.nist.gov/news-events/news/2021/08/nist-technical-series-publications
 ====
 [source,ruby]
 ----
-> require 'relaton_nist'
-=>
-true
+require 'relaton/nist'
+=> true
 
-> hit_collection = RelatonNist::NistBibliography.search("NISTIR 8200")
-[relaton-nist] (NIST IR 8200) Fetching from csrc.nist.gov ...
-[relaton-nist] (NIST IR 8200) Fetching from Relaton repository ...
-=>
-<RelatonNist::HitCollection:0x00000000004b28 @ref=NIST IR 8200 @fetched=false>
+hit_collection = Relaton::Nist::Bibliography.search("NISTIR 8200")
+[relaton-nist] INFO: (NIST IR 8200) Fetching from csrc.nist.gov ...
+[relaton-nist] INFO: (NIST IR 8200) Fetching from Relaton repository ...
+=> <Relaton::Nist::HitCollection:0x00000000002c10 @ref=NIST IR 8200 @fetched=false>
 
-> item = hit_collection[0].fetch
-=>
-#<RelatonNist::NistBibliographicItem:0x007fc049aa6778
+item = hit_collection[0].item
+=> #<Relaton::Nist::ItemData:0x000000012c1d8008
 # ...
 ----
 ====
@@ -146,12 +143,11 @@ revisions or editions.
 ====
 [source,ruby]
 ----
-> RelatonNist::NistBibliography.get("NIST IR 8200", "2018")
-[relaton-nist] (NIST SP 8200:2018) Fetching from csrc.nist.gov ...
-[relaton-nist] (NIST IR 8200:2018) Fetching from Relaton repository...
-[relaton-nist] (NIST IR 8200:2018) Found: `NIST IR 8200`
-=>
-#<RelatonNist::NistBibliographicItem:0x00007fab74a572c0
+Relaton::Nist::Bibliography.get("NIST IR 8200", "2018")
+[relaton-nist] INFO: (NIST IR 8200) Fetching from csrc.nist.gov ...
+[relaton-nist] INFO: (NIST IR 8200) Fetching from Relaton repository ...
+[relaton-nist] INFO: (NIST IR 8200) Found: `NIST IR 8200`
+=> #<Relaton::Nist::ItemData:0x000000012c5e7590
 # ...
 ----
 ====
@@ -170,14 +166,14 @@ A NIST PubID can contain these optional parameters `{ptN}{vN}{verN}{rN}{/Add}`:
 ====
 [source,ruby]
 ----
-item = RelatonNist::NistBibliography.get 'NIST SP 800-67r1'
-[relaton-nist] (NIST SP 800-67r1) Fetching from csrc.nist.gov ...
-[relaton-nist] (NIST SP 800-67r1) Found: `NIST SP 800-67 Rev. 1`
-=> #<RelatonNist::NistBibliographicItem:0x00000001105acd08
+item = Relaton::Nist::Bibliography.get 'NIST SP 800-67r1'
+[relaton-nist] INFO: (NIST SP 800-67r1) Fetching from csrc.nist.gov ...
+[relaton-nist] INFO: (NIST SP 800-67r1) Found: `NIST SP 800-67r1 fpd`
+=> #<Relaton::Nist::ItemData:0x000000012cf294c8
 ...
 
-item.docidentifier.first.id
-=> "NIST SP 800-67 Rev. 1"
+item.docidentifier.first.content
+=> "NIST SP 800-67r1 fpd"
 ----
 ====
 
@@ -186,14 +182,14 @@ item.docidentifier.first.id
 ====
 [source,ruby]
 ----
-item = RelatonNist::NistBibliography.get 'NIST SP 800-38A/Add'
-[relaton-nist] (NIST SP 800-38A/Add) Fetching from csrc.nist.gov ...
-[relaton-nist] (NIST SP 800-38A/Add) Found: `NIST SP 800-38A-Add`
-=> #<RelatonNist::NistBibliographicItem:0x00000001105abf48
+item = Relaton::Nist::Bibliography.get 'NIST SP 800-38A/Add'
+[relaton-nist] INFO: (NIST SP 800-38A Add) Fetching from csrc.nist.gov ...
+[relaton-nist] INFO: (NIST SP 800-38A Add) Found: `NIST SP 800-38A fpd Add`
+=> #<Relaton::Nist::ItemData:0x0000000124864190
 ...
 
-item.docidentifier.first.id
-=> "NIST SP 800-38A-Add"
+item.docidentifier.first.content
+=> "NIST SP 800-38A fpd Add"
 ----
 ====
 
@@ -225,11 +221,10 @@ In case the state is "draft" it should be:
 ====
 [source,ruby]
 ----
-> RelatonNist::NistBibliography.get("NIST SP 800-205 (February 2019) (IPD)")
-[relaton-nist] (NIST SP 800-205) Fetching from csrc.nist.gov ...
-[relaton-nist] (NIST SP 800-205) Found: `NIST SP 800-205 (Draft)`
-=>
-#<RelatonNist::NistBibliographicItem:0x00000001105afdc8
+Relaton::Nist::Bibliography.get("NIST SP 800-205 (February 2019) (IPD)")
+[relaton-nist] INFO: (NIST SP 800-205) Fetching from csrc.nist.gov ...
+[relaton-nist] INFO: (NIST SP 800-205) Found: `NIST SP 800-205 ipd`
+=> #<Relaton::Nist::ItemData:0x000000012494fb40
 # ...
 ----
 ====
@@ -247,11 +242,10 @@ The format for FIPS publications is:
 ====
 [source,ruby]
 ----
-> RelatonNist::NistBibliography.get("NIST FIPS 140-3")
+Relaton::Nist::Bibliography.get("NIST FIPS 140-3")
 [relaton-nist] INFO: (NIST FIPS 140-3) Fetching from csrc.nist.gov ...
-[relaton-nist] INFO: (NIST FIPS 140-3) Found: `NIST FIPS 140-3`
-=>
-# #<RelatonNist::NistBibliographicItem:0x000000013b68fb50
+[relaton-nist] INFO: (NIST FIPS 140-3) Found: `NIST FIPS 140-3 2pd`
+=> #<Relaton::Nist::ItemData:0x0000000124d8dfe0
 # ...
 ----
 ====
@@ -266,12 +260,16 @@ The format for FIPS publications is:
 ====
 [source,ruby]
 ----
-> item.to_xml
-#=> "<bibitem id="NISTIR8200" type="standard" schema-version="v1.2.9">
-#      <fetched>2023-10-16</fetched>
-#      <title format="text/plain" language="en" script="Latn">Interagency report on the status of international cybersecurity standardization for the internet of things (IoT)</title>
-#      ...
-#    <bibitem>"
+item.to_xml
+=> "<bibitem id="NISTSP80038AfpdAdd" type="standard" schema-version="v1.4.1">
+      <fetched>2026-02-26</fetched>
+      <title language="en" script="Latn">Recommendation for Block Cipher Modes of Operation - Three Variants of Ciphertext Stealing for CBC Mode</title>
+      <uri type="src">https://csrc.nist.gov/pubs/sp/800/38/a/sup/final</uri>
+      <uri type="doi">https://doi.org/10.6028/NIST.SP.800-38A-Add</uri>
+      <docidentifier type="NIST" primary="true">NIST SP 800-38A fpd Add</docidentifier>
+      <docidentifier type="DOI">NIST.SP.800-38A-Add</docidentifier>
+      ...
+    </bibitem>"
 ----
 ====
 
@@ -283,16 +281,20 @@ the `bibdata` element and adds a flavor-specific `ext` element.
 ====
 [source,ruby]
 ----
-> item.to_xml bibdata: true
-=>
-"<bibdata type="standard" schema-version="v1.2.9">
-#      <fetched>2023-10-16</fetched>
-#      <title format="text/plain" language="en" script="Latn">Interagency report on the status of international cybersecurity standardization for the internet of things (IoT)</title>
-#      ...
-#      <ext schema-version="v1.0.0">
-#        <doctype>standard</doctype>
-#      </ext>
-#  </bibdata>"
+item.to_xml bibdata: true
+=> "<bibdata type="standard" schema-version="v1.4.1">
+      <fetched>2026-02-26</fetched>
+      <title language="en" script="Latn">Recommendation for Block Cipher Modes of Operation - Three Variants of Ciphertext Stealing for CBC Mode</title>
+      <uri type="src">https://csrc.nist.gov/pubs/sp/800/38/a/sup/final</uri>
+      <uri type="doi">https://doi.org/10.6028/NIST.SP.800-38A-Add</uri>
+      <docidentifier type="NIST" primary="true">NIST SP 800-38A fpd Add</docidentifier>
+      <docidentifier type="DOI">NIST.SP.800-38A-Add</docidentifier>
+      ...
+      <ext schema-version="v1.0.0">
+        <doctype>standard</doctype>
+        <flavor>nist</flavor>
+      </ext>
+    </bibdata>
 ----
 ====
 
@@ -318,18 +320,16 @@ They can be accessed through the following methods:
 NIST publications may have `src` and `doi` links, obtained using the `#link`
 method.
 
-.Accessing links of a NIST bibliographic item
+.Accessing source links of a NIST bibliographic item
 [example]
 ====
 [source,ruby]
 ----
-item.link
-=> [#<RelatonBib::TypedUri:0x0000000111087a98
-  @content=#<Addressable::URI:0x8c0 URI:https://csrc.nist.gov/pubs/sp/800/38/a/sup/final>,
-  @language=nil,
-  @script=nil,
-  @type="src">,
- #<RelatonBib::TypedUri:0x00000001110879a8 @content=#<Addressable::URI:0x8d4 URI:https://doi.org/10.6028/NIST.SP.800-38A-Add>, @language=nil, @script=nil, @type="doi">]
+item.source[0].type
+=> "src"
+
+item.source[0].content
+=> "https://csrc.nist.gov/pubs/sp/800/38/a/sup/final"
 ----
 ====
 
@@ -347,12 +347,8 @@ Offline Relaton YAML files can be loaded directly as bibliographic items.
 ====
 [source,ruby]
 ----
-hash = YAML.load_file 'spec/examples/nist_bib_item.yml'
-=> {"id"=>"NISTIR 8011 Vol. 3",
-...
-
-RelatonNist::NistBibliographicItem.from_hash hash
-=> #<RelatonNist::NistBibliographicItem:0x007f8b708505b8
+Relaton::Nist::Item.from_yaml File.read("spec/fixtures/item.yaml")
+=> #<Relaton::Nist::ItemData:0x0000000124d4ab50
 ...
 ----
 ====
@@ -371,7 +367,9 @@ The following method fetches all the documents from the NIST-Tech-Pubs dataset, 
 ====
 [source,ruby]
 ----
-> RelatonNist::DataFetcher.fetch
+require "relaton/nist/data_fetcher"
+
+Relaton::Nist::DataFetcher.fetch
 Started at: 2021-09-01 18:01:01 +0200
 Stopped at: 2021-09-01 18:01:43 +0200
 Done in: 42 sec.
@@ -384,7 +382,7 @@ Done in: 42 sec.
 ====
 [source,ruby]
 ----
-> RelatonNist::DataFetcher.fetch(output: "data", format: "yaml")
+> Relaton::Nist::DataFetcher.fetch(output: "data", format: "yaml")
 ----
 ====
 

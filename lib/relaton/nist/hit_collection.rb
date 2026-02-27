@@ -125,7 +125,7 @@ module Relaton
           vol: match(/(?:(?<dl>\.)?v(?(<dl>)-)|\sVol\.\s)(?<val>\d+)/, ref),
           ver: match(/(?:(?<dl>\.)?\s?ver|\sVer\.\s)(?<val>\d(?(<dl>)[-\d]|[.\d])*)/, ref)&.gsub(/-/, "."),
           rev: match(/(?:(?:(?<dl>\.)|[^a-z])r|\sRev\.\s)(?(<dl>)-)(?<val>\d+)/, ref),
-          add: match(/(?:(?<dl>\.)?add|\/Add)(?(<dl>)-)(?<val>\d*)/, ref),
+          add: match(/(?:(?<dl>\.)?add|\/Add|\sAdd)(?(<dl>)-)(?<val>\d*)/, ref),
           draft: !(match(/\((?:Draft|PD)\)/, ref).nil? && @opts[:stage].nil?),
         }
       end
@@ -157,6 +157,7 @@ module Relaton
           r += "ver#{refparts[:ver]}" if refparts[:ver]
           r += "v#{refparts[:vol]}" if refparts[:vol]
           r += "r#{refparts[:rev]}" if refparts[:rev]
+          r += "-add#{refparts[:add]}" if refparts[:add]
           r
         end
       end
@@ -227,6 +228,7 @@ module Relaton
         end => id
 
         id.sub!(/(?:-draft\d*|\.\wpd)$/, "")
+        id = id.gsub(".", " ").sub(/-Add(\d*)$/, ' Add\1') if id.match?(/-Add\d*$/)
         pid = ::Pubid::Nist::Identifier.parse(id)
         case json["iteration"]
         when "final"

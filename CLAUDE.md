@@ -32,20 +32,38 @@ bundle exec rubocop
 
 ## Architecture
 
+### Module Structure
+
+All classes live under `Relaton::Nist` (entry point: `require 'relaton/nist'`).
+
 ### Lutaml-Model Serialization
 
 All data models inherit from `Lutaml::Model::Serializable` and use declarative attribute/mapping DSL for XML and YAML serialization. The base bibliographic types come from `relaton-bib` (aliased as `Bib`).
 
-**Inheritance chain**: `Bib::Item` → `Relaton::Nist::Item` → `Bibitem` / `Bibdata`
-- `Bibitem` includes `Bib::BibitemShared`
-- `Bibdata` includes `Bib::BibdataShared`
+**Core model hierarchy**:
+- `Bib::Item` → `Relaton::Nist::Item` (`model ItemData`)
+  - `Relaton::Nist::Bibitem` (includes `Bib::BibitemShared`)
+  - `Relaton::Nist::Bibdata` (includes `Bib::BibdataShared`)
+- `Bib::ItemData` → `Relaton::Nist::ItemData`
 
-**NIST-specific models** (under `lib/relaton/nist/`):
-- `Ext` — extension block holding doctype, comment period, flavor
-- `Date` — adds `abandoned` and `superseded` date types
-- `Relation` — adds `obsoletedBy`, `supersedes`, `supersededBy` relation types
-- `CommentPeriod` — from/to/extended date ranges
-- `Doctype` — currently only `standard`
+**NIST-specific extensions** (under `lib/relaton/nist/`):
+- `Ext` — extension block holding doctype, comment period (extends `Bib::Ext`)
+- `Date` — adds `abandoned` and `superseded` date types (extends `Bib::Date`)
+- `Relation` — adds `obsoletedBy`, `supersedes`, `supersededBy` relation types (extends `Bib::Relation`)
+- `CommentPeriod` — from/to/extended date ranges (extends `Lutaml::Model::Serializable`)
+- `Doctype` — currently only `standard` (extends `Bib::Doctype`)
+
+**Search/retrieval layer** (extends `relaton-core`):
+- `Bibliography` — class methods `search(text, year, opts)` and `get(code, year, opts)`
+- `HitCollection` < `Core::HitCollection` — searches GitHub index + CSRC JSON
+- `Hit` < `Core::Hit` — lazily resolves items via `Scraper`
+- `Processor` < `Core::Processor` — Relaton plugin interface (`get`, `fetch_data`, `from_xml`, `from_yaml`)
+
+**Data fetching/parsing**:
+- `DataFetcher` < `Core::DataFetcher` — fetches NIST Tech Pubs MODS XML from GitHub releases
+- `ModsParser` — maps MODS XML (via `loc_mods`) to `ItemData`
+- `Scraper` — fetches items from GitHub YAML or CSRC JSON
+- `PubsExport` — singleton; caches CSRC pubs-export zip with thread-safe daily updates
 
 ### Serialization Round-Trip Pattern
 
@@ -67,10 +85,12 @@ Tests use VCR with WebMock. Cassettes are stored in `spec/vcr_cassettes/` and re
 ## Key Dependencies
 
 - `relaton-bib` — base bibliographic models and shared mixins
+- `relaton-core` — base classes for Processor, HitCollection, Hit, DataFetcher
 - `loc_mods` — MODS (Metadata Object Description Schema) XML parsing
 - `pubid` — NIST publication ID parsing
 - `relaton-index` — index/search utilities
+- `mechanize` — HTTP fetching for data sources
 
 ## Code Style
 
-RuboCop config inherits from the Ribose OSS style guide. Target Ruby version is 2.7.
+RuboCop config inherits from the Ribose OSS style guide. Target Ruby version is 3.1.
