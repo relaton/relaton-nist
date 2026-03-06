@@ -41,21 +41,21 @@ http_interactions:
       X-Xss-Protection:
       - 1; mode=block
       X-Github-Request-Id:
-      - DE2C:201FBA:1C4EA0:2245F7:69A10BDD
+      - 85A8:2B3C53:1241342:1573768:69AB04BF
       Accept-Ranges:
       - bytes
       Date:
-      - Fri, 27 Feb 2026 03:13:35 GMT
+      - Fri, 06 Mar 2026 16:46:02 GMT
       Via:
       - 1.1 varnish
       X-Served-By:
-      - cache-pdk-kpdk2140061-PDK
+      - cache-pdk-kpdk2140048-PDK
       X-Cache:
-      - MISS
+      - HIT
       X-Cache-Hits:
-      - '0'
+      - '1'
       X-Timer:
-      - S1772162015.981571,VS0,VE115
+      - S1772815563.729590,VS0,VE1
       Vary:
       - Authorization,Accept-Encoding
       Access-Control-Allow-Origin:
@@ -63,11 +63,11 @@ http_interactions:
       Cross-Origin-Resource-Policy:
       - cross-origin
       X-Fastly-Request-Id:
-      - b22bcefedf92b17e494c5dc126da60f16270f905
+      - 5614b79877c5ced2ec3afa8cb1c774e365f99026
       Expires:
-      - Fri, 27 Feb 2026 03:18:35 GMT
+      - Fri, 06 Mar 2026 16:51:02 GMT
       Source-Age:
-      - '0'
+      - '10'
     body:
       encoding: ASCII-8BIT
       base64_string: |
@@ -3043,7 +3043,7 @@ http_interactions:
         Py//j/+5m+n/AFBLAQIeAxQAAAAIAEOUWlx0yOIAqAkCAFHaDwANABgAAAAA
         AAEAAACkgQAAAABpbmRleC12MS55YW1sVVQFAANu2KBpdXgLAAEE9QEAAAQU
         AAAAUEsFBgAAAAABAAEAUwAAAO8JAgAAAA==
-  recorded_at: Fri, 27 Feb 2026 03:13:35 GMT
+  recorded_at: Fri, 06 Mar 2026 16:46:02 GMT
 - request:
     method: get
     uri: https://raw.githubusercontent.com/relaton/relaton-data-nist/data-v2/data/nistir-8200.yaml
@@ -3085,21 +3085,21 @@ http_interactions:
       X-Xss-Protection:
       - 1; mode=block
       X-Github-Request-Id:
-      - 2156:5024A:1C0270:21FA1F:69A10BDF
+      - B09F:369925:120CC4C:1540AFA:69AB04C0
       Accept-Ranges:
       - bytes
       Date:
-      - Fri, 27 Feb 2026 03:13:35 GMT
+      - Fri, 06 Mar 2026 16:46:03 GMT
       Via:
       - 1.1 varnish
       X-Served-By:
-      - cache-pdk-kpdk2140025-PDK
+      - cache-pdk-kpdk2140061-PDK
       X-Cache:
-      - MISS
+      - HIT
       X-Cache-Hits:
-      - '0'
+      - '1'
       X-Timer:
-      - S1772162016.763474,VS0,VE118
+      - S1772815563.313846,VS0,VE1
       Vary:
       - Authorization,Accept-Encoding
       Access-Control-Allow-Origin:
@@ -3107,11 +3107,11 @@ http_interactions:
       Cross-Origin-Resource-Policy:
       - cross-origin
       X-Fastly-Request-Id:
-      - 79aba725ea00c258472d8d6053beb069c94649af
+      - 3d42dff01c3a510b0735ff7b68084ae2ec4de3f2
       Expires:
-      - Fri, 27 Feb 2026 03:18:35 GMT
+      - Fri, 06 Mar 2026 16:51:03 GMT
       Source-Age:
-      - '0'
+      - '10'
     body:
       encoding: ASCII-8BIT
       base64_string: |
@@ -3178,5 +3178,5 @@ http_interactions:
         CiAgLSBpc286IE1ECmV4dDoKICBzY2hlbWFfdmVyc2lvbjogdjEuMC4wCiAg
         ZG9jdHlwZToKICAgIGNvbnRlbnQ6IHN0YW5kYXJkCiAgZmxhdm9yOiBuaWxz
         dAo=
-  recorded_at: Fri, 27 Feb 2026 03:13:35 GMT
+  recorded_at: Fri, 06 Mar 2026 16:46:03 GMT
 recorded_with: VCR 6.4.0

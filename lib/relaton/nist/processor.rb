@@ -1,3 +1,5 @@
+require "relaton/core/processor"
+
 module Relaton
   module Nist
     class Processor < Core::Processor
@@ -48,6 +50,7 @@ module Relaton
       # Returns hash of XML grammar
       # @return [String]
       def grammar_hash
+        require_relative "../nist"
         @grammar_hash ||= Nist.grammar_hash
       end
 
