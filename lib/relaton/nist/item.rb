@@ -10,7 +10,7 @@ module Relaton
       model ItemData
 
       attribute :date, Date, collection: true
-      attribute :relation, Relation, collection: true
+      attribute :relation, Relation, collection: true, initialize_empty: true
       attribute :ext, Ext
     end
   end
