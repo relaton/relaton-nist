@@ -16,12 +16,13 @@ module Relaton
         fetch_tech_pubs
         # add_static_files
         index.save
+        repot_errors
       end
 
       def fetch_tech_pubs
         xml_data = Mechanize.new.get(URL).body
         docs = LocMods::Collection.from_xml xml_data
-        docs.mods.each { |doc| write_file ModsParser.new(doc, series).parse }
+        docs.mods.each { |doc| write_file ModsParser.new(doc, series, @errors).parse }
       end
 
       def write_file(bib)

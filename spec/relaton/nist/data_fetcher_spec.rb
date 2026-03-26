@@ -43,7 +43,7 @@ RSpec.describe Relaton::Nist::DataFetcher do
       parser = double "parser"
       expect(parser).to receive(:parse).and_return(:bib).twice
       expect(Relaton::Nist::ModsParser).to receive(:new)
-        .with(kind_of(LocMods::Record), kind_of(Hash)).and_return(parser).twice
+        .with(kind_of(LocMods::Record), kind_of(Hash), kind_of(Hash)).and_return(parser).twice
       expect(subject).to receive(:write_file).with(:bib).twice
       subject.fetch_tech_pubs
     end

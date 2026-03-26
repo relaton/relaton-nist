@@ -15,9 +15,10 @@ module Relaton
       ATTRS = %i[type docidentifier title source abstract date contributor
                   relation place series].freeze
 
-      def initialize(doc, series)
+      def initialize(doc, series, errors = {})
         @doc = doc
         @series = series
+        @errors = errors
       end
 
       # @return [Bib::ItemData]
@@ -29,24 +30,24 @@ module Relaton
         ItemData.new(**args)
       end
 
-      def parse_type
-        "standard"
-      end
+      def parse_type = "standard"
 
       # @return [Array<Bib::Docidentifier>]
       def parse_docidentifier
-        [
+        ids = [
           { type: "NIST", content: pub_id, primary: true },
           { type: "DOI", content: parse_doi },
-        ].map { |id| Bib::Docidentifier.new(**id) }
+        ].reject { |id| id[:content].nil? || id[:content].empty? }
+        @errors[:docidentifier] &&= ids.empty?
+        ids.map { |id| Bib::Docidentifier.new(**id) }
       end
 
       # @return [String]
-      def pub_id
-        get_id_from_str parse_doi
-      end
+      def pub_id = get_id_from_str parse_doi
 
       def get_id_from_str(str)
+        return if str.nil? || str.empty?
+
         ::Pubid::Nist::Identifier.parse(str).to_s
       rescue ::Pubid::Core::Errors::ParseError
         str.gsub(".", " ").sub(/^[\D]+/, &:upcase)
@@ -66,13 +67,15 @@ module Relaton
 
       def parse_doi
         url = @doc.location.reduce(nil) { |m, l| m || l.url.detect { |u| u.usage == "primary display" } }
+        return if url.nil?
+
         id = remove_doi_prefix(url.content)
+        return if id.nil?
+
         replace_wrong_doi(id)
       end
 
-      def remove_doi_prefix(id)
-        id.match(/10\.6028\/(.+)/)[1]
-      end
+      def remove_doi_prefix(id) = id.match(/10\.6028\/(.+)/)&.send(:[], 1)
 
       # @return [Array<Bib::Title>]
       def parse_title
@@ -90,6 +93,7 @@ module Relaton
         elsif title.size == 1
           title[0].instance_variable_set :@type, "main"
         end
+        @errors[:title] &&= title.empty?
         title
       end
 
@@ -100,26 +104,31 @@ module Relaton
       end
 
       def parse_source
-        @doc.location.map do |location|
+        source = @doc.location.map do |location|
           url = location.url.first
           type = url.usage == "primary display" ? "doi" : "src"
           Bib::Uri.new content: url.content, type: type
         end
+        @errors[:source] &&= source.empty?
+        source
       end
 
       def parse_abstract
-        Array(@doc.abstract).map do |a|
+        abstract = Array(@doc.abstract).map do |a|
           content = a.content.gsub("\n", " ").squeeze(" ").strip
           Bib::LocalizedMarkedUpString.new content: content, language: "en",
                                            script: "Latn"
         end
+        @errors[:abstract] &&= abstract.empty?
+        abstract
       end
 
       def parse_date
         date = @doc.origin_info[0].date_issued.map do |di|
           create_date(di, "issued")
-        end
-        date.compact
+        end.compact
+        @errors[:date] &&= date.empty?
+        date
       end
 
       def create_date(date, type)
@@ -136,13 +145,11 @@ module Relaton
         end
       end
 
-      def parse_doctype
-        Doctype.new(content: "standard")
-      end
+      def parse_doctype = Doctype.new(content: "standard")
 
       def parse_contributor
         # exclude primary contributors to avoid duplication
-        @doc.name.reject { |n| n.usage == "primary" }.map do |name|
+        contributor = @doc.name.reject { |n| n.usage == "primary" }.map do |name|
           entity, default_role = create_entity(name)
           next unless entity
 
@@ -152,6 +159,8 @@ module Relaton
           role << Bib::Contributor::Role.new(type: default_role) if role.empty?
           create_contributor(entity, role)
         end.compact
+        @errors[:contributor] &&= contributor.empty?
+        contributor
       end
 
       def create_contributor(entity, role)
@@ -200,14 +209,19 @@ module Relaton
       end
 
       def parse_relation
-        Array(@doc.related_item).reject { |ri| ri.type == "series" }.map do |ri|
+        relations = Array(@doc.related_item).reject { |ri| ri.type == "series" }.filter_map do |ri|
           type = RELATION_TYPES[ri.type]
-          Relation.new(type: type, bibitem: create_related_item(ri))
+          bibitem = create_related_item(ri)
+          Relation.new(type: type, bibitem: bibitem) if bibitem
         end
+        @errors[:relation] &&= relations.empty?
+        relations
       end
 
       def create_related_item(item)
         item_id = get_id_from_str related_item_id(item)
+        return if item_id.nil? || item_id.empty?
+
         docid = Bib::Docidentifier.new(type: "NIST", content: item_id)
         fref = Bib::LocalizedMarkedUpString.new(content: item_id)
         ItemData.new(docidentifier: [docid], formattedref: fref)
@@ -219,15 +233,20 @@ module Relaton
         else
           item.name[0].name_part[0].content
         end => id
-        replace_wrong_doi remove_doi_prefix(id)
+        doi = remove_doi_prefix(id)
+        return if doi.nil?
+
+        replace_wrong_doi(doi)
       end
 
       def parse_place
-        @doc.origin_info.select { |p| p.event_type == "publisher" }.map do |p|
-          place = p.place[0].place_term[0].content
-          /(?<city>\w+), (?<state>\w+)/ =~ place
+        place = @doc.origin_info.select { |p| p.event_type == "publisher" }.map do |p|
+          pl = p.place[0].place_term[0].content
+          /(?<city>\w+), (?<state>\w+)/ =~ pl
           Bib::Place.new(city: city, region: create_region(state))
         end
+        @errors[:place] &&= place.empty?
+        place
       end
 
       def create_region(state)
@@ -237,12 +256,14 @@ module Relaton
       end
 
       def parse_series
-        Array(@doc.related_item).select { |ri| ri.type == "series" }.map do |ri|
+        series = Array(@doc.related_item).select { |ri| ri.type == "series" }.map do |ri|
           tinfo = ri.title_info[0]
           tcontent = tinfo.title[0].strip
           title = Bib::Title.new(content: tcontent)
           Bib::Series.new(title: [title], number: tinfo.part_number&.first)
         end
+        @errors[:series] &&= series.empty?
+        series
       end
     end
   end
