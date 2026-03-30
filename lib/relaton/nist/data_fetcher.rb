@@ -16,7 +16,7 @@ module Relaton
         fetch_tech_pubs
         # add_static_files
         index.save
-        repot_errors
+        report_errors
       end
 
       def fetch_tech_pubs
@@ -53,10 +53,6 @@ module Relaton
 
       def to_bibxml(bib)
         bib.to_rfcxml
-      end
-
-      def gh_issue_channel
-        ["relaton/relaton-data-nist", "Error fetching NIST documents"]
       end
 
       def log_error(msg)
