@@ -1,4 +1,4 @@
-<bibdata type="standard" schema-version="v1.4.1">
+<bibdata type="standard" schema-version="v1.5.6">
   <fetched>2026-02-26</fetched>
   <title language="en" script="Latn">Risk Management Framework for Information Systems and Organizations - A System Life Cycle Approach for Security and Privacy</title>
   <uri type="src">https://csrc.nist.gov/pubs/sp/800/37/r2/ipd</uri>
@@ -41,114 +41,114 @@
     <region iso="MD"></region>
   </place>
   <keyword>
-    <taxon>assess</taxon>
+    <vocab>assess</vocab>
   </keyword>
   <keyword>
-    <taxon>authorization to operate</taxon>
+    <vocab>authorization to operate</vocab>
   </keyword>
   <keyword>
-    <taxon>common control authorization</taxon>
+    <vocab>common control authorization</vocab>
   </keyword>
   <keyword>
-    <taxon>authorization to use</taxon>
+    <vocab>authorization to use</vocab>
   </keyword>
   <keyword>
-    <taxon>authorizing official</taxon>
+    <vocab>authorizing official</vocab>
   </keyword>
   <keyword>
-    <taxon>categorize</taxon>
+    <vocab>categorize</vocab>
   </keyword>
   <keyword>
-    <taxon>common control</taxon>
+    <vocab>common control</vocab>
   </keyword>
   <keyword>
-    <taxon>common control provider</taxon>
+    <vocab>common control provider</vocab>
   </keyword>
   <keyword>
-    <taxon>continuous monitoring</taxon>
+    <vocab>continuous monitoring</vocab>
   </keyword>
   <keyword>
-    <taxon>control baseline</taxon>
+    <vocab>control baseline</vocab>
   </keyword>
   <keyword>
-    <taxon>hybrid control</taxon>
+    <vocab>hybrid control</vocab>
   </keyword>
   <keyword>
-    <taxon>information owner or steward</taxon>
+    <vocab>information owner or steward</vocab>
   </keyword>
   <keyword>
-    <taxon>monitor</taxon>
+    <vocab>monitor</vocab>
   </keyword>
   <keyword>
-    <taxon>ongoing authorization</taxon>
+    <vocab>ongoing authorization</vocab>
   </keyword>
   <keyword>
-    <taxon>plan of action and milestones</taxon>
+    <vocab>plan of action and milestones</vocab>
   </keyword>
   <keyword>
-    <taxon>privacy assessment report</taxon>
+    <vocab>privacy assessment report</vocab>
   </keyword>
   <keyword>
-    <taxon>privacy control</taxon>
+    <vocab>privacy control</vocab>
   </keyword>
   <keyword>
-    <taxon>privacy plan</taxon>
+    <vocab>privacy plan</vocab>
   </keyword>
   <keyword>
-    <taxon>privacy risk</taxon>
+    <vocab>privacy risk</vocab>
   </keyword>
   <keyword>
-    <taxon>profile</taxon>
+    <vocab>profile</vocab>
   </keyword>
   <keyword>
-    <taxon>risk assessment</taxon>
+    <vocab>risk assessment</vocab>
   </keyword>
   <keyword>
-    <taxon>risk executive function</taxon>
+    <vocab>risk executive function</vocab>
   </keyword>
   <keyword>
-    <taxon>risk management</taxon>
+    <vocab>risk management</vocab>
   </keyword>
   <keyword>
-    <taxon>risk management framework</taxon>
+    <vocab>risk management framework</vocab>
   </keyword>
   <keyword>
-    <taxon>security assessment report</taxon>
+    <vocab>security assessment report</vocab>
   </keyword>
   <keyword>
-    <taxon>security control</taxon>
+    <vocab>security control</vocab>
   </keyword>
   <keyword>
-    <taxon>security plan</taxon>
+    <vocab>security plan</vocab>
   </keyword>
   <keyword>
-    <taxon>security risk</taxon>
+    <vocab>security risk</vocab>
   </keyword>
   <keyword>
-    <taxon>senior agency official for privacy</taxon>
+    <vocab>senior agency official for privacy</vocab>
   </keyword>
   <keyword>
-    <taxon>senior agency information security officer</taxon>
+    <vocab>senior agency information security officer</vocab>
   </keyword>
   <keyword>
-    <taxon>senior agency official for privacy</taxon>
+    <vocab>senior agency official for privacy</vocab>
   </keyword>
   <keyword>
-    <taxon>supply chain risk management</taxon>
+    <vocab>supply chain risk management</vocab>
   </keyword>
   <keyword>
-    <taxon>system development life cycle</taxon>
+    <vocab>system development life cycle</vocab>
   </keyword>
   <keyword>
-    <taxon>system owner</taxon>
+    <vocab>system owner</vocab>
   </keyword>
   <keyword>
-    <taxon>system privacy officer</taxon>
+    <vocab>system privacy officer</vocab>
   </keyword>
   <keyword>
-    <taxon>system security officer</taxon>
+    <vocab>system security officer</vocab>
   </keyword>
-  <ext schema-version="v1.0.0">
+  <ext schema-version="v1.1.2">
     <doctype>standard</doctype>
     <flavor>nist</flavor>
     <commentperiod>

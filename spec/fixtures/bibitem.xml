@@ -1,4 +1,4 @@
-<bibitem id="NISTIR8011Vol3" type="standard" schema-version="v1.4.1">
+<bibitem id="NISTIR8011Vol3" type="standard" schema-version="v1.5.6">
   <fetched>2022-06-22</fetched>
   <title language="en" script="Latn">Automation Support for Security Control Assessments: Software Asset Management</title>
   <uri type="src">http://nvlpubs.nist.gov/nistpubs/ir/2018/NIST.IR.8011-3.pdf</uri>
@@ -54,15 +54,15 @@
     <number>8011 Vol. 3</number>
   </series>
   <keyword>
-    <taxon>actual state</taxon>
+    <vocab>actual state</vocab>
   </keyword>
   <keyword>
-    <taxon>assessment</taxon>
+    <vocab>assessment</vocab>
   </keyword>
   <keyword>
-    <taxon>authorization boundary</taxon>
+    <vocab>authorization boundary</vocab>
   </keyword>
   <keyword>
-    <taxon>automation</taxon>
+    <vocab>automation</vocab>
   </keyword>
 </bibitem>

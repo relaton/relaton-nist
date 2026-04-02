@@ -1,4 +1,4 @@
-<bibdata type="standard" schema-version="v1.4.1">
+<bibdata type="standard" schema-version="v1.5.6">
   <fetched>2026-02-26</fetched>
   <title language="en" script="Latn">Guide for Developing Performance Metrics for Information Security</title>
   <uri type="src">https://csrc.nist.gov/pubs/sp/800/80/ipd</uri>
@@ -121,15 +121,15 @@
     <region iso="MD"></region>
   </place>
   <keyword>
-    <taxon>information security program</taxon>
+    <vocab>information security program</vocab>
   </keyword>
   <keyword>
-    <taxon>performance metrics</taxon>
+    <vocab>performance metrics</vocab>
   </keyword>
   <keyword>
-    <taxon>security metrics</taxon>
+    <vocab>security metrics</vocab>
   </keyword>
-  <ext schema-version="v1.0.0">
+  <ext schema-version="v1.1.2">
     <doctype>standard</doctype>
     <flavor>nist</flavor>
     <commentperiod>

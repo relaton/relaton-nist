@@ -1,4 +1,4 @@
-<bibdata type="standard" schema-version="v1.4.1">
+<bibdata type="standard" schema-version="v1.5.6">
   <fetched>2026-02-26</fetched>
   <title language="en" script="Latn">Protecting Information and System Integrity in Industrial Control System Environments - Cybersecurity for the Manufacturing Sector</title>
   <uri type="src">https://csrc.nist.gov/pubs/sp/1800/10/ipd</uri>
@@ -225,36 +225,36 @@
     <region iso="MD"></region>
   </place>
   <keyword>
-    <taxon>manufacturing</taxon>
+    <vocab>manufacturing</vocab>
   </keyword>
   <keyword>
-    <taxon>industrial control systems</taxon>
+    <vocab>industrial control systems</vocab>
   </keyword>
   <keyword>
-    <taxon>application allowlisting</taxon>
+    <vocab>application allowlisting</vocab>
   </keyword>
   <keyword>
-    <taxon>file integrity checking</taxon>
+    <vocab>file integrity checking</vocab>
   </keyword>
   <keyword>
-    <taxon>user authentication</taxon>
+    <vocab>user authentication</vocab>
   </keyword>
   <keyword>
-    <taxon>user authorization</taxon>
+    <vocab>user authorization</vocab>
   </keyword>
   <keyword>
-    <taxon>behavioral anomaly detection</taxon>
+    <vocab>behavioral anomaly detection</vocab>
   </keyword>
   <keyword>
-    <taxon>remote access</taxon>
+    <vocab>remote access</vocab>
   </keyword>
   <keyword>
-    <taxon>software modification</taxon>
+    <vocab>software modification</vocab>
   </keyword>
   <keyword>
-    <taxon>firmware modification</taxon>
+    <vocab>firmware modification</vocab>
   </keyword>
-  <ext schema-version="v1.0.0">
+  <ext schema-version="v1.1.2">
     <doctype>standard</doctype>
     <flavor>nist</flavor>
     <commentperiod>

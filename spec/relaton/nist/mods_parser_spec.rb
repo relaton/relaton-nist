@@ -157,7 +157,7 @@ describe Relaton::Nist::ModsParser do
       abstracts = parser.parse_abstract
       expect(abstracts).to be_instance_of Array
       expect(abstracts.size).to eq 1
-      expect(abstracts.first).to be_instance_of Relaton::Bib::LocalizedMarkedUpString
+      expect(abstracts.first).to be_instance_of Relaton::Bib::Abstract
       expect(abstracts.first.content).to include "The lean flammability limit"
       expect(abstracts.first.language).to eq "en"
       expect(abstracts.first.script).to eq "Latn"

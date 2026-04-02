@@ -1,4 +1,4 @@
-<bibdata type="standard" schema-version="v1.4.1">
+<bibdata type="standard" schema-version="v1.5.6">
   <fetched>2026-02-26</fetched>
   <title language="en" script="Latn">Guide to Attribute Based Access Control (ABAC) Definition and Considerations</title>
   <uri type="src">https://csrc.nist.gov/pubs/sp/800/162/final</uri>
@@ -152,27 +152,27 @@
     <region iso="MD"></region>
   </place>
   <keyword>
-    <taxon>access control model</taxon>
+    <vocab>access control model</vocab>
   </keyword>
   <keyword>
-    <taxon>access control policy</taxon>
+    <vocab>access control policy</vocab>
   </keyword>
   <keyword>
-    <taxon>attribute based access control (ABAC)</taxon>
+    <vocab>attribute based access control (ABAC)</vocab>
   </keyword>
   <keyword>
-    <taxon>authorization</taxon>
+    <vocab>authorization</vocab>
   </keyword>
   <keyword>
-    <taxon>privilege</taxon>
+    <vocab>privilege</vocab>
   </keyword>
   <keyword>
-    <taxon>access control mechanism</taxon>
+    <vocab>access control mechanism</vocab>
   </keyword>
   <keyword>
-    <taxon>access control</taxon>
+    <vocab>access control</vocab>
   </keyword>
-  <ext schema-version="v1.0.0">
+  <ext schema-version="v1.1.2">
     <doctype>standard</doctype>
     <flavor>nist</flavor>
   </ext>

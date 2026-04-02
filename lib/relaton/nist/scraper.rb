@@ -264,7 +264,7 @@ module Relaton
           end
           ids = [Bib::Docidentifier.new(content: ref, type: "NIST", primary: true)]
           link = [Bib::Uri.new(type: "src", content: uri)]
-          bib = ItemData.new(formattedref: ref, source: link, docidentifier: ids)
+          bib = ItemData.new(formattedref: Bib::Formattedref.new(content: ref), source: link, docidentifier: ids)
           Relation.new(type: t, description: descr, bibitem: bib)
         end
 
@@ -273,7 +273,7 @@ module Relaton
         def fetch_keywords(doc)
           doc["keywords"].map do |kw|
             text = kw.is_a?(String) ? kw : kw.text
-            Bib::Keyword.new(taxon: [Bib::LocalizedString.new(content: text)])
+            Bib::Keyword.new(vocab: Bib::LocalizedString.new(content: text))
           end
         end
 

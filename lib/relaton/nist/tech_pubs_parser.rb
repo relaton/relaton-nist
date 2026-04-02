@@ -113,7 +113,7 @@ module Relaton
         ).each_with_object([]) do |a, m|
           next if a.text.empty?
 
-          m << Bib::LocalizedMarkedUpString.new(
+          m << Bib::Abstract.new(
             content: a.text, language: @doc["language"], script: "Latn",
           )
         end
@@ -267,7 +267,7 @@ module Relaton
         @doc.xpath("./ns:program/ns:related_item", ns: NS).map do |rel|
           rdoi = rel.at_xpath("ns:intra_work_relation|ns:inter_work_relation", ns: NS)
           id = rdoi.text.split("/")[1..].join("/").gsub(".", " ")
-          fref = Bib::LocalizedMarkedUpString.new(content: id)
+          fref = Bib::Formattedref.new(content: id)
           docid = Bib::Docidentifier.new(type: "NIST", content: id, primary: true)
           bibitem = ItemData.new(formattedref: fref, docidentifier: [docid])
           type = RELATION_TYPES[rdoi["relationship-type"]]

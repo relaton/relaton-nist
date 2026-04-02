@@ -1,4 +1,4 @@
-<bibdata type="standard" schema-version="v1.4.1">
+<bibdata type="standard" schema-version="v1.5.6">
   <title language="en" script="Latn" type="main">Interagency report on the status of international cybersecurity standardization for the internet of things (IoT)</title>
   <uri type="doi">https://doi.org/10.6028/NIST.IR.8200</uri>
   <docidentifier type="NIST" primary="true">NIST IR 8200</docidentifier>
@@ -39,7 +39,7 @@
     <city>Gaithersburg</city>
     <region iso="MD"></region>
   </place>
-  <ext schema-version="v1.0.0">
+  <ext schema-version="v1.1.2">
     <doctype>standard</doctype>
     <flavor>nilst</flavor>
   </ext>

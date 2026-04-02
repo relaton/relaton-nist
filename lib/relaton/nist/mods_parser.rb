@@ -116,7 +116,7 @@ module Relaton
       def parse_abstract
         abstract = Array(@doc.abstract).map do |a|
           content = a.content.gsub("\n", " ").squeeze(" ").strip
-          Bib::LocalizedMarkedUpString.new content: content, language: "en",
+          Bib::Abstract.new content: content, language: "en",
                                            script: "Latn"
         end
         @errors[:abstract] &&= abstract.empty?
@@ -223,7 +223,7 @@ module Relaton
         return if item_id.nil? || item_id.empty?
 
         docid = Bib::Docidentifier.new(type: "NIST", content: item_id)
-        fref = Bib::LocalizedMarkedUpString.new(content: item_id)
+        fref = Bib::Formattedref.new(content: item_id)
         ItemData.new(docidentifier: [docid], formattedref: fref)
       end
 

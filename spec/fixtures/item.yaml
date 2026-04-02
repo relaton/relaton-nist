@@ -1,6 +1,6 @@
 id: NISTIR8011Vol3
 
-schema_version: v1.4.1
+schema_version: v1.5.6
 
 fetched: '2022-06-22'
 
@@ -91,17 +91,17 @@ series:
   number: 8011 Vol. 3
 
 keyword:
-  - taxon:
-    - content: actual state
-  - taxon:
-    - content: assessment
-  - taxon:
-    - content: authorization boundary
-  - taxon:
-    - content: automation
+  - vocab:
+      content: actual state
+  - vocab:
+      content: assessment
+  - vocab:
+      content: authorization boundary
+  - vocab:
+      content: automation
 
 ext:
-  schema_version: v1.0.0
+  schema_version: v1.1.2
 
   doctype:
     abbreviation: STD

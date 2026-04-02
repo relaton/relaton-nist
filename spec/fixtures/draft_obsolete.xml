@@ -1,4 +1,4 @@
-<bibdata type="standard" schema-version="v1.4.1">
+<bibdata type="standard" schema-version="v1.5.6">
   <fetched>2026-02-26</fetched>
   <title language="en" script="Latn">Resilient Interdomain Traffic Exchange - BGP Security and DDoS Mitigation</title>
   <uri type="src">https://csrc.nist.gov/pubs/sp/800/189/2pd</uri>
@@ -68,54 +68,54 @@
     <region iso="MD"></region>
   </place>
   <keyword>
-    <taxon>routing security and robustness</taxon>
+    <vocab>routing security and robustness</vocab>
   </keyword>
   <keyword>
-    <taxon>Internet infrastructure security</taxon>
+    <vocab>Internet infrastructure security</vocab>
   </keyword>
   <keyword>
-    <taxon>Border Gateway Protocol (BGP) security</taxon>
+    <vocab>Border Gateway Protocol (BGP) security</vocab>
   </keyword>
   <keyword>
-    <taxon>prefix hijacks</taxon>
+    <vocab>prefix hijacks</vocab>
   </keyword>
   <keyword>
-    <taxon>IP address spoofing</taxon>
+    <vocab>IP address spoofing</vocab>
   </keyword>
   <keyword>
-    <taxon>distributed denial-of-service (DDoS)</taxon>
+    <vocab>distributed denial-of-service (DDoS)</vocab>
   </keyword>
   <keyword>
-    <taxon>Resource Public Key Infrastructure (RPKI)</taxon>
+    <vocab>Resource Public Key Infrastructure (RPKI)</vocab>
   </keyword>
   <keyword>
-    <taxon>BGP origin validation (BGP-OV)</taxon>
+    <vocab>BGP origin validation (BGP-OV)</vocab>
   </keyword>
   <keyword>
-    <taxon>prefix filtering</taxon>
+    <vocab>prefix filtering</vocab>
   </keyword>
   <keyword>
-    <taxon>BGP path validation (BGP-PV)</taxon>
+    <vocab>BGP path validation (BGP-PV)</vocab>
   </keyword>
   <keyword>
-    <taxon>BGPsec</taxon>
+    <vocab>BGPsec</vocab>
   </keyword>
   <keyword>
-    <taxon>route leaks</taxon>
+    <vocab>route leaks</vocab>
   </keyword>
   <keyword>
-    <taxon>source address validation (SAV)</taxon>
+    <vocab>source address validation (SAV)</vocab>
   </keyword>
   <keyword>
-    <taxon>unicast Reverse Path Forwarding (uRPF)</taxon>
+    <vocab>unicast Reverse Path Forwarding (uRPF)</vocab>
   </keyword>
   <keyword>
-    <taxon>remotely triggered black hole (RTBH) filtering</taxon>
+    <vocab>remotely triggered black hole (RTBH) filtering</vocab>
   </keyword>
   <keyword>
-    <taxon>flow specification (Flowspec)</taxon>
+    <vocab>flow specification (Flowspec)</vocab>
   </keyword>
-  <ext schema-version="v1.0.0">
+  <ext schema-version="v1.1.2">
     <doctype>standard</doctype>
     <flavor>nist</flavor>
     <commentperiod>
