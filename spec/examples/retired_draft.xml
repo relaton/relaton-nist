@@ -1,5 +1,5 @@
 <bibdata type="standard" schema-version="v1.2.9">
-  <fetched>2023-10-17</fetched>
+  <fetched>2026-04-07</fetched>
   <title format="text/plain" language="en" script="Latn">Guide for Developing Performance Metrics for Information Security</title>
   <uri type="src">https://csrc.nist.gov/pubs/sp/800/80/ipd</uri>
   <docidentifier type="NIST" primary="true">NIST SP 800-80 ipd</docidentifier>
@@ -106,7 +106,10 @@
       <docidentifier type="NIST" primary="true">NIST SP 800-80 ipd</docidentifier>
     </bibitem>
   </relation>
-  <place>Gaithersburg, MD</place>
+  <place>
+    <city>Gaithersburg</city>
+    <region iso="MD">Maryland</region>
+  </place>
   <keyword>information security program</keyword>
   <keyword>performance metrics</keyword>
   <keyword>security metrics</keyword>

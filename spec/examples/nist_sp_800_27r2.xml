@@ -1,5 +1,5 @@
 <bibdata type="standard" schema-version="v1.2.9">
-  <fetched>2023-10-17</fetched>
+  <fetched>2026-04-07</fetched>
   <title format="text/plain" language="en" script="Latn">Risk Management Framework for Information Systems and Organizations - A System Life Cycle Approach for Security and Privacy</title>
   <uri type="src">https://csrc.nist.gov/pubs/sp/800/37/r2/ipd</uri>
   <docidentifier type="NIST" primary="true">NIST SP 800-37r2 ipd</docidentifier>
@@ -36,7 +36,10 @@
       </organization>
     </owner>
   </copyright>
-  <place>Gaithersburg, MD</place>
+  <place>
+    <city>Gaithersburg</city>
+    <region iso="MD">Maryland</region>
+  </place>
   <keyword>assess</keyword>
   <keyword>authorization to operate</keyword>
   <keyword>common control authorization</keyword>

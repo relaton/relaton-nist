@@ -1,5 +1,5 @@
 <bibdata type="standard" schema-version="v1.2.9">
-  <fetched>2024-11-08</fetched>
+  <fetched>2026-04-07</fetched>
   <title format="text/plain" language="en" script="Latn">Guide to Attribute Based Access Control (ABAC) Definition and Considerations</title>
   <uri type="src">https://csrc.nist.gov/pubs/sp/800/162/final</uri>
   <docidentifier type="NIST" primary="true">NIST SP 800-162 fpd</docidentifier>
@@ -133,7 +133,10 @@
       <docidentifier type="NIST" primary="true">NIST SP 800-162 fpd</docidentifier>
     </bibitem>
   </relation>
-  <place>Gaithersburg, MD</place>
+  <place>
+    <city>Gaithersburg</city>
+    <region iso="MD">Maryland</region>
+  </place>
   <keyword>access control model</keyword>
   <keyword>access control policy</keyword>
   <keyword>attribute based access control (ABAC)</keyword>

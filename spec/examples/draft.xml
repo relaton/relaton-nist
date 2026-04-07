@@ -1,5 +1,5 @@
 <bibdata type="standard" schema-version="v1.2.9">
-  <fetched>2023-10-17</fetched>
+  <fetched>2026-04-07</fetched>
   <title format="text/plain" language="en" script="Latn">Resilient Interdomain Traffic Exchange - BGP Security and DDoS Mitigation</title>
   <uri type="src">https://csrc.nist.gov/pubs/sp/800/189/2pd</uri>
   <uri type="doi">https://doi.org/10.6028/NIST.SP.800-189-draft2</uri>
@@ -59,7 +59,10 @@
       </organization>
     </owner>
   </copyright>
-  <place>Gaithersburg, MD</place>
+  <place>
+    <city>Gaithersburg</city>
+    <region iso="MD">Maryland</region>
+  </place>
   <keyword>routing security and robustness</keyword>
   <keyword>Internet infrastructure security</keyword>
   <keyword>Border Gateway Protocol (BGP) security</keyword>

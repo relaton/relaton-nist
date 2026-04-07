@@ -53,7 +53,7 @@ module RelatonNist
           docstatus: fetch_status(json), # hit_data[:status]),
           copyright: fetch_copyright(json["published-date"]),
           relation: fetch_relations_json(hit_data),
-          place: ["Gaithersburg, MD"],
+          place: [RelatonBib::Place.new(city: "Gaithersburg", region: [RelatonBib::Place::RegionType.new(iso: "MD")])],
           keyword: fetch_keywords(json),
           commentperiod: fetch_commentperiod_json(json),
         }
