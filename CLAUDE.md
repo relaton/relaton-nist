@@ -82,6 +82,21 @@ errors = schema.validate(file)
 
 Tests use VCR with WebMock. Cassettes are stored in `spec/vcr_cassettes/` and re-record every 7 days.
 
+### Test Data Stubbing
+
+Tests pre-load both the NIST index and CSRC pubs-export data from local fixtures in `before(:suite)` (see `spec/support/webmock.rb`), avoiding all HTTP requests for these data sources. VCR is configured to ignore both `index-v1.zip` and `pubs-export` requests (`spec/support/vcr.rb`).
+
+- **Index**: A `Relaton::Index::Type` instance is created with `@index` set directly from `spec/fixtures/index-v1.zip`, then injected into `Relaton::Index.pool`. Run `rake spec:update_index` to refresh.
+- **PubsExport**: The `PubsExport` singleton's `@data` is set directly from `spec/fixtures/pubs-export.zip`. Run `rake spec:update_pubs_export` to refresh.
+
+To apply the index stubbing pattern to other relaton gems:
+
+1. Add `spec:update_index` rake task (downloads `index-v1.zip` from the gem's GitHub data repo)
+2. Run `rake spec:update_index` to create `spec/fixtures/index-v1.zip`
+3. In `spec/support/webmock.rb`: parse the zip once, create a `Type` instance with `@index` set directly, override `actual?` to return `true`, inject into `Relaton::Index.pool`
+4. In `spec/support/vcr.rb`: add `ignore_request` for `index-v1.zip`
+5. Remove any `allow_any_instance_of(Relaton::Index::Type)` workarounds from specs
+
 ## Key Dependencies
 
 - `relaton-bib` — base bibliographic models and shared mixins

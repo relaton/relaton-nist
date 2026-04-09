@@ -405,6 +405,25 @@ refer to the https://github.com/relaton/relaton-logger#usage[relaton-logger]
 documentation.
 
 
+== Development
+
+=== Updating test fixtures
+
+The test suite uses local copies of the NIST index and CSRC pubs-export data
+to avoid network requests. To update the fixtures:
+
+[source,sh]
+----
+$ rake spec:update_index
+$ rake spec:update_pubs_export
+----
+
+`spec:update_index` downloads the latest `index-v1.zip` from the
+https://github.com/relaton/relaton-data-nist[relaton-data-nist] repository.
+
+`spec:update_pubs_export` downloads the latest `pubs-export.zip` from
+the NIST Cybersecurity Resource Center (CSRC).
+
 == Contributing
 
 Bug reports and pull requests are welcome.

@@ -12,12 +12,6 @@ RSpec.describe Relaton::Nist do
   end
 
   context "fetch from GH" do
-    before do
-      # Force to download index file
-      allow_any_instance_of(Relaton::Index::Type).to receive(:actual?).and_return(false)
-      allow_any_instance_of(Relaton::Index::FileIO).to receive(:check_file).and_return(nil)
-    end
-
     it "fetch hit", vcr: "8200_2018" do
       hit_collection = Relaton::Nist::Bibliography.search("NIST IR 8200", "2018")
       expect(hit_collection.fetched).to be false
@@ -244,12 +238,7 @@ RSpec.describe Relaton::Nist do
     end
   end
 
-  context "fetch from pubs-export", vcr: "json_data" do
-    before do
-      # Force to download pubs-export.zip
-      allow(File).to receive(:exist?).with(Relaton::Nist::PubsExport::DATAFILE).and_return false
-      allow(File).to receive(:exist?).and_call_original
-    end
+  context "fetch from pubs-export" do
 
     it "a code with an year form json" do
       expect do

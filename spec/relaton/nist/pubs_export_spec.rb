@@ -1,8 +1,15 @@
 describe Relaton::Nist::PubsExport do
   subject { Relaton::Nist::PubsExport.instance }
 
-  before { Singleton.__init__(Relaton::Nist::PubsExport) }
-  after { Singleton.__init__(Relaton::Nist::PubsExport) }
+  before do
+    Singleton.__init__(Relaton::Nist::PubsExport)
+    $ignore_pubs_export = false # rubocop:disable Style/GlobalVars
+  end
+
+  after do
+    Singleton.__init__(Relaton::Nist::PubsExport)
+    $ignore_pubs_export = true # rubocop:disable Style/GlobalVars
+  end
 
   context "update json file" do
     it "when ctime is nil" do
@@ -23,6 +30,13 @@ describe Relaton::Nist::PubsExport do
       expect(subject).to receive(:fetch_data).with(ctime)
       subject.data
     end
+  end
+
+  it "returns last modified time from server" do
+    last_modified = "Thu, 09 Apr 2026 12:00:00 GMT"
+    stub_request(:head, "#{Relaton::Nist::PubsExport::PUBS_EXPORT}.meta")
+      .to_return(headers: { "Last-Modified" => last_modified })
+    expect(subject.send(:last_modified)).to eq Time.httpdate(last_modified)
   end
 
   it "thread safe fetch data" do
