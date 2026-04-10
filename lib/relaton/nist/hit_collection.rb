@@ -169,12 +169,30 @@ module Relaton
       #
       def sort_hits!
         @array.sort! do |a, b|
-          code = a.hit[:code] <=> b.hit[:code]
-          next code unless code.zero?
+          base_a, upd_a = base_and_update(a.hit[:code])
+          base_b, upd_b = base_and_update(b.hit[:code])
+
+          cmp = base_a <=> base_b
+          next cmp unless cmp.zero?
+
+          # Same base code: prefer higher /UpdN (latest update wins).
+          cmp = upd_b <=> upd_a
+          next cmp unless cmp.zero?
 
           b.hit[:release_date] <=> a.hit[:release_date]
         end
         self
+      end
+
+      # Split a code like "NIST FIPS 140-2/Upd2" into ["NIST FIPS 140-2", 2].
+      # Codes without an update suffix return update 0.
+      def base_and_update(code)
+        code = code.to_s
+        if (m = code.match(%r{\A(.*?)/Upd(\d+)\z}))
+          [m[1], m[2].to_i]
+        else
+          [code, 0]
+        end
       end
 
       def pubid(id = ref)
@@ -230,12 +248,16 @@ module Relaton
         id.sub!(/(?:-draft\d*|\.\wpd)$/, "")
         id = id.gsub(".", " ").sub(/-Add(\d*)$/, ' Add\1') if id.match?(/-Add\d*$/)
         pid = ::Pubid::Nist::Identifier.parse(id)
-        case json["iteration"]
-        when "final"
-          pid.stage = ::Pubid::Nist::Stage.new id: "f", type: "pd"
+
+        # Stage: URI is authoritative, fall back to iteration. "final" => no stage.
+        uri_stage = json["uri"] && json["uri"][%r{/(final|ipd|fpd|\dpd)(?:-\(\d+\))?(?:/|$)}, 1]
+        stage_src = uri_stage || json["iteration"]
+        case stage_src
+        when nil, "final"
+          # no stage — "final" means published
         when "fpd"
           pid.stage = ::Pubid::Nist::Stage.new id: "f", type: "pd"
-        when /(\w)pd/
+        when /\A(\w)pd\z/
           pid.stage = ::Pubid::Nist::Stage.new id: Regexp.last_match(1), type: "pd"
         end
 
@@ -243,7 +265,7 @@ module Relaton
         pid.update = Pubid::Nist::Update.new number: upd if upd
         pid.to_s
       rescue StandardError
-        id += " #{json["iteration"].sub('final', 'fpd')}" if json["iteration"]
+        id += " #{json["iteration"]}" if json["iteration"] && json["iteration"] != "final"
         id
       end
 

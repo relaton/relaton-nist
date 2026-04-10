@@ -108,46 +108,46 @@ RSpec.describe Relaton::Nist do
       context "doc with specific revision" do
         it "1 short notation", vcr: { cassette_name: "nist_sp_800_67r1" } do
           bib = Relaton::Nist::Bibliography.get "NIST SP 800-67r1"
-          expect(bib.docidentifier[0].content).to eq "NIST SP 800-67r1 fpd"
+          expect(bib.docidentifier[0].content).to eq "NIST SP 800-67r1"
         end
 
         it "2 short notation", vcr: { cassette_name: "nist_sp_800_67r2" } do
           bib = Relaton::Nist::Bibliography.get "NIST SP 800-67r2"
-          expect(bib.docidentifier[0].content).to eq "NIST SP 800-67r2 fpd"
+          expect(bib.docidentifier[0].content).to eq "NIST SP 800-67r2"
         end
 
         it "1 long notation", vcr: { cassette_name: "nist_sp_800_67r1" } do
           bib = Relaton::Nist::Bibliography.get "NIST SP 800-67 Rev. 1"
-          expect(bib.docidentifier[0].content).to eq "NIST SP 800-67r1 fpd"
+          expect(bib.docidentifier[0].content).to eq "NIST SP 800-67r1"
         end
 
         it "2 long notation", vcr: { cassette_name: "nist_sp_800_67r2" } do
           bib = Relaton::Nist::Bibliography.get "NIST SP 800-67 Rev. 2"
-          expect(bib.docidentifier[0].content).to eq "NIST SP 800-67r2 fpd"
+          expect(bib.docidentifier[0].content).to eq "NIST SP 800-67r2"
         end
       end
 
       context "doc with specific version" do
         it "short notation", vcr: { cassette_name: "nist_sp_800_45ver2" } do
           bib = Relaton::Nist::Bibliography.get "NIST SP 800-45ver2"
-          expect(bib.docidentifier[0].content).to eq "NIST SP 800-45ver2 fpd"
+          expect(bib.docidentifier[0].content).to eq "NIST SP 800-45ver2"
         end
 
         it "long notation", vcr: { cassette_name: "nist_sp_800_45ver2" } do
           bib = Relaton::Nist::Bibliography.get "NIST SP 800-45 Ver. 2"
-          expect(bib.docidentifier[0].content).to eq "NIST SP 800-45ver2 fpd"
+          expect(bib.docidentifier[0].content).to eq "NIST SP 800-45ver2"
         end
       end
 
       context "doc with specific part & revision" do
         it "short notation", vcr: { cassette_name: "nist_sp_800_57pt1r4" } do
           bib = Relaton::Nist::Bibliography.get "NIST SP 800-57pt1r4"
-          expect(bib.docidentifier[0].content).to eq "NIST SP 800-57pt1r4 fpd"
+          expect(bib.docidentifier[0].content).to eq "NIST SP 800-57pt1r4"
         end
 
         it "long notation", vcr: { cassette_name: "nist_sp_800_57pt1r4" } do
           bib = Relaton::Nist::Bibliography.get "NIST SP 800-57 Part 1 Rev. 4"
-          expect(bib.docidentifier[0].content).to eq "NIST SP 800-57pt1r4 fpd"
+          expect(bib.docidentifier[0].content).to eq "NIST SP 800-57pt1r4"
         end
       end
 
@@ -161,7 +161,7 @@ RSpec.describe Relaton::Nist do
       it "get NIST SP 800-12" do
         VCR.use_cassette "nist_sp_800_12" do
           result = Relaton::Nist::Bibliography.get "NIST SP 800-12"
-          expect(result.docidentifier.first.content).to eq "NIST SP 800-12 fpd"
+          expect(result.docidentifier.first.content).to eq "NIST SP 800-12"
         end
       end
 
@@ -188,7 +188,7 @@ RSpec.describe Relaton::Nist do
 
       it "get incomplete reference", vcr: { cassette_name: "nist_sp_800_60v1" } do
         bib = Relaton::Nist::Bibliography.get "NIST SP 800-60v1"
-        expect(bib.docidentifier[0].content).to eq "NIST SP 800-60v1r1 fpd"
+        expect(bib.docidentifier[0].content).to eq "NIST SP 800-60v1r1"
       end
 
       context "warns when" do
@@ -213,12 +213,12 @@ RSpec.describe Relaton::Nist do
         context "without stage get" do
           it "undated reference", vcr: { cassette_name: "nist_sp_800_162" } do
             result = Relaton::Nist::Bibliography.get("NIST SP 800-162")
-            expect(result.id).to eq "NISTSP800162fpd"
+            expect(result.id).to eq "NISTSP800162Upd2"
           end
 
           it "final without updated-date", vcr: { cassette_name: "nist_sp_800_162_2014_01" } do
             result = Relaton::Nist::Bibliography.get "NIST SP 800-162 (January 2014)"
-            expect(result.id).to eq "NISTSP800162fpd"
+            expect(result.id).to eq "NISTSP800162Upd2"
           end
         end
 
@@ -243,10 +243,10 @@ RSpec.describe Relaton::Nist do
     it "a code with an year form json" do
       expect do
         result = Relaton::Nist::Bibliography.get "NIST FIPS 140-2", "2002"
-        expect(result.id).to eq "NISTFIPS1402Upd2fpd"
+        expect(result.id).to eq "NISTFIPS1402Upd2"
       end.to output(
         match(/\[relaton-nist\] INFO: \(NIST FIPS 140-2\) Fetching from csrc\.nist\.gov \.\.\./)
-          .and(match(/\[relaton-nist\] INFO: \(NIST FIPS 140-2\) Found: `NIST FIPS 140-2\/Upd2 fpd`/)),
+          .and(match(/\[relaton-nist\] INFO: \(NIST FIPS 140-2\) Found: `NIST FIPS 140-2\/Upd2`/)),
       ).to_stderr_from_any_process
     end
 
@@ -360,7 +360,7 @@ RSpec.describe Relaton::Nist do
       context "without stage get" do
         it "final where updated-date > original-release-date" do
           result = Relaton::Nist::Bibliography.get("NIST SP 800-162 (February 25, 2019)")
-          expect(result.id).to eq "NISTSP800162fpd"
+          expect(result.id).to eq "NISTSP800162Upd1"
         end
       end
 
