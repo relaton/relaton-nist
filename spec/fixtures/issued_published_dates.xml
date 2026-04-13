@@ -1,13 +1,15 @@
 <bibdata type="standard" schema-version="v1.5.6">
-  <fetched>2026-02-26</fetched>
+  <fetched>2026-04-10</fetched>
   <title language="en" script="Latn">Guide to Attribute Based Access Control (ABAC) Definition and Considerations</title>
-  <uri type="src">https://csrc.nist.gov/pubs/sp/800/162/final</uri>
-  <docidentifier type="NIST" primary="true">NIST SP 800-162 fpd</docidentifier>
+  <uri type="src">https://csrc.nist.gov/pubs/sp/800/162/upd2/final</uri>
+  <uri type="doi">https://doi.org/10.6028/NIST.SP.800-162</uri>
+  <docidentifier type="NIST" primary="true">NIST SP 800-162/Upd2</docidentifier>
+  <docidentifier type="DOI">NIST.SP.800-162</docidentifier>
   <date type="published">
-    <on>2014-01-16</on>
+    <on>2019-08-02</on>
   </date>
-  <date type="obsoleted">
-    <on>2019-02-25</on>
+  <date type="updated">
+    <on>2019-08-02</on>
   </date>
   <date type="issued">
     <on>2014-01-01</on>
@@ -127,11 +129,11 @@
   <script>Latn</script>
   <status>
     <stage>final</stage>
-    <substage>withdrawn</substage>
+    <substage>active</substage>
     <iteration>final</iteration>
   </status>
   <copyright>
-    <from>2014</from>
+    <from>2019</from>
     <owner>
       <organization>
         <name>National Institute of Standards and Technology</name>
@@ -140,17 +142,24 @@
       </organization>
     </owner>
   </copyright>
-  <relation type="updates">
+  <relation type="obsoletes">
+    <description language="en" script="Latn">supersedes</description>
     <bibitem>
-      <formattedref>NIST SP 800-162 fpd</formattedref>
+      <formattedref>NIST SP 800-162/Upd2</formattedref>
       <uri type="src">https://csrc.nist.gov/pubs/sp/800/162/upd1/final</uri>
-      <docidentifier type="NIST" primary="true">NIST SP 800-162 fpd</docidentifier>
+      <docidentifier type="NIST" primary="true">NIST SP 800-162/Upd2</docidentifier>
     </bibitem>
   </relation>
   <place>
     <city>Gaithersburg</city>
     <region iso="MD"></region>
   </place>
+  <keyword>
+    <vocab>access control</vocab>
+  </keyword>
+  <keyword>
+    <vocab>access control mechanism</vocab>
+  </keyword>
   <keyword>
     <vocab>access control model</vocab>
   </keyword>
@@ -165,12 +174,6 @@
   </keyword>
   <keyword>
     <vocab>privilege</vocab>
-  </keyword>
-  <keyword>
-    <vocab>access control mechanism</vocab>
-  </keyword>
-  <keyword>
-    <vocab>access control</vocab>
   </keyword>
   <ext schema-version="v1.1.2">
     <doctype>standard</doctype>
