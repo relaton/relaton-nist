@@ -72,20 +72,23 @@ source:
 relation:
   - type: partOf
     bibitem:
-      formattedref: NISTIR 8011 Vol. 1
+      formattedref:
+        content: NISTIR 8011 Vol. 1
       source:
       - type: src
         content: https://csrc.nist.gov/publications/detail/nistir/8011/vol-1/final
 
   - type: updates
     bibitem:
-      formattedref: SP 800-53A Rev. 4
+      formattedref:
+        content: SP 800-53A Rev. 4
       source:
       - type: src
         content: https://csrc.nist.gov/publications/detail/sp/800-53a/rev-4/final
 
 series:
-- formattedref: NISTIR 8011 Vol. 3 (IPD)
+- formattedref:
+    content: NISTIR 8011 Vol. 3 (IPD)
   title:
   - content: NISTIR
   number: 8011 Vol. 3
