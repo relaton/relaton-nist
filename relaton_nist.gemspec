@@ -25,7 +25,7 @@ Gem::Specification.new do |spec|
 
   spec.add_dependency "base64"
   spec.add_dependency "mechanize", "~> 2.0"
-  spec.add_dependency "loc_mods", "~> 0.2.0"
+  spec.add_dependency "loc_mods", "~> 0.3.0"
   spec.add_dependency "pubid", "~> 1.15.6"
   spec.add_dependency "relaton-bib", "~> 2.0.0"
   spec.add_dependency "relaton-core", "~> 0.0.13"
