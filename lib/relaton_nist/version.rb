@@ -1,3 +1,3 @@
 module RelatonNist
-  VERSION = "1.20.4".freeze
+  VERSION = "1.20.5".freeze
 end
