@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
 
   spec.summary       = "Relaton::Nist: retrive NIST standards."
   spec.description   = "Relaton::Nist: retrive NIST standards."
-  spec.homepage      = "https://github.com/metanorma/relaton-nist"
+  spec.homepage      = "https://github.com/relaton/relaton-nist"
   spec.license       = "MIT"
 
   # Specify which files should be added to the gem when it is released.
