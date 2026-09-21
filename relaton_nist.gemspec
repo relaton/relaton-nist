@@ -30,5 +30,5 @@ Gem::Specification.new do |spec|
   spec.add_dependency "pubid", "~> 1.15.0"
   spec.add_dependency "relaton-bib", "~> 1.20.0"
   spec.add_dependency "relaton-index", "~> 0.2.0"
-  spec.add_dependency "rubyzip"
+  spec.add_dependency "rubyzip", "~> 3.7"
 end
