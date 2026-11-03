@@ -45,7 +45,7 @@ RSpec.describe RelatonNist do
         xml = hits.first.to_xml(bibdata: true)
           .gsub(/(?<=<fetched>)\d{4}-\d{2}-\d{2}/, Date.today.to_s)
         File.write file_path, xml, encoding: "UTF-8" unless File.exist? file_path
-        expect(xml).to be_equivalent_to File.open(file_path, "r:UTF-8", &:read)
+        expect(xml).to be_xml_equivalent_to File.open(file_path, "r:UTF-8", &:read)
           .gsub(/(?<=<fetched>)\d{4}-\d{2}-\d{2}/, Date.today.to_s)
         schema = Jing.new "grammars/relaton-nist-compile.rng"
         errors = schema.validate file_path
@@ -58,7 +58,7 @@ RSpec.describe RelatonNist do
         xml = hits.first.to_xml
           .gsub(/(?<=<fetched>)\d{4}-\d{2}-\d{2}/, Date.today.to_s)
         File.write file_path, xml, encoding: "UTF-8" unless File.exist? file_path
-        expect(xml).to be_equivalent_to File.open(file_path, "r:UTF-8", &:read)
+        expect(xml).to be_xml_equivalent_to File.open(file_path, "r:UTF-8", &:read)
           .gsub(/(?<=<fetched>)\d{4}-\d{2}-\d{2}/, Date.today.to_s)
       end
     end
@@ -93,7 +93,7 @@ RSpec.describe RelatonNist do
           xml = result.to_xml(bibdata: true).gsub(/(?<=<fetched>)\d{4}-\d{2}-\d{2}/, Date.today.to_s)
           file_path = "spec/examples/get.xml"
           File.write file_path, xml, encoding: "UTF-8" unless File.exist? file_path
-          expect(xml).to be_equivalent_to File.open(file_path, "r:UTF-8", &:read)
+          expect(xml).to be_xml_equivalent_to File.open(file_path, "r:UTF-8", &:read)
             .gsub(/(?<=<fetched>)\d{4}-\d{2}-\d{2}/, Date.today.to_s)
           schema = Jing.new "grammars/relaton-nist-compile.rng"
           errors = schema.validate file_path
@@ -280,7 +280,7 @@ RSpec.describe RelatonNist do
             file_path = "spec/examples/nist_sp_800_27r2.xml"
             xml = result.to_xml bibdata: true
             File.write file_path, xml, encoding: "UTF-8" unless File.exist? file_path
-            expect(xml).to be_equivalent_to(
+            expect(xml).to be_xml_equivalent_to(
               File.open(file_path, "r:UTF-8", &:read)
                 .gsub(/(?<=<fetched>)\d{4}-\d{2}-\d{2}/, Date.today.to_s),
             )
@@ -301,7 +301,7 @@ RSpec.describe RelatonNist do
       #     ).to_xml bibdata: true
       #     file_path = "spec/examples/framework.xml"
       #     File.write file_path, result unless File.exist? file_path
-      #     expect(result).to be_equivalent_to(
+      #     expect(result).to be_xml_equivalent_to(
       #       File.open(file_path, "r:UTF-8", &:read)
       #         .gsub(/(?<=<fetched>)\d{4}-\d{2}-\d{2}/, Date.today.to_s),
       #     )
@@ -340,7 +340,7 @@ RSpec.describe RelatonNist do
       result = RelatonNist::NistBibliography.get("NIST SP 800-189(2PD)").to_xml bibdata: true
       file_path = "spec/examples/draft.xml"
       File.write file_path, result, encoding: "UTF-8" unless File.exist? file_path
-      expect(result).to be_equivalent_to File.open(
+      expect(result).to be_xml_equivalent_to File.open(
         file_path, "r:UTF-8", &:read
       ).gsub(/(?<=<fetched>)\d{4}-\d{2}-\d{2}/, Date.today.to_s)
       schema = Jing.new "grammars/relaton-nist-compile.rng"
@@ -352,7 +352,7 @@ RSpec.describe RelatonNist do
       result = RelatonNist::NistBibliography.get("NIST SP 800-80(IPD)").to_xml bibdata: true
       file_path = "spec/examples/retired_draft.xml"
       File.write file_path, result, encoding: "UTF-8" unless File.exist? file_path
-      expect(result).to be_equivalent_to File.open(
+      expect(result).to be_xml_equivalent_to File.open(
         file_path, "r:UTF-8", &:read
       ).gsub(/(?<=<fetched>)\d{4}-\d{2}-\d{2}/, Date.today.to_s)
       schema = Jing.new "grammars/relaton-nist-compile.rng"
@@ -365,7 +365,7 @@ RSpec.describe RelatonNist do
         .to_xml bibdata: true
       file_path = "spec/examples/draft_obsolete.xml"
       File.write file_path, result, encoding: "UTF-8" unless File.exist? file_path
-      expect(result).to be_equivalent_to File.open(file_path, "r:UTF-8", &:read)
+      expect(result).to be_xml_equivalent_to File.open(file_path, "r:UTF-8", &:read)
         .gsub(/(?<=<fetched>)\d{4}-\d{2}-\d{2}/, Date.today.to_s)
       schema = Jing.new "grammars/relaton-nist-compile.rng"
       errors = schema.validate file_path
@@ -377,7 +377,7 @@ RSpec.describe RelatonNist do
         .to_xml bibdata: true
       file_path = "spec/examples/issued_published_dates.xml"
       File.write file_path, result, encoding: "UTF-8" unless File.exist? file_path
-      expect(result).to be_equivalent_to(
+      expect(result).to be_xml_equivalent_to(
         File.open(file_path, "r:UTF-8", &:read)
           .gsub(/(?<=<fetched>)\d{4}-\d{2}-\d{2}/, Date.today.to_s),
       )
@@ -391,7 +391,7 @@ RSpec.describe RelatonNist do
       xml =  result.to_xml bibdata: true
       file = "spec/examples/full_issued_date.xml"
       File.write file, xml, encoding: "UTF-8" unless File.exist? file
-      expect(xml).to be_equivalent_to File.read(file, encoding: "UTF-8")
+      expect(xml).to be_xml_equivalent_to File.read(file, encoding: "UTF-8")
         .gsub(/(?<=<fetched>)\d{4}-\d{2}-\d{2}/, Date.today.to_s)
       schema = Jing.new "grammars/relaton-nist-compile.rng"
       errors = schema.validate file
@@ -428,7 +428,7 @@ RSpec.describe RelatonNist do
       xml = bib.to_xml bibdata: true
       file = "spec/examples/cswp.xml"
       File.write file, xml, encoding: "UTF-8" unless File.exist? file
-      expect(xml).to be_equivalent_to File.read(file, encoding: "UTF-8")
+      expect(xml).to be_xml_equivalent_to File.read(file, encoding: "UTF-8")
         .gsub(/(?<=<fetched>)\d{4}-\d{2}-\d{2}/, Date.today.to_s)
     end
 

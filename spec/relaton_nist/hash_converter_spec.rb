@@ -9,7 +9,7 @@ RSpec.describe RelatonNist::HashConverter do
       .sub %r{(?<=<fetched>)\d{4}-\d{2}-\d{2}}, Date.today.to_s
     file = "spec/examples/from_yaml.xml"
     File.write file, xml, encoding: "UTF-8" unless File.exist? file
-    expect(xml).to be_equivalent_to File.read(file, encoding: "UTF-8")
+    expect(xml).to be_xml_equivalent_to File.read(file, encoding: "UTF-8")
       .sub %r{(?<=<fetched>)\d{4}-\d{2}-\d{2}}, Date.today.to_s
     schema = Jing.new "grammars/relaton-nist-compile.rng"
     errors = schema.validate file

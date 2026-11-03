@@ -16,7 +16,7 @@ RSpec.describe RelatonNist::NistBibliographicItem do
     file = "spec/examples/nist_bibxml.xml"
     xml = subject.to_bibxml
     File.write file, xml, encoding: "UTF-8" unless File.exist? file
-    expect(xml).to be_equivalent_to File.read(file, encoding: "UTF-8")
+    expect(xml).to be_xml_equivalent_to File.read(file, encoding: "UTF-8")
   end
 
   it "ref_attrs" do
