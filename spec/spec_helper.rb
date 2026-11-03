@@ -1,7 +1,7 @@
 require "simplecov"
 require "bundler/setup"
 require "rspec/matchers"
-require "equivalent-xml"
+require "canon/rspec_matchers"
 
 Dir["./spec/support/**/*.rb"].sort.each { |f| require f }
 
